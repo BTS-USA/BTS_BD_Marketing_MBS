@@ -69,28 +69,20 @@ body[class*='Activity3_AS_Ranking_Moment_Feedback']
 
 .ic
     &-article
-        flex()
-        align-items flex-start
+        display block
+        overflow hidden
     &-column-left
-        float none
-        flex-grow 0
-        flex-shrink 0
-        flex-basis 26%
-        width 26%
+        float left
+        width 42%
         box-sizing border-box
-        padding 0
-        display flex
-        padding 0 10px 10px 0
+        display block
+        padding 0 16px 10px 0
     &-column-right
         float none
-        flex-grow 0
-        flex-shrink 0
-        flex-basis 74%
-        width auto
+        width 100%
         box-sizing border-box
-        min-width 0
         padding 0
-        display flex
+        display block
     &-figure
         width 100%
         margin 0
@@ -104,9 +96,6 @@ body[class*='Activity3_AS_Ranking_Moment_Feedback']
 
 @media screen and (max-width 600px)
     .ic
-        &-article
-            flex-direction column
-            gap .75rem
         &-column-left, &-column-right
-            flex-basis 100%
+            float none
             width 100%

@@ -569,34 +569,22 @@ body[class*='Activity3_AS_Ranking_Moment_Feedback'] .tc-page__page.tc-action-Act
   padding-top: 0 !important;
 }
 .ic-article {
-  display: flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  align-items: flex-start;
+  display: block;
+  overflow: hidden;
 }
 .ic-column-left {
-  float: none;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 26%;
-  width: 26%;
+  float: left;
+  width: 42%;
   box-sizing: border-box;
-  padding: 0;
-  display: flex;
-  padding: 0 10px 10px 0;
+  display: block;
+  padding: 0 16px 10px 0;
 }
 .ic-column-right {
   float: none;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 74%;
-  width: auto;
+  width: 100%;
   box-sizing: border-box;
-  min-width: 0;
   padding: 0;
-  display: flex;
+  display: block;
 }
 .ic-figure {
   width: 100%;
@@ -611,13 +599,9 @@ body[class*='Activity3_AS_Ranking_Moment_Feedback'] .tc-page__page.tc-action-Act
 }
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 600px) {
-  .ic-article {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
   .ic-column-left,
   .ic-column-right {
-    flex-basis: 100%;
+    float: none;
     width: 100%;
   }
 }
