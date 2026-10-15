@@ -1,0 +1,133 @@
+﻿@import "shared\cl.styl"
+
+.ctpc
+    &-tableContWrapper
+        padding-top 15px
+    &-tableCont
+        width 70%
+        border none
+        margin 0 auto
+        color #fff
+    &-tableTitle
+        border 1px solid white
+        padding 25px
+    &-message
+        text-align center
+        color $sunsetOrange
+        font-weight 600
+    &-messageCont
+        text-align center
+        font-size 1.115rem
+        font-weight 600
+        width 50%
+        margin 0 auto
+        @media screen and (max-width 767px)
+            width 90%
+    &-oddEven
+        &:nth-child(odd)
+            background $cerulean
+        &:nth-child(even)
+            background rgba(0, 173, 239, 0.5)
+    &-error
+        &__messageText,&__errorMsg
+            color $sunsetOrange
+        &__detailMsg
+            color $black90
+    &-success
+        &__messageText
+            color $sliderGreen
+    
+    &-webcam
+        width 0
+        height 0
+    &-button
+        max-width 337px
+        width 100%
+        font-size 1.125rem 
+        padding 30px
+        border-radius 40px
+        &-submit
+            &--disable
+                pointer-events none
+    &-content
+        z-index -1
+        position relative
+        margin 20px 0 0 0
+        padding 0
+        &:first-of-type
+            margin 0 0 0 0
+    &-topbar
+        overflow hidden
+        &-container
+            float left
+        &__number
+            display block
+            margin 0 auto 10px auto
+            width 45px
+            height 45px
+            border 1px solid $mercury
+            //background-color alpha($mercury ,0.3)
+            background-color rgba(230,230,230,0.3)
+            border-radius 50%
+            text-align center
+            font-size 2.4*$px
+            line-height 1.8em
+            color $silver
+        &__instructions
+          text-align center
+          padding 0 15px 20px 15px
+          font-size 1.2*$px
+          color $silver
+        &__controls
+            text-align center
+    &-body
+        padding 20px 15px
+        float none
+        margin 0 auto
+        max-width 960px
+        overflow hidden
+        &__no-content
+            text-align center
+            color $mercury
+        &__title
+            &--fix
+                color $cerulean
+        &__instruction
+            padding-top 50px
+            font-weight 900
+            font-style italic
+
+    &-table
+        width 100%
+        margin 0 auto 10px auto
+    &--hidden
+        display none
+   
+    &--important
+        color $sunsetOrange
+    
+    &-internet
+        &__speedCont
+            background $white90
+            height 85px
+            width 30%
+            margin -5px auto
+            @media screen and (max-width 767px)
+                width 75%
+        &__currentSpeedCont
+            text-align center
+            font-size 0.9rem
+        &__uploadSpeedCont, &__downloadSpeedCont
+            text-align center
+            padding 15px
+            height 100%
+        &__uploadSpeedText, &__downloadSpeedText
+            font-size 0.75rem
+        &__uploadSpeedNumber, &__downloadSpeedNumber
+            font-size 1.325rem
+        &__currentSpeedText
+            padding-top 20px
+            text-align center
+.border_right
+    border-right 1px solid #e6e6e6
+

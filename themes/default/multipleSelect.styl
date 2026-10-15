@@ -1,0 +1,343 @@
+
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Single Select List Component Styles
+.msc 
+    &-article
+        background-color $silver
+        margin 0 0 10px 0
+    &-question,
+    &-renderer
+        padding 25px 20px
+    &-label
+        position relative
+        display table
+        width 100%
+    &-article.readonly
+        & ^[0]-label
+            opacity 0.6
+            cursor default
+    &-renderer
+        background-color white
+        vertical-align middle
+        cursor pointer
+        input 
+            display none
+        &.readonly
+            cursor default
+    &-question
+        &__label
+            color $cerulean
+            margin 0 10px 0 0
+            float left
+        &__description
+            padding-right 45px
+    &-accordion
+        &__content
+            background-color $mercury
+            padding 20px
+            width 100%
+            display none
+        &-icon
+            position absolute
+            right 20px
+            top 50%
+            margin -10px 0 0 0
+            width 20px
+            height 20px
+            background url("media/img/plus.svg") no-repeat center center
+            cursor pointer
+            &.open
+                background url("media/img/minus.svg")
+    &-remaining
+        margin 10px 0
+        font-size 1.4*$px
+    &-checkbox
+        position relative
+        width 35px
+        height 35px
+        margin 0 auto
+        border 3px solid $cerulean
+        border-radius 5px
+        background-color white
+        &:after
+            content ""
+            position absolute
+            display none
+            width 20px
+            height 20px
+            top 5px
+            left 5px
+            background url("media/img/check.svg") no-repeat center center
+    &-message
+        margin 0 0 10px 0
+        display none
+        font-size 1.2*$px
+        @media (min-width: 768px)
+            font-size 1.4*$px
+        &__text
+            padding 10px 20px
+            color white
+            background $tundora
+        &:after
+            clear both
+            content ""
+            display block
+        &.hideMessage
+            display none !important
+        &.showMessage
+            display block !important
+    
+    &-buttons
+        text-align right
+        display flex
+        justify-content flex-end
+
+    &-button
+        &:first-child
+            margin-right 5px
+        &--hide
+            display none
+    &-savedmessage
+        &:before
+            content ""
+            width 20px
+            height 16px
+            margin 0 5px 0 0
+            background url("media/img/checkWhite.svg") no-repeat center center
+            display inline-block 
+            vertical-align middle
+    /* addding this style since it's used for disable state in production*/
+    .disableLabels
+        opacity 0.4
+        cursor default
+
+            
+.multipleSelectButtonDisabled
+    .msc-message
+        display block
+        
+            
+.optionSelected
+    .msc-checkbox
+        &:after
+            display block
+    .msc-renderer
+        background-color $cerulean
+
+@import "shared/cl.styl"
+
+.multipleSelectComponent
+
+
+    footer 
+        height 40px
+        margin 1rem auto
+        .cl__button
+            margin 0
+        .multipleSelectComponentMessage
+            color #fff
+            float left
+            margin-left 2*$px
+            margin-top 0.8*$px
+        .multipleSelectButtons
+            float right
+        div 
+            float right
+            margin-left 1*$px
+
+.multipleSelectContainer
+    overflow hidden
+    .multipleSelectTable
+        display table
+    .checkboxRow 
+        color black
+        margin-bottom 1*$px
+        opacity 1
+        cursor pointer
+        display block
+        width 100%
+        
+        .symbol 
+            display none
+            margin-left: 0.3rem;
+            margin-top: 0.3rem;
+        .multipleSelectTableQsnDesc
+            background-color rgba(220, 222, 221, 1)
+            width 100%
+            padding 2*$px
+            vertical-align top
+            position relative
+            .multipleSelectTableQsnLabel
+                color #00adef
+                float left
+    .questionRow
+        background-color #dcdedd
+    .questionRow.optionSelected
+        background-color #f2f2f2
+    
+    
+    .accordionData
+        padding 20px
+        background-color grey
+        color white
+        display none
+    .multipleSelectAccordion
+        vertical-align: middle;
+        padding: 10px;
+        
+    .multipleSelectAccordionContainer
+        float none
+        height 50px
+        display table-cell
+        text-align right
+        vertical-align middle
+        .multipleSelectOptionAccordionSign
+            margin 5px
+            position relative
+            top 2px
+            
+    .checkboxRow.disableLabels
+        opacity 0.4
+        cursor default
+    .checkboxRow .optionSelected 
+        .multipleSelectTableQsnDesc
+            background-color #F2F2F2
+        .symbol
+            display block
+        .multipleSelectRendererContainer
+            background-color $cerulean
+    .multipleSelectRendererContainer
+        background-color white
+        .multipleSelectRenderer
+            display none
+        .multipleSelectCustomCheckbox
+            width 1.9rem
+            height 1.9rem
+            margin: 1rem;
+            border: 0.2rem solid $cerulean;
+            font-size: 2.3em;
+            text-align center
+            color: $cerulean;
+            border-radius 0.4rem
+            background-color white
+     
+    .multipleSelectAlert 
+        background-color #FA3737
+        font-weight 700
+        font-size 18px
+        width 90%
+        padding 0 4%
+        margin 1%
+        float left
+        
+        .multipleAlertMessage
+            padding 10px 0;
+            float left;
+            width 50%;      
+
+    .multipleSelectAlert.hideAlert
+        display none
+        opacity 0
+        height 0
+        overflow hidden
+    
+    .multipleSelectAlert.showAlert 
+        display block
+        opacity 1
+        height auto
+
+        .multipleSelectSubmit 
+            float right
+            display block
+            margin 10px 5px
+            -webkit-border-radius  5px;
+            -moz-border-radius  5px;
+            border-radius  5px;
+            text-alight center
+            color #585858
+            font-size 14px
+            font-weight 600;
+            border 1px solid #585858;
+            background-color #fff;
+            padding:3px 5px
+
+            
+    .multipleSubmitMessageContainer
+        height auto;
+        position absolute
+        top 50%
+        background-color #FFF
+        border 1px solid #585858
+        padding 5px 10px
+        left 50%
+        margin 0 0 0 -15%
+
+        .multipleSubmitMessage
+            color #585858
+            font-weight 700
+            text-transform uppercase
+            text-align center
+
+
+.multipleSelectButtonDisabled
+    //background-color #808080
+    cursor default
+
+.multipleSelectDialog
+    &.ui-dialog 
+        padding 0
+    .ui-widget-content
+        border none
+        text-align center
+        p
+            display inline
+    + .ui-widget-shadow
+        background none
+    .ui-widget-header
+        border none
+        color $tundora
+        border-radius 0
+        text-align: center;
+        &.ui-dialog-titlebar
+            padding: 0.5*$px
+            .ui-dialog-title
+                float none
+        .ui-dialog-titlebar-close
+            display none
+    &.ui-corner-all
+        border-radius 0
+    &.ui-widget
+        font-family: "OpenSans",Arial,"Helvetica Neue",Helvetica,sans-serif;
+        font-size: 1.2*$px;
+    
+    .ui-dialog-buttonpane
+        text-align center
+        button
+            border none
+            color white
+            float none
+            border-radius 2px
+            min-width 71px
+            height 30px
+            background transparent
+            &.ui-state-hover
+                border none
+            &:nth-child(1)
+                button($sunsetOrange)
+            &:nth-child(2)
+                button($apple)
+
+[dir="rtl"]
+	.msc
+		&-question
+			&__label
+				float right
+				margin 0 0 0 10px
+			&__description
+				padding-right 0
+		&-accordion-icon
+			right auto
+			left 20px
+

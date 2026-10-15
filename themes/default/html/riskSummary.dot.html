@@ -1,0 +1,225 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="riskSummary__section-main" data-componentContainer>
+            {{? it.header}}
+            <header class="riskSummary__header-main cl-header--main" data-textListHeader>
+                <div class="riskSummary__header-wrapper cl-header-wrapper">
+                    {{? it.header.title}}
+                    <h1 class="riskSummary__title-main cl-header__title--main">{{=it.header.title}}</h1>
+                    {{?}}
+                    {{? it.header.description}}
+                    <p class="riskSummary__description-main cl-header__description--main">{{=it.header.description}}</p>
+                    {{?}}
+                </div>
+            </header>
+            {{?}}
+        </section>
+        <article class="riskSummary__mainSlider cl-container" data-idea-carousel>
+
+            <div class="riskSummary__mainCont" data-idea-cont>
+                {{? it.ideaArrayHigh.length > 0 }}
+                {{? it.showHighTitle}}<div class="riskSummary__title" data-high-title>{{=it.textContent.highRiskText}}
+                </div>{{?}}
+                {{~it.ideaArrayHigh :idea:index }}
+                <div class="riskSummary__mainWrapper" data-idea-high>
+                    <div class="riskSummary__rankText">{{=it.textContent.rankText}} {{=index+1}}</div>
+                    <div class="riskSummary__titleHeader">
+                        <div class="riskSummary__riskTheme" style="background:{{=idea.themeColorCode}}"></div>
+                        <p class="riskSummary__titleText">{{=idea.IdeaText}}</p>
+                        <p class="riskSummary__riskThemeText">{{=it.textContent.riskThemText}} : {{=idea.riskTheme}}</p>
+                    </div>
+
+                    {{? it.textContent}}
+                    <div class="riskSummary__attributes">
+                        <div class="riskSummary__attrCont">
+                            <div class="c100 p{{=idea.impactPercent}} small">
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill riskSummary__fill"></div>
+                                </div>
+                            </div>
+                            <span class="riskSummary__attr">{{=it.textContent.impactText}}: {{=idea.Impact}}</span>
+                        </div>
+                        <div class="riskSummary__attrCont">
+                            <div class="c100 p{{=idea.likePercent}} small">
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill riskSummary__fill"></div>
+                                </div>
+                            </div>
+                            <span class="riskSummary__attr">{{=it.textContent.likelihoodText}}:
+                                {{=idea.Likelihood}}</span>
+                        </div>
+                        <div class="riskSummary__attrCont">
+                            <div class="c100 p{{=idea.avgPercent}} small">
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill riskSummary__fill"></div>
+                                </div>
+                            </div>
+                            <span class="riskSummary__attr">{{=it.textContent.avgText}}: {{=idea.average}}</span>
+                        </div>
+                    </div>
+                    {{?}}
+                    <div class="riskSummary__colCont">
+                        <div class="riskSummary__col cl-xs-column-6">
+                            <p class="riskSummary__text">{{=it.questions[0].title}} {{=it.textContent.strategyText}}
+                            </p>
+                            {{? idea.minimizeArray.length > 0}}
+                            <div class="riskSummary__minMitCont">
+                                {{~idea.minimizeArray: minRes:ind}}
+                                <div class="riskSummary__minMitTable " data-idea-container>
+                                    <span>{{=minRes.ResponseText}}</span>
+                                    {{? it.showLike && it.showLike === true}}
+                                    <span class="cl-icon cl-icon--heart-empty risksummary__like likeHeart"
+                                        data-voteauthorId="{{=minRes.Id}}" data-like></span>
+                                    <span class="tlc-likeCount likeCount" data-likecount="{{=minRes.Id}}"></span>
+                                    {{?}}
+                                </div>
+                                {{~}}
+                            </div>
+                            {{??}}
+                            <div class="riskSummary__minMitCont">
+                                <div class="riskSummary__minMitTable riskSummary__noStrategy">
+                                    {{=it.textContent.noStrategyText}}</div>
+                            </div>
+                            {{?}}
+                        </div>
+                        <div class="riskSummary__col cl-xs-column-6">
+                            <p class="riskSummary__text">{{=it.questions[1].title}} {{=it.textContent.strategyText}}
+                            </p>
+                            {{? idea.mitigateArray.length > 0}}
+                            <div class="riskSummary__minMitCont">
+                                {{~idea.mitigateArray: mitRes:inde}}
+                                <div class="riskSummary__minMitTable" data-idea-container>
+                                    <span>{{=mitRes.ResponseText}}</span>
+                                    {{? it.showLike && it.showLike === true}}
+                                    <span class="cl-icon cl-icon--heart-empty risksummary__like likeHeart"
+                                        data-voteauthorId="{{=mitRes.Id}}" data-like></span>
+                                    <span class="tlc-likeCount likeCount" data-likecount="{{=mitRes.Id}}"></span>
+                                    {{?}}
+                                </div>
+                                {{~}}
+                            </div>
+                            {{??}}
+                            <div class="riskSummary__minMitCont">
+                                <div class="riskSummary__minMitTable riskSummary__noStrategy">
+                                    {{=it.textContent.noStrategyText}}</div>
+                            </div>
+                            {{?}}
+                        </div>
+                    </div>
+                </div>
+                {{~}}
+                {{?}}
+                {{? it.showOutTitle}}<div class="riskSummary__title" data-outlier-title>
+                    {{=it.textContent.highOutlierText}}</div> {{?}}
+                {{~it.ideaArrayOut :ideas:index1 }}
+                <div class="riskSummary__mainWrapper" data-idea-outliers>
+                    <div class="riskSummary__rankText">{{=it.textContent.rankText}} {{=index1+1}}</div>
+                    <div class="riskSummary__titleHeader">
+                        <div class="riskSummary__riskTheme" style="background:{{=ideas.themeColorCode}}"></div>
+                        <p class="riskSummary__titleText">{{=ideas.IdeaText}}</p>
+                        <p class="riskSummary__riskThemeText">{{=it.textContent.riskThemText}} : {{=ideas.riskTheme}}
+                        </p>
+                    </div>
+                    {{? it.textContent}}
+                    <div class="riskSummary__attributes">
+                        <div class="riskSummary__attrCont">
+                            <div class="c100 p{{=ideas.impactPercent}} small">
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill riskSummary__fill"></div>
+                                </div>
+                            </div>
+                            <span class="riskSummary__attr">{{=it.textContent.impactText}}: {{=ideas.Impact}}</span>
+                        </div>
+                        <div class="riskSummary__attrCont">
+                            <div class="c100 p{{=ideas.likePercent}} small">
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill riskSummary__fill"></div>
+                                </div>
+                            </div>
+                            <span class="riskSummary__attr">{{=it.textContent.likelihoodText}}:
+                                {{=ideas.Likelihood}}</span>
+                        </div>
+                        <div class="riskSummary__attrCont">
+                            <div class="c100 p{{=ideas.avgPercent}} small">
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill riskSummary__fill"></div>
+                                </div>
+                            </div>
+                            <span class="riskSummary__attr">{{=it.textContent.avgText}}: {{=ideas.average}}</span>
+                        </div>
+                    </div>
+                    {{?}}
+                    <div class="riskSummary__colCont">
+                        <div class="riskSummary__col cl-xs-column-6">
+                            <p class="riskSummary__text">{{=it.questions[0].title}} {{=it.textContent.strategyText}}
+                            </p>
+                            {{? ideas.minimizeArray.length > 0}}
+                            <div class="riskSummary__minMitCont">
+                                {{~ideas.minimizeArray: minRes:ind}}
+                                <div class="riskSummary__minMitTable" data-idea-container>
+                                    <span>{{=minRes.ResponseText}}</span>
+                                    {{? it.showLike && it.showLike === true}}
+                                    <span class="cl-icon cl-icon--heart-empty risksummary__like likeHeart"
+                                        data-voteauthorId="{{=minRes.Id}}" data-like></span>
+                                    <span class="tlc-likeCount likeCount" data-likecount="{{=minRes.Id}}"></span>
+                                    {{?}}
+                                </div>
+                                {{~}}
+                            </div>
+                            {{??}}
+                            <div class="riskSummary__minMitCont">
+                                <div class="riskSummary__minMitTable riskSummary__noStrategy">
+                                    {{=it.textContent.noStrategyText}}</div>
+                            </div>
+                            {{?}}
+
+                        </div>
+                        <div class="riskSummary__col cl-xs-column-6">
+                            <p class="riskSummary__text">{{=it.questions[1].title}} {{=it.textContent.strategyText}}
+                            </p>
+                            {{? ideas.mitigateArray.length > 0}}
+                            <div class="riskSummary__minMitCont">
+                                {{~ideas.mitigateArray: mitRes:inde}}
+                                <div class="riskSummary__minMitTable" data-idea-container>
+                                    <span>{{=mitRes.ResponseText}}</span>
+                                    {{? it.showLike && it.showLike === true}}
+                                    <span class="cl-icon cl-icon--heart-empty risksummary__like likeHeart"
+                                        data-voteauthorId="{{=mitRes.Id}}" data-like></span>
+                                    <span class="tlc-likeCount likeCount" data-likecount="{{=mitRes.Id}}"></span>
+                                    {{?}}
+                                </div>
+                                {{~}}
+                            </div>
+                            {{??}}
+                            <div class="riskSummary__minMitCont">
+                                <div class="riskSummary__minMitTable riskSummary__noStrategy">
+                                    {{=it.textContent.noStrategyText}}</div>
+                            </div>
+                            {{?}}
+                        </div>
+                    </div>
+                </div>
+                {{~}}
+                {{? it.lowRatingIdeaArray && it.lowRatingIdeaArray.length > 0 }}
+                <div class="riskSummary__title">{{=it.textContent.otherRisk}}</div>
+                <div class="riskSummary__lowRiskCont">
+                    {{~it.lowRatingIdeaArray: lowIdea:ind }}
+                    <div class="riskSummary__mainWrapper riskSummary__tableCol" data-idea-main>
+                        <div class="riskSummary__titleList">
+                            <div class="riskSummary__sequence">{{=ind+1}}</div>
+                            <div class="riskSummary__ideaText">{{=lowIdea.IdeaText}}</div>
+                        </div>
+                    </div>
+                    {{~}}
+                </div>
+                {{?}}
+            </div>
+        </article>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+#presenter_BaseSlide
+{
+	padding: 30px;
+}
+
+.MultiQuestionBarChart_Table
+{
+	padding: 30px;
+	margin-left: 15px;
+	padding-left: 0px;
+}
+
+.MultiQuestionBarChart_LabelCell
+{
+	background:  url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_25.png') transparent;
+	padding: 4px 7px 6px;
+	text-align: left;
+}
+
+.MultiQuestionBarChart_BarCell
+{
+	background:  url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_25.png') transparent;
+	width: 444px;
+}
+
+.MultiQuestionBarChart_BarTable
+{
+	background:  url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_25.png') transparent;
+	border: 1px solid white;
+}
+
+.MultiQuestionBarChart_Table td
+{
+	color: #fff;
+}
+
+.MultiQuestionBarChart_Table td.MultiQuestionBarChart_BarCell,
+.MultiQuestionBarChart_Table td.MultiQuestionBarChart_Cell
+{
+	color: #fff;
+	padding: 0px;
+}
+
+
+.MultiQuestionBarChart_Table 
+{
+	width:900px;
+	padding-top: 0px;
+}
+
+.MultiQuestionBarChart_BarTable
+{
+	width:100%;
+	height: 23px;
+}
+
+.MultiQuestionBarChart_BarLabelCell
+{
+	text-align: center;
+}
+
+.MultiQuestionBarChart_NoDataCell
+{
+	width: 100%;
+	background: none;
+	font-size: 12px;
+}
+
+.MultiQuestionBarChart_Header
+{
+	margin-bottom: 30px;
+}
+
+.MultiQuestionBarChart_BarSeparator 
+{
+	width: 100%;
+}
+
+.MultiQuestionBarChart_ValueCell
+{
+	background-color: rgb(192, 160, 0);
+	font-size: 1px;
+	height: 14px;
+	padding: 0px;
+}
+
+.MultiQuestionBarChart_ValueText
+{
+	padding-right: 6px;
+}
+
+.MultiQuestionBarChart_BarLabelCell
+{
+	font-size: 10px;
+}
+
+.MultiQuestionBarChart_BarLabelCell:first-child
+{
+	text-align: left;
+}
+
+.MultiQuestionBarChart_BarSeparatorCell
+{
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+}
+
+.MultiQuestionBarChart table
+{
+	padding-left: 0px;
+}

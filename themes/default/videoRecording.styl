@@ -1,0 +1,579 @@
+﻿// import component library mixins and variables
+@import "shared/cl.styl"
+
+.wizletVideoRecording
+	height 100%
+	.mainContentWrapper
+		@media screen and (max-width 768px)
+			height 100%
+	.mainContent
+		@media screen and (max-width 768px)
+			height 100%
+			overflow auto
+	.cc-videobox
+	.cc-videobox__screen
+		height 100%
+	.cc
+		&-videobox
+			.OT_widget-container
+				position relative
+				padding-top 0
+				height 100%
+				width 100%
+			&__noRecording
+				width 100%
+				height 100%
+				display flex
+				flex-direction column
+				justify-content center
+				text-align center
+				color $white
+				font-size 18px
+			&__screen
+				position relative
+				height 100%
+			&__wrapper
+				width 100%
+				position relative
+				height 100%
+			&__publisher
+				width 100%
+				min-width 100px
+				z-index 100
+				height 100%
+			&__buttons
+				width 85%
+				z-index 999
+				position absolute
+				top 15px
+				left 15px
+				background-color transparent
+				border-top 0
+			&__backscreen
+				background-color #000
+				width 60%
+				height 500px
+				margin auto
+				overflow hidden
+				position relative
+				display inline-block
+				.cl-component
+					height 100%
+				&--disabled
+					background-color rgba(0, 0, 0, 0.4)
+			&__message
+				&--end
+					padding 45px 0
+					text-align center
+					color gray
+					&::before
+						font-family "clIcons"
+						content "\f129"
+						display inline-block
+						padding 0 15px
+						font-size 1.4rem
+						position relative
+						top 3px
+		&-button
+			width 85px
+			&__record
+				background-color transparent 
+				position absolute
+				left 50%
+				top 50%
+				transform translate(-50%, -50%)
+				border 3px solid $white
+				border-radius 50%
+				min-width 0rem
+				padding 5px
+				&::before
+					content ""
+					display block
+					width 30px
+					height 30px
+					border-radius 30px
+					background-color $white
+				&:active 
+					background-color transparent
+				&:hover
+					background-color transparent
+
+			&__rerecord
+				button($monza)
+				padding 0.300rem .75rem
+				min-width 4.875rem
+				&:before
+					font-family "clIcons"
+					content "\f122"
+					display inline-block
+					padding 0 5px 0 0
+				&--hide
+					display none !important
+			&__stop
+				background-color transparent
+				top 50%
+				position absolute
+				left 50%
+				border 3px solid $white
+				border-radius 50%
+				min-width 0rem
+				padding 12px
+				-webkit-transform translate(-50%, -50%)
+				-moz-transform translate(-50%, -50%)
+				-ms-transform translate(-50%, -50%)
+				transform translate(-50%, -50%)
+				&:before
+					content ""
+					display block
+					width 15px
+					height 15px
+					background-color $white
+				&:active 
+					background-color transparent
+				&:hover
+					background-color transparent
+
+			&__play
+				position absolute
+				left 50%
+				top 50%
+				transform translate(-50%, -50%)
+				&:before
+					font-family "clIcons"
+					content "\f11a"
+					display inline-block
+					padding 0 5px 0 0
+			&__wait
+				button($silver)
+				&:before
+					font-family "clIcons"
+					content "\f11a"
+					display inline-block
+					padding 0 5px 0 0
+			&__delete
+				button($cerulean)
+				padding 0.300rem .75rem
+				min-width 4.875rem
+				&:before
+					font-family "clIcons"
+					content "\f12d"
+					display inline-block
+					padding 0 5px 0 0
+			&__pause
+				button($apple)
+				&:before
+					font-family "clIcons"
+					content "\f11b"
+					display inline-block
+					padding 0 5px 0 0
+			&__submit
+				button($apple)
+				padding 0.300rem .75rem
+				min-width 4.875rem
+				&:before
+					font-family "clIcons"
+					content "\f116"
+					display inline-block
+					padding 0 5px 0 0
+			&__unsubmit
+				button($cerulean)
+				padding 0.300rem .75rem
+				min-width 4.875rem
+				&:before
+					font-family "clIcons"
+					content "\f116"
+					display inline-block
+					padding 0 5px 0 0
+			&__publish
+				display none !important
+		&-instructions
+			width 100%
+			margin auto
+			margin-bottom 15px
+		&-loader
+			border 10px solid #f3f3f3
+			border-radius 50%
+			border-top 10px solid #3498db
+			width 80px
+			height 80px
+			-webkit-animation spin 2s linear infinite
+			animation spin 2s linear infinite
+			position absolute
+			left calc(50% - 40px)
+			top calc(50% - 40px)
+		&-loader__wait
+			position absolute
+			left 50%
+			top 50%
+			transform translate(-50%, -50%)
+			color $white
+		&-status
+			color $white
+			margin auto
+			text-align center
+			width 100%
+		&-notes
+			&__annotationText
+				@media screen and (max-width 1024px)
+					font-size 0.9rem
+			&__panel
+				display block
+				width 40%
+				float right
+				overflow hidden
+				padding 0 10px
+				@media screen and (max-width 768px)
+					width 100%
+					float none
+					padding 10px
+			&__head
+				width 100%
+				height 25%
+			&__title
+				background-color $tundora
+				width 100%
+				padding 5px
+				color $white
+				font-weight bold
+				div
+					border $white 1px solid
+					background-color transparent
+					color $white
+					float right
+					font-size 0.750rem
+					padding 2px 6px
+                    cursor pointer
+					&:after
+						content "\f114"
+						font-family "clIcons"
+						font-size .750rem
+						font-weight normal
+						margin 0 0 0 5px
+					@media screen and (max-width 1024px)
+						font-size 0.650rem
+						padding 3px 2px
+			&__playlist
+				margin 0
+				display inline-block
+				width 100%
+				&-header
+					font-weight bold
+					text-transform uppercase
+					margin 10px 5px
+					text-align center
+					
+				&-item
+					color $white
+					background-color $tundora
+					padding 5px
+					margin 5px 0 0 0
+					
+					&-active
+						color $white
+						background-color $cerulean
+		.bookmark
+			background $white
+			border 1px solid $mercury
+			cursor pointer
+			&-input
+				margin 5px 0
+				font-size small
+				font-weight normal
+				resize auto
+				input
+					padding 2px 6px
+					border solid 1px $silver
+					margin 0 0 5px 0
+					width 99%
+				textarea
+					padding 2px 6px
+					border solid 1px $silver
+					height 80px
+					width 99%
+				.bookmark-time
+					width 35%
+					margin 0 3px 5px 0
+				input::-webkit-outer-spin-button,
+				input::-webkit-inner-spin-button 
+					-webkit-appearance none
+					margin 0
+			&-buttons
+				display inline-flex
+				color $white
+				
+			&_title
+				font-weight bold
+				padding 10px 4px
+				align-items center
+				display flex
+				color $tundora
+				&-no
+					color $white
+					z-index 9999
+					background-color $tundora
+					margin 0 5px
+					width 28px
+					height 23px
+					border-radius 50px
+					text-align center
+					border none
+				&-name
+					width 100%
+					white-space nowrap
+					overflow hidden
+					text-overflow ellipsis
+					border none
+					padding 0 10px 0 5px
+			&-active
+				color $white
+				background-color $cerulean
+				.bookmark_title-name, .expand_button
+					color $white
+				.bookmarkdetail
+					opacity 1
+					transition opacity .5s
+			&detail
+				display none
+				&.expanded
+					display block
+					background-color $gray94
+					color $tundora
+					font-size 0.75rem
+					textarea
+						overflow auto
+						border none
+						background transparent
+						margin 5px 5px 5px 10px
+						width 96%
+						resize none
+						font-size 0.825rem
+						color $tundora
+					.inner
+						&_title
+							font-weight bold
+						&_time
+							font-size 0.75rem
+							background-color $silver
+							width 50%
+							border none
+							padding 5px 10px
+							color $tundora
+							font-weight bold
+				float left
+		
+		.expand_button
+			font-family "clIcons"
+			font-size 0.75rem
+			padding 0 4px
+			&:before
+				content "\f114"
+			&.expanded:before
+				content "\f113"
+// new (flowplayer7) player
+		.videoplayback
+			overflow visible
+			position absolute
+			width 100%
+			top 0
+			display block
+			height 100%
+			.fp-ratio
+				padding-top 41.67%
+			.fp-fullscreen
+				&:before
+					content "\f120"
+					font-family "clIcons"
+					font-size 1.2rem
+			.fp-playbtn
+				&:before
+					content "\f11a"
+					font-family "clIcons"
+					font-size 1.4rem
+			.fp-cuepoint
+				display block
+				cursor pointer
+				top 10px
+				color $white
+				font-size 10px
+				width 15px
+				height 15px
+				border-radius 15px
+				background-color $tundora
+				border 1px solid $white
+				margin 0 0 0 -7px
+				&:before
+					content ""
+					display block
+					width 1px
+					height 13px
+					margin -11px auto 0 auto
+					border-radius 15px
+					background-color $tundora
+			&.cue0 .fp-cuepoint0, &.cue1 .fp-cuepoint1, &.cue2 .fp-cuepoint2, &.cue3 .fp-cuepoint3, &.cue4 .fp-cuepoint4, &.cue5 .fp-cuepoint5, &.cue6 .fp-cuepoint6, &.cue7 .fp-cuepoint7, &.cue8 .fp-cuepoint8, &.cue9 .fp-cuepoint9, &.cue10 .fp-cuepoint10, &.cue11 .fp-cuepoint11, &.cue12 .fp-cuepoint12, &.cue13 .fp-cuepoint13, &.cue14 .fp-cuepoint14, &.cue15 .fp-cuepoint15, &.cue16 .fp-cuepoint16, &.cue17 .fp-cuepoint17, &.cue18 .fp-cuepoint18, &.cue19 .fp-cuepoint19
+				color $white
+				background-color $cerulean
+			&.is-playing 
+				.fp-playbtn:before
+					content "\f132"
+					font-family "clIcons"
+					font-size 1.4rem
+					top 3px
+					position relative
+			&.is-fullscreen 
+				.fp-fullscreen:before
+					content "\f11f"
+					font-family "clIcons"
+					font-size 1.4rem
+			.fp-bar, .fp-bar-slider
+				background-color $silver
+			.fp-volumebar
+				background-color transparent
+			.fp-share, .fp-unload, .fp-chromecast
+				display none
+		.videoPlayer
+			width 50%
+			position relative
+			padding 0 0 56.25% 0
+			height auto
+			> div
+				height auto !important
+				width 100% !important
+				video
+					min-height 300px
+			object
+				position absolute
+				top 0
+				left 0
+				width 100%
+				height 100%
+//Special class for HTML 5 video player, works on mobile phones
+		.videoPlayerHTML5
+			padding 0
+.sbsc
+	.cc
+		&-button
+			&__publish
+				button($apple)
+				padding 3px
+				width 90px
+				display block !important
+				font-size 0.75rem
+				&:before
+					font-family "clIcons"
+					content "\f116"
+					display inline-block
+					padding 0 5px 0 0
+			&__unpublish
+				button($cerulean)
+				padding 3px
+				width 90px
+				display block !important
+				font-size 0.75rem
+				&:before
+					font-family "clIcons"
+					content "\f116"
+					display inline-block
+					padding 0 5px 0 0
+		&-instructions
+			display none
+		&-videobox
+			&__publisher
+				width auto
+				max-width none
+			/*&__screen
+				display block*/
+	&-window
+		&__body
+			.cc-header--main
+				display none
+		&--left
+			.cc-videobox__backscreen
+				height 400px
+				margin 0
+				float left
+				@media screen and (max-width 768px)
+					width 100%	
+				
+		&--expand
+			.cc-videobox__backscreen
+				height 500px
+		.bookmarkdetail.expanded
+			.inner
+				&_time
+					font-size 0.75rem
+					background-color $silver
+					width 50%
+					border none
+					padding 5px
+				&_btn
+					font-size 0.75rem
+					font-weight normal
+					color $tundora
+					display inline-flex
+					padding 5px
+					background-color $silver
+					width 50%
+					float right
+					&-edit
+						cursor pointer
+						width 48%
+						&:before
+							content "\f108"
+							font-family "clIcons"
+					&-delete
+						cursor pointer
+						width 52%
+						&:before
+							content "\f12c"
+							font-family "clIcons"
+					&-save
+						display none
+					&-cancel
+						display none
+		.bookmark.editable, .bookmark-buttons
+			textarea
+				overflow auto
+				border 1px solid $silver
+				background $white
+				resize vertical
+				color $tundora
+				margin 5px 0 0 0
+				width 100%
+				padding 0 10px
+			.inner
+				&_title
+					font-weight normal
+				&_time
+					font-weight normal
+					background-color $white
+					border 1px solid $silver
+					margin 5px 0
+				&_btn
+					background-color transparent
+					color $white
+					font-size 0.75rem
+					&-edit
+						display none
+					&-delete
+						display none !important
+					&-save
+						padding 2px 6px
+						background-color $apple
+						margin 5px 0
+						display block
+						cursor pointer
+					&-cancel
+						padding 2px 6px
+						background-color $tundora
+						margin 5px 5px
+						display block
+						cursor pointer
+
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}

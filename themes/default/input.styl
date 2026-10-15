@@ -1,0 +1,86 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Input Component Styles
+.ifc
+    &-button
+        margin 0 0 0 5px
+    &-label
+        font-size 1.4*$px
+        margin 0 0 10px 0
+    &-title
+        margin 0 0 10px 0
+        padding 15px 20px
+        background-color rgba(30,30,30,0.5)
+        color #fff
+
+    // These classes needed because footer and buttons dynamicaly comes from textAreaAD renderer.
+    // We may want to change this, but before we need to understand all use cases and how user interacts with this component.
+    footer 
+        text-align right
+        & > div 
+            display inline-block
+            margin 0 5px 0 0
+            &:last-child 
+                margin 0
+
+    &-message, &-buttons
+        &--hide
+            display none
+
+    &-textarea--disabled
+        opacity 0.5
+
+// Time Stamp Css                
+.time-stamp 
+    padding-top 4px;
+    width 46%;
+    position relative;
+    clear both;
+    font-size .75rem;
+    color #666; 
+    
+.time-stamp-msglength     
+    top: -41px;
+
+.inputTextareaAlignment
+    max-width 120.5rem
+    margin 0 auto               
+                
+// These classes also needs to go away once we update textAreaAD renderer
+.inputComponentMessageLength
+    font-size 1.2*$px
+    padding 5px 0 20px 0
+    text-align right
+    clear both
+    position relative;
+    left 50%
+    top 0px
+    width 50%
+    color #666
+
+    span.textAreaAD__messageLength-counter-characters-remaining
+        margin-left 5px
+.inputDisabled
+    background-color $gray
+    cursor not-allowed
+    pointer-events none
+
+.inputSavedMessage
+    &:before
+        content ""
+        display block
+        width 20px
+        height 16px
+        margin 0 5px 0 0
+        background url("media/img/checkWhite.svg") no-repeat center center
+        display inline-block
+        vertical-align middle
+
+[dir="rtl"]
+	.inputComponentMessageLength
+		left 0
+	.ifc
+		footer > div
+			margin 0 0 0 5px
+    

@@ -1,0 +1,38 @@
+﻿<div class="mainContent">
+    <section class="tlc-section-main">
+        {{? it.header}}
+        <header class="cl-header--main">
+            <div class="cl-header-wrapper">
+                {{? it.header.title}}
+                <h1 class="cl-header__title--main">{{=it.header.title}}</h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="cl-header__description--main">{{=it.header.description}}</p>
+                {{?}}
+            </div>
+        </header>
+        {{?}}
+    </section>
+    <article class="ic-article">
+        <div class="cl-container">
+            <div class="row">
+
+
+                {{? it.trackQuestionValues }}
+                {{~it.trackQuestionValues :index:i }}
+                <div class="cl-xs-column-6 cl-row">
+                    <div class="taa-container">
+                        <div class="taa-title">
+                            {{=it.textContent.team}} {{=index}}
+                        </div>
+                        <div data-quadrantchart_{{=index}}></div>
+                    </div>
+                </div>
+                {{~}}
+                {{? }}
+
+
+            </div>
+        </div>
+    </article>
+</div>

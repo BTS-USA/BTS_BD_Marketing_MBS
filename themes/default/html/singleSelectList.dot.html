@@ -1,0 +1,98 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="ssl cl-component">
+            {{? it.header}}
+            <header class="ssl-header--main cl-header--main">
+                {{? it.header.breadCrumbs}}
+                    <p class="ssl-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                {{?}}
+                {{? it.header.bgimage}}
+                 <div class="ssl-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                {{?}}
+                <div class="ssl-header-wrapper cl-header-wrapper">
+                    {{? it.header.title}}
+                    <h1 class="ssl-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                        {{=it.header.title}}
+                    </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                    <p class="ssl-header__description--main cl-header__description--main">
+                        {{=it.header.description}}
+                    </p>
+                    {{?}}
+                </div>
+            </header>
+            {{?}}
+            <div class="ssl-container cl-container">
+                <div class="cl-xs-column-12 cl__row">
+                    {{? it.instructions}}
+                    <div class="ssl-instructions cl-instructions">
+                        <p class="ssl-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+
+                    <div class="ssl-content cl-content">
+                        {{~it.questions :question:index}}
+                        <article class="ssl-article cl-article cl-table">
+                            <div class="ssl-question cl-md-cell-6 cl-xs-cell-12">
+                                <h4 class="ssl-question__title">{{=question.title}}</h4>
+                                {{? question.description}}
+                                <p class="ssl-question__description">{{=question.description}}</p>
+                                {{?}}
+                            </div>
+                            <div class="ssl-answer cl-md-cell-6 cl-xs-cell-12" data-singleselect-slider>
+                                <div data-binding="{{=question.value}}" data-binding-alt="{{=question.binding}}" {{? it.min}} data-min="{{=it.min}}" {{?}} {{? it.max}} data-max="{{=it.max}}" {{?}} {{?it.forceDefaultValue}} data-defaultValue="{{=it.forceDefaultValue}}" {{?}}></div>
+                                {{? it.steps || it.stepsNumbers}}
+                                <div class="ssl-slider-step {{?it.updatedSlider}}stepV2{{?}}" data-singleselectlistbar>
+                                    {{?!it.step}}
+                                    {{var step = 1;}}
+                                    {{??}}
+                                    {{var step = it.step;}}
+                                    {{?}}
+                                    {{ for(var i = parseInt(it.min); i <= parseInt(it.max); i+=step) { }}
+                                    {{? it.stepsNumbers && (i===it.axisTextLow || i===it.axisTextHigh)}}
+                                    <span class="ssl-slider-step__number" data-index="{{=i}}">{{? it.stepsNumbers}}{{=i}}{{?}}</span>
+                                    {{?? it.steps}}
+                                    <span class="ssl-slider-step__bar" data-index="{{=i}}"></span>
+                                    {{?}}
+                                    {{ } }}
+                                </div>
+                                {{?}}
+                            </div>
+                        </article>
+                        {{~}}
+					</div>
+
+                    <footer class="ssl-footer cl-footer">
+                        {{? it.buttons_v2 }}
+                            {{~it.buttons_v2 :button:index}}
+                            <div id="singleSelect{{=button.type}}Button"
+                                data-componentbuttons data-buttons
+                                {{? button.type=="submit"}} data-submitbutton data-pulsesubmitbutton{{?}}
+                                {{? button.type=="clear"}} data-clearaction{{?}}
+                                class="ssl-button ssl-button--{{=button.type}} cl-button cl-button--{{=button.type}}">
+                                <div class="ssl-button--text cl-button--text" 
+                                    {{? button.type == "submit"}} data-submitbutton{{?}} data-sscsubmitbuttontext {{? button.disabled}} disabled{{?}} data-button="{{=button.type}}">
+                                    {{=button.navigation.title}}
+                                </div>
+                            </div>
+                            {{~}}
+                        {{??}}
+                            <div class="ssl-buttons cl-buttons">
+                                {{~it.buttons :button:index}}
+                                <div class="ssl-button ssl-button--{{=button.type}} cl-button 
+                                    cl-button--{{=button.type}} exclude {{? button.hide}}cl-button--hidden{{?}}"
+                                    {{? button.disabled}} disabled{{?}} data-button="{{=button.type}}"
+                                    {{? button.type=="submit"}} data-submitbutton data-pulsesubmitbutton{{?}}
+                                    {{? button.type=="clear"}} data-clearaction{{?}}>
+                                    {{=button.text}}
+                                </div>
+                                {{~}}
+                            </div>
+                        {{?}}
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+@import "../shared/cl.styl"
+/* This is css for the layouts in the wizer core*/
+/* if you are using a layoutInevent then please let it have its own css called layout.css in the events/layout folder*/
+/*
+/*  ========================== */
+/* info3Column page layout styles */
+
+
+.info3Column
+    &-table
+        width 100%
+        border-collapse separate
+        border-spacing 10px 0px
+        @media (max-width: 768px)
+            display block
+    &-row
+        padding-bottom 45px
+        @media (max-width: 768px)
+            display block
+    &-1
+    &-2
+    &-3
+        vertical-align top
+        background-color #fff
+        @media (max-width: 768px)
+            display block
+            width 100%
+            padding-bottom 15px
+            background-color #fff
+    height calc(100vh - 90px)

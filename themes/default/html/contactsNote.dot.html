@@ -1,0 +1,23 @@
+﻿<article class="coc-note__data cl-table{{? it.newNote}} {{= it.workOnTemplates ? 'coc-note__edit-mode-workontemplate' : 'coc-note__edit-mode' }}  coc-note__new{{?}}{{? it.note.changed}} coc--modified{{?}}" data-usernotes={{=it.contactId+"-"+it.note.id}}>
+    {{? it.workOnTemplates == false }}
+    <div class="coc-note__data-cell">
+        <p class="coc-note__date-text" data-deltatime="{{= it.note.delta || 0 }}">{{= it.note.createdAt == null ? '' : new it.moment(it.note.createdAt).format("MMM DD YYYY")}}</p>
+    </div>
+    {{??}}
+    <div class="coc-note__data-cell coc-note__activity" data-activity>
+        <input class="coc-textbox coc-note__data-text {{?it.isReadOnly}}coc-note__data-text--disabled{{?}}" rows="1" data-autoresize data-deltatime="{{= it.note.delta || 0 }}" type='text' name="text" value="{{=it.note.delta || 0}}" data-notefield="deltatime" data-notecontactid="{{= it.contactId}}" data-noteid={{=it.note.id}} {{= it.isReadOnly ? 'disabled' : ''}}>
+    </div>
+    {{?}}
+    <div class="coc-note__data-cell coc-note__activity" data-activity>
+        <textarea class="coc-textbox coc-note__data-text {{?it.isReadOnly}}coc-note__data-text--disabled{{?}}" rows="1" data-autoresize data-notefield="activityHistory" data-notecontactid="{{= it.contactId}}" data-noteid={{=it.note.id}} {{= it.isReadOnly ? 'disabled' : ''}}>{{=it.note.note || ''}}</textarea>
+    </div>
+    <div class="coc-note__data-cell coc-note__mgmtnotes" data-mgmtnotes>
+        <textarea class="coc-textbox coc-note__data-text" rows="1" data-autoresize data-notefield="managementNote" data-notecontactid="{{= it.contactId}}" data-noteid={{=it.note.id}} {{= !it.workOnTemplates ? 'disabled' : '' }} {{= it.isReadOnly ? 'disabled' : ''}}>{{=it.note.mgmtNotes || ''}}</textarea>
+    </div>
+    <div class="coc-note__data-cell" data-addnewnote>
+
+    </div>
+    <div class="coc-note__data-cell{{? !it.newNote}} coc-note__data-cell--hidden{{?}}" data-notebtns>
+        <div class="coc-note__icon--delete" data-notedelete data-notecontactid="{{= it.contactId}}" data-noteid="{{= it.note.id}}"></div>
+    </div>
+</article>

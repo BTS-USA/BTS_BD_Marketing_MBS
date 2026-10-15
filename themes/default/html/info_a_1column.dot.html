@@ -1,0 +1,72 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="ic cl-component">
+           
+            {{? it.header}}
+                <header class="ic-header--main cl-header--main">
+                    {{? it.header.title}}
+                        <h1 class="ic-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                            {{=it.header.title}}
+                        </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="ic-header__description--main cl-header__description--main">
+                            {{=it.header.description}}
+                        </p>
+                    {{?}}
+                </header>
+            {{?}}
+            
+            <div class="ic-container cl-container">
+                <div class="cl-xs-column-12 cl-row cl-padding--no">
+                    {{? it.instructions}}
+                    <div class="ic-instructions cl-instructions">
+                        <p class="ic-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+                    <article class="ic-article cl-row">
+                        {{? it.images}}
+                        <div class="ic-column-left cl-xs-column-12 cl-padding--no">
+                            <section class="ic-images">
+                                {{~it.images :image}}
+                                <figure class="ic-figure">
+                                    <img src="{{=image}}" class="ic-figure__image" />
+                                </figure>
+                                {{~}}
+                            </section>
+                        </div>
+                        {{?}}
+                        {{? it.content}}
+                        <div class="ic-column-right cl-xs-column-12">
+                            <article class="ic-content">
+                                {{? it.content.headline}}
+                                <header class="ic-content__header">
+                                    <h3 class="ic-h3 cl-h3">{{=it.content.headline}}</h3>
+                                </header>
+                                {{?}}
+                                {{? it.content.text}}
+                                <div class="ic-paragraph cl-paragraph">
+                                    {{=it.content.text}}
+                                </div>
+                                {{?}}
+                                {{? it.content.list}}
+                                <ul class="ic-list">
+                                    {{=it.content.list}}
+                                </ul>
+                                {{?}}
+                                {{? it.feedbackOptions}}
+                                <div class="ic-feedback">
+                                    {{~it.feedbackOptions :value}}
+                                    <div class="ic-feedback__option">{{=value}}</div>
+                                    {{~}}
+                                </div>
+                                {{?}}
+                            </article>
+                        </div>
+                        {{?}}
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

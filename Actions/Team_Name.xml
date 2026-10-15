@@ -1,0 +1,23 @@
+<Action disableDynamicVotes="false">
+   <Component type="TabComponent"><![CDATA[{
+  "type": "tab",
+  "version": "2",
+  "showTabs": false,
+  "tabOptions": [
+    {
+      "title": "!{Team_Name}",
+      "actionXML": "Team_Name_Leader",
+      "conditionQuestion":"Leader",
+      "conditionAnswer":"1"
+    },
+    {
+      "title": "!{Team_Name_Follower_AS_InfoNote}",
+      "actionXML": "Team_Name_Follower_AS_InfoNote",
+      "conditionQuestion":"Leader",
+      "conditionAnswer":"2"
+    }
+  ],
+  "title": "!{}",
+  "scope": ["Leader"]
+}]]></Component>
+</Action>

@@ -1,0 +1,51 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="achievementComponent cl__component">
+            {{? it.header }}
+            <header class="achievementComponentHeader cl__header-main">
+                {{? it.header.title}}
+                    <h1 class="achievementComponentTitle cl__title-main">{{=it.header.title}}</h1>
+                {{?}}
+                {{? it.header.description}}
+                    <p class="achievementComponentText cl__description-main">{{=it.header.description}}</p>
+                {{?}}
+            </header>
+            {{?}}
+            <article class="achievementContainer">
+                <header>
+                    <h1 class="achivementTitle">{{=it.title}}</h1>
+                </header>
+                <div class="achievementContent">
+                    <div class="table achievementTable">
+                        <div class="row achievementLevelRow">
+                            <div class="cell achievementLevelCell">
+                                <span class="currentLevelLabel">Current level</span>
+                            </div>
+                        </div>
+                        <div class="row achievementScoreRow">
+                            <div class="cell achievementLevelCell">
+                                <div class="scoreHolder">
+                                    {{
+                                    var score = it.Q[it.question];
+                                    }}
+                                    {{~it.thresholds :value:index}}
+                                    {{? score >= value }}
+                                    <div class="star">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                        <polygon fill="#FFD700" stroke="#525252" stroke-width="37.6152" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="  259.216,29.942 330.27,173.919 489.16,197.007 374.185,309.08 401.33,467.31 259.216,392.612 117.104,467.31 144.25,309.08   29.274,197.007 188.165,173.919 " />
+                                    </svg>
+                                    </div>
+                                    {{?}}
+                                    {{~}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{? score < it.thresholds[it.thresholds.length-1]}}
+                    <div class="achivementBoard"><p class="scoreMessage">You are <span class="remainingPoints">{{=it.thresholds[it.thresholds.length-1]-score}}</span> points away from achieving certification</p></div>
+                    <div class="certificateHolder">{{??}}<div class="achievementCertificateHolder"><a href="#" class="achievementCertificateLink">get certificate</a></div>{{?}}</div>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>

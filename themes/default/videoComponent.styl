@@ -1,0 +1,60 @@
+// import component library mixins and variables
+@import "shared/cl.styl"
+
+// Video Component Styles
+.vc
+    &-article
+        background $white
+    &-transcript
+        padding 20px
+        &__header
+            border-bottom 1px solid $mercury
+            margin 0 0 20px 0         
+    &-accordion
+        &__header
+            margin 0 0 20px 0
+            overflow hidden
+            .vc-paragraph
+                float left
+            .vc-accordion-sign
+                background-image url("media/img/plus.svg")
+                width 20px
+                height 20px
+                float right
+        &__header.js-show
+            .vc-accordion-sign
+                background-image url("media/img/minus.svg")
+    
+        &__content
+            display none
+
+    // This class and styles neede to fix height of the player
+    .videoPlayer
+        width 100%
+        position relative
+        padding 0 0 56.25% 0
+        height auto
+        > div
+            height auto !important
+            width 100% !important
+            video
+                min-height 300px
+        object
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+    // Special class for HTML 5 video player, works on mobile phones
+    .videoPlayerHTML5
+        padding 0
+
+[dir="rtl"]
+	.vc
+		&-video
+			float right
+		&-accordion__header
+			.vc-paragraph
+				float right
+			.vc-accordion-sign
+				float left

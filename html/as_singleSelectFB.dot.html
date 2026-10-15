@@ -1,0 +1,125 @@
+<section class="fbc cl-component">
+
+    {{? it.header}}
+        <header class="fbc-header-main cl-header--main">
+            {{? it.header.breadCrumbs}}
+                <p class="fbc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+            {{?}}
+            {{? it.header.bgimage}}
+             <div class="fbc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+            {{?}}
+            <div class="fbc-header-wrapper cl-header-wrapper">
+                {{? it.header.title}}
+                    <h1 class="ssc-title-main cl-header__title--main">{{=it.header.title}}</h1>
+                {{?}}
+                {{? it.header.description}}
+                    <p class="fbc-description-main cl-header__description--main">{{=it.header.description}}</p>
+                {{?}}
+            </div>
+        </header>
+    {{?}}
+
+    <div class="fbc-container cl-container">
+        {{? it.instructions}}
+        <div class="fbc-instructions cl-instructions">
+            <div class="fbc-instructions__text cl-instructions__text">{{=it.instructions}}</div>
+        </div>
+        {{?}}
+        <div class="fbc-content cl-content">
+            <div class="fbc-feedback {{? it.metrics}}cl-sm-column-8{{??}}cl-sm-column-12{{?}} cl-xs-column-12">
+                <div class="fbc-article youSelected cl-article">
+                    {{? it.youSelectedTitle}}
+                    <div class="youSelected_title">
+                        <div class="youSelected_title--text">{{=it.youSelectedTitle}}</div>
+                    </div>
+                    {{?}} 
+                    {{? it.questions}}
+                    {{~it.questions :item:index }}
+                        {{? item.selected }}
+                        <div class="youSelected_option">
+                            {{? item.feedback.title}}
+                            <div class="youSelected_option--text">
+                                <div class='title'>{{=item.feedback.title}}</div>
+                            </div>
+                            {{?}}
+                            {{? item.feedback.description}}
+                            <div class="youSelected_Description--text">
+                                <div class='description'>{{=item.feedback.description}}</div>
+                            </div>
+                            {{?}}
+                        </div>
+                        {{?}}
+                        {{? !item.selected && item.content}}
+                        <div class="youSelected_option">
+                            {{? item.content.title}}
+                            <div class="youSelected_option--text">
+                                <div class='title'>{{=item.content.title}}</div>
+                            </div>
+                            {{?}}
+                            {{? item.content.description}}
+                            <div class="youSelected_Description--text">
+                                <div class='description'>{{=item.content.description}}</div>
+                            </div>
+                            {{?}}
+                        </div>
+                        {{?}}
+                    {{~}}
+                    {{?}}
+                </div>
+                <div class="fbc-article feedback cl-article">
+                    {{? it.feedbackTitle}}
+                        <div class="feedback_title">
+                            <div class="feedback_title--text">{{=it.feedbackTitle}}</div>
+                        </div>
+                    {{?}} 
+                    {{~it.questions :item:index }}                    
+                    {{? item.selected }}
+                    <div class="feedback_description">
+                        {{? item.feedback.fbTitle}}
+                            <div class="feedback_you-selected">{{=item.feedback.fbTitle}}</div>
+                        {{?}}
+                        {{? item.feedback.feedback}}
+                            <div class="feedback_description--text">{{=item.feedback.feedback}}</div>
+                        {{?}}
+                    </div>
+                    {{?}}
+                    {{? !item.selected && item.content}}
+                    <div class="feedback_description">
+                        {{? item.content.fbTitle}}
+                            <div class="feedback_you-selected">{{=item.content.fbTitle}}</div>
+                        {{?}}
+                        {{? item.content.feedback}}
+                            <div class="feedback_description--text">{{=item.content.feedback}}</div>
+                        {{?}}
+                    </div>
+                    {{?}}
+                    {{~}}
+                </div>
+            </div>
+            {{? it.metrics}}
+            <div class="fbc-metrics cl-sm-column-4 cl-xs-column-12">
+                <div class="metric-container">
+                    {{? it.scoreText}}
+                    <div class="scoreHeader">{{=it.scoreText}}</div>
+                    {{?}}
+                    <div class="metric-content">
+                        {{~it.metrics :value: ind}}
+                        <div class="metric-box">
+                        {{? it.labelArray[ind]}}
+                        <div class="metric_label metric_label-{{=ind+1}} cl-xs-column-6">
+                            {{=it.labelArray[ind]}}
+                        </div>
+                        {{?}}
+                        {{? it.scoreArray[ind]}}
+                            <div class="metricscore metric_score-{{=ind+1}} cl-xs-column-6">{{=it.scoreArray[ind]}}</div>
+                        {{?}}
+                        </div>
+                        {{~}}
+                    </div>
+                </div>
+            </div>
+            {{?}}
+        </div>
+    </div>
+    </div>
+</section>

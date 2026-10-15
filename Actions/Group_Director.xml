@@ -1,0 +1,25 @@
+<Action>
+  <Component type="TabComponent"><![CDATA[{
+  "type": "tab",
+  "version": "2",
+  "showTabs": true,
+  "tabOptions": [
+    {
+      "title": "!{GD}",
+      "actionXML": "GD_Section_1",
+      "open": true
+    },
+    {
+      "title": "!{GD_Facilitator}",
+      "actionXML": "Facilitator"
+    },
+    {
+      "title": "!{Admin}",
+      "actionXML": "Reset"
+    }
+  ],
+  "scope": [
+    "GD_Facilitator"
+  ]
+}]]></Component>
+</Action>

@@ -1,0 +1,154 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+.cfLeft
+	.item
+		&-row
+			border-bottom solid 1px $silver
+			padding 10px 20px
+			display flex
+			align-items center
+			justify-content space-between
+			cursor pointer
+
+			&.active
+				background-color $cerulean
+				color $white
+				font-weight bold
+
+			&.normal
+				background-color $mercury
+				color $gray
+				font-weight bold
+
+			&__ico
+				padding 10px
+				height 16px
+				width 16px
+
+				&.collapsed 
+					background url('./media/img/plus.svg') no-repeat center center
+
+				&.expanded 
+					background url('./media/img/minus.svg') no-repeat center center
+
+		&-detail
+			padding 0 10px 10px 10px
+			
+			&.collapsed 
+				display none
+
+			&.expanded 
+				border-bottom solid 1px $silver
+				display block
+			
+			&__info
+				font-size .75rem
+				margin 5px 0 0 5px
+				
+				.iLabel
+					font-weight bold
+					margin-right 10px
+			
+	.expandAll
+		border-bottom solid 1px $silver
+		display flex
+		align-items center
+		justify-content flex-end
+		padding 5px 10px 3px 0
+		cursor pointer
+
+		&__ico
+			display block
+			float right
+			background-color $cerulean
+			font-family "clIcons"
+			padding 5px
+			margin-left 10px
+			cursor pointer
+			margin-top -2px
+    
+			&.collapsed 
+				&:after
+					content "\f114"
+					font-size 1rem
+					color $white
+	
+			&.expanded 
+				&:after
+					content "\f113"
+					font-size 1rem
+					color $white
+
+	.subItem
+		&-cnt
+			position relative
+			
+			for i in (1..50)
+				&:nth-child({i})
+					&:before
+						content ''+i+''
+
+			&:before
+				color $white
+				width 28px
+				height 28px
+				background-color $cerulean
+				-webkit-border-radius 50%
+				-moz-border-radius 50%
+				border-radius 50%
+				position absolute
+				top 6px
+				left 6px
+				display flex
+				align-items center
+				justify-content center
+
+		&-row
+			position relative
+			border-bottom solid 1px $silver
+			padding 10px 20px 10px 50px
+			display flex
+			align-items center
+			justify-content space-between
+			font-weight 700
+			color $gray
+			cursor pointer
+			
+			&__ico
+				padding 6px
+				height 12px
+				width 12px
+				margin-left 10px
+
+				&.collapsed 
+					background url('./media/img/plus.svg') no-repeat center center
+
+				&.expanded 
+					background url('./media/img/minus.svg') no-repeat center center
+		&-detail
+			padding 10px
+			display none
+
+			&__choice
+				margin-bottom 10px
+				font-size .75rem
+				
+				.siLabel
+					font-weight bold
+					
+				.note
+					border 2px solid $silver
+					padding 5px
+					width 70%
+					background-color $disabled
+					min-height 80px
+					margin 0 auto
+
+				.option
+					border 2px solid $silver
+					padding 5px
+					width 70%
+					background-color $disabled
+					height 32px
+					margin 0 auto

@@ -1,0 +1,407 @@
+@import "../../Shared/css/cl.styl"
+$px = (0.625) rem
+
+menuComandContentWrapper()
+    width 90%
+    margin 0 auto
+    overflow hidden
+    textarea#questionComment
+    textarea#note
+        height 80px
+        width 100%
+        margin 0
+greenButton()
+    button(apple)
+    float right !important
+    box-shadow none
+    text-shadow none
+    margin 0
+    margin-top 10px
+    -webkit-border-radius 0
+    border-radius 0
+    padding 0
+
+.menuContentWrapper
+    padding 0px
+    mainContent
+        margin-top 0px
+.menuComponent
+    width 320px
+    z-index 9999
+    margin 0 auto
+    color mercury
+    :link
+        color #FFFFFF
+    .menuArticleMenu
+         background-color #2d2d2d
+    .menuArticleFooter
+         background-color codGray
+         height 40px
+    .menuRow
+         height 85px
+         overflow-y auto
+         overflow-y hidden
+         white-space nowrap
+    .option
+         /*float left*/
+         padding 10px 10px 10px 10px
+         /*width 50px*/
+         text-align center
+         display none
+         cursor pointer
+    .option.active
+         display inline-block
+    .optionImage00
+         background-color #FF4F3A
+         border-radius 30px
+    .optionImage01
+         background-color #36B545
+         border-radius 30px
+    .optionImage02
+         background-color #A9D41A
+         border-radius 30px
+    .optionImage03
+         background-color #FE9C1F
+         border-radius 30px
+    .optionImage04
+         background-color #FFD237
+         border-radius 30px
+    .optionImage05
+         background-color #CF2764
+         border-radius 30px
+    .optionImage06
+         background-color #0079B0
+         border-radius 30px
+    .optionImage07
+         background-color #334D5C
+         border-radius 30px
+    .optionImage
+         width 42px
+         height 42px
+         margin auto
+         img
+            width 42px
+            height 42px
+            border-radius 30px
+            -webkit-border-radius 30px
+            -moz-border-radius 30px
+    .optionTitle
+         font-size 12px
+    .optionSelected
+         background-color tundora
+    .logoutImage
+         width 25px
+         height 25px
+         float left
+         margin 5px 15px 0 0
+         cursor pointer
+    .logoutText
+         float left
+         margin-top 8px
+         font-size 14px
+         cursor pointer
+    .menuLogout
+         width 45%
+         float left
+         margin-left 10px
+         cursor pointer
+    .menuAbout
+         width 50%
+         float left
+         text-align right
+         margin-top 8px
+         font-size 14px
+         a
+           text-decoration none
+           img
+             width 10px
+             height 10px
+             margin 0 10px 0 0
+    .menuAboutText
+        margin 0 10px 0 0
+    .menuArticleSubMenu
+        background-color tundora
+    .subMenu
+        padding 10px
+        display none
+    .submenuRow
+        overflow hidden
+        margin-bottom 0.8*$px
+        cursor pointer
+        display none
+    .submenuRow.active
+        display inline-block
+    .suboptionImage
+        float left
+        width 40px
+        height 40px
+        border-radius 5px
+        -webkit-border-radius 5px
+        -moz-border-radius 5px
+        img
+           width 30px
+           height 30px
+           margin 5px
+    .suboptionImage.option_0
+        background-color #ff4f3a
+    .suboptionImage.option_1
+        background-color #36B545
+    .suboptionImage.option_2
+        background-color #A9D41A
+    .suboptionImage.option_3
+        background-color #FE9C1F
+    .suboptionImage.option_4
+        background-color #FFD237
+    .suboptionImage.option_5
+        background-color #CF2764
+    .suboptionImage.option_6
+        background-color #0079B0
+    .suboptionImage.option_7
+        background-color #334D5C
+    .suboptionTitle
+        float left
+        padding-left 10px
+        width 70%
+        font-size 0.8rem
+        span
+           font-weight bold
+    .suboptionDescription
+        font-size 0.7rem
+    .suboptionImageNext
+        padding-top 15px
+        float right
+        img
+          width 24px
+          height 24px
+    .menuTitle
+        width 100%
+        height 42px
+        background-color codGray
+    .menuTitleIcon
+        padding 5px 0px 0px 5px
+        float left
+        img
+          width 30px
+          height 30px
+    .menuTitleText
+        float left
+        padding 10px 0px 10px 10px
+    .menuColumn
+        width 100%
+    .optionColumn
+        height 30px
+        margin-top 5px
+    .optionColumnImage
+        float left
+        width 10px
+        img
+          width 10px
+          height 20px
+    .optionColumnNumber
+        float left
+        margin-left 10px
+        color deepCerulean
+        font-weight bolder
+    .optionColumnTitle
+        float left
+        font-size 14px
+        font-weight bold
+        margin-left 10px
+    .optionColumnImageNext
+        float right
+        padding-right 10px
+    .menuExperienceTitle
+        height 15px
+        font-size 16px
+        padding 0px 0px 10px 10px
+        background-color deepCerulean
+    .menuExperience
+        height 140px
+    .menuExperienceExplore
+        float left
+        width 100%
+    .menuExperienceExploreTitle
+        font-size 11px
+        margin 5px 0px 10px 10px
+        width 100%
+    .menuExperienceExploreOptions
+        width 100%
+        margin-left 40px
+        height 60px
+    .menuExperienceExploreOptions:after
+        clear both
+    .menuExperienceExploreOptionsImg
+        width 60px
+        text-align center
+        img
+           height 30px
+           width 30px
+    .menuExperienceExploreOptionsdata
+        float left
+        width 80px
+    .menuExperienceExploreOptionsText
+        width 100px
+        span
+          font-size 10px
+          float left
+          text-align center
+          width 50px
+        img
+           height 10px
+           width 10px
+           float left
+           padding 3px 0px 0px 5px
+    .menuCommands
+        background-color #2d2d2d
+        border-bottom 1px solid silver
+    .commandColumn
+        width 100%
+        height 50px
+        display none
+        cursor pointer
+    .commandColumn.active
+       display inline-block
+    .commandColumnImage
+        float left
+        padding 10px
+        img
+          width 20px
+          height 20px
+    .commandColumnTitle
+        float left
+        padding 10px
+        font-size 13px
+    .commandColumnImageNext
+        float right
+        padding 10px
+    .commandOutput
+        width 100%
+        #submitNote
+          greenButton()
+        .notesWrapper
+           menuComandContentWrapper()
+           #closeNote
+             display none
+           textarea#note
+             height 80px
+             width 100%
+             margin 0
+          .noteNav
+             width 100% !important
+             overflow hidden !important
+             margin-top 0px !important
+          .preview
+             margin: 0;
+             width: 100%;
+             margin-top: 10px;
+             ul
+                margin-left 0px !important
+                margin-top 0px !important
+                width 0% !important
+             li
+                margin 0px 0px 0px 0px
+                padding 0px !important
+                width 286px !important
+                font-size 12px !important
+                text-align left !important
+            #editNote
+                button(cerulean)
+                float right !important
+                box-shadow none
+                text-shadow none
+                margin 0
+                margin-top 10px
+                -webkit-border-radius 0
+                border-radius 0
+                padding 0
+                position relative
+                top 0
+            #prevNote
+                background: url("media/img/leftArrowLightGrey.svg") no-repeat
+                background-color tundora
+            #nextNote
+                background: url("media/img/rightArrowLightGrey.svg") no-repeat
+            #prevNote, #nextNote
+                background-color tundora
+                background-color: #4d4d4d;
+                background-size: 39%;
+                background-position-x: center;
+                background-position-y: center;
+                border: 1px solid gray;
+                border-radius: 3px;
+
+        .questionWrapper
+           menuComandContentWrapper()
+           #saveQuestionComments
+               greenButton()
+    .outputcollapsed
+        display none
+        overflow hidden
+        border-bottom 1px solid silver
+        padding 10px 0
+        background-color codGray
+.menunavigationpopup.ui-dialog
+     top 46px !important
+     left 2px !important
+     height calc(100% - 75px) !important
+     padding-top 20px
+     position absolute
+     > ui-dialog-content
+        height 100% !important
+.menunavigationpopup
+    .ui-dialog-titlebar
+        padding 0px !important
+    .ui-widget-header
+        border 0px !important
+    .ui-dialog-title
+        display none
+    .ui-dialog-content
+        max-height calc(100% - 1px) !important
+    .ui-dialog-titlebar-close
+        margin 0px
+
+.callalert_div
+    text-align center
+    background-color sunsetOrange
+    position absolute
+    width 100%
+    z-index 1100
+    padding 5px 15px
+    font-size 1.6rem
+    &::before
+        font-family "clIcons"
+        content "\f122"
+        font-size 2.8rem
+        padding 0 15px
+        color #fff
+        position relative
+        top 3px
+        margin 0 0 0 -120px
+    .callalertbutton
+        display inline-block
+        padding .625rem .75rem
+        margin-left 10px
+        border-radius 0
+        font-size 14px
+        cursor pointer
+        vertical-align: middle;
+        min-width 6.875rem
+        margin-bottom 5px
+        font-weight 400
+        line-height 1.42857143
+        color #fff
+        text-align center
+        white-space nowrap
+        -ms-touch-action manipulation
+        touch-action manipulation
+        -webkit-user-select none
+        -moz-user-select none
+        -ms-user-select none
+        user-select none
+        background-color #00adef
+    .accept
+        background-color #36b544
+    .cancel
+        background-color #d2003f
+    .callalert_label
+        color white

@@ -1,0 +1,63 @@
+<div class="meeting" data-meeting-id="{{=it.meeting.id}}">
+	<div class="meeting-container">
+		<div class="meeting-header">
+			<div class="meeting-icon cl-icon cl-icon--meeting"></div>
+			<p class="meeting-title">{{=it.meeting.title}}</p>
+			{{?it.meeting.startTime}}
+			<div class="meeting-dateTime">
+				<i class="cl-icon cl-icon--calendar"></i>
+				<span>{{=it.meeting.startDate}}</span>
+				<i class="cl-icon cl-icon--clock"></i>
+				<span>{{=it.meeting.time}}</span>
+			</div>
+			{{?}}
+			<div class="meeting-id">
+				<span>{{=it.wizletInfo.content.meetingIdText}}</span>
+				<span>{{=it.meeting.code}}</span>
+			</div>
+			<div class="meeting-leaderName">
+				<span>{{=it.wizletInfo.content.leaderText}}:</span>
+				<span>{{=it.meeting.leaderName}}</span>
+			</div>
+			{{?it.meeting.totalMembers > 0}}
+			<div class="meeting-groupCount">
+				<span>{{=it.wizletInfo.content.groupMembers}}:</span>
+				<span>{{=it.meeting.totalMembers}}</span>
+			</div>
+			{{?}}
+		</div>
+		<div class="meeting-footer">
+			{{?it.meeting.status === 'Closed'}}
+			<p class="meeting-closed">{{=it.wizletInfo.content.meetingEnded}}</p>
+			{{?}}
+			<div class="meeting-buttons__cont">
+				<div class="meeting-buttons__back meeting-buttons" data-meeting-back data-button-state="back" data-meeting-buttons>
+					<span class="cl-icon cl-icon--pointLeft"></span>
+					<span class="cl-icon cl-icon--pointLeft"></span>
+				</div>
+				{{~it.meetingButtons :button:index}}
+				{{?button.type === 'start'}}
+				<div class="meeting-button__start meeting-buttons" data-button-state="{{=button.type}}" data-meeting-buttons data-meeting-start-button>{{=button.title}}</div>
+				{{?}}
+				{{?button.type === 'join'}}
+				<div class="meeting-button__join meeting-buttons" data-button-state="{{=button.type}}" data-meeting-buttons data-meeting-join-button>{{=button.title}}</div>
+				{{?}}
+				{{?button.type === 'resume'}}
+				<div class="meeting-button__resume meeting-buttons" data-button-state="{{=button.type}}" data-meeting-buttons data-meeting-resume-button>{{=button.title}}</div>
+				{{?}}
+				{{?button.type === 'end'}}
+				<div class="meeting-button__end meeting-buttons" data-button-state="{{=button.type}}" data-meeting-buttons data-meeting-end-button>{{=button.title}}</div>
+				{{?}}
+				{{?button.type === 'revisit'}}
+				<div class="meeting-button__revisit meeting-buttons" data-button-state="{{=button.type}}" data-meeting-buttons data-meeting-revisit-button>{{=button.title}}</div>
+				{{?}}
+				{{?button.type === 'getreport'}}
+				<div class="meeting-button__getReport meeting-buttons {{?!it.meeting.reportId}}meeting-buttons--disabled{{?}}" 
+					 {{?it.meeting.reportId}}data-meeting-report-id="{{=it.meeting.reportId}}"{{?}} data-button-state="{{=button.type}}" data-meeting-buttons>{{=button.title}}</div>
+				{{?}}
+				{{~}}
+			</div>
+			<div class="meetings-errors" data-meetings-errors></div>
+		</div>
+	</div>
+</div>

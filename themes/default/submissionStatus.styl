@@ -1,0 +1,118 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Input Component Styles
+.tssc
+    &-timer
+        text-align center
+        padding 10px 0 0 0
+        font-size 15px
+    &-content
+        background #fff
+        position fixed
+        right 0
+        width 250px
+        height 500px
+        bottom 1px
+        .cl-icon--meeting
+            display none
+        @media screen and (max-width 767px)
+            width 100%
+            height 80%
+        &__header
+            padding 0 10px
+            font-weight 600
+            cursor pointer
+            border-bottom 1px solid #888
+            height 50px
+            p
+                line-height 50px
+                float left
+            .cl-icon
+                float right
+                &:before
+                    font-size 1.3rem
+                    line-height 50px
+        &--collapse
+            height 50px
+            @media screen and (max-width 767px)
+                width 15%
+                .cl-icon--pointUp
+                    display none
+                .cl-icon--meeting
+                    display block
+                    text-align center
+                    float none
+                    &:before
+                        font-size 1.7rem
+                & ^[1]__header p
+                    display none
+        &__body
+            height calc(100% - 50px)
+            &--hidden
+                display none
+    &-participant
+        font-size 14px
+        padding 5px 20px
+        &:nth-child(odd)
+            background-color #e7e7e7
+        &__count
+            width 35px
+            height 35px
+            background #d9001b
+            position absolute
+            border-radius 50%
+            left -20px
+            top -20px
+            display none
+            &:after
+                color #fff
+                font-size 0.8rem
+                content attr(data-pendingparticipantcount)
+                display flex
+                justify-content center
+                line-height 35px
+                left -1px
+                position relative
+            &--shown
+                display block
+        &List
+            &__header
+                font-size 14px
+                padding 0 10px
+                font-weight 600
+                color #333
+                @media screen and (max-width 767px)
+                    padding 15px 10px 0 10px
+            &__container
+                padding 10px
+                max-height calc(100% - 195px)
+                overflow-y auto
+            &__noPendingList
+                text-align center
+                font-size 15px
+                @media screen and (max-width 767px)
+                    padding 20px 0 0 0
+            &__pendingListLabel
+                text-align center
+                font-size 15px
+                font-weight: bold;
+                margin-bottom: 10px;
+                @media screen and (max-width 767px)
+                    padding 20px 0 0 0
+
+.highcharts
+    &-data-label
+        span
+            div
+                span:first-child
+                    font-size 15px
+                span:last-child
+                    font-size 11px
+                    opacity 0.4
+                    position relative
+                    top -5px
+    &-axis-labels
+        font-size 1em
+    &-grid-line
+        stroke none

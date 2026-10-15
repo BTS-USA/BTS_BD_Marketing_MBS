@@ -1,0 +1,93 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.tlc
+    &-votes
+        clear both
+    &-vote
+        width 100%
+        padding 1rem
+        border-radius $radius $radius 0 $radius
+        border-bottom 1px solid $neutral-medium
+        background-color $neutral-light
+        color $neutral-dark
+        &__number
+            display none
+        &__text
+            font-weight normal
+    &-author
+        padding 0.5rem
+        background-color $neutral-dark
+        border-radius 0 0 $radius $radius
+        color $white
+        &__text
+            overflow-wrap anywhere
+            font-size .8rem
+            font-style italic
+    &-article
+        position relative
+        margin-bottom 2px
+        flex()
+        animation scale .5s ease
+        transform-origin center top
+        flex-direction column
+        align-items flex-end
+        &.myVote
+            .tlc
+                &-vote
+                    border-color $primary
+                &-author
+                    background-color $primary
+    &-sorting
+        flex()
+        justify-content center
+        font-size .75rem
+        line-height 25px
+    &-filters
+        flex()
+        background-color transparent
+        border-radius $radius
+        color inherit
+        margin-bottom 0
+        padding 0
+    &-filter
+        margin 0 10px 0 0
+        &:last-child
+            margin-right 10px
+        .cl-radio:not(checked) + label:before
+            top 0
+        .cl-radio:not(checked) + label:after
+            top 4px
+            background-color $primary
+    &-showCounts
+        flex()
+    &-showCount
+        flex()
+        margin-right 10px
+        &_value
+            font-weight bold
+            margin-right 5px
+            background-color $neutral-light
+            height 25px
+            min-width 25px
+            border-radius 1.5rem
+            color $primary
+            text-align center
+        &:last-child
+            margin-right 0
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width 600px)
+    .tlc
+        &-filters
+            flex-grow 1
+        &-filter
+            margin-right 0
+            .cl-radio:not(checked) + label
+                padding 0 5px 0 25px
+            &:last-child
+                margin-right 0px
+        &-showCounts
+            flex-grow 1
+        &-showCount
+            margin-right 2px
+        &-showCount_value
+            margin-right 2px

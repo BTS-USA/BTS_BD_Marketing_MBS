@@ -1,0 +1,535 @@
+.wizletBrainstorm
+{
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+body.Brainstorm
+{
+	padding: 0px;
+}
+
+.wizletBrainstorm #contentBox
+{
+	float: none;
+}
+
+.wizletBrainstorm h1 {
+	margin-bottom: 0;
+}
+
+.wizletBrainstorm h2.comment {
+    display: none;
+}
+
+
+.wizletBrainstorm .BrainstormHeader, 
+.wizletBrainstorm .voteTableHeader {
+  background-color: White;
+  vertical-align:top;
+  font-family: Verdana, Arial;
+  font-size:10px;
+  color: #000;
+  /*border: solid 2px #e9eaed;*/
+  border-left-width:0px;
+  border-right-width:0px;
+  font-family:Verdana;
+  font-size:10px;
+  font-weight:bold;
+  text-transform:uppercase;
+  width:100%;
+}
+
+.wizletBrainstorm .BrainstormHeader .Categories
+{
+    width:295px;
+    padding-left:30px !important;
+}
+
+.wizletBrainstorm .BrainstormHeader .Comment
+{
+    width:400px;  
+}
+
+.wizletBrainstorm .BrainstormHolder table, 
+.wizletBrainstorm .BrainstormHolder tr, 
+.wizletBrainstorm .BrainstormHolder td
+{
+    border: solid 0px #fff;
+}
+
+.wizletBrainstorm .BrainstormHeaderInput
+{
+    background-color: #999999;
+    width:100%;
+    border-bottom: solid 1px #6e7682 !important;
+}
+
+.wizletBrainstorm
+{
+    /* padding-top:10px; */
+    vertical-align:top  !important;
+    font-family: Verdana, Arial;
+    font-size:10px;
+    /* width:30%; */
+    /* padding-bottom:15px; */
+}
+
+.wizletBrainstorm select 
+{
+   /* width:250px;*/
+    margin-right:45px;
+    margin-left:30px;
+}
+
+.wizletBrainstorm textarea 
+{
+    width:400px;
+    height:40px;
+    margin-right:20px;
+    font-size:11pt;
+}
+.wizletBrainstorm .BrainstormDivider
+{
+    height: 30px;
+    min-height:30px;
+    clear:both;
+}
+
+
+.wizletBrainstorm #textVotePanel {
+	/*height: 220px;*/
+	height: auto;
+	/*overflow: auto;*/
+}
+
+.wizletBrainstorm #textVotePanel #filterSelector {
+    /* padding-bottom: 20px; */
+}
+
+.wizletBrainstorm #textVotePanel table {
+  /*clear: both;*/
+  width: 98%;
+}
+
+.wizletBrainstorm #textVotePanel > table {
+    
+}
+
+.wizletBrainstorm #textVotePanel table.multiColumnLayout > tbody > tr > td {
+  vertical-align: top;
+  width: 50%;
+	/*padding-top: 10px;*/
+}
+
+.wizletBrainstorm     #textVotePanel table.multiColumnLayout > tbody > tr > td  h3 {
+        min-height: 44px;
+        max-width: 350px;
+        font-size:16px;
+        font-weight: normal;
+    }
+
+.wizletBrainstorm     #textVotePanel > table.multiColumnLayout > tbody > tr > td table {
+        padding-right: 30px;
+        padding-bottom: 20px;
+	    #border-right: 20px solid transparent;
+    }
+
+.wizletBrainstorm .responseRowEven td,
+.wizletBrainstorm .responseRowOdd td {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.wizletBrainstorm .responseRowEven td {
+	background:  transparent url('/Wizer/Content/WizletResources/Shared/media/img/bg_white_25.png'); /* bg_white_50.png */
+}
+
+.wizletBrainstorm .responseRowOdd td {
+	background:  transparent url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_25.png');
+}
+
+.wizletBrainstorm .brainStormCategory.odd
+{
+	/*background:  transparent url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_25.png');*/ /* bg_white_50.png */
+}
+
+.wizletBrainstorm #textVotes td
+{
+	font-size: 16px;
+	padding: 8px 10px;
+	font-family: arial, helvetica, sans-serif;
+	line-height: 25px;
+}
+
+.wizletBrainstorm #textVotes td.responseTextEven,
+.wizletBrainstorm #textVotes td.responseTextOdd
+{
+	padding: 8px 10px;
+	
+}
+
+.wizletBrainstorm .BrainstormHeaderInput
+{
+	background-color: Transparent;
+}
+
+.wizletBrainstorm .BrainstormHeader
+{
+	background-color: Transparent;
+	color: #fff;
+}
+
+.wizletBrainstorm tr.voteTableHeader td {
+	background: #000 url('/Wizer/Content/WizletResources/Shared/media/img/black_gradient.png') repeat-x center top; /* Transparent */
+}
+
+    .wizletBrainstorm tr.voteTableHeader td.voteTableHeaderCell {
+	    color: #fff;
+	    font-size: 14px;
+	    text-transform: uppercase;
+	    padding: 10px;
+	    border-bottom: 1px solid #333;	    
+    }
+
+	/*ONLY CSS3*/
+   .wizletBrainstorm tr.voteTableHeader td.voteTableHeaderCell:first-of-type {
+	border-radius: 4px 0 0 0;	
+	}
+
+   .wizletBrainstorm tr.voteTableHeader td.voteTableHeaderCell:last-of-type {
+	border-radius: 0 4px 0 0;	
+	}
+
+
+.wizletBrainstorm #textVote {
+	max-width: 440px;
+	height: 78px;
+	font-size: 14px;
+}
+
+.wizletBrainstorm #textVotes {
+	display: none;
+}
+
+.wizletBrainstorm h2 {
+	font-size: 12px;
+	font-weight: normal;
+	padding: 0px;
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+.wizletBrainstorm .brainStormCategory {
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+	float: left;
+	clear: both;
+	padding: 3px 0px 3px 5px;
+}
+
+/* ugly ie7 fix */
+.wizletBrainstorm *:first-child+html .brainStormCategory {
+	line-height: 14px;
+}
+
+.wizletBrainstorm .brainStormCategory input {
+	margin-right: 5px;
+	float:left;
+}
+
+.wizletBrainstorm .brainstormCategories {
+	float: left;
+	padding-right: 35px;
+}
+
+/* Is commented out because it didn't contain anything and was taking up a lot of space */
+.wizletBrainstorm .brainstormCategories h2 { 
+	display:none; 
+}
+
+.wizletBrainstorm #Send {
+	float: left;
+}
+
+.wizletBrainstorm .brainstormVoteContainer
+{
+	/*border-left: 1px solid #79A761;*/
+	float: left;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.wizletBrainstorm #textVotePanel
+{
+	clear: both;
+	padding-top: 0px;
+	margin-bottom:30px
+}
+
+.wizletBrainstorm #textVotePanel textarea {
+    width: 340px;
+    float: left;
+}
+.wizletBrainstorm #textVotePanel .multiColumnLayout textarea { width: 285px; }
+
+.wizletBrainstorm .horisontalLine
+{
+	border-bottom:1px solid #324768;
+	float:left;
+	width:100%;
+	margin-bottom: 27px;
+	display: none;
+}
+
+
+.wizletBrainstorm .brainstormHolder {
+	/* min-height: 110px; */
+	overflow:hidden;
+	padding-top: 10px;
+	margin-bottom:10px;
+	/* padding-bottom: 15px; */
+}
+
+.wizletBrainstorm .Brainstorm_SendButton 
+{
+/*	background:  transparent url('/Wizer/Content/WizletResources/Shared/media/img/send_button.png');*/
+	height: 36px;
+	width: 71px;
+}
+
+.wizletBrainstorm .mainContent {
+  /*    
+  margin-bottom: 0;
+	float: none;
+	width: auto;
+  */
+}
+
+.wizletBrainstorm .sendVoteContainer
+{
+	right: -165px;
+	bottom: 0px;
+	*bottom: 8px;
+	position: absolute;
+	width: 150px;
+}
+
+.wizletBrainstorm #OK,
+.wizletBrainstorm #progress
+{
+	float: left;
+	margin-left: 10px;
+}
+
+.wizletBrainstorm #Progress {
+    height: 0;
+    overflow: hidden;
+}
+
+.wizletBrainstorm .brainStormCategory span
+{
+	display:block;
+	float:left;
+	/*margin-top: -2px;*/
+	margin-top: 3px;
+	width:283px;
+	margin-top:3px;
+}
+
+/* ugly ie7 fix */
+.wizletBrainstorm *:first-child+html .brainStormCategory span
+{
+	margin-top: 4px;
+}
+
+.wizletBrainstorm .questionText
+{
+	width:283px;
+}
+
+.wizletBrainstorm .mainWrapper #contentBox
+{
+	padding-bottom: 12px;
+}
+
+
+.wizletBrainstorm .hasExtraFields .brainstormVoteContainer
+{
+	margin-top: 10px;
+	background:url("/Wizer/Content/WizletResources/Shared/media/img/bg_black_50.png");
+	padding: 15px;
+	margin-bottom: 74px;
+}
+
+.wizletBrainstorm .hasExtraFields .brainstormVoteFields
+{
+	position: relative;
+	float: left;
+}
+
+.wizletBrainstorm .hideResults.hasExtraFields .brainstormVoteFields
+{
+	margin-bottom: 0px;
+}
+
+/* ugly ie7 fix */
+.wizletBrainstorm *:first-child+html .hideResults.hasExtraFields .brainstormHolder
+{
+	margin-bottom: 70px;
+}
+
+.wizletBrainstorm .hasExtraFields .brainstormExtraFields
+{
+	float: left;
+	margin-right: 30px;
+	padding-right: 30px;
+	border-right: 1px solid #324768;
+}
+
+.wizletBrainstorm .hasExtraFields .brainsormExtraFieldTitle
+{
+	display: block;
+	font-size: 12px;
+	padding-bottom: 12px;
+}
+
+.wizletBrainstorm .hasExtraFields .brainsormExtraField
+{
+	height: 22px;
+	line-height: 16px;
+	width: 250px;
+	border: 1px solid #aaaaaa;
+}
+
+.wizletBrainstorm .hasExtraFields .brainstormExtraFieldsRow
+{
+	margin-bottom: 20px;
+}
+
+.wizletBrainstorm .brainstormTopContent
+{
+	z-index: 10000;
+}
+
+.wizletBrainstorm .hideResults .horisontalLine
+{
+	display: none;
+}
+
+.wizletBrainstorm .hasExtraFields .brainstormCategories
+{
+	width: 100%;
+}
+
+.wizletBrainstorm .Brainstorm_SendButton 
+{
+	text-indent: 5px;
+}
+
+.wizletBrainstorm #sendContainer {
+    margin: 0 0 0 15px; /* 58px; */
+    position:static;
+    float: left;
+}
+.wizletBrainstorm #sendContainer .designedButton{
+    float:left;
+}
+
+.wizletBrainstorm #jumpButtonsContainer {
+    bottom: auto;
+    top: 124px;   
+}
+
+/* -------------------- presenter ------------------*/
+/* -------------------- maybe this should be moved to a separate css file ------------------*/
+#presenter_BaseSlide #textVotePanel
+{
+	/*padding-top: 20px;*/
+}
+
+
+#presenter_BaseSlide .brainStormCategory
+{
+	font-weight: bold;
+}
+
+#presenter_BaseSlide .questionText
+{
+	font-weight: bold;
+}
+
+
+/* -------------------- Only handhelds ------------------*/
+/* -------------------- maybe this should be moved to a separate css file ------------------*/
+
+@media only screen and (max-device-width: 1024px) {
+	.wizletBrainstorm #Progress { height: 0; overflow: hidden; }
+}
+
+@media only screen and (max-device-width: 1024px) and (orientation:portrait)  {
+	.wizletBrainstorm .multiColumnLayout textarea {
+		width: 220px!important;
+	}
+
+	.wizletBrainstorm #deviceOrientationMessage {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: blue;
+		display: block;
+	}
+}
+
+@media only screen and (max-device-width: 1024px) and (orientation:landscape)  {
+
+}
+
+@media only screen and (max-device-width: 480px) {
+	.wizletBrainstorm #textVotes0 td,
+	.wizletBrainstorm #textVotes1 td{
+		border-top-left-radius: 4px;	
+	}
+
+	.wizletBrainstorm #textVotes0 td.participantNameEven,
+	.wizletBrainstorm #textVotes1 td.participantNameEven,
+	.wizletBrainstorm #textVotes0 td.participantNameOdd,
+	.wizletBrainstorm #textVotes1 td.participantNameOdd {
+		border-top-left-radius: 0;
+	}
+
+	.wizletBrainstorm td.sequenceEven,
+	.wizletBrainstorm td.sequenceOdd,
+	t.wizletBrainstorm d.sequence {
+		display: none;
+	}
+
+
+	.wizletBrainstorm .sendAction {
+		margin-top: 0!important;
+		width: 85px;
+	}
+	
+	.wizletBrainstorm textarea {
+    border: 1px solid red;
+    width: 290px!important;
+  }
+	
+	.wizletBrainstorm .multiColumnLayout textarea {	
+		width: 95px!important;
+	}	
+}
+
+/*
+#textVote
+{
+   position: absolute;
+}
+
+.brainstormVoteFields
+{
+    width: 430px;
+    height: 85px;
+}
+*/

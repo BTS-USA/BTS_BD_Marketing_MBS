@@ -1,0 +1,92 @@
+﻿<div class="groupDirectorContentWrapper">
+    <div class="mainContent">
+        {{? it.header}}
+        <header class="bcc-header--main cl-header--main{{? it.header.pointer == false}} cl-pointer--hidden{{?}}" data-groupdirectorcomponentdeader>
+            {{? it.header.title}}
+            <h1 class="bcc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                {{=it.header.title}}
+            </h1>
+            {{?}}
+            {{? it.header.description}}
+            <p class="bcc-header__description--main cl-header__description--main">
+                {{=it.header.description}}
+            </p>
+            {{?}}
+        </header>
+        {{?}}
+
+
+        <section class="groupDirector-container container-fluid">
+
+            <article class="groupDirectorArticle">
+                <div class="groupDirectorVoteCountContainer" data-groupdirectorvotecontainer>
+                    <div class="groupdirectorvotecountlabel" id="groupdirectorvotecountlabel" data-groupdirectorvotelabel>{{?it.voteCountLabel}}{{it.voteCountLabel}}{{??}}Vote count :{{?}}</div>
+                    <div class="groupDirectorVoteCount" id="groupDirectorVoteCount" data-groupdirectorvotecount>{{?it.voteCount}}{{it.voteCount}}{{??}}{{?}}</div>
+                </div>
+                <div class="JumpMenuWrapper">
+                    <div class="JumpMenuContainer" data-groupdirectormainmenu>
+                        {{~it.menuOptions: option:optionIndex}}
+                        <a {{?option.tooltip}} title="{{=option.tooltip}}" {{?}} class="jumpMenuItem row{{=optionIndex}}" name="{{=option.type}}{{=optionIndex}}" id="{{=option.type}}{{=optionIndex}}" value="{{=option.title}}" type="button" data-index="{{=optionIndex}}" data-type="{{=option.type}}" data-groupdirectormainoption>
+                            {{=option.title}}
+                        </a>
+                            {{?option.description}}
+                            <div class="jumpMenuItemDescription" id="jumpMenuItemDescription{{=optionIdex}}" data-groupdirectormaindescription>
+                                {{=option.description}}
+                            </div>
+                            {{?}}
+                            {{?option.subOptions}}
+                            <div class="itemAndSubItems" data-groupdirectorsubmenuitems>
+                            </div>
+                            {{?}}
+                        {{?option.type=='Embed'}}
+                        <div class="embeddingWrapper" id="embedding-{{=optionIndex}}" data-embed></div>
+                        {{?}}
+                        {{~}}
+                    </div>
+
+                </div>
+            </article>
+            <article class="qncArticle container-fluid">
+                    <span class="qnc">Questions and Comments</span>
+                    <div id="qandcDiv" data-groupdirectorqnc></div>
+            </article>
+            
+            {{?it.showClientStatus}}
+            <article class="clientStatus" data-clientstatus></article>
+            {{?}}
+
+        </section>
+      
+    </div>
+    <div class="qncFormat" data-qncformat>
+        <span data-response></span>
+        <span data-participantname></span>
+    </div>
+
+    <section class="cl-modal" data-confresetevent>
+        <article class="cl-modal__dialog">
+            <div class="cl-modal__container">
+                
+                <header class="header cl-modal__header cl-modal__header--close">
+                    
+                </header>
+
+                <section class="cl-modal__body">
+                    <header>
+                        <h2 class="cl-modal__title">Reset Event</h2>
+                    </header>
+                    <div class="cl-modal__content">
+                        Are you sure you want to reset event?
+                    </div>
+                    <footer class="cl-modal__footer" data-btnholder>
+                        <div class="cl-modal__buttons">
+                            <span class="cl-button ec-button ec-button__cancel" data-btn="cancel">Cancel</span>
+                            <span class="cl-button ec-button ec-button__ok" data-btn="ok">Ok</span>
+                        </div>
+                    </footer>
+                </section>
+
+            </div>
+        </article>
+    </section>
+</div>

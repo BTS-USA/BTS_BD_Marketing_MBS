@@ -1,0 +1,246 @@
+﻿html, body 
+    height 100%
+    
+    .mainContentWrapper
+        padding 0px
+
+    *[class*="col-"], .pulseNavigationLink 
+        min-height 50px
+    .pulseMenuContainer 
+        overflow hidden
+    .pulseFrontPage, .pulseMenuContainer
+        height 80%
+        padding-right 0px
+        padding-left 0px
+
+        .pulseNavigationPropagation
+            display block
+            text-align center
+            margin 0 auto
+        .pulseNavigationView * 
+            box-sizing border-box
+    
+        .pulseNavigationView 
+            width 100%
+            height 80%
+            overflow hidden
+            margin 20px auto
+
+        .pulseNavigationSlider
+            float left
+            position relative
+            -webkit-transition  all 0.125s linear 
+            -moz-transition  all 0.125s linear 
+            -ms-transition  all 0.125s linear 
+            -o-transition  all 0.125s linear 
+            transition  all 0.125s linear
+        .pulseNavigationPanel
+            float  left 
+            margin-top 20px 
+            height 100%
+            margin 0 10px
+        .pulseNavigationElement
+            float left
+            -moz-box-sizing border-box
+            box-sizing border-box
+            display none
+         .pulseNavigationElement.active
+            display block
+
+        .pulseNavigationElement .pulseNavigationLink
+            background-color #333 
+            width 100% 
+            height 100% 
+            display  block 
+            color #fff 
+            text-align  center 
+            vertical-align middle
+            background-repeat no-repeat
+            background-size 100%
+        .pulseNavigationCol 
+            height 100% 
+
+
+        /* custome spacific to event might be generated diring Pagination */
+        .pulseNavigationElement .pulseNavigationLink.pulseNav_1
+            background-color rgba(0, 174, 239, 0.65) 
+            color #fff 
+
+        .pulseNavigationElement .pulseNavigationLink.pulseNav_2
+            background-color rgba(255, 79, 58, 0.65) 
+            color #fff
+        .pulseNavigationElement .pulseNavigationLink.pulseNav_3
+            background-color rgba(204, 204, 204, 0.65) 
+            color #fff 
+        .pulseNavigationElement .pulseNavigationLink.pulseNav_4
+            background-color rgba(204, 204, 204, 0.65) 
+            color #fff
+        .pulseNavigationElement .pulseNavigationLink.pulseNav_5
+            background-color rgba(0, 174, 239, 0.65) 
+            color #fff 
+        .pulseNavigationElement .pulseNavigationLink.pulseNav_6
+            background-color rgba(255, 79, 58, 0.65) 
+            color #fff 
+        .pulseNavigationElement .pulseNavigationLink.pulseNav_7
+            background-color rgba(26, 26, 26, 0.65) 
+            color #fff
+        .pulseNavigationElement .pulseNavigationLink.pulseNav_8
+            background-color rgba(255, 210, 55, 0.65) 
+            color #fff 
+        .pulseNavigationElement .pulseNavigationLink.pulseNav_9
+            background-color rgba(133, 95, 168, 0.65)
+            color #fff
+        .pulseNavigationElement .pulseNavigationLink.pulseNav_10
+            background-color rgba(86, 205, 137, 0.65)
+            color #fff
+        .pulseNavigationElement .pulseNavigationLink.pulseNav_11
+            background-color  rgba(0, 174, 239, 0.65) 
+            color #fff
+
+        .pulseNavigationControls
+            float  left 
+            top -20px
+            display none
+
+        .pulseNavigationPagination
+            display block
+            text-align center 
+            min-width 300px 
+            margin 0 auto
+        .pulseNavigationAnchor
+            display  inline-block 
+            width 10px 
+            height 10px 
+            background-color  rgba(255, 255, 255, 0.5) 
+            border-radius 10px 
+            margin 5px
+
+        .pulseNavigationAnchor.active
+            background-color #fff
+
+        // @media (min-width 320px)
+        //     .pulseNavigationPanel
+        //         width 300px
+        //         margin-bottom 0
+        //     .pulseNavigationCol
+        //         margin-bottom 0
+        //         height 350px 
+        //     .pulseNavigationView
+        //         overflow visible
+        //     .fix-box-1, .fix-box-2, .fix-box-4, .fix-box-8
+        //         padding-bottom 10px
+        //     .pulseNavigationPanel
+        //         clear both
+        //         .fix-box-8
+        //             height 100%
+        //         .fix-box-4
+        //             height 50%
+        //         .fix-box-2
+        //             height 25%
+        //             max-height 25%
+        //         .fix-box-1
+        //             height 12.5%
+        //         .col-sm-12 
+        //             width: 100%;
+        //     .pulseNavigationElement
+        //         &:after
+        //             content ""
+        //             display block
+        //             clear both
+        //     .pulseNavigationLink
+        //         .linkContent
+        //             position relative
+        //             h1, h2, h3, h4, h5, h6, h7, p, a, span
+        //                 position absolute
+        // @media (min-width 480px)
+        //     .pulseNavigationPanel
+        //         width 450px
+        //         clear both
+        //         margin-bottom 0
+        //     .pulseNavigationView
+        //         overflow visible
+        //         margin-bottom 20px
+        //     .pulseNavigationCol
+        //         margin-bottom 0
+        //         height 545px
+        //     .fix-box-1, .fix-box-2, .fix-box-4, .fix-box-8
+        //         padding-bottom 10px
+        //     .pulseNavigationControls
+        //         display none
+        // @media (min-width 768px max-width 920px)
+        //     .pulseNavigationCol
+        //         .col-md-4
+        //             width 33.33333333%
+
+        @media (min-width 768px)
+            .pulseNavigationPanel
+                width 750px
+                height 98%
+                clear none
+                max-height 670px
+                .fix-box-1, .fix-box-2, .fix-box-4, .fix-box-8
+                    padding-bottom 10px
+                .fix-box-8
+                    height 100%
+                .fix-box-4
+                    height 50%
+                .fix-box-2
+                    height 25%
+                    max-height 25%
+                .fix-box-1
+                    height 12.5%
+                .col-sm-12 
+                    width: 100%;
+            .pulseNavigationView
+                overflow hidden
+                max-height 350px
+                position fixed
+                top calc(50% - 200px)
+                left calc(50% - 390px)
+            .pulseNavigationControls
+                display block
+                position fixed
+                top calc(50% + 160px)
+            .pulseNavigationCol
+                height 100%
+                padding 0;
+            .pulseNavigationSlider
+                height 95%
+            .pulseNavigationLink
+                .linkContent
+                    position static
+                    h1, h2, h3, h4, h5, h6, h7, p, a, span
+                        position static
+
+        @media (min-width  992px)
+            .pulseNavigationPanel
+                width 970px
+            .pulseNavigationPanel
+                height 98%
+            .pulseNavigationView
+                width 990px
+                height 90
+                max-height 420px
+                top calc(50% - 200px)
+                left calc(50% - 495px)
+            .pulseNavigationControls
+                top calc(50% + 240px)
+            .fix-box-1, .fix-box-2, .fix-box-4, .fix-box-8
+                padding-bottom 10px 
+            .fix-box-8
+                height 100% 
+            .fix-box-4
+                height 50% 
+            .fix-box-2
+                height 25%
+                min-height 25%
+            .fix-box-1
+                height 12.5%
+
+        @media (min-width 1200px)
+          .pulseNavigationPanel
+            width  1170px 
+          .pulseNavigationView
+              width 1190px
+              top calc(50% - 200px)
+              left calc(50% - 600px)

@@ -1,0 +1,78 @@
+/* This is css for the layouts in the wizer core*/
+/* if you are using a layoutInevent then please let it have its own css called layout.css in the events/layout folder*/
+
+
+/*  ========================== */
+/* identifier page layout styles */
+
+.identifier
+    height calc(100vh - 90px)
+
+    &-wrapper
+    &-content
+        height 100%
+    &-page-content
+        color #fff
+        float none
+        padding 0
+        background-color rgba(0,173,239,0.5)
+        padding 25px 35px 25px
+    &--display-table
+        width 100%
+        display table
+        height 100%
+    &--display-table-cell
+        display table-cell
+        vertical-align middle
+    &-page-meta-icon
+        float left
+        margin-right 15px
+        max-width 50px
+        min-width 30px
+    &-page-text
+        padding 10px 0 20px 0
+        &__title
+            font-size 2.375rem
+            line-height 1.000em
+            @media (max-width: 768px)
+                font-size 1.25rem
+                line-height 1.000em
+        &__sub-title
+            font-size 3.25rem
+            line-height 1.385em
+            @media (max-width: 768px)
+                font-size 1.905rem
+                line-height 1.100em
+                margin-top 5px
+    &-page-meta
+        display table
+        padding-top 15px
+        &__name
+            display table-cell
+            vertical-align middle
+            font-size 1.125rem
+            line-height 1.000em
+            @media (max-width: 768px)
+                font-size 1rem
+                line-height 1.000em
+        &-icon
+            &__image
+                width 100%
+                border-radius 50%
+                background-color #196A9D
+    &__start-button
+        display inline-block
+        position relative
+        top 50%
+    &-footer
+        padding 80px 40px 0px 0px
+        text-align right
+        @media (max-width: 768px)
+            text-align center
+    .wizlet.wizletVanilla
+        height 100% 
+    &-background
+        background-size cover
+        background-attachment fixed
+        background-position center center
+        background-repeat repeat

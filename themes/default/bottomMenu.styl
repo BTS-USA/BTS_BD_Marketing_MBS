@@ -1,0 +1,161 @@
+﻿@import "shared/cl.styl"
+#votingSlideDiv
+  height calc(100% - 95px)
+  min-height calc(100% - 95px)
+  .mainWrapper
+    padding-bottom 4*$px
+#bottomMenu
+  .bottomContentWrapper
+     position fixed
+     bottom 0
+     width 100%
+     z-index 1001
+     height 40px
+     background-color #4d4d4d;
+     padding 0 1.6*$px
+     color white
+  .bottomMenu__title
+     float left
+     font-size 13px
+     padding-right 20px
+     font-weight 100
+     padding-top 10px
+  .bottomMenu__content
+    float left
+    .option
+      float left
+      padding-right 5px
+      padding-top 6px
+    .option:hover
+      cursor pointer
+    .optionImage
+      float left
+      margin-right 3px
+      img
+        height 30px
+        width 30px
+        border-radius 20px
+    .optionImage_0
+      img
+        background-color #ff4f3a
+    .optionImage_2
+      img
+        background-color #a9d41a
+    .optionTitle
+      float left
+      padding-top 6px
+  #sendContainer
+    position fixed
+    z-index 1001
+    bottom 0px
+    .exclude
+      display block !important
+    .dBGraphics
+      display none !important
+  .nextAction
+    right 0px
+    background-color #00adef
+    button
+      border none
+      background none
+      height 40px
+      width 40px
+      text-indent 100%
+      font-size 0 
+      white-space nowrap
+      overflow hidden
+      position relative
+      &:after
+        content ""
+        display block
+        height 40px
+        background url("media/img/rightArrowLightGrey.svg") no-repeat center 6px
+        background-size 28px 28px
+        background-position center center
+        text-align center
+  .previousAction
+    right 40px
+    button
+      border none
+      background none
+      height 40px
+      width 40px
+      text-indent 100%
+      font-size 0 
+      white-space nowrap
+      overflow hidden
+      &:after
+        content ""
+        display block
+        height 40px
+        background url("media/img/leftArrowLightGrey.svg") no-repeat
+        background-size 28px 28px
+        background-position center center
+        text-align center
+@media screen and (max-width: 1023px)
+  #bottomMenu
+    .bottomMenu__content
+      .option
+        .optionTitle
+          display none
+  .previousAction, .nextAction
+    button
+      position relative
+      &:after
+        position absolute
+        top 0
+        left 0
+        width 40px
+@media screen and (device-width: 1024px)
+  .previousAction, .nextAction
+    button
+      position relative
+      &:after
+        position absolute
+        top 0
+        left 0
+        width 40px
+@media screen and (max-width: 360px)
+  #bottomMenu
+    .bottomMenu__content
+      .bottomMenu__title
+        max-width 25%
+        white-space nowrap
+        text-overflow ellipsis
+        overflow hidden
+        padding-right 10px
+/*#votingSlideDiv .mainWrapper .wizlet.wizletJumpMenu 
+  position fixed
+  bottom 0
+  width 100%
+  z-index 1001
+#votingSlideDiv .mainWrapper .wizlet.wizletJumpMenu .jumpMenu .mainContentWrapper .mainContent .JumpMenuWizlet 
+  background-color #4d4d4d
+  height 40px
+  margin-top 1.25rem
+#votingSlideDiv .mainWrapper .wizlet.wizletJumpMenu .jumpMenu .mainContentWrapper .mainContent .JumpMenuWizlet .description
+  display none
+#votingSlideDiv .mainWrapper .wizlet.wizletJumpMenu .jumpMenu .mainContentWrapper .mainContent .JumpMenuWizlet .JumpMenuContainer
+  float right
+  padding 0
+  border 1px solid white
+  margin-right 80px
+#votingSlideDiv .mainWrapper .wizlet.wizletJumpMenu .jumpMenu .mainContentWrapper .mainContent .JumpMenuWizlet .JumpMenuContainer a
+  display inline-block
+  text-align center
+  line-height 40px
+  height 40px
+  width 40px
+  padding 0
+  margin 0
+  background none
+  background-position center
+  background-repeat no-repeat
+#votingSlideDiv .mainWrapper .wizlet.wizletJumpMenu .jumpMenu .mainContentWrapper .mainContent .JumpMenuWizlet .JumpMenuContainer a:nth-child(1)
+  background-image url("/Wizer/Pages/Events/Rope/images/home_icon.png")
+#votingSlideDiv .mainWrapper .wizlet.wizletJumpMenu .jumpMenu .mainContentWrapper .mainContent .JumpMenuWizlet .JumpMenuContainer a:nth-child(2)
+  background-image: url("/Wizer/Pages/Events/Rope/images/back-arrow.png")
+   display none
+#votingSlideDiv .mainWrapper .wizlet.wizletJumpMenu .jumpMenu .mainContentWrapper .mainContent .JumpMenuWizlet .JumpMenuContainer a:nth-child(3)
+  background-image url("/Wizer/Pages/Events/Rope/images/next-arrow.png")
+   display none*/

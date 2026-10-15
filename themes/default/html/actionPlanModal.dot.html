@@ -1,0 +1,66 @@
+<div class="ap-modal">
+    <div class="ap-createActionModal cl-xs-column-12 cl-row" data-create-modal>
+        <div class="ap-closeModal">
+            <i class="ap-closeModal__button cl-icon cl-icon--remove" data-close-button></i>
+        </div>
+        <div class="ap-mainTitle"><span>{{=it.wizletInfo.textContent.myActionPlanText}}</span></div>
+        <div class="ap-leftContent cl-xs-column-12 cl-md-column-6 cl-row">
+            {{~it.wizletInfo.questions :question:i}}
+            <div class="row ap-form__row" data-form-row data-parent-id="{{=it.actionOpen.parentResponseId}}">
+                {{? question.type === "dropdown"}}
+                <section class="ap-form__dd {{?question.mandatory}}ap-form__mandatory{{?}} cl-xs-column-12" data-questionid="" data-type="{{=question.type}}" data-response-id="{{=it.actionOpen.dropdownResponseId}}" data-form-fields data-dropdown>
+                    <div class="ap-dd__label ap-form__labels">{{=question.title}}</div>
+                    <select class="ap-dd__select
+                {{?question.mandatory}}ap-field__mandatory{{?}}" data-form-select-modal data-form-elements-modal>
+                <option value="">{{=question.defaultOptionLabel}}</option>
+                {{~question.options :option:index}}
+                <option value="{{=option.KeypadNumber}}" {{?option.KeypadNumber == it.actionOpen.dropdownValue}} selected {{?}}>{{=option.ResponseText}}</option>
+                {{~}}
+                </select>
+                </section>
+                {{?? question.type === "date"}}
+                <section class="ap-form__date {{?question.mandatory}}ap-form__mandatory{{?}} cl-xs-column-12" data-questionid="" data-type="{{=question.type}}" data-response-id="{{=it.actionOpen.dateResponseId}}" data-form-fields data-date>
+                    <div class="ap-date__label ap-form__labels">{{=question.title}}</div>
+                    <input type="text" value="{{=it.actionOpen.date}}" class="ap-date__input {{?question.mandatory}}ap-field__mandatory{{?}}" data-format="{{=question.format}}" data-form-type-modal="date" data-form-elements-modal data-form-date-modal {{? question.placeholder}}
+                        placeholder="{{=question.placeholder}}" {{?}}>
+                </section>
+                {{?? question.type === "textArea"}}
+                <section class="ap-form__textArea {{?question.mandatory}}ap-form__mandatory{{?}} cl-xs-column-12" data-type="{{=question.type}}" data-questionid="" data-response-id="{{=it.actionOpen.textResponseId}}" data-form-fields data-text>
+                    <div class="ap-textArea__titleCont">
+                        <div class="ap-textArea__label ap-form__labels">{{=question.title}}</div>
+                        {{? question.maxLength}}
+                        <div class="ap-textArea__maxCharacters" data-characters-modal="characters-{{=i}}">{{? it.actionOpen.textLength >= 0}}{{=it.actionOpen.textLength}}{{??}}{{=question.maxLength}} {{?}} {{=question.remainingCharactersText}}</div> {{?}}
+                    </div>
+                    <textarea class="ap-textArea__textarea ap-textArea__border {{?question.mandatory}}ap-field__mandatory{{?}}" data-characters-modal="characters-{{=i}}" data-form-textarea-modal data-form-elements-modal {{? question.placeholder}} placeholder="{{=question.placeholder}}"
+                        {{?}} {{? question.maxLength}} maxLength="{{=question.maxLength}}" {{?}} data-attr="modal">{{=it.actionOpen.textArea}}</textarea>
+                </section>
+                {{?}}
+            </div>
+            {{~}} {{? it.wizletInfo.controls && it.wizletInfo.controls.length > 0}}
+            <div class="row{{=(i/2) + 1 | 0}} ap-form__row ">
+                <div class="ap-form__controls cl-xs-column-12 cl-md-column-12 ">
+                    {{?it.wizletInfo.controls[0]}}
+                    <div class="ap-form__save" data-saveplan data-controls data-attr="modal">
+                        {{=it.wizletInfo.controls[0].title}}</div>
+                    {{?}} {{?it.wizletInfo.controls[1]}}
+                    <div class="ap-form__delete" data-deleteplan data-controls data-attr="modal">{{=it.wizletInfo.controls[1].title}}</div>
+                    {{?}}
+                    <div class="ap-form__confirmCont ap-form__confirmation" data-confirmation-modal>
+                        <div data-type="yes" class="ap-form__yes deletePlan" data-deleteEntryAction data-attr="modal">{{=it.wizletInfo.textContent.yesText}}</div>
+                        <div data-type="no" class="ap-form__no" data-deleteEntryAction data-attr="modal">{{=it.wizletInfo.textContent.noText}}</div>
+                    </div>
+                </div>
+            </div>
+            {{?}}
+
+        </div>
+        <div class="ap-rightContent cl-xs-column-12 cl-md-column-6 cl-row ">
+            {{? it.wizletInfo.myActionInstructions}} {{? it.wizletInfo.myActionInstructions.title}}
+            <div class=" ap-instructionTitle ">{{=it.wizletInfo.myActionInstructions.title}}
+            </div>
+            {{?}}{{? it.wizletInfo.myActionInstructions.text}}
+            <div class="ap-instructionText "><span>{{=it.wizletInfo.myActionInstructions.text}}</span>
+            </div> {{?}} {{?}}
+        </div>
+    </div>
+</div>

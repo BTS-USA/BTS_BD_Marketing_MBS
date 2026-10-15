@@ -1,0 +1,144 @@
+﻿.wizletVoteCountResult {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 25px;
+    background-color: #00618F;
+}
+
+    .wizletVoteCountResult .VoteCountResultTitle {
+        text-align: left;
+        font-size: 30px;
+        padding: 20px;
+    }
+
+    .wizletVoteCountResult .VoteCountResultBody {
+        background-color: #00618F;
+    }
+
+        .wizletVoteCountResult .VoteCountResultBody table {
+            width: 100%;
+            border: none;
+            border-collapse: collapse;
+        }
+
+        .wizletVoteCountResult .VoteCountResultBody thead {
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .wizletVoteCountResult .VoteCountResultBody tbody {
+            background-color: #00618F;
+        }
+
+        .wizletVoteCountResult .VoteCountResultBody td {
+            padding: 10px;
+        }
+
+    .wizletVoteCountResult .VoteCountResultHighLightRow {
+        background-color: #1B4151;
+    }
+
+    .wizletVoteCountResult .srno {
+        padding-left: 3px;
+        width: 5%;
+        text-align: left;
+    }
+
+    .wizletVoteCountResult .questionsLabel {
+        padding: 5px;
+        width: 25%;
+        text-align: left;
+    }
+
+    .wizletVoteCountResult .myLabel {
+        padding: 5px;
+        width: 10%;
+        text-align: center;
+    }
+
+    .wizletVoteCountResult .graph {
+        padding: 5px;
+        width: 35%;
+        text-align: left;
+    }
+
+    .wizletVoteCountResult .countLabel {
+        padding: 5px;
+        width: 15%;
+        text-align: left;
+    }
+
+    .wizletVoteCountResult .VoteCountResultBar {
+        /*width: 100%;*/
+        height: 30px;
+        background: none repeat scroll 0 0 #FFFF25;
+    }
+
+    .wizletVoteCountResult .mychoice {
+        text-align: center;
+    }
+
+    .wizletVoteCountResult .VoteCountResultBuyBody {
+        background-color: #00618F;
+    }
+
+        .wizletVoteCountResult .VoteCountResultBuyBody table {
+            width: 100%;
+            border: none;
+            border-collapse: collapse;
+        }
+
+        .wizletVoteCountResult .VoteCountResultBuyBody tbody {
+            background-color: #00618F;
+        }
+
+        .wizletVoteCountResult .VoteCountResultBuyBody td {
+            padding: 10px;
+        }
+
+    .wizletVoteCountResult .companyName {
+        padding: 5px;
+        width: 15%;
+        text-align: center;
+    }
+
+    .wizletVoteCountResult .description {
+        padding: 5px;
+        width: 30%;
+    }
+
+    .wizletVoteCountResult .mySelection {
+        padding: 5px;
+        width: 5%;
+        text-align: center;
+    }
+
+    .wizletVoteCountResult .graphBuy {
+        padding: 5px;
+        width: 30%;
+        text-align: left;
+    }
+
+    .wizletVoteCountResult .countLabelBuy {
+        padding: 5px;
+        width: 15%;
+        text-align: left;
+    }
+
+    .wizletVoteCountResult .companyNameBG {
+        font-size: 18px;
+        color: black;
+        text-align: center;
+        vertical-align: central;
+        height: 80px;
+        background-image: url('/Wizer/Content/sampleBG.png');
+        background-repeat: no-repeat;
+        background-size: 100% 80px;
+        border: 1px solid black;
+    }
+
+    .wizletVoteCountResult .myTackLabel {
+        padding: 5px;
+        width: 10%;
+        text-align: center;
+    }

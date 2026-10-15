@@ -1,0 +1,91 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+.mc
+    &-question
+        overflow hidden
+        padding 20px
+        margin 0 0 15px 0
+        background $mercury
+    &-footer
+        text-align right
+        &--hide
+            display none
+    &-button
+        &--disabled
+            pointer-events none
+            background-color $silver
+            color $white
+            text-shadow none
+            cursor not-allowed
+        &--hide
+            display none
+    &-answer
+        position relative
+        margin 0 0 15px 0
+        cursor pointer
+        vertical-align top
+        padding 20px
+        background $silver
+        width 100%
+        overflow hidden
+        -ms-touch-action none
+        touch-action none
+        &.dragStarted
+            background lighten($silver, 50%)
+        &--disabled
+            opacity 0.5
+            cursor default
+    &-description
+        padding 0 0 0 40px
+        -webkit-user-select none
+        -moz-user-select none
+        -ms-user-select none
+        -o-user-select none
+        user-select none
+        pointer-events none
+    &-drag-icon
+        -webkit-user-select none
+        -moz-user-select none
+        -ms-user-select none
+        -o-user-select none
+        user-select none
+        pointer-events none
+        &:before
+            content ""
+            triangle(60px, 60px, 'topLeft', $cerulean) // Create triangle
+            position absolute
+            left 0
+            top 0
+        &:after
+            content ""
+            position absolute
+            left 5px
+            top 5px
+            width 25px
+            height 25px
+            background url("media/img/drag.svg") no-repeat center center
+            -webkit-transform rotate(-45deg)
+            -moz-transform rotate(-45deg)
+            transform rotate(-45deg)
+
+    &-savedmessage
+        &:before
+            content ""
+            width 20px
+            height 16px
+            margin 0 5px 0 0
+            background url("media/img/checkWhite.svg") no-repeat center center
+            display inline-block 
+            vertical-align middle
+
+[dir="rtl"]
+	.mc
+		&-drag-icon:before
+			border-width 60px 0 0 60px
+			right 0
+		&-drag-icon:after
+			right 5px
+			transform rotate(45deg)
+		&-description
+			padding 0 40px 0 0

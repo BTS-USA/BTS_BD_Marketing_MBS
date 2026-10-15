@@ -1,0 +1,60 @@
+@import "../shared/cl.styl"
+/* This is css for the layouts in the wizer core*/
+/* if you are using a layoutInevent then please let it have its own css called layout.css in the events/layout folder*/
+
+/*  ========================== */
+.tbLeaderCodePage
+    background #FFF
+    height calc(100vh - 45px)
+    position absolute
+    width 100%
+    overflow auto
+    padding-bottom 100px
+    .cl-row
+        padding 0
+    &__navigation
+        max-width 62.5em
+        .nc-buttons-container
+            margin 0
+        .nc-container 
+            &>div
+                padding 0
+                .nc-button
+                    width 100%
+                    text-align center
+                    margin 0
+    &__codeSection
+        .lclc
+            &-instructions 
+                margin-bottom 0
+                background #FFF
+                &__text
+                    color #000
+                    margin 25px
+                    text-transform none
+            &-header
+                &--main 
+                    margin 0
+                    padding-bottom 20px
+                &__title--main
+                    font-size 1.5rem
+            &-instructions__userlist
+                min-height 300px
+                overflow auto
+                border 1px solid $mercury
+                margin 35px auto 0
+                padding 10px 0 0 0
+                float none
+                .groupheader
+                    border-bottom 1px solid $mercury
+            &-container-code
+                position static
+                transform none
+                background white
+                margin 20px auto
+                span
+                    color $cerulean
+            .usernames
+                color $cerulean
+                padding 10px 0
+                margin 0 3%

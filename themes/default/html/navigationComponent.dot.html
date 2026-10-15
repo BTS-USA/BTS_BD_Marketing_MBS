@@ -1,0 +1,45 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="nc cl-component">
+            <div class="nc-container cl-container">
+                <div class="cl-xs-column-12 cl-row nc-cl-row">
+                    <article class="nc-article cl-article">
+                        <div class="nc-buttons-container">
+                            {{? it.previousButton}}
+                                {{? it.previousButton.show}}
+                                <div class="nc-button nc-button--previousAction nc-navigationOptions {{?(it.previousButton.navigation && it.previousButton.navigation.remove)}}hidden{{?}} {{? it.previousButton.selected}}nc-button--selected {{?}}" data-remove="{{?it.previousButton.navigation}}{{=it.previousButton.navigation.remove}}{{?}} {{=it.previousButton.navigation.data}} " data-previousaction data-navigationbuttons>
+                                    {{? it.previousButton.img && it.previousButton.img !== undefined && it.previousButton.img !== ""}}
+                                    <img class="nc-button__image" src="{{=it.previousButton.img}}" height="20" />
+                                    {{??}}
+                                    <span class="nc-button__text">{{=it.previousButton.title}}</span>
+                                    {{?}}
+                                </div>
+                                {{?}}
+                            {{?}}
+                            {{~it.menuOptions:option:optionIndex }}
+                            <div class="nc-button option-{{=optionIndex}} nc-navigationOptions {{?(!option.navigation.remove)}}active{{?}} {{? option.selected}}nc-button--selected {{?}} {{=option.navigation.targetSection}}" data-remove="{{=option.navigation.remove}}" data-action-option="{{=optionIndex}}" data-navigate="click" {{=option.navigation.data}} {{?it.showDisabledButton}}data-buttondisabled="{{=option.navigation.remove}}"{{?}}>
+                                {{? option.img}}
+                                <img class="nc-button__image" src="{{=option.img}}" height="20" />
+                                {{??}}
+                                <span class="nc-button__text">{{=option.navigation.title}}</span>
+                                {{?}}
+                            </div>
+                            {{~}}
+                            {{? it.nextButton}}
+                                {{? it.nextButton.show}}
+                                <div class="nc-button nc-button--nextAction nc-navigationOptions {{?(it.nextButton.navigation && it.nextButton.navigation.remove)}}hidden{{?}} {{? it.nextButton.selected}}nc-button--selected {{?}}" data-remove="{{?it.nextButton.navigation}}{{=it.nextButton.navigation.remove}}{{?}} {{=it.nextButton.navigation.data}} " data-nextaction data-navigationbuttons>
+                                    {{? it.nextButton.img && it.nextButton.img !== undefined && it.nextButton.img !== ""}}
+                                    <img class="nc-button__image" src="{{=it.nextButton.img}}" height="20" />
+                                    {{??}}
+                                    <span class="nc-button__text">{{=it.nextButton.title}}</span>
+                                    {{?}}
+                                </div>
+                                {{?}}
+                            {{?}}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

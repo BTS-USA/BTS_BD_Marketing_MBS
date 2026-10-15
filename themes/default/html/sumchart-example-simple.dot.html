@@ -1,0 +1,24 @@
+﻿<div>
+	<div class="title">{{=it.title}}</div>
+    <ul class="scoreList">
+        {{~it.scope :question:qi}}
+        {{?it.trackQuestion && it.trackQuestion==question.name}}
+        {{??}}
+            <li><div class="scoreQuestionName">{{=it.labels[qi]}}</div> <div class="bar-wrapper"><div class="score-bar" style="width:{{=question.displayBarWidth}}%">&nbsp;</div><div class="scoreQuestionPercent">{{=question.percent}} %</div> </div></li>
+        {{?}}
+        {{~}}
+    </ul>
+    <br />
+    <hr />
+    <br />
+    <div<h1>Data in 'it' variable:</h1></div>
+    <table class="scoreListData" border="1">
+        <tr><td>number</td><td>Question name</td><td>value</td><td>label</td><td>percent</td><td>displayBarWidth</td></tr>
+        {{~it.scope :question:qi}}
+        {{?it.trackQuestion && it.trackQuestion==question.name}}
+        {{??}}
+        <tr><td>{{=qi}}</td><td>{{=question.name}}</td><td>{{=question.value}}</td><td>{{=it.labels[qi]}}</td><td>{{=question.percent}} %</td><td>{{=Math.round(question.displayBarWidth*100)/100}}</td></tr>
+        {{?}}
+        {{~}}
+    </table>
+</div>

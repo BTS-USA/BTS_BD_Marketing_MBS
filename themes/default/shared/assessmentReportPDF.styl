@@ -1,0 +1,30 @@
+// import variables and mixins
+@import "cl.styl"
+
+body
+    background transparent
+    #votingSlideDiv
+        padding-bottom 0
+        /* force show all wizlets */
+        .wizlet
+            opacity 1 !important
+        .arc
+            &-button
+                display none
+                
+        .rrc
+            &-matrix__table
+                table-layout fixed
+            &-grade__button
+                float left
+                ~ &-grade__button
+                    margin-left 0
+                :last-child
+                    margin-left 0
+        .crc-body
+            page-break-inside avoid
+            page-break-before auto
+            page-break-after auto
+            
+        .editableText
+            border none

@@ -1,0 +1,131 @@
+<div class="mainContentWrapper">
+    <div class="mainContent"> 
+        <section class="sr cl-component" data-selfregistration-component>
+            {{? it.header}}
+            <header class="sr-header--main cl-header--main" data-selfregistration-header>
+                {{? it.header.title}}
+                <h1 class="sr-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="sr-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+            
+            <div class="sr-container cl-container">
+                
+                    <article class="sr-lp cl-xs-column-12 cl-sm-column-5 cl-md-column-4 cl-lg-column-3 cl-padding--no">
+
+                        <div class="sr-lp__control" data-control="sr-calendar">
+                            <input type="text" class="sr-lp__control--picker" data-picker="input">
+                        </div>
+                        
+                        <div class="sr-outerform" data-form="outer">
+                        </div>
+                    </article>
+                    <article class="sr-rp cl-xs-column-12 cl-sm-column-7 cl-md-column-8 cl-lg-column-9 cl-padding--no" data-panel="right">
+                        <div class="sr-rp__currDate cl-xs-column-12 cl-padding--no" data-ec-list-group>
+                            <div class="sr-rp__back cl-icon cl-icon--pointLeft" data-action="back">Back</div>
+                        </div>
+                        <div class="sr-rp__slotlist cl-xs-column-12" data-list="events" data-slotlist>
+                            {{  var time = 0,
+                                    j = 0;
+                                ampmString = "AM";
+                                for(var i = 0; i < 12; i++) {
+                                    i===0 ? time = 12 : time = i;
+                            }}
+                            <div class="sr-rp__hourholder" data-time="{{=time + ampmString}}" data-hourholder="{{=j}}">
+                                <span class="sr-rp__timelabel">{{=time + " " + ampmString}}</span>
+                            </div>
+                                                        {{
+                                if(i===11 && ampmString === "AM") {
+                                    i=-1;
+                                    ampmString = "PM";
+                                }
+                                j++;
+                            }
+                            }}
+                        </div>
+                    </article>
+
+                
+            </div>
+        </section>
+    </div>
+</div>
+
+<section class="cl-modal" data-confregister>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn" data-dismiss="modal" data-btn="close" aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body">
+                <header>
+                </header>
+                <div class="cl-modal__content">
+                    <span data-confregistertext></span>
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button sr-button sr-button__no" data-btn="no">{{=it.buttonNo}}</span>
+                        <span class="cl-button sr-button sr-button__yes" data-btn="yes">{{=it.buttonYes}}</span>
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+    </article>
+</section>
+
+<section class="cl-modal" data-alert>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn" data-dismiss="modal" data-alertbtn aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body">
+                <header></header>
+                <div class="cl-modal__content">
+                    <span data-alerttext></span>
+                </div>
+                <footer class="cl-modal__footer" data-alertbtnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button sr-button sr-button__yes" data-alertok>{{=it.okayText}}</span>
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+    </article>
+</section>
+
+<section class="cl-modal" data-deleteConfirmation>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn" data-dismiss="modal" data-deletebtn="close" aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body">
+                <header></header>
+                <div class="cl-modal__content">
+                    <span data-deleteConftext></span>
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button sr-button sr-button__no" data-deletebtn="no">{{=it.buttonNo}}</span>
+                        <span class="cl-button sr-button sr-button__yes" data-deletebtn="yes">{{=it.buttonYes}}</span>
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+    </article>
+</section>

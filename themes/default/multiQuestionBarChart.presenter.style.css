@@ -1,0 +1,83 @@
+#presenter_BaseSlide
+{
+  padding: 0px;
+}
+
+.MultiQuestionBarChart_Table
+{
+  padding: 30px;
+  padding-bottom: 15px;
+}
+
+.MultiQuestionBarChart_LabelCell
+{
+  background:  url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_25.png') transparent;
+  padding: 4px 7px 6px;
+  text-align: left;
+}
+
+.MultiQuestionBarChart_BarCell
+{
+  background:  url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_25.png') transparent;
+}
+
+.MultiQuestionBarChart_BarTable
+{
+  background:  url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_25.png') transparent;
+}
+
+.MultiQuestionBarChart_Table td
+{
+  color: #fff;
+  font-size: 18px;
+}
+
+.MultiQuestionBarChart_Table 
+{
+  width: 1100px;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+
+.MultiQuestionBarChart_BarTable
+{
+  width:100%;
+}
+
+.MultiQuestionBarChart_BarLabelCell
+{
+  text-align: center;
+}
+
+.MultiQuestionBarChart_NoDataCell
+{
+  width: 100%;
+  background: none;
+}
+
+.MultiQuestionBarChart_Header
+{
+  margin-bottom: 30px;
+}
+
+.MultiQuestionBarChart_BarSeparator 
+{
+  width: 98%;
+}
+
+.MultiQuestionBarChart > table
+{
+  margin: 0 auto;
+  width: 1100px;
+}
+
+.MultiQuestionBarChart_SubHeader
+{
+  font-weight: bold;
+  padding-bottom: 7px;
+}
+
+.MultiQuestionBarChart_Legend2
+{
+  text-align: right;
+}

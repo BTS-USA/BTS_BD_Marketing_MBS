@@ -1,0 +1,37 @@
+@import "../../Shared/css/cl.styl"
+// Info Component Stylus
+.ic
+    background-color #fff
+    &-article
+        background-color white
+    &-figure
+        &__image
+            display block
+            width 100%
+    &-content
+        padding 20px
+    &-list,
+    &-paragraph
+        margin 0 0 20px 0
+
+    // Removing default list-style from list elements inside of INFO component
+    /*ul,
+    li
+        list-style none*/
+
+    &-summary
+        &__header
+            padding 20px 0 20px 10px
+            color cerulean
+
+        &__details
+            padding 0 0 30px 10px
+
+[dir="rtl"]
+	.ic
+		&-column-left
+			float right
+		&-list
+			padding 0 30px 0 0
+
+

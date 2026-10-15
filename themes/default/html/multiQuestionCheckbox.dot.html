@@ -1,0 +1,8 @@
+﻿{{? it.wizletInfo.title}}
+    <h2>{{=it.wizletInfo.title}}</h2>
+{{?}}
+<ul>
+    {{~it.questions :question:index}}
+        <li><input type="checkbox" data-questionid="{{=question.Id}}" data-cost="{{=question.cost}}" data-question-name="{{=question.QuestionText}}" {{? question.checked}}checked="checked" {{?}} />{{=question.label}}</li>
+    {{~}}
+</ul>

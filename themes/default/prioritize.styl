@@ -1,0 +1,145 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Prioritize Component Styles
+.pc
+	margin 0
+	&-article
+		margin 0 0 10px 0
+	&-readonly
+		opacity 0.6
+		cursor default
+	&-label
+		margin 0
+	&-listleft
+		text-align center
+		font-size 3.2*$px
+		height 150px
+		padding 0
+		float left
+		margin 0
+	&-listright
+		margin 0
+		padding 0
+		-ms-touch-action none
+		touch-action none
+	&-orderindex
+		font-weight normal
+		vertical-align middle
+	&-rowitem
+		margin 0 0 10px 0
+		-ms-touch-action none
+		touch-action none
+		-webkit-user-select none
+		-moz-user-select none
+		-ms-user-select none 
+		user-select none  
+		p
+			-webkit-user-select none
+			-moz-user-select none
+			-ms-user-select none 
+			user-select none 
+	&-buttons
+		clear both
+		height 40px
+		display flex
+		justify-content flex-end
+	&-button
+		float right
+		margin: 0 5px;
+		&--disabled
+			pointer-events none
+			background-color $silver
+			color $white
+			text-shadow none
+			cursor not-allowed
+	&-clearbutton
+		margin 0 5px 0 0
+	&-buttontext  
+		// display table-cell
+		vertical-align middle
+		text-align center
+	&-submitbuttontext
+		// display table-cell
+		vertical-align middle
+		text-align center
+	&-orderlistleftpanel
+		background-color $tundora
+		margin 0 0 10px 0
+		color white
+	&-rightpanel
+		background-color $silver
+		height 100%
+		overflow hidden
+		color black
+		margin 0px
+	&-draggablecontainer
+		width 55px
+		height 55px
+		background-size 100% 100%
+		float left
+		background-image url('./media/img/drag.png')
+	&-votes
+		padding 7px
+		position relative
+		margin 0 0 0 50px
+		overflow hidden
+	&-draggablesign1
+		width 3px
+		position relative
+		height 15px
+		left 15px
+		top 10px
+		-webkit-transform rotate(39deg)
+		-moz-transform rotate(45deg)
+		-ms-transform rotate(45deg)
+		transform rotate(45deg)
+		background-image url('./media/img/line.png')
+	&-draggablesign2
+		width 3px
+		position relative
+		height 15px
+		left 9px
+		top -11px
+		-webkit-transform rotate(40deg)
+		-moz-transform rotate(45deg)
+		-ms-transform rotate(45deg)
+		transform rotate(45deg)
+		background-image url('./media/img/line.png')
+	&-draggablesign3
+		width 3px
+		position relative
+		height 15px
+		left 12px
+		top -23px
+		-webkit-transform rotate(40deg)
+		-moz-transform rotate(45deg)
+		-ms-transform rotate(45deg)
+		transform rotate(45deg)
+		background-image url('./media/img/line.png')
+	&-savedmessage
+		&:before
+			content ""
+			width 20px
+			height 16px
+			margin 0 5px 0 0
+			background url("media/img/checkWhite.svg") no-repeat center center
+			display inline-block 
+			vertical-align middle
+
+[dir="rtl"]
+	.pc
+		&-draggablecontainer
+			transform rotate(90deg)
+			float right
+		&-listleft
+			float right
+		&-draggablesign1
+			left -39px
+			top 2px
+		&-draggablesign2
+			left -36px
+			top -10px
+		&-draggablesign3
+			left -33px
+			top -22px

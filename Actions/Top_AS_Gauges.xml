@@ -1,0 +1,69 @@
+<Action>
+  <Component type="Gaugedisplay" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_gaugeDisplay.dot",
+  "css": "events/BTS_BD_Marketing_MBS/styles/as_gauges.css",
+  "gaugeTitle": "",
+  "gaugeId": "TopGauges",
+  "numGauges": 3,
+  "labels": [
+    {
+      "label": "!{Top_Gauges_Gauge1}",
+      "binding": "Metric1"
+    },
+    {
+      "label": "!{Top_Gauges_Gauge2}",
+      "binding": "Metric2"
+    },
+    {
+      "label": "!{Top_Gauges_Gauge3}",
+      "binding": "Metric3"
+    }
+  ],
+  "dynamic": "true",
+  "bindings": {
+    "Metric1": {
+      "dynamic": true,
+      "bind": "db:Metric1",
+      "render": "renderer/spanBox",
+      "trackQuestion": "Team_Track",
+      "renderOptions": {
+        "numberFormat": {
+          "value": "0"
+        },
+        "dynamic": "true"
+      }
+    },
+    "Metric2": {
+      "dynamic": true,
+      "bind": "db:Metric2",
+      "render": "renderer/spanBox",
+      "trackQuestion": "Team_Track",
+      "renderOptions": {
+        "numberFormat": {
+          "value": "0"
+        },
+        "dynamic": "true"
+      }
+    },
+    "Metric3": {
+      "dynamic": true,
+      "bind": "db:Metric3",
+      "render": "renderer/spanBox",
+      "trackQuestion": "Team_Track",
+      "renderOptions": {
+        "numberFormat": {
+          "value": "0"
+        },
+        "dynamic": "true"
+      }
+    }
+  },
+  "trackQuestion": "Team_Track",
+  "scope": [
+    "Metric1",
+    "Metric2",
+    "Metric3",
+    "Team_Track"
+  ]
+}]]></Component>
+</Action>

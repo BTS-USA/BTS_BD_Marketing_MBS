@@ -1,0 +1,60 @@
+<Action>
+  <Component type="BarChartList"><![CDATA[{
+  "templateInEvent": "html/as_barChartList.dot",
+  "css": "styles/as_barchartList.css",
+  "version": "2.0",
+  "header": {
+    "bgimage": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/headerGraphic.svg",
+    "title": "!{Activity3_RankingMomentTitle}",
+    "description": "!{Activity3_RankingMomentDescription}"
+  },
+  "sections": [
+    {
+      "questions": [
+        {
+          "option_title": "!{Activity3_RankingMomentLabel1}",
+          "title": "!{Activity3_RankingMomentOption1}",
+          "name": "Activity3_RANKING1",
+          "minValue": 0,
+          "maxValue": 4
+        },
+        {
+          "option_title": "!{Activity3_RankingMomentLabel2}",
+          "title": "!{Activity3_RankingMomentOption2}",
+          "name": "Activity3_RANKING2",
+          "minValue": 0,
+          "maxValue": 4
+        },
+        {
+          "option_title": "!{Activity3_RankingMomentLabel3}",
+          "title": "!{Activity3_RankingMomentOption3}",
+          "name": "Activity3_RANKING3",
+          "minValue": 0,
+          "maxValue": 4
+        },
+        {
+          "option_title": "!{Activity3_RankingMomentLabel4}",
+          "title": "!{Activity3_RankingMomentOption4}",
+          "class": "optimal",
+          "text": "!{Optimal}",
+          "name": "Activity3_RANKING4",
+          "minValue": 0,
+          "maxValue": 4
+        }
+      ]
+    }
+  ],
+  "display": "average",
+  "sortingEnabled": true,
+  "sortingOrder": "DESC",
+  "animation": false,
+  "trackQuestion": "Cohort_Track",
+  "scope": [
+    "Activity3_RANKING1",
+    "Activity3_RANKING2",
+    "Activity3_RANKING3",
+    "Activity3_RANKING4",
+    "Cohort_Track"
+  ]
+}]]></Component>
+</Action>

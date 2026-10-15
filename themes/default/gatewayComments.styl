@@ -1,0 +1,199 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+darkGray = #edebec
+lightGray = #f5f5f5
+borderGray = #cccccc
+textGray = #666666
+
+.gwc
+    &-container
+        height 100% 
+        //calc(100vh - 145px)
+        
+    &-content
+        background-color #fff
+        height 100%
+        padding 30px
+        @media screen and (max-width 768px)
+            padding 0
+    &-like
+        &__container
+            background-color darkGray
+            border 1px solid borderGray
+            display inline-flex
+            border-radius 7px
+            max-width 250px
+            color textGray
+            @media screen and (max-width 768px)
+                margin-left 10px
+        &__textCont
+            padding 10px 20px 10px 6px
+            border-right 1px solid borderGray
+            cursor pointer
+            display flex
+            
+        &__icon
+            margin-right 8px
+            &--liked
+                color $cerulean
+        &__count
+            margin 10px
+            cursor default
+    &-comments
+        &__cont
+            display none
+            &--show
+                display block
+        &__commentTime, &__replyTime
+            font-size 0.8rem
+        &__commentContent
+            background-color darkGray
+            padding 0 0 15px 0
+        &__commentBox
+            text-align center
+            padding-top 30px
+        &__commentArea
+            float none
+            border-radius 7px
+            width 95%
+            height 64px
+        &__mainCont
+            background-color darkGray
+            margin-top 25px
+        &__wrapper
+            background-color lightGray
+            height 100%
+            padding 25px 22px
+            position relative
+            @media screen and (max-width 768px)
+                padding 0
+        &__button
+            border-radius 7px
+            float right
+            @media screen and (max-width 768px)
+                min-width 5rem 
+                padding 6px
+        &__replybutton
+            min-width 5rem
+            padding 5px
+            margin-bottom 0
+            border-radius 7px
+            float right
+            @media screen and (max-width 768px)
+                min-width 3.5rem
+                padding 3px
+                font-size 0.8rem
+        &__countCont
+            margin-top 5px
+            padding 0 22px
+            overflow hidden
+            @media screen and (max-width 768px)
+                font-size 0.9rem
+        &__count
+            float left
+            color textGray
+        &__countText
+            cursor pointer
+            text-decoration underline
+            line-height 3
+        &__participantName, &__replyParticipantName
+            font-weight 600
+        &__participantComment
+            position relative
+            max-width 876px
+            height auto
+            margin 20px
+            padding 20px 20px 10px 20px
+            background-color #fff
+            border-radius 10px
+            box-shadow 3px 3px 6px borderGray
+        &__participantDetails
+            padding-left 12px
+        &--hidden
+            display none
+        &__replyCont
+            color textGray
+            margin-top 15px
+            margin-bottom 10px
+            font-size 0.8em
+        &__replyArea
+            border 1px solid borderGray
+            height auto
+            width 100%
+            float none
+            border-radius 7px
+        &__replyBody
+            border-bottom 1px solid borderGray
+            padding 0 0 7px 0
+            margin-bottom 10px
+            &:after
+                content ""
+                display table
+                clear both
+        &__reply
+            margin 0 0 0 15px
+            padding 15px
+            border-bottom 1px dotted borderGray
+            display none
+            &--show
+                display block
+            @media screen and (max-width 768px)
+                font-size 0.9rem
+        &__replies 
+            border-left 1px solid borderGray
+            margin 0 40px
+            @media screen and (max-width 768px)
+                margin 10px 0 0 10px
+        &__replyText
+            cursor pointer
+        &__moreReply
+            border-left 1px solid borderGray
+            margin 0px 40px
+            padding 20px 0
+            display none
+            cursor pointer
+            &Icon
+                &:before
+                    position relative
+                    top 2px
+                    margin 0 0 0 2px
+                &--rotate
+                    transform rotate(180deg)
+                    position relative
+                    top 3px
+            &Cont
+                color textGray
+                background-color borderGray
+                padding 3px 10px
+                border-bottom-right-radius 7px
+                border-top-right-radius 7px
+            &--show
+                display block
+            @media screen and (max-width 768px)
+                margin-left 10px
+                font-size 0.9rem
+        &__showMoreComments
+            text-align center
+            background-color #fff
+            border-radius 7px
+            margin 10px
+            padding 10px
+            color textGray
+            display none
+            cursor pointer
+            &--show
+                display block
+.tip
+    width 0px
+    height 0px
+    position absolute
+    background transparent
+    border 15px solid #fff
+
+.tip-up
+    top -28px
+    left 30px
+    border-right-color transparent
+    border-left-color transparent
+    border-top-color transparent

@@ -1,0 +1,178 @@
+﻿@import "shared\cl.styl"
+
+.ctpc
+    &-test
+        &__caption
+            font-size 20px
+            font-weight bold
+            text-align center
+            margin 0 0 20px 0
+
+    &-internet
+        &__progress
+            width 40%
+            float left
+            @media screen and (max-width 768px)
+                width 100%
+        &__testResult
+            width 60%
+            float left
+            padding 0 0 0 20px
+            @media screen and (max-width 768px)
+                width 100%
+                padding 0
+        & ^[0]-table
+            &__cell:first-child
+                width 35%
+            &__cell:last-child
+                width 65%
+
+    &-progress
+        &__type, &__pass, &__percent, &__speed
+            margin 0 0 10px 0
+        &__typevalue
+            text-transform capitalize
+        &__error
+            display none
+
+    &-webcam
+        width 0
+        height 0
+    &-button
+        width 200px
+    &-content
+        z-index -1
+        position relative
+        margin 20px 0 0 0
+        padding 0
+        &:first-of-type
+            margin 0 0 0 0
+    &-topbar
+        padding 20px 15px
+        background-color #fcfcfc
+        border-style solid
+        border-color $mercury
+        border-width 1px 0
+        overflow hidden
+        &-container
+            float left
+        &__number
+            display block
+            margin 0 auto 10px auto
+            width 45px
+            height 45px
+            border 1px solid $mercury
+            //background-color alpha($mercury ,0.3)
+            background-color rgba(230,230,230,0.3)
+            border-radius 50%
+            text-align center
+            font-size 2.4*$px
+            line-height 1.8em
+            color $silver
+        &__instructions
+          text-align center
+          padding 0 15px 20px 15px
+          font-size 1.2*$px
+          color $silver
+        &__controls
+            text-align center
+    &-body
+        padding 20px 15px
+        float none
+        margin 0 auto
+        max-width 960px
+        overflow hidden
+        &__no-content
+            text-align center
+            color $mercury
+        &__title
+            &--fix
+                color $cerulean
+    &-message
+        text-align center
+        color #ff0000
+        padding 20px
+
+    &-table
+        width 100%
+        margin 0 auto 10px auto
+        &__cell
+            padding 12px
+            &--even
+                background-color #fcfcfc
+        &__row
+            border-bottom 1px solid $mercury
+            &:last-child
+                border 0
+            &--hide
+                display none
+        &__cellhead
+            padding 12px
+            background-color $deepCerulean
+            &--even
+                //background-color darken($deepCerulean, 10%)
+                background-color #006d9e
+        &__label
+            width 100%
+            display inline-block
+            color $gray
+            font-size 1.2*$px
+            &--header
+                text-align center
+                color #fff
+                font-size 1.6*$px
+            &--headerleft
+                text-align left
+        &__value
+            display inline-block
+            text-align center
+            width 100%
+            color $gray
+            font-size 1.2*$px
+            &--check
+                background url("../default/media/img/check.svg") no-repeat
+                height 15px
+                width 15px
+                display block
+                top 50%
+                left 50%
+                position relative
+            &--ex
+                background url("../default/media/img/closeBlue.svg") no-repeat
+                height 13px
+                width 13px
+                display block
+                top 50%
+                left 50%
+                position relative
+    &--hidden
+        display none
+    &--fadeout
+        opacity 0 
+        transition(opacity 0.25s ease-in)
+        pointer-events none
+        position absolute
+        z-index -1
+    &--fadein
+        opacity 1 !important
+        transition(opacity 0.25s ease-in)
+        pointer-events auto !important
+        position static
+        z-index auto
+    &--important
+        color $sunsetOrange
+.border_right
+    border-right 1px solid #e6e6e6
+
+[dir="rtl"] 
+    .ctpc-body
+        padding 20px
+    ul
+        padding-inline-start 40px
+    .ctpc-table
+        &__value
+            &--check, &--ex
+                left 0
+                right 50%
+            
+

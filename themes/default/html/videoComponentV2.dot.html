@@ -1,0 +1,58 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="vcfp7 cl-component" data-videocomponentfp7>
+            {{? it.header}}
+                <header class="vcfp7-header-main cl-header--main {{? it.header.pointer == false}} cl-pointer--hidden{{?}}">
+                    {{? it.header.breadCrumbs}}
+                        <p class="vcfp7-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="vcfp7-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="vcfp7-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                            <h1 class="vcfp7-title-main cl-header__title--main">{{=it.header.title}}</h1>
+                        {{?}}
+                        {{? it.header.description}}
+                            <p class="vcfp7-description-main cl-header__description--main">{{=it.header.description}}</p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+
+            <div class="vcfp7-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <div class="vcfp7-instructions cl-instructions">
+                            <p class="vcfp7-nstructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                    
+                    <div class="vcfp7-content cl-content">
+                        <article class="vcfp7-article{{? it.transcript}} cl-row{{?}} cl-article" data-videocomponentfp7cont>
+                            <div class="vcfp7-video{{? it.transcript}} cl-sm-column-7{{?}} cl-xs-column-12 cl-padding--no" data-videocontainerfp7>
+                            </div>
+                            {{? it.transcript}}
+                            <div class="vcfp7-transcript cl-sm-column-5 cl-xs-column-12" data-videocomponentfp7-transcriptcont>
+                                <div class="vcfp7-transcript__header" data-videocomponentfp7-transcripttitle>
+                                    <h3 class="vcfp7-transcript__h3 cl-h3">{{=it.transcript.title}}</h3>
+                                </div>
+                                <div class="vcfp7-accordion cl-accordion">
+                                    <div class="vcfp7-accordion__header cl-accordion__header" data-videocomponentfp7-transcriptdetailscont data-videocomponentfp7-accordionsign>
+                                        <p class="vcfp7-paragraph cl-paragraph" data-videocomponentfp7-transcripttext>{{=it.transcript.label}}</p>
+                                        <div class="vcfp7-accordion-sign"></div>
+                                    </div>
+                                    <div class="vcfp7-accordion__content cl-accordion__content" data-videocomponentfp7-transcriptdesccont>
+                                        <p class="vcfp7-paragraph cl-paragraph" data-videocomponentfp7-transcriptdesc>{{=it.transcript.text}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{?}}
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

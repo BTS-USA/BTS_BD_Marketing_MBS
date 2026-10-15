@@ -1,0 +1,69 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="gwh cl-component" data-gwh-component>
+		 {{?!Wizer.fromLMS}}
+            <header class="gwh-header">
+                {{?it.menuActionXML}}
+                <div class="gwh-header__menuCont">
+                    <div class="gwh-header__menuIcon cl-icon cl-icon--hamburger" data-gateway-menu-icon></div>
+                    <div class="gwh-header__menu" data-gateway-menu></div>
+                </div>
+                {{?}}
+                <div class="gwh-header__back {{?it.menuActionXML}}gwh-header__back--withMenu{{?}}">
+                    <span class="cl-icon cl-icon--pointLeft gw-icon gw-icon--back {{?(!it.isNavigationEnable)}}gwh-header__disabled{{?}}" data-backtogateway></span>
+                </div>
+                {{?!it.isHierarchyEmpty}}
+                <p class="gwh-header__title cl-xs-column-7 cl-md-column-10 {{?it.menuActionXML}}gwh-header__title--withMenu{{?}}">
+                    {{?it.coTitles[2]}}{{=it.coTitles[2]}}{{?}}
+                </p>
+                {{?}}
+                <div class="gwh-header__right">
+                    <img class="gwh-header__logo" src="{{=it.contentObjectImagePath}}{{=it.brandImage}}" />
+                    <div class="gwh-header__resources gw-icon gw-icon--glossary"></div>
+                </div>
+            </header>
+         {{?}}
+            <div class="gwh-body" data-gwh-body>
+				{{?it.isResources}}
+					<img class="gwh-body__icon" src="{{=it.contentObjectImagePath}}{{=it.details.metadata.icon}}" data-gwh-body-icon />
+				{{??it.coIcons.length > 1}}
+					<img class="gwh-body__icon" src="{{=it.contentObjectImagePath}}{{=it.coIcons[0]}}" data-gwh-body-icon />
+				{{?}}
+				
+                <!-- <img class="gwh-body__icon" src="{{=it.contentObjectImagePath}}{{?!it.isHierarchyEmpty}}{{?!it.isResources}}{{=it.coIcons[0]}}{{??}}{{=it.details.metadata.icon}}{{?}}{{?}}" data-gwh-body-icon /> -->
+				{{?!Wizer.fromLMS}}
+                <h1 class="gwh-body__title" data-gwh-body-title>
+                    {{?!it.isHierarchyEmpty}}{{?it.coTitles[1]}}{{=it.coTitles[1]}}{{?}}{{??}}{{=it.details.metadata.title}}{{?}}
+                </h1>
+				{{??}}
+				 <h1 class="gwh-body__title">
+                    {{=it.details.metadata["title"][0]}}
+                </h1>
+				{{?}}
+				
+                {{?!it.isHierarchyEmpty && !Wizer.fromLMS}}
+                <h2 class="gwh-body__description">
+                    {{=it.details.metadata.title}}
+                </h2>
+                {{?}}
+            </div>
+            <footer class="gwh-footer" data-gwh-footer>
+                {{?it.details.metadata.duration}}
+                <p class="gwh-footer__duration">
+                    {{=it.details.metadata.duration}}{{=it.duration}}
+                </p>
+                {{?}}
+                {{?it.details.metadata.points}}
+                <p class="gwh-footer__points">
+                    {{=it.details.metadata.points}}{{=it.points}}
+                </p>
+                {{?}}
+                {{?it.details.metadata.type}}
+                <p class="gwh-footer__type">
+                    {{=it.details.metadata.type}}
+                </p>
+                {{?}}
+            </footer>
+        </section>
+    </div>
+</div>

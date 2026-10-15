@@ -1,0 +1,93 @@
+<div class="mainContentWrapper">
+	<div class="mainContent">
+		<section class="ssc cl-component" data-component-version="{{=it.version}}" data-singleselectcomponent>
+
+		{{? it.header}}
+			<header class="ssc-header-main cl-header--main">
+				{{? it.header.breadCrumbs}}
+					<p class="ssc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+				{{?}}
+				{{? it.header.bgimage}}
+				 <div class="ssc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+				{{?}}
+				<div class="ssc-header-wrapper cl-header-wrapper">
+					{{? it.header.title}}
+						<h1 class="ssc-title-main cl-header__title--main">{{=it.header.title}}</h1>
+					{{?}}
+					{{? it.header.description}}
+						<p class="ssc-description-main cl-header__description--main">{{=it.header.description}}</p>
+					{{?}}
+				</div>
+			</header>
+		{{?}}
+
+			<div class="ssc-container cl-container">
+				<div class="cl-xs-column-12 cl-row">
+					{{? it.instructions}}
+					<div class="ssc-instructions cl-instructions">
+						<p class="ssc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+					</div>
+					{{?}}
+
+					<div class="ssc-content cl-content {{? it.reportView}}report-view-main{{?}}">
+						<div class="ssc-row {{=it.type}}">
+							{{~it.questions:question:j}}
+							{{~ question.options:option:i}}
+							<div class="ssc-article ssc-result{{=i+1}} singleSelectOptionCont" data-component-version="{{=it.version}}" data-option="{{=i+1}}" data-binding="{{=option.value}}" data-binding-alt="result{{=i+1}}" data-optioncount="{{=question.options.length}}" data-leadtext="{{?option.leadText}}{{=option.leadText}}{{?}}" data-optioncontainer></div>
+							{{? it.type === "radio"}}
+							<div class="ssc-description" data-optiondesccont>
+								{{?it.version==1}}
+								<p class="ssc-description__text" data-optiondescription data-component-version="{{=it.version}}">
+									{{=option.description}}
+								</p>
+								{{??}}
+								<p class="ssc-description__text" data-optiondescription data-component-version="{{=it.version}}">
+									{{=option.subDescription}}
+								</p>
+								{{?}}
+							</div>
+							{{?}}
+							{{~}}
+							{{~}}
+						</div>
+					</div>
+					<footer class="ssc-footer cl-footer" data-controls>
+                        <div class="ssc-buttons cl-buttons" data-sscbuttons>
+                        	{{? it.buttons_v2 }}
+	                            {{~it.buttons_v2 :button:index}}
+	                            <div id="singleSelect{{=button.type}}Button"
+                                    data-componentbuttons data-buttons
+                                    {{? button.type=="submit"}} data-submitbutton data-submitaction data-pulsesubmitbutton{{?}}
+                                    {{? button.type=="clear"}} data-clearAction{{?}}
+                                    class="ssc-button ssc-button--{{=button.type}} cl-button cl-button--{{=button.type}}">
+	                                <div class="ssc-button--text cl-button--text" 
+	                                	{{? button.type == "submit"}} data-submitaction{{?}} data-sscsubmitbuttontext>
+	                                	{{=button.navigation.title}}
+	                                </div>
+	                            </div>
+	                            {{~}}
+                        	{{??}}
+		                        {{? it.buttons[0].show || it.buttons[0].show === undefined}}
+		                        <div class="ssc-button--submit ssc-button buttonEnabled singleSelectClearButton
+		                        	cl-button cl-button--submit" id="singleSelectSubmitButton" 
+		                        	data-submitbutton data-buttons data-pulsesubmitbutton>
+		                            <span class=" ssc-submitbuttontext ssc-buttontext" data-sscsubmitbuttontext>{{=it.buttons[0].navigation.title}}</span>
+		                        </div>
+		                        {{?}}
+		                        {{? it.buttons[1].show || it.buttons[1].show === undefined}}
+		                        <div class="ssc-button--clear ssc-button buttonEnabled singleSelectClearButton
+		                        	cl-button cl-button--clear" id="singleSelectClearButton" 
+		                        	data-clearAction data-buttons data-enabled="{{=it.buttons[1].navigation.remove}}">
+		                            <span class="ssc-clearbuttontext ssc-buttontext">
+		                            	{{=it.buttons[1].navigation.title}}
+		                            </span>
+		                        </div>
+		                        {{?}}
+                            {{?}}
+                        </div>
+					</footer>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

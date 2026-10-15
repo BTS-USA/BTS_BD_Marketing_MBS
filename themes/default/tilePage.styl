@@ -1,0 +1,331 @@
+﻿
+@import "../../Shared/css/cl.styl"
+
+    .mainContentWrapper
+        padding 0px
+
+    .selfRegistrationPopup .ui-dialog-content
+        display block !important
+    *[class*="col-"], .pulseNavigationLink
+    .pulseMenuContainer
+        overflow hidden
+    .pulseFrontPage, .pulseMenuContainer
+        height 90vw
+        padding-right 0px
+        padding-left 0px
+
+        .pulseNavigationPropagation
+            display block
+            text-align center
+            margin 0 auto
+        .pulseNavigationView * 
+            box-sizing border-box
+    
+        .pulseNavigationView 
+            width 180vw
+            height 60vw
+            overflow hidden
+            margin 20px auto
+            -webkit-transition  all 0s linear 
+            -moz-transition  all 0s linear 
+            -ms-transition  all 0s linear 
+            -o-transition  all 0s linear 
+            transition  all 0s linear
+             
+        .pulseNavigationSlider
+            float left
+            position relative
+            -webkit-transition  all 0.125s linear 
+            -moz-transition  all 0.125s linear 
+            -ms-transition  all 0.125s linear 
+            -o-transition  all 0.125s linear 
+            transition  all 0.125s linear
+            min-width 180vw
+        .pulseNavigationPanel
+            float  left 
+            margin-top 20px
+            width 180vw
+            height 60vw
+            margin 0
+            &:after, &:before
+                content ""
+                clear both
+		
+        .pulseNavigationElement
+            float left
+            -moz-box-sizing border-box
+            box-sizing border-box
+            visibility visible
+            .active
+                visibility visible
+        .pulseNavigationElement .pulseNavigationLink 
+            background-color #333
+            display  block 
+            color #fff 
+            text-align  center 
+            vertical-align middle
+            background-repeat no-repeat
+            background-size 100%
+            position relative
+            cursor pointer
+
+        .tilePageContentDetails
+            text-align center
+
+        .pulseNavTitle, .tilePageContentDetails 
+            position relative
+            padding 10px 0 0 10px
+            text-align left
+            float left
+            width 100%
+            line-height 1.4em
+
+        .fix-box-1
+            .pulseNavTitle, .tilePageContentDetails
+                font-size 1.6*$px
+                left 10x
+
+        .fix-box-2
+            .pulseNavTitle, .tilePageContentDetails
+                font-size 1.6*$px
+
+        .fix-box-4
+            .pulseNavTitle,. tilePageContentDetails
+                font-size 1.6*$px
+
+        .tilePageContentDetails
+            padding 20px 10px 0 10px
+            word-break break-word
+
+        .pulseNavigationCol 
+            height 100% 
+            width 60vw
+        *[class*="fix-box-"]
+            padding 1.5vw
+            a 
+                width 100%
+                height 100%
+                display block
+
+        .pulseNavigationLink
+            width 100%
+            height 100%
+            position relative
+            img
+                width 60%
+                position absolute
+                top 0
+                left 0 
+                right 0 
+                bottom 0
+                margin auto
+        .pulseNavigationControls
+            width 100%
+            position fixed
+            float left
+            bottom 25%
+            height 30px
+            top calc( 20% + 60vw + 50px )
+        .pulseNavigationPagination
+            display block
+            text-align center 
+            min-width 300px 
+            margin 0 auto
+            width 80%
+        .pulseNavigationAnchor
+            display  inline-block 
+            width 10px 
+            height 10px 
+            background-color  rgba(255, 255, 255, 0.5) 
+            border-radius 10px 
+            margin 5px
+
+        .pulseNavigationAnchor.active
+            background-color #fff
+        
+        @media only screen and (min-width 320px)
+                height auto
+                overflow visible
+                *[class*="fix-box-"]
+                    padding 1vw
+                .pulseNavigationPanel
+                    width 90vw
+                    height auto
+                    clear both
+                    float left
+                .fix-box-4
+                    height 90vw
+                    width 90vw
+                .fix-box-2
+                    height 45vw
+                    width 45vw
+                .fix-box-1
+                    height 22.5vw
+                    width 22.5vw
+                .pulseNavigationView
+                    width 90vw
+                    height auto
+                    overflow hidden
+                    position static
+                    left 0
+                    top 20%
+                .pulseNavigationCol
+                    height 100%
+                    width 90vw
+                    padding 0
+                .pulseNavigationSlider
+                    height auto
+                    width 90vw
+                    min-width 90vw
+                .linkContent
+                    position static
+                    h1, h2, h3, h4, h5, h6, h7, p, a, span
+                        position static
+                .pulseNavigationControls
+                    display none
+
+        @media only screen and (min-width 480px)
+                .pulseMenuContainer
+                    height auto
+                    overflow visible
+                *[class*="fix-box-"]
+                    padding 0.5vw
+                .pulseNavigationPanel
+                    width 129vw
+                    height 33vw
+                .fix-box-4
+                    height 33vw
+                    width 33vw
+                .fix-box-2
+                    height 16.5vw
+                    width 16.5vw
+                .fix-box-1
+                    height 8.25vw
+                    width 8.25vw
+                .fix-box-pulseNavigationView
+                    height 8.25vw
+                    width 8.25vw
+                .pulseNavigationView
+                    width 129vw
+                    overflow hidden
+                    position fixed
+                    left calc(50% - 49.5vw)
+                    height 33vw
+                .pulseNavigationCol
+                    height 100%
+                    width 33vw
+                    padding 0
+                .pulseNavigationSlider
+                    height 33vw
+                .pulseNavigationControls
+                    top calc( 50% + 65vw )
+
+
+                .linkContent
+                    position static
+                    h1, h2, h3, h4, h5, h6, h7, p, a, span
+                        position static
+                .pulseNavigationControls
+                    top calc( 50% +30vh )
+
+        @media (min-width 768px)
+            *[class*="fix-box-"]
+                padding .5vw
+            .pulseNavigationPanel
+                width 99vw
+                height 33vw
+                clear none
+                max-height 670px
+            .fix-box-4
+                height 33vw
+                width 33vw
+            .fix-box-2
+                height 16.5vw
+                width 16.5vw
+            .fix-box-1
+                height 8.25vw
+                width 8.25vw
+            .pulseNavigationView
+                width 99vw
+                height 33vw
+                overflow hidden
+                position fixed
+                left calc(50% - 49.5vw)
+            .pulseNavigationCol
+                height 100%
+                width 33vw
+                padding 0
+            .pulseNavigationSlider
+                height 33vw
+            .linkContent
+                position static
+                h1, h2, h3, h4, h5, h6, h7, p, a, span
+                    position static
+            .pulseNavigationControls
+                display block
+                top calc( 20% + 40vw )
+
+         @media (min-width 992px)
+            *[class*="fix-box-"]
+                padding 0.5vw
+            .pulseNavigationPanel
+                width 129vw
+                height 33vw
+            .fix-box-4
+                height 33vw
+                width 33vw
+            .fix-box-2
+                height 16.5vw
+                width 16.5vw
+            .fix-box-1
+                height 8.25vw
+                width 8.25vw
+            .fix-box-pulseNavigationView
+                height 8.25vw
+                width 8.25vw
+            .pulseNavigationView
+                width 129vw
+                overflow hidden
+                position fixed
+                left calc(50% - 49.5vw)
+                height 33vw
+            .pulseNavigationCol
+                height 100%
+                width 33vw
+                padding 0
+            .pulseNavigationSlider
+                height 33vw
+
+        @media (min-width 1200px)
+
+            *[class*="fix-box-"]
+                padding 0.5vw
+            .pulseNavigationPanel
+                width 129vw
+                height 33vw
+            .fix-box-4
+                height 33vw
+                width 33vw
+            .fix-box-2
+                height 16.5vw
+                width 16.5vw
+            .fix-box-1
+                height 8.25vw
+                width 8.25vw
+            .fix-box-pulseNavigationView
+                height 8.25vw
+                width 8.25vw
+            .pulseNavigationView
+                width 129vw
+                overflow hidden
+                position fixed
+                left calc(50% - 49.5vw)
+                height 33vw
+            .pulseNavigationCol
+                height 100%
+                width 33vw
+                padding 0
+            .pulseNavigationSlider
+                height 33vw
+            .pulseNavigationControls
+                top calc( 20% + 60vw + 50px )

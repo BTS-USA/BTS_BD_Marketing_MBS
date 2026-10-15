@@ -1,0 +1,65 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="mrc cl-component">
+            {{? it.header}}
+            <header class="mrc-header cl-header--main">
+                {{? it.header.breadCrumbs}}
+                    <p class="mrc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                {{?}}
+                {{? it.header.bgimage}}
+                 <div class="mrc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                {{?}}
+                <div class="mrc-header-wrapper cl-header-wrapper">
+                    {{? it.header.title}}
+                    <h1 class="mrc-header__title cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                        {{=it.header.title}}
+                    </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                    <p class="mrc-header__description cl-header__description--main">
+                        {{=it.header.description}}
+                    </p>
+                    {{?}}
+                </div>
+            </header>
+            {{?}}
+            <div class="mrc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="mrc-instructions cl-instructions">
+                        <p class="mrc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+                    <div class="mrc-content cl-content">
+                        {{~it.questions:question:index}}
+                        <article class="mrc-article cl-article">
+                            {{? it.barchart}}
+                            <div class="mrc-result-bar cl-table">
+                                <div class="mrc-percentage cl-md-cell-1 cl-xs-cell-2">
+                                    {{=question.barChartYes}}%
+                                </div>
+                                <div class="mrc-bar cl-bar cl-md-cell-10 cl-xs-cell-8">
+                                    <div class="mrc-bar__inner--true cl-bar__inner--true" style="width:{{=question.barChartYes}}%"></div>
+                                    <div class="mrc-bar__inner--false cl-bar__inner--false" style="width:{{=question.barChartNo}}%"></div>
+                                </div>
+                                <div class="mrc-percentage cl-md-cell-1 cl-xs-cell-2">
+                                    {{=question.barChartNo}}%
+                                </div>
+                            </div>
+                            {{?}}
+                            <div class="mrc-answer-row cl-table">
+                                <div class="mrc-question mrc-question--{{=question.questionClass}} cl-xs-cell-12 cl-sm-cell-6">
+                                    <p class="mrc-paragraph cl-paragraph">{{=question.description}}</p>
+                                </div>
+                                <div class="mrc-answer mrc-answer--{{=question.answerClass}} cl-xs-cell-12 cl-sm-cell-6">
+                                    <p class="mrc-paragraph cl-paragraph">{{=it.questions[0].options[index].description}}</p>
+                                </div>
+                            </div>
+                        </article>
+                        {{~}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

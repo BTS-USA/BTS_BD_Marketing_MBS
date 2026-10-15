@@ -1,0 +1,52 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="apum cl-component" data-apusermenu>
+            <div class="cc-webCol cl-xs-column-12 cl-sm-column-5 cl-padding--no" data-video-box>
+                <!-- <section class="cc-videobox hide" data-label="videobox">
+                    <div class="cc-videobox__screen" data-form="video-screen" data-video-container>
+                        <div class="cc-videobox__wrapper cc-videobox__subscriber-wrapper">
+                            <div id="subscriberAp" class="cc-videobox__subscriber">Waiting for answer...</div>
+                        </div>
+                        <div class="cc-videobox__wrapper cc-videobox__publisher-wrapper">
+                            <div id="publisherAp" class="cc-videobox__publisher"></div>
+                        </div>
+                    </div>
+                </section>
+                <div class="cc-videobox-buttons cl--appear cc-videobox-buttons--fade" data-label="videobox-buttons">
+                    <span class="cl-button cc-button__stop" data-video-hangup="">Hang up</span>
+                    <span class="cl-button cc-button__mute" data-video-mute="">Active</span>
+                </div>
+                <section class="cc-videobox-message hide" data-label="video-call-ended"></section> -->
+            </div>
+            <article class="apum-bar">
+                <header class="apum__header cl-padding--no">
+                    <h1 class="apum__title" data-title>{{?it.currentActionObject}}{{=it.currentActionObject.title}}{{?}}</h1>
+                    {{?it.countDownTimer}}<h1 class="apum__countdown-holder" data-countdownholder></h1>{{?}}
+                </header>
+                <div class="apum-tab-container" data-apum-tab-container>
+                    {{~it.tabOptions :rootMenuItem:rootMenuIndex}}
+                    {{?rootMenuItem.enabledByField && it.assessmentBasicData[rootMenuItem.enabledByField]}}
+                    <div class="apum-bar__tab {{=rootMenuItem.class}}" data-menuid="{{=rootMenuIndex}}"
+                         {{?rootMenuItem.actionXML}} data-action="{{=rootMenuItem.actionXML}}" {{?}}
+                         {{?rootMenuItem.enabledByField}} data-enabledbyfield="{{=rootMenuItem.enabledByField}}" {{?}}>
+                        {{?rootMenuItem.showUnread}}
+                        <div class="apum__unread" data-icon-unread>
+                            <span data-unread-count class="apum__count"></span>
+                        </div>
+                        {{?}}
+                    </div>
+                    {{?}}
+                    {{~}}
+                </div>
+            </article>
+            <article class="apum-page__container">
+                <div class="apum-page__page" data-apum-page>
+                </div>
+            </article>
+            <audio  data-apum-sound>
+                <source src="/Wizer/Content/WizletResources/themes/default/media/WindowsDing.mp3" type="audio/mp3">
+                Your browser does not support the audio tag.
+            </audio>
+        </section>
+    </div>
+</div>

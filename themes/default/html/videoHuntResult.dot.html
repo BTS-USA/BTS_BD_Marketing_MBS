@@ -1,0 +1,123 @@
+<div class="mainContentWrapper vhrr-mainContainerWrapper" data-main-wrapper>
+    <div class="mainContent">
+        <section class="vhrr-section-main" data-componentContainer>
+            {{? it.header}}
+            <header class="cl-header--main" data-textListHeader>
+                <div class="cl-header-wrapper">
+                    {{? it.header.title}}
+                    <h1 class="cl-header__title--main">{{=it.header.title}}</h1>
+                    {{?}}
+                    {{? it.header.description}}
+                    <p class="cl-header__description--main">{{=it.header.description}}</p>
+                    {{?}}
+                </div>
+            </header>
+            {{?}}
+        </section>
+        <article class="vhrr-article">
+            <div class="cl-container vhrr-mainContainer">
+                
+                <div class="vhrr-filterOptions">
+                    <div class="vhrr-filterCont">
+                        {{? it.filter}}
+                        <div class="cl-row vhrr-dropdown__filterCont" data-filter-dropdown>
+                            <div class="vhrr-dropdown__filterText">
+                                {{=it.textContent.filterTitle}}
+                            </div>
+                            <select data-filter class="vhrr-dropdown__select">
+                                {{~it.filter:filterName}}
+                                <option value="{{=filterName.value}}" class="vhrr-dropdown__options">
+                                    {{=filterName.text}}</option>
+                                {{~}}
+                            </select>
+                        </div>
+                        {{?}}
+                        {{? it.sort}}
+                        <div class="cl-row vhrr-dropdown__sortCont" data-sort-dropdown>
+                            <div class="vhrr-dropdown__sortText">
+                                {{=it.textContent.sortText}}
+                            </div>
+                            <select data-sort class="vhrr-dropdown__select">
+                                {{~it.sort:sortName}}
+                                <option value="{{=sortName.value}}" class="vhrr-dropdown__options">
+                                    {{=sortName.text}}</option>
+                                {{~}}
+                            </select>
+                        </div>
+                        {{?}}
+                    </div>
+                    <div class="vhrr-viewOptions__cont">
+                        <div class="vhrr-viewOptions__wrapper">
+                            <div class="vhrr-viewOptions__gridCont" data-grid><i
+                                    class="cl-icon cl-icon--picture vhrr-viewOptions__gridIcon"></i><span>{{=it.textContent.gridText}}</span>
+                            </div>
+                            <div class="vhrr-viewOptions__listCont vhrr-viewOptions__listCont--inactive" data-list><i
+                                    class="cl-icon cl-icon--list vhrr-viewOptions__listIcon"></i><span>{{=it.textContent.listText}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vhrr-contentGridContainer" data-grid-view></div>
+                <div class="vhrr-contentListContainer" data-list-view></div>
+
+                <div class="cl-row vhrr-submit__cont" data-button-container>
+                    {{? it.buttons }}
+                    <div class="vhrr-center">
+                        {{? it.buttons[0] }}
+                        <div class="vhrr-submit__button" data-submitbutton data-backbutton>
+                            <i class="cl-icon vhrr-submit__icon cl-icon--pointLeft"></i>
+                            {{=it.buttons[0].title}}
+                        </div>
+                        {{?}}
+                        {{? it.buttons[1] }}
+                        <div class="vhrr-submit__button" data-submitbutton data-nextbutton>
+                            {{=it.buttons[1].title}}
+                            <i class="cl-icon vhrr-submit__icon cl-icon--pointRight"></i>
+                        </div>
+                        {{?}}
+                    </div>
+                    {{?}}
+                </div>
+
+
+            </div>
+        </article>
+    </div>
+</div>
+
+<div class="vhrr-modalWrapper" data-comment-modal>
+    <article class="vhrr-modal">
+        <div class="vhrr-modal__container">
+            <section class="vhrr-modal__commentBody">
+                <div class="vhrr-modal__ideaCont">
+                    <div class="vhrr-modal__ideaText" data-comment-idea-text></div>
+                    <div class="vhrr-modal__ideaClose" data-close-button><i
+                            class="cl-icon cl-icon--close-border vhrr-closeIcon"></i></div>
+                </div>
+                <div class="vhrr-modal__commentContent" data-comment-content-box>
+                </div>
+            </section>
+        </div>
+    </article>
+</div>
+
+<div class="vhrr-modalWrapper" data-video-modal>
+    <article class="vhrr-modal">
+        <div class="vhrr-modal__container">
+            <section class="vhrr-modal__body">
+                <div class="vhrr-backControl">
+                    <i class="cl-icon cl-icon--back"></i>
+                    <span data-back-button>{{=it.textContent.backToRatingText}}</span>
+                </div>
+                <div class="vhrr-modal__content">
+                    <div class="vhrr-video__recording" data-fp-container>
+                    </div>
+                    <div class="vhrr-modal__ideaTitle" data-idea-text>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </article>
+</div>

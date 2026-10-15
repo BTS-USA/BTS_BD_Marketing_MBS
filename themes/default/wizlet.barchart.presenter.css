@@ -1,0 +1,47 @@
+.BarChart_Chart
+{
+	width:1000px;
+	margin-top:50px;
+}
+
+.BarChart_RowText
+{
+    font-size:24pt;
+    color:White;
+    background-color:navy;
+    padding:5px;
+}
+
+.BarChart_Bar
+{
+    background-color:Yellow;
+    height:30px;
+    border:1px solid black;
+}
+
+.BarChart_ScoreText
+{
+    font-size:16pt;
+    color:White;
+}
+
+#BarChart_SlideHeader
+{
+	width:100%;
+	text-align:center;
+	color:black;
+	font-size:36pt;
+}
+
+.BarChart_AverageText
+{
+	padding-left:500px;
+	font-size:14pt;
+	width:400px;
+	text-align:center;
+}
+
+.BarChart_VoteCountText
+{
+	color:black;
+}

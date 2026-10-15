@@ -1,0 +1,241 @@
+﻿<div class="mainContentWrapper">
+    {{
+        function pad(t) { return t < 10 ? '0' + t : t; };
+        function formatTime(dt) {
+            var actualhours= dt.getHours();
+            var ampm = actualhours >= 12 ? 'PM' : 'AM';
+            var hours = actualhours % 12;
+            hours = hours ? hours : 12;
+            var monthNames = it.textContent.monthNames;
+            return dt.getDate() + " " + monthNames[dt.getMonth()] + " " + dt.getFullYear()+ "  "+hours + ":" + pad(dt.getMinutes())+ "  "  +ampm;
+        }
+}}
+    <div class="mainContent">
+        <section class="ec cl-component">
+            <article class="ec-list cl-xs-column-12 cl-sm-column-5 cl-md-column-4 cl-lg-column-5 cl-padding--no">
+                <div class="ec-list__group cl-xs-column-12 cl-padding--no">
+                    {{?!it.isReadOnly}}
+                    <a class="ec-list__button ec-list__button--new" data-type="new">{{=it.textContent.new}}</a>
+                    {{?}}
+                    <a class="ec-list__button ec-list__button--inbox ec-list__button--active" data-type="inbox">{{=it.textContent.inbox}}</a>
+                    <a class="ec-list__button ec-list__button--drafts" data-type="drafts">{{=it.textContent.drafts}}</a>
+                    <a class="ec-list__button ec-list__button--sent" data-type="sent">{{=it.textContent.sent}}{{?it.isReadOnly}} ({{=it.sent.length}}){{?}}</a>
+                    <a class="ec-list__button ec-list__button--deleted" data-type="deleted">{{=it.textContent.deleted}}</a>
+                </div>
+                <div class="ec-list__emails ec-list__emails--show cl-xs-column-12 cl-padding--no" data-list="inbox">
+                    {{~it.emails :value:index}}
+                    {{var sentTime = new Date(value.sentTime);}}
+                    <div class="ec-list__email cl-xs-column-12" data-eid="{{=value.id}}" data-type="emails">
+                        <header class="ec-list__header">
+                            <span class="ec-list__marker{{?value.status=='unread'}} ec-list__marker--new{{?}}" data-marker></span>{{?value.status=='unread'}}<span data-unread></span>{{?}}
+                            <h2 class="ec-list__title cl-xs-column-5 cl-sm-column-5 cl-lg-column-7 cl-padding--no">{{=value.from}}</h2>
+                            <div class="ec-list__term">
+                                <span class="ec-list__date">
+                                    {{=formatTime(sentTime)}}
+                                </span>
+                            </div>
+                        </header>
+                        <div class="ec-list__info cl-xs-column-10">
+                            <span class="ec-list__subject">{{=value.subject}}</span>
+                            <span class="ec-list__description">{{=value.body.replace(/\<br\/?\>/g,"   ")}}</span>
+                        </div>
+                        <div class="cl-xs-column-2 ec-list__iconContainer">
+                            {{? value.attachments.length > 0}}
+                            <div class="ec-list__attach"></div>
+                            {{?}}
+                            {{? value.isImportant && value.isImportant == true}}
+                            <div class="ec-list__important"></div>
+                            {{?}}
+                        </div>
+                    </div>
+                    {{~}}
+                </div>
+                <div class="ec-list__emails cl-xs-column-12 cl-padding--no" data-list="drafts">
+                    {{~it.drafts :value:index}}
+                    {{var sentTime = new Date(value.sentTime);}}
+                    <div class="ec-list__email cl-xs-column-12" data-eid="{{=value.id}}" data-type="drafts">
+                        <header class="ec-list__header">
+                            <span class="ec-list__marker{{?value.status=='unread'}} ec-list__marker--new{{?}}" data-marker></span>
+                            <h2 class="ec-list__title cl-xs-column-5 cl-sm-column-5 cl-lg-column-7 cl-padding--no">{{=value.to}}</h2>
+                            <div class="ec-list__term">
+                                <span class="ec-list__date">
+                                    {{=formatTime(sentTime)}}
+                                </span>
+                            </div>
+                        </header>
+                        <div class="ec-list__info cl-xs-column-10">
+                            <div class="ec-list__subject">{{=value.subject}}</div>
+                            <div class="ec-list__description">{{=value.body.replace(/\<br\/?\>/g,"   ")}}</div>
+                        </div>
+                        <div class="cl-xs-column-2 ec-list__iconContainer">
+                            {{? value.attachments.length > 0}}
+                            <div class="ec-list__attach"></div>
+                            {{?}}
+                            {{? value.isImportant && value.isImportant == true}}
+                            <div class="ec-list__important"></div>
+                            {{?}}
+                        </div>
+                    </div>
+                    {{~}}
+                </div>
+                <div class="ec-list__emails cl-xs-column-12 cl-padding--no" data-list="sent">
+                    {{~it.sent :value:index}}
+                    {{var sentTime = new Date(value.sentTime);}}
+                    <div class="ec-list__email cl-xs-column-12" data-eid="{{=value.id}}" data-type="sent">
+                        <header class="ec-list__header">
+                            <span class="ec-list__marker{{?value.status=='unread'}} ec-list__marker--new{{?}}"></span>
+                            <h2 class="ec-list__title cl-xs-column-5 cl-sm-column-5 cl-lg-column-7 cl-padding--no">{{=value.to}}</h2>
+                            <div class="ec-list__term">
+                                <span class="ec-list__date">
+                                    {{=formatTime(sentTime)}}
+                                </span>
+                            </div>
+                        </header>
+                        <div class="ec-list__info cl-xs-column-10">
+                            <div class="ec-list__subject">{{=value.subject}}</div>
+                            <div class="ec-list__description">{{=value.body.replace(/\<br\/?\>/g,"   ")}}</div>
+                        </div>
+                        <div class="cl-xs-column-2 ec-list__iconContainer">
+                            {{? value.attachments.length > 0}}
+                            <div class="ec-list__attach"></div>
+                            {{?}}
+                            {{? value.isImportant && value.isImportant == true}}
+                            <div class="ec-list__important"></div>
+                            {{?}}
+                        </div>
+                    </div>
+                    {{~}}
+                </div>
+                <div class="ec-list__emails cl-xs-column-12 cl-padding--no" data-list="deleted">
+                    {{~it.deleted :value:index}}
+                    {{var sentTime = new Date(value.sentTime);}}
+                    <div class="ec-list__email cl-xs-column-12" data-eid="{{=value.id}}" data-type="deleted" data-status="{{=value.status}}">
+                        <header class="ec-list__header">
+                            <span class="ec-list__marker{{?value.status=='unread'}} ec-list__marker--new{{?}}"></span>
+                            <h2 class="ec-list__title cl-xs-column-5 cl-sm-column-5 cl-lg-column-7 cl-padding--no">{{=value.from}}</h2>
+                            <div class="ec-list__term">
+                                <span class="ec-list__date">
+                                    {{=formatTime(sentTime)}}
+                                </span>
+                            </div>
+                        </header>
+                        <div class="ec-list__info cl-xs-column-10">
+                            <div class="ec-list__subject">{{=value.subject}}</div>
+                            <div class="ec-list__description">{{=value.body.replace(/\<br\/?\>/g,"   ")}}</div>
+                        </div>
+                        <div class="cl-xs-column-2 ec-list__iconContainer">
+                            {{? value.attachments.length > 0}}
+                            <div class="ec-list__attach"></div>
+                            {{?}}
+                            {{? value.isImportant && value.isImportant == true}}
+                            <div class="ec-list__important"></div>
+                            {{?}}
+                        </div>
+                    </div>
+                    {{~}}
+                </div>
+            </article>
+           
+            <article class="ec-view cl-xs-column-12 cl-sm-column-7 cl-md-column-8 cl-lg-column-7 cl-padding--no" >
+                
+                <div class="ec-view__bar cl-xs-column-12 cl-padding--no">
+                    <div class="ec-view__group cl-xs-column-12 cl-sm-column-9 cl-md-column-9 cl-padding--no" data-ec-list-group>
+                        {{?!it.isReadOnly}}
+                        <a class="ec-view__button" data-action="restore" data-restore>{{=it.textContent.restore}}</a>
+                        <a class="ec-view__button" data-action="delete" data-delete>{{=it.textContent.delete}}</a>
+                        <a class="ec-view__button" data-action="print" data-print>Print</a>
+                        <a class="ec-view__button" data-action="forward" data-forward>{{=it.textContent.forward}}</a>
+                        <a class="ec-view__button" data-action="replyall" data-replyall>{{=it.textContent.replyall}}</a>
+                        <a class="ec-view__button" data-action="reply" data-reply>{{=it.textContent.reply}}</a>
+                        {{?}}
+                        <a class="ec-view__button ec-view__button--back" data-action="back">{{=it.textContent.back}}</a>
+                        {{?it.enablePrintAll}}<a class="ec-view__button ec-view__button--printAllMail" data-action="printAll" data-printAll>Print All</a>{{?}}
+                    </div>
+                </div>
+                <div class="ec-view__preview cl-xs-column-12" data-email-preview="">
+                    
+                </div>
+                <div class="ec-view__allMailPreview cl-xs-column-12" data-email-allMailsPreview>
+                    
+                </div>
+            </article>
+          
+        </section>
+    </div>
+</div>
+<section class="cl-modal" data-confemail>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn" data-dismiss="modal" aria-hidden="true"></span>
+            </header>
+
+            <section class="cl-modal__body">
+                <header>
+                    <h1 class="cl-modal__title">{{=it.textContent.confirm}}</h1>
+                </header>
+                <div class="cl-modal__content">
+                   {{=it.textContent.confirmMsg}}
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button ec-button ec-button__cancel" data-btn="cancel">{{=it.textContent.dontSend}}</span>
+                        <span class="cl-button ec-button ec-button__ok" data-btn="ok">{{=it.textContent.sendAnyway}}</span>
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+    </article>
+</section>
+<section class="cl-modal" data-noToAndCCModal>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn" data-dismiss="modal" aria-hidden="true"></span>
+            </header>
+
+            <section class="cl-modal__body">
+                <header>
+                    <h1 class="cl-modal__title">{{=it.textContent.confirm}}</h1>
+                </header>
+                <div class="cl-modal__content">
+                    {{=it.textContent.noToMsg}}
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button ec-button ec-button__ok" data-btn="ok">{{=it.textContent.okay}}</span>
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+    </article>
+</section>
+<section class="cl-modal" data-discardemail>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn" data-dismiss="modal" aria-hidden="true" data-closemodal></span>
+            </header>
+            <section class="cl-modal__body">
+                <header>
+                    <h1 class="cl-modal__title">{{?it.textContent.warning}}{{=it.textContent.warning}}{{??}}Warning{{?}}</h1>
+                </header>
+                <div class="cl-modal__content">
+                  {{?it.textContent.warningMessage}} {{=it.textContent.warningMessage}}{{??}}Click Save to save changes or Discard to discard your email{{?}}
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button ec-button ec-button__cancel" data-btn="cancel">{{?it.textContent.discardChanges}}{{=it.textContent.discardChanges}}{{??}}Discard{{?}}</span>
+                        <span class="cl-button ec-button ec-button__ok" data-btn="ok">{{?it.textContent.saveAndContinue}}{{=it.textContent.saveAndContinue}}{{??}}Save{{?}}</span>
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+    </article>
+</section>

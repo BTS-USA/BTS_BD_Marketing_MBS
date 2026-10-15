@@ -1,0 +1,30 @@
+<div class="gwc-comments__cont" data-comment-id="{{=it.comment.Id}}">
+    <div class="gwc-comments__participantDetails"> 
+        <span class="gwc-comments__participantName">{{=it.comment.Name}}, </span>
+        <span class="gwc-comments__commentTime" data-comment-timeframe>{{=it.comment.CreatedOn}}</span>
+    </div>
+    <div class="gwc-comments__participantComment">
+        <span class="tip tip-up"></span>
+        <span>{{=it.comment.Body}}</span>
+        <div class="gwc-comments__replyCont" data-reply-cont>
+            <span class="cl-icon cl-icon--reply"></span>
+            <span class="gwc-comments__replyText" data-comment-replyText>{{=it.wizletInfo.content.replytext}}</span>
+            <span class="gwc-comments__replyCount"></span>
+        </div>
+        <div class="gwc-comments__replyContent" data-comment-replyBox>
+            <div class="gwc-comments__replyBody gwc-comments--hidden" data-comment-replyinput>
+                <textarea class="cl-textarea gwc-comments__replyArea" placeholder="{{=it.wizletInfo.content.replyplaceholder}}" data-input-replyBox></textarea>
+                <div class="cl-button gwc-comments__replybutton" data-reply-save>
+                {{=it.wizletInfo.content.replytext}}</div>
+            </div>
+            <div class="gwc-comments__replies" data-comment-replies>
+            </div>
+            <div class="gwc-comments__moreReply {{?it.comment.replies && it.comment.replies.length > 2}}gwc-comments__moreReply--show{{?}}" data-show-more-replies>
+                <span class="gwc-comments__moreReplyCont" data-view-all>
+                    <span class="gwc-comments__moreReplyText" data-view-all-text>{{=it.wizletInfo.content.viewallreplies}}</span>
+                    <span class="gwc-comments__moreReplyIcon cl-icon cl-icon--pointDown" data-morereplyicon></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

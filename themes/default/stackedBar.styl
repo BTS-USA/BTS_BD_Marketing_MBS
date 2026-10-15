@@ -1,0 +1,43 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Stacked Bar Component Styles
+.sbc
+    &-filters-container
+        color #fff
+        background-color #434343
+        padding 20px
+        margin 0 0 20px 0
+        overflow hidden
+    &-filter-container
+        float none
+        margin 0 0 15px 0
+        &:last-child
+            margin 0
+        @media (min-width: 768px)
+            float left
+            margin 0 70px 0 0
+    &-article
+        margin 0 0 10px 0
+    &-question,
+    &-answer
+        padding 25px 20px
+    &-question 
+        background-color $silver
+    &-answer
+        background-color $gray
+    &-bar-container
+        margin 0 0 10px 0
+        &:last-child
+            margin 0
+    &-bar
+        &__inner
+            float left
+            position relative
+    &-bubble
+        left 50%
+        transform translate(-50%,0)
+    &-filter-name
+        color white
+        margin 5px 0 0 0
+        font-size 1.2*$px

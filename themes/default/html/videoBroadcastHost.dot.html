@@ -1,0 +1,40 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="cc cl-component" data-videoBroadcast>
+
+            {{? it.texts}}
+            <header class="cc-header--main cl-header--main{{? it.texts.pointer == false}} cl-pointer--hidden{{?}}">
+                {{? it.texts.title}}
+                <h1 class="cc-header__title--main cl-header__title--main{{? !it.texts.description}} cl-margin--no{{?}}">
+                            {{=it.texts.title}}
+                        </h1> {{?}} {{? it.texts.description}}
+                <p class="cc-header__description--main cl-header__description--main">
+                    {{=it.texts.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <div class="cc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.texts && it.texts.instructions}}
+                    <div class="cc-instructions cl-instructions">
+                        <p class="cc-instructions__text cl-instructions__text">{{=it.texts.instructions}}</p>
+                    </div>
+                    {{?}}
+                </div>
+
+                <div class="main-container">
+                    <div id="videoContainer" class="video-container">
+                        <div id="hostDivider" class="hidden"></div>
+                    </div>
+                </div>
+                <div class="broadcast-controls-container">
+                    <span id="startStop" class="cl-button cc-button__start" data-video-start-broadcast="">{{! it.texts.start }}</span>
+                    <span id="publishVideo" class="cl-button cc-button__publish" data-video-toggle-video="">Video is on</span>
+                    <span id="publishAudio" class="cl-button cc-button__mute" data-video-toggle-audio="">Audio is on</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

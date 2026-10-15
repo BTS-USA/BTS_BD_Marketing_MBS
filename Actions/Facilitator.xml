@@ -1,0 +1,68 @@
+<Action>
+  <Component type="GroupDirectorComponent"><![CDATA[{
+  "templateInEvent": "html/as_groupDirector.dot",
+  "css": "Styles/as_groupDirector.css",
+  "trackQuestion": "GD_Facilitator",
+  "qandcVoteLimit": "1000",
+  "hideVoteCount": "true",
+  "refreshIntervalInSeconds": "5",
+  "voteCountLabel": "!{GD_voteCountLabel}",
+  "nextButtonLabel": "Next",
+  "showClientStatus": "false",
+  "menuOptions": [
+    {
+      "title": "!{GD_Button_1}",
+      "section": "Welcome_AS_SplashScreen",
+      "icon": "info"
+    },
+    {
+      "title": "!{GD_Activity1_Result}",
+      "section": "Activity1_AS_Moment_Result",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Activity2_Result}",
+      "section": "Activity2_AS_Moment_Result",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Activity3_Result}",
+      "section": "Activity3_AS_Ranking_Moment_Result",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Activity4_Result}",
+      "section": "Activity4_AS_Moment_Result",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Activity5_Result}",
+      "section": "Activity5_AS_Moment_Result",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Activity6_Wordcloud}",
+      "section": "Activity6_Result_MBS_Wordcloud",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Static_Leaderboard}",
+      "section": "Static_Leaderboard",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Progressive_Leaderboard}",
+      "section": "Progressive_Leaderboard",
+      "icon": "result"
+    },
+    {
+      "title": "!{ThankYou_AS_SplashScreen_button}",
+      "section": "ThankYou_AS_SplashScreen",
+      "icon": "info"
+    }
+  ],
+  "scope": [
+    "GD_Facilitator"
+  ]
+}]]></Component>
+</Action>

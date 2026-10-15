@@ -1,0 +1,147 @@
+@import "common-rules.styl"
+
+@keyframes star1
+    0%{
+    transform: rotate(-200deg);
+    opacity: 0
+    }
+
+    100%{
+    transform: translateZ(0);
+    opacity: 1;
+    }
+
+@keyframes row
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+    }
+
+    100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    }
+
+.hmcp
+    &-data
+        padding 0
+    &-table
+        border-radius $radius $radius 0 0
+        display 18px
+        background-color $white
+        border 1px solid $neutral-medium
+        &__thead, &__row
+            display table-row
+        &__th, &__td
+            text-align center
+            display table-cell
+            font-size inherit
+            word-break break-word
+            font-weight normal
+            b 
+                background-color $primary-medium
+                border-radius $radius
+                padding 6px 14px
+                color $darkgrey
+                font-weight normal
+        &__th
+            color $white
+            padding 0.9rem
+            border-right 1px solid $neutral-medium
+            border-bottom 1px solid $neutral-medium
+            &:last-child
+                border-bottom 0
+        &__td
+            color $darkgrey
+            border-right 1px solid $neutral-medium
+            border-bottom 1px solid $neutral-medium
+            &:first-child
+                min-width 5.75rem
+                white-space nowrap
+            &:last-child
+                border-right 0
+        &__thead
+            background $primary
+            color $white
+        &__row
+            animation-name row
+            animation-duration 2s
+            &:last-child
+                .hmcp-table__td, .hmcp-table__th
+                    border-bottom 0
+            .hmcp-table
+                &__td, &__th
+                    color $darkgrey
+                    padding 1rem
+                &__td
+                    font-weight normal
+            &.hide
+                display none
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4)
+                .hmcp-table__td
+                    b
+                        border 1px solid $primary-medium
+                        color $white
+                        font-weight bold
+                        position relative
+                        display inline-block
+                        margin-left 2.35rem
+                        margin-right 0
+                        &:before
+                            font-family 'fa-solid-900'
+                            position absolute
+                            // animation-name star1
+                            // animation-duration 4s
+                            // animation-delay 1s
+                            // animation-fill-mode both
+                            left -2.7rem
+                            top 50%
+                            width 1.9rem
+                            line-height 1
+                            text-align center
+                            transform translateY(-50%)
+                            
+            &:nth-child(2)
+                b
+                    &:before
+                        content '\f091'
+                        font-size 2rem
+                        color #ffc850
+            &:nth-child(3)
+                b
+                    &:before
+                        content '\f0a3'
+                        font-size 1.9rem
+                        color #d6d6d6
+            &:nth-child(4)
+                b
+                    &:before
+                        content '\f005'
+                        font-size 1.7rem
+                        color #c77841
+    &-reverse, &-rev
+        &-button
+            margin 0 0 0 5px !important
+            min-width auto
+            &--text
+                font-size 0
+            &:before
+                content '\f2ea'
+                font-family 'fa-solid-900'
+
+    .animation-container
+        background url('../images/logo-green.png')
+        background-size contain
+        background-position center
+        background-repeat no-repeat
+        height 18rem
+        margin 3rem 0
+        display none
+    &-progressive-leaderboard
+        &-refresh
+            margin-bottom 2rem
+

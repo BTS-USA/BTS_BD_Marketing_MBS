@@ -1,0 +1,100 @@
+﻿.wizletRanking #contentBox 
+{
+    float: none;
+	*float: left;
+}
+
+html .wizletRanking
+{
+	overflow: visible;
+	*overflow: auto;
+}
+
+
+.wizletRanking .ranking_TableDiv
+{
+  height: auto;
+	overflow: visible;
+}
+
+.wizletRanking #ranking_Table .ranking_RowOdd
+{
+	background:  url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_25.png');
+	height: auto;
+}
+
+.wizletRanking #ranking_Table .ranking_RowEven
+{
+		background:  url('/Wizer/Content/WizletResources/Shared/media/img/bg_white_25.png');
+		height: auto;
+}
+
+.wizletRanking #ranking_Table th
+{
+	background:  none;
+}
+
+.wizletRanking .answersTable td
+{
+	
+}
+
+.wizletRanking th
+{
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.wizletRanking .ranking_Cell_Headertext
+{
+	padding: 8px 0 8px 15px;
+}
+
+.wizletRanking .ranking_Cell_Text 
+{
+	font-size: 18px;
+	padding: 10px 0 10px 15px;
+	line-height: 20px;
+}
+
+.wizletRanking .ranking_rankInputBox
+{
+	line-height: 25px;
+	padding: 0px;
+	text-align: center;
+	vertical-align: middle;
+	width: 30px;
+	margin-left: 7px;
+}
+
+.wizletRanking .RankingWizlet
+{
+	height: 100%;
+	float: left;
+	width: 100%;
+}
+
+.wizletRanking #ranking_Table
+{
+	float: left;
+	width: 100%;
+}
+
+/*.wizletRanking .mainContent 
+{
+	
+	*margin-bottom:0px;
+	padding-bottom:15px;
+	*padding-bottom:35px;
+}*/ 
+
+.wizletRanking {
+    margin-bottom:20px;
+}
+/*
+.wizletRanking #sendContainer {
+    float:right;
+	margin-top:20px;
+	margin-right:1%;
+}
+*/

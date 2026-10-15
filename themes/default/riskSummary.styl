@@ -1,0 +1,151 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+.riskSummary
+    &__mainSlider
+        @media screen and (max-width 767px)
+            padding 10px
+    &__mainCont
+        position relative
+    &__mainWrapper
+        position relative
+        display block
+        clear both
+    &__col
+        padding 0 10px 20px 10px
+    &__titleHeader
+        padding 5px 0 10px 30px
+    &__riskTheme
+        width 8px
+        height 45px
+        background red
+        float left
+        margin-right 8px
+    &__riskThemeText
+        color #ccc
+        font-size 14px
+    &__title
+        color $silver
+        text-align center
+        font-size 24px
+        padding 40px 0 0 0
+        text-transform uppercase
+        clear both
+        @media screen and (max-width 767px)
+            padding 30px 0 0 0
+    &__like
+        flex 0 0 10%
+        &--checked          
+            color red
+        &--disabled
+            opacity 0.4
+            pointer-events none
+        &:before
+            cursor pointer
+    &__titleText
+        color $emerald
+        font-size 18px
+        @media screen and (max-width 767px)
+            padding 5px 0 10px 10px
+    &__text
+        color $silver
+        text-transform capitalize
+        padding 10px 0 10px 20px
+        @media screen and (max-width 767px)
+            padding 10px 0 10px 0
+    &__attributes
+        color $silver
+        padding 10px 0 10px 25px
+        font-size 14px
+        display flex
+        clear both
+        @media screen and (max-width 767px)
+            justify-content space-evenly
+            padding 0
+            margin 5px
+            font-size 13px
+    &__rankText
+        padding 20px 0 0 30px
+        color $silver
+        font-size 14px
+        clear both
+        @media screen and (max-width 767px)
+            padding 20px 0 0 10px
+    &__attr
+        margin 5px
+        @media screen and (max-width 767px)
+            margin 5px 5px 0 3px
+    &__attrCont
+        margin 0 10px 0 5px
+        @media screen and (max-width 767px)
+            margin 0
+    &__titleList
+        padding 10px 0
+        font-size 16px
+        display table
+        width 100%
+    &__lowRiskCont
+        margin 20px 20px 20px 30px
+    &__ideaText
+        display table-cell
+        width 95%
+    &__sequence
+        display table-cell
+        width 5%
+        padding 0 0 0 15px
+    &__tableCol
+        &:nth-child(even)
+            background #dadada
+            color gray
+        &:nth-child(odd)
+            background $mercury
+            color gray
+    
+    &__minMitCont
+        color $silver
+        margin 10px 0 0 20px
+        border 1px solid $tundora
+        @media screen and (max-width 767px)
+            margin 10px 0 0 0
+    &__minMitTable        
+        padding 10px 15px
+        &:nth-child(even)
+            background #dadada
+            color gray
+        &:nth-child(odd)
+            background $mercury
+            color gray
+    &__noStrategy
+        font-size 14px
+        padding 11px
+.dark-area 
+    background-color #666
+    padding 40px
+    margin 0 -40px 20px -40px
+    clear both
+
+
+.clearfix:before,.clearfix:after {content: " "; display: table;}
+.clearfix:after {clear: both;}
+.clearfix {*zoom: 1;}
+.c100.small
+    font-size 18px
+    &:hover
+        font-size 18px
+.c100:after, .c100:hover:after
+    top 0.156em
+    left 0.150em
+    width 0.69em
+    height 0.69em
+    background-color #182033
+.c100 .bar
+    border 0.15em solid $emerald
+    width 0.69em
+    height 0.70em
+.likeCount
+    float right
+    color #21252e
+    margin-right 5px
+.likeHeart
+    float right
+    margin-top 3px

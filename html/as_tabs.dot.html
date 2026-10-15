@@ -1,0 +1,238 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        {{? !it.version || it.version
+        < 2 }} <section class="tabComponent">
+            <article class="tabContainer">
+                {{?it.title}}
+                <div class="accordion_title">{{=it.title}}</div>{{?}} {{?it.type && it.type=='accordion'}}
+                <div class="accordion">
+                    {{~it.tabOptions :rootMenuItem:rootMenuIndex}} {{? rootMenuItem.create}}
+                    <div class="accordionItem" id="accordion{{=rootMenuIndex}}">
+                        <div class="accordionTitle"> <span class="tabTitle" {{?rootMenuItem.actionXML}}data-action="{{=rootMenuItem.actionXML}}" {{?}}> {{=rootMenuItem.title}} </span>
+                            <div class="imageContainer"></div>
+                        </div>
+                        <div class="accordionPage" id="accordionPage{{=rootMenuIndex}}">
+                        </div>
+                    </div>
+                    {{?}} {{~}}
+                </div>
+                {{??}}
+                <div class="tabComponentTabs hidden-xs">
+                    {{~it.tabOptions :rootMenuItem:rootMenuIndex}} {{? rootMenuItem.create}}
+                    <div class="tab" data-menuid="{{=rootMenuIndex}}">
+                        <span class="tabTitle" {{? rootMenuItem.actionXML}} data-action="{{=rootMenuItem.actionXML}}" {{?}} {{? rootMenuItem.children}} data-children="true" {{?}} data-timer="{{? rootMenuItem.hasTimer}}true{{??}}false{{?}}">
+                            {{? rootMenuItem.hasTimer}}
+                            {{=rootMenuItem.timerDuration}}
+                            {{??}}
+                            {{=rootMenuItem.title}}
+                            {{?}}
+                        </span> {{?rootMenuItem.children}} {{~rootMenuItem.children :childmenu:menuindex}} {{? childmenu.create}}
+                        <span class="arrow"></span> {{break;}} {{?}} {{~}} {{?}}
+                    </div>
+                    {{?}} {{~}}
+                </div>
+                <div class="tabComponentTabsMenu hidden-xs">
+                    {{~it.tabOptions :rootMenuItem:rootMenuIndex}} {{?rootMenuItem.children}}
+                    <ul>
+                        {{~rootMenuItem.children :submenu:menuIndex}} {{? submenu.create}}
+                        <li class="subMenu clearfix" data-menuid="{{=rootMenuIndex}}">
+                            {{?submenu.icon}}<img src="{{=submenu.icon}}" class="icon" />{{?}}
+                            <span class="menuLabel" {{?submenu.actionXML}} data-action="{{=submenu.actionXML}}" {{?}}>{{=submenu.title}}</span> {{?submenu.children}} {{~submenu.children :childmenu:menuindex}} {{? childmenu.create}}
+                            <div class="subMenuArrow"></div>
+                            {{break;}} {{?}} {{~}}
+                            <ul>
+                                {{~submenu.children :childmenu:menuindex}} {{? childmenu.create}}
+                                <li class="sub_subMenu">
+                                    <img class="icon" />
+                                    <span class="menuLabel" {{?childmenu.actionXML}} data-action="{{=childmenu.actionXML}}" {{?}}>{{=childmenu.title}}</span>
+                                </li>
+                                {{?}} {{~}}
+                            </ul>
+                            {{?}}
+                        </li>
+                        {{?}} {{~}}
+                    </ul>
+                    {{?}} {{~}}
+                </div>
+
+                <div class="tabComponentTabs-xs visible-xs">
+                    {{~it.tabOptions :rootMenuItem:rootMenuIndex}} {{? rootMenuItem.create}}
+                    <div>
+                        <div class="tab" data-menuid="{{=rootMenuIndex}}">
+                            <span class="tabTitle" {{? rootMenuItem.actionXML}} data-action="{{=rootMenuItem.actionXML}}" {{?}} {{? rootMenuItem.children}} data-children="true" {{?}} data-timer="{{? rootMenuItem.hasTimer}}true{{??}}false{{?}}">
+                                {{? rootMenuItem.hasTimer}}
+                                {{=rootMenuItem.timerDuration}}
+                                {{??}}
+                                {{=rootMenuItem.title}}
+                                {{?}}
+                            </span> {{?rootMenuItem.children}} {{~rootMenuItem.children :childmenu:menuindex}} {{? childmenu.create}}
+                            <span class="arrow"></span> {{break;}} {{?}} {{~}} {{?}}
+                        </div>
+                        <div class="tabComponentTabsMenu">
+                            {{?rootMenuItem.children}}
+                            <ul>
+                                {{~rootMenuItem.children :submenu:menuIndex}} {{? submenu.create}}
+                                <li class="subMenu" data-menuid="{{=rootMenuIndex}}">
+                                    {{?submenu.icon}}<img src="{{=submenu.icon}}" class="icon" />{{?}}
+                                    <span class="menuLabel" {{?submenu.actionXML}} data-action="{{=submenu.actionXML}}" {{?}}>{{=submenu.title}}</span> {{?submenu.children}} {{~submenu.children :childmenu:menuindex}} {{? childmenu.create}}
+                                    <div class="subMenuArrow"></div>
+                                    {{break;}} {{?}} {{~}}
+                                    <ul>
+                                        {{~submenu.children :childmenu:menuindex}} {{? childmenu.create}}
+                                        <li class="sub_subMenu" data-menuid="{{=rootMenuIndex}}">
+                                            <img class="icon" />
+                                            <span class="menuLabel" {{?childmenu.actionXML}} data-action="{{=childmenu.actionXML}}" {{?}}>{{=childmenu.title}}</span>
+                                        </li>
+                                        {{?}} {{~}}
+                                    </ul>
+                                    {{?}}
+                                </li>
+                                {{?}} {{~}}
+                            </ul>
+                            {{?}}
+                        </div>
+
+                    </div>
+                    {{?}} {{~}}
+                </div>
+                <div class="tabpageContainer">
+                    <div class="tabPage" id="tabPage">
+                    </div>
+                </div>
+                {{?}}
+
+
+            </article>
+            </section>
+            {{??}}
+            <section class="tc">
+                <article class="tc-container cl-component">
+                {{? it.header}}
+                    <header class="tc-header-main cl-header--main">
+                        {{? it.header.breadCrumbs}}
+                            <p class="tc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                        {{?}}
+                        {{? it.header.bgimage}}
+                         <div class="tc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                        {{?}}
+                        <div class="tc-header-wrapper cl-header-wrapper">
+                            {{? it.header.title}}
+                                <h1 class="ssc-title-main cl-header__title--main">{{=it.header.title}}</h1>
+                            {{?}}
+                            {{? it.header.description}}
+                                <p class="tc-description-main cl-header__description--main">{{=it.header.description}}</p>
+                            {{?}}
+                        </div>
+                    </header>
+                {{?}}
+                    {{? it.instructions}}
+                    <div class="tc__instructions cl__instructions">
+                        <p class="tc__instructions-text cl__instructions-text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}} {{?it.type && it.type=='accordion'}} {{? it.expandCollapseAll && it.expandCollapseAll.show}}
+                    <div class="tc-expandCollapseCont">
+                        <span class="tc-expandCollapse tc-expandCollapse__expand" data-expandcollapse>{{=it.expandCollapseAll.expandText}}</span>
+                        <div class="tc-expandCollapseSign expand" data-expandcollapsesign></div>
+                    </div>
+                    {{?}}
+                    <div class="tc-acctabs">
+                        {{~it.tabOptions :rootMenuItem:rootMenuIndex}} {{? rootMenuItem.create}}
+                        <div class="tc-acc__item" id="accordion{{=rootMenuIndex}}">
+                            <div class="tc-acc__label"> <span class="tc-acc__title" {{?rootMenuItem.actionXML}} data-action="{{=rootMenuItem.actionXML}}" {{?}}> {{=rootMenuItem.title}} </span>
+                                <div class="tc-acc__ico"></div>
+                            </div>
+                            <div class="tc-acc__page" id="accordionPage{{=rootMenuIndex}}">
+                            </div>
+                        </div>
+                        {{?}} {{~}}
+                    </div>
+                    {{??}}
+                    <div class="tc-bar tc-tabs-xs hidden-xs">
+                        {{~it.tabOptions :rootMenuItem:rootMenuIndex}} {{? rootMenuItem.create}}
+                        <div class="tc-bar__tab" data-menuid="{{=rootMenuIndex}}">
+                            <span class="tc-bar__title" {{? rootMenuItem.actionXML}} data-action="{{=rootMenuItem.actionXML}}" {{?}} {{? rootMenuItem.children}} data-children="true" {{?}} data-timer="{{? rootMenuItem.hasTimer}}true{{??}}false{{?}}">
+                            {{? rootMenuItem.hasTimer}}
+                            {{=rootMenuItem.timerDuration}}
+                            {{??}}
+                            {{=rootMenuItem.title}}
+                            {{?}}
+                        </span> {{?rootMenuItem.children}} {{~rootMenuItem.children :childmenu:menuindex}} {{? childmenu.create}}
+                            <span class="tc-bar__arrow arrow"></span> {{break;}} {{?}} {{~}} {{?}}
+                        </div>
+                        {{?}} {{~}}
+                    </div>
+                    <div class="tc-menu hidden-xs">
+                        {{~it.tabOptions :rootMenuItem:rootMenuIndex}} {{?rootMenuItem.children}}
+                        <ul>
+                            {{~rootMenuItem.children :submenu:menuIndex}} {{? submenu.create}}
+                            <li class="tc-submenu clearfix" data-menuid="{{=rootMenuIndex}}">
+                                {{?submenu.icon}}<img src="{{=submenu.icon}}" class="icon" />{{?}}
+                                <span class="tc-submenu__label" {{?submenu.actionXML}} data-action="{{=submenu.actionXML}}" {{?}}>{{=submenu.title}}</span> {{?submenu.children}} {{~submenu.children :childmenu:menuindex}} {{? childmenu.create}}
+                                <div class="tc-submenu__arrow arrow"></div>
+                                {{break;}} {{?}} {{~}}
+                                <ul>
+                                    {{~submenu.children :childmenu:menuindex}} {{? childmenu.create}}
+                                    <li class="tc-submenu__sub">
+                                        <img class="tc-submenu__ico" />
+                                        <span class="tc-submenu__sublabel" {{?childmenu.actionXML}} data-action="{{=childmenu.actionXML}}" {{?}}>{{=childmenu.title}}</span>
+                                    </li>
+                                    {{?}} {{~}}
+                                </ul>
+                                {{?}}
+                            </li>
+                            {{?}} {{~}}
+                        </ul>
+                        {{?}} {{~}}
+                    </div>
+
+                    <div class="tc-xs visible-xs">
+                        {{~it.tabOptions :rootMenuItem:rootMenuIndex}} {{? rootMenuItem.create}}
+                        <div>
+                            <div class="tc-bar__tab" data-menuid="{{=rootMenuIndex}}">
+                                <span class="tc-bar__title cl-xs-column-12" {{? rootMenuItem.actionXML}} data-action="{{=rootMenuItem.actionXML}}" {{?}} {{? rootMenuItem.children}} data-children="true" {{?}} data-timer="{{? rootMenuItem.hasTimer}}true{{??}}false{{?}}">
+                                {{? rootMenuItem.hasTimer}}
+                                {{=rootMenuItem.timerDuration}}
+                                {{??}}
+                                {{=rootMenuItem.title}}
+                                {{?}}
+                            </span> {{?rootMenuItem.children}} {{~rootMenuItem.children :childmenu:menuindex}} {{? childmenu.create}}
+                                <span class="tc-bar__arrow"></span> {{break;}} {{?}} {{~}} {{?}}
+                            </div>
+                            <div class="tc-menu">
+                                {{?rootMenuItem.children}}
+                                <ul class="tc-menu__list--bi cl-xs-column-12">
+                                    {{~rootMenuItem.children :submenu:menuIndex}} {{? submenu.create}}
+                                    <li class="tc-submenu" data-menuid="{{=rootMenuIndex}}">
+                                        {{?submenu.icon}}<img src="{{=submenu.icon}}" class="tc-bar__ico--bi" />{{?}}
+                                        <span class="tc-submenu__label  cl-xs-column-12" {{?submenu.actionXML}} data-action="{{=submenu.actionXML}}" {{?}}>{{=submenu.title}}</span> {{?submenu.children}} {{~submenu.children :childmenu:menuindex}} {{? childmenu.create}}
+                                        <div class="tc-submenu__arrow"></div>
+                                        {{break;}} {{?}} {{~}}
+                                        <ul class="tc-submenu__list--tri cl-xs-column-12">
+                                            {{~submenu.children :childmenu:menuindex}} {{? childmenu.create}}
+                                            <li class="tc-submenu--tri" data-menuid="{{=rootMenuIndex}}">
+                                                <img class="tc-submenu__ico--tri" />
+                                                <span class="tc-submenu__label--tri  cl-xs-column-12" {{?childmenu.actionXML}} data-action="{{=childmenu.actionXML}}" {{?}}>{{=childmenu.title}}</span>
+                                            </li>
+                                            {{?}} {{~}}
+                                        </ul>
+                                        {{?}}
+                                    </li>
+                                    {{?}} {{~}}
+                                </ul>
+                                {{?}}
+                            </div>
+                        </div>
+                        {{?}} {{~}}
+                    </div>
+                    <div class="tc-page__container">
+                        <div class="tc-page__page" id="tc-page__page">
+                        </div>
+                    </div>
+                    {{?}}
+
+
+                </article>
+            </section>
+            {{?}}
+    </div>
+</div>

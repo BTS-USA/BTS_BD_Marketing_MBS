@@ -1,0 +1,344 @@
+﻿.wizletEntry
+    position absolute
+    z-index 1
+    width 100%
+    /*min-height 100%*/
+    background-color #fff
+    -webkit-box-sizing border-box
+    -moz-box-sizing border-box
+    box-sizing border-box
+    min-height 100%
+
+    .noEntry
+        padding 15px
+        color #666
+
+    button, .recordbutton, .photobutton, .deleteVideobutton, .delete, .addCommentButton, input[type="submit"].save
+            cursor pointer
+            background-color #00adff
+            color #fff
+            background-image none
+            text-align left
+            padding 14px 22px 10px 22px
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            border none;
+        &.nextEntry
+            position: absolute;
+            bottom: 60px;
+            top: auto
+            left: auto
+            right: 52%
+        &.deleteVideobutton
+            float left
+            margin-top 10px
+
+    .recordbutton, .photobutton
+        left:0px
+
+    #lastSaved
+        color #333
+        background #fff2a8
+        margin 8px 15px
+
+    .remainingCharacters
+        color #666
+        text-align right
+        padding 6px 1%
+        font-weight normal
+        font-size 12pt
+
+    .entry
+        .field
+            -webkit-box-sizing border-box
+            -moz-box-sizing border-box
+            box-sizing border-box
+            font-weight bold
+            display block
+            width 95%
+            font-size 14pt
+            float left
+            clear left
+            font-size 12pt
+            font-weight normal
+            color #666
+            padding-left 5px
+            margin: 20px 2.5%;
+            
+            .hasTextarea
+                margin-left:initial;
+            
+
+            .label
+                font-size 11pt
+                font-weight bold
+                text-transform uppercase
+            .value
+                font-size 18pt
+                color #68B7D7
+
+            label
+                font-weight bold
+                font-size 10pt
+
+            textarea, input, select
+                float none
+                font-weight normal
+                font-size 12pt
+                display block
+                width 95%
+                width calc(100% \- 20px)
+                margin-top 6px
+                background-color: #E7E7E7;
+                border: none;
+                padding 10px
+
+        .mediaListBox
+            h1
+                display none
+            .videoPlayer
+                width 100%
+                // height auto
+            img
+                width 100%
+            #VideoPlayer
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 */
+                padding-top: 20%;
+                height: 0;
+
+                object 
+                   float: left;
+                   width: 100%;
+                   height: 100%;
+                   position: absolute;
+                   display: block;
+				    
+        .entryActions
+            list-style none
+            // bottom: 30px;
+            // position: absolute;
+            width 48%
+
+            li
+                float right
+                margin: 15px 0
+
+                .save
+                    -webkit-appearance default-button;
+                    -moz-appearance default-button;
+
+                .entryActionButtons
+
+                    .deleteEntry, .confirmDeleteEntry
+                        &[hidden]
+                            display none
+                        input
+                            position static
+
+
+
+    .designedButton
+        display none
+    .rated
+        height 100%
+        width: 95%;
+        margin: 10px 2.5%;
+    .entryLeft 
+            float left
+            width 50%
+     .entryRight
+            float right
+            width 50%
+        .field
+            &.hasInput 
+                font-size 14pt
+                width 95% 
+                font-weight normal
+                color #666     
+                margin-top 6px
+                input
+                    font-size 12pt
+                    width 48%
+                    text-transform none
+                    background-color #E7E7E7
+                    font-weight normal
+                    color #666
+                    padding-bottom 5px
+                    padding-top 6px
+                    padding-left 2%
+                    overflow-x hidden
+
+    .info.author
+        float left
+        clear left
+        color #333
+        padding-left 20px
+
+    .optional-image-container,
+    .ranking,
+    .commentsContainer
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+        width 96%
+        /* width calc(50% \- 20px) */
+        margin-top 10px
+        margin-bottom 20px
+        overflow hidden
+
+        img
+           display block
+           width 100%
+
+    .ranking
+        padding: 15px 2%;
+        background-color: #cae9f5
+        color: #426a7a
+        float: left
+        width: 96%
+
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            background-color: #508FA5;
+            height: 8px;
+            margin: 5%;
+            border-radius: 5px;
+            width: 90%;
+            border: 1px solid #307E99;
+            clear: both;
+            -webkit-appearance: none;
+        }
+        input[type='range']::-moz-range-track 
+            -webkit-appearance: none;
+            background-color: #508FA5;
+            height: 8px;
+            margin: 5%;
+            border-radius: 5px;
+            width: 90%;
+            border: 1px solid #307E99;
+            clear: both;
+            -webkit-appearance: none;
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            background-color: #666;
+            width:35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 1px 2px 3px rgba(0,0,0,0.6);
+            -ms-touch-action: none;
+            touch-action: none; 
+        }
+
+        .rightlabel, .leftlabel
+            display inline-block;
+            margin 6px 2% 12px 2%;
+            color #68b7d7;
+            text-transform uppercase;
+            font-size: 12px;
+
+        .rightlabel
+            float right
+        .leftlabel
+            float left
+
+        p.title
+            font-size: 11pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #666;
+            float: left;
+            margin:3px 2%;
+            width: 95%;
+        p.stats
+            font-size: 12pt;
+            margin-top: 6px;
+            font-weight: normal;
+            float: left;
+            width:95%;
+            margin:5px 2%;
+            .data
+                font-weight normal
+                color #426a7a
+        .dimension
+            margin-top: 16px;
+            font-size: 12pt;
+            font-weight: normal;
+            float: left;
+            width: 100%;
+            border-bottom: 1px solid #B9DCE9
+            p
+                font-size: 11pt;
+                font-weight: bold;
+                margin-bottom: 4px;
+                text-transform: uppercase;
+                clear both;
+                width: 95%;
+                margin: 0 2%;
+            .label
+                position relative
+                top -5px
+            input
+                width: 95%;
+                margin: 22px
+                display: inline-block;
+                margin: 2%;
+
+
+            .next
+                text 12pt
+
+    .optional-image-container
+        //Add a background image to this class in votestyle, to add a custom image to your pages with CSS.
+        //This is an easy way to hit multiple pages - list off the body class names, thenpath to this div. 
+        //Path that background image using an action-specific body class to assign an image to a specific page view.
+        //background-image url(/Wizer/Pages/Events/iLead1/images/title_bkg.jpg)
+
+        //Optional image can be added with XML too.  If present, the lines below pad and center it. 
+        text-align: center;
+
+
+    .commentsContainer
+        min-height 150px
+        width 96%
+        background-color #cae9f5
+        padding 15px
+        clear right
+        float left
+
+        .addComment
+            background-color:transparent;
+            background-color:#cae9f5;color:#426a7a;
+
+            textarea
+                float left
+                width 100%
+                height 80px
+            button, input
+                float right
+                margin-top 10px
+
+        .commentsDiv
+            width 100%
+            color: #426a7a;
+            table
+                width:100%;
+                border-top 1px solid #fff
+                margin-top: 15px
+                border-collapse collapse
+
+                td
+                    padding: 10px
+                    color #fff
+                tr:nth-child(even)  
+                    td
+                        background: rgba(255, 255, 255, 0.1)
+                        color #999
+                tr:nth-child(odd)
+                    td
+                        background: rgba(0, 0, 0, 0.2)
+

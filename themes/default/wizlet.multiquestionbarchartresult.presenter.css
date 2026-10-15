@@ -1,0 +1,126 @@
+.MultiQuestionBarChart_Table 
+{
+
+}
+
+.MultiQuestionBarChart_Header
+{
+	font-size: 22px;
+	font-weight: bold;
+	margin: 0px 0px 0px 0px;
+}
+
+.MultiQuestionBarChart_SubHeader
+{
+	width: 380px;
+	font-family: Verdana;
+	font-size: 14px;
+	font-weight: normal;
+	margin-top: 0px;
+	color: White;
+}
+
+.MultiQuestionBarChart_Legend1
+{
+	width: 390px;
+	font-family: Verdana;
+	font-size: 14px;
+}
+
+.MultiQuestionBarChart_Legend2
+{
+	font-family: Verdana;
+	font-size: 14px;
+}
+
+
+.MultiQuestionBarChart_SpacingCell
+{
+	width: 10px;
+	padding: 0px;
+}
+
+.MultiQuestionBarChart_LabelCell
+{
+	width: 300px;
+	vertical-align: middle;
+	text-align: right;
+	color: White;
+	padding: 3px;
+	background-color: #0a0a2c;
+	font-size: 14px;
+}
+
+.MultiQuestionBarChart_NoDataCell
+{
+	text-align: right;
+	font-size: 12px;
+}
+
+.MultiQuestionBarChart_BarCell
+{
+	padding: 3px;
+	background-color: #0a0a2c;
+}
+
+.MultiQuestionBarChart_BarTable 
+{
+	background-color: #0a0a2c;
+	border: 1px solid white;
+	width: 402px;
+}
+
+.MultiQuestionBarChart_BarRow
+{
+}
+
+.MultiQuestionBarChart_Cell
+{
+	padding: 0px;
+}
+
+.MultiQuestionBarChart_ValueText
+{
+	width: 100px;
+	padding: 3px;
+	font-size: 14px;
+}
+
+.MultiQuestionBarChart_ValueCell
+{
+	background-color: #C0A000;
+	font-size:1px;
+	height: 14px;
+	padding: 0px;
+}
+
+.MultiQuestionBarChart_FillCell
+{
+	height: 14px;
+	font-size:1px;
+}
+
+.MultiQuestionBarChart_BarSeparator 
+{
+	width: 400px;
+	height: 5px;
+	margin: 0px 5px 0px 5px;
+}
+.MultiQuestionBarChart_BarSeparatorCell 
+{
+	border-right: solid 1px white; 
+	border-left: solid 1px white;
+	font-size: 1px;
+}
+.MultiQuestionBarChart_BarLabelCell 
+{
+	text-align: center;
+	font-size: 10px;
+	padding: 0px;
+	color: White;
+}
+
+.MultiQuestionBarChart_LegendDiv 
+{
+	float: right;
+}

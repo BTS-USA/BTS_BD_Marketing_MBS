@@ -1,0 +1,26 @@
+﻿// import component library mixins and variables
+@import "shared/cl.styl"
+
+.wizletCountDownTimer
+   font-size: bigger
+   .timer00-05, .timer00-04, .timer00-03
+        background-color $treePoppy
+   .timer00-02, .timer00-01, .timer00-00
+        background-color $sunsetOrange
+        color white
+
+.cdt 
+    background-color #fff
+    max-width 1024px
+    margin 0 auto
+    padding 10px
+    &__text
+        font-size 1.2*$px
+        color $gray
+    &__timer
+        font-weight 600
+    &__timer, &__text
+        text-align center
+        float none
+        margin 0 auto
+        padding 0 5px

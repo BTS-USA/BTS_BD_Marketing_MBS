@@ -1,0 +1,87 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="irc cl-component">
+            {{? it.header}}
+                <header class="irc-header--main cl-header--main">
+                    {{? it.header.title}}
+                        <h1 class="irc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                            {{=it.header.title}}
+                        </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="irc-header__description--main cl-header__description--main">
+                            {{=it.header.description}}
+                        </p>
+                    {{?}}
+                </header>
+            {{?}}
+            <div class="irc-container cl-container">
+               <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <div class="irc-instructions cl-instructions">
+                            <p class="irc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                    <article class="irc-article hidden-xs">
+                        <div class="irc-data">
+                            {{ var width = (it.columnHeaders.length + 1) * 200 + 'px'; }}
+                            <div class="irc-table cl-table" style="width:{{=width}}">
+                                <div class="irc-table__thead">
+                                    <div class="irc-table__th--sticky js-set-height"><div class="irc-table__th"></div></div>
+                                    <div class="irc-table__th"><p class="irc-th-text cl-paragraph">User</p></div>
+                                    {{~it.columnHeaders :columnHeader:ch}}
+                                    <div class="irc-table__th"><p class="irc-th-text cl-paragraph">{{=columnHeader.title}}</p></div>
+                                    {{~}}
+                                </div>
+                                {{ var count = 1; }}
+                                {{~it.questionVotes.participationVotes :participation:qi}}
+                                <div class="irc-table__row {{? participation.class}}{{=participation.class}}{{?}}">
+                                    <div class="irc-table__td--sticky js-set-height">
+                                        <div class="irc-table__sign"><span class="irc-table__count">{{=count}}</span></div>
+                                    </div>
+                                    <div class="irc-table__td"><p class="irc-td-text cl-paragraph">{{=participation.participationName}}</p></div>
+                                    {{~participation.votes :vote:index}}
+                                    {{ var strClass = (index % 2 === 0) ? 'class=\'alternate\'' : ''; }}
+                                    <div class='irc-table__td'><p class="irc-td-text cl-paragraph">{{=vote}}</p></div>
+                                    {{~}}
+                                    {{ count++; }}
+                                </div>
+                                {{~}}
+                            </div>
+                        </div>
+                    </article>
+                    <article class="irc-article visible-xs">
+                        <div class="irc-table cl-table">
+                            <div class="irc-table__thead">
+                                <div class="irc-table__th cl-xs-cell-2"></div>
+                                <div class="irc-table__th cl-xs-cell-10">
+                                    <p class="irc-left cl-paragraph">User</p>
+                                </div>
+                            </div>            
+                            {{ var count = 1; }}         
+                            {{~it.questionVotes.participationVotes :participation:qi}}
+                                <div class="irc-table__row">
+                                    <div class="irc-table__td--serial cl-xs-cell-2">
+                                        <p class="">{{=count}}</p>
+                                    </div>
+                                    <div class="irc-table__td irc-left cl-xs-cell-10">
+                                        <h4 class="irc-participant">{{=participation.participationName}}</h4>
+                                        {{ var i = 0; }}
+                                        {{~it.columnHeaders :columnHeader:ch}}
+                                        <div class="irc-records">
+                                            <p class="irc-records__question">{{=columnHeader.title}}:</p>
+                                            <p class="irc-records__vote">{{=participation.votes[i]}}</p>
+                                        </div>
+                                        {{ i++; }}
+                                        {{~}}
+                                    </div>
+                                </div>
+                            {{ count++; }}
+                            {{~}}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿<div class="mpl-modal">
+    <div class="mpl-modal__close" data-participant-close-button>
+        <i class="cl-icon cl-icon--close" data-meetingparticipant-close-button></i>
+    </div>
+    <div class="mpl-modal__container">
+        <div class="mpl-modal__header">{{=it.content.participantlist}}</div>
+        <div class="mpl-modal__legandsContainer">
+            <div class="mpl-modal__lateJoinlabel">
+                <i class="cl-icon cl-icon--clock"></i>
+                <span>
+                    {{=it.content.latejoiners}}
+                </span>
+            </div>
+            <div class="mpl-modal__logoutlabel">
+            <i class="cl-icon cl-icon--logout"></i>
+            <span>{{=it.content.logoutjoiners}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="mpl-modal__holder">
+        {{?it.participants}} {{~it.participants :participant}}
+        <div class="mpl-modal__participantnameCont {{?participant.isLoggedIn == 'False'}}loggedout{{??}}loggedin{{?}} {{?participant.lateJoin == 'False'}}earlyJoin{{??}}lateJoin{{?}}"
+            data-participants>
+            <span class="mpl-modal__participantname">{{=participant.name}}</span>
+            <i class="cl-icon {{?participant.isLoggedIn == 'False'}}cl-icon--logout{{??}}{{?participant.isLoggedIn == 'True' && participant.lateJoin == 'True'}}cl-icon--clock{{?}}{{?}} {{?participant.lateJoin == 'False'}}earlyJoin{{??}}lateJoin{{?}}"></i></div>
+        {{~}} {{??}}
+        <div class="mpl-modal__participantname noparticipants" data-no-participants>{{=it.content.noparticipants}}</div>
+        {{?}}
+    </div>
+</div>

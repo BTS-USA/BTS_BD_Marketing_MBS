@@ -1,0 +1,53 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="cc cl-component">
+
+            {{? it.header}}
+            <header class="cc-header--main cl-header--main" data-columnchartheader>
+                {{? it.header.title}}
+                <h1 class="cc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="cc-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <section class="cc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="cc-instructions cl-instructions">
+                        <p class="cc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+
+                    <section class="cc-content cl-content" data-columnchartsection>
+                        <article class="cc-content-columnChart--container" data-columnchartholder>
+                        </article>
+                    </section>
+
+                    {{? it.votesAmount || it.average}}
+                    <footer class="cc-footer cl-footer">
+                        {{? it.votesAmount}}
+                        <div class="cc-stats cl-stats" data-columncharttotalvotes>
+                            <span class="cc-stats__text">{{=it.votesAmount.text}}</span>
+                            <span class="cc-stats__value" data-columncharttotalvotesval>{{=it.votesAmount.val}}</span>
+                        </div>
+                        {{?}}
+                        {{? it.average}}
+                        <div class="cc-stats cl-stats" data-columnchartavg>
+                            <span class="cc-stats__text">{{=it.average.text}}</span>
+                            <span class="cc-stats__value" data-columnchartavgval>{{=it.average.val}}</span>
+                        </div>
+                        {{?}}
+                    </footer>
+                    {{?}}
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

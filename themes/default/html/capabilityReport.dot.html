@@ -1,0 +1,69 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="crc cl-component" data-capabilityreportcomponent>
+
+            {{? it.header}}
+            <header class="crc-header--main cl-header--main" data-capabilityreportcomponentheader>
+                {{? it.header.title}}
+                <h1 class="crc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="crc-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <div class="crc-container cl-container">
+                <div class="cl-xs-column-12 cl-row cl-noLeft cl-noRight">
+                    <div class="cl-row crc-body cl-xs-column-12 cl-noLeft cl-noRight">
+                        <header class="crc-capability__header cl-header--article">
+                            <h2 class="crc-capability__title cl-header__title--artice">{{=it.capability.title}}</h2>
+                        </header>
+                        <div class="crc-capability__fields cl-table">
+                            <div class="crc-capability__row cl-table-row">
+                                <div class="crc-capability__label-cell cl-xs-cell-3">
+                                    <span class="crc-capability__proficiency-label">
+                                        {{=it.capability.proficiencyLabel}}
+                                    </span>
+                                </div>
+                                {{?it.capability.proficiency}}
+                                <div class="crc-capability__proficiency-result crc-capability__proficiency-result--editable crc-capability__proficiency-result--level{{=it.capability.proficiency}} crc-capability__value-cell cl-xs-cell-9" data-proficiencyresult>{{=it.capability.proficiencyResult[it.capability.proficiency-1].text}}</div>
+                                {{??}}
+                                <div class="crc-capability__proficiency-result crc-capability__proficiency-result--editable crc-capability__proficiency-result--level0 crc-capability__value-cell cl-xs-cell-9" data-proficiencyresult></div>
+                                {{?}}
+                            </div>
+                            <div class="crc-capability__row cl-table-row">
+                                <div class="crc-capability__label-cell cl-xs-cell-3">
+                                    <span class="crc-capability__individual-label">
+                                        {{=it.capability.individualLabel}}
+                                    </span>
+                                </div>
+                                {{?it.capability.proficiency}}
+                                <div class="crc-capability__individual-feedback crc-capability__individual-feedback--editable crc-capability__value-cell cl-xs-cell-9" data-individualfeedback data-binding="individualFeedback" data-render="{{=it.bindings["individualFeedback"].render}}"></div>
+                                {{??}}
+                                <div class="crc-capability__individual-feedback crc-capability__individual-feedback--editable crc-capability__value-cell cl-xs-cell-9" data-individualfeedback></div>
+                                {{?}}
+                            </div>
+                            <div class="crc-capability__row cl-table-row">
+                                <div class="crc-capability__label-cell cl-xs-cell-3">
+                                    <span class="crc-capability__exercise-label">
+                                        {{=it.capability.exerciseLabel}}
+                                    </span>
+                                </div>
+                                {{?it.capability.proficiency}}
+                                <div class="crc-capability__exerciseFeedback crc-capability__exerciseFeedback--editable crc-capability__value-cell cl-xs-cell-9" data-exercisefeedback data-binding="exerciseFeedback" data-render="{{=it.bindings["exerciseFeedback"].render}}"></div>
+                                {{??}}
+                                <div class="crc-capability__exerciseFeedback crc-capability__exerciseFeedback--editable crc-capability__value-cell cl-xs-cell-9" data-exercisefeedback></div>
+                                {{?}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

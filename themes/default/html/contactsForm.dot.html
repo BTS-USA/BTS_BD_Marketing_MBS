@@ -1,0 +1,21 @@
+﻿{{~it.layout.cols :col:cindex}}
+<article class="coc-form__col coc-form__col-{{=it.layout.cols.length}}">
+    {{~col :section:sindex}}
+
+    <div class="coc-form__container ">
+        <div class="coc-form__infotitle">{{!section.section}}</div>
+        <div>
+            {{~section.fields :field:findex}}
+            <div class="coc-form__field {{? it.contact && it.contact.original && !it.contact.isTemplate && it.contact[field.field] != it.contact.original[field.field]}}coc--modified{{?}}">
+                <span class="coc-form__fieldlabel">{{!field.label}}</span>
+                <span class="coc-form__fieldinput">
+                    <textarea class="cl-form__text coc-textbox" rows="1" data-autoresize data-field="{{!field.field}}" {{?it.isReadOnly}} readonly {{?}}>{{?it.contact}}{{!it.contact[field.field]}}{{?}}</textarea>
+                </span>
+            </div>
+            {{~}}
+        </div>
+    </div>
+
+    {{~}}
+</article>
+{{~}}

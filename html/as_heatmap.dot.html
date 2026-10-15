@@ -1,0 +1,88 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="hmc cl-component">
+            {{? it.header}}
+                <header class="hmc-header--main cl-header--main">
+                    {{? it.header.breadCrumbs}}
+                        <p class="hmc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="hmc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="hmc-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                            <h1 class="hmc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                                {{=it.header.title}}
+                            </h1>
+                        {{?}}
+                        {{? it.header.description}}
+                            <p class="hmc-header__description--main cl-header__description--main">
+                                {{=it.header.description}}
+                            </p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+            <div class="hmc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <!-- Instructions -->
+                    <div class="hmc-instructions cl-instructions">
+                        <p class="hmc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+                    <!-- Desktop Table -->
+                    <div class="hmc-content cl-content">
+                        <article class="hmc-article cl-article">
+                            <div class="hmc-data">
+                                <div class="hmc-table cl-table">
+                                    <div class="hmc-table__thead">
+                                        {{? it.rankLabel}}
+    									<div class="hmc-table__th rank">{{=it.rankLabel}}</div>
+    									{{?}}
+                                        {{~it.heatmapData.columnHeaders: label: index}}
+                                        {{? label != ""}}
+    									<div class="hmc-table__th">{{=label}}</div>
+    									{{??}}
+    									<div class="hmc-table__th"></div>
+    									{{?}}
+                                        {{~}}
+                                    </div>
+                                    {{~it.heatmapData.rows: row: oIndx}}
+                                    {{? !it.skipTeams || oIndx >= it.skipTeams}}
+                                    <div class="hmc-table__row {{?row.myScore}}{{=row.myScore}}{{?}}">
+                                        {{?it.rankLabel}}
+                                        <div class="hmc-table__th">{{=oIndx+1}}</div>
+                                        {{?}}
+                                        {{?it.teamNumber && it.direction == "VERTICAL"}}
+                                        <div class="hmc-table__th">{{=row.teamNumber}}</div>
+                                        {{?}}
+                                        <div class="hmc-table__th">{{=row.header}}</div>
+                                        {{~row.data: data: index}}
+                                        {{? data.isAlphabet}}
+                                            <div class='hmc-table__td {{?data.cls}}{{=data.cls}}{{?}}'>{{?it.showValues}}
+                                             {{?data.value == 1}}A
+                                             {{??data.value == 2}}B
+                                             {{??data.value == 3}}C
+                                             {{??data.value == 4}}D
+                                             {{??data.value == 5}}E
+                                             {{??data.value == 6}}F
+                                             {{??data.value == 7}}G
+                                             {{??data.value == 8}}H{{?}}
+                                        {{?}}</div>
+                                        {{??}}
+                                            <div class='hmc-table__td {{?data.cls}}{{=data.cls}}{{?}}'>{{?it.showValues}} {{=data.value}} {{?}}</div>
+                                        {{?}}
+                                        {{~}}
+                                    </div>
+                                    {{?}}
+                                    {{~}} 
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

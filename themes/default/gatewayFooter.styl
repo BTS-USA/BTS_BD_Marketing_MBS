@@ -1,0 +1,162 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+$iconcolor = #87c530
+$textColor = #1e1e1e
+$headerBackground = #eeeeee
+$gray = #888888
+$lightgray = #CECECE
+
+
+.gwf
+    background-color $headerBackground
+    width 100%
+    overflow hidden
+    padding 5px
+    &-header
+        padding 15px 20px 20px 15px
+        color $textColor
+        font-size 14px
+    &-content
+        padding 0 10px 10px 20px
+        overflow hidden
+        &__parentCO
+            width 15%
+            float left
+            padding 10px
+            color $textColor
+            &Icon
+                display block
+                margin auto
+                width 85px
+                height 85px
+            &Title
+                text-align center
+                font-size 20px
+                font-weight bold
+                text-transform uppercase
+            @media screen and (max-width 990px)
+                width 100%
+        &__activityStatus
+            width 85%
+            float left
+            padding 40px 10px 10px 10px
+            overflow-x auto
+            @media screen and (max-width 990px)
+                width 100%
+                padding 20px 10px 10px 10px
+
+        &__activityDiagram
+            display table
+
+        &__activityText
+            padding 20px 0 0 0
+            display table
+
+        &__line
+            width 100%
+            height 1px
+            border-top 1px solid $gray
+            position relative
+            top 14px
+
+        &__status
+            overflow-x auto
+            padding 0 0 40px 0
+			
+        &__placeHolder
+            display block
+            margin auto
+            width 85px
+            height 30px
+
+        &__disabled
+            pointer-events none
+            cursor default             
+
+    &-cos
+        min-width 180px
+        display table-cell
+        &-text
+            min-width 180px
+            max-width 180px
+            padding 0 10px 0 0
+            display table-cell
+            color $textColor
+            font-size 14px
+
+    &-co
+        position relative
+        background $headerBackground
+        &.notStarted
+            width 26px
+            height 26px
+            border-radius 50%
+            border 3px solid $gray
+        &.completed:before
+            color $iconcolor
+            font-size 1.7rem
+        &.visited:before
+            color $iconcolor
+            font-size 1.7rem
+        &.navigationEnabled
+            cursor pointer
+        &.locked
+            pointer-events none
+            width 27px
+            height 27px
+            background-color $gray
+            border-radius 50%
+            &:before
+                position absolute
+                top calc(50% - 9px)
+                left calc(50% - 7px)
+                color $lightgray
+                @media screen and (max-width 1024px)
+                    left calc(50% - 5px)
+                
+
+        &-tooltip
+            position absolute
+            display inline-block
+            margin 5px 0px
+            cursor pointer
+            
+        &-tooltipContent
+            &:before
+                color $iconcolor
+                font-size 1.2rem
+        
+        &-tooltiptext
+            visibility hidden
+            min-width 120px
+            background-color $iconcolor
+            color #fff
+            padding 10px
+            position absolute
+            z-index 1
+            bottom 125%
+            left 50%
+            margin-left -60px
+            opacity 0
+            transition opacity 1s
+            
+            
+        &-tooltip:hover &-tooltiptext
+            visibility visible
+            opacity 1
+            font-size 14px
+        
+            
+        // &-tooltip &-tooltiptext::after
+        //     content ""
+        //     position absolute
+        //     top 100%
+        //     left 50%
+        //     margin-left -5px
+        //     border-width 5px
+        //     border-style solid
+        //     border-color #555 transparent transparent transparent
+
+        
+            

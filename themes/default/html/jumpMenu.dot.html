@@ -1,0 +1,20 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <div class="JumpMenuWizlet">
+            {{? it.title}}
+                <h1>{{=it.title}}</h1>
+            {{?}}
+            <div id="description" class="description">
+                {{=it.description || ""}}
+            </div>
+            <div class="JumpMenuContainer">
+                {{~it.menuItems :item:index}}
+                    {{? item.remove}}
+                    {{??}}
+                <a type="button" class="jumpMenuItem textButton {{=item.css || ''}}" data-navigate="click" {{=item.data}} value="{{=item.title}}" id="JumpMenu{{=index}}" name="JumpMenu{{=index}}">{{=item.title}}</a>
+                    {{?}}
+                {{~}}
+            </div>
+        </div>
+    </div>
+</div>

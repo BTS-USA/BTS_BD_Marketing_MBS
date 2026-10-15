@@ -1,0 +1,820 @@
+﻿// import component library mixins and variables
+@import "shared/cl.styl"
+
+
+
+.xdsoft_datetimepicker 
+    .xdsoft_timepicker
+        width 85px
+        .xdsoft_time_box 
+            .xdsoft_time
+                font-size 1.2*$px
+                height inherit
+        .xdsoft_next, .xdsoft_prev
+            margin-left 27px
+.cc
+    height 100vh
+    position relative
+    overflow hidden
+    @media (min-width 768px)
+        max-width 1024px // for screens larger then 1024px (ipad) screen will show background
+        margin 0 auto
+        height calc(100vh - 120px)
+    .cl-vp[min-width~="768px"] &
+        max-width 1024px // for screens larger then 1024px (ipad) screen will show background
+        margin 0 auto
+        height calc(100vh - 120px)
+    // controls
+    &-controls
+        background-color $cerulean
+        &__title
+            color #fff
+            font-size 2*$px
+            font-weight 400
+            &::before
+                font-family "clIcons"
+                content '\f101'
+                font-size 2.4*$px
+                padding 0 5px 0 0
+                vertical-align bottom
+        &__group
+            float right
+            background-color $codGray
+            position relative
+            top -55px
+            @media (min-width 768px)
+                top 0
+            .cl-vp[min-width~="100px"] &
+                top -55px
+        &__button
+            display inline-block
+            line-height 3.8em
+            float left
+            width 20%
+            height 55px
+            border-left 1px solid $tundora
+            text-align center
+            &:first-child
+                border 0
+                @media (min-width 768px)
+                    border-left 1px solid $tundora
+                .cl-vp[min-width~="100px"] &
+                    border 0
+                .cl-vp[min-width~="768px"] &
+                    border-left 1px solid $tundora
+                    top -55px
+            &::before
+                font-family "clIcons"
+                color #fff
+                font-size 3*$px
+                vertical-align bottom
+            &--email
+                &::before
+                    content '\f102'
+            &--calendar
+                &::before
+                    content '\f101'
+            &--flag
+                &::before
+                    content '\f104'
+            &--contacts
+                &::before
+                    content '\f106'
+            &--folder
+                &::before
+                    content '\f105'
+            &--selected
+                background-color $cerulean
+        &__header
+            position relative
+            top 55px
+            @media (min-width 768px)
+                top 0
+            .cl-vp[min-width~="100px"] &
+                top 55px
+    &-container
+        padding 0px 10px 0px 10px
+    &-lp
+        background-color $silver
+        height calc(100% - 55px)
+        position absolute
+        top 0
+        z-index 1
+        overflow auto
+        transition(all 0.25s ease)
+        @media (min-width 768px)
+            z-index 1
+            position relative
+            left 0
+            top 0
+        .cl-vp[min-width~="100px"] &
+            position absolute
+            top 0
+            z-index 1
+            transition(all 0.5s ease)
+        .cl-vp[min-width~="768px"] &
+            z-index 1
+            position relative
+            left 0
+            top 0
+        .cl-mobile &
+            width 100%
+            background-color $silver
+            height calc(100% - 55px)
+            position absolute
+            top 0px
+            z-index 1
+            overflow auto
+            transition(all 0.25s ease)
+        &__addnewcontainer
+            font-size 1.4*$px
+            text-transform uppercase
+            height 30px
+            margin 15px 15px
+            &--label
+                cursor pointer
+        &__control
+            @media(max-width: 768px)
+                &-inactive
+                    display none
+            .cl-vp[min-width~="768px"] &
+                    display none
+            .cl-vp[min-width~="100px"] &
+                    display block
+            &--picker
+                display none
+            &--tz
+                text-align center
+                background-color $tundora
+                padding 5px 15px
+                font-size 1.4*$px
+                text-transform uppercase
+                color #fff
+                height 30px
+            .pika-button
+                height 100%
+                display block !important
+            .pika-single
+                width 100%
+                background-color transparent
+                border-bottom Solid 1px $gray
+                border-width 0 0 1px 0
+                padding 0 0 20px 0
+                font-family inherit
+                margin-bottom 20px
+                font-weight 400
+                .pika-title
+                    background-color $tundora
+                    padding 0 15px
+                    .pika-select
+                        display none
+                    .pika-next
+                    .pika-prev
+                        background none
+                        text-indent 0
+                        opacity 1
+                        width 15px
+                        height 25px
+                        font-family "clIcons"
+                        display inline-block !important
+                        vertical-align middle
+                        line-height 1
+                        font-weight normal
+                        font-style normal
+                        speak none
+                        text-decoration inherit
+                        text-transform none
+                        text-rendering auto
+                        -webkit-font-smoothing antialiased
+                        -moz-osx-font-smoothing grayscale
+                        cursor pointer
+                        
+                        &:before
+                            color #fff
+                            padding 5px 3px
+                            font-size 1.2*$px
+                    .pika-prev:before
+                        content "\f111"
+                    .pika-next:before
+                        content "\f112"
+                .pika-label
+                    background-color transparent
+                    color #fff
+                    font-weight inherit
+                    padding 4px 3px 0
+                .pika-table
+                    width calc(100% - 30px)
+                    margin 0 15px
+                    td
+                        vertical-align top
+                        height 43px
+                    th
+                        color #1e1e1e
+                        border-bottom 1px solid #fff
+                        abbr[title]
+                            border none
+                            text-decoration none
+                .pika-button
+                    text-align center
+                    background-color transparent
+                    color $tundora
+                    font-size 1.6*$px
+                    padding 0 0 3px
+                    max-width 43px
+                    margin 0 auto
+                .no-padding
+                    padding 0
+                .is-today .pika-button
+                    color $cerulean
+                .is-today .pika-button:hover
+                    border-radius(50%  !important)
+                    color $cerulean !important /*important is added to override the Pikaday css*/
+                .is-selected .pika-button
+                    background-color $cerulean
+                    border-radius(50%)
+                    color #fff
+                    box-shadow none
+                .pika-button:hover /*important is added to override the Pikaday css*/
+                    color inherit !important 
+                    background none !important
+                .is-selected .pika-button:hover /*important is added to override the Pikaday css*/
+                    color #fff !important    
+                    background #00adef !important
+                    border-radius(50% !important)
+        
+    &-rp
+        background-color #fff
+        color $tundora
+        height calc(100% - 55px)
+        position absolute
+        overflow hidden
+        top 0
+        right 0
+        z-index 5
+        transition(all 0.5s ease)
+        @media (min-width 768px)
+            z-index 0
+            position absolute
+            right 0
+            top 0
+        @media (min-width 768px)
+            z-index 0
+            position relative
+            right 0
+            top 0
+        .cl-vp[min-width~="100px"] &
+            z-index 5
+            position absolute
+            right 0
+            left 0
+            top 0
+            transition(all 0.5s ease)
+        .cl-vp[min-width~="768px"] &
+            z-index 0
+            position relative
+            right 0
+            top 0
+        .cl-mobile &
+            z-index 5
+            right inherit
+            top 0px
+            width 100%
+            transition(all 0.5s ease)
+        &--collapse
+            right -100%
+            transition(all 0.5s ease)
+            .cl-mobile &
+                left 100%
+            @media (min-width 768px)
+                left auto
+            .cl-vp[min-width~="100px"] &
+                left 100%
+                transition(all 0.5s ease)
+            .cl-vp[min-width~="768px"] &
+                left 0
+        &--open
+            right 0
+            transition(all 0.5s ease)
+            .cl-mobile &
+                right 0 
+                transition(all 0.5s ease) 
+        &__currDate
+            background-color $gray
+            padding 4px 15px 5px
+            color $mercury
+            height 30px
+        &__back
+            display block
+            float left
+            margin-right 10px
+            font-size 1.2*$px
+            line-height 22px
+            @media (min-width 768px)
+                display none
+            .cl-vp[min-width~="100px"] &
+                display block
+            .cl-vp[min-width~="768px"] &
+                display none
+            .cl-mobile &
+                display block
+            &:before
+                font-family "clIcons"
+                content "\f111"
+                font-size 1.2*$px
+                margin-right 1px
+        &__title
+            display inline-block
+            font-weight 100
+            font-size: 1.4*$px
+        &__slotlist
+            padding 5px
+            height calc(100% - 78px)
+            overflow auto
+            @media (min-width 768px)
+                padding 5px 15px
+            .cl-vp[min-width~="768px"] &
+                padding 5px 15px
+            .cl-vp[min-width~="100px"] &
+                padding 5px
+        &__hourholder
+            border-top 1px solid white
+            position relative
+        &__timelabel
+            position absolute
+            font-size 1.2*$px
+            top 0px
+            left 0px
+        &__timeslots
+            height 30px
+            border-top 1px solid $mercury
+            padding 0 0 0 40px
+            -webkit-transition all 200ms ease-out 
+            -moz-transition all 200ms ease-out 
+            -o-transition all 200ms ease-out 
+            transition all 200ms ease-out 
+            @media (min-width 768px)
+                padding 0 0 0 40p
+            .cl-vp[min-width~="768px"] &
+                padding 0 0 0 40p
+            .cl-vp[min-width~="100px"] &
+                padding 0 0 0 40px
+        &__timeslots:first-of-type
+            border-top 1px solid $tundora
+        .cl-mobile &
+            width 100%
+    &-videobox
+        .OT_widget-container
+            position relative
+            padding-top 0
+            padding-bottom 80%
+            height 0 !important
+        .OT_subscriber
+            .OT_bar
+                background rgba(0,0,0,0.1)
+        &__screen
+            position relative
+            padding 10px
+        &__wrapper
+            width 100%
+            padding 5px
+            padding-bottom 5%
+            position relative
+        &__subscriber
+            width 100%;
+            min-width 300px;
+            z-index 10;
+            border-radius 0
+            display -webkit-flex
+            display flex
+            -webkit-justify-content center
+            justify-content center
+            flex-wrap wrap
+            &-wrapper
+                min-height 100px
+            .OT_subscriber
+                max-width 320px
+                min-width 300px
+                margin 2px
+                border 1px solid #000
+                width 35%
+        &__publisher
+            width 20%
+            min-width 180px
+            max-width 240px
+            z-index 100
+            margin auto
+    &-videobox-buttons
+        position absolute
+        bottom 0
+        width 100%
+        z-index 500
+        text-align center
+        border-top 1px solid $silver
+        background-color $mercury
+        padding 10px
+    &-videobox-message
+        position relative
+        color gray
+        margin-top 200px
+        min-width 160px
+        &::before
+            font-family "clIcons"
+            content "\f122"
+            display inline-block
+            width 100%
+        &--end
+            padding 45px 0
+            text-align center
+            color gray
+            &::before
+                font-family "clIcons"
+                content "\f129"
+                display inline-block
+                padding 0 15px
+                font-size 1.4rem
+                position relative
+                top 3px
+    &-outerform
+        margin 10px 15px 0
+    &-innerform
+        @media (min-width 768px)
+            .tbcontainer:nth-child(2)
+                margin-right 4px
+        .cl-vp[min-width~="768px"] &
+            .tbcontainer:nth-child(2)
+                margin-right 4px
+        &::after
+            content " "
+            clear both
+            display table
+        &--hide
+            display none
+    &-button
+        width 85px
+        &__holder
+            clear both
+            text-align right
+            display table
+            width 100%
+        &__ok
+            button($apple)
+        &__cancel
+            button($monza)
+            margin-right 5px
+        &__call
+            button($monza)
+        &__mute
+            button($apple)
+            &::before
+                font-family "clIcons"
+                content "\f12a"
+                display inline-block
+                padding 0 5px 0 0
+        &__unmute
+            button($monza)
+            &:before
+                font-family "clIcons"
+                content "\f12b"
+                font-size
+                display inline-block
+                padding 0 5px 0 0
+        &__stop
+            button($tundora)
+            &::before
+                font-family "clIcons"
+                content "\f129"
+                display inline-block
+                padding 0 5px 0 0
+
+    &-form
+        &__row
+            margin 0px 0px 5px 0px
+            padding 0 3px 0 0
+            display table
+            width 100%
+            float left
+            &--half
+                width 50%
+                & ~ &
+                    width calc(50% - 2px)
+                    padding 0 0 0 3px
+        //text box
+        &__tblabel
+            font-style italic
+            background-color #fff
+            color $silver
+            padding 0 5px
+            font-size 1.4*$px
+        &__tbbox
+            width 100%
+
+        &__tbfield
+            border none
+            font-size 1.4*$px
+            placeholder-text($silver)
+
+        &__icon
+            font-family "clIcons"
+            display inline-block
+            vertical-align middle
+            line-height 1.4em
+            &--addnew
+            &--datepic
+            &--clock
+                &:before
+                    background-color $cerulean
+                    color #fff
+                    text-align center
+                    height 33px
+                    width 30px
+                    float left
+                    font-size 2.2*$px
+                    line-height 1.2em
+            &--addnew
+                font-size 1.3*$px
+                &:before
+                    content:"\f11e"
+                    padding 3px
+                    margin 0 5px 0 0
+                    height 100%
+            &--datepic
+                &:before
+                    content:"\f101"
+                    padding 5px 3px 6px
+            &--clock
+                &:before
+                    content:"\f11b"
+                    padding 5px 3px 6px
+        &__cell
+            display table-cell
+    /*&-addnewinner
+        margin-right 5px
+        width 25%
+        &:last-child
+            margin-right 0px
+        &__date
+            width 48%*/
+    &__eventholder
+        z-index 1
+        overflow hidden
+        position relative
+        float left
+        padding 0 1px 1px 0
+        width 100% /*default width, will be changed from dynamically*/
+        min-width 62px
+        -webkit-user-select none
+        -moz-user-select none
+        -ms-user-select none
+        user-select none
+        &--reduce-margin
+        &--expanded
+            overflow visible
+            z-index 1000
+            box-shadow( 1px 2px 6px 0px rgba(0,0,0,0.4))
+            border 1px solid white
+            transition(all 0.25s ease)
+        &:last-child
+            padding 0 2px 0 0
+        .big_Header
+            min-height 60px
+    &-view
+        color #ffffff
+        font-size 1.4*$px
+        padding 3px 10px
+        &__header
+            background-color $cerulean
+            min-height 30px
+            overflow hidden
+            text-overflow ellipsis
+            padding 3px 3px 3px 10px
+            &--received
+                background-color $pickledBlueWood
+        &__headerleft
+            float left
+            max-width calc(100% - 85px)
+            &--auto-width
+                width auto
+            &--hide-overflow
+                overflow hidden
+                text-overflow ellipsis
+                white-space nowrap
+        &__headerright
+            float right
+            max-width 120px
+            text-align right
+        &__title
+            font-size 1.6*$px
+            font-weight 700
+            float left
+            padding 0 10px 0 0
+            overflow: hidden;
+            text-overflow ellipsis
+            max-width 100%
+        &__description
+            font-size 1.6*$px
+            font-weight 100
+        &__hidden
+            display none
+        &__detailsbox
+            background-color $deepCerulean
+            overflow hidden
+            &::after
+                content ""
+                clear both
+                display table
+            &--expanded
+                overflow visible
+                height auto !important
+                padding 5px 10px
+            &--show
+                display block
+            &--received
+                background-color $cerulean
+        &__detailsdiv, &__organizerdiv
+            padding 10px 0 0        
+        &__icon
+            font-family "clIcons"
+            display inline-block
+            vertical-align middle
+            line-height 1
+            font-weight normal
+            font-style normal
+            speak none
+            text-decoration inherit
+            text-transform none
+            text-rendering auto
+            -webkit-font-smoothing antialiased
+            -moz-osx-font-smoothing grayscale
+            cursor pointer
+            &--edit
+            &--delete
+            &--video
+            &--more
+                &:before
+                    background-color $mercury
+                    color $cerulean
+                    padding 3px 1px
+                    text-align center
+                    height 24px
+                    width 100%
+                    border-radius 4px
+                    -moz-border-radius 4px
+                    -webkit-border-radius 4px
+                    font-size 1.8*$px
+                    display inline-block
+                    margin-right 3px
+            &--video
+                &:before
+                    content "\f122"
+            &--more
+                &:before
+                    content "\f11d"
+            &--edit
+                &:before
+                    content "\f11c"
+            &--delete
+                &:before
+                    content "\f115"
+                    font-weight 700
+            &--hidden
+                display none
+        &__details
+            line-height 1.5em
+            padding 0 0 5px 0
+            display block
+            &--hide
+                display none
+        &__button
+            font-size 1.2*$px
+            line-height 2em
+            text-align center
+            text-transform uppercase
+            padding 5px 0
+            top -5px
+            position relative
+            color $mercury
+            float right
+            display inline-block
+            width 16%
+            height 32px
+            border-left 1px solid $mercury
+            cursor pointer                
+            &--active
+               border-bottom 5px solid $mercury
+            @media (min-width 768px)
+                width 20%
+            .cl-vp[min-width~="768px"] &
+                width 20%
+            .cl-vp[min-width~="100px"] &
+                width 16%
+            &--back
+                display block
+                width 20%
+                &::before
+                    font-family "clIcons"
+                    content "\f111"
+                    margin 0 0 0 10%
+                    float left
+                @media (min-width 768px)
+                    display none
+                .cl-vp[min-width~="100px"] &
+                    display block
+                .cl-vp[min-width~="768px"] &
+                    display none
+                .cl-mobile &
+                    display block
+    &-events
+        &__count
+            position relative
+            margin 0 auto
+            height 0
+            top -8px
+            text-align center
+            none-select()
+        &__dot
+            font-size 3px
+            height 3px
+            width 3px
+            border-radius(4px)
+            margin 0px 1px
+            background-color $cerulean
+            display inline-block
+            line-height 1
+            none-select()
+            .is-selected &
+                background-color #fff
+
+.sbsc-window .cc-videobox
+    height calc(50vh - 120px)
+
+@media print
+    body
+        background-image none
+    body *
+        visibility hidden
+    .page #main, .apum-bar
+        display none
+    .cc, .cc *
+        visibility visible
+    .cc
+        height auto
+        [data-action], .cc-view__icon, .cc-view__organizerdiv, .cc-view__detailsdiv
+            display none
+        .cc-rp
+            position relative
+            width 100%
+            left 0
+            top 0
+            display block
+        &__eventholder
+            height auto !important
+        &-view
+            padding 0 10px
+            &__detailsbox
+                height auto !important
+                display block
+            &__headerleft
+                float none
+            &__header
+                min-height auto !important
+                padding 0 3px 0 10px
+        &-rp
+            &__slotlist
+                padding 30px 0
+            &__timeslots
+                padding 0
+                border 0px !important
+                &:first-of-type
+                    border 0px !important
+                &:empty
+                    display none !important
+            &__hourholder
+                border 0px !important
+            &__timelabel
+                display none
+        &__headerleft
+            white-space inherit !important
+
+[dir="rtl"]
+    .pika-next
+    .pika-prev
+        &:before
+            float right
+            transform rotate(180deg)
+    .cc
+        &-button__cancel
+            margin-right 0
+            margin-left 5px
+        &-rp__title
+            margin 0 10px 0 0
+        &-view
+            &__headerleft
+                float right
+            &__headerright
+                float left
+            &__title
+                float right
+                padding 0 0 0 10px
+            &__detailsdiv
+                ul
+                    padding 0 30px 0 0

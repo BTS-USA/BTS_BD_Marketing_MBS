@@ -1,0 +1,43 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="tc cl-component">
+            {{? it.header}}
+                <header class="tc-header--main cl-header--main">
+                    {{? it.header.breadCrumbs}}
+                        <p class="tc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="tc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="tc-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                            <h1 class="tc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                                {{=it.header.title}}
+                            </h1>
+                        {{?}}
+                        {{? it.header.description}}
+                            <p class="tc-header__description--main cl-header__description--main">
+                                {{=it.header.description}}
+                            </p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+            <article class="tc-container cl-container" data-tc-container>
+                <div class="cl-xs-column-12 cl-row tc-row">
+                    {{? it.instructions}}
+                    <div class="tc-instructions cl-instructions">
+                        <p class="tc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+
+                    {{~ it.contents :content:index}}
+                    <div class="tc-columns tc-column-{{=index + 1}} tc-text-column-{{=it.contents.length}}" data-tc-columns>
+                        <span class="tc-columnText tc-column{{=index + 1}}Text" data-tc-columntext>{{=content.text}}</span>
+                    </div>
+                    {{~}}
+                </div>
+            </article>
+        </section>
+    </div>
+</div>

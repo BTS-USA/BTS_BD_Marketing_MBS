@@ -1,0 +1,11 @@
+﻿<div class="change_lang">
+	{{? it.languages && it.languages.length}}
+		{{~ it.languages :language:index }}
+			{{? language.CurrentSelection }}
+			<div class="languageLink languageLinkSelected">{{= language.Description}}</div>
+			{{??}}
+			<div class="languageLink" data-key="{{= language.Key }}">{{= language.Description}}</div>
+			{{?}}
+		{{~}}
+	{{?}}
+</div>

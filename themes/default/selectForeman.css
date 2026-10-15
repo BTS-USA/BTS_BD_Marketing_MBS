@@ -1,0 +1,30 @@
+﻿.wizletSelectForeman {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 25px;
+    background-color: #00618F;
+}
+
+    .wizletSelectForeman .SelectForemanTitle {
+        text-align: left;
+        font-size: 25px;
+        padding: 20px;
+    }
+
+    .wizletSelectForeman .SelectForemanBody {
+        background-color: #00618F;
+    }
+
+        .wizletSelectForeman .SelectForemanBody table {
+            width: 100%;
+        }
+
+        .wizletSelectForeman .SelectForemanBody td {
+            padding: 5px;
+            border-radius: 5px;
+            background: black;
+        }
+
+        .wizletSelectForeman .SelectForemanBody .isSelected {
+            background: #008000;
+        }

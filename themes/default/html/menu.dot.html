@@ -1,0 +1,99 @@
+﻿<div class="menuContentWrapper">
+    <div class="mainContent">
+        <section class="menuComponent">
+            {{?it.type=='horizontal' || it.type=='mix'}}
+            <article class="menuArticleMenu container-fluid">
+                {{~it.menuRows: row:rowIndex}}
+                <div class="menuRow row{{=rowIndex}}">
+                    {{~row.parentOptions :option:optionIndex}}
+                    <div class="opt option option_{{=optionIndex}} {{?(!option.navigation.remove)}} active{{?}} {{?(option.navigation.complete)}} complete{{?}}" data-complete="{{=option.navigation.complete}}" data-remove="{{=option.navigation.remove}}" data-navigate="click" {{=option.navigation.data}}
+                         data-submenu="{{?(option.menuOptions && option.menuOptions.length)}}true{{??}}false{{?}}">
+                        <div class="optionImage optionImage{{=rowIndex}}{{=optionIndex}}"><img src="{{=option.img}}" /></div>
+                        <span class="optionTitle">
+                           {{?(option.title)}}{{!option.title}}{{??}} {{!option.navigation.title}}{{?}}
+                        </span>
+                    </div>
+                    {{~}}
+                </div>
+                {{~}}
+
+            </article>
+
+            <article class="menuArticleSubMenu">
+                <div class="subMenu"></div>
+            </article>
+            {{?}}
+           
+            {{?it.type=='vertical' || it.type=='mix'}}
+            <div class="menuTitle">
+               {{?{{=it.images[2]}}}} <div class="menuTitleIcon"><img src="{{=it.images[2].img}}" /></div>{{?}}
+                <div class="menuTitleText">{{=it.title}}</div>
+            </div>
+            {{?it.experienceModule}}
+            <div class="menuExperience">
+                <div class="menuExperienceTitle">{{=it.experienceModule.title}}</div>
+                {{?it.experienceModule.explore}}
+                <div class="menuExperienceExplore">
+                    <div class="menuExperienceExploreTitle">{{=it.experienceModule.explore.title}}</div>
+                    <div class="menuExperienceExploreOptions">
+                        {{~it.experienceModule.explore.options:exploreoption:exploreoptionIndex}}
+                        <div class="menuExperienceExploreOptionsdata">
+                            <div class="menuExperienceExploreOptionsImg">
+                                <img src="{{=exploreoption.img}}" /><br />
+                                <div class="menuExperienceExploreOptionsText">
+                                    <span>{{=exploreoption.title}}</span>
+                                    <img src="{{=exploreoption.imgclick}}" />
+                                </div>
+                            </div>
+                        </div>
+                        {{~}}
+                    </div>
+                    <div class="menuExperienceExploreTitle">{{=it.experienceModule.explore.topic}}</div>
+                </div>
+                {{?}}
+            </div>
+            {{?}}
+            <article class ="menuArticleMenu">
+                <div class="menuColumn">
+                    {{~it.menuRows: row:rowIndex}}
+                    {{~row.options :option:optionIndex}}
+                    <div class="opt optionColumn optionv_{{=optionIndex}} {{?(!option.navigation.remove)}} active{{?}} {{?(option.navigation.complete)}} complete{{?}}" data-complete="{{=option.navigation.complete}}" data-navigate="click" {{=option.navigation.data}}
+                         data-submenu="{{?(option.menuOptions && option.menuOptions.length)}}true{{??}}false{{?}}">
+                       <div class="optionColumnImage"><img src="{{=option.img}}" /></div>
+                        <div class="optionColumnNumber">0{{=optionIndex+1}}</div>
+                        <div class="optionColumnTitle">
+                            {{?(option.title)}}{{!option.title}}{{??}} {{!option.navigation.title}}{{?}}
+                        </div>
+                        <div class="optionColumnImageNext"><img src="{{=option.imgclick}}" height="20" width="20" /></div>
+                    </div>
+                    {{~}}
+                    {{~}}
+                 </div>
+                </article>
+            {{?}}
+
+            {{?it.menuCommands}}
+            <article class="menuCommands">
+                {{~it.menuCommands :command:commandIndex}}
+                <div class="opt commandColumn optionc_{{=commandIndex}} {{?(!command.navigation.remove)}} active{{?}} {{?(command.navigation.complete)}} complete{{?}} closedCommand" data-complete="{{=command.navigation.complete}}" data-navigate="click" {{=command.navigation.data}}
+                     data-submenu="{{?(command.menuOptions && command.menuOptions.length)}}true{{??}}false{{?}}" data-outputelem="commandOutput{{=commandIndex}}" data-close="{{=command.imgclickClose}}" data-open="{{=command.imgclickOpen}}">
+                    <div class="commandColumnImage"><img src="{{=command.img}}" /></div>
+                    <div class="commandColumnTitle">
+                        {{?(command.title)}}{{!command.title}}{{??}} {{!command.navigation.title}}{{?}}
+                    </div>
+                    <div class="commandColumnImageNext"><img class="imgNext" src="{{=command.imgclickOpen}}" height="20" width="20" /></div>
+                </div>
+                <div class="commandOutput outputcollapsed" id="commandOutput{{=commandIndex}}"></div>
+                {{~}}
+            </article>
+            {{?}}
+
+            <article class="menuArticleFooter">
+                <div class="menufooter">
+                    <div class="menuLogout"><img class="logoutImage" src="{{=it.images[0].img}}" /><span class="logoutText">{{!it.images[0].text}}</span></div>
+                    {{?it.images[1]}}   <div class="menuAbout"> <a href="{{=it.aboutLink}}" target="_blank"><span class="menuAboutText">{{=it.images[1].text}}</span><img src="{{=it.images[1].img}}" /></a></div>  {{?}}
+                </div>
+            </article>
+</section>
+    </div>
+</div>

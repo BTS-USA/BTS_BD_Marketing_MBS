@@ -1,0 +1,103 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="ctpc cl-component">
+            {{? it.header}}
+            <header class="ctpc-header--main cl-header--main">
+                    {{? it.header.title}}
+                        <h1 class="ctpc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                            {{=it.header.title}}
+                        </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="ctpc-header__description--main cl-header__description--main">
+                            {{=it.header.description}}
+                        </p>
+                    {{?}}
+            </header>
+            {{?}} 
+            <article class="ctpc-article cl-xs-column-12 cl-padding--no">
+                {{?it.textContent}}
+                <div class="ctpc-messageCont ctpc--hidden" data-success-message>
+                    <span class="ctpc-success__messageText">{{=it.textContent.content.SuccessMessage}}</span>
+                </div>
+                <div class="ctpc-messageCont ctpc--hidden" data-error-message>
+                    <span class="ctpc-error__messageText">{{=it.textContent.content.ErrorMessage}}</span>
+                </div>
+                <div class="ctpc-topbar">
+                    <div class="ctpc-body cl-xs-column-12">
+                        <div class="ctpc-topbar-container cl-xs-column-12" data-browser-test>
+                            <div class="ctpc-topbar__controls">
+                                <a>
+                                    <button type="button" class=" cl-button ctpc-button ctpc-button-submit" data-browser-run>{{=it.textContent.content.StartBrowserTestText}}</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ctpc-topbar-container cl-xs-column-12 ctpc--hidden" data-rerun-browser-test>
+                            <div class="ctpc-topbar__controls">
+                                <a>
+                                    <button type="button" class=" cl-button ctpc-button ctpc-button-submit" data-browser-rerun>{{=it.textContent.content.RerunBrowserTestText}}</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ctpc-topbar-container cl-xs-column-12 ctpc--hidden" data-internet-test>
+                            <div class="ctpc-topbar__controls">
+                                <a>
+                                    <button type="submit" class="cl-button ctpc-button ctpc-button-submit" data-internet-run>{{=it.textContent.content.StartSpeedTestText}}</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ctpc-topbar-container cl-xs-column-12 ctpc--hidden" data-next-container>
+                            <div class="ctpc-topbar__controls" data-next-button>
+                                <a>
+                                    <button type="button" class="cl-button cl-button--submit ctpc-button ctpc-button-submit" data-next>{{=it.textContent.content.NextText}}</button>
+                                </a>
+                            </div>
+                            <div class="ctpc-topbar__controls ctpc--hidden" data-rerun-button>
+                                <a>
+                                    <button type="submit" class="cl-button ctpc-button ctpc-button-submit" data-internet-rerun>{{=it.textContent.content.RerunSpeedTestText}}</button>
+                                </a>
+                            </div>
+                            <div class="ctpc-internet__speedCont ctpc--hidden" data-speed-test>
+                                <div class="ctpc-internet__downloadSpeedCont cl-xs-column-6 border_right">
+                                    <div class="ctpc-internet__downloadSpeedNumber" data-download-value></div>
+                                    <div class="ctpc-internet__downloadSpeedText">{{=it.textContent.content.MbpsDownload}}</div>
+                                </div>
+                                <div class="ctpc-internet__uploadSpeedCont cl-xs-column-6">
+                                    <div class="ctpc-internet__uploadSpeedNumber" data-upload-value></div>
+                                    <div class="ctpc-internet__uploadSpeedText">{{=it.textContent.content.MbpsUpload}}</div>
+                                </div>
+                            </div>
+                            <div class="ctpc-internet__speedCont ctpc-internet__currentSpeedCont" data-current-speed>
+                                    <div class="ctpc-internet__currentSpeedText">{{=it.textContent.content.CurrentSpeedText}}</div>
+                                <div class="ctpc-internet__currentSpeed" data-speed-value></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ctpc-messageCont ctpc--hidden" data-message>
+                    <span class="ctpc-error__errorMsg" data-browser-supported></span>
+                </div>
+                <div class="ctpc-messageCont ctpc--hidden" data-error-text>
+                    <span class="ctpc-error__detailMsg" data-error-type></span>
+                </div>
+                <div class="ctpc-messageCont ctpc--hidden" data-speed-error>
+                    <span class="ctpc-error__errorMsg" data-speed-error-text>
+                    </span>
+                </div>
+                <div class="ctpc-tableContWrapper ctpc--hidden" data-info-table>
+                    
+                </div>
+                <div class="ctpc-body ctpc-body__instruction cl-xs-column-12" data-helpline-details>
+                    <span>{{=it.textContent.instructions.HelpLineDetails}}</span>
+                </div>
+                {{?}}
+            </article>
+            <div id="webcam" class="ctpc-webcam ctpc--hidden"></div>
+            <div class="cl__loader-wrap ctpc--hidden" data-loader>
+                <div class="cl__loader-container">
+                    <div class="cl__loader"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

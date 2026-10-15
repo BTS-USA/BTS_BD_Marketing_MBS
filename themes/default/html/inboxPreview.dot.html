@@ -1,0 +1,49 @@
+﻿{{
+        function pad(t) { return t < 10 ? '0' + t : t; };
+        function formatTime(dt) {
+            var actualhours= dt.getHours();
+            var ampm = actualhours >= 12 ? 'PM' : 'AM';
+            var hours = actualhours % 12;
+            hours = hours ? hours : 12;
+            var monthNames = it.textContent.monthNames;
+            return dt.getDate() + " " + monthNames[dt.getMonth()] + " " + dt.getFullYear()+ "  "+hours + ":" + pad(dt.getMinutes())+ "  "  +ampm;
+        }
+}}
+    <header class="ec-view__header" date-type="previewEmail" data-eid="{{=it.email.id}}">
+        <div class="ec-view__firstRow">
+            <h2 class="ec-view__subject">{{=it.email.subject}}</h2>
+            <div class="ec-view__important">
+                {{?it.email.isImportant && it.email.isImportant == true}}
+                    <a class="ec-view__important--icon"></a>
+                {{?}}
+            </div>
+        </div>
+        <div class="ec-view__sender"><span class="ec-view__label">{{=it.textContent.from}}: </span>{{=it.email.from}}</div>
+        <div class="ec-view__recipient">
+            <span class="ec-view__label">{{=it.textContent.to}}: </span>{{=(it.email.to||"")}}
+        </div>
+        {{?it.email.cc}}
+        <div class="ec-view__recipient">
+            <span class="ec-view__label">{{=it.textContent.cc}}: </span>{{=(it.email.cc||"")}}
+        </div>
+        {{?}}
+            {{
+                var previewTime = new Date(it.email.sentTime);
+            }}
+        <span class="ec-view__date" title="{{! previewTime.toUTCString() }}">
+            {{=formatTime(new Date(it.email.sentTime))}}
+        </span>
+    </header>
+    <div class="ec-view__content">{{=it.email.body}}</div>
+{{?it.email.attachments.length>0}}
+    <div class="ec-view__attachments">
+        {{?it.email.attachments.length>0}}
+        {{~it.email.attachments :value:index}}
+        <a class="ec-view__attach" href="wizer/{{=value.url}}" target="_blank">
+            <span class="ec-view__filename">{{=value.name}}</span>
+            <span class="ec-view__filesize">({{=value.sizeKb}}Kb)</span>
+        </a>
+        {{~}}
+        {{?}}
+    </div>
+{{?}}

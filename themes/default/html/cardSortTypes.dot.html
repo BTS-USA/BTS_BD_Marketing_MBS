@@ -1,0 +1,17 @@
+{{?it.type.cards.length > 0}}
+{{~it.type.cards :card:ind}}
+<div class="cs__focusCardCont" data-card-holder>
+    <div class="cs__focusCardWrapper" data-card>
+        <img src="{{=card.imgPath}}">
+        <div class="cs__focusCardTextCont">
+            <div class="cs__focusCardText" value="{{=card.value}}">{{=card.title}}</div>
+            <div class="cs__focusCardCloseButton"><i class="cl-icon cs__focusCardClose cl-icon--remove" data-remove-card></i>
+            </div>
+        </div>
+    </div>
+</div>
+{{~}}
+{{?}}
+{{for(var i=0;i< it.type.maxCardCount-it.type.cards.length;i++){}}
+<div class="cs__focusCardCont" data-card-holder></div>
+{{}}}

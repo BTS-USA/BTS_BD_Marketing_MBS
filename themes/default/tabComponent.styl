@@ -1,0 +1,995 @@
+@import "../../Shared/css/cl.styl"
+    .tc
+        margin 0
+        &-container
+            .tc-expandCollapseCont
+                text-align right
+                .tc-expandCollapse
+                    cursor pointer
+                .tc-expandCollapseSign
+                    display block
+                    float right
+                    background-color #00adef
+                    font-family "clIcons"
+                    padding 5px
+                    margin-left 10px
+                    cursor pointer
+                    margin-top -2px
+
+                .tc-expandCollapseSign.expand
+                    &::after
+                        content "\f114"
+                        font-size 1.6*$px
+                        color #fff
+
+                .tc-expandCollapseSign.collapse
+                    &::after
+                        content "\f113"
+                        font-size 1.6*$px
+                        color #fff
+                    
+        &-bar
+            margin 14px 0 0 0
+            overflow hidden
+            padding-top 14px
+            padding-left 20px
+            border-bottom 10px solid deepCerulean
+            background-color silver
+            &__tab
+                display block
+                font-size 1.6*$px
+                line-height 1.4em
+                float left
+                height auto
+                border-top 1px solid silver
+                border-right 1px solid silver
+                border-left 1px solid silver
+                margin -3px 0 0 0
+                color white
+                background-clip border-box
+                background-color #e6e6e6
+                borderRadius(8px 14px 0 0)
+                margin-right 30px
+                position relative
+                &:after
+                    content ""
+                    display block
+                    height 0
+                    width 0
+                    border-right 29px solid transparent
+                    float right
+                    position relative
+                    top 4px
+                    right -26px
+                    border-bottom 41px solid mercury
+                    z-index 0
+                &--active
+                    color #ffffff
+                    background-color deepCerulean
+                    color #fff
+                    height auto
+                    border-top 1px solid deepCerulean
+                    border-right 1px solid deepCerulean
+                    border-left 1px solid deepCerulean
+                    margin-top -3px
+                    &:after
+                        content ""
+                        display block
+                        height 0
+                        width 0
+                        border-right 29px solid transparent
+                        float right
+                        position relative
+                        top 4px
+                        right -27px
+                        border-bottom 41px solid deepCerulean
+
+            &__arrow
+                triangle(10px, 15px, 'right', deepCerulean)
+                top 17px
+                right 5px
+                position absolute
+                cursor pointer
+                z-index 900
+                box-sizing content-box
+                -webkit-transition all 0.5s
+                transition all 0.5s
+                transform-origin 50% 50%;
+                &--active
+                    border-left-color cerulean
+                    top 17px
+                    -webkit-transition all 1s
+                    transition all 1s
+                    -webkit-transform rotate(0.25turn)
+                    transform rotate(0.25turn)
+                    transform-origin 50% 50%;
+                &--on
+                  width 0
+                  height 0
+                  background:0
+                  border-style solid
+                  border-width 7.5px 0 7.5px 10px
+                  border-color transparent transparent transparent #e6e6e6
+                  transform-origin 50% 50%
+            &__title
+                margin 13px 20px 10px 20px
+                cursor pointer
+                float left
+                font-size 1.6*$px
+                color deepCerulean
+                font-weight 400
+                &--active
+                    color #FFFFFF
+        &-menu
+            width 100%
+            height 0px
+            position relative
+            z-index 1000
+            left 0
+            top 100%
+            font-size 1.2*$px
+            box-sizing border-box
+            padding 0 0
+            ul
+                padding 0 0 0 0                
+
+        &-submenu
+            list-style-type none
+            line-height 1.4em
+            padding 0
+            border-bottom solid 1px silver
+            background-color mercury
+            color white
+            display none
+            ul
+                padding 0 0 0 0
+            &__label
+                cursor pointer
+                font-size 1.4*$px
+                line-height 1.4em
+                color gray
+                margin 1.4*$px 2*$px
+                display inline-block
+            &__arrow
+                width 50px
+                height 50px
+                float right
+                cursor pointer
+                padding 1rem 1.375rem
+                position relative
+                top 25%
+                &:after
+                    content ""
+                    display block
+                    triangle(15px, 10px, 'bottom', deepCerulean);
+                    margin 0 auto
+                    position relative
+                    top 25%
+                    -webkit-transition all 0.5s
+                    transition all 0.5s
+                    transform-origin 50% 50%
+            &__sub
+                background-color silver
+                display none
+                padding 15px 30px 15px 30px
+                margin 1px 0 0 
+                border-bottom 0
+                &--active
+                    display block
+                    margin 1px 0 0 
+            &__ico
+                margin 6px
+                vertical-align middle
+            &__sublabel
+                font-size 1.4*$px
+                margin 0
+                width 80%
+                cursor pointer
+            &--active
+                display block
+            &__arrow
+                width 50px
+                height 50px
+                float right
+                cursor pointer
+                padding 16px 22px
+                position relative
+                top 25%
+                &:after
+                    content ""
+                    display block
+                    triangle(15px, 10px, 'bottom', deepCerulean);
+                    margin 0 auto
+                    position relative
+                    top 25%
+                    -webkit-transition all 0.5s
+                    transition all 0.5s
+                    transform-origin 50% 50%
+                    -webkit-transform rotate(0.5turn)
+                    transform rotate(0.5turn)
+                &--active
+                    shape-rendering $crispEdges
+                    background-color #ccc
+                    &:after
+                        content ""
+                        display block
+                        -webkit-transform rotate(0turn)
+                        transform rotate(0turn)
+                        background-color
+                        margin 0 auto
+        &-acctabs
+            margin 0
+            padding 0
+            overflow auto
+            height calc(70vh - 100px)
+            @media (min-width 768px)
+                height calc(70vh - 70px)
+        &-acc
+            &__item
+                position relative
+                display block
+                font-size 1rem
+                font-weight 700
+                width 100%
+                float left
+                padding 0
+                margin 0
+                color #4d4d4d
+                border-bottom solid 1px silver
+                box-sizing border-box
+            &__label
+                padding 10px 20px
+                color deepCerulean
+                cursor pointer
+                background-color mercury
+                &--bi
+                    color gray
+                    font-size 1.6*$px
+                    font-weight 400
+                    padding 10px 20px
+                    cursor pointer
+                &--tri
+                    color silver
+                    font-size 1.6*$px
+                    font-weight 400
+                    padding 10px 20px
+                    cursor pointer
+            &__arrow
+                width 50px
+                height 42px
+                position absolute
+                top 0
+                right 0
+                background-color mercury
+                &:after
+                    content ""
+                    position absolute
+                    right 30%
+                    top 30%
+                    triangle(15px, 10px, 'bottom', deepCerulean)
+                    box-sizing content-box
+                &--active, &.active
+                    background-color silver
+                    &:after
+                        triangle(15px, 10px, 'top', deepCerulean)
+                &--bi
+                    height 43px 
+                    width 50px
+                    position absolute
+                    top 0
+                    right 0
+                    background-color silver
+                    border-bottom 1px solid gray
+                    &:after
+                        content ""
+                        position absolute
+                        triangle(15px, 10px, 'bottom', gray)
+                        right 30%
+                        top 30%
+                        height 0
+                        width 0
+                        cursor pointer
+                        z-index 900
+                        box-sizing content-box
+                    &--active, &.active
+                        background-color gray
+                        border-bottom 1px solid gray
+                        &:after
+                            triangle(15px, 10px, 'top', silver)
+            &__menu
+                position initial
+                float left
+                padding 0
+                width 100%
+            &__list
+                &--bi
+                    float left
+                    border-bottom 0
+                    list-style none
+                    padding 0
+                    margin 0
+                &--tri
+                    float left
+                    border-bottom 0
+                    list-style none
+                    padding 0
+                    margin 0
+            &__submenu
+                &--bi
+                    position relative
+                    float left
+                    width 100%
+                    background-color silver
+                    border-bottom 1px solid gray
+                    padding 0
+                    display none
+                    &.active
+                        display block
+                &--tri
+                    position relative
+                    float left
+                    padding 0
+                    width 100%
+                    background-color gray
+                    margin 1px 0 0 0
+                    display none
+                &--active
+                    display block
+            &__ico
+                float right
+                background url("media/img/plus.svg") no-repeat center center
+                height 15px
+                cursor pointer
+                padding 10px 50px 0 0
+                position absolute
+                right 10px
+                top 15px
+                &--expanded 
+                    background:url("media/img/minus.svg") no-repeat center center
+            &__ico
+                &--bi
+                    position absolute
+                    top 0
+                    left 0
+                &--tri
+                    position absolute
+                    top 0
+                    left 0
+            &--active
+                background-color deepCerulean
+                color #FFFFFF
+                height auto
+                margin-top -3px
+                &:after
+                    content ""
+                    display block
+                    height 0
+                    width 0
+                    border-right 30px solid transparent
+                    float right
+                    position relative
+                    top 4px
+                    right -27px
+                    border-bottom 40px solid
+            &__page
+                display none
+                &--showcontent
+                    display block
+        &-page
+            &__container
+                width 100%
+                position relative
+                float left
+            &__page
+                width 100%
+                overflow hidden
+                .tc
+                    .tc-container
+                        .tc-menu
+                            z-index 999    
+    .visible-xs
+        display none
+// mobile view 
+.tc-xs
+    .tc
+        &-bar
+            &__tab
+                margin 0 0 1px 0
+                padding 0
+                width 100%
+                overflow-y auto
+                overflow hidden
+                border-width 0
+                background-color #FFFFFF
+                border-radius 0
+                &:after
+                    display none
+            &__list
+                &--bi
+                    float left
+                    border-bottom 0
+                    list-style none
+                    padding 0
+                    margin 0
+                &--tri
+                    float left
+                    border-bottom 0
+                    list-style none
+                    padding 0
+                    margin 0
+            &__arrow
+                width 50px
+                height 52px
+                position absolute
+                top 0
+                right 0
+                border 0
+                -webkit-transition all 0.5s
+                transition all 0.5s
+                transform-origin 50% 50%
+                -webkit-transform rotate(0turn)
+                transform rotate(0turn)
+                &:after
+                    content ""
+                    position absolute
+                    right 40%
+                    top 40%
+                    triangle(15px, 10px, 'bottom', deepCerulean)
+                &--active, &.active
+                    -webkit-transition all 0.5s
+                    transition all 0.5s
+                    transform-origin 50% 50%
+                    -webkit-transform rotate(0.5turn)
+                    transform rotate(0.5turn)
+                &--bi
+                    height 43px 
+                    width 50px
+                    position absolute
+                    top 0
+                    right 0
+                    background-color silver
+                    border-bottom 1px solid gray
+                    &:after
+                        content ""
+                        position absolute
+                        triangle(15px, 10px, 'bottom', gray)
+                        right 30%
+                        top 30%
+                        height 0
+                        width 0
+                        cursor pointer
+                        z-index 900
+                        box-sizing content-box
+                    &--active, &.active
+                        background-color gray
+                        border-bottom 1px solid gray
+                        &:after
+                            triangle(15px, 10px, 'top', silver)
+            &__item
+                float left
+                width 100%
+                background-color tundora
+                padding-bottom 1px
+                cursor pointer
+            &__submenu
+                &--active
+                    display block
+                &--bi
+                    position relative
+                    float left
+                    width 100%
+                    background-color silver
+                    border-bottom 1px solid gray
+                    padding 0
+                    display none
+                    &.active
+                        display block
+                &--tri
+                    position relative
+                    float left
+                    padding 0
+                    width 100%
+                    background-color gray
+                    margin 1px 0 0 0
+                    display none 
+            &__title
+                color deepCerulean
+                display block
+                margin 0.5*$px
+                padding 1*$px
+                color deepCerulean
+                overflow hidden
+                position relative
+            &__label
+                margin 5px 0 
+                cursor pointer
+                float left
+                font-size 1.6*$px
+                color deepCerulean
+                font-weight 400
+            &__page
+                width 100%
+                height calc(100% - 3em)
+                height -moz-calc(100% - 3rem)
+                height -webkit-calc(100% - 3rem)
+                display none
+                &--showcontent
+                    display block
+        [class*='arrow'] 
+            cursor pointer
+        &-menu
+            &__list
+                &--bi
+                    padding 0
+        &-submenu
+            list-style-type none
+            line-height 1.4em
+            padding 0
+            border-bottom 0
+            background-color silver
+            color white
+            position relative
+            border-bottom 1px solid white
+            &:after
+                content ""
+                clear both
+                display block
+            &--tri
+                position relative
+                background-color gray
+                padding 0
+                margin 0 0 1px 0
+                display none
+                &:after
+                    content ""
+                    clear both
+                    display block
+                &--active
+                    display block
+            &__list
+                &--tri
+                    padding 0
+            &__label
+                width 80%
+                cursor pointer
+                font-size 1.4*$px
+                line-height 1.4em
+                margin 0
+                color gray
+                background-color silver
+                padding 1.4*$px 2*$px
+                display inline-block
+                &--active
+                    display block
+                &--bi
+                    color gray
+                    font-size 1.6*$px
+                    font-weight 400
+                    padding 10px 20px
+                    cursor pointer
+                &--tri
+                    color silver
+                    font-size 1.4*$px
+                    font-weight 400
+                    padding 15px 20px
+                    cursor pointer
+                    &--active
+                        display block
+            &__arrow
+                float right
+                z-index 100
+                width 20%
+                max-width 50px
+                height 48px
+                &--active
+                    background-color gray
+                    height 47px
+                    &:after
+                        triangle(15px, 10px, 'bottom', silver)
+                &:after
+                    position absolute
+                    top 40%
+                    right 40%
+                    triangle(15px, 10px, 'top', tundora)
+            &__ico
+                &--tri
+                    position absolute
+                    top 0
+                    right 0
+
+
+    .shield
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 150;
+        top: 0px;
+        left: 0px;
+        background-color rgba(0, 0, 0, 0.74902)
+
+@media screen and (max-width: 767px)
+
+        .hidden-xs
+            display none !important
+        .visible-xs
+            display block
+
+
+.tabComponent
+    margin 0
+    &Tabs
+        margin 14px 0 0 0
+        overflow hidden
+        padding-top 14px
+        padding-left 20px
+        border-bottom 10px solid deepCerulean
+        background-color silver
+        .tab
+            display block
+            font-size 1.6*$px
+            line-height 1.4em
+            float left
+            height auto
+            border-top 1px solid silver
+            border-right 1px solid silver
+            border-left 1px solid silver
+            margin -3px 0 0 0
+            color white
+            background-clip border-box
+            background-color #e6e6e6
+            borderRadius(8px 14px 0 0)
+            margin-right 30px
+            position relative
+            &:after
+                content ""
+                display block
+                height 0
+                width 0
+                border-right 29px solid transparent
+                float right
+                position relative
+                border-bottom 36px solid mercury
+                top 4px
+                right -25px
+                border-bottom 41px solid mercury
+                z-index 0
+                
+            &.active
+                background-color deepCerulean
+                color #ffffff
+                height auto
+                border-top 1px solid deepCerulean
+                border-right 1px solid deepCerulean
+                border-left 1px solid deepCerulean
+                margin-top -3px
+                &:after
+                    content ""
+                    display block
+                    height 0
+                    width 0
+                    border-right 29px solid transparent
+                    float right
+                    position relative
+                    top 4px
+                    right -27px
+                    border-bottom 41px solid deepCerulean
+                .tabTitle
+                    color mercury
+                    font-size 1.6*$px
+                .arrow
+                    triangle(10px, 15px, 'right', mercury)
+                    transform-origin 50% 50%
+                    &.active 
+                        -webkit-transition all 0.5s
+                        transition all 0.5s
+                        -webkit-transform rotate(0.25turn)
+                        transform rotate(0.25turn)
+            .arrow
+                triangle(10px, 15px, 'right', deepCerulean)
+                top 17px
+                right 5px
+                position absolute
+                cursor pointer
+                z-index 900
+                box-sizing content-box
+                -webkit-transition all 0.5s
+                transition all 0.5s
+                transform-origin: 50% 50%;
+                &.active
+                    border-left-color: cerulean
+                    top 17px
+                    -webkit-transition all 0.5s
+                    transition all 0.5s
+                    -webkit-transform rotate(0.25turn)
+                    transform: rotate(0.25turn)
+            .tabContent
+                padding 0
+                float left
+            .tabTitle
+                margin 13px 20px 10px 20px
+                cursor pointer
+                float left
+                font-size 1.6*$px
+                color deepCerulean
+                font-weight 400
+            &:first-child
+                margin-left 0
+            &.withChild
+                color white
+                &.active
+                    color gray
+                    background-color deepCerulea
+                &.withLink
+                    color white
+                    &.active
+                        color #fff
+                        background-color deepCerulean
+            
+            .tabEdge
+                width 0
+                height 0
+                border-bottom 45px solid #E6E6E6
+                border-right 24px solid transparent
+                margin-right -24px
+                float right
+        &-xs
+            overflow hidden
+            .tab
+                display block
+                font-size 1.6*$px
+                font-weight 700
+                width 100%
+                float left
+                padding 1*$px 2*$px
+                margin 0
+                color tundora
+                background-color mercury
+                border-bottom solid 1px gray
+                box-sizing border-box
+                &.active
+                    background-color deepCerulean
+                    border-bottom 0
+                    border-top 0
+                    .tabTitle
+                        color mercury
+                        font-size 1.6*$px
+                            
+                .arrowHolder
+                    width 30px
+                    height 100%
+                    background-color gray
+                .arrow
+                    triangle(15px, 10px, 'bottom', deepCerulean)
+                    background-repeat no-repeat
+                    shape-rendering crispEdges 
+                    width 0
+                    height 0
+                    float right
+                    margin-top 3px
+                    cursor pointer
+                    &.active
+                        triangle(15px, 10px, 'top', deepCerulean)
+                .tabTitle
+                    color deepCerulean
+                    font-size 1.6*$px
+            .tabComponentTabsMenu 
+                position initial
+                float left
+                padding 0
+                ul 
+                    float left
+                    width 100%
+                    border-bottom 0
+                .subMenu 
+                    background-color silver
+                    border-bottom 1px solid gray
+                    &Arrow
+                        &.active
+                            background-color gray
+                    .sub_subMenu
+                        background-color gray
+                        .menuLabel
+                            color silver
+                            width 80%
+            .tabMenu
+                float left
+                ul
+                    width -moz-calc(100% - 5px)
+                    width -webkit-calc(100% - 5px)
+                    width calc(100% - 5px)
+                    border-left 5px solid deepCerulean 
+                    &.active 
+                        margin 0
+                        padding 0
+    &TabsMenu
+        width 100%
+        height 0px
+        position relative
+        z-index 500
+        left 0
+        top 100%
+        font-size 1.2*$px
+        box-sizing border-box
+        padding 0 0
+        &.active
+            background-color tundora
+            color white
+        .menuLabel
+            cursor pointer
+            font-size 1.4*$px
+            line-height 1.4em;
+            color gray
+            margin 1.4*$px 2*$px
+            display inline-block
+        ul
+        &.tabComponentTabsMenuList
+            border-bottom 3px solid deepCerulean
+            .subMenu
+                list-style-type none
+                line-height 1.4em
+                padding 10px 0
+                border-bottom solid 1px silver
+                background-color mercury
+                color white
+                display none
+                &.active
+                    display block
+                &:last-child
+                    border-bottom solid 0px gray
+                .icon
+                    margin 6px
+                    vertical-align middle
+                &Arrow
+                    width 50px
+                    height 50px
+                    float right
+                    cursor pointer
+                    padding 1.6*$px 2.2*$px
+                    position relative
+                    top 25%
+                    &:after
+                        content ""
+                        display block
+                        triangle(15px, 10px, 'bottom', deepCerulean);
+                        margin 0 auto
+                        position relative
+                        top 25%
+                        -webkit-transition all 0.5s
+                        transition all 0.5s
+                        transform-origin 50% 50%
+                    &.active
+                        shape-rendering crispEdges
+                        background-color silver
+                        &:after
+                            content ""
+                            display block
+                            -webkit-transform rotate(0.5turn)
+                            transform rotate(0.5turn)
+                            background-color
+                            margin 0 auto
+                        
+                ul
+                    background-color silver
+                    display none
+                    margin 1*$px 0
+                    border-bottom 0
+                    &.active
+                        display block
+                        margin 0
+
+                .sub_subMenu
+                    list-style-type none
+                    line-height 1.5em
+                    margin 0
+                    padding 1*$px
+                    color white
+                    &:not(:last-child)
+                        border-bottom solid 1px mercury
+                    .menuLabel 
+                        font-size 1.4*$px
+                        margin 0
+                        width 80%
+                &.active
+                    padding 0
+                
+    .tabpageContainer
+        width 100%
+        position relative
+        float left
+    .tabPage 
+        width 100%
+        overflow hidden
+        
+            
+    .accordion_title
+        &.barTitle
+            background-color cerulean
+            font-size 2.2*$px
+            font-weight 100
+            line-height 1.2em
+            padding 1*$px 2*$px
+            border 0
+            box-sizing border-box
+    .accordion
+        width 100%
+        overflow-y auto
+        background-color mercury
+        .accordionItem
+            float left
+            width 100%
+            background-color tundora
+            padding-bottom 1px
+            cursor pointer
+
+        .accordionItem .tabTitle 
+            margin 0.2*$px 0 0 0
+            vertical-align middle
+            font-size 1.8*$px
+            float left
+            width -moz-calc(100% - 5rem)
+            width -webkit-calc(100% - 5rem)
+            width calc(100% - 5rem)
+    
+        .accordionItem .accordionPage
+            width 100%
+            height calc(100% - 3em)
+            height -moz-calc(100% - 3rem)
+            height -webkit-calc(100% - 3rem)
+            display none
+        .accordionItem.active .accordionPage
+            display block
+        .accordionTitle
+            display block
+            padding 1*$px
+            background-color white
+            color deepCerulean
+            overflow hidden
+            position relative
+
+        .imageContainer 
+            float right
+            background url("media/img/plus.svg") no-repeat center center
+            height 15px
+            cursor pointer
+            padding 10px 50px 0 0
+            position absolute
+            right 10px
+            top calc( 50% - 7px )
+
+
+        .imageContainer.expanded 
+            background:url("media/img/minus.svg") no-repeat center center
+
+        /* create a class that hides the text */
+        .showcontent 
+            display block
+
+@media screen and (max-width: 767px)
+    .tc
+        .hidden-xs
+            display none !important
+        .visible-xs
+            display block
+
+[dir="rtl"]
+	.tc
+		&-acc__ico
+			background url("media/img/plus.svg") no-repeat left center
+			right 0
+			left 15px
+		&-acc__ico--expanded
+			background url("media/img/minus.svg") no-repeat left center	
+		&-submenu__arrow
+			float left
+		&-bar__tab
+			float right
+		&-bar__title
+			float right
+		&-bar__arrow
+			right auto
+			transform rotate(180deg)
+			&--active
+				-webkit-transition: all 1s;
+				transition: all 1s;
+				-webkit-transform: rotate(0.25turn);
+				transform: rotate(0.25turn);

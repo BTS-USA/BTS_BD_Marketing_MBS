@@ -1,0 +1,12 @@
+﻿{{~it.menuOptions: suboption:suboptionIndex}}
+<div class="submenuRow subrow{{=suboptionIndex}} {{?(!suboption.navigation.remove)}} active{{?}} {{?(suboption.navigation.complete)}} complete{{?}}" data-complete="{{=suboption.navigation.complete}}" data-remove="{{=suboption.navigation.remove}}" {{?(!suboption.navigation.remove)}}data-navigate="click" {{=suboption.navigation.data}}{{?}}>
+    <div class="suboptionImage"><img src="{{=suboption.img}}" /></div>
+    <div class="suboptionTitle">
+        <span>{{!suboption.title}}</span>
+        <br />
+        <span class="suboptionDescription">{{=suboption.description}}</span>
+    </div>
+    <div class="suboptionImageNext"><img src="{{=suboption.imgclick}}" /></div>
+</div>
+{{~}}
+

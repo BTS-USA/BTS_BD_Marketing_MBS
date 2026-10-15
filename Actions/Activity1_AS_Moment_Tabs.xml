@@ -1,0 +1,25 @@
+<Action>
+  <Include name="Top_AS_Gauges"></Include>
+  <Component type="TabComponent"><![CDATA[{
+  "type": "tab",
+  "version": "2",
+  "showTabs": true,
+  "tabOptions": [
+    {
+      "title": "!{Activity1_Case_Study}",
+      "actionXML": "Base_CaseStudy"
+    },
+    {
+      "title": "!{Activity1_Scenario}",
+      "actionXML": "Activity1_AS_Moment_Scenario",
+      "open": true
+    },
+    {
+      "title": "!{Activity1_Decision}",
+      "actionXML": "Activity1_AS_Moment_Input"
+    }
+  ],
+  "title": "!{Activity1_GD_TabsTitle}",
+  "scope": []
+}]]></Component>
+</Action>

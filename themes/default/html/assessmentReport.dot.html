@@ -1,0 +1,57 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="arc cl-component" data-component-version="{{=it.version}}" data-assessmentreportcomponent>
+
+            {{? it.header}}
+            
+            <header class="arc-header--main cl-header--main" data-assessmentreportheader>
+                {{? it.header.title}}
+                <h1 class="arc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="arc-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <div class="arc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    <footer class="arc-footer arc--footer" data-sscbuttons>
+                        {{? it.buttons[0].show || it.buttons[0].show === undefined}}
+                        <p data-reporttime class="arc-reporttime"></p>
+                        {{?it.languagekeys && it.languagekeys.length > 0}}
+                        {{~it.languagekeys :languagekey:ind}}
+                        <div class="arc-button--view arc-button arc-button-hidden " id="assessmentReportViewButton" data-viewbutton_{{=languagekey}} data-buttons>
+                            <span class="arc-viewbuttontext arc-buttontext cl-button cl-button--view" data-sscviewbuttontext>{{=it.buttons[0].navigation.title}}_{{=languagekey}}</span>
+                        </div>
+                        {{~}}
+                        {{??}}
+                        <div class="arc-button--view arc-button arc-button-hidden " id="assessmentReportViewButton" data-viewbutton data-buttons>
+                            <span class="arc-viewbuttontext arc-buttontext cl-button cl-button--view" data-sscviewbuttontext>{{=it.buttons[0].navigation.title}}</span>
+                        </div>
+                        {{?}}
+                        {{?}}
+                        {{? it.buttons[1].show || it.buttons[1].show === undefined}}
+                        <div class="arc-button--generate arc-button buttonEnabled singleSelectClearButton" id="assessmentReportGenerateButton" data-generateaction data-buttons data-enabled="{{=it.buttons[1].navigation.remove}}">
+                            <span class="arc-generatebuttontext arc-buttontext cl-button cl-button--generate" data-pulsesubmitbutton data-sscgeneratebuttontext>{{=it.buttons[1].navigation.title}}</span>
+                        </div>
+                        <p data-generatesuccess class="arc-message">{{= it.generateText}}</p>
+                        {{?}}
+                        {{? it.buttons.length>2 && (it.buttons[2].show || it.buttons[2].show === undefined)}}
+                        <div class="arc-button--generate arc-button buttonEnabled singleSelectClearButton" id="assessmentReportReGenerateButton" data-regenerateaction data-buttons data-enabled="{{=it.buttons[2].navigation.remove}}">
+                            <span class="arc-generatebuttontext arc-buttontext cl-button cl-button--generate" data-pulsesubmitbutton data-sscgeneratebuttontext>{{=it.buttons[2].navigation.title}}</span>
+                        </div>
+                        <p data-generatesuccess class="arc-message">{{=it.generateText}}</p>
+                        {{? it.noReportText}}<p data-generaterror class="arc-message">{{=it.noReportText}}</p>{{?}}
+                        {{?}}
+                    </footer>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

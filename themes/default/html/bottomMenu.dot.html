@@ -1,0 +1,24 @@
+﻿<div class="bottomContentWrapper">
+    <div class="bottomContent">
+        <section class="bottomMenuComponent">
+            {{?it.title}}
+            <header class="bottomMenu__title">
+               {{=it.title}}
+            </header>
+            {{?}}
+            <article class="bottomMenu__content">
+                    {{~it.menuOptions:option:optionIndex }}
+                    <div class="option option_{{=optionIndex}} {{?(!option.navigation.remove)}} active{{?}} {{?(option.navigation.complete)}} complete{{?}}"
+                         data-complete="{{=option.navigation.complete}}" 
+                         data-remove="{{=option.navigation.remove}}" {{?(!option.navigation.remove)}}
+                         data-navigate="click" {{=option.navigation.data}}{{?}} >
+                        <div class="optionImage optionImage_{{=optionIndex}}"><img src="{{=option.img}}" /></div>
+                        <span class="optionTitle">
+                            {{?(option.title)}}{{!option.title}}{{??}} {{!option.navigation.title}}{{?}}
+                        </span>
+                    </div>
+                    {{~}}
+            </article>
+        </section>
+    </div>
+</div>

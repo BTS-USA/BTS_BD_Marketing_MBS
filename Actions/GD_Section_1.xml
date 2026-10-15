@@ -1,0 +1,128 @@
+<Action>
+  <Component type="GroupDirectorComponent" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_groupDirector.dot",
+  "css": "styles/as_groupDirector.css",
+  "trackQuestion": "Group_Director",
+  "qandcVoteLimit": "1000",
+  "refreshIntervalInSeconds": "5",
+  "voteCountLabel": "!{GD_voteCountLabel}",
+  "nextButtonLabel": "Next",
+  "showClientStatus": "true",
+  "hideVoteCount": "true",
+  "storeCurrentAction": {
+    "allow": true,
+    "question": "CurrentSection_1"
+  },
+  "menuOptions": [
+    {
+      "title": "!{GD_Button_1}",
+      "section": "Welcome_AS_SplashScreen",
+      "icon": "info"
+    },
+    {
+      "title": "!{Assign_Base_Values}",
+      "section": "Assign_BaseValues_AS_SplashScreen",
+      "icon": "info"
+    },
+    {
+      "title": "!{GD_Button_3}",
+      "section": "Team_Name",
+      "icon": "info"
+    },
+    {
+      "title": "!{Base_Case_Study}",
+      "section": "Base_CaseStudy",
+      "icon": "info"
+    },
+    {
+      "title": "!{GD_Activity1_Tabs}",
+      "section": "Activity1_AS_Moment_Tabs",
+      "icon": "input"
+    },
+    {
+      "title": "!{GD_Activity1_Aggregator}",
+      "embed": "Aggregator",
+      "options": {
+        "actionXML": "Activity1_Aggregator"
+      },
+      "icon": "aggregator"
+    },
+    {
+      "title": "!{GD_Activity1_Feedback}",
+      "section": "Activity1_AS_Moment_Feedback",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Activity2_Tabs}",
+      "section": "Activity2_AS_Moment_Tabs",
+      "icon": "input"
+    },
+    {
+      "title": "!{GD_Activity2_Aggregator}",
+      "embed": "Aggregator",
+      "options": {
+        "actionXML": "Activity2_Aggregator"
+      },
+      "icon": "aggregator"
+    },
+    {
+      "title": "!{GD_Activity2_Feedback}",
+      "section": "Activity2_AS_Moment_Feedback",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Activity3_Tabs}",
+      "section": "Activity3_AS_Ranking_Moment_Tabs",
+      "icon": "input"
+    },
+    {
+      "title": "!{GD_Activity3_Feedback}",
+      "section": "Activity3_AS_Ranking_Moment_Feedback",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Activity4_Tabs}",
+      "section": "Activity4_AS_Moment_Tabs",
+      "icon": "input"
+    },
+    {
+      "title": "!{GD_Activity4_Aggregator}",
+      "embed": "Aggregator",
+      "options": {
+        "actionXML": "Activity4_Aggregator"
+      },
+      "icon": "aggregator"
+    },
+    {
+      "title": "!{GD_Activity4_Feedback}",
+      "section": "Activity4_AS_Moment_Feedback",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Activity5_Tabs}",
+      "section": "Activity5_AS_Moment_Tabs",
+      "icon": "input"
+    },
+    {
+      "title": "!{GD_Activity5_Feedback}",
+      "section": "Activity5_AS_Moment_Feedback",
+      "icon": "result"
+    },
+    {
+      "title": "!{GD_Activity6_Tabs}",
+      "section": "Activity6_AS_Moment_Tabs",
+      "icon": "input"
+    },
+    {
+      "title": "!{ThankYou_AS_SplashScreen_button}",
+      "section": "ThankYou_AS_SplashScreen",
+      "icon": "info"
+    }
+  ],
+  "scope": [
+    "Group_Director",
+    "CurrentSection_1"
+  ]
+}]]></Component>
+<Include name="GD_Heatmap"></Include>
+</Action>

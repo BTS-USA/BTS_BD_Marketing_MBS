@@ -1,0 +1,170 @@
+{{? it.viewType == 'gridView' }}
+
+
+{{? it.finalIdeaList && it.finalIdeaList.length > 0 }}
+
+{{~it.finalIdeaList: idea :index }}
+
+<div class="vhrr-likeRatingCont" data-grid-cont data-ideaid="{{=idea.IdeaId}}" data-ideaid_{{=idea.IdeaId}}>
+    <div class="vhrr-likeRatingWrapper" data-click-video>
+        <div class="vhrr-likeRating__imgCont">
+            <img class="vhrr-likeRating__img" src="{{=idea.PosterUrl}}" data-video_{{=idea.IdeaId}}
+                data-videourl="{{=idea.VideoUrl}}"><img />
+            <i class="vhrr-likeRating__playIcon cl-icon cl-icon--play01 vhrr-center"></i>
+        </div>
+        <div class="vhrr-detailsCont">
+            <div class="vhrr-likeRating__ideaText">
+                <span data-ideatext_{{=idea.IdeaId}}>{{=idea.IdeaText}}</span>
+            </div>
+            {{? it.categories && !it.hideCategory }}
+            <div class="vhrr-likeRating__ideaCategory">
+                <span>{{=idea.Category}}</span>
+            </div>
+            {{?}}
+            <div class="vhrr-scoringCont">
+                <div class="vhrr-scoringRankCont">
+                    <div class="vhrr-scoringRankText">{{=it.textContent.rankText}}</div>
+                    <div class="vhrr-scoringRankNo vhrr-center">{{=idea.Rank}}</div>
+                </div>
+                {{? it.type == "likeVideo"}}
+                <div class="vhrr-scoringLikesCont">
+                    <div class="vhrr-scoringLikesText">{{=it.textContent.likeText}}</div>
+                    <div class="vhrr-scoringLikeNo vhrr-center">
+                        <span>{{=idea.LikeCount}}</span>
+                    </div>
+                </div>
+                {{??}}
+                <div class="vhrr-scoringScoreCont">
+                    <div class="vhrr-scoringScoreText">{{=it.textContent.scoreText}}</div>
+                    <div class="c100 p{{=idea.ScorePercentage}} small">
+                        <span>{{=idea.AverageScore}}</span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+
+                </div>
+                {{?}}
+            </div>
+
+        </div>
+    </div>
+    <div class="vhrr-userDetailsCont">
+        {{?it.textContent.meText === idea.IdeaAuthorName}}
+        <div class="vhrr-userMeName">
+            <i class="vhrr-userIcon cl-icon cl-icon--user"></i>
+            <span class="vhrr-userNameText">{{=idea.IdeaAuthorName}}</span>
+        </div>
+        {{??}}
+        <div class="vhrr-userName">
+            <i class="vhrr-userIcon cl-icon cl-icon--user"></i>
+            <span class="vhrr-userNameText">{{=idea.IdeaAuthorName}}</span>
+        </div>
+        {{?}}
+        <div class="vhrr-commentButton" data-comment-cont data-ideaid="{{=idea.IdeaId}}" data-rate-comment-button>
+            <span class="vhrr-commentText">{{=it.textContent.commentText}}</span>
+            <i class="cl-icon cl-icon--comment01 vhrr-commentIcon"></i>
+        </div>
+    </div>
+</div>
+
+{{~}}
+{{??}}
+<div class="vhrr-center vhrr-noVideolabel">
+    {{=it.textContent.noVideoText}}
+</div>
+{{?}}
+
+{{??}}
+
+<div class="vhrr-listView">
+    <div class="vhrr-listView__header">
+        {{? it.deviceType == 'desktop' }}
+            <div class="vhrr-w13"></div>
+            <div class="vhrr-w47"></div>
+        
+            <div class="vhrr-overAllText vhrr-w20 vhrr-center">
+                {{? it.type == "likeVideo"}}
+                <span>{{=it.textContent.overallLikeText}}</span>
+                {{??}}
+                <span>{{=it.textContent.overallScoreText}}</span>
+                {{?}}
+            </div>
+            <div class="vhrr-w20"></div>
+        {{??}}
+            {{? it.type == 'rateVideo'}}
+                <div class="vhrr-w13 vhrr-listView__header-title">{{=it.textContent.videoHeaderTextMobile}}</div>
+                <div class="vhrr-w47 vhrr-listView__header-title">{{=it.textContent.titleHeaderTextMobile}}</div>
+                <div class="vhrr-w20 vhrr-listView__header-title">{{=it.textContent.overallScoreHeaderTextMobile}}</div>
+                <div class="vhrr-w20 vhrr-listView__header-title">{{=it.textContent.posterHeaderTextMobile}}</div>
+            {{?}}
+        {{?}}
+        
+        
+    </div>
+
+
+    {{? it.finalIdeaList && it.finalIdeaList.length > 0 }}
+
+    {{~it.finalIdeaList: idea :index }}
+
+    <div class="vhrr-listView__mainCont" data-list-cont data-ideaid="{{=idea.IdeaId}}" data-ideaid_{{=idea.IdeaId}}>
+        <div class="vhrr-listView__imgHolder vhrr-w13">
+            <img class="vhrr-listView__imgThumbnail" src="{{=idea.PosterUrl}}" data-listvideo_{{=idea.IdeaId}}
+                data-videourl="{{=idea.VideoUrl}}">
+            <img />
+            <i class="vhrr-listView__playIcon cl-icon cl-icon--play01 vhrr-center vhrr-listView__commonBtnStyle"
+                data-list-video></i>
+        </div>
+
+
+        <div class="vhrr-listView__ideaCont vhrr-center vhrr-w22">
+            <span data-listideatext_{{=idea.IdeaId}}>
+                {{=it.deviceType != 'desktop' ?  idea.IdeaText.substring(0, 50) : idea.IdeaText }}
+            </span>
+            
+        </div>
+        
+        <div class="vhrr-listView__ideaCategory vhrr-center vhrr-w22">
+            {{? it.categories && !it.hideCategory }}
+            <span>
+                {{=it.deviceType != 'desktop' ? idea.Category.substring(0, 50) : idea.Category }}
+            </span>
+            {{?}}
+        </div>
+       
+        <div class="vhrr-listView__scoreCont vhrr-center vhrr-w20">
+            {{? it.type == "likeVideo"}}
+            <span>{{=idea.LikeCount}}</span>
+            {{??}}
+            <span>{{=idea.AverageScore}}</span>
+            {{?}}
+        </div>
+        <div class="vhrr-listView__userDetails vhrr-center vhrr-w20">
+            {{?it.textContent.meText === idea.IdeaAuthorName}}
+            <i class="cl-icon cl-icon--user vhrr-likeRating__userMeIcon"></i>
+            <span class="vhrr-likeRating__userMeText">{{=idea.IdeaAuthorName}}</span>
+            {{??}}
+            <i class="cl-icon cl-icon--user vhrr-likeRating__userIcon"></i>
+            <span class="vhrr-likeRating__userText">{{=idea.IdeaAuthorName}}</span>
+            {{?}}
+        </div>
+        <div class="vhrr-listView__srNo vhrr-center vhrr-listView__commonBtnStyle"><span>{{=idea.Rank}}</span></div>
+        <div class="vhrr-listView__commentIcon vhrr-center vhrr-listView__commonBtnStyle" data-comment-box>
+            <i class="cl-icon cl-icon--comment01"></i>
+        </div>
+
+    </div>
+
+    {{~}}
+    {{??}}
+    <div class="vhrr-center vhrr-noVideolabel">
+        {{=it.textContent.noVideoText}}
+    </div>
+    {{?}}
+
+
+</div>
+
+{{?}}

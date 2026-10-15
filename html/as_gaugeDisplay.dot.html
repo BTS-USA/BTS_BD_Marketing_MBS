@@ -1,0 +1,10 @@
+<div class="gauge-holder" {{? typeof it.gaugeId !== "undefined"}}id="{{=it.gaugeId}}"{{?}}>
+    <div class="gauges {{?it.numGauges > 1}}multiplegauges{{?}}">
+        {{for(var counter = 0; counter < it.numGauges; counter++) {}}
+        <div class="gauge">
+            <span class="gauge-value" data-binding="{{=it.labels[counter].binding}}"></span>
+            <span class="gauge-label">{{=it.labels[counter].label}}</span>
+        </div>
+        {{};}}
+    </div>
+</div>

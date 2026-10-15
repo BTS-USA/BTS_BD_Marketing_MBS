@@ -1,0 +1,108 @@
+<Action>
+  <Component type="HeatmapComponent" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_heatmap.dot",
+  "css": "styles/as_heatmap.css",
+  "header": {
+    "title": "!{Static_Leaderboard_Title}",
+    "description": "!{Progressive_Leaderboard_Description}",
+    "bgimage": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/headerGraphic.svg"
+  },
+  "liveUpdate": true,
+  "heatmapType": "QUESTION",
+  "direction": "VERTICAL",
+  "showValues": true,
+  "showAllTeams": false,
+  "appendTeamNumber": true,
+  "columnLabel": "!{Progressive_Leaderboard_Column}",
+  "isDelivery": false,
+  "rankLabel": "!{Static_Leaderboard_Rank}",
+  "filterQuestions": [
+    {
+      "filterQuestion": "Leader",
+      "filterText": 1
+    }
+  ],
+  "teamName": {
+    "question": "Team_Name"
+  },
+  "questions": [
+    {
+      "title": "!{Progressive_Leaderboard_Metric1}",
+      "binding": "Metric1"
+    },
+    {
+      "title": "!{Progressive_Leaderboard_Metric2}",
+      "binding": "Metric2"
+    },
+    {
+      "title": "!{Progressive_Leaderboard_Metric3}",
+      "binding": "Metric3"
+    },
+    {
+      "title": "!{Progressive_Leaderboard_Total}",
+      "binding": "Metric_Total"
+    }
+  ],
+  "options": [
+    {
+      "val": "0",
+      "class": "color-0"
+    },
+    {
+      "val": "111",
+      "class": "tick"
+    },
+    {
+      "val": "1",
+      "class": "A"
+    },
+    {
+      "val": "2",
+      "class": "B"
+    },
+    {
+      "val": "3",
+      "class": "C"
+    },
+    {
+      "val": "4",
+      "class": "D"
+    },
+    {
+      "val": "5",
+      "class": "E"
+    }
+  ],
+  "sorting": {
+    "question": "Metric_Total",
+    "isNumeric": true,
+    "sortOrder": "DESC",
+    "sorting": {
+      "question": "Metric1",
+      "isNumeric": true,
+      "sortOrder": "DESC",
+      "sorting": {
+        "question": "Metric2",
+        "isNumeric": true,
+        "sortOrder": "DESC",
+        "sorting": {
+          "question": "Metric3",
+          "isNumeric": true,
+          "sortOrder": "DESC"
+        }
+      }
+    }
+  },
+  "maxList": "100",
+  "trackQuestion": "Cohort_Track",
+  "scope": [
+    "Metric1",
+    "Metric2",
+    "Metric3",
+    "Metric_Total",
+    "Cohort_Track",
+    "Team_Name",
+    "Leader"
+  ]
+}]]></Component>
+</Action>

@@ -1,0 +1,74 @@
+﻿{{?!it.isReadOnly}}
+<div class="ec-draft__buttons">
+        <span class="cl-button ec-draft__button--send" data-senddraft data-draft-button>{{=it.textContent.send}}</span>
+        <span class="cl-button ec-draft__button--cancel" data-canceldraft data-draft-button>{{=it.textContent.cancel}}</span>
+        <span class="cl-button ec-draft__button--save" data-savedraft data-draft-button>{{=it.textContent.saveasdraft}}</span>
+        <a class="cl-button {{= it.email.isImportant ? "ec-draft__button--important" : "ec-draft__button--important-disabled"}}" data-important="{{= it.email.isImportant ? "true" : "false"}}" data-draft-button></a>
+        <a class="cl-button ec-draft__button--attach file_input" data-attach data-jfiler-name="files" data-draft-button></a>
+    
+</div>
+{{?}}
+<div class="ec-draft__editors" draft-view>
+    <input type="hidden" value="{{=it.email.id || ''}}" class="cl-form__text ec-draft__textfield email__draftid" />
+    <div class="ec-draft__inputbox">
+        <span class="ec-draft__label">{{=it.textContent.subject}}</span>
+        <span class="ec-draft__inputrow">
+            <input type="text" value="{{=it.email.subject || ''}}" class="cl-form__text ec-draft__textfield email__subject" draft-subject {{?it.isReadOnly}} disabled{{?}} />
+        </span>
+    </div>
+
+    <div class="ec-draft__inputbox" data-tofield>
+        <span class="ec-draft__label">{{=it.textContent.to}}</span>
+        {{?it.isReadOnly}}
+        <span class="ec-draft__inputrow">
+        <input type="text" value="{{=it.email.to || ''}}" class="cl-form__text ec-draft__textfield email__to" draft-to disabled/>
+        </span>
+
+        {{??}}
+        <select name="to" multiple draft-to data-selector>
+            {{~it.contacts :contact:index}}
+                <option {{! contact.to ? 'selected' : '' }}>{{! contact.name }}</option>
+            {{~}}
+        </select>
+        {{?}}
+      
+    </div>
+
+    <div class="ec-draft__inputbox" data-ccfield>
+        <span class="ec-draft__label">{{=it.textContent.cc}}</span>
+        {{?it.isReadOnly}}
+        <span class="ec-draft__inputrow">
+            <input type="text" value="{{=it.email.cc || ''}}" class="cl-form__text ec-draft__textfield email__cc" draft-cc disabled />
+        </span>
+
+        {{??}}
+        <select name="cc" multiple draft-cc data-selector>
+            {{~it.contacts :contact:index}}
+            <option {{! contact.cc ? 'selected' : '' }}>{{! contact.name }}</option>
+            {{~}}
+        </select>
+        {{?}}
+
+    </div>
+
+    <div class="ec-draft__inputbox">
+        <textarea draft-message class="cl-form__text email__body" rows="2" data-autoresize placeholder="Message" {{?it.isReadOnly}} disabled{{?}}>{{= it.email.body ? it.email.body : ""}}</textarea>
+    </div>
+
+
+    {{?it.email.attachments && it.email.attachments.length>0}}
+    <div class="ec-view__attachments">
+        {{~it.email.attachments :value:index}}
+        <div class="ec-view__attachment cl-xs-column-12" data-copyattachment="{{=value.url}}">
+            <input type="hidden" data-copyattachment-url="{{=value.url}}" />
+            <a class="ec-view__attach" href="wizer/{{=value.url}}" target="_blank">
+                <span class="ec-view__filename">{{=value.name}}</span>
+                <span class="ec-view__filesize">({{=value.sizeKb}}Kb)</span>
+            </a>
+            <a class="icon-jfi-trash jFiler-item-trash-action" data-removeattachment="{{=value.url}}"></a>
+        </div>
+        {{~}}
+    </div>
+    {{?}}
+
+</div>

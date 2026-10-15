@@ -1,0 +1,95 @@
+@import "shared/cl.styl"
+/* This is css for the layouts in the wizer core*/
+/* if you are using a layoutInevent then please let it have its own css called layout.css in the events/layout folder*/
+
+
+/*  ========================== */
+/*  IdeaHuntEntryListHorizontal page layout styles */
+.ideaList     
+    &__idea
+        @media (max-width: 800px)
+            display block
+            .clear-float:after
+                content ""
+                display block
+                clear both
+            &-header
+            &-ranks
+            &-body-holder
+            &-footer
+                display block
+                width auto
+
+        &-header
+            padding 0 10px
+            @media (max-width: 800px)
+                margin 0
+        &-title
+        &-category
+        &-label
+        &-description
+        &-author
+        .ideaList__rankCell-title
+        .ideaList__rankCell-value
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap                        
+        &-title
+            width 60%
+            border-right 2px solid #fff
+            margin 0
+            padding 0 8px
+            max-width 10rem
+            @media (max-width: 800px)
+                border-right none
+                max-width none
+            @media (min-width: 1025px)
+                max-width 14rem
+        &-category
+            width 40%
+            padding 0 20px
+        &-title
+        &-category
+            float left
+            height 40px
+            line-height @height
+            @media (max-width: 800px)
+                float none
+                width 100%
+                padding 0
+        &-ranks
+            @media (min-width: 801px)
+                background transparent
+            .ideaList__rankCell                
+                background-color #fff                
+                font-weight 400
+                height 50px
+                padding 5px 10px   
+                &-value
+                    color $codGray
+                @media (max-width: 800px)
+                    margin-left 5px                    
+            .ideaList__rankCell:not(:last-child)
+                width 35%
+                margin-right 5px
+            .ideaList__rankCell:last-child
+                @media (min-width: 1200px)
+                    width 25%
+        &-body
+            padding 0 10px
+            height 50px
+            @media (max-width: 800px)
+                height auto
+                padding 10px 10px
+        &-description
+        &-label
+            height 20px
+            max-width 400px
+            @media (max-width: 1024px)
+                max-width 300px
+            @media (max-width: 800px)
+                max-width none
+        &-footer
+            margin 0
+            padding 0 10px
+            height 60px

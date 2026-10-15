@@ -1,0 +1,124 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section data-embedContainer class="ideaEntry ideaEntry__popup"></section>
+        <section class="ideaList">
+            {{? it.wizletInfo.title}}
+            <header class="ideaList__header cl-xs-column-12">
+                <h1 class="ideaList__title">{{=it.wizletInfo.title}}</h1>
+            </header>
+            {{?}}
+            <section class="ideaList__filters cl-row cl-xs-column-12">
+                {{~it.wizletInfo.menu :element:i}}
+                    <div class="cl-xs-column-6 {{?i === 0}}cl-noLeft{{??i === 1}}cl-noRight{{?}}">
+                        <article class="ideaList__filter">
+                            <label class="ideaList__label">{{=element.text}}</label>     
+                            <select class="ideaList__dropdown ideaList__dropdown-{{=i}}" data-menuindex="{{=i}}">
+                                {{~element.menuItem :dropdown:index}}
+                                <option value="{{=index}}" {{?dropdown.selected}}selected{{?}}>
+                                    {{=dropdown.text}}
+                                </option>
+                                {{~}}
+                            </select>
+                        </article>
+                    </div>
+                {{~}}
+            </section>
+            <section class="ideaList__list cl-row" data-entrylist>
+                {{? it.wizletInfo.entryListHeader}}
+                <header class="ideaList__header-list cl-xs-column-12">
+                    {{? it.wizletInfo.legend}}
+                       <label class="ideaList__label ideaList__label-list">{{=it.wizletInfo.entryListHeader}}</label>
+                       <section class="ideaList__legend">
+                            {{~it.wizletInfo.legend :legend:index}}
+                                <div class="ideaList__legendItem">
+                                    <span class="ideaList__legendColor ideaList__legendColor{{=legend.classSuffix}}"></span>
+                                    <span class="ideaList__label ideaList__label-legend">{{=legend.text}}</span>
+                              </div>
+                            {{~}}                 
+                        </section>
+                    {{?}}
+                </header>
+                {{?}}
+                {{~it.entryList :entry}}
+                <div class="listItem cl-xs-column-12 cl-sm-column-12 cl-md-column-12" data-entryid="{{=entry.id}}" data-action="{{=entry.action}}">
+                    <article class="ideaList__idea cl-table{{?entry.isMine}} ideaList__idea-myIdea{{?}}" data-openAction>
+                        <div class="ideaList__idea-header clear-float cl-xs-cell-3">
+                            {{~entry.area.header.fieldList :field:fieldIndex}}
+                            {{? fieldIndex === 0}}
+                            <h3 class="ideaList__idea-title">
+                                {{=field.displayText}}
+                            </h3>
+                            {{??}}
+                            <p class="ideaList__idea{{=field.config.classSuffix}}">
+                                {{=field.displayText}}
+                            </p>
+                            {{?}}
+                            {{~}}
+                        </div>
+                        {{? it.wizletInfo.rankings}}
+                            <div class="ideaList__idea-ranks clear-float cl-xs-cell-3">
+                                {{? it.wizletInfo.scoreLabel}}
+                                <div class="ideaList__rankCell">
+                                    <div class="ideaList__rankCell-title">{{=it.wizletInfo.scoreLabel}}</div>
+                                    <div class="ideaList__rankCell-value" data-averageRank>
+                                        {{? entry.totalAverageRank.Average }}
+                                            {{=entry.totalAverageRank.Average.toFixed(2) }}
+                                        {{?? it.wizletInfo.noRankingText}}
+                                            {{=it.wizletInfo.noRankingText}}
+                                        {{?}}
+                                    </div>
+                                </div>
+                                {{?}}
+                                {{? it.wizletInfo.rankLabel}}
+                                <div class="ideaList__rankCell">
+                                    <div class="ideaList__rankCell-title">{{=it.wizletInfo.rankLabel}}</div>
+                                    <div class="ideaList__rankCell-value">
+                                        {{? entry.totalAverageRank.Position }}
+                                            {{=entry.totalAverageRank.Position}}
+                                        {{?? it.wizletInfo.noRankingText}}
+                                            {{=it.wizletInfo.noRankingText}}
+                                        {{?}}
+                                    </div>
+                                </div>
+                                {{?}}
+                                {{? it.wizletInfo.idLabel}}
+                                <div class="ideaList__rankCell">
+                                    <div class="ideaList__rankCell-title">{{=it.wizletInfo.idLabel}}</div>
+                                    <div class="ideaList__rankCell-id">{{!entry.sequence}}</div>
+                                </div>
+                                {{?}}
+                            </div>
+                        {{?}}
+                                           
+                        {{? entry.area.body}}
+                            <div class="ideaList__idea-body-holder cl-xs-cell-5">
+                                <div class="ideaList__idea-body">
+                                    {{~entry.area.body.fieldList :field:fieldIndex}}
+                                        <h4 class="ideaList__idea-label">{{=field.config.title}}</h4>
+                                        <p class="ideaList__idea{{=field.config.classSuffix}}">{{!field.displayText}}</p>
+                                    {{~}}
+                                </div>
+                            </div>
+                        {{?}}
+                        {{? it.wizletInfo.authorLabel}}
+                            <div class="ideaList__idea-footer cl-xs-cell-1">
+                                <h4 class="ideaList__idea-label">{{=it.wizletInfo.authorLabel}}</h4>
+                                <p class="ideaList__idea-author">{{?entry.isMine}}You{{??}}{{!entry.authorName}}{{?}}</p>
+                            </div>
+                        {{?}}
+                    </article>
+                </div>
+                {{~}}
+            </section>
+            {{? it.wizletInfo.buttons}}
+            <footer class="ideaList__footer cl-xs-column-12 cl-row">
+                {{~it.wizletInfo.buttons :button:index}}
+                    {{? button.type === "showMore"}}
+                        <div class="ideaList__footer-showMore" data-list-length="{{=button.length}}" data-moreaction>{{=button.text}}</div>
+                    {{?}}
+                {{~}}
+            </footer>
+            {{?}}
+        </section>
+    </div>
+</div>

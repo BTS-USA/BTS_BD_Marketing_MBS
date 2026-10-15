@@ -1,0 +1,504 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="meetings cl-component">
+
+            {{? it.header}}
+            <header class="meetings-header--main cl-header--main">
+                {{? it.header.title}}
+                <h1 class="meetings-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="meetings-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <div class="meetings-container cl-container" data-meeting-landing>
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="meetings-instructions cl-instructions">
+                        <p class="meetings-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+                    <article class="meetings-article cl-row">
+                        <section class="meetings-body" data-meetings-body>
+
+                            <div class="meetings-body__panel" data-meetings-startjoin data-meetings-panel>
+                                <div class="meetings-startJoin" data-select-leader-follower data-panel-actions>
+                                    <div class="meetings-start__error" data-meetings-start-error>{{=it.content.meetingAlreadyOpened}}</div>
+
+                                    <div class="meetings-header-buttons">
+                                        <div class="meetings-leader__start meetings-button">
+                                            <span class="meetings-start__button" data-createbutton data-lead-meeting-button>{{=it.content.leadingButton}}</span>
+                                        </div>
+                                        <div class="meetings-participant__join meetings-button">
+                                            <span class="meetings-join__button" data-joinbutton data-join-meeting-button>{{=it.content.joiningButton}}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meetings-instructions__header_button">
+                                        <span class="meetings-instructions__header_button__title" data-meeting-instruction>{{=it.content.leaderInstructions}}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+
+                        <section class="meetings-body" data-meeting-list>
+
+                            <div data-meetings-startjoin data-meetings-panel>
+
+                                <ul class="meeting-tabs">
+                                    <li class="meeting-tabs-link {{? it.isFollower}}current{{?}}" data-tab="tab-1">{{=it.content.leadingButton}}</li>
+                                    <li class="meeting-tabs-link {{? !it.isFollower}}current{{?}}" data-tab="tab-2">{{=it.content.joiningButton}}</li>
+                                </ul>
+
+                                <div id="tab-1" class="meeting-tabs-content {{? it.isFollower}}current{{?}}">
+                                    <div class="meetings-body__list">
+                                        <div class="meetings-list__header">
+                                            <div class="meetings-list__text">
+                                                <span class="meetings-text__title">{{=it.content.meetingList}}</span>
+                                            </div>
+                                            <div class="meetings-utility">
+                                                {{? it.isFollower}}
+                                                <div class="meetings__facguide">
+                                                    <span class="facguide__title">{{=it.content.facguide}}</span>
+                                                </div>
+                                                {{?}}
+                                                <div class="meetings-instructions__header">
+                                                    <span class="meetings-instructions__title" data-meeting-instruction>{{=it.content.leaderInstructions}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="meetings-list__body" data-meetingslist-body>
+                                            <div class="meetings-meeting__details header">
+                                                <div class="meeting-meetinglistheader">
+                                                    <span class="meetings-list_button  cl-icon cl-icon--add" data-createbutton data-create-meeting-button></span>
+                                                    <span class="meetings-text__desc" data-create-meeting-button>{{=it.content.createMeeting}}</span>
+                                                </div>
+                                                <div class="meeting-meetinglistheader">
+                                                    <span class="meetings-list_button rehearsal_button cl-icon cl-icon--add" data-createbutton data-rehearsal-meeting-button></span>
+                                                    <span class="meetings-text__desc" data-rehearsal-meeting-button>{{=it.content.createRehearsalMeeting}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="meetings-meeting__details">
+                                                <div class="meetings-errors" data-meetings-errors></div>
+                                            </div>
+                                            <div class="meetings-list">
+                                                {{?it.leaderMeetings && it.leaderMeetings.length > 0}}
+                                                {{~it.leaderMeetings :meeting:ind}}
+                                                <div class="meetings-list__meeting {{=meeting.status}} {{? meeting.isTest == true }} meeting-rehearsal {{?}}" data-meetingid="{{=meeting.id}}" data-meeting data-meetingStatus="{{=meeting.status}}" 
+                                                    data-rehearsameeting="{{=meeting.isTest}}">
+                                                    <div class="meetings-meeting__details">
+                                                        <div class="meetings-meeting__statusbox" data-meeting-status="{{=meeting.status}}">
+                                                            <div><i class="cl-icon cl-icon--calendar"></i></div>
+                                                            {{? meeting.status == "Open"}}
+                                                            <div>{{=it.statusOpen}}</div>
+                                                            {{?}}
+                                                            {{? meeting.status == "Closed"}}
+                                                            <div>{{=it.statusClosed}}</div>
+                                                            {{?}}
+                                                            {{? meeting.status == "Started"}}
+                                                            <div>{{=it.statusStarted}}</div>
+                                                            {{?}}
+                                                        </div>
+                                                        <div class="meetings-meeting__left">
+                                                            <p class="meetings-meeting__title {{?meeting.status !== 'Closed'}}meetings-meeting__title--notClosed{{?}}">{{=meeting.title}}</p>
+                                                            {{?it.content.leaderText}}
+                                                            <div>
+                                                                {{=it.content.leaderText}}: {{=meeting.leaderName}} 
+																<!-- {{? meeting.isTest == true }}
+																<span class="test-meeting-content">( {{=it.content.testMeetingText}} )</span>
+																{{?}} -->
+                                                            </div>
+                                                            {{??}}
+                                                            <div>
+                                                                Leader: {{=meeting.leaderName}}
+																<!-- {{? meeting.isTest == true }}
+																<span class="test-meeting-content">( {{=it.content.testMeetingText}} )</span>
+																{{?}} -->
+                                                            </div>
+                                                            {{?}}
+
+                                                            {{?meeting.startTime}}
+                                                            <div class="meetings-meeting__dateTime">
+                                                                <i class="cl-icon cl-icon--calendar"></i>
+                                                                <span class="meetings-meeting__date">{{=meeting.startDate}}</span>
+                                                                <i class="cl-icon cl-icon--clock"></i>
+                                                                <span class="meetings-meeting__time">{{=meeting.time}}</span>
+                                                            </div>
+                                                            {{??}}
+                                                            {{?meeting.planTime}}
+                                                            <div class="meetings-meeting__dateTime">
+                                                                <i class="cl-icon cl-icon--calendar"></i>
+                                                                <span class="meetings-meeting__date">{{=meeting.planDate}}</span>
+                                                                <i class="cl-icon cl-icon--clock"></i>
+                                                                <span class="meetings-meeting__time">{{=meeting.planTm}}</span>
+                                                            </div>
+                                                            {{?}}
+                                                            {{?}}
+
+                                                            <p class="meetings-meeting__code {{?meeting.status !== 'Closed'}}meetings-meeting__code--notClosed{{?}}">{{=it.content.meetingIdText}} {{=meeting.code}}</p>
+                                                            <div class="meetings-meeting__buttonbox">
+                                                                {{?meeting.status === 'Open'}}
+                                                                <div class="meetings-button__start meeting-meetingbuttons" data-meeting-buttons data-meeting-start-new-button>{{=it.content.start}}</div>
+                                                                {{??meeting.status === 'Started'}}
+                                                                <div class="meetings-button__resume meeting-meetingbuttons" data-meeting-buttons data-meeting-resume-button>{{=it.content.resume}}</div>
+                                                                <div class="meetings-button__end meeting-meetingbuttons meeting-meetingbuttons_endmeeting" data-meeting-buttons data-meeting-end-button>{{=it.content.endMeeting}}</div>
+                                                                {{??meeting.status === 'Closed'}}
+                                                                <div class="meetings-button__getReport meeting-meetingbuttons {{?!meeting.reportId}} meeting-meetingbuttons__button--disabled{{?}}" {{?meeting.reportId}} data-meeting-report-id="{{=meeting.reportId}}" {{?}} data-meeting-buttons data-meeting-getreport-button>{{=it.content.getReport}}</div>
+                                                                <div class="meetings-button__revisit meeting-meetingbuttons" data-meeting-buttons data-meeting-revisit-button>{{=it.content.revisit}}</div>
+                                                                {{?}}
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="meetings-meeting__right">
+                                                            {{?meeting.isLeader && meeting.status !== 'Closed'}}                                                            
+                                                            <div class="meetings-meeting__copyURL">
+                                                                <span data-direct-link="{{=meeting.directLinkText}}" data-meeting-copydirecturl> {{?meeting.status !== 'Closed'}}{{=it.content.copyDirectURL}}{{?}}</span>
+                                                            </div>
+                                                            {{?}}
+                                                            {{?meeting.qrcode !== undefined}}
+                                                            <div class="meeting-qrcode">{{=meeting.qrcode}}
+                                                                <a class="meeting-qrcode-copy" data-image-source data-copy-meeting-code={{=meeting.code}}
+                                                                    data-copy-meeting-name={{=meeting.title}}>{{=it.copyQrCode}}</a>
+                                                            </div>
+                                                            {{?}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{~}}
+                                                {{??}}
+                                                <p class="meetings-list__noMeeting">{{=it.content.noMeetings}}</p>
+                                                {{?}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-2" class="meeting-tabs-content {{? !it.isFollower}}current{{?}}">
+                                    <div class="meetings-body__list">
+                                        <div class="meetings-list__header">
+                                            <div class="meetings-list__text">
+                                                <span class="meetings-text__title">{{=it.content.meetingList}}</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="meetings-list__body" data-meetingslist-body>
+                                            <div class="meeting-meetinglistheader">
+                                                <span class="meetings-start__button  cl-icon cl-icon--add" data-joinbutton data-join-meeting-button></span>
+                                                <span class="meetings-text__desc" data-join-meeting-button>{{=it.content.joinTitle}}</span>
+                                            </div>
+                                            <div class="meetings-meeting__details">
+                                                <div class="meetings-errors" data-meetings-errors></div>
+                                            </div>
+                                            <div class="meetings-list">
+                                                {{?it.followerMeetings && it.followerMeetings.length > 0}}
+                                                {{~it.followerMeetings :meeting:ind}}
+                                                <div class="meetings-list__meeting" data-meetingid="{{=meeting.id}}" data-meeting>
+                                                    <div class="meetings-meeting__details">
+                                                        <div class="meetings-meeting__statusbox">
+                                                            <div><i class="cl-icon cl-icon--calendar"></i></div>
+                                                            {{? meeting.status == "Open"}}
+                                                            <div>{{=it.statusOpen}}</div>
+                                                            {{?}}
+                                                            {{? meeting.status == "Closed"}}
+                                                            <div>{{=it.statusClosed}}</div>
+                                                            {{?}}
+                                                            {{? meeting.status == "Started"}}
+                                                            <div>{{=it.statusStarted}}</div>
+                                                            {{?}}
+                                                        </div>
+
+                                                        <div class="meetings-meeting__left">
+                                                            <span class="meetings-meeting__title {{?meeting.status !== 'Closed'}}meetings-meeting__title--notClosed{{?}}">{{=meeting.title}}</span>
+                                                            {{?it.content.leaderText}}
+                                                            <div>
+                                                                {{=it.content.leaderText}}: {{=meeting.leaderName}}
+																<!-- {{? meeting.isTest == true }}
+																<span class="test-meeting-content">( {{=it.content.testMeetingText}} )</span>
+																{{?}} -->
+                                                            </div>
+                                                            {{??}}
+                                                            <div>
+                                                                Leader: {{=meeting.leaderName}}
+																<!-- {{? meeting.isTest == true }}
+																<span class="test-meeting-content">( {{=it.content.testMeetingText}} )</span>
+																{{?}} -->
+                                                            </div>
+                                                            {{?}}
+                                                            {{?meeting.startTime}}
+                                                            <div class="meetings-meeting__dateTime">
+                                                                <i class="cl-icon cl-icon--calendar"></i>
+                                                                <span class="meetings-meeting__date">{{=meeting.startDate}}</span>
+                                                                <i class="cl-icon cl-icon--clock"></i>
+                                                                <span class="meetings-meeting__time">{{=meeting.time}}</span>
+                                                            </div>
+                                                            {{??}}
+                                                            {{?meeting.planTime}}
+                                                            <div class="meetings-meeting__dateTime">
+                                                                <i class="cl-icon cl-icon--calendar"></i>
+                                                                <span class="meetings-meeting__date">{{=meeting.planDate}}</span>
+                                                                <i class="cl-icon cl-icon--clock"></i>
+                                                                <span class="meetings-meeting__time">{{=meeting.planTm}}</span>
+                                                            </div>
+                                                            {{?}}
+                                                            {{?}}
+                                                            <p class="meetings-meeting__code {{?meeting.status !== 'Closed'}}meetings-meeting__code--notClosed{{?}}">{{=it.content.meetingIdText}} {{=meeting.code}}</p>
+                                                        </div>
+                                                        <div class="meetings-meeting__right">
+                                                            {{?meeting.status === 'Open'}}
+                                                            <div class="startmeeting-button__join meeting-meetingbuttons" data-joinbutton data-meeting-buttons data-meeting-join-new-button>{{=it.content.join}}</div>
+                                                            {{??meeting.status === 'Started'}}
+                                                            <div class="startmeeting-button__join meeting-meetingbuttons" data-joinbutton data-meeting-buttons data-meeting-join-new-button>{{=it.content.join}}</div>
+                                                            {{??meeting.status === 'Closed'}}
+                                                            <div class="meetings-button__getReport meeting-meetingbuttons {{?!meeting.reportId}} meeting-meetingbuttons__button--disabled{{?}}" {{?meeting.reportId}} data-meeting-report-id="{{=meeting.reportId}}" {{?}} data-meeting-buttons data-meeting-getreport-button>{{=it.content.getReport}}</div>
+                                                            {{?}}
+                                                        </div>
+                                                    </div>
+
+                                                    {{?meeting.isLeader && meeting.status !== 'Closed'}}                                                    
+                                                    <div class="meetings-meeting__copyURL">
+                                                        <span data-direct-link="{{=meeting.directLinkText}}" data-meeting-copydirecturl> {{?meeting.status !== 'Closed'}}{{=it.content.copyDirectURL}}{{?}}</span>
+                                                    </div>
+                                                    {{?}}
+                                                </div>
+                                                {{~}}
+                                                {{??}}
+                                                <span class="meetings-list__noMeeting">{{=it.content.noMeetings}}</span>
+                                                {{?}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="meetings-modal cl-modal linkCopied" data-meetings-modal data-meetings-modal-all>
+                
+            <article class="cl-modal__dialog">
+                    <div class="meeting-close">
+                            <div class="meeting-buttons__close">
+                                <div class="meeting-button__close meeting-buttons" data-meeting-close-button>{{=it.content.closeButton}}</div>
+                            </div>
+                        </div>
+                <div class="cl-modal__container">
+                    <section class="cl-modal__body">
+                        <div class="cl-modal__content">
+                            <p>{{=it.copyurlMessage}}</p>
+                        </div>
+                        <div class="meeting-close">
+                            <div class="meeting-buttons__close">
+                                <div class="meeting-button__close meeting-buttons" data-meeting-ok-button>{{=it.content.okButton}}</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+           
+        </section>
+		
+		<section class="meetings-modal cl-modal linkCopied" data-meetings-modal-qrcode data-meetings-modal-all>
+                
+            <article class="cl-modal__dialog">
+                    <div class="meeting-close">
+                            <div class="meeting-buttons__close">
+                                <div class="meeting-button__close meeting-buttons" data-meeting-close-button>{{=it.content.closeButton}}</div>
+                            </div>
+                        </div>
+                <div class="cl-modal__container">
+                    <section class="cl-modal__body">
+                        <div class="cl-modal__content">
+                            <p>{{=it.copyqrMessage}}</p>
+                        </div>
+                        <div class="meeting-close">
+                            <div class="meeting-buttons__close">
+                                <div class="meeting-button__close meeting-buttons" data-meeting-ok-button>{{=it.content.okButton}}</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+           
+        </section>
+        
+        <section class="meetings-modal cl-modal instructions" data-instructions-modal data-meetings-modal-all>
+                
+            <article class="cl-modal__dialog">
+                    <div class="meeting-close">
+                            <div class="meeting-buttons__close">
+                                <div class="meeting-button__close meeting-buttons" data-meeting-close-button>{{=it.content.closeButton}}</div>
+                            </div>
+                        </div>
+                <div class="cl-modal__container">
+                    <section class="cl-modal__body">
+                        {{? it.leaderInstructions}}
+                        <div class="meetings-body__instructionsHeader">{{=it.leaderInstructionsHeader}}
+                        </div>
+                        {{?}}
+                        <div class="meetings-body__instructions">
+                            <div class="meetings-instructions__body">
+                                {{? it.leaderInstructions}}
+                                <ol>
+                                    {{~it.leaderInstructions :li:index}}
+                                    <li>{{=li.instruction}}</li>
+                                    {{~}}
+                                </ol>
+                                {{?}}
+                            </div>
+                        </div>
+                        <div class="meeting-footer">
+                            <div class="meeting-buttons__cont">
+                                <div class="meeting-button__resume meeting-buttons" data-meeting-close-button>{{=it.content.closeButton}}</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </section>
+
+        <section class="meetings-modal cl-modal endMeeting" data-end-meeting-modal data-meetings-modal-all>
+                
+            <article class="cl-modal__dialog">
+                    <div class="meeting-close">
+                            <div class="meeting-buttons__close">
+                                <div class="meeting-button__close meeting-buttons" data-meeting-close-button>{{=it.content.closeButton}}</div>
+                            </div>
+                        </div>
+                <div class="cl-modal__container">
+
+                    <section class="cl-modal__body" data-meeting-end data-meeting-id>
+                        <div class="meeting-header">
+                            <div class="meeting-icon"></div>
+                            <p class="meeting-title">{{=it.content.endMeetingTitle}}</p>
+                        </div>                            
+                        <div class="startmeeting-start__title">
+                            <p>{{=it.content.endMeetingDesc}}</p>
+                        </div>
+                        <div class="meeting-footer">
+                            <div class="meeting-buttons__cont">
+                                <div class="meeting-buttons" data-meeting-no-button>{{=it.content.noButton}}</div>
+                                <div class="meeting-buttons" data-meeting-yes-button>{{=it.content.yesButton}}</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </section>
+
+        <section class="meetings-modal cl-modal startMeeting" data-create-meeting-modal data-meetings-modal-all>
+               
+            <article class="cl-modal__dialog">
+                    <div class="meeting-close">
+                            <div class="meeting-buttons__close">
+                                <div class="meeting-button__close meeting-buttons" data-meeting-close-button>{{=it.content.closeButton}}</div>
+                            </div>
+                        </div>
+                <div class="cl-modal__container">
+
+                    <section class="cl-modal__body" data-meeting-start>
+                        <div class="meeting-header">
+                            <div class="meeting-icon"></div>
+                            <p class="meeting-title" data-create-meeting-title>{{=it.content.createMeeting}}</p>
+                            <div class="rehearsal-title-container">
+                                <p class="meeting-title" data-rehearsal-meeting-title>{{=it.content.rehearsalMeetingTitle}}</p>
+                                <p class="meeting-message" data-rehearsal-meeting-title>{{=it.content.rehearsalMeetingMessage}}</p>
+                            </div>
+                        </div>
+                        <div class="meetings-errors" data-meetings-errors></div>							
+						
+						<!-- <div class="meeting-test-checkbox">
+							<input type="checkbox" data-start-test-meeting /> {{=it.content.testMeetingHeader}}
+						</div>							 -->
+						
+                        <div class="meetings-start">                            							
+                            <div class="meetings-start_inputbox password-field">
+                                    <div class="meetings-startinputlabel">{{=it.content.enterLeaderPasswordLabel}}</div>
+                                <input type="password" placeholder="{{=it.content.enterPwdPlaceholder}}" data-meetings-input data-start-meeting-pwd />
+                                <div class="meetings-start-invalid__tooltip" data-meetings-invalid data-meeting-pwd-invalid></div>
+                            </div>
+
+                            <div class="meetings-start_inputbox title-field" data-mymeetingtitle>
+                                    <div class="meetings-startinputlabel">{{=it.content.enterMeetingTitleLabel}}</div>
+                                <input type="text" value="{{=it.MyMeeting}}" data-meetings-input data-start-meeting-title />
+                                <div class="meetings-start-invalid__tooltip" data-meetings-invalid data-meeting-title-invalid></div>
+                            </div>
+                            
+                            <div class="meetings-start_inputbox title-field" data-myRehearsalTitle>
+                                <div class="meetings-startinputlabel">{{=it.content.enterMeetingTitleLabel}}</div>
+                                <input type="text" value="{{=it.MyRehearsal}}" data-meetings-input data-start-meeting-title />
+                                <div class="meetings-start-invalid__tooltip" data-meetings-invalid data-meeting-title-invalid></div>
+                            </div>
+
+                            <div class="meetings-start_inputbox date-field">
+                                    <div class="meetings-startinputlabel">{{=it.content.enterdateLabel}}</div>
+                                <input type="text" data-type="date" placeholder="{{=it.content.setDatePlaceholder}}" data-meetings-input data-start-meeting-date>
+                                <div class="meetings-start-invalid__tooltip" data-meetings-invalid data-meeting-setdate-invalid></div>
+                            </div>
+
+                            <div class="meetings-start_inputbox time-field">
+                                    <div class="meetings-startinputlabel">{{=it.content.enterTimeLabel}}</div>
+                                <input type="text" id="input-24-hour" name="usr_time" placeholder="{{=it.content.setTimePlaceholder}}" data-meetings-input data-start-meeting-time />
+                                <div class="meetings-start-invalid__tooltip" data-meetings-invalid data-meeting-settime-invalid></div>
+                            </div>
+                        </div>
+
+                        <div class="meeting-footer">
+                            <div class="meeting-buttons__cont">
+                                <div class="meeting-button__resume meeting-buttons" data-meeting-create-buttons data-meeting-plan-button>{{=it.content.plan}}</div>
+                                <div class="meeting-button__start meeting-buttons" data-meeting-create-buttons data-meeting-start-button>{{=it.content.start}}</div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </article>
+        </section>
+
+        <section class="meetings-modal cl-modal joinMeeting" data-join-meeting-modal data-meetings-modal-all>
+                
+            <article class="cl-modal__dialog">
+                    <div class="meeting-close">
+                            <div class="meeting-buttons__close">
+                                <div class="meeting-button__close meeting-buttons" data-meeting-close-button>{{=it.content.closeButton}}</div>
+                            </div>
+                        </div>
+                <div class="cl-modal__container">
+                    <section class="cl-modal__body" data-meeting-join>
+
+                        <div class="meeting-header">
+                            <div class="meeting-icon"></div>
+                            <p class="meeting-title" data-join-meeting-title>{{=it.content.joinTitle}}</p>
+                        </div>
+
+                        <div class="meetings-start">
+                            <div class="meetings-errors" data-meetings-errors></div>
+                            <div class="meetings-start_inputbox title-field">
+                                    <div class="meetings-startinputlabel">{{=it.content.enterCodeLabel}}</div>
+                                <input type="text" placeholder="{{=it.content.enterCodePlaceholder}}" data-meetings-input data-join-meeting-code />
+                                <div class="meetings-start-invalid__tooltip" data-meetings-invalid data-meeting-code-invalid></div>
+                            </div>
+                        </div>
+
+                        <div class="meeting-footer">
+                            <div class="meeting-buttons__cont">                                
+                                <div class="meeting-button__join meeting-buttons" data-meeting-join-buttons data-meeting-join-button>{{=it.content.join}}</div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>

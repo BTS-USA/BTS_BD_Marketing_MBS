@@ -1,0 +1,111 @@
+<div class="mainContentWrapper">
+	<div class="mainContent">
+		<section class="msc cl-component">
+			
+			{{? it.header}}
+				<header class="msc-header cl-header--main">
+					{{? it.header.breadCrumbs}}
+						<p class="msc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+					{{?}}
+					{{? it.header.bgimage}}
+					 <div class="msc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+					{{?}}
+					<div class="msc-header-wrapper cl-header-wrapper">
+						{{? it.header.title}}
+							<h1 class="msc-header__title cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+								{{=it.header.title}}
+							</h1>
+						{{?}}
+						{{? it.header.description}}
+							<p class="msc-header__description cl-header__description--main">
+								{{=it.header.description}}
+							</p>
+						{{?}}
+					</div>
+				</header>
+			{{?}}
+			<div class="msc-container cl-container">
+				<div class="cl-xs-column-12 cl-row">
+					{{? it.instructions}}
+						<div class="msc-instructions cl-instructions">
+							<p class="msc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+						</div>
+					{{?}}
+					<div class="msc-content cl-content" data-contentContainer>
+						{{?it.questions}}
+						{{~it.questions :item:index }}
+						<article class="msc-article cl-article cl-table" data-checkBoxRowContainer>
+							<label class="msc-label cl-table-row" data-checkBoxRow>
+								<div class="msc-renderer cl-xs-cell-1" data-leftcheckbox>
+									<div class="msc-checkbox"></div>
+									<div class="multipleSelectRenderer" data-binding="{{? item.value && item.value !== "" && item.value !== undefined}}{{=item.value}}{{??}}{{=item.binding}}{{?}}" data-clearOnDeselect="{{=it.clearOnDeselect}}"></div>
+								</div>
+								<div data-question class="msc-question cl-xs-cell-11">
+									<p class="msc-question__label">{{=item.title}}:</p>
+									<p class="msc-question__description">{{=item.description}}</p> 
+								</div>
+								{{?item.subDescription}}
+									<div class="msc-accordion-icon" data-optionContainer></div>
+								{{?}}
+							</label>
+							<div class="msc-accordion cl-table-row">
+								{{?item.subDescription}}
+									<div data-accordionData class="msc-accordion__content cl-xs-cell-12">{{=item.subDescription}}</div>
+								{{?}}
+							</div>
+						</article>
+						{{~}}
+						{{?}}
+						<div class="msc-remaining" data-checkRemainingCont>
+							<span class="msc-remaining__counter" data-checkRemaining></span>
+							<span class="msc-remaining__remaining" data-checkRemainingText></span>
+						</div>
+					</div>
+
+					<footer class="msc-footer cl-footer" data-controls>
+						{{? it.submitMessage != null && it.submitMessage != "undefined" && it.submitMessage.length > 0  }}
+						<div class="msc-message hideMessage">
+							<p class="msc-message__text cl-paragraph">{{=it.submitMessage}}</p>
+						</div>
+						<div class="msc-message">
+							<p class="msc-message__text cl-paragraph" data-componentMessage></p>
+						</div>
+						{{?}}
+					
+						<div class="msc-buttons cl-buttons" data-mscbuttons>
+						{{? it.buttons_v2 }}
+                            {{~it.buttons_v2 :button:index}}
+                            <div id="multipleSelect{{=button.type}}Button"
+                                data-componentbuttons data-buttons
+                                {{? button.type=="submit"}} data-submitbutton data-submitaction data-pulsesubmitbutton{{?}}
+                                {{? button.type=="clear"}} data-clearAction{{?}}
+                                class="msc-button msc-button--{{=button.type}} cl-button cl-button--{{=button.type}}">
+                                <div class="msc-button--text cl-button--text" 
+                                    {{? button.type=="submit"}} data-submitaction {{?}} 
+                                    data-mscsubmitbuttontext {{? button.disabled}} disabled{{?}} 
+                                    data-button="{{=button.type}}">
+                                    {{=button.navigation.title}}
+                                </div>
+                            </div>
+                            {{~}}
+						{{??}}
+	                        <div class="msc-buttons" data-mscbuttons>
+	                            {{? it.buttons[1].show || it.buttons[1].show === undefined}}
+	                            <div class="msc-button-container" id="multipleSelectSubmitButton" data-componentbuttons data-submitbutton data-pulsesubmitbutton>
+	                                <span class="msc-button msc-button--submit cl-button cl-button--submit disabled" data-submitaction>{{=it.buttons[1].title}}</span>
+	                            </div>
+	                            {{?}}
+	                            {{? it.buttons[0].show || it.buttons[0].show === undefined}}
+	                            <div class="msc-button-container" id="multipleSelectClearButton" data-componentButtons>
+	                                <span class="msc-button msc-button--clear cl-button cl-button--clear disabled" data-clearAction>{{=it.buttons[0].title}}</span>
+	                            </div>
+	                            {{?}}
+	                        </div>
+						{{?}}
+						</div>
+					</footer>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+<div class="groupheader"><span class="grpText">{{=it.groupMembersTitle || "Group Members"}}</span><span class="grpCount" data-totalcount>{{=it.totalParticipants}}</span></div>
+{{~it.participants :participant}}
+{{? Wizer.ParticipationId != participant.Id}}
+<div class="usernames ruler" data-participants>{{=participant.Name}}</div>
+{{?}}
+{{~}}

@@ -1,0 +1,99 @@
+<Action>
+  <Component type="SingleSelect" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_singleSelect.dot",
+  "css": "styles/as_singleSelect.css",
+  "header": {
+    "bgimage": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/headerGraphic.svg",
+    "title": "!{Activity1_MomentSingleSelectRadioTitle}",
+    "description": "!{Activity1_MomentSingleSelectRadioDescription}"
+  },
+  "instructions": "!{Activity1_MomentSingleSelectRadioInstructions}",
+  "type": "select",
+  "readOnlyCondition": "Q.Leader==2",
+  "questions": [
+    {
+      "binding": "Activity1_MOMENT_SINGLE_SELECT",
+      "options": [
+        {
+          "name": "!{Activity1_MomentSingleSelectOption1}",
+          "title": "!{Activity1_MomentSingleSelectOption1}",
+          "subDescription": "!{Activity1_MomentSingleSelectDescription1}",
+          "value": "1"
+        },
+        {
+          "name": "!{Activity1_MomentSingleSelectOption2}",
+          "title": "!{Activity1_MomentSingleSelectOption2}",
+          "subDescription": "!{Activity1_MomentSingleSelectDescription2}",
+          "value": "2"
+        },
+        {
+          "name": "!{Activity1_MomentSingleSelectOption3}",
+          "title": "!{Activity1_MomentSingleSelectOption3}",
+          "subDescription": "!{Activity1_MomentSingleSelectDescription3}",
+          "value": "3"
+        },
+        {
+          "name": "!{Activity1_MomentSingleSelectOption4}",
+          "title": "!{Activity1_MomentSingleSelectOption4}",
+          "subDescription": "!{Activity1_MomentSingleSelectDescription4}",
+          "value": "4"
+        }
+      ]
+    }
+  ],
+  "bindings": {
+    "1": {
+      "bind": "db:Activity1_MOMENT_SINGLE_SELECT",
+      "render": "renderer/radio",
+      "trackQuestion": "Team_Track",
+      "renderOptions": {
+        "id": 1,
+        "val": "1",
+        "type": "select"
+      }
+    },
+    "2": {
+      "bind": "db:Activity1_MOMENT_SINGLE_SELECT",
+      "render": "renderer/radio",
+      "trackQuestion": "Team_Track",
+      "renderOptions": {
+        "id": 2,
+        "val": "2",
+        "type": "select"
+      }
+    },
+    "3": {
+      "bind": "db:Activity1_MOMENT_SINGLE_SELECT",
+      "render": "renderer/radio",
+      "trackQuestion": "Team_Track",
+      "renderOptions": {
+        "id": 3,
+        "val": "3",
+        "type": "select"
+      }
+    },
+    "4": {
+      "bind": "db:Activity1_MOMENT_SINGLE_SELECT",
+      "render": "renderer/radio",
+      "trackQuestion": "Team_Track",
+      "renderOptions": {
+        "id": 4,
+        "val": "4",
+        "type": "select"
+      }
+    }
+  },
+  "buttons": [
+    {
+      "text": "!{Activity1_submit}",
+      "type": "submit",
+      "submitButton": true
+    }
+  ],
+  "scope": [
+    "Activity1_MOMENT_SINGLE_SELECT",
+    "Team_Track",
+    "Leader"
+  ]
+}]]></Component>
+</Action>

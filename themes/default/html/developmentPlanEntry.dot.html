@@ -1,0 +1,105 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="dpe table">
+            {{? it.header}}
+            <header class="dpe-header cl-header--main" data-textlistheader>
+                {{? it.header.title}}
+                <h1 class="dpe-header__title cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="dpe-header__description cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+            <div class="dpe-form-cont cl-container">
+                <header class="dpe-form__header">
+                    <span class="dpe-form__headerText">{{=it.mainSectionTitle}}</span>
+                    {{? it.mode === "edit"}}
+                    <div class="dpe-form__close"></div>
+                    {{?}}
+                </header>
+                <article class="dpe-form">
+                    <div class="dpe-form__body">
+                        {{~it.questions :question:i}}
+                            {{? i%2 == 0}}
+                                <div class="row{{=(i/2) | 0}} dpe-form__row" data-form-row>
+                            {{?}}
+                                {{? question.type === "dropdown"}}
+                                    <section class="dpe-form__dd {{?question.mandatory}}dpe-form__mandatory{{?}} cl-xs-column-12 cl-sm-column-6 cl-md-column-6" data-questionid="{{=question.questionId}}" data-type="{{=question.type}}" data-responseid="{{=question.responseId}}" data-form-fields>
+                                        <label class="dpe-dd__label dpe-form__labels">{{=question.title}}</label>
+                                        <select class="dpe-dd__select {{?question.mandatory}}dpe-field__mandatory{{?}}{{?!question.isEditable}} disabled {{?}}" {{?!it.allFieldsEditable}} {{?!question.isEditable}} disabled {{?}} {{?}} data-form-select data-form-elements>
+                                            <option value="">{{=question.defaultOptionLabel}}</option>
+                                            {{~question.options :option:index}}
+                                            <option value="{{=option.KeypadNumber}}" {{?option.KeypadNumber == question.responseText}} selected {{?}}>{{=option.ResponseText}}</option>
+                                            {{~}}
+                                        </select>
+                                    </section>
+                                {{?? question.type === "textField"}}
+                                    <section class="dpe-form__textField {{?question.mandatory}}dpe-form__mandatory{{?}} cl-xs-column-12 cl-sm-column-6 cl-md-column-6" data-questionid="{{=question.questionId}}" data-type="{{=question.type}}" data-responseid="{{=question.responseId}}" data-form-fields>
+                                        <label class="dpe-textField__label dpe-form__labels">{{=question.title}}</label>
+                                        <input type="text" value="{{=question.responseText}}" class="dpe-textField__input {{?question.mandatory}}dpe-field__mandatory{{?}}{{?!question.isEditable}} disabled {{?}}" data-form-textfield data-form-elements {{? question.maxlength}} maxlength="{{=question.maxLength}}" {{?}} {{?!it.allFieldsEditable}} {{?!question.isEditable}} readonly {{?}} {{?}}>
+                                    </section>
+                                {{?? question.type === "textArea"}}
+                                    <section class="dpe-form__textArea {{?question.mandatory}}dpe-form__mandatory{{?}} cl-xs-column-12 cl-sm-column-6 cl-md-column-6" data-questionid="{{=question.questionId}}" data-type="{{=question.type}}" data-responseid="{{=question.responseId}}" data-form-fields>
+                                        <label class="dpe-textArea__label dpe-form__labels">{{=question.title}}</label>
+                                        <textarea class="dpe-textArea__textarea {{?question.mandatory}}dpe-field__mandatory{{?}}{{?!question.isEditable}} disabled {{?}}" data-form-textarea data-form-elements {{? question.maxlength}} maxlength="{{=question.maxLength}}" {{?}} {{?!it.allFieldsEditable}} {{?!question.isEditable}} readonly {{?}} {{?}}>{{=question.responseText}}</textarea>
+                                    </section>    
+                                {{?? question.type === "date"}}
+                                    <section class="dpe-form__date {{?question.mandatory}}dpe-form__mandatory{{?}} cl-xs-column-12 cl-sm-column-6 cl-md-column-6" data-questionid="{{=question.questionId}}" data-type="{{=question.type}}" data-responseid="{{=question.responseId}}" data-form-fields>
+                                        <label class="dpe-date__label dpe-form__labels">{{=question.title}}</label>
+                                        <input type="text" value="{{= question.responseText != '' ? (question.format == null ? moment(question.responseText).format('dd MMM yyyy') : moment(question.responseText).format(question.format)) : '' }}" class="dpe-date__input {{?question.mandatory}}dpe-field__mandatory{{?}}{{?!question.isEditable}} disabled {{?}}" data-format="{{= question.format }}" data-form-type="date" data-form-elements {{? question.placeholder}} placeholder="{{=question.placeholder}}" {{?!question.isEditable}} disabled {{?}} {{?}}>
+                                    </section>
+                                {{?}}
+                            {{? i%2 == 1 || i === it.questions.length - 1}}
+                                </div>
+                            {{?}}
+                        {{~}}
+                        {{? it.controls && it.controls.length > 0}}
+                        <div class="row{{=(i/2) + 1 | 0}} dpe-form__row">
+                            <div class="dpe-form__controls cl-xs-column-12 cl-md-column-12">
+                                {{?it.controls[0].show}}
+                                    <div class="dpe-form__save" data-saveplan data-pulsesubmitbutton>{{=it.controls[0].title}}</div>
+                                {{?}}
+                                {{?it.controls[1] && it.controls[1].show}}
+                                    <div class="dpe-form__delete deletePlan" data-deleteplan>{{=it.controls[1].title}}</div>
+                                {{?}}
+                            </div>
+                        </div>
+                        {{?}}
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</div>
+{{?it.textContent}}
+<section class="cl-modal" data-confdelete>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn" data-dismiss="modal" aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body">
+                <header>
+                    <h1 class="cl-modal__title">{{=it.textContent.confirm}}</h1>
+                </header>
+                <div class="cl-modal__content">
+                    {{=it.textContent.confirmMsg}}
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button dpe-form__cancelbutton" data-btn="cancel">{{=it.textContent.cancel}}</span>
+                        <span class="cl-button dpe-form__okbutton" data-btn="ok">{{=it.textContent.ok}}</span>
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+    </article>
+</section>
+{{?}}

@@ -1,0 +1,12 @@
+﻿<div class="multiQuestionMatch {{=it.inputMode}}">
+    <ul class="multiQuestionMatchQuestions multiQuestionMatchList">
+        {{~it.questions :question:index}}
+        <li class="{{=question.validityClass}}">{{=question.QuestionText}}</li>
+        {{~}}
+    </ul>
+    <ul class="multiQuestionMatchAnswers multiQuestionMatchList">
+        {{~it.options :option:index}}
+        <li class="swappable ui-state-default {{=option.validityClass}}" id="{{=option.KeypadNumber}}">{{=option.ResponseText}}</li>
+        {{~}}
+    </ul>
+</div>

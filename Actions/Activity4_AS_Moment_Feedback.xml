@@ -1,0 +1,43 @@
+<Action>
+  <Component type="TabComponent" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_tabs.dot",
+  "type": "tab",
+  "version": "2",
+  "showTabs": true,
+  "header": {
+    "bgimage": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/headerGraphic.svg",
+    "title": "!{Activity4_MomentSingleSelectRadioTitle}",
+    "description": "!{Activity4_MomentSingleSelectRadioDescription}"
+  },
+  "YourAction": "!{Activity4_YourAction}",
+  "yourChoiceText": "!{Activity4_YourChoice}",
+  "trackQuestion": "Team_Track",
+  "tabOptions": [
+    {
+      "title": "!{Activity4_TabTitle1}",
+      "actionXML": "Activity4_AS_Moment_FeedbackA",
+      "conditionQuestion": "Activity4_MOMENT_SINGLE_SELECT",
+      "conditionAnswer": "1",
+      "youraction": "!{Activity4_YourAction}"
+    },
+    {
+      "title": "!{Activity4_TabTitle2}",
+      "actionXML": "Activity4_AS_Moment_FeedbackB",
+      "conditionQuestion": "Activity4_MOMENT_SINGLE_SELECT",
+      "conditionAnswer": "2",
+      "youraction": "!{Activity4_YourAction}"
+    },
+    {
+      "title": "!{Activity4_TabTitle3}",
+      "actionXML": "Activity4_AS_Moment_FeedbackC",
+      "conditionQuestion": "Activity4_MOMENT_SINGLE_SELECT",
+      "conditionAnswer": "3",
+      "youraction": "!{Activity4_YourAction}"
+    }
+  ],
+  "scope": [
+    "Activity4_MOMENT_SINGLE_SELECT",
+    "Team_Track"
+  ]
+}]]></Component>
+</Action>

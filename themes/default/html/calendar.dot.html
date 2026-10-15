@@ -1,0 +1,97 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="cc cl-component">
+            <article class="cc-lp cl-xs-column-12 cl-sm-column-5 cl-md-column-4 cl-lg-column-4 cl-padding--no">
+
+                <div class="cc-lp__control" data-control="calendar">
+                    <input type="text" class="cc-lp__control--picker" data-picker="input">
+                </div>
+                <div class="cc-lp__addnewcontainer" data-label="addnew" data-addnew-appointment>
+                    <span class="cc-lp__addnewcontainer--label" data-formlabel="outer"><span class="cc-form__icon cc-form__icon--addnew"></span>{{=it.addnewappointment}}</span>
+                </div>
+                <div class="cc-outerform" data-form="outer">
+                </div>
+            </article>
+            <article class="cc-rp cl-xs-column-12 cl-sm-column-7 cl-md-column-8 cl-lg-column-8 cl-padding--no" data-panel="right" >
+                <div class="cc-rp__currDate cl-xs-column-12 cl-padding--no" data-ec-list-group>
+                    <div class="cc-rp__back" data-action="back">{{=it.back}}</div>
+                    <p class="cc-rp__title" data-dateheader></p>
+                    <a class="cc-view__button" data-action="print" data-print>Print</a>
+                </div>
+                <div class="cc-rp__slotlist cl-xs-column-12" data-list="events" data-calendarHolder>
+                    {{  var time = 0,
+                            ampmString = "AM";
+                        for(var i = 0; i < 12; i++) {
+                                i===0 ? time = 12 : time = i;
+}}
+                            <div class="cc-rp__hourholder" data-time="{{=time + ampmString}}">
+                                <span class="cc-rp__timelabel">{{=time + " " + ampmString}}</span>
+                                <div class="cc-rp__timeslots" data-minutes="15"></div>
+                                <div class="cc-rp__timeslots" data-minutes="30"></div>
+                                <div class="cc-rp__timeslots" data-minutes="45"></div>
+                                <div class="cc-rp__timeslots" data-minutes="60"></div>
+                            </div>
+
+                        {{  
+                                if(i===11 && ampmString === "AM") {
+                                    i=-1;
+                                    ampmString = "PM";
+                                }
+                            }
+                        }}
+                </div>
+            </article>
+        </section>
+    </div>
+</div>
+
+<section class="cl-modal" data-confDelete>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn" data-dismiss="modal" aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body">
+                <header>
+                    <h1 class="cl-modal__title">{{=it.confirm}}</h1>
+                </header>
+                <div class="cl-modal__content">
+                    {{=it.confirmMsg}}
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button cc-button cc-button__cancel" data-btn="cancel">{{=it.cancel}}</span>
+                        <span class="cl-button cc-button cc-button__ok" data-btn="ok">{{=it.ok}}</span>
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+    </article>
+</section>
+
+<section class="cl-modal" data-alert>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn" data-dismiss="modal" aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body">
+                <header>
+                    <h1 class="cl-modal__title">{{=it.alert}}</h1>
+                </header>
+                <div class="cl-modal__content" data-alerttext>
+                    {{=it.alertmsg}}
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button cc-button cc-button__ok" data-btn="alertok">OK</span>
+                    </div>
+                </footer>
+            </section>
+
+        </div>
+    </article>
+</section>

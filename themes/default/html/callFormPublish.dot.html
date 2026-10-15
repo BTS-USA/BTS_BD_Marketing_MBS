@@ -1,0 +1,32 @@
+<div class="EvalFormCompleteContentWrapper">
+    {{? it.showEvalFormButton || Wizer.editMode }}
+        <div class="{{= it.class }}" data-exerciseid="{{= it.exerciseId }}" data-evalFormQuestionId="{{= it.evalFormQuestionId }}" data-button>{{= !it.published || Wizer.editMode ? it.completeButtonText : it.reopenText }}</div>
+    {{?}}
+
+    <section class="cl-modal" data-confirm>
+        <article class="cl-modal__dialog">
+            <div class="cl-modal__container">
+                <header class="cl-modal__header cl-modal__header--close">
+                    <span type="button" class="cl-modal__closebtn" data-dismiss="modal" aria-hidden="true"></span>
+                </header>
+                <section class="cl-modal__body">
+                    <header>
+                        <h1 class="cl-modal__title" data-confirm-header>{{= it.confirmMessageHeader }}</h1>
+                    </header>
+                    <div class="cl-modal__content" data-confirm-message>
+                        {{= it.confirmMessageText }}
+                    </div>
+                    <footer class="cl-modal__footer" data-btnholder>
+                        <div class="cl-modal__buttons">
+                            <span class="cl-button ec-button ec-button--yes" data-btn="yes">{{=it.confirmYes}}</span>
+                            <span class="cl-button ec-button ec-button--no" data-btn="no">{{=it.confirmNo}}</span>
+                        </div>
+                    </footer>
+                </section>
+
+            </div>
+        </article>
+    </section>
+
+</div>
+

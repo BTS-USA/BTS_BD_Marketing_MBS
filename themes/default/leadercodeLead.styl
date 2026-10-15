@@ -1,0 +1,79 @@
+// Info Component Stylus
+.lclc
+    &-article
+        background-color white
+    &-figure
+        &__image
+            display block
+            width 100%
+    &-content
+        padding 20px
+    &-list,
+    &-paragraph
+        margin 0 0 20px 0
+    &-container
+        position relative
+        &-code
+            text-align center
+            width 200px
+            height 50px
+            display table
+            margin 0 auto
+            background-color rgba(0,173,239,0.7)
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%,-50%)
+            span   
+                display table-cell
+                vertical-align middle
+                font-size 28px
+                color white
+                font-weight bolder
+    &-message
+        height 40px
+        text-align center
+        display table
+        color white
+        margin 0 auto 10px auto
+        width calc(100% - 20px)
+        opacity 0
+        &-error
+            background #FF4E3A
+        &-success
+            background #6A9E44
+        & span
+            display table-cell
+            vertical-align middle
+        &--show
+            opacity 1					
+    &-instructions
+        &__text
+            /*width 40%*/
+            margin 5%
+        &__userlist
+            padding 3%
+            .groupheader
+                text-align center
+                font-size 1.25rem
+                border-bottom 3px solid #00adef
+                margin-bottom .4em
+                line-height 2em
+                color #00adef
+                font-weight 800
+            .ruler
+                border-bottom: 1px solid #e6e6e6
+                padding: 10px 0
+            .grpCount
+                padding: 5px 10px
+                box-sizing: border-box
+                border-radius: 50%
+                background: #00adef
+                margin: 10px
+                color white
+                font-size 0.75rem
+ 		    
+    // Removing default list-style from list elements inside of INFO component
+    /*ul,
+    li
+        list-style none*/

@@ -1,0 +1,45 @@
+<Action>
+  <Component type="GroupDirectorComponent" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_groupDirector.dot",
+  "css": "styles/as_groupDirector.css",
+  "trackQuestion": "Group_Director",
+  "qandcVoteLimit": "1000",
+  "hideVoteCount": "true",
+  "refreshIntervalInSeconds": "5",
+  "voteCountLabel": "!{GD_voteCountLabel}",
+  "nextButtonLabel": "Next",
+  "showClientStatus": "true",
+  "menuOptions": [
+    {
+      "title": "!{Data_Export}",
+      "command": "ExportData",
+      "options": {
+        "ExportName": "export1"
+      },
+      "icon": "download"
+    },
+    {
+      "title": "!{Reset}",
+      "command": "ResetVotes",
+      "icon": "reset",
+      "sendToSection": "Blank_Screen"
+    }
+  ],
+  "commentsBox": "!{GD_comment_text}",
+  "resetEvent": {
+    "title": "!{GD_Reset_Event_title}",
+    "description": "!{GD_Reset_Event_desc}",
+    "button": [
+      {
+        "cancel_btn_title": "!{GD_cl_btn_title}"
+      },
+      {
+        "ok_btn_title": "!{GD_ok_btn_title}"
+      }
+    ]
+  },
+  "scope": [
+    "Group_Director"
+  ]
+}]]></Component>
+</Action>

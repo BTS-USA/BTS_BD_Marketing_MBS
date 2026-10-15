@@ -1,0 +1,445 @@
+﻿
+//True constants - things that should be uniform literally everywhere. 
+//Template top-title treatment
+$main_heading_color = rgba(45, 109, 145, 1) 
+$main_heading_height = 44px
+
+//Content backgrounds:
+$transparent_popup_background = rgba(45, 109, 145, .7)
+
+//All templates:
+$standard_template_positioning = absolute
+$standard_template_z-index = 100
+
+//Standard size templates:
+$standard_total_height = 65% 
+$standard_min_width = 650px
+$standard_total_width = 80%
+$standard_gutter_width = 10%
+$standard_top_position = 15%
+$standard_entry_width = 60%
+$standard_width_remaining_after_entry = 37%
+$standard_entry_heading_height = 30px
+$standard_left_content_width = 650px
+
+//Wide content:
+$wide_min_width = 850px
+
+//Color Palette:
+$hiltonColor1 = rgba(171, 132, 34, 1)
+$transColor1 = rgba(171, 132, 34, .66)
+$hiltonColor2 = rgba(105, 124, 140, 1)
+$hiltonColor3 = rgba(165, 194, 198, 1)
+$hiltonColor4 = rgba(119, 94, 108, 1)
+$hiltonColor5 = rgba(160, 100, 79, 1)
+$hiltonColor6 = rgba(81, 31, 53, 1)
+$hiltonColor6Hover = #9e2954
+$hiltonColor7 = rgba(130, 130, 130, 1)
+$hiltonColor8 = rgba(88, 88, 88, 1)
+$hiltonColor9 = rgba(170, 168, 102, 1)
+$hiltonTextColor1 = #515f6f
+
+
+//Specific heights for specific content:
+$standard_video_height = 435px
+$standard_info_with_image_height = 406px
+
+//Reverse layout templates:
+$reverse_entry_width = 40%
+$reverse_left_content_width = 60%
+
+//Compact width templates:
+$compact_gutter_width = 20%
+$compact_content_width = 60%
+
+//Small templates:
+
+
+//Mini templates:
+$mini_min_height = 360px
+$mini_total_width = 30%
+$mini_min_width = 330px
+$mini_gutter_width = 35%
+
+$standard_text_color = #005A85
+$standard_text_text-align = left
+$standard_text_margins = 18px 18px
+$standard_text_font-size = 14px
+
+$popup_text_text-align = center
+
+$position = absolute
+$total_height = auto
+$total_width = 100%
+$gutter_width = 10%
+$top_position = 0px
+$left_position = 0px
+
+/*.mainWrapper .JumpMenu
+    opacity: 1;
+    z-index: 500;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    visibility: visible; 
+    overflow: auto; 
+    height: auto; 
+    width: auto; */
+
+.mainWrapper .Aggregator
+    display none
+
+.mainarea #main-area 
+    #top
+        display none
+    #menus
+        min-width 50%
+        background-size: 80px;
+        background-position: 82% center;
+        background-repeat: no-repeat;
+        .menu
+            display:none
+    #actions
+        display block
+        #info
+        #email
+        #phone
+        #calendar
+        #decision
+            display none
+        #bts
+            z-index: 205;
+            position: absolute;
+            right: 3%;
+            top: 8px;
+    
+
+
+.wizletGuidedMenu
+    position $position
+    background-position center
+    background-repeat no-repeat
+    background-color $hiltonColor1
+    z-index 200
+    width $total_width
+    height $total_height
+    left $left_position
+    top $top_position
+    color #fff
+    text-align center
+
+    .main-heading
+        display block
+        position relative
+        padding 15px 4em
+        -webkit-box-sizing: border-box; 
+        -moz-box-sizing: border-box;  
+        box-sizing border-box
+        margin auto
+        color #fff
+        background-repeat: no-repeat;
+        background-position: 3% center;
+        background-size 100px
+        height: 60px;
+        
+
+    .jump-menu-info
+        display none
+        
+        &.active
+            display inline-block
+
+    .content
+        top 60px
+        width 100%
+        position absolute
+        padding 40px 4em
+        -webkit-box-sizing: border-box; 
+        -moz-box-sizing: border-box;  
+        box-sizing border-box
+
+        
+        .subtitle
+            display block
+            margin 8px 15px
+            text-align center
+
+        .hiddenData
+            display none
+
+        .databox
+            width 30%
+            height auto
+            background-color rgba(81, 31, 53, .85);
+            color #fff
+            float left
+            padding-bottom 5px
+            .datapoint
+                display block
+                text-align left
+                margin 15px 15px 20px 15px
+                .dataLabel
+                    display inline-block
+                    width 45%
+                    font-weight bold
+                .data
+                    display inline-block
+                    text-align right
+                    width 45%
+                    .fillBar
+                        width 100%
+                        background transparent
+                        .fill
+                            display none
+
+        .guides
+            width 20%
+            float left
+            margin 0px 5%
+            
+            #guide_1
+                .guideButton
+                    cursor pointer
+                    background #7f584b 
+                    background -moz-linear-gradient(top,  #7f584b  0%, #9a7466 100%)
+                    background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7f584b ), color-stop(100%,#9a7466))
+                    background -webkit-linear-gradient(top,  #7f584b  0%,#9a7466 100%)
+                    background -o-linear-gradient(top,  #7f584b  0%,#9a7466 100%)
+                    background -ms-linear-gradient(top,  #7f584b  0%,#9a7466 100%)
+                    background linear-gradient(to bottom,  #7f584b  0%,#9a7466 100%)
+                    opacity 1
+                    cursor pointer
+                    &:hover
+                        cursor pointer
+                        background #7f422d 
+                        background -moz-linear-gradient(top,  #7f422d  0%, #8e5641 100%)
+                        background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7f422d ), color-stop(100%,#8e5641))
+                        background -webkit-linear-gradient(top,  #7f422d  0%,#8e5641 100%)
+                        background -o-linear-gradient(top,  #7f422d  0%,#8e5641 100%)
+                        background -ms-linear-gradient(top,  #7f422d  0%,#8e5641 100%)
+ 
+        .guide
+            height auto
+            background rgba(145, 105, 86, 0.85)
+            color #fff
+            display block
+            margin 0px 0px 25px 0px
+            padding 1px 12px 12px 12px
+            -webkit-box-sizing border-box
+            -moz-box-sizing border-box
+            box-sizing border-box
+            .guideButton
+                padding 15px 20px 15px 52px
+                -webkit-box-sizing border-box
+                -moz-box-sizing border-box
+                box-sizing border-box
+                border 1px solid #be9587
+                text-align left
+                background-image none
+                opacity .7
+                position relative
+                transition all .5s
+                font-size 14px
+                line-height 1em
+                &.active
+                
+                .fallback
+                    display none
+                    text-align: center;
+                    margin-right: 30px;
+                .data
+                    display none
+                .icon
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 25px;
+                    width: 52px;
+                    position: absolute;
+                    height: 100%;
+                    top: 0px;
+                    left: 0px;
+            &.app
+                background-color rgba(123, 165, 184, 0.85)
+                .guideButton
+                    border 1px solid #88a7b6
+                    background #5e7580
+                    background -moz-linear-gradient(top,  #5e7580 0%, #88a7b6 100%)
+                    background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5e7580), color-stop(100%,#88a7b6))
+                    background -webkit-linear-gradient(top,  #5e7580 0%,#88a7b6 100%)
+                    background -o-linear-gradient(top,  #5e7580 0%,#88a7b6 100%)
+                    background -ms-linear-gradient(top,  #5e7580 0%,#88a7b6 100%)
+                    background linear-gradient(to bottom,  #5e7580 0%,#88a7b6 100%)
+                    cursor pointer
+                    transition all .5s
+                    &:hover
+                        background #516a76
+                        background -moz-linear-gradient(top,  #516a76 0%, #6a93a6 100%)
+                        background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#516a76), color-stop(100%,#6a93a6))
+                        background -webkit-linear-gradient(top,  #516a76 0%,#6a93a6 100%)
+                        background -o-linear-gradient(top,  #516a76 0%,#6a93a6 100%)
+                        background -ms-linear-gradient(top,  #516a76 0%,#6a93a6 100%)
+                        background linear-gradient(to bottom,  #516a76 0%,#6a93a6 100%)
+            
+
+        .menu
+            width 40%
+            height auto
+            background-color rgba(136, 120, 139, 0.85);
+            color #fff
+            text-align left
+            float right
+            padding 0px 0px 10px 0px
+            .block
+                display block
+                margin 3px 10px
+                .column
+                    .option
+                          display block
+                          background-color:gray;
+                          &.active
+                                background-color rgba(136, 120, 139, 0.85);
+                          &.completed
+                                color : green
+                    .optionIcon
+                          background-size 24px
+                          float :left;
+                          height:24px;
+                          width:24px;
+                          background-repeat: no-repeat;
+                          &.completed
+                            background-image: url("/wizer/Content/filledCheck.png");
+                            background-size 24px
+                .blockHeader
+                    display block
+                    background-color rgba(51, 51, 51, 0.18)
+                    font-weight bold
+                    -webkit-box-sizing border-box
+                    -moz-box-sizing border-box
+                    box-sizing border-box
+                    padding 8px 5px
+                    clear both
+                    border-right: 1px solid rgba(166, 137, 172, 1);
+                    background-image: linear-gradient(rgb(172, 151, 163) 0%, rgb(130, 111, 122) 49%, rgb(113, 94, 105) 100%);
+                    opacity .5
+                    position relative
+                    .blockIcon
+                        background-repeat: no-repeat;
+                        background-size: 8px;
+                        background-position: center;
+                        width: 30px;
+                        height: 45px;
+                        position: absolute;
+                        right: 0px;
+                        top: 0px;
+                &.active
+                    .header
+                        opacity 1
+                        cursor pointer
+                &.open
+                    .header
+                        .icon
+                            background-size 13px
+                    .column_0, .column_1, .column_2
+                        display inline-block
+                .column_0
+                    /*display none*/
+                    width 40%
+                    float left
+                    .activityButton
+                        background-color rgba(255,255,255,0.33)
+                        &.active:hover
+                            background-color $hiltonColor6
+                .column_1
+                    /*display none*/
+                    float left
+                    width 30%   
+                    .activityButton
+                        background-color rgba(0,0,0,0.33)
+                        &.active:hover
+                            background-color #361021
+                .column_2 
+                    /*display none*/
+                    float left
+                    width 30%
+                    .activityButton
+                        background-color rgba(0,0,0,0.33)
+                .activityButton
+                    margin: 0px 1px 1px 0px;
+                    height: 45px;
+                    -webkit-box-sizing border-box
+                    -moz-box-sizing border-box
+                    box-sizing: border-box;
+                    padding: 5px 35px 5px 5px;
+                    font-size: 13px;
+                    font-weight: bold;
+                    background-repeat: no-repeat;
+                    background-size: 22px;
+                    background-position: 95% center;
+                    opacity .4
+                    overflow hidden
+                    .data
+                        display none
+                    &.active
+                        opacity 1
+                        cursor pointer
+                        transition all 0.7s ease
+                    &.completed
+                        background-size 24px
+            &.noManager
+                .block.open
+                    .column_2
+                        display none
+                    .column_1
+                        width:45%
+                    .column_0
+                        width:55%
+
+
+                        
+// Responsive stylesheet
+@media all and (max-width: 1000px)
+    html
+        overflow auto
+        background-color #fff
+    .mainarea
+        #main-area
+            #actions
+                #bts
+                    right 3%
+    .wizletGuidedMenu
+        background-size 90px
+        .content 
+            padding 20px 0.5em
+            .guide
+                .guideButton
+                    padding 1em .5em 1em 2.5em
+                    font-size 80%
+                    .icon
+                        background-size 20px
+                        width 30px
+                    
+            .databox
+                width 49%
+                float left
+                margin-bottom 15px
+        
+            .menu
+                width 100%
+                clear both
+                margin-bottom 15px
+
+            .guides
+                width 49%
+                float right
+                margin 0px
+        .main-heading
+            background-position: 3% center;
+            background-size 90px
+    
+    .wizletGuidedMenu .content .databox .datapoint 
+        .dataLabel
+            width auto
+        .data
+            width 50px
+            float right

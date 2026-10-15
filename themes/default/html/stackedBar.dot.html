@@ -1,0 +1,76 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="sbc cl-component">
+            {{? it.header}}
+                <header class="sbc-header cl-header--main">
+                    {{? it.header.title}}
+                        <h1 class="sbc-header__title cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                            {{=it.header.title}}
+                        </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="sbc-header__description cl-header__description--main">
+                            {{=it.header.description}}
+                        </p>
+                    {{?}}
+                </header>
+            {{?}}
+            <div class="sbc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <div class="sbc-instructions cl-instructions">
+                            <p class="sbc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                    <div class="sbc-content cl-content">
+                        {{? typeof it.filterQuestions !== 'undefined'}}
+                            {{? it.filterQuestions[0]}}
+                            <div class="sbc-filters-container cl-row">
+                                {{~it.filterQuestions[0].options :filterQuestion:index}}
+                                <div class="sbc-filter-container" id="{{=filterQuestion.value}}" data-filter="{{=filterQuestion.value}}" data-stackedBarFilter>
+                                    <div class="sbc-filter" id="{{=filterQuestion.value}}" data-filter="{{=filterQuestion.value}}" data-stackedBarFilterCheck>
+                                        <input type="checkbox" class="sbc-filer__checkbox cl-checkbox" data-sbccheckbox value="filter-{{=filterQuestion.value}}" id="sbc-filter_{{=filterQuestion.value}}">
+                                        <label for="sbc-filter_{{=filterQuestion.value}}" class="sbc-filter__label">{{=filterQuestion.description}}</label>
+                                    </div>
+                                </div>
+                                {{~}}
+                            </div>
+                            {{?}}
+                        {{?}}
+                        <div class="cl-row">
+                            <div class="sbc-legend-container cl-legend-container cl-md-column-6 cl-xs-column-12">
+                                {{~it.questions[0].options:responseOption:ind}}
+                                    <div class="sbc-legend cl-legend">
+                                        <div class="sbc-legend__color-box cl-legend__color-box" style="background-color:{{=responseOption.color}}"></div>
+                                        <p class="sbc-legend__label cl-legend__label">{{=responseOption.description}}</p>   
+                                    </div>
+                                {{~}}
+                            </div>
+                        </div>
+                        <article class="bclc-articles-group cl-row">
+                            {{~it.questions:question:ind}}    
+                            <div class="sbc-article cl-article cl-table">
+                                <div class="sbc-question cl-md-cell-6 cl-xs-cell-12">
+                                    <p class="sbc-question__text cl-paragraph">{{=question.description}}</p>   
+                                </div>
+                                <div class="sbc-answer cl-md-cell-6 cl-xs-cell-12" data-stackedBarAnswer>
+                                    <div class="sbc-bar-container" data-stackedBarBarChartArray>
+                                        <div class="sbc-bar cl-bar">
+                                            {{~question.barChartArray: barChartArray:i}}      
+                                                <div class="sbc-bar__inner sbc-bar__inner--{{=i}} cl-bar__inner" style="width:{{=barChartArray}}%;background-color:{{=it.questions[0].options[i].color}}" data-stackedBarHorizontalBarChartInner>  
+                                                    <div class="sbc-bubble cl-bubble">{{=barChartArray}}%</div>
+                                                </div>
+                                            {{~}}
+                                        </div>    
+                                        <div class="sbc-filter-name" data-stackedBarFilterName></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{~}}
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

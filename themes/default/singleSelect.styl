@@ -1,0 +1,112 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Single Select Component Styles
+
+//****** PLEASE NOTE:
+// We are using "!important" to overwrite inline styles coming from radio.js renderer and singleSelect.js. 
+// Once renderer will be updated, we should adjust styles and remove "!important"
+
+.ssc
+    &-content
+        display table
+        width 100%
+        margin 0 0 10px 0
+    &-article
+        display table
+        width 100%
+        margin 0 0 10px 0
+        background-color white
+        cursor pointer
+        &.clicked
+            .singleSelectLeftPanel
+                background-color darken($cerulean, 30%) !important
+            .singleSelectRightPanel
+                background-color $cerulean !important
+                color #FFF
+            .singleSelectAccordionContainer
+                background-color $cerulean !important
+        &.readonly
+            opacity 0.6
+            cursor default
+    &-description
+        background-color darken(white, 2%)
+        padding 20px
+        display none
+        // needed because accordion element not inside of article
+        position relative
+        top -10px
+    &-footer
+        text-align right
+    &-button
+        float right
+        &--clear
+            margin 0 5px 0 0
+        &--disabled
+            pointer-events none
+            background-color #ccc !important
+            color $white
+            text-shadow: none;
+            cursor not-allowed
+        &--hide
+            display none
+    &-savedmessage
+        &:before
+            content ""
+            width 20px
+            height 16px
+            margin 0 5px 0 0
+            background-image url("media/img/checkWhite.svg")
+            background-repeat no-repeat
+            background-position center
+            display inline-block 
+            vertical-align middle
+    &-buttontext  
+        display table-cell
+        vertical-align middle
+        text-align center
+        float left
+        width 100%
+    &-submitbuttontext
+        display table-cell
+        vertical-align middle
+
+// Old styles needed for renderer
+.singleSelectOptionCont
+    .singleSelectLeftPanel
+        background-color $cerulean !important
+        padding 10px
+        float none
+        display table-cell
+        vertical-align middle
+
+        .singleSelectLeftPanelLabel
+            color #FFF !important
+            text-align center
+            font-size 3.2*$px 
+            
+    .singleSelectRightPanel
+        float none
+        padding 10px
+        display table-cell
+        vertical-align middle
+        background-color $silver !important
+        @media (min-width: 768px)
+                padding 20px
+
+        .singleSelectRightPanelLabel
+            vertical-align middle
+
+    .singleSelectAccordionContainer
+        float none
+        display table-cell
+        text-align right
+        vertical-align middle
+        background-color $silver !important
+
+        .singleSelectOptionAccordionSign
+            margin 5px
+            position relative
+            top 2px
+            cursor pointer
+

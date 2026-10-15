@@ -1,0 +1,57 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="vc cl-component" data-videoComponent>
+            {{? it.header}}
+                <header class="vc-header-main cl-header--main {{? it.header.pointer == false}} cl-pointer--hidden{{?}}">
+                    {{? it.header.breadCrumbs}}
+                        <p class="vc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="vc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="vc-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                            <h1 class="vc-title-main cl-header__title--main">{{=it.header.title}}</h1>
+                        {{?}}
+                        {{? it.header.description}}
+                            <p class="vc-description-main cl-header__description--main">{{=it.header.description}}</p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+            <div class="vc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <div class="vc-instructions cl-instructions">
+                            <p class="vc-nstructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                    
+                    <div class="vc-content cl-content">
+                        <article class="vc-article{{? it.transcript}} cl-row{{?}} cl-article" data-videoComponentCont>
+                            <div class="vc-video{{? it.transcript}} cl-sm-column-7{{?}} cl-xs-column-12 cl-padding--no" data-videoContainer>
+                            </div>
+                            {{? it.transcript}}
+                            <div class="vc-transcript cl-sm-column-5 cl-xs-column-12" data-transcriptCont>
+                                <div class="vc-transcript__header" data-transcriptTitle>
+                                    <h3 class="vc-transcript__h3 cl-h3">{{=it.transcript.title}}</h3>
+                                </div>
+                                <div class="vc-accordion cl-accordion">
+                                    <div class="vc-accordion__header cl-accordion__header" data-transcriptdetailscont data-accordionsign>
+                                        <p class="vc-paragraph cl-paragraph" data-transcripttext>{{=it.transcript.label}}</p>
+                                        <div class="vc-accordion-sign"></div>
+                                    </div>
+                                    <div class="vc-accordion__content cl-accordion__content" data-transcriptDescCont>
+                                        <p class="vc-paragraph cl-paragraph" data-transcriptDesc>{{=it.transcript.text}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{?}}
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

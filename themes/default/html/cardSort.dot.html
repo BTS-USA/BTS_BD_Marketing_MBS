@@ -1,0 +1,112 @@
+<div class="mainContentWrapper cs__mainContentWrapper" data-main-wrapper>
+    <div class="mainContent">
+        <section class="cs__component cl-component">
+            {{? it.header.title || it.header.description}}
+            <header class="cs--main cl-header--main">
+                {{? it.header.title}}
+                <h1 class="cs__title--main cl-header__title--main">{{=it.header.title}}</h1>
+                {{?}}
+                {{? it.header.description }}
+                <div class="cs__description--main cl-header__description--main">
+                    <span>{{=it.header.description}}</span>
+                </div>
+                {{?}}
+            </header>
+            {{?}}
+        </section>
+        <section class="cs__mainCont">
+            <article class="cs__progressArticle" data-main-article>
+                <div class="cs__progressBarCont">
+                    <div class="cs__progressBar-text" data-progress-text></div>
+                    <div class="cs__progressBar Progressbar">
+                        <div class="cs__progressBar-value Progressbar__value"></div>
+                        <progress value="" max="{{=it.typesSum}}" data-progress-value></progress>
+                    </div>
+                </div>
+            </article>
+            <article class="cl-container">
+                <div class="cs__mainWrapper">
+                    {{~it.focuses: focus:index }}
+                    <div class="cs__mainArticle">
+                        <div class="cs__focusType" data-focus-type>{{=focus.title}}</div>
+                        {{~focus.types: type:ind}}
+                        {{? !it.isMobile}}
+                        <div class="cs__focusOptions" data-focus-options data-card-focus-type="{{=type.value}}">
+                            <div class="cs__focusHeader cs__color-{{=index}}" data-card-type="{{=type.value}}"
+                                data-card-header>{{=type.name}}
+                            </div>
+                            <div class="cs__focusCardConatiner" data-card-container></div>
+                        </div>
+                        {{??}}
+                        <div class="cs__mobileCont" data-focus-mobile-options data-card-mobile="{{=type.value}}">
+                            <div class="cs__focusOptions--mobile cs__color-{{=index}} cs__commonOptions"
+                                data-card-type="{{=type.value}}" data-focus-options-mobile>
+                                <span>{{=type.name}}</span>
+                                <span class="cs__notifictaionIndex" data-card-name="{{=type.value}}"
+                                    data-notification></span>
+                            </div>
+                            <div class="cs__focusOptions--viewCard cs__commonOptions" data-show-modal-cont>
+                                <i class="cl-icon cl-icon--warning-eye" data-show-modal></i>
+                            </div>
+                        </div>
+                        {{?}}
+                        {{~}}
+                    </div>
+                    {{~}}
+                </div>
+                <div class="cs__cardWrapper">
+                    <div class="" data-card-carousel></div>
+                    <div class="cs__cardRemainingText" data-cards-used><span>0 {{=it.textContent.ofText}} {{=it.cards.length}} {{=it.textContent.cardUsedtext}}</span>
+                    </div>
+                </div>
+                <div class="cs__footer">
+                    <div class="cl-button cs__footerButton" data-reset>
+                        <i class="cl-icon cl-icon--reset cs__footerIcon"></i>
+                        <span class="cs__footerText">{{=it.textContent.resetText}}</span>
+                    </div>
+                    <div class="cl-button cs__footerButton cs-disabled" data-submit>
+                        <span class="cs__footerText">{{=it.textContent.submitText}}</span>
+                        <i class="cl-icon cl-icon--tick cs__footerIcon"></i>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="cl-modal cs-sm" data-submit-modal>
+            <article class="cl-modal__dialog cs-sm__dialog">
+                <div class="cl-modal__container cs-sm__container">
+                    <section class="cl-modal__body cs-sm__body">
+                        <div class="cl-modal__content cs-sm__content">
+                            <div class="cs-sm__text" data-message></div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </section>
+
+        <section class="cl-modal" data-alert>
+            <article class="cl-modal__dialog cs-modal__dialog">
+                <div class="cl-modal__container cs-modal__dialogCard">
+                    <section class="cl-modal__body">
+                        <header>
+                            <i class="icon cl-icons-48"></i>
+                            <h1 class="cl-modal__title cs-modal__title">{{=it.textContent.alertReset}}</h1>
+                        </header>
+                        <div class="cl-modal__content cs-modal__content" data-alerttext>
+                                {{=it.textContent.alertMsg}}
+                        </div>
+                        <footer class="cl-modal__footer" data-btnholder>
+                            <div class="cl-modal__buttons cs-modal__buttons">
+                                <span class="cl-button cc-button cs-modal__buttons_no" data-btn="alertno">NO</span>
+                                <span class="cl-button cc-button cs-modal__buttons_yes" data-btn="alertyes">YES</span>
+                            </div>
+                        </footer>
+                    </section>
+                </div>
+            </article>
+        </section>
+
+    </div>
+</div>
+
+<div class="" data-modal-container></div>

@@ -1,0 +1,84 @@
+<div class="mainContentWrapper">
+    <div class="mainContent gt">
+        <!-- Header -->
+        <section class="cl-component">
+            {{? it.header }}
+            <header class="gt-header">
+                {{? it.header.title }}
+                    <h1 class="gt-headerText" data-qna-header>{{=it.header.title}}</h1>
+                {{?}}
+            </header>
+            {{?}}
+        </section>
+        
+        <section>
+            <div class="gt-card">
+                <div class="gt-card-left">
+                    <div class="gt-card-left-heading">
+                        <p>{{=it.content.individualHeaderMessage}}</p>
+                    </div>
+                    <div class="gt-card-left-icon">
+                        <i class="cl-icon cl-icon--user"></i>
+                    </div>
+                    <div class="gt-card-left-title">
+                        {{=it.content.individualTitleMessage}}
+                    </div>
+                    <div class="gt-card-left-desc">
+                        {{=it.content.individualDescriptionMessage}}
+                    </div>
+                    <div class="gt-card-left-submit">
+                        <div class="button" data-gatewayLanding-individual-submit>{{=it.content.submit}}</div>
+                    </div>
+                </div>
+                <div class="gt-card-right">
+                    <div class="gt-card-right-heading">
+                        <p>{{=it.content.commonTeamText}}</p>
+                    </div>
+                    <div class="gt-card-right-participat">
+                        <div class="gt-card-right-leader" data-session-start>
+                            <div class="icon">
+                                <i class="cl-icon cl-icon--people"></i>
+                            </div>
+                            <div class="title">
+                                {{=it.content.leaderText}}
+                            </div>
+                            <div class="input">
+                                <input class="gt-input" type="password"
+                                    placeholder="{{=it.content.enterPwdPlaceholder}}" data-gatewaylanding-input
+                                    data-start-session-pwd />
+                                <div class=""
+                                        data-gatewaylanding-invalid data-meeting-pwd-invalid></div>
+                            </div>
+                            <div class="submit">
+                                <div class="submit-button" data-gatewayLanding-start-submit>{{=it.content.submit}}
+                                </div>
+                            </div>
+                            <div class="gt-errors"><span data-error-leader></span></div>
+                        </div>
+                        <div class="gt-card-right-follower" data-session-join>
+                            <div class="icon">
+                                <i class="cl-icon cl-icon--user"></i>
+                            </div>
+                            <div class="title">
+                                {{=it.content.followerText}}
+                            </div>
+                            <div class="input">
+                                <input class="gt-input" type="text"
+                                    placeholder="{{=it.content.enterCodePlaceholder}}" data-gatewaylanding-input
+                                    data-join-session-code />
+                                <div class=""
+                                    data-gatewaylanding-invalid data-meeting-code-invalid></div>
+                            </div>
+                            <div class="submit">
+                                <div class="submit-button" data-gatewayLanding-join-submit>{{=it.content.submit}}
+                                </div>
+                            </div>
+                            <div class="gt-errors"><span data-error-follower></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <img alt="Background Image" class="gt-backgroundImg" src={{=it.content.backgroundImg}}>
+    </div>
+</div>

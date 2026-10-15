@@ -1,0 +1,91 @@
+img
+{
+	border: 0;
+}
+
+#main
+{
+	height: 55px;
+	width: 100%;
+	position: relative;
+	color: #fff;
+	z-index: 1001;/* As per discussion with vindy the top bar should always be on top of everthing*/
+}
+
+#main-menu
+{
+    z-index:9999;
+    position:absolute;
+    top:44px;
+    left:0px;
+    background-color:#4d4d4d;
+}
+#menuMain
+{
+	font-size: 16px;
+	top: 8px;
+	left: 10px;
+	position: absolute;
+}
+#mainMenu
+{
+    height:25px;
+    width:25px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#menuParticipantName
+{
+	font-weight: bold;
+	font-size: 16px;
+	top: 8px;
+	left: 75px;
+	position: absolute;
+}
+
+#menuEventName
+{
+	font-weight: bold;
+	font-size: 16px;
+	font-family: arial, helvetica, sans-serif;
+	top: 8px;
+	right: 20px;
+	position: absolute;
+}
+
+#menuSubMenuContainer
+{
+	font-size: 12px;
+	font-family: arial, helvetica, sans-serif;
+	bottom: 10px;
+	left: 75px;
+	position: absolute;
+	z-index: 100;
+}
+
+#menuSubMenuContainer a,
+#menuSubMenuContainer span
+{
+	text-decoration: none;
+	color: #a4a4a4;
+}
+
+#menuEventLogo
+{
+	top: 10px;
+	right: 13px;
+	position: absolute;
+	display: none;
+}
+
+.hide
+{
+	display: none;
+}
+
+#menuSubMenuContainer .separator
+{
+	padding: 0 7px;
+	color: #3d3d3d;
+}

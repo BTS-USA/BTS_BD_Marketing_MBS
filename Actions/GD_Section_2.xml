@@ -1,0 +1,27 @@
+<Action>
+  <Component type="GroupDirectorComponent" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_groupDirector.dot",
+  "css": "styles/as_groupDirector.css",
+  "trackQuestion": "Group_Director",
+  "qandcVoteLimit": "1000",
+  "refreshIntervalInSeconds": "5",
+  "voteCountLabel": "!{GD_voteCountLabel}",
+  "nextButtonLabel": "Next",
+  "showClientStatus": "true",
+  "storeCurrentAction": {
+    "allow": true,
+    "question": "CurrentSection_2"
+  },
+  "menuOptions": [
+    {
+      "title": "!{GD_Button_2}",
+      "section": "ThankYou_AS_SplashScreen",
+      "icon": "info"
+    }
+  ],
+  "scope": [
+    "Group_Director",
+    "CurrentSection_2"
+  ]
+}]]></Component>
+</Action>

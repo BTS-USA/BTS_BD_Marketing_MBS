@@ -1,0 +1,79 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        {{? it.matrix.calls.length > 0 && it.matrix.questions.length > 0}}
+            <section class="pbm cl-component cl-container" data-pbm-holder>
+                <article class="pbm-table cl-table-container pbm-table-cols--{{=it.matrix.calls.length}}">
+                    <div class="cl-table pbm-table__headerRow">
+                        <div class="cl-table-cell pbm-table__labelCell"></div>
+                        {{~it.matrix.calls :call:index}}
+                            <div class="cl-table-cell pbm-table__cell pbm-table__headerCell" data-eval-cell>
+                                {{ var publishedVote = it.find(call.votes, function (vote) { return vote.ResponseText.toLowerCase() == "published" }); }}
+                                <span {{? publishedVote && !it.myOwn }} class="callform-public" data-published-q-rid="{{! publishedVote.Id}}" data-published-q-qid="{{! publishedVote.QuestionId}}" data-call-rid="{{! call.id}}"{{?}}>
+                                    Call at<br/>{{=new it.moment(call.timestamp).format('MMM DD YYYY')}}<br/>{{=new it.moment(call.timestamp).format('hh:mmA')}}
+                                </span>
+                            </div>
+                        {{~}}
+                        <div class="cl-table-cell pbm-table__cell pbm-table__headerCell" data-eval-cell>
+                            <span>Average</span>
+                        </div> 
+                    </div>
+                    {{~it.matrix.questions :question:qIndex}}
+                        {{ var sum = 0; var count = 0; }}
+                        <div class="cl-table pbm-table__row" data-question-row>
+                            <div class="cl-table-cell pbm-table__labelCell">
+                                <label>{{=question.text}}</label>
+                            </div>
+                            {{~it.matrix.calls :call:eIndex}}
+                                <div class="cl-table-cell pbm-table__cell pbm-table__dataCell" data-answer-cell>
+                                {{~call.votes :vote:vIndex}}
+                                    {{?question.id == vote.QuestionId}}
+                                        {{?question.responseOptions}} 
+                                            {{~question.responseOptions :option:oIndex}}
+                                                {{?option.value == vote.ResponseText}}
+                                                    {{? !isNaN(option.value) }}{{ sum = sum + parseInt(option.value); count = count + 1; }}{{?}}
+                                                    <span>{{=option.responseText}}</span>
+                                                {{?}}
+                                            {{~}}
+                                        {{??}}
+                                            <span class="pbm-table__text-content">{{=vote.ResponseText}}</span>
+                                            <a role="button" tabindex="0" class="pbm-table__more-icon" data-more-icon data-content="{{!vote.ResponseText || ''}}"></a>
+                                        {{?}}
+                                    {{?}}
+                                {{~}}
+                                </div>
+                            {{~}}
+                            <div class="cl-table-cell pbm-table__cell pbm-table__dataCell pbm-table__dataCell--average" data-answer-average>{{? count > 0 }}{{= Math.round(sum*100/count)/100 }}{{?}}</div>
+                        </div>
+                    {{~}}
+                </article>
+            </section>
+        {{??}}
+            No Matrix Available
+        {{?}}
+        <section class="cl-modal cl-modal--half" data-confirm-unpublish>
+            <article class="cl-modal__dialog">
+                <div class="cl-modal__container">
+                    <header class="cl-modal__header cl-modal__header--close">
+                        <span type="button" class="cl-modal__closebtn" data-dismiss="modal" aria-hidden="true"></span>
+                    </header>
+                    <section class="cl-modal__body">
+                        <header>
+                            <h1 class="cl-modal__title">Are you sure?</h1>
+                        </header>
+                        <div class="cl-modal__content">
+                            <div>Do you want to unpublish the call form?</div>
+                            <div>(It cannot be re-published from here afterwards, only from the call form itself)</div>
+                        </div>
+                        <footer class="cl-modal__footer" data-btnholder>
+                            <div class="cl-modal__buttons">
+                                <span class="cl-button cl-button--yes" data-btn="yes">Unpublish</span>
+                                <span class="cl-button cl-button--no" data-btn="no">Cancel</span>
+                            </div>
+                        </footer>
+                    </section>
+
+                </div>
+            </article>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+// import variables and mixins
+@import "shared/cl.styl"
+.arc
+    padding 10px 0
+    margin 10px 0 0 0
+    &-content
+        display table
+        width 100%
+        margin 0 0 10px 0
+    &-description
+        background-color darken(white, 2%)
+        padding 20px
+        display none
+        // needed because accordion element not inside of article
+        position relative
+        top -10px
+    &-footer
+        text-align right
+    &-button
+        float right
+        &--generate
+            margin 0 5px 0 0
+    &-buttontext  
+        display table-cell
+        vertical-align middle
+        text-align center
+    &-viewbuttontext
+        display table-cell
+        vertical-align middle
+    &-instructions
+        height 80%
+    &-message
+        display none
+        float right
+        font-weight bold
+        padding 10px 10px 0px 0px
+    &-reporttime
+        font-weight bold
+        font-size 11px
+        padding 0px 0px 5px 0px

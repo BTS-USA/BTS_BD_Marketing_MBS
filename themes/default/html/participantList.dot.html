@@ -1,0 +1,54 @@
+﻿<div class="mainContentWrapper">
+
+    <div class="mainContent">
+        <section class="confParticipantList" data-participantlist>
+            {{? it.header}}
+            <header class="pl-header cl-header--main" data-textlistheader>
+                {{? it.header.title}}
+                <h1 class="pl-header__title cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="pl-header__description cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+            <div class="legends" data-legends>
+                {{~it.lettersArr :letter:index}}
+                <a href="javascript:" data-legends-href>{{=letter}}</a>
+                {{~}}
+            </div>
+            <article class="participantsContainer" data-participantscont>
+                <div class="participantRowHeader hidden-xs">
+                    <div class="participantName cl-sm-column-3">Name</div>
+                    <div class="participantOffice cl-sm-column-2">Office</div>
+                    <div class="participantEmail cl-sm-column-4">Email</div>
+                    <div class="participantPhone cl-sm-column-3">Phone</div>
+                </div>
+                {{~it.participants :participant:index}}
+                <div class="participantRow" data-row>
+                    <div class="participantName cl-sm-column-3 cl-xs-column-12" data-participantname>
+                        <span class="dataPrefix">Name: </span>
+                        <span class="nameTxt" data-nametxt>{{=participant.Name}}</span>
+                    </div>
+                    <div class="participantOffice cl-sm-column-2 cl-xs-column-12" data-participantoffice>
+                        <span class="dataPrefix">Office: </span>
+                        <span data-officetxt>{{=participant.Office}}</span>
+                    </div>
+                    <div class="participantEmail cl-sm-column-4 cl-xs-column-12" data-participantemail>
+                        <span class="dataPrefix">Email: </span>
+                        <a href="mailto:{{=participant.Email}};" data-emailtxt>{{=participant.Email}}</a>
+                    </div>
+                    <div class="participantPhone cl-sm-column-3 cl-xs-column-12" data-participantphone>
+                        <span class="dataPrefix">Phone: </span>
+                        <a href="tel:{{=participant.Phone}};" data-phonetxt>{{=participant.Phone}}</a>
+                    </div>
+                </div>
+                {{~}}
+            </article>
+        </section>
+    </div>
+</div>

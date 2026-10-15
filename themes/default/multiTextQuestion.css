@@ -1,0 +1,183 @@
+
+
+.wizletMultiTextQuestion #contentBox {
+	float: none;
+}
+
+.wizletMultiTextQuestion
+{
+	font-family: arial;
+	font-size: 13px;
+}
+
+
+.wizletMultiTextQuestion h2 {
+	font-size: 16px;
+	padding: 20px 0 7px 0; 
+	margin: 0;
+}
+
+.wizletMultiTextQuestion .radioOptionsContainer
+{
+	width:  600px;
+}
+
+.wizletMultiTextQuestion .MultiTextQuestion_TextBox_Item
+{
+	float:  left;
+	width: 300px;
+}
+
+.wizletMultiTextQuestion textarea
+{
+	float:  left;
+	width: 540px;
+	height: 140px;
+	padding: 6px;
+	font-size: 13px;
+	margin-top: 20px;
+}
+
+.wizletMultiTextQuestion .TextQuestion textarea
+{
+	float:  left;
+	width: 540px;
+	height: 60px;
+	padding: 6px;
+	font-size: 13px;
+	margin-top: 0px;
+}
+
+.wizletMultiTextQuestion .MultiTextQuestion_TextBox_Item input
+{
+	margin-right: 5px;
+}
+
+.wizletMultiTextQuestion h2
+{
+	clear: both;
+}
+
+.wizletMultiTextQuestion .MultiTextQuestionRow {
+	margin-right: 15px;
+	float: left;
+}
+
+.wizletMultiTextQuestion .MultiTextQuestionRow input {
+	width: 150px;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+.wizletMultiTextQuestion .MultiTextQuestionRow:first-child {
+	width: 100%;
+	float: none;
+}
+.wizletMultiTextQuestion .MultiTextQuestionRow:first-child.MultiTextQuestionRow .MultiTextQuestion_TextBox_Item {
+	width: 180px;
+}
+.wizletMultiTextQuestion .MultiTextQuestionRow:first-child.MultiTextQuestionRow input {
+	width: 20px;
+}
+
+.wizletMultiTextQuestion #description ul
+{
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
+
+.wizletMultiTextQuestion #description p
+{
+	font-size: 14px;
+	padding-top: 15px;
+}
+
+.wizletMultiTextQuestion .mandatory
+{
+	padding-left: 5px;
+	color: red;
+	font-weight: bold;
+}
+
+.wizletMultiTextQuestion .TextQuestion .MultiTextQuestionRow h2
+{
+	position:  relative;
+}
+
+.wizletMultiTextQuestion .TextQuestion .MultiTextQuestionRow h2 .mandatory
+{
+	left: -8px;
+}
+
+.wizletMultiTextQuestion .TextQuestion .MultiTextQuestionRow.COMMENTAUTHORNAME
+{
+	clear: both;
+	width: 255px;
+}
+
+.wizletMultiTextQuestion .TextQuestion .MultiTextQuestionRow.COMMENTDEPARTMENT h2
+{
+	float: left;
+	font-weight: normal;
+	font-family: arial, helvetica;
+	font-size: 12px;
+	padding-top: 5px;
+	padding-right: 8px;
+}
+
+.wizletMultiTextQuestion .TextQuestion .MultiTextQuestionRow.COMMENTAUTHORNAME h2
+{
+	float: left;
+	font-weight: normal;
+	font-family: arial, helvetica;
+	font-size: 12px;
+	padding-top: 5px;
+	padding-right: 8px;
+}
+
+.wizletMultiTextQuestion .TextQuestion .MultiTextQuestionRow.COMMENTCOMPANY h2
+{
+	float: left;
+	font-weight: normal;
+	font-family: arial, helvetica;
+	font-size: 12px;
+	padding-top: 5px;
+	padding-right: 8px;
+}
+
+.wizletMultiTextQuestion .TextQuestion .MultiTextQuestionRow.COMMENT h2
+{
+	width: 550px;
+}
+
+.wizletMultiTextQuestion .TextQuestion .MultiTextQuestionRowTextArea
+{
+	clear: both;
+}
+
+.wizletMultiTextQuestion .TextQuestion #description p
+{
+	padding-top: 0px;
+}
+
+.wizletMultiTextQuestion .TextQuestion #description p
+{
+	*width: 100%;
+	color: #ffffff !important;
+}
+
+
+
+.wizletMultiTextQuestion #OKIcon img {
+	display: none;
+}
+
+.wizletMultiTextQuestion .QuestionLabel
+{
+	clear: both;
+}
+
+.wizletMultiTextQuestion #sendContainer {
+	margin: 104px 0 0 25px;
+}

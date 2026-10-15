@@ -1,0 +1,355 @@
+// import component library mixins and variables
+@import "shared/cl.styl"
+
+.vhe
+    &-backdrop
+        position fixed 
+        width 100%
+        height 100%
+    &-mainCont
+        position relative
+        margin 0
+        padding 0
+    &-article
+        margin 10px 0 10px 0
+    &-textarea
+        border 5px solid rgba(10, 185, 240, 1)
+        font-family inherit
+        width 100%
+        resize none
+    &-instructions
+        padding 4px 0
+        color $white90
+        display flex
+        &__text
+            flex auto
+            font-weight 600
+            font-size 16px
+    &-category
+        &Dropdown
+            width 100%
+            height 50px
+            padding 0 0 0 10px
+            border-radius 10px
+            background linear-gradient(180deg, rgba(66, 208, 255, 1) 0%, rgba(10, 185, 240, 1) 81%)
+            color $white90
+            // border none
+            font-size 15px
+            // &:hover
+            //     background $deepCerulean
+        &Options
+            color #6D747E
+            &:nth-child(even)
+                background rgba(242, 242, 242, 1)
+    &-recordVideo
+        &__wrapper
+            color #6D747E
+            min-height 180px
+            max-height 250px
+        &__cont
+            text-align center
+            margin 20px 0
+            color $white90
+        &__limit
+            font-size 14px
+            font-weight 300
+        &__icon
+            cursor pointer
+        
+    &-submit
+        &__cont
+            margin-bottom 50px
+        &__button
+            // display flex
+            // align-items center
+            // padding 10px
+            // color $white90FFF
+            // text-transform uppercase
+            border-radius 20px
+            font-weight 600
+            transition all 500ms cubic-bezier(0.6, -0.28, 0.735, 0.045)
+    &-disabled
+        background-color rgba(191, 194, 200, 1)
+        cursor none
+        opacity 1
+        pointer-events none
+    &-enabled
+        background linear-gradient(180deg, rgba(66, 208, 255, 1) 0%, rgba(10, 185, 240, 1) 81%)
+        cursor pointer    
+    &-center
+        display flex
+        align-items center
+        justify-content center
+    
+    
+    &-text
+        // font-family 'Open Sans Light', 'Open Sans Regular', 'Open Sans', sans-serif
+        font-weight 300
+        font-size 14px
+        &__characterRemaining
+            font-size 14px
+
+    &-modalWrapper
+        position absolute
+        top 0
+        display none
+    &-modal
+        position fixed
+        height 100%
+        width 100%
+        background rgba(0,0,0,.9)
+        z-index 1005
+        &__container
+            // position absolute
+            // top 5%
+            // right 5%
+            width 100%
+            height 100%
+            overflow auto
+            border-radius 0
+
+        &__body
+            width 50%
+            position relative
+            transform translate(-50%, -50%)
+            top 50%
+            left 50%
+            @media screen and (max-width 1024px) 
+                width 100%
+        &__footer
+            display flex
+            color $white90
+            background #434951
+            margin 0 auto
+            // width 652px
+    &-videoControl
+        flex 1
+        font-size 14px
+        font-weight 600
+        padding 6px
+        &__button
+            cursor pointer
+        &__stopButton
+            background $monza
+            border-radius 50%
+            height 30px
+            width 30px
+            text-align center
+            border 2px solid $gray
+            i
+                font-size 9px
+                margin-top 8px
+        &__rerecordButton
+            height 30px
+            width 30px
+            background $monza
+            border-radius 50%
+            border 2px solid $gray
+    &-closeControl
+        display flex
+        i
+            margin 0 5px
+        &__button
+            cursor pointer
+            font-size 14px
+            font-weight 600
+        &__close
+            border-left 1px solid $white90
+            border-right 1px solid $white90
+            padding 10px
+        &__confirm
+            padding 10px
+        &__closeModal
+            padding 10px
+    &-backControl
+        // margin 0 auto
+        text-align end
+        // width 652px
+        color $white90
+        font-size 14px
+        span
+            cursor pointer
+    &-recordedVideo
+        &__wrapper
+            text-align center
+            margin 35px 0
+        &__cont
+            height 235px
+            width 250px
+            margin 0 auto
+            border-radius 10px
+            background $white90
+            position relative
+        &__ideatext
+            font-size 14px
+        &__video
+            height 180px
+            border-radius 10px
+            border-bottom-left-radius 0
+            border-bottom-right-radius 0
+            width 100%
+            background #000
+        &__deletedIcon, &__expandIcon
+            cursor pointer
+            position absolute
+            top 85px
+            color $white90
+            i
+                font-size 20px
+        &__deletedIcon
+            right -15px
+            background $gray
+            border-radius 50%
+            height 30px
+            border 4px solid $white90
+            width 30px
+            i
+                &:before
+                    position relative
+                    left 1px
+                    top -2px
+                    font-size 13px
+        &__expandIcon
+            left 45%
+            background rgba(0,0,0,0.4)
+            padding 8px 10px
+            border-radius 50%
+    &-video
+        &__recording
+            // text-align center
+            video
+                max-height 425px
+                width 100%
+                background black
+    &-videoOptions
+        display flex
+        justify-content center
+        &__recordButton, &__browseButton
+            padding 20px
+            
+        &__iconCont
+            height 45px
+            width 45px
+            background $gray
+            border-radius 50%
+            color $white90
+            display flex
+            justify-content center
+            align-items center
+            cursor pointer
+            margin-top 8px
+            &:hover
+                background $cerulean
+        &__browserIcon
+            margin-bottom 4px
+            font-size 18px
+        &__text
+            font-size 14px
+            font-weight 600
+        &__recordIcon
+            // padding-left 4px
+            i
+                &:before
+                    position relative
+                    left 2px
+    &-uploadForm
+        position absolute
+        top 65px
+        &__chooseCont
+            border 2px solid rgba(109, 116, 126, 1)
+            display flex
+            border-radius 20px
+        &__chooseFileText
+            padding 5px 20px
+            background rgba(109, 116, 126, 1)
+            border-radius 20px
+            border-top-right-radius 0
+            border-bottom-right-radius 0
+            font-size 14px
+            color $white90
+        &__fileName
+            max-width 350px
+            min-width 200px
+            padding 5px
+            font-size 14px
+        &__options
+            width 80%
+            margin 0 auto
+            display flex
+            border-bottom-right-radius 10px
+            border-bottom-left-radius 10px
+            font-size 14px
+            i
+                margin-left 5px
+            input
+                border none
+                background transparent
+        &__cancel
+            flex 0 0 50%
+            padding 5px
+            cursor pointer
+            border-bottom-left-radius 10px
+            color $silver
+            border-bottom 1px solid $silver
+            border-left 1px solid $silver
+            background $mercury
+            i, input
+                color $gray
+            i
+                font-size 11px
+        &__upload
+            flex 0 0 50%
+            cursor pointer
+            padding 5px
+            background linear-gradient(180deg, #42d0ff 0%, #0ab9f0 81%)
+            border-bottom-right-radius 10px
+            i, input
+                color $white90
+    &-loading
+        &-image
+            background-image url(/Wizer/Authoring/img/loading.gif)
+            background-size 100px 100px
+            background-repeat no-repeat
+            background-position center center
+            display inline-block
+            width 100px
+            height 100px
+        &-content
+            top 50%
+            left 45%
+            width 30%
+            position relative
+        &-message
+            color $white90
+            margin-left 5px
+.select option:hover
+    background-color rgb(168, 173, 180)
+    color $white90
+
+.disabled
+    opacity 0.5
+    pointer-events none
+    
+.select:hover 
+    background-color rgb(168, 173, 180)
+    color $white90
+.fp-share
+    display none
+.flowplayer.is-fullscreen
+    height auto !important
+    max-height unset
+    video
+        max-height 100% !important
+
+
+video::-webkit-media-controls-play-button
+    display none!important
+    -webkit-appearance none
+
+.aftBtn-enabled
+     color: white;
+     background-color: black;
+     text-align: center;
+     margin-bottom: 1%;
+
+

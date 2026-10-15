@@ -1,0 +1,46 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="tssc cl-component">
+            {{? it.header}}
+            <header class="tssc-header--main cl-header--main">
+                {{? it.header.title}}
+                <h1 class="tssc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="tssc-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <div class="tssc-container cl-container">
+                <article class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="tssc-instructions cl-instructions">
+                        <p class="tssc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+                    <div class="tssc-content cl-content" data-tssccontent>
+                        <div class="tssc-content__header" data-tssccontentheader>
+                            <div class="tssc-participant__count" data-pendingparticipantcount=""></div>
+                            <p>{{=it.content.componentHeaderText}}</p>
+                            <i class="cl-icon" data-tssccontentexpandcollapse></i>
+                            <i class="cl-icon cl-icon--meeting"></i>
+                        </div>
+                        <div class="tssc-content__body" data-tssccontentbody>
+                            <div class="tssc-timer" data-tssctimer>
+                                <p>00:00:00</p>
+                            </div>
+                            <div class="tssc-participant__details" data-tsscpendingparticipantdetails>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</div>

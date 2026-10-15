@@ -1,0 +1,31 @@
+<Action disableDynamicVotes="false">
+  <Component type="TabComponent"><![CDATA[{
+  "type": "tab",
+  "version": "2",
+  "showTabs": true,
+  "tabOptions": [
+    {
+      "title": "!{GD_Section_1}",
+      "actionXML": "GD_Section_1",
+      "open": true
+    },
+    {
+      "title": "!{GD_Section_2}",
+      "actionXML": "GD_Section_2"
+    },
+    {
+      "title": "!{GD_Section_3}",
+      "actionXML": "GD_Section_3"
+    },
+    {
+      "title": "!{GD_Section_4}",
+      "actionXML": "GD_Section_4"
+    },
+    {
+      "title": "!{Reset}",
+      "actionXML": "Reset"
+    }
+  ],
+  "scope": []
+}]]></Component>
+</Action>

@@ -1,0 +1,51 @@
+﻿<div data-evebox="{{=it[0].id}}" class="cc__eventholder">
+    <div class="cc-view cc-view__header cc-view__header--{{= ( it[0].status || '').toLowerCase() }}" data-evebox="header" data-eveid="{{=it[0].id}}">
+        <div class="cc-view__headerleft cc-view__headerleft--hide-overflow" data-headerleft>
+            <span class="cc-view__title">{{=it[0].title || 'Untitled Event'}}</span>
+            <span class="cc-view__description">{{=it[0].description || ' '}}</span>
+        </div>
+        {{? !it[0].newEvent}}
+        <div class="cc-view__headerright">
+            <span class="cc-view__icon cc-view__icon--more" data-icon="more" data-eveid="{{=it[0].id}}"></span>
+            {{?it[0].status === "Created"}}
+            <span class="cc-view__icon cc-view__icon--delete" data-icon="delete" data-eveid="{{=it[0].id}}"></span>
+            <span class="cc-view__icon cc-view__icon--edit" data-icon="edit" data-eveid="{{=it[0].id}}"></span>
+            {{??}}
+            {{? it[0].callId != null && it[0].videoFeatures != 'Disabled' }}
+            <span class="cc-view__icon cc-view__icon--video" data-icon="video" data-eveid="{{=it[0].id}}" data-callid="{{=it[0].callId}}" data-eval="{{=it[0].exercise ? it[0].exercise.evalForm : ''}}" data-recordingq="{{=it[0].exercise ? it[0].exercise.question : ''}}" data-videofeatures="{{!it[0].videoFeatures}}"></span>
+            {{?}}
+            {{?}}
+        </div>
+        {{?}}
+    </div>
+    <div class="cc-view cc-view__detailsbox{{?it[0].duration < 15}} cc-view__hidden {{?}}  cc-view__detailsbox--{{= ( it[0].status || '').toLowerCase() }}" data-evebox="details" data-eveid="{{=it[0].id}}">
+        <div class="cc-view__details {{?it[0].newEvent}}cc-view__hidden{{?}}" data-evebox="data" data-eveid="{{=it[0].id}}">
+            {{
+            var dateTime= new moment(it[0].startTime),
+            endTime = dateTime.clone();
+            endTime.add(it[0].duration*1,'m');
+            }}
+            <span> {{=dateTime.format('DD MMM YYYY')}}, {{=dateTime.format('hh:mm A')}} - {{=endTime.format('hh:mm A')}}</span>
+            {{? it[0].organizer || it[0].isFromTemplate}}
+            <div class="cc-view__organizerdiv">
+                <div class="cc-view__title" data-organizer>ORGANIZER:</div>
+                <div>{{=it[0].organizer || ''}}</div>
+            </div>
+            {{?}}
+            {{? it[0].details || it[0].isFromTemplate}}
+            <div class="cc-view__detailsdiv">
+                <div class="cc-view__title" data-details>DETAILS:</div>
+                <div>{{=it[0].details || ''}}</div>
+            </div>
+            {{?}}
+            {{? it[0].additionalInfo || it[0].isFromTemplate}}
+            <div class="cc-view__detailsdiv">
+                <div class="cc-view__title" data-additionalInfo>Additional Info:</div>
+                <div>{{=it[0].additionalInfo || ''}}</div>
+            </div>
+            {{?}}
+        </div>
+        <div class="cc-innerform cc-innerform--hide" data-form="inner" data-eveid="{{=it[0].id}}">
+        </div>
+    </div>
+</div>

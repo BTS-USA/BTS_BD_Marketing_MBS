@@ -1,0 +1,217 @@
+@import "shared/cl.styl"
+
+@keyframes blinking {
+  0% {
+    box-shadow(0 0 0 1px rgba(210, 0, 63, 0.1))
+    height 18px
+    width 18px
+  }
+  50% {
+    box-shadow(0 0 0 8px rgba(210, 0, 63, 0.5))
+    height 22px
+    width 22px
+  }
+  100% {
+    box-shadow(0 0 0 1px rgba(210, 0, 63, 0.1))
+    height 18px
+    width 18px
+  }
+}
+
+    .apum
+        width 100%
+        position relative
+        overflow hidden
+        transition(all 1s ease)
+        @media (min-width 768px)
+            max-width 1024px // for screens larger then 1024px (ipad) screen will show background
+            margin 0 auto
+        &__readOnly
+            opacity 0.5
+            pointer-events none
+        &__header
+            position relative
+            top 55px
+            float left
+            padding-left 10px
+            width 100%
+            @media (min-width 768px)
+                top 0
+                width 60%
+        &__title
+            color #fff
+            font-size 2*$px
+            font-weight 300
+            float left
+            &::before
+                font-family "clIcons"
+                content '\f102'
+                font-size 2.4*$px
+                padding 0 5px 0 0
+                vertical-align bottom
+        &__countdown-holder
+            color #fff
+            font-size 1rem
+            font-weight 300
+            float right
+            padding 0 10px
+            margin 0
+        &-tab-container
+            float left
+            background-color $codGray
+            position relative
+            top -55px 
+            width 100%
+            display flex
+            display -webkit-flex
+            @media (min-width 768px)
+                top 0
+                float right
+                width 40%
+         &-bar
+            background-color $cerulean
+            overflow hidden
+            width 100%
+            .cl-mobile &
+                clear none
+                width 100%
+            @media (min-width 768px)
+                float none
+                width auto
+                .cl-mobile &
+                    width auto
+            &__tab
+                display inline-block
+                line-height 3.8em
+                float left
+                height 55px
+                width 65px
+                border-left 1px solid $tundora
+                text-align center
+                background-color #000
+                position relative
+                flex 1
+                -webkit-flex 1
+                &:first-child
+                    border 0
+                    @media (min-width 768px)
+                        border-left 1px solid $tundora
+                &::before
+                    content ""
+                    font-family "clIcons"
+                    color #fff
+                    font-size 2.5*$px
+                    vertical-align bottom
+                &--email
+                    &::before
+                        content '\f102'
+                &--email.blink::before
+                    color $brightSun
+                &--cal
+                    &::before
+                        content '\f101'
+                &--flag
+                    &::before
+                        content '\f104'
+                &--contacts
+                    &::before
+                        content '\f126'
+                &--personnel
+                    &::before
+                        content '\f127'
+                &--accmanager
+                    &::before
+                        content '\f128'
+                &--folder
+                    &::before
+                        content '\f105'
+            .active
+                background-color $cerulean
+        &__unread
+            position absolute
+            width 20px
+            height 20px
+            border-radius 50%
+            -moz-border-radius 50%
+            -webkit-border-radius 50%
+            font-size 10px
+            line-height 1.9em
+            text-align center
+            float right
+            left calc(50% + 15px)
+            top calc(50% - 10px)
+            transform translate(-50%, -50%)
+            color #FFF
+            display none
+            background-color #D2003F
+            &--visible
+                display inline-block
+            &--blink
+                animation-name blinking
+                animation-duration 2s
+                animation-iteration-count 15
+        &__count
+            transform-origin 50% 50%
+            position relative
+        &-page
+            &__container
+                position relative
+                .cl-mobile &
+                    width auto
+                    transition(all 1s ease)
+                    float left
+                    width 100%
+                    @media (min-width 768px)
+                        overflow hidden
+                        float none
+                        width auto
+                @media (min-width 768px)
+                    overflow hidden
+            &__page
+                width 100%
+                overflow hidden
+    
+    &-button
+        width 85px
+        &__call
+            button($monza)
+            &::after
+                content "\f129"
+        &__mute
+            button($apple)
+        &__unmute
+            button($monza)
+        &__stop
+            button($tundora)
+            &::before
+                content "\f12a"
+    .cc
+        &-webCol
+            // overflow auto
+            background-color $mercury
+            transition(all 0.25s ease)
+            text-align center
+            float left
+            width 0
+            height calc(100vh - 120px)
+            @media (min-width 768px)
+                position relative
+                left 0
+                top 0
+            &--hide
+                overflow hidden
+                width 0
+                display none
+                transition(all 1s ease-in 0.5s)
+            &--open
+                display block
+                width 100%
+                transition(all 0.25s ease-in 0.5s)
+                @media (min-width 768px)
+                    width 41.66666666666667%
+            .OT_widget-container
+                position relative
+                padding-top 25px
+                padding-bottom 56.25%
+                height 0 !important
+

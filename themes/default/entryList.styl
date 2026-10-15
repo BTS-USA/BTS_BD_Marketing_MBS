@@ -1,0 +1,256 @@
+﻿@import './entry.css'
+.mainWrapper .EntryList
+    overflow visible
+.wizletEntryList
+    height:100%;
+    button.moreButton
+        display inline-block !important //temporary hack due to designedButton. can be removed when designedButton is phased out.
+        position relative
+        cursor pointer 
+        float none
+        margin 0px
+        background-color #00adff
+        color #fff
+        background-image none
+        text-align left
+        padding 10px 20px 10px 20px
+        border-radius 3px
+        border none
+        text-transform uppercase
+        font-weight bold
+    .entryList
+        width 100%
+        background-color transparent
+        //overflow hidden
+        display block
+
+        .list
+            margin-top 1%
+            clear both
+        .menu
+            .nav
+                background-color transparent
+                height 69px
+                border-bottom 1px solid #666
+                span
+                    width 150px
+                    height 50px
+                    background-color #b4b4b4
+                    border 1px solid #666
+                li,.menu-super
+                    display inline-block
+                    float left
+                    margin 10px 0 0 10px
+                    ul
+                        display inline-block
+        .button-shape
+            display inline-block
+            width 120px
+            height 50px
+            overflow hidden
+            background-color #b4b4b4
+            //border 1px solid #666
+            -webkit-box-sizing border-box
+            -moz-box-sizing border-box
+            box-sizing border-box
+            padding 5px 
+            color #333
+            text-transform uppercase
+            cursor pointer
+            //top 19px
+            position relative
+            top 0px
+            font-weight bold
+            font-size 9pt
+            overflowhidden
+            hover
+                background-color #ddd
+         .selected
+            .button-shape
+                background-color #dfdfdf
+
+        .addAction
+            display block
+            padding 15px
+            border-radius 3px
+            background rgb(51, 153, 51)
+            color #fff
+            float left
+            margin 20px 15px
+            text-transform uppercase
+            outline 5px solid rgba(255, 255, 255, 0.20)
+
+    .listItem
+        // To force list items to display in a single column instead of multiple columns, change "float" to "none". 
+        float left
+        position relative
+        // The two lines below will alter the size of the list items, and how many columns they flow into if allowed to flow.
+        margin 0px 1% 12px 1%
+        //23% for 4 column. 
+        //31.25% for 3 column
+        width 31.25%
+        //If you alter the height, you may also want to adjust .field-CHALLENGE_DESCRIPTION's height.
+        height 400px 
+        overflow hidden
+
+        a.openAction        
+            padding 6px    
+            width 100%
+            height 100%
+            position absolute
+            display inline-block
+            color #666
+            background-color #eee
+            padding 0px
+            -webkit-box-sizing border-box
+            -moz-box-sizing border-box
+            box-sizing border-box
+            border-radius 6px
+            
+        .field
+            width 100%
+            font-weight bold
+            display block
+            font-size 14pt
+            &.likelyTitle         
+                background-color #69b8d9
+                color #fff
+                padding 8px
+                margin 0px
+                margin-bottom 12px
+                font-weight normal
+                height 50px
+                overflow auto
+            &.likelyDescription
+                height 215px 
+                width 100%
+                overflow auto
+                font-weight normal
+                font-size 12pt
+                padding 8px
+                position absolute
+                bottom 0px
+                background-color #fff
+                -webkit-box-sizing border-box
+                -moz-box-sizing border-box
+                box-sizing border-box
+                border-bottom #fff 6px solid
+            img
+                width 80%
+                max-height 45%
+                position absolute
+                bottom 6%
+                left 25px
+
+
+        span.info
+            font-weight normal
+            display block
+            font-size 9pt
+            width 96%
+            padding 4px 6px 14px 6px
+            text-transform uppercase
+            bottom auto
+            position relative
+            &.author
+               bottom: -10px;
+               position: absolute; 
+            span
+                display inline-block
+                .data
+                    text-indent 0px
+                    font-size 16pt
+                    display block
+                    color #0a88b8
+                    white-space nowrap
+                .field-averagerank
+                    width 49%
+                    margin 0px
+                    padding 6px
+                    -webkit-box-sizing border-box
+                    -moz-box-sizing border-box
+                    box-sizing border-box
+                    text-align center
+                    text-transform uppercase
+                .field-rankposition
+                    width 49%
+                    margin 0px
+                    padding 6px
+                    -webkit-box-sizing border-box
+                    -moz-box-sizing border-box
+                    box-sizing border-box
+                    text-align center
+                    text-transform uppercase
+                .field-author
+                    text-transform none
+                    color #0a88b8
+                    font-size 12pt
+                    font-weight normal
+    .moreButton
+        position relative
+        float right
+        margin 0px 2% 12px 1%
+        background-color #00adff
+
+    .designedButton
+        displaynone
+    .recordVideo
+        background-color #00adff
+        color #fff
+        border-radius 3px
+        padding 6px
+        font-size 10pt
+        width 120px
+        text-align center
+        -webkit-box-sizing border-box
+        -moz-box-sizing border-box
+        box-sizing border-box
+        border none
+        margin-top 6px
+
+    .dBGraphics
+        background-image none
+
+    .entryContainer
+        background-color #FCFCFC
+        position absolute
+        width 100%
+        height auto
+        top  -12px
+        left 0
+        overflow-y hidden
+
+        .info
+            bottom 58px
+        .optional-image-container
+            /*display none*/
+        .remainingCharacters
+            color #666
+            text-align right
+            padding 6px 1%
+            font-weight normal
+
+        button
+            display block !important //temporary hack until designedButton is phased out.
+            cursor pointer
+            background-color #00adff
+            color #fff
+            background-image none
+            text-align left
+            padding 14px 22px 10px 22px
+            border-radius 3px
+            border none
+        .closeControl 
+            float left
+            clear both
+            width 100%
+
+        .closeAction
+            float right
+            margin 10px 20px
+
+            .field label.recordbutton, .field label.photobutton, .recordVideo
+                padding 14px 22px 10px 22px
+                color #fff
+                position absolute
+                left 3%

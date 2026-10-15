@@ -1,0 +1,110 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="bclc cl-component">
+            {{? it.header}}
+                <header class="bclc-header--main cl-header--main">
+                    {{? it.header.breadCrumbs}}
+                        <p class="bclc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="bclc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="bclc-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                            <h1 class="bclc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                                {{=it.header.title}}
+                            </h1>
+                        {{?}}
+                        {{? it.header.description}}
+                            <p class="bclc-header__description--main cl-header__description--main">
+                                {{=it.header.description}}
+                            </p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+
+            <div class="bclc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <div class="bclc-instructions cl-instructions">
+                            <p class="bclc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                    <div class="bclc-content cl-content">
+                        {{? typeof it.filterQuestions !== 'undefined'}}
+                            {{? it.filterQuestions[0]}}
+                        <div class="bclc-filters-container cl-row">
+                            {{~it.filterQuestions[0].options :filterQuestion:index}}
+
+                            <div class="bclc-filter-container" id="{{=filterQuestion.value}}" data-filter="{{=filterQuestion.value}}" data-barchartlistfilter>
+                                <div class="bclc-filter" id="{{=filterQuestion.value}}"" data-filter="{{=filterQuestion.value}}"" data-barchartlistfiltercheck>
+                                    <input type="checkbox" class="bclc-filter__checkbox cl-checkbox" data-bclccheckbox value="filter-{{=filterQuestion.value}}" id="bclc-filter_{{=filterQuestion.value}}">
+                                    <label for="bclc-filter_{{=filterQuestion.value}}" class="bclc-filter__label">{{=filterQuestion.description}}</label>
+                                </div>
+                            </div>
+                            {{~}}
+                        </div>
+                            {{?}}
+                        {{?}}
+
+                        {{~it.sections :section:index}}
+                        <div class="bclc-articles-group cl-row">
+                            {{? section.sectionLabel }}
+                                <header class="bclc-header--article cl-header--article"> 
+                                    <h4 class="bclc-header__title--artice cl-header__title--artice" id="section{{=index}}">{{=section.sectionLabel}}</h4>
+                                </header>
+                            {{?}}
+                            {{~section.questions:question:ind}}
+                            <article class="bclc-article cl-article cl-table">
+                                <div class="bclc-question cl-md-cell-6 cl-xs-cell-12">
+                                    <p class="bclc-question__text cl-paragraph">{{=question.label}}</p>   
+                                </div>
+                                <div class="bclc-answer cl-md-cell-6 cl-xs-cell-12" data-barChartListAnswer>
+                                        {{~question.barCharts: barChart:i}}
+                                        {{? barChart }}
+                                        <div class="bclc-bar-container" data-barChartListBarChartArray data-name="{{=question.name}}">
+                                            <div class="bclc-bar cl-bar">
+                                                <div class="bclc-bar__inner cl-bar__inner" style="width:{{=barChart}}%" data-barChartListHorizontalBarChartInner>
+                                                    {{? it.display == "percent"}} 
+                                                        <div class="bclc-bubble cl-bubble" data-bubblePercent>{{=barChart}}%</div>
+                                                    {{?}}
+                                                    {{? it.display == "average"}} 
+                                                    <div class="bclc-bubble cl-bubble" data-bubbleAverage>{{=question.ranking}}</div>
+                                                    {{?}}
+                                                    {{? it.display == "vote"}} 
+                                                    <div class="bclc-bubble cl-bubble" data-bubbleVote>{{=question.ranking}} </div>
+                                                    {{?}}             
+                                                </div>
+                                            </div> 
+                                            <div class="bclc-filter-name" data-barChartListFilterName></div>
+                                        </div>
+                                        {{?}}
+                                        {{~}}
+                                </div>
+                            </article>
+                            {{~}}
+                        </div>
+                        {{~}}
+                        {{? it.votesAmount || it.average}}
+                            <footer class="bclc-footer cl-footer">
+                                {{? it.votesAmount}}
+                                     <div class="bclc-stats cl-stats" data-barChartComponentTotalVotes>
+                                        <span class="bclc-stats__text">{{=it.votesAmount.text}}</span>
+                                        <span class="bclc-stats__value" data-barChartListTotalVotesVal>{{=it.votesAmount.val}}</span> 
+                                    </div>
+                                {{?}}
+                                {{? it.average}}
+                                     <div class="bclc-stats cl-stats" data-barChartComponentTotalVotes>
+                                        <span class="bclc-stats__text">{{=it.average.text}}</span>
+                                        <span class="bclc-stats__value" data-barChartListAvgVal>{{=it.average.val}}</span> 
+                                    </div>
+                                {{?}}
+                            </footer>
+                        {{?}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,230 @@
+/*json('./colors.json')*/
+@font-face
+  font-family 'Gibson-Light'
+  src url("../fonts/Gibson-Light.ttf") format("truetype")
+  font-weight 300
+  font-style normal
+@font-face
+  font-family 'Gibson-Regular'
+  src url("../fonts/Gibson-Regular.otf") format("opentype")
+  font-weight 400
+  font-style normal
+@font-face
+  font-family 'Gibson-SemiBold'
+  src url("../fonts/Gibson-SemiBold.otf") format("opentype")
+  font-weight 600
+  font-style normal
+@font-face
+  font-family 'fa-regular-400'
+  src url("../fonts/fa-regular-400.eot")
+  src url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype"), url("../fonts/fa-regular-400.svg#fontawesome") format("svg")
+@font-face
+  font-family 'fa-solid-900'
+  src url("../fonts/fa-solid-900.eot")
+  src url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg")
+
+// -------------------------------------------------//<<<<-----NewColors--->>>>---------------------------------------------------//
+$white = #ffffff
+$neutral-dark = #24282b
+$neutral-medium = #cccccc
+$neutral-light = lighten($neutral-dark, 90%)
+$darkgrey =  #333333
+$black = #000000
+/*Primary color and shades*/
+$primary = #021a32
+$primary-medium = #337ab7
+$primary-light = lighten($primary, 70%)
+/*Secondary color and shades*/
+$secondary = #ffb612 
+$secondary-dark = darken($secondary, 80%)
+$secondary-medium = lighten($secondary, 30%)
+$secondary-light = lighten($secondary, 70%)
+/*Tertiary colors*/
+$tertiary1 = #4C3480
+$tertiary1-medium = lighten($tertiary1, 40%)
+$tertiary1-light = lighten($tertiary1, 70%)
+$tertiary2 = #E63F50
+$tertiary2-medium = lighten($tertiary2, 40%)
+$tertiary2-light = lighten($tertiary2, 70%)
+$tertiary3 = #1C4C87
+$tertiary3-medium = lighten($tertiary3, 40%)
+$tertiary3-light = lighten($tertiary3, 70%)
+/*Defaults*/
+$error = #DA1E28
+$error-dark = darken($error,30%)
+$success = #1E853B
+$success-dark = darken($success,30%)
+$warning = #FDD13A
+$warning-dark = darken($warning,30%)
+$note = #0071EB
+$note-dark = darken($note,50%)
+/*Frequently used*/
+$overlay-light = rgba(255, 255, 255, 0.5)
+$overlay-dark = rgba(0, 0, 0, 0.5)
+$shadow-big = 0 0 3rem -0.5rem rgba(0, 0, 0, 0.2)
+$shadow-small = .625rem .625rem 1rem rgba(0, 0, 0, 0.2)
+$shadow-text = .3125rem .3125rem .625rem rgba(0, 0, 0, 0.4)
+$shadow-bg = 0 5px 30px 0 rgba(127, 127, 127, 0.35)
+$radius = 5px
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+body, p, li, input, button
+    font-family 'Gibson-Regular'
+    font-weight normal
+    line-height normal
+    line-height 1.8rem
+h1, h2, h3
+    font-family 'Gibson-SemiBold'
+    font-weight normal
+    line-height normal
+    margin 0
+ul, ol
+    margin 0
+    padding .5rem 0
+li
+    margin-left 20px
+    padding 5px 0
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+input[type=button]
+    -webkit-appearance none !important
+.designedButton, .dBGraphics, .nextAction
+    visibility hidden
+    display none !important
+#filterSelector
+    display none
+// -------------------------------------------------//<<<<-----other rules--->>>>---------------------------------------------------//
+*
+    -webkit-user-select none
+     -moz-user-select none
+     -ms-user-select none
+     user-select none
+textarea, input
+    -webkit-user-select initial
+    -moz-user-select initial
+    -ms-user-select initial
+    user-select initial
+    border 1px solid $neutral-light !important
+    border-radius $radius
+    box-shadow inset 5px 5px 10px rgba(0,0,0,0.2)
+.row
+    margin 0
+.col
+    padding 0
+.hidden
+    display none !important
+.is-blurred
+    filter blur(2px) grayscale(50%);
+// -------------------------------------------------//<<<<-----Scrollbar--->>>>---------------------------------------------------//
+::-webkit-scrollbar
+    width 10px
+    height 5px
+::-webkit-scrollbar-track
+    // -webkit-box-shadow inset 0 0 6px rgba(0,0,0,0.3)
+    -webkit-border-radius $radius
+    background $white 
+    border-radius 0px
+::-webkit-scrollbar-thumb
+    border-radius $radius
+    background #676e75 !important
+::-webkit-scrollbar-thumb:window-inactive
+    background rgba(0,0,0,0.3)
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.shield
+    position absolute
+    top 0
+    left 0
+    height 100%
+    width 100%
+    background-color $overlay
+    &.hidden
+        display none
+.readonly
+    pointer-events none
+    .cl-footer
+        display none
+.disabled
+    pointer-events none
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+blockquote
+    padding 1.5rem
+    background-color $lightgrey
+    border-radius $radius
+    position relative
+    margin-top 2.5rem
+    &:before, &:after
+        content '\f10d'
+        font-family 'fa-solid-900'
+        position absolute
+        color $color-primary
+    &:before
+        font-size 3rem
+        top -30px
+        left 10px
+    &:after
+        content '\f10e'
+        font-size 2rem
+        bottom -18px
+        right 10px
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+flex()
+    display flex
+    display -webkit-box
+    display -moz-box
+    display -ms-flexbox
+    display -webkit-flex
+// -------------------------------------------------//<<<<-----Animations--->>>>---------------------------------------------------//
+@keyframes check
+    0%
+        height 0
+        width 0
+    25%
+        height 0
+        width 12px
+    50%
+        height 20px
+        width 12px
+@keyframes pulse
+    0%
+        transform scale(0)
+    100%
+        transform scale(1)
+@keyframes scale
+    0%
+        transform scaleY(0)
+    100%
+        transform scaleY(1)
+@keyframes rotate
+    0%
+        transform rotateZ(0)
+    100%
+        transform rotateZ(180deg)
+@keyframes wobble
+    33%
+        transform rotate(20deg)
+    66%
+        transform rotate(-20deg)
+@keyframes toggler-left
+    0%
+      left 50%
+    100%
+      left 0
+@keyframes toggler-right
+    0%
+      right 50%
+    100%
+      right 0
+
+@keyframes customSlideHorizontal
+    0%
+        transform scaleX(0)
+    100%
+        transform scaleX(1)
+@keyframes customSlideVertical
+    0%
+        transform scaleY(0)
+    100%
+        transform scaleY(1)
+@keyframes spin
+    0%
+        transform rotate(0deg)
+    100%
+        transform rotate(360deg)

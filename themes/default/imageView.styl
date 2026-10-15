@@ -1,0 +1,45 @@
+// import component library mixins and variables
+@import "shared/cl.styl"
+
+// Image View Component Styles
+.iwc
+    &-container
+        text-align center
+    &-article
+        margin 0 0 20px 0
+    &-figure
+        &__image
+            width 100%
+    // Styles for slider version of image view component
+    &-slider
+        margin auto
+        max-width 600px
+        display none
+        position relative
+        .slidesjs-container
+            margin 0 0 20px 0
+            overflow hidden
+        .slidesjs-slide 
+            overflow hidden
+        .slidesjs-navigation 
+            background $cerulean
+            color white
+            padding 10px
+            position absolute
+            text-decoration none
+        .slidesjs-pagination
+            &-item
+                display inline-block
+                list-style none
+                margin 0 5px
+                a
+                    color white
+                    background $cerulean
+                    padding 10px
+                    text-decoration none
+        .slidesjs-previous 
+            left 0
+            bottom -10px
+        .slidesjs-next 
+            right 0
+            bottom -10px

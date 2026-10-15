@@ -1,0 +1,60 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="sc cl-component" data-streamingcomponent>
+
+            {{? it.header}}
+            <header class="sc-header cl-header--main">
+                {{? it.header.title}}
+                <h1 class="sc-header__title cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="sc-header__description cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <div class="sc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="sc-instructions cl-instructions">
+                        <p class="sc-nstructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+
+                    <div class="sc-content cl-content">
+                        <article class="sc-article{{? it.transcript}} cl-row{{?}} cl-article" data-streamingcomponentcont>
+                            <div id="player" class="provider sc-video{{? it.transcript}} cl-sm-column-7{{?}} cl-xs-column-12 cl-padding--no" data-streamingvideocontainer>
+                            </div>
+                            <div id="P1" class="player youtubePlayer" data-youtubeplayer data-property=""></div>
+                        </article>
+                        {{? it.buttons}}
+                        <footer class="sc-footer cl-footer" data-controls>
+                           <div class="sc-buttons">
+                                {{? it.buttons[2].show || it.buttons[2].show === undefined}}
+                                <div class="sc-button-container" id="scHighResButton" data-componentbuttons>
+                                    <div class="sc-button sc-button--highRes cl-button" data-highResAction>{{=it.buttons[2].title}}</div>
+                                </div>
+                                {{?}}
+                                {{? it.buttons[1].show || it.buttons[1].show === undefined}}
+                                <div class="sc-button-container" id="scMediumResButton" data-componentbuttons>
+                                    <div class="sc-button sc-button--mediumRes cl-button" data-mediumResAction>{{=it.buttons[1].title}}</div>
+                                </div>
+                                {{?}}
+                               {{? it.buttons[0].show || it.buttons[0].show === undefined}}
+                               <div class="sc-button-container" id="scLowResButton" data-componentbuttons>
+                                   <div class="sc-button sc-button--lowRes cl-button" data-lowResAction>{{=it.buttons[0].title}}</div>
+                               </div>
+                               {{?}}
+                            </div>
+                        </footer>
+                        {{?}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

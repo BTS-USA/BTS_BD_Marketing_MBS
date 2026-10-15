@@ -1,0 +1,181 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+.riskRating
+  &__boldtext
+      font-weight 900
+      font-size 18px
+  &__submit_button
+      width 130px
+      position relative
+      padding 10px 2px 2px 2px
+      color #FFFFFF
+      text-align center
+      text-transform uppercase
+      border-radius 20px
+      font-weight 600
+      transition all 500ms cubic-bezier(0.6, -0.28, 0.735, 0.045)
+      height 40px
+      background linear-gradient(180deg, rgba(66, 208, 255, 1) 0%, rgba(10, 185, 240, 1) 81%)
+      cursor pointer
+      margin 20px 0px 20px 0px     
+  &__disabled
+      background rgba(191, 194, 200, 1)
+      cursor none
+      opacity 1
+      pointer-events none
+  &__enabled
+      background linear-gradient(180deg, rgba(66, 208, 255, 1) 0%, rgba(10, 185, 240, 1) 81%)
+      cursor pointer
+  &__center
+      display flex
+      align-items center
+      justify-content center
+  &__message
+      height 40px
+      text-align center
+      display table
+      color white
+      margin 0 auto 10px auto
+      width calc(100% - 20px)
+      opacity 0
+      &-error
+          background #FF4E3A
+      &-success
+          background #6A9E44
+      & span
+          display table-cell
+          vertical-align middle
+      &--show
+          opacity 1
+  &__mainSlider
+    margin 0 auto
+    max-width 840px
+    position relative
+    overflow hidden
+  &__mainCont
+    position relative
+    height 190px
+    margin 0
+    padding 0
+  &__mainWrapper
+    float left
+    position relative
+    display block
+    text-align center
+    max-height 500px
+    background-color rgb(242, 242, 242)
+    margin 20px 10px 10px 10px
+    @media screen and (max-width 768px)
+      padding 10px
+  &__nextIcon
+    &:before
+      font-size 12px
+  &__nextText
+    font-size 14px
+    text-transform uppercase
+    font-weight 600
+  &__nextButtonCont
+    text-align center
+    display inline-block
+  &__nextButton
+    padding 15px
+    margin-top 15px
+    border-radius 25px
+    color white
+    white-space nowrap
+    cursor pointer
+    border none
+    outline none
+    background-color $cerulean
+  &__noRisk
+    color $emerald
+  &__sliderContainer
+    height 150px
+    padding 5px 0px 5px 5px
+    box-sizing border-box
+    float left
+    width 50%
+  &__sliderWrapper
+      height 100%
+      background white
+      width 100%
+      position relative
+      border 7px solid #f2f2f2        
+      
+  &__propertyText
+      background #fff
+      text-align left
+      color #434951 
+      padding 10px 5px 5px 8%
+      font-size 14px
+      font-weight 300
+  &__ideaText
+      margin 15px 0
+      font-weight 600
+      font-size 16px
+      color #434951
+      padding 5px
+  &__modal
+      background linear-gradient(180deg, rgba(66, 208, 255, 1) 0%, rgba(10, 185, 240, 1) 81%)
+      color #fff
+
+.cl-modal__dialog
+    width 350px
+    box-shadow none
+
+.cl-modal__content
+    padding 20px
+    text-align center
+  
+.slider-container
+  margin 35px 40px
+  @media screen and (max-width 768px)
+    margin 20px
+  .back-bar
+    background-color #a8adb4
+    .pointer
+      cursor pointer
+      height 25px
+      width 25px
+      border 6px solid white
+      background-color $cerulean
+      border-radius 13px
+      top -8px
+      margin-left -6px
+    .pointer-label
+      top -20px
+      font-size 9px
+.scale
+    span
+        ins
+            display none
+        &:first-child, &:last-child
+            ins
+                display block
+                margin-top 5px
+                font-size 10px
+
+.disabledContainer {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.cl
+            &-header
+                &--main
+                    background transparent
+                    color $white
+                    padding 0
+                    margin 0 auto 16px
+                    /*max-width 600px*/
+                    width 100%
+                    @media screen and (max-width 600px)
+                        margin-bottom 8px
+                        max-width calc(100% - 20px)
+                        padding 6px 0
+                &__title--main
+                    padding 0
+                    font-size 18px
+                    font-weight bold
+                    color $white

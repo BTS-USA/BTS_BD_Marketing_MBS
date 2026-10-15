@@ -1,0 +1,479 @@
+// import component library mixins and variables
+@import "shared/cl.styl"
+
+.vhr
+    &-user
+        &DetailsCont
+            display flex
+            align-items center
+            padding 7px 10px
+        &Name
+            flex 0 0 65%
+            font-size 13px
+            color #6D747E
+        &MeName
+            flex 0 0 65%
+            font-size 13px
+            color $apple
+    &-backdrop
+        position fixed 
+        width 100%
+        height 100%
+    &-noVideolabel
+        color $white90
+    &-mainWrapper
+        background $white90
+        display flex
+        border-radius 10px
+        min-height 190px
+        max-height 190px
+        margin 24px 0
+        position relative
+        @media screen and (max-width: 768px)
+            width 80%
+            margin 15px auto
+            min-height 510px
+            max-height 510px
+        &-active
+            min-height 768px
+            max-height 768px
+    &-videoCont
+        flex 0 0 17%
+        position relative
+        video
+            width 100%
+            height 100%
+        &__playButton
+            color $white90
+            cursor pointer
+            position absolute
+            top 40%
+            left 40%
+            background rgba(0,0,0,0.4)
+            padding 8px 11px
+            border-radius 50%
+    &-ratingCont
+        flex 0 0 83%
+        &__title
+            background #6d747e
+            color $white90
+            border-top-right-radius 10px
+            font-size 14px
+            font-weight 400
+        &__category
+            background #6d747e
+            color $white90
+            border-top-right-radius 10px
+            font-size 14px
+            font-weight 400    
+        &__author
+            color #6d747e
+            padding 8px 10px
+            border-top-right-radius 10px
+            font-size 14px
+            font-weight 400
+        &__rating
+            display flex
+            height calc(100% - 70px)
+        &__slider
+            &Container
+                font-size 14px
+                margin 15px
+    &-comment
+        &ButtonCont
+            display flex
+            align-items center
+            margin 0 0 16px 8px
+        &Button
+            height 25px
+            width 25px
+            background $cerulean
+            border-radius 50%
+            color $white90
+            display flex
+            align-items center
+            justify-content center
+            cursor pointer
+            &--active
+                background #182033
+            i
+                font-size 14px
+    &-disabled
+        background-color rgba(191, 194, 200, 1)
+        cursor none
+        opacity 1
+        pointer-events none
+    &-enabled
+        background $cerulean
+        cursor pointer
+    &-submit
+        &__cont
+            margin 25px
+            text-align center
+        &__button
+            border-radius 20px
+            font-weight 600
+            transition all 500ms cubic-bezier(0.6, -0.28, 0.735, 0.045)
+    &-comment
+        &Wrapper
+            display flex
+            position absolute
+            background transparent
+            top 190px
+            left 1%
+            width 98%
+            color $white90
+            border 2px solid $white90
+            border-top 0
+            border-bottom-right-radius 10px
+            border-bottom-left-radius 10px
+        &Input
+            flex 0 0 50%
+            padding 20px
+        &Instructions
+            // width 50%
+            &_text
+                font-size 15px
+            &__characterRemaining
+                float right
+                font-size 12px
+        &__textarea
+            width 100%
+            border 4px solid $cerulean
+            font-size 14px
+            resize none
+        &__saveButtonCont
+            float right
+            border-bottom-right-radius 10px
+            border-bottom-left-radius 10px
+            i
+                font-weight 600
+    &-commentDisplay
+        flex 0 0 50%
+        padding 10px 15px
+        &__close
+            display flex
+            justify-content flex-end
+            font-size 26px
+            span
+                cursor pointer
+        &__holder
+            max-height 115px
+            min-height 100px
+            overflow auto
+            padding 8px 15px 8px 0
+            @media screen and (max-width: 768px)
+                width 100%
+        &__commentText
+            font-size 14px
+            &Cont
+                border-bottom 1px solid $white50
+                margin 4px 0
+                padding 4px
+                @media screen and (max-width: 768px)
+                    text-align left 
+        &__editIcon  
+            float right
+            font-size 12px
+            cursor pointer
+    &-heightCont
+        height 190px
+        &--expand
+            height 350px
+        @media screen and (max-width: 768px)
+            height 510px
+        &-active
+            height 810px
+    &-label
+        color $white90
+        text-align center
+        font-size 16px
+    &-hide
+        display none
+    &-show
+        display block        
+    &-modalWrapper
+        position absolute
+        top 0
+        display none
+    &-modal
+        position fixed
+        height 100%
+        width 100%
+        background rgba(0,0,0,.9)
+        z-index 1005
+        &__body
+            width 50%
+            position relative
+            top 50%
+            transform translate(-50%, -50%)
+            left 50%
+            @media screen and (max-width 1024px) 
+                width 100%
+        &__backControl
+            color $white90
+            text-align right
+            font-size 14px
+            margin-bottom 4px 
+            i, span
+                cursor pointer
+        &__container
+            width 100%
+            height 100%
+            overflow auto
+            border-radius 0
+        &__videoRecording
+            video
+                width 100%
+                max-height 425px
+                background #000
+        &__ideaTitle
+            padding 12px
+            background #434951
+            color $white90
+    &-likeRating
+        &Cont
+            &--noExpanded
+                height 300px
+                width 33%
+                float left
+            &--expand
+                height 585px
+                width 33%
+                float left
+        &Wrapper
+            background $white90
+            border-radius 10px
+            margin 15px
+            position relative
+            video
+                width 100%
+                border-top-left-radius 10px
+                border-top-right-radius 10px 
+        &__ideaText
+            font-size 14px
+            flex 0 0 92%
+        &__ideaCategoryText
+            font-size 14px
+            flex 0 0 92%
+        &__playIcon
+            position absolute
+            top 33%
+            left 46%
+            color $white90
+            font-size 26px
+            margin 0 auto
+            cursor pointer
+            background rgba(0,0,0,0.4)
+            padding 8px 10px
+            border-radius 50%
+
+        &__likeIcon
+            position absolute
+            top 5%
+            right 5%
+            color $white90
+            cursor pointer
+            font-size 22px
+        &__textCont
+            display flex
+            padding 4px 12px 0 12px
+            align-items center
+        &__textCategory
+            display flex
+            padding 4px 12px 0 12px
+            align-items center
+        &__commentButton
+            margin 10px 0
+            flex 0 0 8%
+    &-like
+        &__commentWrapper
+            position absolute
+            background transparent
+            // top 202px
+            width 100%
+            color $white90
+            border 2px solid $white90
+            border-top 0
+            border-bottom-right-radius 10px
+            border-bottom-left-radius 10px
+            margin-bottom 10px
+            margin-top -7px
+            @media screen and (max-width: 768px)
+                background #182033
+        &__commentInstructionsText
+            font-size 14px
+        &__commentInput
+            padding 12px
+        &__commentDisplay
+            padding 10px 15px
+        &__close
+            margin 16px 14px 0 5px
+            font-weight 600
+            font-size 12px
+        &__remainingText
+            float right
+            font-size 12px
+            line-height 2
+            color $gray
+        &__imgCont
+            width 100%
+            height 200px
+            text-align center
+            background #000
+            border-top-left-radius 10px
+            border-top-right-radius 10px
+            overflow hidden
+            &Img
+                height 100%
+                max-width 100%
+                width auto
+
+    &-rate
+        &__imgCont
+            width 100%
+            height 100%
+        &__imgContImg
+            width 100%
+            height 100%
+            border-top-left-radius 10px
+            border-bottom-left-radius 10px
+            @media screen and (max-width: 768px)
+                border-top-left-radius 0px
+                border-top-right-radius 0px
+    
+    &-videoContMobile
+        width 100%
+        text-align center
+        // padding-top 5px
+        // box-shadow 0 2px 14px 6px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)
+        // background #fff
+        // margin 3px 3px 5px 3px
+        // border-radius 12px
+        &-videoSection
+            display flex
+            justify-content center
+        &-video
+            max-width 322px
+            min-height 140px
+            max-height 140px
+        &-playButton
+            display flex
+            justify-content center
+            position relative
+            bottom 80px
+            .play
+                color $white90
+                cursor pointer
+                position absolute
+                background rgba(0,0,0,0.4)
+                padding 8px 11px
+                border-radius 50%
+        &-title
+            background rgba(109, 116, 126, 1)
+            margin-top -6px
+            padding 10px 0
+            color $white
+            font-weight 600
+            border-top-left-radius 8px
+            border-top-right-radius 8px
+        &-category
+            background rgba(109, 116, 126, 1)
+            margin-top -6px
+            padding 10px 0
+            color $white
+            font-weight 600
+            border-top-left-radius 8px
+            border-top-right-radius 8px    
+        &-rating
+            .title
+                text-align left 
+                margin 0 20px
+            .container
+                position relative
+                padding 2px
+                margin-left 25px
+        &-comment
+            float right
+            position relative
+            right 25px
+        &-author
+            float left
+            position relative
+            left 25px
+    &-commentCont
+        &-active
+            position relative
+            top 40px
+            background transparent
+            border-bottom-left-radius 14px
+            border-bottom-right-radius 14px
+    &-commentWrapper
+        @media screen and (max-width: 768px)
+            top 0
+            left 0
+            width 100%
+            max-height 315px
+    &-commentInput
+        @media screen and (max-width: 768px)
+            width 100%
+            flex 0 0 100%
+            .commentInstructions
+                display flex
+                padding 3px
+                align-items center
+                &-text
+                    width 50%
+                    text-align left
+                    font-size 16px
+                &-characterRemaining
+                    width 50%
+                    text-align right
+                    font-size 14px
+                    color $gray
+                    font-weight 700
+    &-likeRatingCont
+        @media screen and (max-width: 768px)
+            width 100%
+            padding 0 50px
+    &-likeRatingWrapper
+        @media screen and (max-width: 768px)
+            box-shadow 0 2px 14px 6px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)
+        //     position relative
+        //     left -17px
+    // ::-webkit-scrollbar
+    //     width 6px
+    //     height 6px
+    //     border-radius 10px
+    //     background-color rgba(256,256,256,0.5)
+
+    // ::-webkit-scrollbar-thumb
+    //     border-radius 10px
+    //     background-color rgba(30,30,30,0.5)
+
+.slider-container
+  margin 30px 0
+  @media screen and (max-width 768px)
+    margin 20px
+  .back-bar
+    background-color #a8adb4
+    .pointer
+      cursor pointer
+      height 25px
+      width 25px
+      border 6px solid white
+      background-color $cerulean
+      border-radius 13px
+      top -8px
+      margin-left -6px
+    .pointer-label
+      top -20px
+      font-size 9px
+
+.fp-share
+    display none
+.flowplayer.is-fullscreen
+    height auto !important
+    max-height unset
+    video
+        max-height 100% !important

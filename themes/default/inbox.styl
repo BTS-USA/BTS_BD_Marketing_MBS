@@ -1,0 +1,787 @@
+// import component library mixins and variables
+@import "shared/cl.styl"
+
+.ec
+    height 100vh
+    width 100%
+    position relative
+    overflow hidden
+    /**
+        -webkit-transform translate3d(0, 0, 0)*/
+
+    &-button
+        width 85px
+        &__holder
+            clear both
+            text-align right
+            display table
+            width 100%
+        &__ok
+            button($apple)
+        &__cancel
+            button($monza)
+            margin-right 5px
+    
+    @media (min-width 768px)
+        max-width 1024px // for screens larger then 1024px (ipad) screen will show background
+        margin 0 auto
+        height 90vh
+    .cl-vp[min-width~="768px"] &
+        max-width 1024px // for screens larger then 1024px (ipad) screen will show background
+        margin 0 auto
+        height 90vh
+    // controls
+    &-controls
+        background-color $cerulean
+        &__title
+            color #fff
+            font-size 2*$px
+            font-weight 300
+            &::before
+                font-family "clIcons"
+                content '\f102'
+                font-size 2.4*$px
+                padding 0 5px 0 0
+                vertical-align bottom
+        &__group
+            float right
+            background-color $codGray
+            position relative
+            top -55px 
+            @media (min-width 768px)
+                top 0
+            .cl-vp[min-width~="100px"] &
+                top -55px
+            .cl-vp[min-width~="768px"] &
+                top 0
+    
+        &__button
+            display inline-block
+            line-height 3.8em
+            float left
+            width 20%
+            height 55px
+            border-left 1px solid $tundora
+            text-align center
+            &:first-child
+                border 0
+                @media (min-width 768px)
+                    border-left 1px solid $tundora
+                .cl-vp[min-width~="100px"] &
+                    border 0
+                .cl-vp[min-width~="768px"] &
+                    border-left 1px solid $tundora
+            &::before
+                font-family "clIcons"
+                color #fff
+                font-size 3*$px
+                vertical-align bottom
+            &--email
+                &::before
+                    content '\f102'
+            &--calendar
+                &::before
+                    content '\f101'
+            &--flag
+                &::before
+                    content '\f104'
+            &--contacts
+                &::before
+                    content '\f106'
+            &--folder
+                &::before
+                    content '\f105'
+            &--selected
+                background-color $cerulean
+        &__header
+            position relative
+            top 55px
+            @media (min-width 768px)
+                top 0
+            .cl-vp[min-width~="100px"] &
+                top 55px
+
+    // email list
+    &-list
+        background-color silver
+        height 100%
+        position absolute
+        top 0
+        z-index 1
+        overflow hidden
+        @media (min-width 768px)
+            z-index 1
+            position relative
+            left 0
+            top 0
+        .cl-vp[min-width~="100px"] &
+            height 100%
+            position absolute
+            top 0
+            z-index 1
+        .cl-vp[min-width~="768px"] &
+            z-index 1
+            position relative
+            left 0
+            top 0
+        .cl-mobile &
+            width 100%
+            position absolute
+            left inherit
+            top 0px
+            z-index 1
+
+        &__group
+            background-color $tundora
+            float left
+            &::after
+                content ""
+                clear both
+        &__button
+            cursor pointer
+            font-size 1.2*$px
+            line-height 2em
+            text-align center
+            text-transform uppercase
+            padding 5px 0
+            color $mercury
+            float left
+            display inline-block
+            height 32px
+            width 16%
+            margin 0 2%
+            &--active
+               border-bottom 5px solid $mercury
+            &--new
+                &::before
+                    font-family "clIcons"
+                    display block
+                    content "\f114"
+                    border-radius 10px
+                    background-color #0079B0
+                    position relative
+                    text-indent 1px
+                    z-index 10
+                    padding 1px
+                    width 15px
+                    height 15px
+                    font-size 9px
+                    line-height 1.6em
+                    text-align center
+                    margin-left 0
+                    float left
+                    left calc(50% - 18px)
+                    top -3px
+        &__email
+            padding 10px 0
+            border-top 1px solid $gray
+            cursor pointer
+            &::after
+                clear both
+                display block
+                content ""
+            &:first-child
+                border-top 0
+            &--active
+                background-color $deepCerulean
+        &__emails
+            height calc(100% - 32px)
+            overflow-y auto
+            display none
+            &--show
+                display block
+            .cl-vp[min-width~="100px"] &
+                display none
+            .cl-vp[min-width~="100px"] &--show
+                display block
+            
+        &__header
+            padding 5px 0
+        &__marker
+            display inline-block
+            width 10px
+            height 10px
+            margin 5px 10px 5px 10px
+            -webkit-border-radius 20px
+            border-radius 20px
+            float left
+            background-color $mercury
+            &--new
+                background-color $cerulean
+        &__title
+            font-size 1.6*$px
+            color $tundora
+            text-overflow ellipsis
+            margin 0
+            overflow hidden
+            white-space nowrap
+            .ec-list__email--active &
+                color white
+        &__term
+            float right
+            padding 7px 15px 0 0
+            display inline-block
+        &__date
+            font-size 1.2*$px
+            color $deepCerulean
+            text-align right
+            vertical-align sub
+            display block
+            .ec-list__email--active &
+                color white
+        &__info
+            color $tundora
+            float left
+            padding 5px 5px 5px 15px
+        &__subject
+            text-overflow ellipsis
+            overflow hidden
+            white-space nowrap 
+            display block
+            font-weight 400
+            margin 0 0 5px 15px
+            .ec-list__email--active &
+                color white
+            &:empty
+                display none
+        &__description
+            color $tundora
+            margin 0 0 0 15px
+            height 25px
+            line-height 25px
+            text-overflow ellipsis
+            overflow hidden
+            white-space nowrap
+            display block
+            .ec-list__email--active &
+                color white
+            li
+                text-overflow ellipsis
+                overflow hidden
+                white-space nowrap
+        /*
+        &__attach
+            float right
+            padding 12px 10px 0 10px
+            height 30px
+            &::after
+                font-family "clIcons"
+                content '\f103'
+                font-size 1.8*$px
+                position relative
+                .ec-list__email--active &
+                    color white
+        */
+        &__iconContainer
+            padding-left 0px
+        &__attach
+        &__important
+            float right
+            padding 12px 2px 0 0px
+            height 30px
+            display inline-block
+            font-family "clIcons"
+            font-size 1.8*$px
+            position relative
+        &__attach
+            &::after
+                content '\f103'
+                .ec-list__email--active &
+                    color white
+        &__important
+            &::after
+                content '\f125'
+                background-color $monza
+                color $mercury
+                padding 3px
+                font-size 1.3*$px
+                .ec-list__email--active &
+                    color white
+
+    // views 
+    &-view
+        height 100%
+        background-color #fff
+        position absolute
+        top 0
+        left 100%
+        z-index 5
+        transition(left 0.25s ease-in-out)
+        -webkit-transform translate3d(0, 0, 0)
+        -webkit-perspective 1000
+        @media (min-width 768px)
+            z-index 0
+            position relative
+            left 0
+            top 0
+        .cl-vp[min-width~="100px"] &
+            z-index 5
+            position absolute
+            left 100%
+            top 0
+        .cl-vp[min-width~="768px"] &
+            z-index 0
+            position relative
+            left 0
+            top 0
+        .cl-mobile &
+            width 100%
+            left 100%
+            top 0
+            position absolute
+            z-index 5
+        &--open
+           left 0
+           transition(left 0.25s ease-in-out)
+           .cl-vp[min-width~="100px"] & 
+                left 0
+           .cl-vp[min-width~="768px"] & 
+                left 0
+        &__bar
+            background-color $gray
+            height 32px
+            .cl-mobile &
+                width 100%
+
+        &__group
+            float right
+            width 100%
+            &::after
+                content ""
+                display block
+                clear none
+            .cl-mobile &
+                width 100%
+        &__button
+            font-size 1.2*$px
+            line-height 2em
+            text-align center
+            text-transform uppercase
+            padding 5px 0
+            color $mercury
+            float right
+            display inline-block
+            width 16%
+            height 32px
+            border-left 1px solid $mercury
+            cursor pointer                
+            &--active
+               border-bottom 5px solid $mercury
+            @media (min-width 768px)
+                width 13%
+            .cl-vp[min-width~="100px"] &
+                width 16%
+            .cl-vp[min-width~="768px"] &
+                width 13%
+            &--back
+                display block
+                width 20%
+                &::before
+                    font-family "clIcons"
+                    content "\f111"
+                    margin 0 0 0 10%
+                    float left
+                @media (min-width 768px)
+                    display none
+                .cl-vp[min-width~="100px"] &
+                    display block
+                .cl-vp[min-width~="768px"] &
+                    display none
+                .cl-mobile &
+                    display block
+            &--printAllMail
+                display block
+                width 13%
+                @media (min-width 1024px)
+                    display block
+                @media (max-width 767px)   
+                    display none !important
+                .cl-vp[min-width~="100px"] &
+                    display none
+                .cl-vp[min-width~="768px"] &
+                    display block
+                    width 20%
+                .cl-mobile &
+                    display none
+        &__preview
+            padding 0 15px
+            color $tundora
+            height calc(100% - 78px)
+            position relative
+            overflow-y auto
+        &__allMailPreview
+            display none
+            &--typeTitle
+                text-align center
+        &__header
+            padding 10px 0
+        &__subject
+            color $cerulean
+            margin 0 0 15px 0
+            float left
+            width calc(100% - 30px)
+        &__sender
+            font-weight 600
+            margin 0 0 5px 0
+        &__label
+            padding 0 5px 0 0
+            min-width 3.5em
+            display inline-block
+        &__recipient
+            padding 0 0 5px 0
+        &__date
+            color $cerulean
+            text-align right
+        &__content
+            padding 15px 0
+            border-top 1px solid $silver
+            p
+                padding 1em 0 0 0
+            ul, ol
+                padding 0 0 0 20px
+            &:empty
+                display none
+        &__attachments
+            margin 15px 0 0 0
+            padding 15px 0 0 0
+            font-size 1.4*$px
+            background-color #fff
+            border-top 1px solid $silver
+            &::after, ::before
+                content ""
+                clear both
+        &__attachment
+            &__filesize   
+                float left
+        &__attach
+            float left
+            clear both
+            margin 0 0 5px 0
+            text-decoration none
+            color $tundora
+            width calc(100% - 40px)
+            &::before
+                font-family "clIcons"
+                content '\f103'
+                font-size 2.2*$px
+                line-height 1.2em
+                float left
+                width 25px
+                height 25px
+        &__filename
+            color $codGray
+            font-weight 600
+            display inline-block
+            padding 3px 0
+            float left
+            width calc(100% - 40px)
+        &__filesize
+            float left
+            padding 3px 5px
+            color $gray
+        &__unread
+            position relative
+            width 0
+            height 0
+            font-size 11px
+            line-height 1.6em
+            text-align center
+            float right
+            right calc(50% - 12px)
+            top 4px
+            color #FFF
+        &__count
+            transform-origin 50% 50%
+            -moz-border-radius 20px
+            -webkit-border-radius 20px
+            position relative
+            top 5px
+            right 5px
+            display none
+            border-radius 20px
+            width 18px
+            height 18px
+            background-color #D2003F
+            &--visible
+                display inline-block
+        &__firstRow
+            &:after
+                clear both
+                display block
+                content ''
+        &__important
+            float right
+            &--icon
+            &--icon--disabled
+                cursor pointer
+                height 30px
+                width 30px
+                display inline-block
+                &:after
+                    font-family 'clicons'
+                    content "\f125"
+                    display inline-block
+                    font-size 1.5rem
+                    line-height 1em
+                    padding 4px 0px 0px 1px
+                    color #fff
+            &--icon
+                    background-color #d2003f
+            &--icon--disabled
+                    background-color $mercury
+                    
+    &-draft
+        &__buttons
+            padding 10px 0px
+            position relative
+        &__buttons:after
+            content ''
+            display block
+            clear both
+        &__button
+            &--send
+                button($apple)
+            &--cancel
+                button($monza)
+            &--save
+                button($tundora)
+            &--attach
+                button($tundora)
+                min-width 0
+                padding 3px 7px
+                position absolute
+                top 10px
+                right 43px
+                &::before
+                    font-family "clIcons"
+                    font-size 2.4*$px
+                    content '\f103'
+            &--important
+            &--important-disabled
+                min-width 0
+                padding 3px 7px
+                float right
+                &::before
+                    font-family "clIcons"
+                    font-size 2.4*$px
+                    content '\f125'
+            &--important
+                button(#d2003f)
+            &--important-disabled
+                button($silver)
+            &--send, &--cancel, &--save
+                @media (min-width: 320px)
+                    min-width 6.2*$px
+                @media (min-width: 480px)
+                    min-width 10.5*$px
+        &__editors
+            padding 0px 0px 10px 0px
+        &__label
+            font-style italic
+            color $silver
+            padding 7px 5px
+            display table-cell
+            vertical-align top
+        
+        &__textfield
+                border none
+        &__inputrow
+            display table-cell
+            width 100%
+            vertical-align middle
+        &__inputbox
+            margin 0px 0px 5px 0px
+            border 1px solid $mercury
+            display table
+            width 100%
+            &:last-child
+                margin 0
+                border none
+                .froala-box
+                    width 100%
+                    .froala-wrapper.f-basic
+                        width 100%
+                [data-autoresize]
+                    margin-top 20px
+                    float none
+                    min-height 180px
+                    resize none
+                    overflow-y hidden
+
+// attachements 
+    .jFiler
+        &-item
+            &-info
+                background-color transparent !important
+                font-size 1.2*$px !important
+            &-others
+                font-size 1*$px !important
+                padding 5px 0
+            &-trash
+                &-action
+                    padding 5px 5px
+                    display inline-block
+                    float right
+        &-icon
+            &-file
+                font-size 1.2*$px !important
+                font-weight 100
+                margin 0 !important
+                padding 15px 5px
+
+.icon
+    &-jfi
+        &-trash
+            &:before
+                font-size 1.6*$px
+                content '\f318'
+
+
+.selectator
+    border-width 0
+    width 100%
+    display table-cell
+    &::after
+        display none
+    &_input
+        top 0
+        min-width 70px
+        font-size 1rem
+    &_chosen_item
+        background-color transparent
+        font-size 1rem
+        color $tundora
+        border 0
+        margin 3px 0 0 5px !important
+        padding 4px 0px 4px 0!important
+        &_title 
+            padding 0 !important
+            float left
+            &::after
+                content ';'
+                display inline-block
+                padding 0 3px
+        &_remove
+            color $tundora
+            font-size 0.8rem
+            font-weight 700
+            padding 0 !important
+            margin 0
+            visibility hidden
+            float left
+            position static
+            width 2px
+            &:hover
+                background-color transparent
+        &--edit
+            border 1px solid $mercury
+            padding 6px 10px !important
+            margin 3px 5px 0 5px !important
+            padding 4px 5px 4px 6px !important
+            .selectator_chosen_item_remove
+                visibility visible
+                width inherit
+                padding 6px 5px 6px 3px !important
+            .selectator_chosen_item_title
+                &::after 
+                    content ""
+    &_option
+        padding 10px
+        &.active
+            color #4d4d4d
+            background-color #e6e6e6
+        &_title
+            margin 0
+    &_options
+        border 1px solid $silver
+        display block
+        max-height 400px
+        -webkit-overflow-scrolling touch
+        
+span.jFiler-icon-file:after
+    border-style none
+    
+@media print
+    .sbsc-viewport
+        padding 0
+        height unset
+    .sbsc-window
+        height unset
+        position unset
+    body
+        background-image none
+    body *
+        visibility hidden
+    .page #main, .apum-bar
+        display none
+    .ec, .ec *
+        visibility visible
+    .ec
+        height auto
+    .ec-list, .ec-view__bar
+        display none
+    .ec-view
+        position relative
+        width 100% !important
+        left 0
+        top 0
+        display block
+    .ec-view__button--back
+        display none !important
+    .ec-view__bar
+        height 0
+    .ec-view__allMailPreview--participantName
+        text-align right
+    .cl-vp[min-width~="768px"] .ec
+        height auto
+    .cl-vp[min-width~="768px"] .ec-list, .cl-vp[min-width~="768px"] .ec-list *, .cl-vp[min-width~="768px"] .ec-view__bar
+        display none
+    .cl-vp[min-width~="100px"] .ec-view
+        position relative
+    .sbsc-leftcol
+        display none
+    .sbsc-rightcol
+        width 100%
+    .sbsc-window__leftCont, .sbsc, .sbsc-window__body--left
+        overflow visible
+    .sbsc-window--expand
+        width 100%
+      
+    .cl-vp[min-width~="768px"] .cl-sm-column-7
+        width 100% !important
+
+[dir="rtl"]
+	.ec-list
+		&__marker
+			float right
+		&__header:last-child
+			float right
+			display inline-block
+		&__title
+			float right
+		&__button
+			float right
+		&__info
+			float right
+			padding 5px 15px 5px 5px
+		&__subject
+			margin 0 15px 5px 0
+		&__description
+			margin 0 15px 0 0
+		&__important
+			float left
+			padding 12px 2px 0 10px
+	.ec-view
+		&__subject
+			float right
+		&__important
+			float left
+	.ec-draft
+		&__button--important
+			float left
+			&-disabled
+				float left
+		&__button--attach
+			left 43px
+			right auto
+    

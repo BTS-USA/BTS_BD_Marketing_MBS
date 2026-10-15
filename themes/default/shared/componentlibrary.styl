@@ -1,0 +1,788 @@
+@import 'normalize' // normalize.css v3.0.2
+@import 'fonts' // Default font is OpenSans
+@import 'cl.styl'// Variables and mixins
+@import 'grid' // Modified bootstrap grid system
+
+*,
+*:after,
+*:before
+    margin 0
+    padding 0
+    box-sizing border-box
+
+ul
+    padding 0 0 0 30px
+html
+    text-rendering optimizeLegibility
+
+body 
+    font-family OpenSans, Arial, "Helvetica Neue", Helvetica, sans-serif
+    font-size 1.6*$px
+    line-height 1.4
+    color $codGray
+    line-height normal
+    
+    .phonegap-upload
+        &__container
+            position fixed
+            z-index 1000
+            width 200px
+            padding 20px
+            left 50%
+            margin-left -110px
+            top 250px
+            background #333
+            color #fff
+            border 1px solid #999
+            border-radius 6px
+        &__status
+            font-size 18px
+
+
+input[type="text"], textarea, :focus
+    outline 0px
+input[type="text"],input[type="password"], textarea
+    -webkit-appearance none
+    border-radius 0
+
+// states
+.cl--appear
+    opacity 1
+    transition(opacity 0.5s ease-in 1.25s)
+[class*="cl-"] [class $="--fade"]
+    opacity 0
+    transition(opacity 0.25s ease-out)
+
+.cl-icon
+    font-family "clIcons"
+    display inline-block
+    font-style normal
+    speak none
+    -webkit-font-smoothing antialiased
+
+.cl-icon--remove:before
+    content "\f115" 
+
+.cl-icon--send:before
+    content "\f102"
+
+.cl-icon--pointLeft:before
+    content "\f111"
+
+.cl-icon--pointRight:before
+    content "\f112"
+
+.cl-icon--resources:before
+    content "\f107"
+
+.cl-icon--tick:before
+    content "\f116"
+
+.cl-icon--edit:before
+    content "\f11c"
+
+.cl-icon--addNew:before
+    content "\f11e"
+
+.cl-icon--add:before
+    content "\f124"
+
+.cl-icon--play:before
+    content "\f11a"
+
+.cl-icon--collapse:before
+    content "\f10f" 
+
+.cl-icon--expand:before
+    content "\f110"
+    
+.cl-icon--instruction:before
+    content "\f10a"
+
+.cl-icon--raiseHand:before
+	content "\f134"
+	
+.cl-icon--alert:before
+	content "\f135"
+
+.cl-icon--pointDown:before
+    content "\f10f"
+
+.cl-icon--pointUp:before
+    content "\f110"
+    
+.cl-icon--like:before
+    content "\f136"
+    
+.cl-icon--reply:before
+    content "\f137"
+
+.cl-icon--hamburger:before
+    content "\f10c"
+
+.cl-icon--attachment:before
+	content:"\f103";	
+	
+.cl-icon--download:before
+	content: "\f138";
+
+.cl-icon--delete:before
+    content: "\f12c"  
+	
+.cl-icon--plus:before
+    content "\f114"
+
+.cl-icon--minus:before
+    content "\f113"
+
+.cl-icon--clock:before
+    content "\f139"
+
+.cl-icon--meeting:before
+    content "\f106"
+
+.cl-icon--calendar:before
+    content "\f101"
+
+.cl-icon--heart:before
+    content "\f13e"
+
+.cl-icon--tick-filled:before
+    content "\f13d"
+
+.cl-icon--people:before
+    content "\f13c"
+	
+.cl-icon--graph:before
+    content "\f13f"
+
+.cl-icon--descendingArrow:before
+    content "\f140"
+
+.cl-icon--comment:before
+    content "\f141"
+
+.cl-icon--heart-empty:before
+    content "\f142"
+
+.cl-icon--fullscreen:before
+    content "\f120"
+
+.cl-icon--share:before
+    content "\f143"
+
+.cl-icon--browse:before
+    content "\f144"
+
+.cl-icon--close:before
+    content "\f12f"
+
+.cl-icon--close-border:before
+    content "\f12e"
+
+.cl-icon--edit01:before
+    content "\f108"
+
+.cl-icon--addComment:before
+    content "\f145"
+
+.cl-icon--folder:before
+    content "\f146"
+
+.cl-icon--back:before
+    content "\f147"
+
+.cl-icon--stop:before
+    content "\f148"
+
+.cl-icon--upload:before
+    content "\f149"
+
+.cl-icon--play01:before
+    content "\f14a"
+
+.cl-icon--list:before
+    content: "\f10b"
+
+.cl-icon--users:before
+    content: "\f109"
+    
+.cl-icon--user:before
+    content: "\f14e"
+
+.cl-icon--quotes:before
+    content: "\f14d"
+
+.cl-icon--picture:before
+    content: "\f14c"
+
+.cl-icon--comment01:before
+    content: "\f14b"
+
+.cl-icon--warning-eye:before
+    content: "\f14f"
+
+.cl-icon--reset:before
+    content: "\f130"
+    
+.cl-icon--logout:before
+    content: "\f10e"
+
+.gw-icon
+    font-family "gwclIcons"
+    display inline-block
+    font-style normal
+    speak none
+    -webkit-font-smoothing antialiased
+    
+.gw-icon--back:before
+    content "\e920"
+
+.gw-icon--glossary:before
+    content "\e90b"
+      
+.gw-icon--visited:before
+    content "\e918"
+
+.gw-icon--completed:before
+    content "\e916"
+
+.gw-icon--info:before
+    content "\e924"
+    
+.gw-icon--lock:before
+    content "\e900" 
+
+// Common classes
+.cl
+    &-component
+        &:after
+            content ""
+            clear both
+            display block
+    &-container
+        max-width 100*$px
+        margin 0 auto
+    &-header
+        position relative // default styles for all headers
+        background $cerulean
+        color $white
+        &--main // modifier for header
+            @extend .cl-header // get default styles from header
+            margin 0 0 30px 0
+            padding 10px 0 0 0
+            min-height 4rem
+            @media (min-width: 768px)
+                padding 10px 0 0 0
+        &--article
+            @extend .cl-header // get default styles from header
+            padding 20px
+        &__title
+            &--main
+                margin 0
+                padding 0 0 10px 0 
+                font-weight 300
+                font-size 2.4*$px
+                text-align center
+                @media (min-width: 768px)
+                    padding 0 0 10px 0
+                    font-size 3.2*$px
+            &--article
+                font-weight 300
+        &__description
+            &--main
+                margin 0 auto
+                padding 0 10px 15px 10px
+                max-width 800px
+                font-size 1.4*$px
+                text-align center
+                @media (min-width: 768px)
+                    font-size 1.6*$px
+        &-image
+            position absolute
+            top 0
+            left 0
+            background-repeat no-repeat
+            background-size cover
+            background-position center
+            height 100%
+            width 100%
+			
+        &-wrapper
+            position relative
+
+    // Instructions or short guide how to use component.           
+    &-instructions
+        margin 0 0 10px 0
+        padding 10px 20px
+        background $tundora
+        &__text
+            color white
+            font-size 1.2*$px
+            text-transform uppercase
+            @media (min-width: 768px)
+                font-size 1.4*$px
+    // Placeholder for bar charts, has default bad style with inner bar always 100% height of bar placeholder
+    &-bar
+        position relative
+        background-color $codGray
+        height 15px
+        &__inner 
+            height 100%
+            position relative
+            float left
+            background-color $brightSun
+
+    // Bubble with Digits on top of bar. Always on top and has tiny arrow/pointer below
+    &-bubble
+        background-color $mercury
+        color $codGray
+        font-weight 500
+        padding 3px 5px
+        position absolute
+        border-radius 4px
+        font-size 1.2*$px
+        bottom 100%
+        margin-bottom 2px
+        left 50%
+        -webkit-transform   translate(-50%,0)
+        -o-transform        translate(-50%,0)
+        -moz-transform      translate(-50%,0)
+        -ms-transform       translate(-50%,0)
+        transform           translate(-50%,0)
+        &:after
+            position absolute
+            display block
+            top 100%
+            content ""
+            left 50%
+            -webkit-transform   translate(-50%,0)
+            -o-transform        translate(-50%,0)
+            -moz-transform      translate(-50%,0)
+            -ms-transform       translate(-50%,0)
+            transform           translate(-50%,0)
+            triangle(10px, 7px, 'bottom', $mercury)
+
+    // buttons
+    &-button
+        display inline-block !important
+        vertical-align middle
+        padding 1*$px 1.2*$px
+        min-width 11*$px
+        margin-bottom 5px
+        font-size 1.4*$px
+        font-weight 400
+        line-height 1.42857143
+        color white
+        text-align center
+        white-space nowrap
+        cursor pointer
+        -ms-touch-action    manipulation
+        touch-action        manipulation
+        -webkit-user-select none
+        -moz-user-select    none
+        -ms-user-select     none
+        user-select         none
+        background-image    none
+        border              none
+        outline             none
+
+        button($cerulean)
+        &--default,
+        &--primary
+            button($cerulean)
+        &--submit
+            button($apple)
+        &--clear
+            button($sunsetOrange)
+        &--success
+            &:before
+                content ""
+                width 20px
+                height 20px
+                margin-right 5px
+                background url("/Wizer/Content/WizletResources/Shared/media/img/checkWhite.svg") no-repeat center center
+                display inline-block
+                vertical-align bottom
+        &--hidden
+            display none !important
+        
+    // Legend container. Used in Stacked Bar, RedGreenResult
+    &-legend-container
+        float right
+        background-color $tundora
+        color white
+        padding 10px 20px
+    &-legend
+        float left
+        margin 0 20px 0 0
+        font-size 1.2*$px
+        &:last-child
+            margin 0 0 0 0
+        &__color-box,
+        &__label
+            display inline-block
+            vertical-align middle
+        &__color-box
+            width 10px
+            height 10px
+            margin 0 5px 0 0
+        
+    // Statistics at footer of component
+    &-stats
+        margin 0 5px 0 0
+        padding 10px 20px
+        float left
+        background-color $tundora
+        color white
+        font-size 1.4*$px
+
+    // Text area
+    &-textarea
+        border none
+        color $codGray
+        font-family inherit
+        font-size 1.2*$px
+        height 120px
+        outline none
+        padding 10px
+        resize none
+        width 100% 
+        @media (min-width: 768px)
+            font-size 1.4*$px
+            
+    // Text area report view
+    &-textarea.report-view
+        height auto
+    
+    // Checkbox
+    &-checkbox
+        // Default styles needed for older browsers
+        vertical-align top
+        margin 0 3px 0 0
+        width 17px
+        height 17px
+        & + label
+            cursor pointer
+            font-size 1.2*$px       
+        // not "checked" styles for checkbox
+        &:not(checked)
+            position absolute
+            opacity 0
+            & + label
+                position relative
+                display block
+                padding 0 0 0 35px
+                // plain element for checkbox, it's just a holder
+                &:before
+                    content ''
+                    position absolute
+                    top -4px
+                    left 0
+                    width 24px
+                    height 24px
+                    border-radius 2px
+                    background-color $mercury
+                // actual checkmark or any other indicator that checkbox is checked
+                &:after
+                    opacity 0
+                    content ''
+                    position absolute
+                    top 0
+                    left 4px
+                    width 16px
+                    height 16px
+                    border-radius 2px
+                    background-color $cerulean
+                    transition: all .2s
+        // styles for "checked" checkbox
+        &:checked 
+            & + label
+                display block
+                &:before
+                    background-color $mercury
+                &:after
+                    opacity 1
+        // Styles for disabled checkbox
+        &[disabled]
+            & + label
+                opacity .5
+                &:before
+                    background-color $gray
+
+    // Radio button
+    &-radio
+        // Default styles needed for older browsers
+        vertical-align top
+        width 17px
+        height 17px
+        & + label
+            cursor pointer
+            font-size 1.2*$px       
+        // not "checked" styles for checkbox
+        &:not(checked)
+            position absolute
+            opacity 0
+            & + label
+                position relative
+                display block
+                padding 0 10px 0 30px
+                // plain element for checkbox, it's just a holder
+                &:before
+                    content ''
+                    position absolute
+                    top -4px
+                    left 0
+                    width 24px
+                    height 24px
+                    border-radius 100%
+                    background-color $mercury
+                // actual checkmark or any other indicator that checkbox is checked
+                &:after
+                    opacity 0
+                    content ''
+                    position absolute
+                    top 0
+                    left 4px
+                    width 16px
+                    height 16px
+                    border-radius 100%
+                    background-color $cerulean
+                    transition: all .2s
+        // styles for "checked" checkbox
+        &:checked 
+            & + label
+                display block
+                &:before
+                    background-color $mercury
+                &:after
+                    opacity 1
+        // Styles for disabled checkbox
+        &[disabled]
+            & + label
+                opacity .5
+                &:before
+                    background-color $gray
+
+    &__loader-wrap
+        position fixed
+        transform translate(-50%, -50%)
+        top 50%
+        left 50%
+        opacity .8
+        z-index 99999
+
+
+// alerts and messages
+.cl-message
+    padding 10px
+    float left
+    clear both
+    width 100%
+    &__text
+        font-size 1.4*$px
+        font-weight 400
+        color #FFFFFF
+    &__container
+        padding 10px
+        &--warning
+            background-color $sunsetOrange
+        &--confirm
+            background-color $emerald
+        &--alert
+            background-color $sunsetOrange
+
+// Common styles
+.cl-padding
+    &--no
+        padding 0
+.cl-margin
+    &--no
+        margin 0
+
+
+/* forms */
+
+.cl-form
+    &__text
+        border 1px solid $mercury
+        color $codGray
+        padding 7px 5px
+        line-height 1.4em
+        font-weight 400
+        width 100%
+        &::-webkit-input-placeholder
+            font-style italic
+    &__label
+        color $gray
+        font-size 1.6*$px
+        font-weight 400
+        margin 0 0 5px 0
+        display inline-block
+    &__row
+        &--require
+            &::after
+                content "*"
+                display blocl
+                color #F00
+                font-size 1.8*$px
+                position absolute
+                top calc( 50% - 5px )
+                right 13px
+                background-color #FFFFFF
+            
+
+// modals
+
+.cl-modal
+    position fixed
+    top -100%
+    left -100%
+    opacity 0
+    z-index 2000
+    width 100%
+    height 100%
+    transition(opacity 0.5s ease-out)
+    background-color rgba(255, 255, 255, 0.55)
+    &--half
+        position absolute
+    &--in
+        opacity 1
+        top 0
+        left 0
+        transition(opacity 0.5s ease-out)
+    &__dialog
+        max-width 990px
+        float none
+        background-color #fff
+        margin 0 auto
+        position relative
+        top 50%
+        box-shadow(0 0 1px 1px rgba(30, 30, 30, 0.55))
+        transform translate(0, -50%) !important
+        -ms-transform translate(0, -50%) !important
+        -webkit-transform translate(0, -50%) !important
+        &:after, &:before
+           content "." 
+           visibility hidden 
+           display block 
+           height 0 
+           clear both
+        @media (min-width: 480px)
+            100%
+        @media (min-width: 768px)
+            width 80%
+    &__header 
+        padding 10px 20px
+        margin 0 0 20px 0
+        background-color $cerulean
+        &:after, &:before
+           content "." 
+           visibility hidden 
+           display block
+           clear both
+           height 0
+    &__body
+        padding 10px 20px
+    &__title
+        color $cerulean
+        margin 0 0 0.67em 0
+        font-size 3.2*$px
+        line-height 1.5em
+        line-height 1em
+    &__content
+        padding 0 0 30px 0
+    &__footer
+        padding 15px 0 0
+        &:after, &:before
+            content "." 
+            visibility hidden 
+            display block
+            clear both
+            height 0
+            border-top 1px solid $mercury
+    &__buttons
+        display inline-block
+        float right
+    &__closebtn
+        display inline-block
+        float right
+        height 25px
+        width 25px
+        margin 0 5px
+        background-image url('../../../Shared/media/img/closeWhite.svg')
+    .cl-button
+        &--yes
+            button($apple)
+        &--no
+            button($monza)
+
+
+
+/* ============
+
+    We also need to add:
+        - text fields (email, name, password)
+            - default placeholder styles
+            
+        - handler for slider
+        
+        - dropdowns
+        
+        - IOS/Andriod Switcher (good example: Draft field in IdeaHunt)
+        
+        - draggable styles
+            - hover
+            - active element
+            - drop element
+            
+        - popup (we have tiny popup in TableRow component)
+        
+        - accordion
+            - header
+            - content
+            
+ ============ */
+
+.cl
+    &__loader
+        margin 60px auto
+        font-size 10px
+        position relative
+        text-indent -9999em
+        border-top .5em solid rgba(10,10,10, 0.2)
+        border-right .5em solid rgba(10,10,10, 0.2)
+        border-bottom .5em solid rgba(10,10,10, 0.2)
+        border-left .5em solid #0a0a0a
+        -webkit-transform translateZ(0)
+        -ms-transform translateZ(0)
+        transform translateZ(0)
+        -webkit-animation load8 1.1s infinite linear
+        animation load8 1.1s infinite linear 
+
+    &__loader,
+    &__loader:after
+        border-radius 50%
+        width 8em
+        height 8em
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(360deg)
+    transform: rotate(360deg)
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(360deg)
+    transform: rotate(360deg)
+  }
+}

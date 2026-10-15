@@ -1,0 +1,37 @@
+﻿{{? it.wizletInfo.title}}
+<h1>{{=it.wizletInfo.title}}</h1>
+{{?}}
+{{? it.wizletInfo.subtitle}}
+<h2>{{=it.wizletInfo.subtitle}}</h2>
+{{?}}
+
+    <div class="cinema">
+        <div class="provider">
+            <div id="player">Loading player...</div>
+        </div>
+        <div class="button player_1_res">
+            Low
+        </div>
+        <div class="button player_2_res">
+            Medium
+        </div>
+        <div class="button player_3_res">
+            High
+        </div>        
+    </div>
+    <div class="sidebar">
+        {{?it.wizletInfo.commentQuestionId}}
+        <div class="comments commentsContainer">
+            <div class="addComment">
+                <p>{{=it.wizletInfo.commentQuestion.label}}</p>
+                <textarea rows="4" class="inputComment" maxlength="100" />
+                <button type="submit" class="addCommentButton">
+                	Submit
+                </button>
+            </div>
+        </div>
+        {{?}}
+        {{?it.wizletInfo.image}}
+        <div class="logo"><img src="{{=it.wizletInfo.image}}" /></div>
+        {{?}}
+    </div>

@@ -1,0 +1,89 @@
+<div class="mainContentWrapper">
+    <div class="mainContent" data-main>
+        <section class="riskSingleQuadrant-component cl-component">
+            {{? it.header.title || it.header.description}}
+            <header class="riskSingleQuadrant--main cl-header--main">
+                {{? it.header.title}}
+                <h1 class="riskSingleQuadrant__title--main cl-header__title--main">{{=it.header.title}}</h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="riskSingleQuadrant__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+                {{? it.textContent.highRiskText}}
+                <div class="riskSingleQuadrant__highRiskCont">
+                    <span class="riskSingleQuadrant__highRiskText">{{=it.textContent.highRiskText}}</span>
+                </div>
+                {{?}}
+            </header>
+            {{?}}
+        </section>
+        <article>
+            <div class="riskSingleQuadrant__container cl-container">
+                {{? it.views && it.views.length > 1}}
+                <div class="riskSingleQuadrant__viewOptionsCont">
+                    <div class="riskSingleQuadrant__listViewButton" data-listView-button>
+                        <i class="cl-icon cl-icon--hamburger"></i>
+                        <span class="riskSingleQuadrant__listViewText">{{=it.textContent.listText}}</span>
+                    </div>
+                    <div class="riskSingleQuadrant__graphViewButton riskSingleQuadrant__active" data-graphView-button>
+                        <i class="cl-icon cl-icon--graph"></i>
+                        <span class="riskSingleQuadrant__graphViewText">{{=it.textContent.graphText}}</span>
+                    </div>
+                </div>
+                {{?}}
+                <div class="riskSingleQuadrant__maincontainer">
+                    <div class="riskSingleQuadrant__noteHolder">
+
+                        <div class="riskSingleQuadrant__noteText">
+                            {{? it.showNote && it.showNote == true }}
+                            *{{=it.textContent.noteText}}
+                            {{?}}
+                        </div>
+
+                        <div class="riskSingleQuadrant__sortContainerWrapper">
+                            <div class="riskSingleQuadrant__sortCont" data-sorting>
+                                <i class="cl-icon cl-icon--descendingArrow"></i>
+                                <select class="riskSingleQuadrant__dropdownCont" data-select-option>
+                                    <option value="0">{{=it.textContent.sortText}}</option>
+                                    {{~it.sortOptions :type:index}}
+                                    <option value="{{=type.key}}">{{=type.value}}</option>
+                                    {{~}}
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="riskSingleQuadrant__themeHolder" data-riskthemeholder>
+                        {{? it.textContent.riskThemesText }}
+                        {{=it.textContent.riskThemesText}}:
+                        {{~it.riskThemes:theme:index}}
+                        <div style="background:{{=theme.colorCode}} " class="riskSingleQuadrant__riskThemeBlock"></div>
+                        <div class="riskSingleQuadrant__riskThemeTitle">{{=theme.text}}</div>
+                        {{~}}
+                        {{?}}
+                    </div>
+                    <div class="riskSingleQuadrant__mainViewCont">
+                        <div class="riskSingleQuadrant__listView" data-list>
+
+                        </div>
+                        <div class="riskSingleQuadrant__graphView" data-singlequadrantchart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <div class="riskSingleQuadrant__modalWrapper" data-modal-container style="display:none">
+        <div class="riskSingleQuadrant__modal">
+            <div class="riskSingleQuadrant__createActionModal" data-create-modal>
+                <div class="cl-xs-column-12">
+                    <div class="popupContent" data-popup>
+                        <div><i class="cl-icon cl-icon--remove"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

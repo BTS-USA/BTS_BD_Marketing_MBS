@@ -1,0 +1,63 @@
+{{?!Wizer.fromLMS}}
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="gwf cl-component">
+            <div class="gwf-header">
+                <span class="gwf-header__text">{{=it.headerText}}</span>
+            </div>
+            
+
+            <div class="gwf-content">
+                {{?!it.isHierarchyEmpty}}
+                <div class="gwf-content__parentCO">
+					{{?it.isResources}}
+						<img class="gwf-content__parentCOIcon" src="{{=it.contentObjectImagePath}}{{=it.details.metadata.icon}}" />
+					{{??it.coIcons.length > 1}}
+						<img class="gwf-content__parentCOIcon" src="{{=it.contentObjectImagePath}}{{=it.coIcons[0]}}" />
+					{{??}}
+						<div class="gwf-content__placeHolder"></div>
+					{{?}}
+                    <p class="gwf-content__parentCOTitle">{{?it.coTitles[1]}}{{=it.coTitles[1]}}{{?}}</p>
+                </div>
+                {{?}}
+                <div class="gwf-content__activityStatus">
+                    <div class="gwf-content__line"></div>
+                    <div class="gwf-content__status">
+                        <div class="gwf-content__activityDiagram {{?(!it.isNavigationEnable)}}gwf-content__disabled{{?}}" data-gwf-activitydiagram>
+                            {{var count = 0;}}
+                            {{~it.lastLevelCos :co:index}}
+                            {{?!co.hasChildren}}
+                            {{?co.visible}}
+                            <div class="gwf-co-{{=index}} gwf-cos">
+                                <div class="gwf-co gw-icon {{?co.navigation}}navigationEnabled{{?}} {{?co.status === 'notstarted'}}notStarted{{?}}{{?co.status === 'completed' && !co.locked}}
+                                gw-icon--completed completed{{?}}{{?co.status === 'visited' && !co.locked}}visited gw-icon--visited{{?}} {{?co.locked}}gw-icon--lock locked{{?}}" {{?co.navigation}} data-navigate="click" {{=it.navigationItems[count].data}} {{count++;}}{{?}}>
+                                </div>
+                                {{?co.locked}}
+                                <div class="gwf-co-tooltip">
+                                <div class="gwf-co-tooltipContent gw-icon--info" data-lock-message-tooltip></div>
+                                <div class="gwf-co-tooltiptext" data-lock-message>{{?co.message}}{{=co.message}}{{?}}</div>
+                                </div>
+                                {{?}}
+                            </div>
+                            {{??}}
+                            {{count++;}}
+                            {{?}}
+                            {{?}}
+                            {{~}}
+                        </div>
+                        <div class="gwf-content__activityText" data-gwf-activitytextcont>
+                            {{~it.lastLevelCos :co:index}}
+                            {{?!co.hasChildren && co.visible}}
+                            <p class="gwf-coText-{{=index}} gwf-cos-text" data-gwf-activitytext>
+                                {{=co.metadata.title}}
+                            </p>
+                            {{?}}
+                            {{~}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{{?}}

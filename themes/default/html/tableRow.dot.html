@@ -1,0 +1,206 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="tableRowComponent trc cl-component">
+
+            {{? it.header}}
+                <header class="trc-header--main cl-header--main">
+                    {{? it.header.title}}
+                        <h1 class="trc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                            {{=it.header.title}}
+                        </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="trc-header__description--main cl-header__description--main">
+                            {{=it.header.description}}
+                        </p>
+                    {{?}}
+                </header>
+            {{?}}
+
+            <div class="trc-container cl-container">
+                <div class="cl-xs-column-12 cl-row trc-row">
+                    {{? it.instructions}}
+                        <div class="trc-instructions cl-instructions">
+                            <p class="trc-instructions-text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+
+                    <article class="trc-article cl-article tableRowComponentTableContainer tableRowComponent__container">
+                        <div class="trc-data tableRowComponentTable2Container">
+                            <div class="trc-table tableRowComponentTable2" data-tableRowComponentTable2>
+                                <div class="trc-table__thead tableRowComponentTable2Headers" data-tableRowComponentTable2Headers>
+                                    <div id="header1" class="trc-table__th trc-table__th--sticky tableRowComponentTable2CellEditable" data-tableRowComponentTable2Header row="0" column="1" colspan="{{=it.rows[0].cells[0].colSpan}}">
+                                        <div class="trc-table__post">{{=it.rows[0].cells[0].value}}</div>
+                                    </div>
+
+                                    {{ for(var i = 2; i <= it.rows[0].cells.length; i++) { }}
+                                    {{? it.rows[0].cells[i-1].editable && it.editable !== false }}
+                                    {{? it.rows[0].cells[i-1].colSpan === "2"}}
+                                    {{? it.rows[0].cells[i-1].binding !== "" && it.rows[0].cells[i-1].binding !== undefined}}
+                                    <div id="header{{=i}}" class="trc-table__th tableRowComponentTable2CellEditable" data-tableRowComponentTable2Header row="0" column="{{=i}}" colspan="{{=it.rows[0].cells[i-1].colSpan}}" data-binding="{{=it.rows[0].cells[i-1].binding}}" binding="{{=it.rows[0].cells[i-1].binding}}">{{=it.rows[0].cells[i-1].value}}</div>
+
+                                    {{??}}
+                                    <div id="header{{=i}}" class="trc-table__th tableRowComponentTable2CellEditable" data-tableRowComponentTable2Header row="0" column="{{=i}}" colspan="{{=it.rows[0].cells[i-1].colSpan}}">{{=it.rows[0].cells[i-1].value}}</div>
+                                    {{?}}
+                                    {{??}}
+                                    {{? it.rows[0].cells[i-1].binding !== "" && it.rows[0].cells[i-1].binding !== undefined}}
+                                    <div id="header{{=i}}" class="trc-table__th tableRowComponentTable2CellEditable" data-tableRowComponentTable2Header row="0" column="{{=i}}" colspan="{{=it.rows[0].cells[i-1].colSpan}}" data-binding="{{=it.rows[0].cells[i-1].binding}}" binding="{{=it.rows[0].cells[i-1].binding}}">{{=it.rows[0].cells[i-1].value}}</div>
+                                    {{??}}
+                                    <div id="header{{=i}}" class="trc-table__th" data-tableRowComponentTable2Header row="0" column="{{=i}}" colspan="{{=it.rows[0].cells[i-1].colSpan}}">{{=it.rows[0].cells[i-1].value}}</div>
+                                    {{?}}
+                                    {{?}}
+                                    {{??}}
+                                    {{? it.rows[0].cells[i-1].colSpan === "2"}}
+                                    {{? it.rows[0].cells[i-1].binding !== "" && it.rows[0].cells[i-1].binding !== undefined}}
+                                    <div id="header{{=i}}" class="trc-table__th" data-tableRowComponentTable2Header row="0" column="{{=i}}" colspan="{{=it.rows[0].cells[i-1].colSpan}}" data-binding="{{=it.rows[0].cells[i-1].binding}}" binding="{{=it.rows[0].cells[i-1].binding}}" >{{=it.rows[0].cells[i-1].value}}</div>
+                                    {{??}}
+                                    <div id="header{{=i}}" class="trc-table__th" data-tableRowComponentTable2Header row="0" column="{{=i}}" colspan="{{=it.rows[0].cells[i-1].colSpan}}">{{=it.rows[0].cells[i-1].value}}</div>
+                                    {{?}}
+                                    {{??}}
+                                    {{? it.rows[0].cells[i-1].binding !== "" && it.rows[0].cells[i-1].binding !== undefined}}
+                                    <div id="header{{=i}}" class="trc-table__th" data-tableRowComponentTable2Header row="0" column="{{=i}}" colspan="{{=it.rows[0].cells[i-1].colSpan}}" data-binding="{{=it.rows[0].cells[i-1].binding}}" binding="{{=it.rows[0].cells[i-1].binding}}">{{=it.rows[0].cells[i-1].value}}</div>
+                                    {{??}}
+                                    <div id="header{{=i}}" class="trc-table__th" data-tableRowComponentTable2Header row="0" column="{{=i}}" colspan="{{=it.rows[0].cells[i-1].colSpan}}">{{=it.rows[0].cells[i-1].value}}</div>
+                                    {{?}}
+                                    {{?}}
+                                    {{?}}
+                                    {{ } }}
+                                </div>
+
+                                {{ for(var i = 1; i < it.rows.length; i++) { }}
+                                <div class="trc-table__row">
+                                    <div row="{{=i}}" column="1" data-header="header{{=it.cells[0].cellCounter}}" class="trc-table__td trc-table__td--sticky tableRowComponentTableCell_{{=i}}_1 tableRowComponentTable2Cell tableRowComponentTable2CellEditable">
+                                       <div class="trc-table__value">{{=it.rows[i].cells[0].value}}</div>
+                                    </div>
+
+                                    {{ for(var j = 2; j <= it.rows[i].cells.length; j++) { }}
+                                    {{? it.rows[i].cells[j-1].class !== "" && it.rows[i].cells[j-1].class}}
+                                    {{? it.rows[i].cells[j-1].editable && it.editable !== false }}
+                                    {{? it.rows[i].cells[j-1].colSpan === "2"}}
+                                    {{? it.rows[i].cells[j-1].binding !== "" && it.rows[i].cells[j-1].binding !== undefined}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" 
+                                        class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}} {{=it.rows[i].cells[j-1].class}} tableRowComponentTable2Cell tableRowComponentTable2CellEditable" 
+                                        data-binding="{{=it.rows[i].cells[j-1].binding}}" 
+                                        binding="{{=it.rows[i].cells[j-1].binding}}">
+                                    </div>
+                                    {{??}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}} {{=it.rows[i].cells[j-1].class}} tableRowComponentTable2Cell tableRowComponentTable2CellEditable">
+                                        <div class="tableRowComponentDataCell">
+                                            <div class="tableRowComponentEditImage"></div>
+                                            <p class="tableRowComponentDataCellValue">{{=it.rows[i].cells[j-1].value}}</p>
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{??}}
+                                    {{? it.rows[i].cells[j-1].binding !== "" && it.rows[i].cells[j-1].binding !== undefined}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}} {{=it.rows[i].cells[j-1].class}} tableRowComponentTable2Cell tableRowComponentTable2CellEditable" data-binding="{{=it.rows[i].cells[j-1].binding}}" binding="{{=it.rows[i].cells[j-1].binding}}"></div>
+                                    {{??}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}} tableRowComponentTable2Cell tableRowComponentTable2CellEditable" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}} {{=it.rows[i].cells[j-1].class}}">
+                                        <div class="tableRowComponentDataCell">
+                                            <div class="tableRowComponentEditImage"></div>
+                                            <p class="tableRowComponentDataCellValue">{{=it.rows[i].cells[j-1].value}}</p>
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{?}}
+                                    {{??}}
+                                    {{? it.rows[i].cells[j-1].colSpan === "2"}}
+                                    {{? it.rows[i].cells[j-1].binding !== "" && it.rows[i].cells[j-1].binding !== undefined}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}} {{=it.rows[i].cells[j-1].class}}" data-binding="{{=it.rows[i].cells[j-1].binding}}" binding="{{=it.rows[i].cells[j-1].binding}}"></div>
+                                    {{??}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}} {{=it.rows[i].cells[j-1].class}}">
+                                        <div class="tableRowComponentDataCell">
+                                            <div class="tableRowComponentEditImage"></div>
+                                            <p class="tableRowComponentDataCellValue">{{=it.rows[i].cells[j-1].value}}</p>
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{??}}
+                                    {{? it.rows[i].cells[j-1].binding !== "" && it.rows[i].cells[j-1].binding !== undefined}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}} {{=it.rows[i].cells[j-1].class}}" data-binding="{{=it.rows[i].cells[j-1].binding}}" binding="{{=it.rows[i].cells[j-1].binding}}"></div>
+                                    {{??}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}} {{=it.rows[i].cells[j-1].class}}">
+                                        <div class="tableRowComponentDataCell">
+                                            <div class="tableRowComponentEditImage"></div>
+                                            <p class="tableRowComponentDataCellValue">{{=it.rows[i].cells[j-1].value}}</p>
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{?}}
+                                    {{?}}
+                                    {{??}}
+                                    {{? it.rows[i].cells[j-1].editable && it.editable !== false }}
+                                    {{? it.rows[i].cells[j-1].colSpan === "2"}}
+                                    {{? it.rows[i].cells[j-1].binding !== "" && it.rows[i].cells[j-1].binding !== undefined}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}}" data-binding="{{=it.rows[i].cells[j-1].binding}} tableRowComponentTable2Cell tableRowComponentTable2CellEditable" binding="{{=it.rows[i].cells[j-1].binding}}"></div>
+                                    {{??}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}} tableRowComponentTable2Cell tableRowComponentTable2CellEditable">
+                                        <div class="tableRowComponentDataCell">
+                                            <div class="tableRowComponentEditImage"></div>
+                                            <p class="tableRowComponentDataCellValue">{{=it.rows[i].cells[j-1].value}}</p>
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{??}}
+                                    {{? it.rows[i].cells[j-1].binding !== "" && it.rows[i].cells[j-1].binding !== undefined}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}} tableRowComponentTable2Cell tableRowComponentTable2CellEditable" data-binding="{{=it.rows[i].cells[j-1].binding}}" binding="{{=it.rows[i].cells[j-1].binding}}"></div>
+                                    {{??}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}} tableRowComponentTable2Cell tableRowComponentTable2CellEditable">
+                                        <div class="tableRowComponentDataCell">
+                                            <div class="tableRowComponentEditImage"></div>
+                                            <p class="tableRowComponentDataCellValue">{{=it.rows[i].cells[j-1].value}}</p>
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{?}}
+                                    {{??}}
+                                    {{? it.rows[i].cells[j-1].colSpan === "2"}}
+                                    {{? it.rows[i].cells[j-1].binding !== "" && it.rows[i].cells[j-1].binding !== undefined}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}}" data-binding="{{=it.rows[i].cells[j-1].binding}}" binding="{{=it.rows[i].cells[j-1].binding}}"></div>
+                                    {{??}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}}">
+                                        <div class="tableRowComponentDataCell">
+                                            <div class="tableRowComponentEditImage"></div>
+                                            <p class="tableRowComponentDataCellValue">{{=it.rows[i].cells[j-1].value}}</p>
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{??}}
+                                    {{? it.rows[i].cells[j-1].binding !== "" && it.rows[i].cells[j-1].binding !== undefined}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}}" data-binding="{{=it.rows[i].cells[j-1].binding}}" binding="{{=it.rows[i].cells[j-1].binding}}"></div>
+                                    {{??}}
+                                    <div row="{{=i}}" column="{{=j}}" data-header="header{{=it.cells[j-2].cellCounter}}" class="trc-table__td tableRowComponentTableCell_{{=i}}_{{=j}}">
+                                        <div class="tableRowComponentDataCell">
+                                            <div class="tableRowComponentEditImage"></div>
+                                            <p class="tableRowComponentDataCellValue">{{=it.rows[i].cells[j-1].value}}</p>
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{?}}
+                                    {{?}}
+                                    {{?}}
+                                    {{ } }}
+                                </div>
+                                {{ } }}
+                            </div>
+                        </div>
+                    </article>
+                    {{? it.buttons && it.buttons.length > 0}}
+                    <footer class="trc-footer cl-footer">
+                        {{? it.buttons}}
+                            <div class="trc-buttons cl-buttons">
+                                {{~it.buttons :button:index}}
+                                    <div class="trc-button trc-button--{{=button.type}} cl-button cl-button--{{=button.type}} {{? button.hide}}cl-button--hidden{{?}}" 
+                                    {{? button.disabled}} disabled{{?}} data-button="{{=button.type}}">
+                                         {{=button.text}}
+                                    </div>
+                                {{~}}
+                            </div>
+                        {{?}}
+                    </footer>
+                    {{?}}
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

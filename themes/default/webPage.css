@@ -1,0 +1,17 @@
+﻿body {
+  background: transparent;
+}
+
+.backgroundWrapper
+{
+	display: none;
+}
+
+body
+{
+	overflow-y: hidden;
+}
+
+/* for test: .wizletWebPage
+   we accept that this wizlet ruins the body css for other wizlets; use it with care... 
+*/

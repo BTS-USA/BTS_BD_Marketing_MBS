@@ -1,0 +1,63 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Red-Green Result Component Styles
+.rgrc
+    margin 0
+    &-article
+        margin 0 0 10px 0
+    &-question
+        padding 25px 20px
+    &-answer
+        padding 25px 20px 10px 20px
+    &-question 
+        background-color $silver
+    &-answer
+        background-color $gray60
+    &-bar-container
+        margin 0 0 10px 0
+        &:last-child
+            margin 0
+    &-bar
+        &__inner
+            float left
+            position relative
+            &--no
+                @extend .rgrc-bar__inner
+                background-color $sunsetOrange
+                float left
+                left 50%
+                width 50%
+            &--yes
+                @extend .rgrc-bar__inner
+                background-color $apple
+                float right
+                right 50%
+                width 50%
+    &-bubble
+        left 50%
+        transform translate(-50%,0)
+    &-legend
+        &--measurement
+            float right
+            font-size 1.2*$px
+        &__color-box
+            &--true
+                background-color $apple
+            &--false
+                background-color $sunsetOrange
+    &-net-total
+        color white
+        margin 5px 0 0 0
+        font-size 1.2*$px
+        text-align center
+
+[dir="rtl"]
+	.rgrc
+		&-legend
+			&.cl-legend
+				float right
+			.cl-legend__color-box
+				margin 0 0 0 5px
+			&--measurement
+				float left

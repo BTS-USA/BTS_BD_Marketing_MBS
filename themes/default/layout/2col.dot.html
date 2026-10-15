@@ -1,0 +1,12 @@
+<div class="container">
+    <!-- in layouts, you can move the components like this. If they are not in the layout, they stay where they are.  -->
+     {{~it.components :component:i}}
+        {{? i%2 == 0}}
+            <div class="row{{=(i/2) | 0}} bs-row">
+        {{?}}
+            <div class="row{{=(i/2) | 0}} col{{=i%2}} col-xs-6 col-sm-6 col-md-6 col-lg-6">{{=component}}</div>
+        {{? i%2 == 1}}
+            </div>
+        {{?}}
+    {{~}}
+</div>

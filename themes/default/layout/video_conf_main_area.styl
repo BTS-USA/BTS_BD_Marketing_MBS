@@ -1,0 +1,128 @@
+.video_conf_main_area
+	margin auto 0
+	@media (min-width: 960px)
+		display flex
+	.video_conf_container
+		min-height 100px
+		float none
+		z-index 2 !important
+		@media (min-width: 960px)
+			flex 1
+		&.hidden
+			display none
+		.video-box
+			width 100%
+	.content-container
+		float none
+		@media (min-width: 960px)
+			flex 1
+	.actioncontainer
+		width 100%
+.pfi, .callalert
+	&-modal
+		position fixed
+		top -100%
+		left -100%
+		opacity 0
+		z-index 20000
+		width 100%
+		height 100%
+		-webkit-transition opacity .5s ease-out
+		-moz-transition opacity .5s ease-out
+		-o-transition opacity .5s ease-out
+		transition opacity .5s ease-out
+		background-color rgba(255,255,255,0.55)
+		&__message
+			text-align center
+		&__dialog
+			max-width 35%
+			float none
+			background-color #fff
+			margin 0 auto
+			position relative
+			top 50%
+			-webkit-box-shadow 0 0 1px 1px rgba(30,30,30,0.55)
+			-moz-box-shadow 0 0 1px 1px rgba(30,30,30,0.55)
+			box-shadow 0 0 1px 1px rgba(30,30,30,0.55)
+			transform translate(0,-50%) !important
+			-ms-transform translate(0,-50%) !important
+			-webkit-transform translate(0,-50%) !important
+		&__header
+			position relative
+			text-align center
+			padding 15px 0
+			background-color #1E1E1E
+			color #fff
+		&__title
+			font-size 1.1rem
+			font-weight bold
+		&__closeBtn
+			height 25px
+			width 25px
+			background-image url('../../../Shared/media/img/closeWhite.svg')
+			background-repeat no-repeat
+			position absolute
+			top 15px
+			right 10px
+		&__alertBox
+			background #fff
+			width 100%
+			max-width 425px
+			text-align center
+			color #1E1E1E
+			margin 0 auto
+
+			&--unableTo, &--contactInfo
+				max-width 425px
+				font-size 1em
+
+			&--unableTo
+				padding 0 25px 15px 25px
+				img
+					margin-top 20px
+				h1
+					margin 0
+					font-size 1em
+					color #cc0000
+				p
+					color #666666
+					font-size 0.875rem
+					font-style italic
+					margin 5px 0 0 0
+			
+			&--contactInfo
+				padding 0 25px 25px 25px
+				ul, li
+					margin 0
+					padding 4px 0
+					list-style none
+				label
+					font-weight bold
+		&--in
+			opacity 1
+			top 0
+			left 0
+			-webkit-transition opacity .5s ease-out
+			-moz-transition opacity .5s ease-out
+			-o-transition opacity .5s ease-out
+			transition opacity .5s ease-out
+			background-color rgba(0, 0, 0, 0.7)
+
+.pfi
+	&-modal
+		&__dialog
+			@media (max-width: 1024px)
+				max-width 65%
+
+
+.callalert		
+	&-modal
+		&__dialog
+			max-width 30%
+		&__body
+			text-align center
+		&__buttons
+			float none
+		&__content
+			margin 20px 0
+			padding 0

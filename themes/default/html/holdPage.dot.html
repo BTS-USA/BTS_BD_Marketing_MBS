@@ -1,0 +1,25 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="hpc cl-component">
+            <header class="hpc-header--main cl-header--main">
+                    {{? it.header.title}}
+                        <h1 class="iwc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                            {{=it.header.title}}
+                        </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="hpc-header__description--main cl-header__description--main">
+                            {{=it.header.description}}
+                        </p>
+                    {{?}}
+                </header>
+                <div class="hpc__container cl-container">
+                    <p class="hpc__code-prefix">{{=it.codePrefix}}</p>
+                    <p class="hpc__code">{{=it.DB[it.questions[0].binding]}}</p>
+                    <p class="hpc__wait-message">
+                        {{=it.waitMessage}}
+                    </p>
+                </div>
+        </section>
+    </div>
+</div>

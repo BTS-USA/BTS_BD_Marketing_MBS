@@ -1,0 +1,90 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.identifier
+    display block
+    &-background
+        background-size cover
+        background-position center center
+        background-repeat no-repeat
+.inc
+    &-noteBox
+        margin auto
+        position absolute
+        &-container
+            height 100%
+            padding 4rem
+        &-img
+            // height 3rem
+            // width 3rem
+            // border-radius 50%
+            // margin-left 2rem
+            // position relative
+            // z-index 1
+            // bottom -1.5rem
+            // background-color $primary
+            // background-repeat no-repeat
+            // background-position center
+            // background-size 25px
+            // animation pulse 1s ease
+            display none
+        &-text
+            width 35rem
+            max-height 25rem
+            overflow hidden
+            padding 2rem
+            border-radius 1rem 1rem 0 0
+            background-color $white
+            color $darkgrey
+            font-size 1.4rem
+            border-bottom 4px solid $primary
+            box-shadow $shadow-bg
+        &.LeftBottom, &.LeftTop
+            left 10rem
+            .identifier-footer
+                text-align left
+        &.RightBottom, &.RightTop
+            right 10rem
+            text-align right
+        &.LeftBottom, &.RightBottom
+            bottom 4rem
+        &.CenterBottom, &.CenterTop
+            left 50%
+            transform translateX(-50%)
+            text-align center
+            // &:after
+            //     content ''
+            //     display block
+            //     height 2rem
+            //     width 2rem
+            //     border-radius 50%
+            //     background-color $primary
+            //     background-image url('../images/quote-after.svg')
+            //     background-repeat no-repeat
+            //     background-position center
+            //     background-size 16px
+            //     position absolute
+            //     right 1rem
+            //     bottom -.5rem
+            //     animation pulse 1s ease
+            .identifier-footer
+                text-align center
+        &.CenterBottom
+            bottom 4rem
+        .identifier-footer
+            margin auto
+            float none
+            width auto
+            padding .5rem 0 0
+            .cl-button
+                background-color $neutral-dark !important
+                font-size 1rem !important
+                &:hover
+                    background-color $neutral-medium !important
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width 1024px)
+    .inc
+        &-noteBox
+            &.LeftBottom, &.LeftTop
+                left 4rem
+            &.RightBottom, &.RightTop
+                right 4rem

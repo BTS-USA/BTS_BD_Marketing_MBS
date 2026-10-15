@@ -1,0 +1,179 @@
+// import component library mixins and variables
+@import "shared/cl.styl"
+
+button($color = $apple)
+    background $color
+    boxSizing()
+    border none
+    color white
+    cursor pointer
+    font-size 1.4*$px
+    height 4*$px
+    line-height 4*$px
+    outline 0
+    text-align center
+    text-transform uppercase
+    width 110px
+    &:hover 
+        background lighten($color, 6%)
+    &:active 
+        background darken($color, 6%)
+
+.dpe
+    &-form
+        background $mercury
+        border 1px solid $silver
+        &__header
+            padding 15px 15px 20px 20px
+            background-color $bayOfMany
+            color white
+        &__headerText
+            font-size 22px
+        &__body
+            padding 0
+            overflow hidden
+        &__labels
+            width 25%
+            float left
+            text-align right
+        &__row
+            overflow hidden
+            margin 0 0 40px 0
+            @media screen and (max-width 768px)
+                margin 0
+            &:first-child
+                margin 60px 0 40px 0
+                @media screen and (max-width 768px)
+                    margin 60px 0 0 0
+            &:last-child
+                @media screen and (max-width 768px)
+                    margin 0 0 30px 0    
+        &__save
+            button($apple)
+            margin 5px
+            &.disabled
+                background $gray
+                cursor default
+                float left
+                margin 5px
+
+        &__delete
+            button($apple)
+            margin 5px
+            background $sunsetOrange
+            &.disabled
+                background $gray
+                cursor default
+                float left
+                margin 5px
+            &:hover
+                background $sunsetOrange
+				
+        &__controls
+            justify-content center
+            display flex
+
+        &__okbutton
+            line-height normal !important
+            button($apple)
+
+        &__cancelbutton
+            line-height normal !important
+            button($monza)
+            margin-right 5px
+            
+        &__mandatory:after
+            content "*"
+            color $monza
+            font-size 1.6rem
+            position relative
+            top 4px
+            left 15px
+        &__dd, &__textField, &__textArea, &__date
+            padding 0 20px 0 20px
+            @media screen and (max-width 768px)
+                margin 0 0 30px 0
+                
+        &__textArea
+            .froala-box
+                float left
+                width 70%
+                height 7.5rem
+                overflow auto
+                background-color white
+                &.disabled
+                    background alpha(white, 0.3)
+                    .froala-element
+                        cursor default
+            .froala-element
+                position static 
+                padding 10px
+                height 100%
+            .froala-wrapper
+                height 100%   
+
+    &-dd
+        &__label
+            padding 8px 15px 0 0
+        &__select
+            float left
+            border none
+            font-size .875rem
+            outline none
+            padding .625rem .625rem
+            resize none
+            width 70%
+            color white
+            background $tundora
+            &.disabled
+                background alpha($tundora, 0.3)
+    
+    &-textField
+        &__label
+            padding 8px 15px 0 0
+        &__input    
+            float left
+            background white
+            border none
+            color $tundora
+            font-size .875rem
+            outline 0
+            padding .625rem .625rem
+            resize none
+            width 70%
+            &.disabled
+                background alpha(white, 0.3)
+
+    &-textArea
+        &__label
+            padding 8px 15px 0 0
+        &__textarea
+            border none
+            color $codGray
+            float none
+            font-size .875rem
+            height 7.5rem
+            outline none
+            padding .625rem
+            resize none
+            width 70%
+            float left
+            &.disabled
+                background alpha(white, 0.3)
+        
+    &-date
+        &__label
+            padding 8px 15px 0 0
+        &__input
+            float left
+            border none
+            color $tundora
+            font-size .875rem
+            outline none
+            padding .625rem .625rem
+            resize none
+            width 70%
+            color white
+            background $tundora url("media/img/calendar.png") no-repeat center right .625rem
+            &.disabled
+                background alpha($tundora, 0.3)

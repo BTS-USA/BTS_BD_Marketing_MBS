@@ -1,0 +1,44 @@
+﻿<div>
+    <div class="title">{{=it.title}}</div>
+    <ul class="scoreList">
+        {{~it.groups :group:gi}}
+        <li><div class="scoreQuestionName">{{=group.groupname}}</div> 
+            <div class="bar-wrapper" style="width:80%">
+                {{~group.questions :question:qi}}
+                {{? question.percent != 0}}
+                <div class="score-bar score-color-{{=qi}}" style="width:{{=question.displayBarWidth}}%; text-align:center; ">{{=question.label}}: {{=question.percent}} %</div>
+                {{?}}
+                {{~}}
+            </div>
+        </li>
+        {{~}}
+    </ul>
+</div>
+<br />
+<hr />
+<br />
+<div class="hide">
+    <div class="title">{{=it.title}}</div>
+    <div class="scoreList">
+        <table border="1">
+            {{~it.groups :group:gi}}
+            <tr>
+                <td>{{=group.groupname}}</td>
+                <td>
+                    <table border="1">
+                        {{~group.questions :question:qi}}
+                        <tr>
+                            <td style="padding:10px">{{=question.name}}</td>
+                            <td style="padding:10px">{{=question.value}}</td>
+                            <td style="padding:10px">{{=question.label}}</td>
+                            <td style=" padding:10px">{{=question.percent}}</td>
+                            <td style=" padding:10px">{{=Math.round(question.displayBarWidth*1000)/1000}}</td>
+                        </tr>
+                        {{~}}
+                    </table>
+                </td>
+            </tr>
+            {{~}}
+      </table>
+</div>
+</div>

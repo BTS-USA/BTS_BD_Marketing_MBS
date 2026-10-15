@@ -1,0 +1,50 @@
+<div class="mainContentWrapper vhe-mainContainerWrapper" data-main-wrapper>
+    <div class="mainContent">
+        <section class="vhe-section-main" data-componentContainer>
+            {{? it.header}}
+            <header class="cl-header--main" data-textListHeader>
+                <div class="cl-header-wrapper">
+                    {{? it.header.title}}
+                    <h1 class="cl-header__title--main">{{=it.header.title}}</h1>
+                    {{?}}                  
+                </div>
+            </header>
+            {{?}}
+        </section>
+        <article class="vhe-article">
+            <div class="cl-container vhe-mainContainer">
+
+                <div class="vhe-mainCont">
+                    <div class="cl-xs-column-12 cl-row">
+                       
+                        
+                      
+                        <div class="cl-row vhe-submit__cont" data-button-container>
+                            <div class="vhe-center">
+                                <button id="btn-start-recording" class="cl-button vhe-submit__button" data-start-recording>Start Recording</button>
+                                <button id="btn-stop-recording" class="cl-button vhe-submit__button" data-stop-recording disabled>Stop Recording</button>
+                             </div>
+                        </div>    
+
+               
+                        <video id="myVideo" class="vhe-video" controls  autoplay="true" muted="muted" playsinline data-video></video>
+                        
+
+                        
+                    </div>
+                    <div class="cl-row vhe-submit__cont" data-button-container>
+                        <div class="vhe-center">
+                            {{? it.buttons[0] }}
+                            <div class="cl-button vhe-submit__button" data-submitbutton disabled>
+                                {{=it.buttons[0].title}}
+                                <i class="cl-icon vhe-submit__icon cl-icon--tick"></i>
+                            </div>
+                            {{?}}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

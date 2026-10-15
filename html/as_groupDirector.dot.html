@@ -1,0 +1,92 @@
+﻿<div class="groupDirectorContentWrapper">
+    <div class="mainContent">
+        {{? it.header}}
+                <header class="gd-header-main cl-header--main">
+                    {{? it.header.breadCrumbs}}
+                        <p class="gd-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="gd-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="gd-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                            <h1 class="gd-title-main cl-header__title--main">{{=it.header.title}}</h1>
+                        {{?}}
+                        {{? it.header.description}}
+                            <p class="gd-description-main cl-header__description--main">{{=it.header.description}}</p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+        <section class="groupDirector-container container-fluid">
+            <article class="groupDirectorArticle">
+                {{?!it.hideVoteCount}}
+                <div class="groupDirectorVoteCountContainer" data-groupdirectorvotecontainer>
+                    <div class="groupdirectorvotecountlabel" id="groupdirectorvotecountlabel" data-groupdirectorvotelabel>{{?it.voteCountLabel}}{{=it.voteCountLabel}}{{??}}Vote count :{{?}}</div>
+                    <div class="groupDirectorVoteCount" id="groupDirectorVoteCount" data-groupdirectorvotecount>{{?it.voteCount}}{{it.voteCount}}{{??}}{{?}}</div>
+                </div>
+                {{?}}
+                <div class="JumpMenuWrapper">
+                    <div class="JumpMenuContainer" data-groupdirectormainmenu>
+                        {{~it.menuOptions: option:optionIndex}}
+                        <a {{?option.tooltip}} title="{{=option.tooltip}}" {{?}} class="jumpMenuItem row{{=optionIndex}} {{?option.icon}}{{=option.icon}}{{?}}" name="{{=option.type}}{{=optionIndex}}" id="{{=option.type}}{{=optionIndex}}" value="{{=option.title}}" type="button"
+                            data-index="{{=optionIndex}}" data-type="{{=option.type}}" data-groupdirectormainoption>
+                            {{=option.title}}
+                        </a> {{?option.description}}
+                        <div class="jumpMenuItemDescription" id="jumpMenuItemDescription{{=optionIdex}}" data-groupdirectormaindescription>
+                            {{=option.description}}
+                        </div>
+                        {{?}} {{?option.subOptions}}
+                        <div class="itemAndSubItems" data-groupdirectorsubmenuitems>
+                        </div>
+                        {{?}} {{?option.type=='Embed'}}
+                        <div class="embeddingWrapper" id="embedding-{{=optionIndex}}" data-embed></div>
+                        {{?}} {{~}}
+                    </div>
+
+                </div>
+            </article>
+            <article class="qncArticle container-fluid">
+                <span class="qnc">{{=it.commentsBox}}</span>
+                <div id="qandcDiv" data-groupdirectorqnc></div>
+            </article>
+
+            {{?it.showClientStatus}}
+            <article class="clientStatus" data-clientstatus></article>
+            {{?}}
+
+        </section>
+
+    </div>
+    <div class="qncFormat" data-qncformat>
+        <span data-response></span>
+        <span data-participantname></span>
+    </div>
+
+    <section class="cl-modal" data-confresetevent>
+        <article class="cl-modal__dialog">
+            <div class="cl-modal__container">
+
+                <header class="header cl-modal__header cl-modal__header--close">
+
+                </header>
+                {{?it.resetEvent}}
+                <section class="cl-modal__body">
+                    <header>
+                        <h2 class="cl-modal__title">{{=it.resetEvent.title}}</h2>
+                    </header>
+                    <div class="cl-modal__content">
+                        {{=it.resetEvent.description}}
+                    </div>
+                    <footer class="cl-modal__footer" data-btnholder>
+                        <div class="cl-modal__buttons">
+                            <span class="cl-button ec-button ec-button__cancel" data-btn="cancel">{{=it.resetEvent.button[0].cancel_btn_title}}</span>
+                            <span class="cl-button ec-button ec-button__ok" data-btn="ok">{{=it.resetEvent.button[1].ok_btn_title}}</span>
+                        </div>
+                    </footer>
+                </section>
+                {{?}}
+            </div>
+        </article>
+    </section>
+</div>

@@ -1,0 +1,52 @@
+<section class="identifier-background identifier--display-table" style="background-image:url('{{=it.images[0].src}}')">
+    <article class="identifier-content identifier--display-table-cell">
+        <div class="identifier-blue-box-wrapper cl-xs-column-9 cl-md-column-8 cl-padding--no">
+            <article class="identifier-page-content">
+                <article>
+                    <section class="identifier-page-thumbnail">
+                        {{? it.images[1] && it.images[1].src}}
+                        <img src="{{=it.images[1].src}}" class="identifier-page-thumbnail__image" />
+                        {{?}}
+                    </section>
+
+                    <section class="identifier-page-text ">
+                        {{? it.session.sessionTitle}}
+                        <header class="identifier-page-text__title"><p>{{=it.session.sessionTitle}}</p></header>
+                        {{?}}
+                        {{? it.session.sessionSubTitle}}
+                        <div class="identifier-page-text__sub-title"><p>{{=it.session.sessionSubTitle}}</p></div>
+                        {{?}}
+                    </section>
+                    <section class="identifier-page-meta">
+                        <article class="identifier-page-meta-icon">
+                            {{? it.images[2] && it.images[2].src}}
+                            <img src="{{=it.images[2].src}}" class="identifier-page-meta-icon__image" />
+                            {{?}}
+                        </article>
+                        <div class="identifier-page-meta__name"><p>{{=Wizer.ParticipantName}}</p></div>
+                    </section>
+                </article>
+            </article>
+        </div>
+        <footer class="identifier-footer cl-xs-column-12 cl-md-column-12">
+                <div class="identifier__start-button">
+                    {{~it.menuOptions:option:optionIndex }}
+                            <div class="cl-button cl-button--submit option-{{=optionIndex}} nc-navigationOptions {{?(!option.navigation.remove)}}active{{?}} {{? option.selected}}nc-button--selected {{?}} {{=option.navigation.targetSection}}" data-remove="{{=option.navigation.remove}}" data-action-option="{{=optionIndex}}" data-navigate="click" {{=option.navigation.data}}>
+                                {{? option.img}}
+                                <img class="cl-button__image" src="{{=option.img}}" height="20" />
+                                {{??}}
+                                <span class="cl-button__text">{{=option.navigation.title}}</span>
+                                {{?}}
+                            </div>
+                    {{~}}
+                </div>
+        </footer>
+    </article>
+</section>
+
+
+			
+
+
+		
+	

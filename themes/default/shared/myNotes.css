@@ -1,0 +1,490 @@
+﻿#noteItemTemplate { display: none; }
+#noteList li { display: none; }
+#noteList li.selected { display: block; }
+#menuSubMenuContainer{
+    top:30px;
+    bottom: auto!important;
+    width: 400px;
+}
+.notesWrapper, .questionWrapper{
+    width:100%;
+}
+
+.questionWrapper{
+    width:100%;
+}
+
+.questionWrapper #comment {
+    margin:24px 0 0 30px;
+}
+
+.notesWrapper .preview {
+    margin-left:100px;
+    margin-top:16px;
+    position:relative;
+    width:423px;
+}
+
+textarea, #submitNote, #submitQuestion, .preview {
+    float:left;
+}
+#submitQuestion{
+    width: 62px;
+}
+
+#new-questions-and-comments,
+#new-my-notes{
+    margin: 0;
+    width: 100%;
+    background: rgb(51, 51, 51);
+    background: rgba(51, 51, 51, 0.8);
+    border-bottom: 1px solid black;
+    height: 120px;
+    position: absolute;
+    top: 55px;
+    display:none;
+}
+
+#new-questions-and-comments textarea#comment,
+#new-my-notes textarea {
+    height:60px;
+    width:309px;
+    padding:5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+#new-questions-and-comments textarea,
+#new-my-notes textarea{
+    font-size:13px;
+    border:1px solid #2b2b2b;
+}
+
+textarea#note{ 
+    margin-top:24px;
+    margin-left:30px; 
+}
+
+textarea.empty{
+    color:#999;
+}
+.noteNav{
+    width:390px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.noteNav #prevNote {
+    float:left;
+    background: url('/Wizer/Content/WizletResources/Shared/media/img/previous-button.png') no-repeat;
+    width:25px;
+    height:24px;
+    cursor:pointer;
+}
+
+.noteNav #nextNote {
+    float:right;
+    background: url('/Wizer/Content/WizletResources/Shared/media/img/next-button.png') no-repeat;
+    width:25px;
+    height:24px;
+    cursor:pointer;
+}
+
+ul#noteList {
+    margin-left: 35px;
+    margin-top: -25px;
+    width:388px;
+}
+
+
+ul#noteList li{
+    border:1px solid #2b2b2b;
+    background-color:#000;
+    font-size:15px;
+    text-align:center;
+    margin:0 0 5px 0;
+    overflow:auto;
+    color: #000;
+    background: url("/Wizer/Content/WizletResources/Contribute/images/gradient_yellow.png") no-repeat right bottom #F4F06A;
+    height:60px;
+    width:309px;
+    padding:5px;
+}
+/*#submitQuestion{ margin:44px 20px 0 5px; }
+#submitNote{ margin:76px 18px 0 5px; }
+#editNote{ margin:55px 20px 0 5px; }*/
+
+#editNote {
+    float: right;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: -36px;
+    padding: 8px 20px 8px 17px;
+    position:absolute;
+    right:0;
+    top:85px;
+}
+
+#submitNote,
+#submitQuestion {
+    margin: 65px 18px 0 5px;
+    padding: 8px 15px 18px 10px;
+    height: 31px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border-radius: 5px;
+    top:0;
+    left:354px;
+    width:60px;
+}
+
+
+.btn {
+    background-image:  url("/Wizer/Content/WizletResources/Contribute/images/btn_bg.png");
+    background-repeat:  repeat-x;
+    color: #fff;
+    cursor: pointer;
+	padding:  0 6px;
+    text-decoration:  none;
+}
+
+
+a.btn{ padding: 2px 6px; }
+
+.greenBtn {
+	background-position:  0 -5px;
+    background-color:  #2b9835;
+    
+    border-top:  1px solid #40af49;
+	border-left:  1px solid #40af49;
+	border-right:  1px solid #217831;
+	border-bottom:  1px solid #217831;
+}
+.greenBtn:hover {
+    background-color:  #2b9835;
+}
+
+.blackBtn {
+    background-color:#212121;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 8px 14px 8px 16px;
+    cursor:pointer;
+    background: -moz-linear-gradient(
+        top,
+        #3d3d3d 0%,
+        #212121);
+    background: -webkit-gradient(
+        linear, left top, left bottom, 
+        from(#3d3d3d),
+        to(#212121));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border:1px solid #212121;
+    -moz-box-shadow:
+        0 0 0 rgba(000,000,000,0.5),
+        inset 0 0 0 rgba(255,255,255,0);
+    -webkit-box-shadow:
+        0 0 0 rgba(000,000,000,0.5),
+        inset 0 0 0 rgba(255,255,255,0);
+    box-shadow:
+        0 0 0 rgba(000,000,000,0.5),
+        inset 0 0 0 rgba(255,255,255,0);
+    text-shadow:
+        0 0 0 rgba(000,000,000,0),
+        0 0 0 rgba(255,255,255,0);
+}
+
+.blackBtn:hover {
+    background-color:#262626;
+    background: -moz-linear-gradient(
+        top,
+        #3d3d3d 0%,
+        #262626);
+    background: -webkit-gradient(
+        linear, left top, left bottom, 
+        from(#3d3d3d),
+        to(#262626));
+}
+
+.newGreenBtn {
+    background-color:#147c12;
+    font-size: 12px;
+    font-family:arial, helvetica, sans-serif;
+    color: #ffffff;
+    padding: 8px 14px 8px 16px;
+    cursor:pointer;
+    background: -moz-linear-gradient(top,#1aac16 0%,#147c12);
+    background: -webkit-gradient(linear, left top, left bottom, from(#1aac16),to(#147c12));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border:1px solid #147c12;
+    -moz-box-shadow:0 0 0 rgba(000,000,000,0.5),inset 0 0 0 rgba(255,255,255,0);
+    -webkit-box-shadow:0 0 0 rgba(000,000,000,0.5),inset 0 0 0 rgba(255,255,255,0);
+    box-shadow:0 0 0 rgba(000,000,000,0.5),inset 0 0 0 rgba(255,255,255,0);
+    text-shadow:0 0 0 rgba(000,000,000,0),0 0 0 rgba(255,255,255,0);    
+}
+
+.newGreenBtn:hover {
+    background-color:#179814;
+    background: -moz-linear-gradient(top,#148d11 0%,#179814);
+    background: -webkit-gradient(linear, left top, left bottom, from(#148d11),to(#179814));
+}
+.redBtn {
+	background-position:  0px -40px;
+	background-color:  #861c14;
+	
+    border-top:  1px solid #ab3527;
+	border-left:  1px solid #ab3527;
+	border-right:  1px solid #580000;
+	border-bottom:  1px solid #580000;
+}
+.redBtn:hover {
+    background-color:  #861c14;
+}
+
+
+
+.yellowBtn {
+	background-position:  0 -75px;
+	background-color:  #e6ab24;
+	color:#fff;
+	
+    border-top:  1px solid #fdbf3a;
+	border-left:  1px solid #fdbf3a;
+	border-right:  1px solid #d29a11;
+	border-bottom:  1px solid #d29a11; 
+}
+.yellowBtn:hover {
+    background-color:  #e6ab24;
+}
+.whiteBtn {
+    background-position:  0 -110px;
+    background-color:  #e1e2e3;
+	
+    border-top:  1px solid #fff;
+	border-left:  1px solid #fff;
+	border-right:  1px solid #d2d3d5;
+	border-bottom:  1px solid #d2d3d5;
+	color:  #000;  
+}
+.yellowBtn,
+.whiteBtn {
+    width: 30px;
+    margin-top: 5px;
+}
+.whiteBtn:hover {
+    background-color:  #e1e2e3;
+}
+#prevNote, #editNote, #nextNote, #closeNote {
+    font-size:12px;
+}
+
+#closeNote {
+    background: url('/Wizer/Content/WizletResources/Shared/media/img/close-button.png') no-repeat;
+    background-size: 28px 28px; 
+    width:28px;
+    height:28px;
+    border:none;
+    padding:0;
+    margin:6px;
+}
+
+.hideBtn{
+    border-bottom:1px solid #fff;
+    border-left:1px solid #fff;
+    padding: 3px 8px;
+    float:right;
+    text-decoration:none;
+}
+
+
+
+
+
+/*   OLD MYNOTES    */
+
+/*
+
+#noteItemTemplate { display: none; }
+#noteList li { display: none; }
+#noteList li.selected { display: block; }
+#menuSubMenuContainer{
+    top:30px;
+    bottom: auto!important;
+}
+.notesWrapper, .questionWrapper{
+    background-color: #000;
+    border: 1px solid #fff;
+    padding: 0 0 10px 10px;
+    margin-left: 16px;
+    margin-top: 10px;
+    overflow: hidden;
+    width:980px;
+}
+
+.questionWrapper{
+    width:630px;
+}
+textarea, #submitNote, #submitQuestion, .preview, #editNote{
+    float:left;
+}
+#submitQuestion{
+    width: 62px;
+}
+
+#new-questions-and-comments,
+#new-my-notes{
+    margin:5px 0;
+    height:105px;
+    position:absolute;
+    top:55px;
+    display:none;
+    width:100%;
+}
+#new-questions-and-comments textarea#comment,
+#new-my-notes textarea,
+ul#noteList li{
+    height:60px;
+    width:380px;
+    padding:5px;
+}
+#new-questions-and-comments textarea,
+#new-my-notes textarea{
+    font-size:13px;
+    border:1px solid #2b2b2b;
+}
+
+//textarea{
+//    margin-top:14px;
+//}
+textarea#note{ margin-top:24px; }
+
+textarea.empty{
+    color:#999;
+}
+.noteNav{
+    width:390px;
+    overflow:hidden;
+    margin-top:10px;
+}
+#prevNote{ float:left; }
+#nextNote{ float:right; }
+
+ul#noteList li{
+    border:1px solid #2b2b2b;
+    background-color:#000;
+    font-size:15px;
+    text-align:center;
+    margin:0 0 5px 0;
+    overflow:auto;
+    color: #000;
+    background: url("/Wizer/Content/WizletResources/Contribute/images/gradient_yellow.png") no-repeat right bottom #F4F06A;
+}
+#submitQuestion{ margin:44px 20px 0 5px; }
+#submitNote{ margin:76px 18px 0 5px; }
+#editNote{ margin:55px 20px 0 5px; }
+
+.btn {
+    background-image:  url("/Wizer/Content/WizletResources/Contribute/images/btn_bg.png");
+    background-repeat:  repeat-x;
+    color: #fff;
+    cursor: pointer;
+    padding:  0 6px;
+    text-decoration:  none;
+}
+
+
+a.btn{ padding: 2px 6px; }
+
+.greenBtn {
+    background-position:  0 -5px;
+    background-color:  #2b9835;
+    
+    border-top:  1px solid #40af49;
+    border-left:  1px solid #40af49;
+    border-right:  1px solid #217831;
+    border-bottom:  1px solid #217831;
+}
+.greenBtn:hover {
+    background-color:  #2b9835;
+}
+.redBtn {
+    background-position:  0px -40px;
+    background-color:  #861c14;
+    
+    border-top:  1px solid #ab3527;
+    border-left:  1px solid #ab3527;
+    border-right:  1px solid #580000;
+    border-bottom:  1px solid #580000;
+}
+.redBtn:hover {
+    background-color:  #861c14;
+}
+.yellowBtn {
+    background-position:  0 -75px;
+    background-color:  #e6ab24;
+    color:#fff;
+    
+    border-top:  1px solid #fdbf3a;
+    border-left:  1px solid #fdbf3a;
+    border-right:  1px solid #d29a11;
+    border-bottom:  1px solid #d29a11; 
+}
+.yellowBtn:hover {
+    background-color:  #e6ab24;
+}
+.whiteBtn {
+    background-position:  0 -110px;
+    background-color:  #e1e2e3;
+    
+    border-top:  1px solid #fff;
+    border-left:  1px solid #fff;
+    border-right:  1px solid #d2d3d5;
+    border-bottom:  1px solid #d2d3d5;
+    color:  #000;  
+}
+.yellowBtn,
+.whiteBtn {
+    width: 30px;
+    margin-top: 5px;
+}
+.whiteBtn:hover {
+    background-color:  #e1e2e3;
+}
+#prevNote, #editNote, #nextNote, #closeNote {
+    font-size:12px;
+}
+.hideBtn{
+    border-bottom:1px solid #fff;
+    border-left:1px solid #fff;
+    padding: 3px 8px;
+    float:right;
+    text-decoration:none;
+}
+
+@media (max-width: 500px) and (min-width: 0px){
+    #new-questions-and-comments,
+    #new-my-notes{
+        margin:0;
+    }
+    .notesWrapper, .questionWrapper{
+       width:470px!important;
+       margin:0;
+       border:none;
+    }
+    #new-questions-and-comments textarea#comment, #new-my-notes textarea, ul#noteList li{
+        width: 445px;
+    }
+    #new-questions-and-comments textarea#comment{ height:137px; }
+    #submitNote, #editNote, #submitQuestion{ clear:left; float:right; margin: 5px 13px 0 0; }
+    ul#noteList li{ margin-bottom:0; }
+    .noteNav{ width:auto; }
+}
+
+*/
+
+

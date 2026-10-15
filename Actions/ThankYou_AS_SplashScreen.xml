@@ -1,0 +1,26 @@
+<Action layout="identifier">
+  <Component type="Vanilla"><![CDATA[{
+  "eventTitle": "!{AS_Screen_EventTitle}",
+  "css": "events/BTS_BD_Marketing_MBS/styles/as_splashScreen.css",
+  "trackQuestion": "Team_Track",
+  "images": [
+    {
+      "src": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/welcome.jpg",
+      "alt": "backgroundImage"
+    },
+    {
+      "src": "",
+      "alt": "identifierImage"
+    },
+    {
+      "src": "",
+      "alt": "teamIcon"
+    }
+  ],
+  "session": {
+    "sessionTitle": "!{ThankYou_AS_Screen_Title}",
+    "sessionSubTitle": "!{ThankYou_AS_Screen_subTitle}"
+  },
+ "templateInEvent": "html/as_identiferPage.dot"
+}]]></Component>
+</Action>

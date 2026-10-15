@@ -1,0 +1,29 @@
+<div class="mainContentWrapper vhe-mainContainerWrapper" data-main-wrapper>
+    <div class="mainContent">
+        <section class="vhe-section-main" data-componentContainer>
+            {{? it.header}}
+            <header class="cl-header--main" data-textListHeader>
+                <div class="cl-header-wrapper">
+                    {{? it.header.title}}
+                    <h1 class="cl-header__title--main">{{=it.header.title}}</h1>
+                    {{?}}
+                    {{? it.header.description}}
+                    <p class="cl-header__description--main">{{=it.header.description}}</p>
+                    {{?}}
+                </div>
+            </header>
+            {{?}}
+        </section>
+        <article class="vhe-article">
+            <div class="cl-container vhe-mainContainer">
+
+                <div class="vhe-mainCont">				
+                    <div class="cl-xs-column-12 cl-row" style="height:600px">
+					 <div data-powerbiembed-container style="height:100%"> </div>
+                      </div>
+
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

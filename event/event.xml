@@ -1,0 +1,20 @@
+<Event>
+  <TopBar show="true">
+    <QC show="false" />
+    <Refresh show="true" />
+    <Notes show="false" />
+    <Log show="true" />
+    <Menu show="false" action="MainMenu" />
+  </TopBar>
+  <dynamicVotes disable="true" />
+  <MediaSecurity disabled="true" />
+  <eventConsent key="Consent_Text">
+    <headerTitle key="Consent_Header" />
+    <acceptButton key="Consent_Accept" />
+    <declineButton key="Consent_Decline" />
+  </eventConsent>
+  <Logout confirm="true">
+    <Content message="!{logoutConfirmText}" yesButton="!{yesButtonText}" noButton="!{noButtonText}" />
+  </Logout>
+  <Cdn enabled="False" publishedActions="False" id="20261015065559" />
+</Event>

@@ -1,0 +1,12 @@
+<div class="LeaderBoardWizlet">
+    <table class="leaderboard alternative">
+        <tr><td colspan="3"><h3>Using alternative template to layout leaderboard</h3></td></tr>
+        {{~it.votes :vote:index}}
+        <tr>
+            <td class="name">{{=vote.participantName}}</td>
+            <td class="rating">Rated number {{=index+1}}</td>
+            <td class="score">{{=vote.responseText}}</td>
+        </tr>
+        {{~}}
+    </table>
+</div>

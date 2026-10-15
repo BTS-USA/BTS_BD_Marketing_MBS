@@ -1,0 +1,411 @@
+// 12 columns grid system
+.cl-row
+    display block
+    &:after, &:before
+        clear both
+        display table
+        content ""
+    &--height
+        display table
+        table-layout fixed
+        height 100%
+        width 100%
+        float left
+
+// xs
+@media (min-width: 480px)
+    .cl-xs
+        &-row
+            &--height
+                display table
+                table-layout fixed
+                height 100%
+                width 100%
+
+// sm
+@media (min-width: 768px)
+    .cl-sm
+        &-row
+            &--height
+                display table
+                table-layout fixed
+                height 100%
+                width 100%
+// md
+@media (min-width: 992px)
+    .cl-md
+        &-row
+            &--height
+                display table
+                table-layout fixed
+                height 100%
+                width 100%
+// lg
+@media (min-width: 1200px)
+    .cl-lg
+        &-row
+            &--height
+                display table
+                table-layout fixed
+                height 100%
+                width 100%
+
+
+.cl-table
+    display table
+    width 100%
+    &-row
+        display table-row
+        &--count
+            padding 5px 10px
+            for i in (1..25)
+                sum = i - 1
+                &:nth-child({i})
+                    &:before
+                        content ''+ sum +''
+            &:before
+                display inline-block
+                text-align center
+                color white
+                padding 5px
+                width 32px
+                height 32px
+                background-color $cerulean
+                border-radius(50%)
+                position relative
+                margin 5px 0
+                top 0
+                left 5px
+    &-headerRow
+        display table-row
+        &--count
+            &:before
+                content ""
+                opacity 0
+                width 32px
+                height 32px
+                margin 5px 0
+                display inline-block
+    &-cell
+        display table-cell
+    &-col
+        display table-column
+
+
+*[class*="-column-"] {
+    display block
+    float left
+    padding 0 10px
+    position relative
+}
+*[class*="-cell-"] {
+	vertical-align middle
+}
+*[class*="column-"].cl-noLeft {
+    padding-left 0
+}
+*[class*="-column-"].cl-noRight {
+    padding-right 0
+}
+
+
+// XS columns for extra small size devices
+for i in (1..12)
+	.cl-xs-cell-{i}
+		display table-cell
+	.cl-xs-column-{i},
+	.cl-xs-cell-{i}
+		if i == 3
+			width 25%
+		else if i == 6
+			width 50%
+		else if i == 9
+			width 75%
+		else if i == 12
+			width 100%
+			display block
+		else 
+			width (100% / 12*i)
+for i in (0..12)
+	.cl-xs-offset-{i}
+		if i == 3
+			margin-left 25%
+		else if i == 6
+			margin-left 50%
+		else if i == 9
+			margin-left 75%
+		else if i == 12
+			margin-left 100%
+		else 
+			margin-left (100% / 12*i)
+
+// sm columns for small size devices
+@media (min-width: 768px) 
+	for i in (1..12)
+		.cl-sm-cell-{i}
+			display table-cell
+		.cl-sm-column-{i},
+		.cl-sm-cell-{i}
+			if i == 3
+				width 25%
+			else if i == 6
+				width 50%
+			else if i == 9
+				width 75%
+			else if i == 12
+				width 100%
+				display block
+			else 
+				width (100% / 12*i)
+	for i in (0..12)
+		.cl-sm-offset-{i}
+			if i == 3
+				margin-left 25%
+			else if i == 6
+				margin-left 50%
+			else if i == 9
+				margin-left 75%
+			else if i == 12
+				margin-left 100%
+			else 
+				margin-left (100% / 12*i)
+
+// MD columns for medium size devices
+@media (min-width: 992px) 
+	for i in (1..12)
+		.cl-md-cell-{i}
+			display table-cell
+		.cl-md-column-{i},
+		.cl-md-cell-{i}
+			if i == 3
+				width 25%
+			else if i == 6
+				width 50%
+			else if i == 9
+				width 75%
+			else if i == 12
+				width 100%
+				display block
+			else 
+				width (100% / 12*i)
+	for i in (0..12)
+		.cl-md-offset-{i}
+			if i == 3
+				margin-left 25%
+			else if i == 6
+				margin-left 50%
+			else if i == 9
+				margin-left 75%
+			else if i == 12
+				margin-left 100%
+			else 
+				margin-left (100% / 12*i)
+
+// LG columns for large size devices
+@media (min-width: 1200px)
+	for i in (1..12)
+		.cl-lg-cell-{i}
+			display table-cell
+		.cl-lg-column-{i},
+		.cl-lg-cell-{i}
+			if i == 3
+				width 25%
+			else if i == 6
+				width 50%
+			else if i == 9
+				width 75%
+			else if i == 12
+				width 100%
+				display block
+			else 
+				width (100% / 12*i)
+	for i in (0..12)
+		.cl-lg-offset-{i}
+			if i == 3
+				margin-left 25%
+			else if i == 6
+				margin-left 50%
+			else if i == 9
+				margin-left 75%
+			else if i == 12
+				margin-left 100%
+			else 
+				margin-left (100% / 12*i)
+
+.cl-column
+    float left
+    &--height
+        display table-cell
+        float none
+        height 100%
+        margin 0 0 10px 0
+        float left
+        @media (min-width: 768px)
+            float none
+            margin 0
+
+// xs
+@media (min-width: 480px)
+    .cl-column
+        &-xs
+            &--height
+                display table-cell
+                float none
+                height 100%
+                margin 0 0 10px 0
+                float left
+
+// sm
+@media (min-width: 768px)
+    .cl-column
+        &-sm
+            &--height
+                display table-cell
+                float none
+                height 100%
+                margin 0 0 10px 0
+                float left
+// md
+@media (min-width: 992px)
+    .cl-column
+        &-md
+            &--height
+                display table-cell
+                float none
+                height 100%
+                margin 0 0 10px 0
+                float left
+
+// lg
+@media (min-width: 1200px)
+    .cl-column
+        &-lg
+            &--height
+                display table-cell
+                float none
+                height 100%
+                margin 0 0 10px 0
+                float left
+
+
+// offset push & pull
+//all
+    for i in (0..11)
+        .cl-push-{i}
+            left i*8.33333% !important
+            right auto
+        .cl-pull-{i}
+            right i*8.33333% !important
+            left auto
+
+//xs
+@media (min-width: 480px)
+    for i in (0..11)
+        .cl-xs-push-{i}
+            left i*8.33333% !important
+            right auto
+        .cl-xs-pull-{i}
+            right i*8.33333% !important
+            left auto
+//sm
+@media (min-width: 768px)
+    for i in (0..11)
+        .cl-sm-push-{i}
+            left i*8.33333% !important
+            right auto
+        .cl-sm-pull-{i}
+            right i*8.33333% !important
+            left auto
+// md
+@media (min-width: 992px)
+    for i in (0..11)
+        .cl-md-push-{i}
+            left i*8.33333% !important
+            right auto
+        .cl-md-pull-{i}
+            right i*8.33333% !important
+            left auto
+// lg
+@media (min-width: 1200px) 
+    for i in (0..11)
+        .cl-lg-push-{i}
+            left i*8.33333% !important
+            right auto
+        .cl-lg-pull-{i}
+            right i*8.33333% !important
+            left auto
+
+
+
+
+
+// XS columns for extra small size columns
+.cl-vp[min-width~="100px"]
+	for i in (1..12)
+		.cl-xs-column-{i},
+		.cl-xs-cell-{i}
+			if i == 3
+				width 25% !important 
+			else if i == 6
+				width 50% !important
+			else if i == 9
+				width 75% !important
+			else if i == 12
+				width 100% !important
+				display block
+			else 
+				width (100% / 12*i) !important
+
+//SM columns for small size columns
+.cl-vp[min-width~="768px"]
+	for i in (1..12)
+		.cl-sm-column-{i}
+			if i == 3
+				width 25% !important
+			else if i == 6
+				width 50% !important
+			else if i == 9
+				width 75% !important
+			else if i == 12
+				width 100% !important
+			else 
+				width (100% / 12*i) !important
+
+// MD columns for medium size columns
+.cl-vp[min-width~="992px"]
+	for i in (1..12)
+		.cl-md-column-{i},
+		.cl-md-cell-{i}
+			if i == 3
+				width 25% !important
+			else if i == 6
+				width 50% !important
+			else if i == 9
+				width 75% !important
+			else if i == 12
+				width 100% !important
+				display block
+			else 
+				width (100% / 12*i) !important
+
+
+//LG columns for large size columns
+.cl-vp[min-width~="1200px"]
+	for i in (1..12)
+		.cl-lg-column-{i},
+		.cl-lg-cell-{i}
+			if i == 3
+				width 25% !important
+			else if i == 6
+				width 50% !important
+			else if i == 9
+				width 75% !important
+			else if i == 12
+				width 100% !important
+				display block
+			else 
+				width (100% / 12*i) !important
+
+
+
+

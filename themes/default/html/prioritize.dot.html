@@ -1,0 +1,103 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="pc cl-component">
+            {{? it.header}}
+                <header class="pc-header cl-header--main" data-textListHeader>
+                    {{? it.header.breadCrumbs}}
+                        <p class="pc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="pc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="pc-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                        <h1 class="pc-header__title cl-header__title--main" data-prioritizeComponent__header-h1>{{=it.header.title}}</h1>
+                        {{?}}
+                        {{? it.header.description}}
+                        <p class="pc-header__description cl-header__description--main" data-prioritizeComponent__header-text>{{=it.header.description}}</p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+
+            <div class="pc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                        {{? it.instructions}}
+                            <div class="pc-instructions cl-instructions">
+                                <p class="pc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                            </div>
+                        {{?}}
+                    <div class="pc-content cl-content">
+                        <article class="prioritizeComponentTable" id="prioritizeComponentTableDiv" data-prioritizecomponenttablediv data-prioritizecomponenttable>
+                            {{?it.label}}<div class="pc-label__text" data-prioritizelabeltext><p>{{=it.label}}</p></div>{{?}}
+                            <div id="prioritizeOrderListLeft" class="pc-listleft cl-xs-column-1" data-prioritizeorderlistleft>
+                                {{? it.type == "VOTES"}}
+                                    {{~it.results :vote :index}}
+                                <div class="prioritizeOrderListleft{{=index + 1}} pc-orderlistleftpanel" data-orderlistleftpanel><span class="pc-orderindex">{{=index + 1}} </span></div>
+                                    {{~}}
+                                {{?}}
+                                {{? it.type == "QUESTIONS"}}
+                                    {{~it.results :question :index}}
+                                <div class="prioritizeOrderListleft{{=index+1}} pc-orderlistleftpanel" data-orderlistleftpanel><span class="pc-orderindex">{{=index + 1}} </span></div>
+                                    {{~}}
+                                {{?}}
+                            </div>
+                            <div id="prioritizeOrderListRight" class="pc-listright cl-xs-column-11" data-prioritizeorderlistright>
+                                {{~it.results :vote :index}}
+                                <div class="prioritizeVotes{{=index+1}} pc-rowitem" id="prioritizeOrderList" data-rowitem>
+                                    <div class="prioritizeRowItem{{=index+1}}RightPanel pc-rightpanel">
+                                        <div class="prioritizeRowItem{{=index+1}}DraggableContainer pc-draggablecontainer">
+                                            <div class="prioritizeRowItem{{=index+1}}DraggableSign pc-draggablesign1"></div>
+                                            <div class="prioritizeRowItem{{=index+1}}DraggableSign pc-draggablesign2"></div>
+                                            <div class="prioritizeRowItem{{=index+1}}DraggableSign pc-draggablesign3"></div>
+                                        </div>
+                                        {{? it.type == "VOTES"}}
+                                        <div class="prioritizeRowItem{{=index+1}}Text pc-votes" rel={{=vote.universalId}} data-votes>
+                                            <p>{{=vote.responseText}}</p>
+                                        </div>
+                                        {{?}}
+                                        {{? it.type == "QUESTIONS"}}
+                                        <div class="prioritizeRowItem{{=index+1}}Text pc-votes" rel={{=vote.binding}} data-votes>
+                                            <p>{{=vote.title}}</p>
+                                        </div>
+                                        {{?}}
+                                    </div>
+                                </div>
+                               {{~}}
+                        </article>
+					</div>
+					<footer class="pc-footer cl-footer" data-controls>
+						<div class="pc-buttons cl-buttons" data-prioritizebuttons>
+                        {{? it.buttons_v2 }}
+                            {{~it.buttons_v2 :button:index}}
+                            <div id="prioritize{{=button.type}}Button"
+                                data-componentbuttons data-buttons
+                                {{? button.type=="submit"}} data-submitButton data-submitaction data-pulsesubmitbutton{{?}}
+                                {{? button.type=="clear"}} data-clearAction{{?}}
+                                class="pc-button pc-button--{{=button.type}} cl-button cl-button--{{=button.type}}">
+                                <div class="pc-button--text cl-button--text" 
+                                    {{? button.type=="submit"}} data-submitaction {{?}} 
+                                    data-prioritizesubmitbuttontext {{? button.disabled}} disabled{{?}} 
+                                    data-button="{{=button.type}}">
+                                    {{=button.navigation.title}}
+                                </div>
+                            </div>
+                            {{~}}
+                        {{??}}
+                            <div class="pc-submitbutton pc-button  cl-button cl-button--submit" 
+                                id="submitButton" data-submitButton data-pulsesubmitbutton>
+                                <span class="pc-submitbuttontext pc-buttontext" 
+                                data-prioritizesubmitbuttontext>{{=it.buttons[0].navigation.title}}</span>
+                            </div>
+                            <div class="pc-clearbutton pc-button cl-button cl-button--clear" 
+                                id="clearAction" data-clearAction>
+                                <span class="pc-clearbuttontext pc-buttontext">{{=it.buttons[1].navigation.title}}</span>
+                            </div>
+                        {{?}}
+						</div>
+					</footer>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

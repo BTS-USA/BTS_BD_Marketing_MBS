@@ -1,0 +1,538 @@
+// import component library mixins and variables
+@import "shared/cl.styl"
+
+.vhrr
+    &-backdrop
+        position fixed 
+        width 100%
+        height 100%
+    
+    &-disabled
+        background-color rgba(191, 194, 200, 1)
+        cursor none
+        opacity 1
+        pointer-events none
+    &-enabled
+        background linear-gradient(180deg, rgba(66, 208, 255, 1) 0%, rgba(10, 185, 240, 1) 81%)
+        cursor pointer    
+    &-center
+        display flex
+        align-items center
+        justify-content center
+    &-noVideolabel
+        color $white90
+    &-submit
+        &__cont
+            margin 25px
+            height 100%
+            width 100%
+        &__button
+            border-radius 20px
+            font-weight 600
+            transition all 500ms cubic-bezier(0.6, -0.28, 0.735, 0.045)
+            margin 0 10px
+            vertical-align middle
+            padding .625rem .75rem
+            min-width 6.875rem
+            font-size 16px
+            line-height 1.42857143
+            color #fff
+            text-align center
+            white-space nowrap
+            cursor pointer
+            touch-action manipulation
+            user-select none
+            background-image none
+            border none
+            outline none
+            background-color #00adef
+    &-backControl
+        text-align end
+        color $white90
+        font-size 14px
+        margin-bottom 4px
+        span
+            cursor pointer
+    &-video
+        &__recording
+            video
+                max-height 425px
+                width 100%
+                background black
+
+    &-filter
+        &Options
+            color $white90
+            display flex
+            align-items flex-end
+            margin-bottom 35px
+
+        &Cont
+            display flex
+            flex 0 0 85%
+            @media screen and (max-width: 768px)
+                width 100%
+    &-dropdown
+        &__filter
+            &Cont
+                margin-right 10px
+                @media screen and (max-width: 768px)
+                    width 50%
+        &__options
+            color #6D747E
+            background $white90
+            &:nth-child(even)
+                background rgba(242, 242, 242, 1)
+        &__filter, &__sort
+            &Text
+                font-size 13px
+                color $white90
+                margin-bottom 5px
+        &__select
+            border-radius 7px
+            width 200px
+            height 42px
+            background #a8adb4
+            padding 5px
+            color $white90
+            font-size 14px
+            &:hover
+                background $deepCerulean
+            @media screen and (max-width: 768px)
+                width 100%
+        &__sortCont
+            @media screen and (max-width: 768px)
+                width 50%
+    &-content
+        &ListContainer
+            color white
+    &-viewOptions
+        &__cont
+            flex 0 0 15%
+            font-size 14px
+            @media screen and (max-width: 768px)
+                display block
+                width 100%
+                margin-top 10px
+        &__wrapper
+            display flex
+        &__gridCont, &__listCont
+            display flex
+            padding 10px
+            height 42px
+            i
+                margin 2px
+            @media screen and (max-width: 768px)
+                width 50%
+        &__gridCont
+            background $cerulean
+            border-bottom-left-radius 7px
+            border-top-left-radius 7px
+            border 3px solid transparent
+            &--inactive
+                background $mercury
+                color $gray
+                cursor pointer
+                &:hover
+                    border 3px solid $cerulean
+        &__listCont
+            background $cerulean
+            border-bottom-right-radius 7px
+            border-top-right-radius 7px
+            border 3px solid transparent
+            &--inactive
+                background $mercury
+                color $gray
+                cursor pointer
+                &:hover
+                    border 3px solid $cerulean
+    &-likeRating
+        &Cont
+            height 335px
+            width 32%
+            float left
+            background $white90
+            border-radius 10px
+            margin 15px 7px 35px 7px
+            position relative
+            // height 100%
+            &:first-child
+                margin-left 0
+        &__userMeText
+            color $apple
+        &__userText, &__userMeText
+            font-size 14px
+            @media screen and (max-width: 768px)
+                font-size 12px
+        &Wrapper
+            cursor pointer
+        &__imgCont
+            width 100%
+            height 150px
+            text-align center
+            background #000
+            border-top-left-radius 10px
+            border-top-right-radius 10px
+            overflow hidden
+            position relative
+        &__img
+            height 100%
+            max-width 100%
+            width auto
+        &__ideaText
+            display flex
+            padding 8px
+            font-size 14px
+            background #42484f
+            color $white90
+            max-height 58px
+            align-items center
+        &__ideaCategory
+            display flex
+            padding 8px
+            font-size 14px
+            background #42484f
+            color $white90
+            max-height 58px
+            align-items center    
+        &__playIcon
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            background rgba(0,0,0,0.4)
+            color $white90
+            font-size 20px
+            cursor pointer
+            border-radius 50%
+            height 40px
+            width 40px
+        &__userIcon, &__userMeIcon
+            margin-right 6px
+            @media screen and (max-width: 768px)
+                display none
+        &__userMeIcon
+            color $apple
+    &-scoring
+        &Cont
+            display flex
+            justify-content space-evenly
+            border-bottom 1px solid $gray
+        &RankCont, &ScoreCont, &LikesCont
+            padding 8px 0
+        &RankText, &ScoreText, &LikesText
+            font-size 13px
+            text-align center
+            margin-bottom 4px
+            color #6D747E
+        &RankNo, &LikeNo
+            height 35px
+            width 35px
+            border-radius 50%
+        &RankNo
+            background #42484f
+            color $white90
+        &LikeNo
+            color #42484f
+            background #cdcdcd
+    &-user
+        &DetailsCont
+            display flex
+            align-items center
+            padding 7px 10px
+        &Name
+            flex 0 0 65%
+            font-size 13px
+            color #6D747E
+        &MeName
+            flex 0 0 65%
+            font-size 13px
+            color $apple
+    &-comment
+        &Button  
+            display flex
+            align-items center
+            font-size 13px
+            color #6D747E
+            flex 0 0 35%
+            cursor pointer
+        &Text
+           margin-right 4px
+        &Icon
+            width 30px
+            height 30px
+            border-radius 50%
+            background $cerulean
+            display flex
+            justify-content center
+            align-items center
+            color $white90
+            // cursor pointer
+    &-listView
+        &__header
+            display flex
+            &-title
+                font-size 13px
+                font-weight 600
+                margin-left 3px
+        &__mainCont
+            display flex
+            border-radius 10px
+            background $white90
+            color $gray
+            // overflow hidden
+            height 84px
+            position relative
+            margin-bottom 20px
+            @media screen and (max-width: 768px)
+                background $whiteSmoke
+        &__img
+            &Holder
+                position relative
+                overflow hidden
+                border-top-left-radius 10px
+                border-bottom-left-radius 10px
+                text-align center
+                background #000
+            &Thumbnail
+                width auto
+                height 100%
+        &__ideaCont
+            background rgba(109, 116, 126, 1)
+            color $white90
+            padding 14px
+            justify-content flex-start
+            @media screen and (max-width: 768px)
+                background transparent
+                color $gray
+        &__ideaCategory
+            background rgba(109, 116, 126, 1)
+            color $white90
+            padding 20px
+            justify-content flex-start
+            @media screen and (max-width: 768px)
+                background transparent
+                color $gray   
+        &__scoreCont
+            border-right 1px solid $gray
+            @media screen and (max-width: 768px)
+                border-right 0
+                font-weight bold
+                font-size 16px
+        &__srNo
+            background $apple
+            top 28%
+            margin-left -10px
+            @media screen and (max-width: 768px)
+                top 35%
+        &__commentIcon
+            background $cerulean
+            top 28%
+            right 41%
+            cursor pointer
+            @media screen and (max-width: 768px)
+                background transparent
+                right 30%
+                color $gray !important
+                top 35%
+        &__commonBtnStyle
+            height 35px
+            width 35px
+            border-radius 50%
+            color $white90
+            position absolute
+            @media screen and (max-width: 768px)
+                height 25px
+                width 25px
+        &__playIcon
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            background rgba(0,0,0,0.3)
+            cursor pointer
+        &__imgThumbnail
+            @media screen and (max-width: 768px)
+                max-width 70px
+    // &-flex__center
+    //     display flex
+    //     justify-content center
+    //     align-items center
+    &-w13
+        flex 0 0 13%
+        @media screen and (max-width: 768px)
+            flex 0 0 20%
+    &-w47
+        flex 0 0 47%
+        @media screen and (max-width: 768px)
+            flex 0 0 48%
+    &-w20
+        flex 0 0 20%
+        @media screen and (max-width: 768px)
+            flex 0 0 15%
+    &-w22
+        flex 0 0 22%
+        @media screen and (max-width: 768px)
+            flex 0 0 15%        
+    &-overAllText
+        padding 5px 0
+        font-size 14px
+        color $white90
+        font-weight 600
+    &-modalWrapper
+        position absolute
+        top 0
+        display none
+    &-modal
+        position fixed
+        height 100%
+        width 100%
+        background rgba(0,0,0,.9)
+        z-index 1005
+        &__idea
+            &Cont
+                display flex
+                justify-content center
+                margin 10px 0
+            &Text
+                flex 0 0 92%
+                font-size 24px
+                font-weight 700
+            &Close
+                font-size 28px
+                i
+                    cursor pointer
+        &__comment
+            &Body
+                width 100%
+                position relative
+                // top 15%
+                // left 50%
+                // transform translate(-50%, -50%)
+                color $white90
+                text-align center
+                margin 40px 0
+            &Content
+                display inline-block
+                max-height 425px
+                overflow auto
+                margin 20px 0 0 0
+                min-width 400px
+                width 40%
+            &Cont
+                display flex
+                align-items center
+                padding 16px
+            &Number
+                font-size 48px
+                font-weight 800
+                color $deepCerulean
+                // padding 5px
+            &Text
+                font-size 18px
+                padding 5px
+                text-align left
+            &Quotes
+                font-size 28px
+                margin 0 8px 30px 12px
+                float left
+            &DetailsCont
+                border-bottom 1px solid $white20
+                width 100%
+                padding 0 0 0 5px
+        &__user
+            &Details
+                display flex
+                flex 0 0 92%
+                align-items center
+                &Cont
+                    display flex
+                    padding 10px 0
+                    font-size 13px
+            &Name
+                margin-left 8px
+        // &__like
+        //     &Status
+        //         flex 0 0 8%
+        //     &Count
+        //         margin-right 8px
+        &__container
+            width 100%
+            height 100%
+            overflow auto
+            border-radius 0
+        &__ideaTitle
+            padding 12px
+            background #434951
+            color $white90
+        &__body
+            width 50%
+            position relative
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            @media screen and (max-width 1024px) 
+                width 100%
+        &__footer
+            display flex
+            color $white90
+            background #434951
+            margin 0 auto
+    &-likeRatingCont
+        @media screen and (max-width: 768px)
+            width 100%
+            box-shadow 0 2px 14px 6px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)
+    &-article
+        @media screen and (max-width: 768px)
+            margin 0 15px
+    &-filterOptions
+        @media screen and (max-width: 768px)
+            display block
+            margin-bottom 20px
+.c100.small
+    font-size 36px
+    cursor pointer
+    &:hover
+        font-size 36px
+.c100 .span
+    font-size 11px
+    width inherit
+    color #42484f
+    line-height 3.45em
+.c100:after, .c100:hover:after
+    top 0.156em
+    left 0.150em
+    width 0.69em
+    height 0.69em
+    // background-color #182033
+.c100 .bar
+    border 0.15em solid #42484f
+    width 0.69em
+    height 0.70em
+
+.pie, .c100 .bar, .c100.p51 .fill, .c100.p52 .fill, .c100.p53 .fill, .c100.p54 .fill, .c100.p55 .fill, .c100.p56 .fill, .c100.p57 .fill, .c100.p58 .fill, .c100.p59 .fill, .c100.p60 .fill, .c100.p61 .fill, .c100.p62 .fill, .c100.p63 .fill, .c100.p64 .fill, .c100.p65 .fill, .c100.p66 .fill, .c100.p67 .fill, .c100.p68 .fill, .c100.p69 .fill, .c100.p70 .fill, .c100.p71 .fill, .c100.p72 .fill, .c100.p73 .fill, .c100.p74 .fill, .c100.p75 .fill, .c100.p76 .fill, .c100.p77 .fill, .c100.p78 .fill, .c100.p79 .fill, .c100.p80 .fill, .c100.p81 .fill, .c100.p82 .fill, .c100.p83 .fill, .c100.p84 .fill, .c100.p85 .fill, .c100.p86 .fill, .c100.p87 .fill, .c100.p88 .fill, .c100.p89 .fill, .c100.p90 .fill, .c100.p91 .fill, .c100.p92 .fill, .c100.p93 .fill, .c100.p94 .fill, .c100.p95 .fill, .c100.p96 .fill, .c100.p97 .fill, .c100.p98 .fill, .c100.p99 .fill, .c100.p100 .fill
+    border 0.15em solid #42484f 
+
+.c100 > span
+    font-size 10px
+    width inherit
+    line-height 3.6em
+    color #42484f
+    font-weight 600
+    // &:hover
+    //     font-size 10px
+.c100:hover > span
+    font-size 10px
+    width inherit
+    line-height 3.6em
+    color #42484f
+    font-weight 600
+    // &:hover
+    //     font-size 10px
+
+.fp-share
+    display none
+.flowplayer.is-fullscreen
+    height auto !important
+    max-height unset
+    video
+        max-height 100% !important

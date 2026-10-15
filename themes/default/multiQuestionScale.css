@@ -1,0 +1,98 @@
+/* .wizletMultiQuestionScale */  #contentBox
+{
+	float: none;
+}
+
+.wizTypeMultiQuestionScale input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #666;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.6);
+    -ms-touch-action: none;
+    touch-action: none; 
+}
+
+.wizletMultiQuestionScale td {
+	font-size: 18px;
+}
+
+.wizletMultiQuestionScale .Even td
+{
+	background:  transparent url('/Wizer/Content/WizletResources/Shared/media/img/bg_white_50.png');
+	padding: 6px 4px;
+}
+
+
+.wizletMultiQuestionScale .Odd td
+{
+	background:  transparent url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_50.png');
+	padding: 7px 4px;
+}
+
+.wizletMultiQuestionScale .titleRow th
+{
+	background:  transparent url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_50.png');
+	padding: 7px 4px;
+}
+
+.wizletMultiQuestionScale .mainContent 
+{
+	margin-bottom: 0px;
+}
+
+.wizletMultiQuestionScale .multiQuestionScaleTable
+{
+	width: 100%;
+}
+
+.wizletMultiQuestionScale .alternativeColumn
+{
+	width: 100px;
+}
+
+.wizletMultiQuestionScale th.titleColumn
+{
+    text-align: left; 
+    padding-left: 20px;
+}
+
+/* I believe this makes this adjustment is now wrong after the submitbuttons moved out of wizlets
+#sendContainer {
+  float: right;
+  margin: -10px 27px 0;
+}
+*/
+
+.wizletMultiQuestionScale .is_tablet { display: none }
+.wizletMultiQuestionScale .not_tablet { display: block; float:right; }
+		
+@media only screen and (device-width: 768px) {
+	/* For general iPad layouts */ 
+	.wizletMultiQuestionScale .is_tablet { display: block }
+    .wizletMultiQuestionScale .is_tablet select { display: none; }
+	.wizletMultiQuestionScale .not_tablet { display: none }
+}
+.wizletMultiQuestionScale .ui-slider{ width:400px; text-align:center!important; }
+.wizletMultiQuestionScale .ui-slider a{ text-decoration:none; }
+
+.wizletMultiQuestionScale .tabletNativeSlider
+{
+	width: 84%;
+    box-sizing: border-box;
+    margin: 3% 8%;
+}
+
+.wizletMultiQuestionScale .multiQuestionScaleTable .td-slider { width: 400px; }
+
+.wizletMultiQuestionScale .multiQuestionScaleTable .labels { font-size: 14px; }
+
+.wizletMultiQuestionScale .multiQuestionScaleTable .labels .label { margin-top: 10px; }
+
+.wizletMultiQuestionScale .multiQuestionScaleTable .labels .none { color: gray; margin-right: 10px; }
+
+.wizletMultiQuestionScale .correct{color:Green;}
+.wizletMultiQuestionScale .incorrect{color:Red;}
+.wizletMultiQuestionScale .responses {text-align:right;}

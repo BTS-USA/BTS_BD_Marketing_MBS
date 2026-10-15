@@ -1,0 +1,316 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Single Select List Component Styles
+.ssl
+    &-article
+        margin 0 0 10px 0
+    &-button
+        &--disabled
+            pointer-events none
+            background-color $silver
+            color $white
+            text-shadow none
+            cursor not-allowed
+        &--hide
+            display none 
+    &-question,
+    &-answer
+        padding 25px 20px
+        background-color $gray60
+        &:after, &:before
+            content ""
+            clear both
+            display block
+
+    &-question 
+        background-color $silver
+        &__title
+            margin 0 0 5px 0
+    
+    &-slider-step
+        color #646060
+        margin 10px -7% 0 -3%;
+        color $silver
+        font-size 10px
+        &__number,
+        &__bar
+            float left
+            position relative
+            text-align center
+            height 15px
+        &__bar
+            &:after
+                content  "|"
+                height 10px
+                display block
+                font-size 8px
+
+    &-slider-step.stepV2
+        width 100%
+        display inline-block
+        margin 10px 0 0 0
+    &-footer
+        text-align right
+
+    &-savedmessage
+        &:before
+            content ""
+            width 20px
+            height 16px
+            margin 0 5px 0 0
+            background url("media/img/checkWhite.svg") no-repeat center center
+            display inline-block 
+            vertical-align middle
+
+// Old styles for slider renderer
+@import "shared/cl.styl"
+
+.bubble_container
+    display none
+    position relative
+    padding 0
+    overflow visible
+
+.bubble
+    position absolute
+    margin -75px -75px
+
+.bubble_container.active
+    display block
+
+.inactive .ui-slider-handle
+        background ligten($cerulean, -5%)
+
+// UI slider
+.ui-slider 
+    position relative
+    background-color $codGray
+    height 10px
+    border none
+    border-radius 4px
+    .ui-slider-handle 
+        border-radius 100%
+        background $cerulean
+        top -10px
+        position absolute
+        padding 15px
+        margin 0 -10px
+        border none
+        display block
+        outline 0
+        -ms-touch-action none
+        touch-action none
+    .ui-slider-range
+        background #FFC000
+        height 100%
+        border none
+        border-radius 4px
+    .ui-state-hover
+        border none
+
+.readonly
+    .ui-slider
+        &-handle
+            cursor default
+        
+// Old styles for smiley renderer
+.readonly
+    .singleSelectlistSmiley-holder
+        opacity 0.5
+        .smiley_Promote, .smiley_Neutral, .smiley_Demote
+            cursor default
+
+.singleSelectlistSmiley-holder
+    body
+        padding 0
+    .row 
+        display block
+
+    .singleSelectListQuestion label 
+        display none
+
+    #contentBox
+        float none
+
+    .smiley_Promote
+        width 45px
+        height 45px
+        margin 0
+        cursor pointer
+        background-color #656565
+        border-radius 100%
+        padding 0px
+
+    .smiley_Neutral
+        width 45px
+        height 45px
+        cursor pointer
+        margin 0
+        background-color #656565
+        border-radius 100%
+        padding 0px
+
+    .smiley_Demote
+        width 45px
+        height 45px
+        background-color #656565
+        cursor pointer
+        margin 0 
+        border-radius 100%
+
+    .circle_container
+        cursor pointer
+        text-align left
+        height 20px
+        width 4.7*$px
+        height 100%
+        margin 0 auto
+        font-weight bolder
+
+    .circle_container .text
+        padding 6px 0
+        font-size 1.2*$px
+        text-align center
+        color white
+
+    .circle_container .smiley_Demote .text
+        padding-top 6px
+        padding-left 3px
+   
+    .promoted .smiley_Promote 
+        background-color #88C545
+    
+    
+    .promoted .smiley_Promote span.circle
+        background-color white
+        width 25px
+        height 25px
+        display inline-block
+        margin 0 auto
+        border-radius 100%
+        display block
+        top 22%
+        position relative
+    
+    .neutral .smiley_Neutral 
+        background-color #FDDC1F
+    
+    .neutral .smiley_Neutral span.circle 
+        background-color white
+        width 25px
+        height 25px
+        display inline-block
+        margin 0 auto
+        border-radius 100%
+        display block
+        top 22%
+        position relative
+    
+    
+    .demoted .smiley_Demote 
+        background-color #FE4E36
+    
+    .demoted .smiley_Demote span.circle
+        background-color white
+        width 25px
+        height 25px
+        display inline-block
+        margin 0 auto
+        border-radius 100%
+        display block
+        top 22%
+        position relative
+
+// Old styles for DropDown renderer
+.readonly
+    .singleSelectlistDropdown-holder
+        opacity 0.5
+        .rootNode
+            cursor default
+
+.singleSelectlistDropdown-holder
+    
+    .dropdown
+        width 100%
+        border 1px solid #ccc
+        display none
+        position absolute;
+        box-sizing border-box
+        position absolute
+        z-index 10
+    
+    label 
+        color #333333
+    
+    label:nth-child(odd) 
+        background-color #D7D7D7
+    
+    label:nth-child(even) 
+        background-color #E4E4E4
+    
+    .checkbox 
+        display block
+        padding 10px 
+        z-index 9
+    
+    .optionText 
+        padding 0 9px
+    
+        
+    .multi-check 
+        background-color #666666
+        color white
+        position relative
+    a 
+        color black
+    
+    a:visited 
+        color black
+    
+    .rootNode 
+        display inline-block
+        padding 1*$px
+        width 100%
+        cursor pointer
+        box-sizing border-box
+    
+    .dropPlaceholder 
+        padding 10px
+    
+    .arrow-down
+        width  14px
+        height 14px
+        display inline
+        margin 3px 8px 0 0
+        background transparent url("media/img/arrow.png") no-repeat
+        float right
+    
+    .open .arrow-down 
+        height 14px
+        display inline
+        background transparent url("media/img/arrowUp.png") no-repeat
+        float right
+        margin 3px 0 0 0
+    
+    .dropdown .checkall
+        display block
+        margin 0 0 5px 0
+        padding 0 0 5px 0 
+        border-bottom 1px solid #ccc
+        cursor pointer
+    
+    .dropdown .selected 
+        background-color rgb(113, 113, 113) !important
+        color white
+
+[dir="rtl"]
+	.ssl-answer
+		.cl-md-column-4, .cl-sm-column-4, .cl-xs-column-4
+			float right
+	.singleSelectlistDropdown-holder .arrow-down
+		float left
+	.singleSelectlistDropdown-holder .open .arrow-down
+		float left
+    
+    

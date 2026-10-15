@@ -1,0 +1,77 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="tnc cl-component">
+            {{? it.header}}
+            <header class="tnc-header--main cl-header--main">
+                {{? it.header.breadCrumbs}}
+                    <p class="tnc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                {{?}}
+                {{? it.header.bgimage}}
+                 <div class="tnc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                {{?}}
+                <div class="tnc-header-wrapper cl-header-wrapper">
+                    {{? it.header.title}}
+                    <h1 class="tnc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                        {{=it.header.title}}
+                    </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                    <p class="tnc-header__description--main cl-header__description--main">
+                        {{=it.header.description}}
+                    </p>
+                    {{?}}
+                </div>
+            </header>
+            {{?}}
+            <div class="tnc-container cl-container">
+                <div class="tnc-form" data-team-form>
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="tnc-instructions cl-instructions">
+                        <p class="tnc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+                    <div class="tnc-content cl-content">
+                        {{~it.questions :input:index}}
+                        <article class="tnc-article cl-article">
+                            {{? input.title}}
+                            <div class="tnc-label cl-label">{{=input.title}}</div>
+                            {{?}}
+                            <div class="tnc-textarea-container cl-textarea-container" data-renderer data-question-name={{=input.question}}>
+                                <div>
+                                    <input data-input class="cl-textinput {{=input.renderOptions.class || ''}}" {{?input.renderOptions.maxCharacters}} maxlength="{{=input.renderOptions.maxCharacters.maxValue}}" {{?}} autofocus>
+                                    <div class="inputComponentMessageLength">
+                                        <span class="inputText__messageLength-counter" data-input-counter>
+                                            {{=input.renderOptions.maxCharacters.maxValue}}
+                                        </span>
+                                        <span class="inputText__messageLength-counter-characters-remaining" data-input-remaining>
+                                            {{=input.renderOptions.maxCharacters.text || "characters remaining"}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        {{~}}
+
+                        <footer class="tnc-footer cl-footer inputText__controls">
+                            {{? it.buttons}}
+                            <div class="tnc-buttons cl-buttons" data-sscbuttons>
+                                {{~it.buttons :button:index}}
+                                <button type="button" data-buttons data-button="{{=button.type}}" id="{{=button.type}}Button" {{?button.submitButton}}data-submit-button data-pulsesubmitbutton{{??button.clearButton}}data-clear-button{{?}} class="buttonDisabled inputComponent__content-{{=button.type}} cl-button cl-button--{{=button.type}} exclude {{? button.hide}}cl-button--hidden{{?}}"
+                                    {{? button.disabled}} disabled{{?}} data-button="{{=button.type}}">
+                                    <div class="tnc-button--text cl-button--text"  {{?button.submitButton}}data-sscSubmitbuttontext{{?}}>{{=button.text}}</div>
+                                </button> {{~}}
+                            </div>
+                            {{?}}
+                        </footer>
+                    </div>
+                </div>
+                </div>
+                <div class="tnc-thankyou" data-thankyou>
+                    <h2 class="tnc-thankyou__title">{{=(it.thankYou && it.thankYou.title) || "Thank you!"}}</h2>
+                    <p class="tnc-thankyou__message">{{=(it.thankYou && it.thankYou.message) || "Sit tight. Your facilitator will move everyone forward once all teams have submitted their names."}}</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

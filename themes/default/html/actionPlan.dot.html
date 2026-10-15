@@ -1,0 +1,105 @@
+<div class="mainContentWrapper  ap-mainContentWrapper" data-mcWrapper>
+    <div class="mainContent">
+        <section class="cl-xs-column-12">
+            {{? it.wizletInfo.header }}
+            <header class="ap-header cl-header--main">
+                {{? it.wizletInfo.header.title}}
+                <h1 class="ap-header__title cl-header__title--main" data-ap-header>{{=it.wizletInfo.header.title}}</h1>
+                {{?}} {{?it.wizletInfo.header.description}}
+                <h3 class="ap-header__description cl-header__description--main">{{=it.wizletInfo.header.description}}</h3>
+                {{?}}
+            </header>
+            {{?}}
+            <div class="ap-mainContainer cl-container">
+                <div class="ap-subHeader">
+                    <div class="ap-actionPlan__title">{{=it.wizletInfo.textContent.actionPlanText}}</div>
+                    <div class="ap-actionPlan__tabsCont">
+                        <div class="ap-createActionText ap-active" data-attr="create" data-action>{{? it.wizletInfo.textContent.createActionText }} {{=it.wizletInfo.textContent.createActionText}} {{??}} Create Actions {{?}}</div>
+                        <div class="ap-myActionText ap-inactive" data-attr="my" data-action>{{? it.wizletInfo.textContent.myActionText }} {{=it.wizletInfo.textContent.myActionText}} {{??}} My Actions {{?}}</div>
+                    </div>
+                </div>
+
+                <article class="ap-createActionWrapper ap--show cl-xs-column-12 cl-row" data-create-action>
+                    <div class="ap-leftContent cl-xs-column-12 cl-md-column-6 cl-row">
+                        {{~it.wizletInfo.questions :question:i}}
+                        <div class="row ap-form__row" data-form-row>
+                            {{? question.type === "dropdown"}}
+                            <section class="ap-form__dd {{?question.mandatory}}ap-form__mandatory{{?}} cl-xs-column-12" data-questionid="" data-type="{{=question.type}}" data-responseid="0" data-form-fields>
+                                <div class="ap-dd__label ap-form__labels">{{=question.title}}</div>
+                                <select class="ap-dd__select
+                                    {{?question.mandatory}}ap-field__mandatory{{?}}" data-form-select data-form-elements>
+                                    <option value="">{{=question.defaultOptionLabel}}</option>
+                                    {{~question.options :option:index}}
+                                    <option value="{{=option.KeypadNumber}}" {{?option.KeypadNumber == question.responseText}} selected {{?}}>{{=option.ResponseText}}</option>
+                                    {{~}}
+                                </select>
+                            </section>
+                            {{?? question.type === "date"}}
+                            <section class="ap-form__date {{?question.mandatory}}ap-form__mandatory{{?}} cl-xs-column-12" data-questionid="" data-type="{{=question.type}}" data-responseid="0" data-form-fields>
+                                <div class="ap-date__label ap-form__labels">{{=question.title}}</div>
+                                <input type="text" value="" class="ap-date__input {{?question.mandatory}}ap-field__mandatory{{?}} " data-format="{{= question.format }}" data-form-type="date" data-form-date data-form-elements {{? question.placeholder}} placeholder="{{=question.placeholder}}"
+                                    {{?}}>
+                            </section>
+                            {{?? question.type === "textArea"}}
+                            <section class="ap-form__textArea {{?question.mandatory}}ap-form__mandatory{{?}} cl-xs-column-12" data-type="{{=question.type}}" data-questionid="" data-responseid="0" data-form-fields>
+                                <div class="ap-textArea__titleCont">
+                                    <div class="ap-textArea__label ap-form__labels">{{=question.title}}</div>
+                                    {{? question.maxLength}}
+                                    <div class="ap-textArea__maxCharacters" data-characters="characters-{{=i}}">{{=question.maxLength}} {{=question.remainingCharactersText}}</div> {{?}}
+                                </div>
+                                <textarea class="ap-textArea__textarea ap-textArea__border {{?question.mandatory}}ap-field__mandatory{{?}}" data-form-textarea data-form-elements {{? question.placeholder}} placeholder="{{=question.placeholder}}" {{?}} {{? question.maxLength}} maxLength="{{=question.maxLength}} "
+                                    {{?}}></textarea>
+                            </section>
+                            {{?}}
+                        </div>
+                        {{~}} {{? it.wizletInfo.controls && it.wizletInfo.controls.length > 0}}
+                        <div class="row{{=(i/2) + 1 | 0}} ap-form__row ">
+                            <div class="ap-form__controls cl-xs-column-12 cl-md-column-12 ">
+                                {{?it.wizletInfo.controls[0]}}
+                                <div class="ap-form__save " data-saveplan data-pulsesubmitbutton>
+                                    {{=it.wizletInfo.controls[0].title}}</div>
+                                {{?}}
+
+                            </div>
+                        </div>
+                        {{?}}
+                    </div>
+                    <div class="ap-rightContent cl-xs-column-12 cl-md-column-6 cl-row ">
+                        {{? it.wizletInfo.instructions}} {{? it.wizletInfo.instructions.title}}
+                        <div class="ap-instructionTitle ">{{=it.wizletInfo.instructions.title}}
+                        </div>
+                        {{?}}{{? it.wizletInfo.instructions.text}}
+                        <div class="ap-instructionText"><span>{{=it.wizletInfo.instructions.text}}</span>
+                        </div> {{?}} {{?}}
+                    </div>
+                </article>
+
+                <article class="ap-myActionWrapper ap--hidden cl-xs-column-12 cl-row " data-my-action>
+                    {{? it.wizletInfo.actionPlanList && it.wizletInfo.actionPlanList.length > 0}} {{~ it.wizletInfo.actionPlanList :action:aindex}}
+                    <div class="ap-cardWrapper" data-card-wrapper data-id="{{=action.parentResponseId}}">
+                        <div class="ap-userDetails">
+                            <div class="ap-userDetails__topicText">{{=action.dropdown}}</div>
+                            <div class="ap-userDetails__dateText">
+                                <i class=" cl-icon cl-icon--calendar"></i>
+                                <span>{{=action.date}}</span>
+                            </div>
+                        </div>
+                        <div class="ap-userAction">
+                            <span>{{=action.shortText}}</span>
+                        </div>
+                        <div class="ap-userName ">
+                            <i class="cl-icon cl-icon--meeting "></i>
+                            <span class=" ">{{=action.Name}}</span>
+                        </div>
+                    </div>
+                    {{~}} {{??}}
+                    <div class="ap-noActionPlans cl-xs-column-12 cl-row " data-no-action>{{=it.wizletInfo.textContent.noActionText}}</div>
+                    {{?}}
+                </article>
+
+        </section>
+        </div>
+
+    </div>
+    <div class="ap-modalWrapper" data-modal-container>
+    </div>

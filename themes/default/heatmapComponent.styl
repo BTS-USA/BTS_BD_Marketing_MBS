@@ -1,0 +1,58 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+$white = #ffffff
+$lightgrey = #efefef
+$mediumgrey = #d0d0cf
+$grey = #4d4d4d
+$darkgrey = #1e1e1e
+$black = #000
+$green = #74C365
+$red = #e2725b
+$btsred = #f00a3c
+$btsmagenta = #ff41a5
+$btsnavy = #28324b
+$btsblue = #0050be
+$btsbrightblue = #00b9ff
+/*-------------------------------------------------------------------------------------------------------------------*/
+.hmc
+    &-article
+        position relative
+        overflow hidden
+    &-data
+        padding 2px
+        background-color $white
+        overflow-x auto
+        overflow-y hidden
+        -webkit-overflow-scrolling auto
+    &-table
+        overflow hidden
+        &__thead,
+        &__row
+            display table-row
+            width 100%
+        &__thead
+            background-color $lightgrey
+            text-align center
+        &__th,
+        &__td
+            display table-cell
+            vertical-align middle
+            width auto
+            padding .9rem
+            border-bottom 1px solid $lightgrey
+            position relative
+        &__th
+            max-width 15rem
+            white-space initial
+            font-size .9rem
+        &__td
+            text-align center
+            color $white
+    .color-1
+        background-color $red
+    .color-2
+        background-color $white
+        color $darkgrey
+    .color-3
+        background-color $green

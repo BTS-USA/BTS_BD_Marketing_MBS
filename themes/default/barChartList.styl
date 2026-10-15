@@ -1,0 +1,59 @@
+// import component library mixins and variables
+@import "shared/cl.styl"
+
+// Bar Chart List Component Styles
+.bclc
+    &-filters-container
+        color #fff
+        background-color #434343
+        padding 20px
+        margin 0 0 20px 0
+        overflow hidden
+    &-filter-container
+        float none
+        margin 0 0 15px 0
+        &:last-child
+            margin 0
+        @media (min-width: 768px)
+            float left
+            margin 0 70px 0 0
+    &-article
+        margin 0 0 10px 0
+    &-article-group
+        margin 0 0 10px 0
+    &-answer,
+    &-question
+        padding 25px 20px
+    &-question
+        background-color $silver
+    &-answer
+        background-color $gray60
+    &-bar-container
+        margin 0 0 10px 0
+        &:last-child
+            margin 0
+    &-bar
+        margin 0 0 5px 0
+        &:last-child
+            margin 0
+        &__inner
+            float left
+            background-color $brightSun
+            height 100%
+    &-bubble
+        left 50%
+        transform translate(-50%,0)
+    &-filter-name
+        color white
+        margin 5px 0 0 0
+        font-size 1.2*$px
+
+[dir="rtl"]
+	.bclc-filter-container
+		float right
+		margin 0 0 0 70px
+	.bclc-stats.cl-stats
+		float right
+		margin 0 0 0 5px
+	.bclc-bar__inner
+		float right

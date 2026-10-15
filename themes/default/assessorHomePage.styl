@@ -1,0 +1,27 @@
+﻿// import component library mixins and variables
+@import "shared/cl.styl"
+
+.ahp
+    max-width 1000px
+    background-color white
+    height 700px
+    margin 15px auto 0
+    *
+    	padding 0
+    &-leftPanel
+    &-rightPanel
+    	height 100%
+    	border 1px solid black
+    &-rightPanel
+    	&_top
+    		height 40%
+    		border 1px solid $tundora        		
+    	&_bottom
+    		height 60%
+    		border 1px solid $tundora
+    &-calenderView_container
+    &-searchView_container
+    	width 50%
+    	height 100%
+    	border 1px solid $tundora
+    	float left

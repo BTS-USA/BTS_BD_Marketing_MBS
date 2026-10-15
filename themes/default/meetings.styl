@@ -1,0 +1,565 @@
+@import "./shared/cl.styl"
+
+$pink = #f51d60
+
+.meetings
+	&-modal, &-modal__leaderStart, &-modal__followerJoin, &-modal__others
+		background-color rgba(0, 0, 0, 0.6)
+		.cl-modal__dialog
+			width 350px
+			box-shadow none
+		.cl-modal__content
+			padding 20px
+			text-align center
+			p:last-child
+				color green
+
+	&-modal__leaderStart, &-modal__followerJoin, &-modal__others
+		.cl-modal__header
+			background #28324b
+			color #fff
+			text-align center
+			padding 10px 5px
+			&Text
+				position relative
+				top 2px
+			.cl-icon:before
+				position relative
+				top 4px
+				color $pink
+				font-weight bold
+		.cl-modal__body
+			padding 25px 20px
+		.cl-modal__content
+			padding 0
+			.meetings-start__title
+				margin 25px 0 0 0
+		.cl-modal__footer
+			display flex
+			justify-content center
+
+	&-modal__followerJoin
+		.cl-modal__dialog
+			min-height 310px
+
+	&-modal__others
+		.cl-modal__body
+			padding 0 20px 25px 20px
+
+	&-mobileFooter
+		position fixed
+		bottom 0
+		left 0
+		height 48px
+		width 100%
+		box-shadow(0px 0px 15px #333)
+		background-color #fff
+		justify-content space-evenly
+		align-items center
+		z-index 999999
+		transition(all ease-in 0.2s)
+		display none
+		&__startButton, &__joinButton
+			background-color $pink
+			width 50%
+			height 100%
+			color #fff
+			height 100%
+			display flex
+			align-items center
+			justify-content center
+			margin 0 .5px 0 0
+		&__joinButton
+			margin 0 0 0 .5px
+
+		@media only screen and (max-width 768px)
+			display flex
+
+	&-invalid
+		&__tooltip
+			background #de1e1e
+			right 0
+			margin-top 0
+			position relative
+			z-index 5
+			max-width 100%
+			padding 0.5rem
+			font-size 0.875rem
+			line-height 1
+			color #fff
+			border-radius 0
+			display none
+
+	&-body
+		min-height 600px
+		@media only screen and (min-width 769px) and (max-width 1200px)
+			min-height 580px
+		padding 10px
+		background rgba(255, 255, 255, 0.5)
+		@media only screen and (max-width 768px)
+			min-height 0
+			max-height calc(100vh - 180px)
+			overflow-y auto
+			&::-webkit-scrollbar-track
+				-webkit-box-shadow inset 0 0 6px #d3d3d3
+				border-radius 6px
+				background-color #6d747e
+			&::-webkit-scrollbar
+				width 1px
+				background-color #fff
+			&::-webkit-scrollbar-thumb
+				border-radius 6px
+				background-color #fff
+		
+		&__leftPanel
+			float left
+			width 40%
+			@media only screen and (max-width 768px)
+				float none
+				width 100%
+		&__rightPanel
+			float left
+			width 60%
+			min-height 580px
+			position relative
+			@media only screen and (max-width 768px)
+				display none
+		&__list
+			background-color $white 
+			padding 10px
+			&:after
+				display table
+				content ""
+				clear both
+
+		&__instructions
+			margin 15px 0 0 0
+			background-color $white 
+			padding 10px
+
+	&-text
+		&__title
+			font-size 18px
+			color #000
+		&__desc
+			font-size 16px
+			color #666
+	
+	&-instructions
+		&__header
+			overflow hidden
+		&__title
+			float left
+			width 90%
+			font-size 18px
+			color #000
+		&__accordion
+			float right
+			margin 2px 0 0 0
+			cursor pointer
+
+		&__body
+			display none
+			@media only screen and (min-width 1200px)
+				max-height 432px
+				overflow auto
+			@media only screen and (min-width 769px) and (max-width 1200px)
+				max-height 410px
+				overflow auto
+			font-size 16px
+			color #666
+			li
+				list-style-position inside
+				padding 10px 5px
+
+	&-list
+		&__body
+			display none
+			@media only screen and (min-width 1200px)
+				max-height 432px
+				overflow auto
+			@media only screen and (min-width 769px) and (max-width 1200px)
+				max-height 410px
+				overflow auto
+		&__header
+			&:after
+				display table
+				content ""
+				clear both
+		&__text
+			float left
+			width 75%
+		&__icon
+			float left
+			position relative
+			&:before
+				font-size 35px
+				color #666
+				position absolute
+				top 15px
+				left 10px
+
+		&__accordion
+			float right
+			cursor pointer
+
+		&__meeting
+			border 1px solid #ccc
+			border-left 3px solid #888
+			border-right 3px solid #888
+			padding 10px
+			margin 10px 5px 10px 0
+			cursor pointer
+			&--selected
+				border-left 3px solid #ccc
+				border-right 3px solid #ccc
+			&:after
+				display table
+				content ""
+				clear both
+
+		&__noMeeting
+			font-size 14px
+			font-style italic
+			color #999
+			text-align center
+			height 432px
+			display flex
+			flex-direction column
+			justify-content center
+
+	&-meeting
+		&__details
+			overflow hidden
+		&__left
+			float left
+			width 80%
+		&__right
+			float left
+			width 20%
+			text-align right
+			position relative
+			right 11px
+		&__title
+			font-size 16px
+			font-weight normal
+			&--notClosed
+				font-weight bold
+		&__dateTime, &__code, &__status
+			font-size 14px
+			color #666
+			.cl-icon--clock
+				margin 0 0 0 15px
+		&__status
+			font-style italic
+			margin 2px 2px 0 0
+		&__time
+			margin 0 0 0 2px
+		&__code
+			font-weight bold
+			color #666
+			&--notClosed
+				color $pink
+		&__copyURL
+			text-align right
+			font-size 14px
+			color #666
+			padding 5px 9px 0 0
+			text-decoration underline
+
+	&-buttons
+		font-size 24px
+		font-weight bold
+		color #fff
+		background-color $pink
+		padding 10px 0px
+		width 300px
+		margin 5px auto
+		border-radius 30px
+		cursor pointer
+
+	&-startJoin, &-start, &-join
+		@media only screen and (min-width 769px)
+			position absolute
+			top 50%
+			left 50%
+			transform translate(-50%, -50%)
+
+	&-start, &-join
+		&__text
+			font-size 16px
+			color #000
+
+	&-leader
+		&__start
+			transform translate(0%, -65%)
+			text-align center
+
+	&-follower
+		&__join
+			transform translate(0%, 35%)
+			text-align center 
+
+	&-start, &-join
+		&__button--disabled
+			cursor default
+			opacity 0.6
+		&__back
+			background-color $pink
+			width 40px
+			padding 8px 0
+			border-radius 50%
+			color #fff
+			cursor pointer
+			float left
+			span
+				position relative
+				&:first-child
+					left 8px
+				&:last-child
+					right 4px
+
+		&__error
+			position absolute
+			width 250px
+			border-radius 5px
+			padding 10px
+			color #555
+			background #fff
+			z-index 999999999
+			display none
+			transform translate(10%, -150%)
+			border 1px solid #ccc
+			box-shadow(5px 5px 25px #999)
+			@media only screen and (max-width 768px)
+				transform translate(-30%, -100%)
+			&:before
+				position absolute
+				z-index 999
+				content ''
+				border-left 20px solid transparent
+				border-bottom 20px solid transparent
+				border-right 20px solid transparent
+				border-top 20px solid #fff
+				left -8px
+				top 64px
+				left 105px
+				@media only screen and (max-width 768px)
+					left 30px
+
+		&__password
+			@media only screen and (min-width 769px)
+				transform translate(0, -60%)
+
+		&__title
+			@media only screen and (min-width 769px)
+				transform translate(0, 0%)
+
+		&__backSubmit, &__backJoin
+			display flex
+			justify-content center
+			margin 50px 0 0 0
+
+		&__backJoin
+			margin 0
+
+		&__submit
+			float left
+			width 150px
+			background-color $pink
+			color #fff
+			padding 8px 0
+			text-align center
+			border-radius 25px
+			margin 0 0 0 15px
+			font-size 18px
+			cursor pointer
+
+		input
+			padding 10px
+			width 350px
+			box-shadow none
+			border none
+			margin 5px 0 0 0
+			@media only screen and (max-width 768px)
+				width 100%
+				border 1px solid #999
+				padding 5px
+				margin 10px 0 0 0
+		input.invalid
+			border 1px solid #dc3545
+
+		p
+			text-align center
+			font-size 16px
+			color #333
+
+	&-join
+		&__back
+			span
+				&:last-child
+					right 5px
+
+	&-errors
+		margin 30px 0
+		padding 10px
+		background-color #ea3c25
+		border 1px solid #c22a16
+		color #fff
+		display none
+		position absolute
+		width 100%
+		word-break break-word
+		@media only screen and (max-width 768px)
+			position relative
+			margin 30px 0 0 0
+
+.meeting
+	padding 10px
+	position relative
+	min-height 580px
+	@media only screen and (max-width 768px)
+		min-height 0
+
+	&-container
+		@media only screen and (min-width 769px)
+			background-color #fff
+			width 70%
+			top 50%
+			left 50%
+			transform translate(-50%, -50%)
+			position absolute
+			text-align center
+			padding 20px
+			&:before
+				content ''
+				display block;
+				width 0
+				height 0
+				position absolute
+				border-top 25px solid transparent
+				border-bottom 25px solid transparent
+				border-right 25px solid #fff
+				left -24px
+				top 40%
+
+	&-buttons
+		width 150px
+		background-color $pink
+		color #fff
+		padding 8px 0
+		text-align center
+		border-radius 25px
+		font-size 18px
+		cursor pointer
+
+		&__cont
+			display flex
+			justify-content center
+
+	&-icon
+		&:before
+			font-size 50px
+			color $pink
+
+	&-title
+		font-size 24px
+		color #333
+		font-weight bold
+
+	&-dateTime
+		font-size 16px
+		color #666
+		margin 10px 0
+		span
+			padding 0 2px
+		.cl-icon--clock
+			margin 0 0 0 20px
+
+	&-id
+		font-size 16px
+		color #666
+		padding 15px 0 5px 0
+		span:last-child
+			color $pink
+			margin 0 5px
+
+	&-leaderName
+		font-size 16px
+		color #666
+		font-weight bold
+		span:last-child
+			margin 0 5px
+
+	&-groupCount
+		margin 20px 0 0 0
+		font-size 14px
+		color #333
+		span:last-child
+			font-weight bold
+			margin 0 5px
+
+	&-footer
+		padding 35px 0 10px 0
+
+	&-buttons
+		&__back
+			background-color $pink
+			width 40px
+			padding 8px 0
+			border-radius 50%
+			color #fff
+			cursor pointer
+			float left
+			span
+				position relative
+				&:first-child
+					left 6px
+				&:last-child
+					right 9px
+
+			@media only screen and (max-width 768px)
+				display none
+
+		&:nth-child(2)
+			margin 0 0 0 5px
+		&:last-child
+			margin 0 0 0 5px
+
+		&--disabled
+			background-color #808080
+			cursor default
+
+	&-closed
+		padding 15px
+		font-size 18px
+		font-weight bold
+		color $pink
+
+	.meetings-errors
+		left 0px
+		margin 50px 0
+			
+.hide
+	display none
+.show
+	display block
+
+::-webkit-scrollbar-track
+	-webkit-box-shadow inset 0 0 6px #d3d3d3
+	border-radius 6px
+	background-color #fff
+
+::-webkit-scrollbar
+	width 5px
+	background-color #fff
+
+
+::-webkit-scrollbar-thumb
+	border-radius 6px
+	background-color #6d747e
+
+		
+    
+
+

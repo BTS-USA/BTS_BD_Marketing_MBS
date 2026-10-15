@@ -1,0 +1,45 @@
+@import "../shared/cl.styl"
+/* This is css for the layouts in the wizer core*/
+/* if you are using a layoutInevent then please let it have its own css called layout.css in the events/layout folder*/
+
+
+/*  ========================== */
+/*  Email page layout styles */
+.email
+    background-color #fff
+    .layout__header-main
+        margin-bottom 0
+    &:after
+        content ""
+        clear both
+        display block
+.eml-page
+    &-email
+        &__header
+            width 100%
+            padding 20px
+            background-color $silver
+        &__body
+            padding 25px 20px
+            font-size 1rem
+            @media (min-width: 768px) 
+                padding 30px
+    &-thumbnail
+        float left
+        margin 0 20px 0 0
+        &__image
+            display block
+            width 105px
+            border-radius 100%
+    &-meta
+        &__subject
+            margin 0 0 10px 0
+            color $tundora
+            font-size 1.6*$px
+            @media (min-width: 768px) 
+                font-size 2*$px
+        &__item
+            color $gray
+            font-size 1.4*$px   
+            &:last-child
+                margin 0

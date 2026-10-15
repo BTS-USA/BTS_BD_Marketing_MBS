@@ -1,0 +1,422 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="ideaEntry__table table">
+            <section class="ideaEntry__main table-cell cl-xs-column-12 cl-md-column-6">
+                {{? it.wizletInfo.mainSectionTitle && it.entry.isEdit}}
+                <header class="ideaEntry__header">
+                    <h1 class="ideaEntry__headline">{{=it.wizletInfo.mainSectionTitle}}</h1>
+                </header>
+                {{?}}
+                <section class="ideaEntry__form">
+                    {{##def.header:
+                        {{? field.isEdit}}
+                        <header class="ideaEntry__header-row{{? field.config.accordion}} js-ideaEntry-accordion__header{{?}}">
+                            {{? field.config.maxLength && field.isEdit}}
+                                <div class="ideaEntry__maxCharacters" data-characters="characters-{{=fieldIndex}}">{{=field.config.maxLength}}</div>
+                            {{?}}
+                            {{? field.config.title}}
+                                <label class="ideaEntry__label {{?field.config.mandatory && field.isEdit}}mandatory{{?}}">{{=field.config.title}}</label>
+                            {{?}}
+                        </header>
+                        {{??}}
+                            {{? field.config.title}}
+                                <label class="ideaEntry__label {{?field.config.mandatory && field.isEdit}}mandatory{{?}}">{{=field.config.title}}</label>
+                            {{?}}
+                        {{?}}
+                    #}}
+
+                    {{~it.entry.fieldList :field:fieldIndex}}
+
+                    {{? field.config.questionId === it.wizletInfo.entryQuestionId && !it.entry.isEdit}}
+                    <header class="ideaEntry__header">
+                        <h1 class="ideaEntry__headline">
+                            {{!field.displayText}}
+                            <span class="ideaEntry__headline-author">ID #{{!field.responseId}} by {{!it.entry.authorName}}</span>
+                        </h1>
+                    </header>
+
+                    {{?? !field.isEdit && field.config.initial}}
+                        {{ /* Note: as field is auto initialized and is not editable, do not show its (obvious) value */ }}
+
+                    {{?? field.config.type == "category"}}
+                    <section class="ideaEntry__row field-{{!field.config.question}}{{?field.config.accordion}} ideaEntry-accordion js-ideaEntry-accordion{{?}}" data-questionid="{{=field.config.questionId}}">
+                        {{#def.header}}
+                        {{? field.isEdit}}
+                        <div class="ideaEntry-field__body{{?field.config.accordion}} ideaEntry-accordion__content js-ideaEntry-accordion__content{{?}}">
+                            <select class="ideaEntry__select" data-category>
+                                <option value="">{{=field.config.defaultOptionLabel}}</option>
+                                {{~field.config.Options :option:optionIndex}}
+                                <option value="{{=option.KeypadNumber}}">{{=option.ResponseText}}</option>
+                                {{~}}
+                            </select>
+                        </div>
+                        {{??}}
+                            <div>{{!field.displayText}}</div>
+                        {{?}}
+                    </section>
+
+                    {{?? field.config.type == "textArea"}}
+                    <section class="ideaEntry__row field-{{!field.config.question}} ideaEntry__clear{{?field.config.accordion}} ideaEntry-accordion js-ideaEntry-accordion{{?}}" data-questionid="{{=field.config.questionId}}">
+                        {{#def.header}}
+                        {{? field.isEdit}}
+                        <div class="ideaEntry-field__body{{?field.config.accordion}} ideaEntry-accordion__content js-ideaEntry-accordion__content{{?}}">
+                            <textarea class="ideaEntry__textarea" data-characters="characters-{{=fieldIndex}}" {{? field.config.maxLength}} maxlength="{{=field.config.maxLength}}" {{?}}></textarea>
+                        </div>
+                        {{??}}
+                            <div>{{!field.displayText}}</div>
+                        {{?}}
+                    </section>
+
+                    {{?? field.config.type == "date"}}
+                    <section class="ideaEntry__row field-{{!field.config.question}} table-cell cl-xs-column-6 cl-noLeft{{?field.config.accordion}} ideaEntry-accordion js-ideaEntry-accordion{{?}}" data-questionid="{{=field.config.questionId}}">
+                        {{? field.config.title}}
+                        <header class="ideaEntry__header-row{{? field.config.accordion}} js-ideaEntry-accordion__header{{?}}">
+                            <label class="ideaEntry__label {{?field.config.mandatory && field.isEdit}}mandatory{{?}}">{{=field.config.title}}</label>
+                        </header>
+                        {{?}}
+                        {{? field.isEdit}}
+                        <div class="ideaEntry-field__body{{?field.config.accordion}} ideaEntry-accordion__content js-ideaEntry-accordion__content{{?}}">
+                            <input type="text" class="ideaEntry__date" data-type="date" readonly {{? field.config.placeholder}}placeholder="{{=field.config.placeholder}}" {{?}}>
+                        </div>
+                        {{??}}
+                            <div>{{!field.displayText}}</div>
+                        {{?}}
+                    </section>
+
+                    {{?? field.config.type == "progress"}}
+                    <section class="ideaEntry__row field-{{!field.config.question}} table-cell cl-xs-column-6 cl-noRight{{?field.config.accordion}} ideaEntry-accordion js-ideaEntry-accordion{{?}}" data-questionid="{{=field.config.questionId}}">
+                        {{? field.config.title}}
+                        <header class="ideaEntry__header-row{{? field.config.accordion}} js-ideaEntry-accordion__header{{?}}">
+                            <label class="ideaEntry__label {{?field.config.mandatory && field.isEdit}}mandatory{{?}}">{{=field.config.title}}</label>
+                        {{?}}
+                        </header>
+                        {{? field.isEdit}}
+                        <div class="ideaEntry-field__body{{?field.config.accordion}} ideaEntry-accordion__content js-ideaEntry-accordion__content{{?}}">
+                            <div class="ideaEntry__dropdown">
+                                <div class="ideaEntry__dropdown-toggle" id="ideaEntry__progress" data-toggle="dropdown" data-defaultprogress="{{=field.config.defaultOptionLabel}}">
+                                    {{=field.config.defaultOptionLabel}}
+                                    <span class="ideaEntry__dropdown-image"></span>
+                                </div>
+                                <ul class="ideaEntry__dropdownList" role="dropdown">
+                                    {{~field.config.Options :option:index}}
+                                    <li class="ideaEntry__dropdownItem ideaEntry__dropdownItem-{{=option.KeypadNumber}}" tabindex="-1" value="{{=option.KeypadNumber}}">{{=option.ResponseText}}</li>
+                                    {{~}}
+                                </ul>
+                            </div>
+                            <input type="text" name="ideaEntry__progressField" value="Yahhooo" id="ideaEntry__progressField" data-questionid="{{=field.config.questionId}}" class="ideaEntry__row field-{{!field.config.question}}" hidden />
+                        </div>
+                        {{??}}
+                            <div>{{!field.displayText}}</div>
+                        {{?}}
+                    </section>
+
+                    {{?? field.config.type == "textField"}}
+                    <section class="ideaEntry__row field-{{!field.config.question}}{{?field.config.accordion}} ideaEntry-accordion js-ideaEntry-accordion{{?}}" data-questionid="{{=field.config.questionId}}">
+                        {{#def.header}}
+                        {{? field.isEdit}}
+                        <div class="ideaEntry-field__body{{?field.config.accordion}} ideaEntry-accordion__content js-ideaEntry-accordion__content{{?}}">
+                            <input type="text" class="ideaEntry__input" data-pattern="{{?field.config.pattern !== undefined}}{{=field.config.pattern}}{{?}}" data-characters="characters-{{=fieldIndex}}" {{? field.config.maxLength}} maxlength="{{=field.config.maxLength}}" {{?}}>
+                        </div>
+                        {{??}}
+                            <div>{{!field.displayText}}</div>
+                        {{?}}
+                    </section>
+
+                    {{?? field.config.media}}
+                    <section class="ideaEntry__row field-{{!field.config.question}}" data-questionid="{{=field.config.questionId}}">
+                        {{#def.video}}
+                    </section>
+
+                    {{?}}
+
+                    {{? field.config.questionId === it.wizletInfo.entryQuestionId && it.wizletInfo.private && it.entry.isEdit}}
+                    <section class="ideaEntry__row field-{{!field.config.question}}{{?field.config.accordion}} ideaEntry-accordion js-ideaEntry-accordion{{?}}" data-questionid="{{=field.config.questionId}}">
+                        {{? it.wizletInfo.private.title}}
+                        <header class="ideaEntry__header-row{{? field.config.accordion}} js-ideaEntry-accordion__header{{?}}">
+                            <label class="ideaEntry__label {{?field.config.mandatory && field.isEdit}}mandatory{{?}}">{{=it.wizletInfo.private.title}}</label>
+                        </header>
+                        {{?}}
+                        <div class="ideaEntry-field__body{{?field.config.accordion}} ideaEntry-accordion__content js-ideaEntry-accordion__content{{?}}">
+                            <select class="ideaEntry__select ideaEntry__isDraft" data-draft>
+                                <option value="false" {{? !it.entry.isdraft}} selected{{?}}>{{=it.wizletInfo.private.no}}</option>
+                                <option value="true" {{? it.entry.isdraft}} selected{{?}}>{{=it.wizletInfo.private.yes}}</option>
+                            </select>
+                        </div>
+                    </section>
+                    {{?}}
+
+                    {{~}}
+                    {{?it.wizletInfo.actions.assign && it.isForeman}}
+                    <section class="ideaEntry__row ideaEntry__assignDialog" data-assignDialog>
+                        <select class="ideaEntry__select" data-assignee>
+                            <option value="">{{=it.wizletInfo.assign.label}}</option>
+                            {{~it.trackParticipants :participant:participantIndex}}
+                                {{? participant.Id !== it.entry.authorId }}
+                                    <option value="{{=participant.Id}}">{{=participant.Name}}</option>
+                                {{?}}
+                            {{~}}
+                        </select>
+                        <div class="ideaEntry__controls">
+                            <div class="ideaEntry__control">
+                                <div class="ideaEntry__button-hideAssign" data-hideAssignDialog>
+                                    {{=it.wizletInfo.assign.cancel}}
+                                </div>
+                            </div>
+                            <div class="ideaEntry__control">
+                                <div class="ideaEntry__button-assign" data-assignAction>
+                                    {{=it.wizletInfo.assign.assign}}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {{?}}
+                </section>
+
+                <footer class="ideaEntry__footer">
+                    <div class="ideaEntry__controls">
+                        
+                        {{?it.entry.isEdit}}
+                            {{?it.wizletInfo.actions.save}}
+                                <div class="ideaEntry__control">
+                                    <div class="ideaEntry__button-save" data-saveaction data-pulsesubmitbutton>
+                                        {{=it.wizletInfo.actions.save}}
+                                    </div>
+                                </div>
+                            {{?}}
+                            {{?it.wizletInfo.actions.clear}}
+                                <div class="ideaEntry__control">
+                                    <div class="ideaEntry__button-clear" data-clearaction>
+                                        {{=it.wizletInfo.actions.clear}}
+                                    </div>
+                                </div>
+                            {{?}}
+                            {{?it.wizletInfo.actions.add}}
+                                <div class="ideaEntry__control">
+                                    <div class="ideaEntry__button-add" data-addaction>
+                                        {{=it.wizletInfo.actions.add}}
+                                    </div>
+                                </div>
+                            {{?}}
+                            {{?it.wizletInfo.actions.delete}}
+                                <div class="ideaEntry__control">
+                                    <div class="ideaEntry__button-delete delete" data-type="delete" data-deleteEntryAction>
+                                        {{=it.wizletInfo.actions.delete}}
+                                    </div>
+                                    <div class="ideaEntry__deleteConfirmation">
+                                        <div class="ideaEntry__control">
+                                            <div data-type="yes" class="ideaEntry__button-delete ideaEntry__button-confirmDelete" data-deleteEntryAction>{{=it.wizletInfo.confirm.yes || 'Yes'}}</div>
+                                        </div>
+                                        <div class="ideaEntry__control">
+                                            <div data-type="no" class="ideaEntry__button-delete ideaEntry__button-confirmDelete" data-deleteEntryAction>{{=it.wizletInfo.confirm.no || 'No'}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{?}}
+                        {{??}}
+                            {{?it.wizletInfo.actions.next}}
+                            <div class="ideaEntry__control">
+                                <div class="ideaEntry__button-next" data-nextAction>
+                                    {{=it.wizletInfo.actions.next}}
+                                </div>
+                            </div>
+                            {{?}}
+                        {{?}}
+                        {{?it.wizletInfo.actions.assign && it.isForeman}}
+                        <div class="ideaEntry__control">
+                            <div class="ideaEntry__button-showAssign" data-showassigndialog>
+                                {{=it.wizletInfo.actions.assign}}
+                            </div>
+                        </div>
+                        {{?}}
+                        {{?it.wizletInfo.isEmbedded}}
+                        <div class="ideaEntry__control">
+                            <div class="ideaEntry__button-close" data-closeaction>
+                                {{=it.wizletInfo.actions.close}}
+                            </div>
+                        </div>
+                        {{?}}
+                        
+                    </div>
+                    <div class="ideaEntry__savedMessage"></div>
+                </footer>
+            </section>
+                
+                
+            <section class="ideaEntry__right table-cell cl-xs-column-12 cl-md-column-6">
+            {{?it.wizletInfo.rankings}}
+                {{?it.entry.isMine && it.ranks[0].myRank == 0}}
+                    {{?it.wizletInfo.instructions.title || it.wizletInfo.instructions.text}}
+                    <article class="ideaEntry__instructions">
+                        {{?it.wizletInfo.instructions.title}}
+                        <header class="ideaEntry__header-instructios">
+                            <h2 class="ideaEntry__headline-h2">{{=it.wizletInfo.instructions.title}}</h2>
+                        </header>
+                        {{?}}
+                        {{?it.wizletInfo.instructions.text}}
+                            <div class="ideaEntry__instructiosCopy">{{=it.wizletInfo.instructions.text}}</div>
+                        {{?}}  
+                    </article>
+                    {{?}}
+                {{?? it.ranks[0].myRank == 0}}
+                    {{?it.wizletInfo.instructions.feedBackTitle || it.wizletInfo.instructions.feedBackText}}
+                    <article class="ideaEntry__instructions">
+                        {{?it.wizletInfo.instructions.feedBackTitle}}
+                        <header class="ideaEntry__header-instructios">
+                            <h2 class="ideaEntry__headline-h2">{{=it.wizletInfo.instructions.feedBackTitle}}</h2>
+                        </header>
+                        {{?}}
+                        {{?it.wizletInfo.instructions.feedBackText}}   
+                            <div class="ideaEntry__instructiosCopy">{{=it.wizletInfo.instructions.feedBackText}}</div>
+                        {{?}}
+                    </article>
+                    {{?}}
+                {{??}}
+                    {{?it.wizletInfo.instructions.ratingsTitle}}
+                    <article class="ideaEntry__instructions">
+                        <header class="ideaEntry__header-instructios">
+                            <h2 class="ideaEntry__headline-h2">{{=it.wizletInfo.instructions.ratingsTitle}}</h2>
+                        </header>
+                    </article>
+                    {{?}}
+                {{?}}
+            {{??}}
+                {{?it.entry.isMine}}
+                <article class="ideaEntry__instructions">
+                    <header class="ideaEntry__header-instructios">
+                        <h2 class="ideaEntry__headline-h2">{{=it.wizletInfo.instructions.title}}</h2>
+                    </header>
+                        <div class="ideaEntry__instructiosCopy">{{=it.wizletInfo.instructions.text}}</div>
+                </article>
+                {{?}}
+            {{?}}
+                {{?it.wizletInfo.rankings}}
+                {{?it.entry.averageRanks}}
+                    {{?it.ranks}}
+                        <section class="ideaEntry__ranks">
+                            {{~it.ranks :rank:k}}
+                            <article class="ideaEntry__rank">
+                                <label class="ideaEntry__label-white">{{=rank.label}}</label>
+                                {{? !it.entry.isMine && rank.myRank == 0}}
+                                <input type="range" min="{{=rank.minValue}}" max="{{=rank.maxValue}}" value="{{=rank.myRank}}" data-rangeitem="{{=rank.dimension}}" class="ideaEntry__range"/>     
+                                {{?? it.ranks.length > 0 }}
+                                <div class="ideaEntry__bar">
+                                    <div class="ideaEntry__bar-bubble" style="left:{{=it.entry.averageRanks[k].toFixed(2) * (100 / rank.maxValue)}}%">{{=it.entry.averageRanks[k].toFixed(2)}}</div>
+                                    <div class="ideaEntry__bar-container">
+                                        <div class="ideaEntry__bar-filled" style="width:{{=it.entry.averageRanks[k].toFixed(2) * (100 / rank.maxValue)}}%"></div>
+                                        </div>
+                                </div>
+                                {{?}}
+                                <footer class="ideaEntry__rankFooter cl-row">
+                                    <span class="ideaEntry__minValue">{{=rank.minLabel}}</span>
+                                    <span class="ideaEntry__maxValue">{{=rank.maxLabel}}</span>
+                                </footer>
+                            </article>
+                            {{~}}
+                        </section>
+                    {{?}}
+                {{?}}
+                {{?}}
+                {{?it.wizletInfo.comments}}
+                <section class="ideaEntry__comments">
+                    <section class="ideaEntry__leaveComment">
+                        {{?!it.entry.isMine}} 
+                        <label class="ideaEntry__label-white">{{=it.wizletInfo.comments.title}}</label>
+                        <textarea class="ideaEntry__textarea-comment"></textarea>
+                        <div class="ideaEntry__controls">
+                            <div class="ideaEntry__control">
+                                <div class="ideaEntry__button-addComment">{{=it.wizletInfo.comments.button}}</div>
+                            </div>
+                        </div>
+                        {{?}}
+                    </section>
+                    
+                    <section class="ideaEntry__commentsList{{? it.entry.comments && !it.entry.comments.length}} ideaEntry__hiddenElement{{?}}">
+                        {{? it.entry.comments}}
+                        <header class="ideaEntry__header-instructios">
+                            <h2 class="ideaEntry__headline-h2">Comments to idea</h2>
+                        </header>
+                        {{?}}
+                        {{~it.entry.comments :comment:index}}
+                        <article class="ideaEntry__comment" id="{{=comment.id}}comment">
+                            <p class="ideaEntry__commentParagraph">{{=comment.text}}</p>
+                            <footer class="ideaEntry__commentFooter">
+                                <span class="ideaEntry__commentAuthor">{{=comment.author}}</span>
+                                {{? comment.isMine && it.wizletInfo.comments.delete }}
+                                <div class="ideaEntry__control">
+                                    <div class="ideaEntry__button-delete delete" data-type="delete" data-deleteCommentAction>
+                                        {{=it.wizletInfo.comments.delete}}
+                                    </div>
+                                    <div class="ideaEntry__deleteConfirmation">
+                                        <div class="ideaEntry__control">
+                                            <div data-type="yes" class="ideaEntry__button-delete ideaEntry__button-confirmDelete" data-deleteCommentAction data-id="{{=comment.id}}">{{=it.wizletInfo.confirm.yes || 'Yes'}}</div>
+                                        </div>
+                                        <div class="ideaEntry__control">
+                                            <div data-type="no" class="ideaEntry__button-delete ideaEntry__button-confirmDelete" data-deleteCommentAction>{{=it.wizletInfo.confirm.no || 'No'}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{?}}
+                            </footer>
+                        </article>
+                        {{~}}
+                    </section>
+                </section>
+                {{?}}
+                {{?it.wizletInfo.isEmbedded}}
+                    <div class="ideaEntry__close" data-closeAction>
+                        <div class="ideaEntry__close-button"></div>
+                    </div>
+                {{?}}
+            </section>
+        </section>
+    </div>
+</div>
+{{##def.video:
+
+    
+
+<div class="ideaEntry_mediaControl">
+    {{?field.config.media.url != ""}}
+        {{?field.config.media.mimeType && field.config.media.mimeType.substr(0,5) == "image"}}
+            <img class="ideaEntry__thumbnail" src="{{=field.config.media.url}}" />
+        {{??}}
+            <div class="ideaEntry__media">
+                <div class="ideaEntry__videoplayer" id="videoPlayer-{{=field.config.media.Id}}" data-media="{{=field.config.media.url}}" data-mediakey="{{=field.config.media.key}}" {{?field.config.media.disableAutoPlay}}data-disableautoplay{{?}}>
+                </div>
+            </div>
+        {{?}}
+    {{??}}
+       <img class="ideaEntry__thumbnail" src="{{=field.config.media.missingMediaUrl || '/Wizer/content/novideo.png' }}" />
+    {{?}}
+    {{?field.isEdit}}
+        <section class="ideaEntry__row field-{{!field.config.question}}{{?field.config.accordion}} ideaEntry-accordion js-ideaEntry-accordion{{?}}" data-questionid="{{=field.config.questionId}}">
+        {{?field.config.media.url == ""}}
+            <header class="ideaEntry__header-row{{? field.config.accordion}} js-ideaEntry-accordion__header{{?}}">
+                <label class="ideaEntry__label {{?field.config.mandatory && field.isEdit}}mandatory{{?}}">{{=field.config.media.actions.add}}</label>
+            </header>
+            <div class="ideaEntry-field__body{{?field.config.accordion}} ideaEntry-accordion__content js-ideaEntry-accordion__content{{?}}">
+                <div class="ideaEntry__control">
+                    <div class="ideaEntry__button-addMedia" data-addMediaAction data-questionid="{{=field.config.questionId}}" data-participantid="{{=field.config.media.participantId}}" data-mimetype="{{=field.config.media.mimeType}}">
+                        {{=field.config.media.actions.add}}
+                    </div>
+                </div>
+            </div>
+        {{??}}
+            <div class="ideaEntry__control">
+                <div class="ideaEntry__button-delete delete" data-type="delete" data-deleteVideoAction>
+                    {{=field.config.media.actions.delete}}
+                </div>
+                <div class="ideaEntry__deleteConfirmation">
+                    <div class="ideaEntry__control">
+                        <div data-type="yes" class="ideaEntry__button-delete ideaEntry__button-confirmDelete" data-deleteVideoAction data-questionid="{{=field.config.questionId}}" data-responseid="{{=field.config.media.Id}}">{{=it.wizletInfo.confirm.yes || 'Yes'}}</div>
+                    </div>
+                    <div class="ideaEntry__control">
+                        <div data-type="no" class="ideaEntry__button-delete ideaEntry__button-confirmDelete" data-deleteVideoAction>{{=it.wizletInfo.confirm.no || 'No'}}</div>
+                    </div>
+                </div>
+            </div>
+        {{?}}
+        </section>
+    {{?}}
+</div>
+#}}

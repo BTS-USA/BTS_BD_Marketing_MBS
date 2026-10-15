@@ -1,0 +1,19 @@
+﻿{{?it.participantArray.length > 0}}
+<div class="tssc-participantList__pendingListLabel">
+    <span>{{=it.participantArray.length}} {{=it.wizletInfo.content.pendingParticipantText}}</span>
+</div>
+{{?}}
+{{?it.participantArray.length <= it.pendingParticipantListNumber && it.participantArray.length > 0}}
+<p class="tssc-participantList__header">{{=it.wizletInfo.content.pendingParticipantListText}}</p>
+<div class="tssc-participantList__container" data-tssc-pending-participants-list>
+    {{~it.participantArray :participant:index}}
+    <p class="tssc-participant" data-tsscparticipantid="{{=participant.id}}">{{=participant.name}}</p>
+    {{~}}
+</div>
+{{??}}
+{{?it.participantArray.length == 0}}
+<div class="tssc-participantList__noPendingList">
+    <span>{{=it.wizletInfo.content.noPendingParticipantText}}</span>
+</div>
+{{?}}
+{{?}}

@@ -1,0 +1,476 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+.im
+    &-table
+        // table cells and rows
+        &__headRow
+            text-align center
+            background-color transparent
+            display table-row
+            &--count
+                &:before
+                    height 0
+        &__result-row
+            &:before
+                content ""
+        &__row
+            background-color $mercury
+            position relative
+            &--count:before
+                display inline-block
+                text-align center
+                color #fff
+                padding 5px
+                width 32px
+                height 32px
+                background-color $cerulean
+                -webkit-border-radius 50%
+                -moz-border-radius 50%
+                border-radius 50%
+                margin 10px 0
+                position relative
+                left 5px
+            &--count-1:before
+                content "1"
+            &--count-2:before
+                content "2"
+            &--count-3:before
+                content "3"
+            &--count-4:before
+                content "4"
+            &--count-5:before
+                content "5"
+            &--count-6:before
+                content "6"
+            &--count-7:before
+                content "7"
+            &--count-8:before
+                content "8"
+            &--count-9:before
+                content "9"
+            &--count-10:before
+                content "10"
+            &--count-11:before
+                content "11"
+            &--count-12:before
+                content "12"
+            &--count-13:before
+                content "13"
+            &--count-14:before
+                content "14"
+            &--count-15:before
+                content "15"
+            &--count-16:before
+                content "16"
+            &--count-17:before
+                content "17"
+            &--count-18:before
+                content "18"
+            &--count-19:before
+                content "19"
+            &--count-20:before
+                content "20"
+            &--count-21:before
+                content "21"
+            &--count-22:before
+                content "22"
+            &--count-23:before
+                content "23"
+            &--count-24:before
+                content "24"
+        &__headerCell
+            background-color $mercury
+            vertical-align top
+            min-width 140px
+
+        &__expandNotes
+            color $deepCerulean
+            text-align left
+            font-size 1.4*$px 
+            &Text
+                cursor pointer
+        &__expandBehaviours
+            color $deepCerulean
+            text-align left
+            font-size 1.4*$px
+            padding 0 0 0 10px
+        &__expandBehavioursText
+                cursor pointer
+                    
+        &__dataCell
+            border-color #f0f0f0
+            border-width 2px 1px
+            border-style solid
+            padding 5px
+            background-color $deepCerulean
+            border-collapse collapse
+        &__chatCell
+            min-width 150px
+        &__resultCell
+            background-color $cerulean
+            border-color #f0f0f0
+            border-width 2px 1px
+            border-style solid
+            min-width 90px
+        &__overallCell
+            background-color $cerulean
+            border-color #f0f0f0
+            border-width 2px 2px 2px 1px
+            border-style solid 
+            min-width 90px
+            text-align center
+
+        &__dataCell, &__resultCell, &__overallCell
+            vertical-align middle
+        &__labelCell
+            padding 10px
+            min-width 260px
+            vertical-align middle
+            position relative
+        &__behaviourTitleCell
+            min-width 150px
+        &__behaviourTitle
+            font-size 1.25*$px
+            text-indent -15px
+            padding-left 15px
+        &__behaviour
+            &-row
+                &:before
+                    display inline-block
+                    text-align center
+                    color #fff
+                    padding 3px
+                    width 28px
+                    height 28px
+                    background-color $cerulean
+                    -webkit-border-radius 50%
+                    -moz-border-radius 50%
+                    border-radius 50%
+                    position relative
+                    margin 5px
+                    top 0
+                    left 5px
+
+                &--hide
+                    display none
+                .im-table__dataCell
+                    background-color #f0f0f0
+                    padding 0
+                    .im-table__input
+                        color $cerulean
+        &__expandBehavioursText, &__expandNotesText
+            font-weight 600
+            font-size 1*$px
+            float left
+            display block
+        &__expandNotesText
+            margin 0 0 0 5px
+            padding 0 0 0 5px
+            border-left 1px solid $silver
+        &__comment-row
+            &:before
+                content ""
+            &--hide
+                display none
+            .im-table__dataCell
+                background-color $cerulean
+                padding 0
+        &__comment-holder
+            position relative
+            color #fff
+            width 100%
+            height 69px
+            font-size 1.2*$px
+            padding 5px
+        &__comment-text
+            width 82px
+            height 45px
+            overflow hidden
+            text-overflow ellipsis
+        &__more-icon
+            height 20px
+            width 20px
+            text-align center
+            cursor pointer
+            font-family "clIcons"
+            padding 3px 0 0 0
+            transform translate(50%, 0)
+            margin 0 auto
+            display block
+            &:after
+                display block
+                content "\f11d"
+
+        // table content holders
+        &__titleText
+            padding 10px
+            display inline-block
+            font-size 1.4*$px
+            font-weight 400
+            color $deepCerulean
+        &__label
+            margin 0 0 0 5px
+            font-weight 600
+            color $deepCerulean
+            width calc(100% - 80px)
+            line-height 1.2em 
+        &__subLabel
+            margin 0 0 0 5px
+            font-size 1.4*$px
+            width 100%
+        &__label, &__subLabel
+            display inline-block
+        &__input
+            padding 0 5px
+            border 0
+            background-color transparent
+            color white
+            text-align center
+            width 100% 
+        &__selectBox
+            overflow hidden
+        &__select
+            min-width 100px
+            background-color transparent
+            border 0
+            text-align center
+            background #fff url("../../shared/media/img/downDropBlue.png") no-repeat right
+            background-size 27px 27px
+            background-position calc( 100% - 40px)
+            -webkit-appearance none
+            -moz-appearance none
+            appearance none
+            -ms-appearance none
+            -o-appearance none
+            width calc(100% + 40px)
+            &::-ms-expand 
+                display none
+        &__option
+            color $codGray
+        &__chat
+            position absolute
+            width 22px
+            height 22px
+            display block
+            float right
+            margin 0 0 0 10px
+            right 10px
+            top 50%
+            transform translate(0, -50%)
+            &:before
+                content ''
+                display inline-block
+                margin 0
+                font-family "clIcons"
+                display inline-block
+                cursor pointer
+                width 22px
+                height 22px
+                background url('media/img/chatGray.svg') no-repeat
+            &:after
+                content ''
+                opacity 0
+                transition(opacity 1s)
+            &--expanded
+                &:after
+                    content ''
+                    display inline-block
+                    font-family "clIcons"
+                    display inline-block
+                    cursor pointer
+                    float right
+                    width 22px
+                    height 22px
+                    background url('media/img/chatBlue.svg') no-repeat 
+                    position absolute
+                    top 50%
+                    left 50%
+                    opacity 1
+                    transition(opacity 1s)
+                    transform translate(-50%,-50%)
+                
+        &__behaviours
+            position absolute
+            width 22px
+            height 22px
+            display block
+            float right
+            margin 0 0 0 10px
+            right 50px
+            top 50%
+            transform translate(0, -50%)
+            &:before
+                content ''
+                display inline-block
+                margin 0
+                font-family "clIcons"
+                display inline-block
+                cursor pointer
+                width 22px
+                height 22px
+                background url('media/img/behaviorGray.svg') no-repeat
+                position absolute
+                top 50%
+                left 50%
+                transform translate(-50%,-50%)
+            &:after
+                content ''
+                opacity 0
+                transition(opacity 1s)
+            &--expanded
+                &:after
+                    content ''
+                    display inline-block
+                    font-family "clIcons"
+                    display inline-block
+                    cursor pointer
+                    float right
+                    width 22px
+                    height 22px
+                    background url('media/img/behaviorBlue.svg') no-repeat
+                    position absolute
+                    top 50%
+                    left 50%
+                    opacity 1
+                    transition(opacity 1s)
+                    transform translate(-50%,-50%)
+        &__overallText
+            vertical-align top
+            font-size 2.2*$px
+            line-height 1.5em
+            padding 10px 3px
+            color $deepCerulean
+    &-comment__popover
+        max-height 400px
+        overflow-y auto
+
+    &-reopen
+        color $cerulean
+        &__hide
+            opacity 0
+            .im-reopen__text
+                cursor default    
+        &__text
+            cursor pointer
+            font-size 1.4*$px
+            font-weight 700
+            &:after
+                font-family "clIcons"
+                display inline-block
+                content "\f108"
+                font-size 1.6*$px
+                color $cerulean
+                margin 0 0 0 3px
+    &__scroll-row
+        position relative
+        width 100%
+    &__scroll-notice
+        max-width calc(100% - 60px)
+        position absolute
+        right 10px
+        top calc(100% - 80px)
+        padding 10px 30px 10px 10px
+        border 1px solid #ccc
+        color #808080
+        transform translate(0, -50%)
+        font-size 1.2*$px
+        opacity 1
+        transition(all 0.25s ease-in, background 0.1)
+        pointer-events none
+        position absolute
+        z-index 5
+        background rgba(255,255,255,0.9) url("../../Shared/media/img/rightArrowGrey.svg") no-repeat calc(100% - 10px) 10px
+        background-size 10px
+        &--fadeout 
+            z-index -1
+            padding 0
+            opacity 0
+            transition(all 0.25s ease-in, background 1)
+            background transparent none
+    // Old styles for DropDown renderer
+    .singleSelectlistDropdown-holder
+    
+        .dropdown
+            width 100%
+            border 1px solid #ccc
+            display none
+            position absolute;
+            box-sizing border-box
+            position absolute
+            z-index 10
+            top calc(100% + 10px)
+            min-width 150px
+            max-width 300px
+    
+        label 
+            color #333333
+    
+        label:nth-child(odd) 
+            background-color #D7D7D7
+    
+        label:nth-child(even) 
+            background-color #E4E4E4
+    
+        .checkbox 
+            display block
+            padding 10px 
+            z-index 9
+    
+        .optionText 
+            padding 0 9px
+        
+        .multi-check 
+            background-color deepCerulean
+            color white
+            position relative
+            &__disabled
+                background-color #EEEEEE
+                color #B3A0A0
+
+        a 
+            color black
+    
+        a:visited 
+            color black
+    
+        .rootNode 
+            display inline-block
+            padding 0
+            width 190px
+            cursor pointer
+            box-sizing border-box
+            position relative
+    
+        .dropPlaceholder 
+            padding 10px
+
+        .arrow-down
+            width  14px
+            height 8px
+            display inline
+            margin 0 8px 0 0
+            position absolute
+            top 50%
+            right -10px
+            transform translate(-50%,-50%)
+            background transparent url("media/img/dropdown.svg") no-repeat 0 0
+            float right
+    
+        .open .arrow-down 
+            height 14px
+            transform translate(-50%,-50%) rotate(180deg)
+            float right
+            background-position 0 2px
+    
+        .dropdown .checkall
+            display block
+            margin 0 0 5px 0
+            padding 0 0 5px 0 
+            border-bottom 1px solid #ccc
+            cursor pointer
+    
+        .dropdown .selected 
+            background-color rgb(113, 113, 113) !important
+            color white
+    

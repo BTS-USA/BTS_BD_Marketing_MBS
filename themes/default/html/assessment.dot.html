@@ -1,0 +1,46 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="ass cl-component">
+
+            {{? it.header}}
+            <header class="ass-header--main cl-header--main">
+                {{? it.header.title}}
+                <h1 class="ass-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="ass-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+            <div class="ass-container cl-container">
+                <div class="cl-xs-column-12 cl__row">
+                    <div class="ass-content cl-content">
+                       {{?it.participants && it.participants.length != 0}}
+                        <div class="dropdown" data-dropdown>
+                            <a class="btn-default dropdown-toggle" type="button" id="dropdownParticipants" data-toggle="dropdown">
+                                <input class="particpantName" data-participantname placeholder="{{=it.selectText}}" ></input>
+                                <span class="caret" data-caret></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownParticipants">
+                                {{~it.participants :participant:index}}
+                                {{?participant.IsAdmin==false}}
+                                <li role="presentation" data-participantli data-filter="{{=participant.Name.toLowerCase()}}">>
+                                    <p data-pid="{{=participant.Id}}" data-email="{{=participant.Email}}" class="particpantSelection">{{=participant.Name}}</p>
+                                </li>
+                                {{?}}
+                                {{~}}
+                            </ul>
+                        </div>
+                        {{??}}
+                            {{=it.not_found ? it.not_found : 'No Participations Found'}}
+                        {{?}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

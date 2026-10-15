@@ -1,0 +1,33 @@
+/* This is css for the layouts in the wizer core*/
+/* if you are using a layoutInevent then please let it have its own css called layout.css in the events/layout folder*/
+
+/*  ========================== */
+/*  Double Brainstorm page layout styles */
+.sstr-layout
+    &__container
+        width 100%
+        background #fff
+        &::after
+            content ""
+            display block
+            clear both
+
+    &-instructions
+        margin-bottom 10px
+
+        &__instructions
+            background-color #4d4d4d
+            height 40px
+            color #fff
+
+            &-text
+                line-height 40px
+                margin-left 20px
+            
+    &-singleSelect-container
+        padding 0 0 0 0
+        @media screen and (max-width: 767px)
+            padding 10px 0 0 0
+
+    &-tableRow-container
+        padding 0 0 0 0

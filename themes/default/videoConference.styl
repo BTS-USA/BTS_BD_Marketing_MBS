@@ -1,0 +1,689 @@
+﻿// import component library mixins and variables
+@import "shared/cl.styl"
+
+.wizletVideoConference
+    height 100%
+    .mainContentWrapper
+    .mainContent
+    .cc-videobox
+    .cc-videobox__screen
+        height 100%
+.wizletVideoConference
+    .mainContent
+        @media (max-width 1024px)
+            overflow-y auto
+    
+
+.cc
+    &-videobox
+        .OT_widget-container
+            position relative
+            padding-top 0
+            padding-bottom 80%
+            height 0 !important
+        .OT_subscriber
+            .OT_bar
+                background rgba(0,0,0,0.1)
+        &__screen
+            position relative
+            padding 10px
+        &__wrapper
+            width 100%
+            padding 5px
+            padding-bottom 5%
+            position relative
+        &__subscriber
+            width 100%;
+            min-width 180px;
+            z-index 10;
+            border-radius 0
+            display -webkit-flex
+            display flex
+            -webkit-justify-content center
+            justify-content center
+            flex-wrap wrap
+            &-wrapper
+                min-height 100px
+            .OT_subscriber
+                min-width 180px
+                margin 2px
+                border 1px solid #000
+                width 35%
+        &__publisher
+            width 20%
+            min-width 100px
+            z-index 100
+            position absolute
+            bottom 0
+            right 0
+        &__buttons
+            width 100%
+            z-index 500
+            text-align center
+            border-top 1px solid $silver
+            background-color $mercury
+            margin 6px
+        &__message
+            &--end
+                padding 20px 0
+                text-align center
+                color gray
+                &::before
+                    font-family "clIcons"
+                    content "\f129"
+                    display inline-block
+                    padding 0 15px
+                    font-size 1.4rem
+                    position relative
+                    top 3px
+        &__videoOptions
+            max-width 265px
+            margin 0 auto
+        &__option
+            font-size 0.8rem
+            font-weight bold
+            text-align left
+            padding 0 5px 5px 5px
+            display inline-block
+
+        &__checkboxContainer 
+            input[type="checkbox"]
+                display none
+            label
+                position relative
+                display inline-block
+                user-select none
+                /* 16px width of fake checkbox + 6px distance between fake checkbox and text */
+                padding-left 15px
+                font-size 0.65rem
+                &::before, &::after
+                    position absolute
+                    content ""
+                    /* Needed for the line-height to take effect */
+                    display inline-block;
+                &::before
+                    height 12px
+                    width 12px
+                    border 1px solid
+                    left 0px
+                    /* (24px line-height - 16px height of fake checkbox) / 2 - 1px for the border to vertically center it. */
+                    top 1px
+                &::after
+                    height 4px
+                    width 8px
+                    border-left 1.5px solid
+                    border-bottom 1.5px solid
+                    transform rotate(-45deg)
+                    left 2px
+                    top 4px
+            label.disabled
+                opacity 0.6
+                cursor not-allowed
+        &__checkboxContainer input[type="checkbox"] + label::after
+            content none
+        &__checkboxContainer input[type="checkbox"]:checked + label::after
+            content ""
+        
+        &__alertBox
+            background $white
+            width 100%
+            max-width 425px
+            box-shadow(3px 3px 15px $silver)
+            text-align center
+            color $codGray
+            margin 0 auto
+            margin-top 2.5rem
+            margin-bottom 2.5rem
+
+            &--unableTo, &--contactInfo
+                padding 15px 25px
+                max-width 425px
+                font-size 1em
+
+            &--unableTo
+                img
+                    margin-top 20px
+                h1
+                    margin 0
+                    font-size 1em
+                    color $bloodRed
+                p
+                    color $gray30
+                    font-size 0.875rem
+                    font-style italic
+                    margin 5px 0 0 0
+            
+            &--contactInfo
+                padding 0 25px 15px 25px
+                a
+                    color $royalBlue
+                    font-size 0.875rem
+                ul, li
+                    margin 0
+                    padding 4px 0
+                    list-style none
+                label
+                    font-weight bold
+        
+        &__ratingsMainContainer
+            height calc(100% - 70px)
+            overflow-y auto
+        &__ratingCloseBtn
+            float right
+            margin 5px 5px
+            cursor pointer
+            font-size 0.7rem
+            color $gray60
+            font-weight bold
+            background none
+        &__ratingsContainer
+            text-align center
+            max-width 350px
+            margin auto
+            margin-top 1rem
+            margin-bottom 100px
+            background-color $white
+            box-shadow(3px 3px 15px $silver)
+
+        &__ratings
+            padding 15px 25px
+            font-size 14px
+            margin-top 5px
+            p
+                white-space pre
+                @media (max-width 1024px)
+                    white-space normal
+
+            &--startCont
+                margin-top 10px
+
+            &--star
+                position relative
+                display inline-block
+                width 0
+                height 0
+                margin-left .7em
+                margin-right .7em
+                margin-bottom 1.2em
+                border-right  .3em solid transparent
+                border-bottom .7em  solid $gray60
+                border-left   .3em solid transparent
+                /* Controlls the size of the stars. */
+                font-size 12px
+
+                &::before, &::after
+                    content ''
+                    display block
+                    width 0
+                    height 0
+                    position absolute
+                    top .6em
+                    left -1em
+                    border-right  1em solid transparent
+                    border-bottom .7em  solid $gray60
+                    border-left   1em solid transparent
+                    transform rotate(-35deg)
+                &::after
+                    transform rotate(35deg)
+
+            &--starChecked
+                border-bottom .7em  solid $corn
+                &::before, &::after
+                    border-bottom .7em  solid $corn
+
+        &__alertBox, &__ratings
+            &--helpImprove
+                border-top 1px solid $mediumGray
+                padding 15px 25px
+                margin-top 15px
+
+                a
+                    color $gray30
+                    font-size 0.875em
+                    text-decoration underline
+                    cursor pointer
+
+        &__ratings
+            &--helpImprove
+                margin-top 0
+
+    &-button
+        width 85px
+        &__mute
+            button($apple)
+            padding 5px 15px
+            &::before
+                font-family "clIcons"
+                content "\f12a"
+                display inline-block
+                padding 0 5px 0 0
+        &__unmute
+            button($monza)
+            padding 5px 15px
+            &:before
+                font-family "clIcons"
+                content "\f12b"
+                display inline-block
+                padding 0 5px 0 0
+        &__stop
+            button($tundora)
+            padding 5px 15px
+            &:before
+                font-family "clIcons"
+                content "\f129"
+                padding 0 5px 0 0
+        &__forceFallback
+            button($tundora)
+            padding 5px 15px
+            &::before
+                font-family "clIcons"
+                content: "\f125"
+                display inline-block
+                font-size 0.75rem
+
+.scall-popup
+    &__callLoadingDiv
+        position absolute
+        top 40%
+        left 50%
+        transform translateX(-50%);
+
+    &__calling
+        &--status
+            font-size 0.9em
+            padding 5px 0 0 0
+            margin 0 0 8px 0
+            text-align center
+        &--progress
+            width 240px
+            height 8px
+            margin 8px 0 0 4px
+            display flex
+            flex-direction row
+            align-items center
+            justify-content space-between
+            .pbBox
+                width 11.5%
+                height 8px
+                &__fill
+                    background-color $cerulean
+                &__nill
+                    background-color $silver
+            
+.cl
+    &-modal
+        &__dialog
+            max-width 40%
+            @media (max-width 1024px)
+                max-width 60%
+        &__header
+            margin 0
+            position relative
+        &__title
+            font-size 1.4rem
+            color $white
+            margin 0
+            padding 5px 0
+        &__closebtn
+            position absolute
+            top 15px
+            right 6px
+            cursor pointer
+            background none
+            color $white
+            font-size 1.2rem
+        &__content
+            padding-bottom 5px
+            textarea
+                width 100%
+                float none
+                border 1px solid $mediumGray
+                padding 10px
+                font-size 0.8rem
+            input
+                border 1px solid $mediumGray
+                width 100%
+                height 35px
+                padding-left 10px
+                font-size 0.8rem
+            input[disabled]
+                background-color $white
+                cursor not-allowed
+            p
+                font-size 0.875rem
+                margin-bottom 5px
+            &--fileTypes
+                font-size 0.75rem !important
+                margin-top 5px
+            &--fileInput
+                margin-top 10px
+                position relative
+            &--customUpload
+                text-align center
+                background-color $cerulean
+                padding 0px 10px
+                font-style normal
+                font-size 1.875rem
+                text-decoration none
+                color $white
+                position absolute
+                top 25px
+                right 0
+                line-height 35px
+                cursor pointer
+        &__footer
+            padding-top 0
+        &--in
+            background-color rgba(0, 0, 0, 0.7)
+            text-align left
+        &__thankYou, &__errorMsg
+            text-align center
+            margin 10px 0
+            font-size 0.9rem
+        &__errorMsg
+            color $bloodRed
+        
+.fc
+    &-modal
+        position fixed
+        top -100%
+        left -100%
+        opacity 0
+        z-index 2000
+        width 100%
+        height 100%
+        -webkit-transition opacity .5s ease-out
+        -moz-transition opacity .5s ease-out
+        -o-transition opacity .5s ease-out
+        transition opacity .5s ease-out
+        background-color rgba(255,255,255,0.55)
+        &__dialog
+            max-width 25%
+            float none
+            background-color $white
+            margin 0 auto
+            position relative
+            top 50%
+            -webkit-box-shadow 0 0 1px 1px rgba(30,30,30,0.55)
+            -moz-box-shadow 0 0 1px 1px rgba(30,30,30,0.55)
+            box-shadow 0 0 1px 1px rgba(30,30,30,0.55)
+            -ms-transform translate(0,-50%)
+            -webkit-transform translate(0,-50%)
+            transform translate(0,-50%)
+            @media (max-width 1024px)
+                max-width 50%
+        &__header
+            padding-top 30px
+            margin-bottom 5px
+            background-color $white
+        &__title
+            margin-bottom 20px
+            font-size 1.4rem
+            color $cerulean
+        &__body
+            padding 0
+            text-align center
+        &__content
+            padding 0 15px 5px 0
+            &--msg
+                font-size 0.8rem
+        &__footer
+            padding-top 0
+        &__buttons
+            display flex
+            float none
+            margin-top 30px
+        &--in
+            opacity 1
+            top 0
+            left 0
+            -webkit-transition opacity .5s ease-out
+            -moz-transition opacity .5s ease-out
+            -o-transition opacity .5s ease-out
+            transition opacity .5s ease-out
+            background-color rgba(0, 0, 0, 0.7)
+    &-customButton
+        flex 1
+        padding 10px 0
+        color $white
+        cursor pointer
+    &-customButton__no
+        background-color $gray60
+    &-customButton__yes
+        background-color $apple
+
+.pfi
+	&-modal
+		position fixed
+		top -100%
+		left -100%
+		opacity 0
+		z-index 20000
+		width 100%
+		height 100%
+		-webkit-transition opacity .5s ease-out
+		-moz-transition opacity .5s ease-out
+		-o-transition opacity .5s ease-out
+		transition opacity .5s ease-out
+		background-color rgba(255,255,255,0.55)
+		&__message
+			text-align center
+		&__dialog
+			max-width 35%
+			float none
+			background-color $white
+			margin 0 auto
+			position relative
+			top 50%
+			-webkit-box-shadow 0 0 1px 1px rgba(30,30,30,0.55)
+			-moz-box-shadow 0 0 1px 1px rgba(30,30,30,0.55)
+			box-shadow 0 0 1px 1px rgba(30,30,30,0.55)
+			transform translate(0,-50%) !important
+			-ms-transform translate(0,-50%) !important
+			-webkit-transform translate(0,-50%) !important
+		&__header
+			position relative
+			text-align center
+			padding 15px 0
+			background-color $codGray
+			color $white
+		&__title
+			font-size 1.1rem
+			font-weight bold
+		&__closeBtn
+            cursor pointer
+            color $white
+            font-weight bold
+            position absolute
+            top 15px
+            right 6px
+            font-size 1.1rem
+            background none
+		&__alertBox
+			background $white
+			width 100%
+			max-width 425px
+			text-align center
+			color $codGray
+			margin 0 auto
+
+			&--unableTo, &--contactInfo
+				max-width 425px
+				font-size 1em
+
+			&--unableTo
+				padding 0 25px 15px 25px
+				img
+					margin-top 20px
+				h1
+					margin 0
+					font-size 1em
+					color $bloodRed
+				p
+					color $gray30
+					font-size 0.875rem
+					font-style italic
+					margin 5px 0 0 0
+			
+			&--contactInfo
+				padding 0 25px 25px 25px
+				ul, li
+					margin 0
+					padding 4px 0
+					list-style none
+				label
+					font-weight bold
+		&--in
+			opacity 1
+			top 0
+			left 0
+			-webkit-transition opacity .5s ease-out
+			-moz-transition opacity .5s ease-out
+			-o-transition opacity .5s ease-out
+			transition opacity .5s ease-out
+			background-color rgba(0, 0, 0, 0.7)
+
+.pfi
+	&-modal
+		&__dialog
+			@media (max-width: 1024px)
+				max-width 65%
+
+//Addition 2017
+.main1x1
+    height initial
+    width 100% 
+    .mainContent
+        // height initial
+        width 100% 
+.main1x1    
+    .cc-videobox
+    .cc-videobox__screen
+        display flex
+        justify-content center
+        &.hide
+            display none
+    .cc-videobox
+    .cc-videobox__screen
+        height initial
+.main1x1        
+    .cc
+        &-videobox
+            .OT_widget-container
+                position relative
+                padding-top 0
+                padding-bottom 88%
+                height 0
+            .OT_subscriber
+                .OT_bar
+                    background rgba(0,0,0,0.1)
+            &__screen
+                position relative
+                padding 0
+                height 72%
+            &__wrapper
+                width auto
+                padding 10px
+                padding-bottom 0
+                position relative
+                margin: 0 auto
+            &__subscriber
+                width auto;
+                min-width 200px;
+                z-index 10;
+                border-radius 0
+                display block
+                -webkit-justify-content center
+                justify-content center
+                flex-wrap wrap
+                &-wrapper
+                    min-height 100px
+                    position initial
+                .OT_subscriber
+                    min-width 200px
+                    margin 0
+                    border 1px solid #000
+                    width 100% !important
+            &__publisher
+                width auto
+                min-width 200px
+                z-index 100
+                position relative
+                top 0
+                right 0
+.sbsc
+    &-window
+        &__videoBody
+            &--medium
+                .main1x1 
+                    .cc-videobox__subscriber
+                        .OT_subscriber
+                            max-width 200px
+                    .cc-videobox__publisher
+                        max-width 200px
+                        width auto
+                        min-width 200px
+            &--large
+                width 100%
+                .main1x1
+                    .cc-videobox__screen
+                        height 460px
+                    .cc-videobox__subscriber
+                        min-width 440px
+                        .OT_subscriber
+                            max-width 440px
+                    .cc-videobox__publisher
+                        min-width 275px
+                        max-width 275px
+    @media (min-width 768px) and (max-width 1024px)
+        &-window
+            &__videoBody
+                &--medium
+                    .main1x1
+                        .cc-videobox__subscriber
+                            min-width 200px
+                            .OT_subscriber
+                                max-width 200px
+                                min-width 200px
+                        .cc-videobox__publisher
+                            max-width 200px
+                            min-width 200px
+                &--large
+                    .main1x1
+                        .cc-videobox__subscriber
+                            min-width 260px
+                        .OT_subscriber
+                            max-width 260px
+                        .cc-videobox__publisher
+                            min-width 200px
+                            max-width 200px
+    @media (min-width 768px) and (max-width 1024px) and (max-height 600px)
+        &-window
+            &__videoBody
+                &--medium
+                    .main1x1
+                        .cc-videobox
+                            .OT_widget-container
+                                padding-bottom 62%
+                        .cc-videobox__subscriber
+                            min-width 140px
+                            .OT_subscriber
+                                max-width 150px
+                                min-width 150px
+                        .cc-videobox__publisher
+                            max-width 150px
+                            min-width 150px
+                &--large
+                    .main1x1
+                        .cc-videobox__screen
+                            height 300px
+                        .cc-videobox
+                            .OT_widget-container
+                                padding-bottom 88%
+                        .cc-videobox__subscriber
+                            min-width 260px
+                            .OT_subscriber
+                                max-width 260px
+                        .cc-videobox__publisher
+                            min-width 200px
+                            max-width 200px                         

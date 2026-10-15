@@ -1,0 +1,228 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Individual Results Component Styles
+.trc
+    position relative
+    &-article
+        position relative
+        overflow hidden   
+    // Default styles for table with data
+    &-data
+        padding 0 0 0 130px
+        overflow-x auto
+        overflow-y hidden
+        -webkit-overflow-scrolling auto
+    &-table
+        &__thead
+            display table
+            width 100%
+        &__row
+            display table-row
+            width 100%
+        &__thead
+            background-color $codGray
+            color white
+        &__row
+            &:nth-child(even)
+                background-color $mercury
+                .trc-table__td--sticky
+                    background-color darken($cerulean, 10%)
+            &:nth-child(odd)
+                background-color white
+                .trc-table__td--sticky
+                    background-color $cerulean
+        &__th,
+        &__td
+            display table-cell
+            vertical-align middle
+            width auto
+            text-align center
+            padding 10px 0
+            border-right 1px solid $silver
+        &__th--sticky,
+        &__td--sticky
+            display table-column-group
+            position absolute
+            top auto
+            left 0
+            text-align center
+            border none
+            padding 10px 0
+            background-color $codGray
+            color white
+            width 130px
+            z-index 5
+            -webkit-transform translateZ(0px)
+        &__value
+            // extra padding because icons pushing content in other cells
+            padding 4px
+                
+    &-footer
+        text-align right
+    input
+        width 80%
+        padding 10px
+        margin 0 auto
+        border-radius 5px
+
+    input[type="checkbox"]
+        width 25px
+        height 25px
+             
+.trc-border-no 
+    border none
+    
+// These classes are in use by renderer/cell
+.tableRowComponentEditImage
+    display inline-block
+    vertical-align middle
+    margin 0 10px 0 0
+    width 21px
+    height 19px
+    position relative
+    z-index 1
+
+.tableRowComponentDataCellValue
+    position relative
+    display inline-block
+    vertical-align middle
+.tableRowComponentTable2CellEditable 
+    .tableRowComponentEditImage
+        background-image url(media/img/notes.svg)
+        cursor pointer
+
+
+.popupModal
+        position absolute
+        width 100%
+        height 100% !important
+        top 0px
+        background-color black
+        opacity 0.5
+        z-index 10
+        display none
+
+
+.mainContentWrapper
+    .mainContent
+            footer
+                width 100%
+                max-width 1000px
+                margin 20px auto 0 auto
+
+                   
+.rendererPopup
+    color white
+    position absolute
+    width 300px !important
+    height 170px !important
+    background-color black !important
+    display none
+    text-align center
+    z-index 100
+    border-radius 5px
+    margin 0 auto
+
+    .popupCellRowTitle
+        margin-top 1.28*$px
+        font-weight bold
+
+    .popupCellColumnTitle
+        margin-top 0.32*$px
+        margin-bottom 20px
+
+    .popupCloseButton
+        width: 50px
+        height: 25px
+        background: $cerulean
+        margin: 0 auto
+        top: 0.7*$px
+        position: relative
+        cursor pointer
+        border-radius: 5px
+        display table
+        text-align center
+
+        .popupCloseButtonText
+            display table-cell
+            vertical-align middle
+
+    .slider-holder
+        width 70%
+        margin 0 auto 10px auto
+        margin-top 2.4*$px                
+
+        .bubble_container
+            display none
+            position relative
+            padding 0
+            overflow visible
+
+            .bubble
+                position absolute
+                margin -4.8rem -4.6rem
+
+        .bubble_container.active
+            display block
+
+        .ui-slider 
+            height 9px
+            background $gray
+            border none
+            -webkit-border-radius 15px
+            -moz-border-radius 15px
+            border-radius 15px
+
+            .ui-slider-range
+                background $corn
+                height 9px
+                -webkit-border-radius 15px
+                -moz-border-radius 15px
+                border-radius 15px
+
+            .ui-slider-handle 
+                height 15px
+                width 15px
+                -webkit-border-radius 50%
+                -moz-border-radius 50%
+                border-radius 50%
+                background $cerulean
+                top -18px
+                position relative
+                padding 13px
+                margin 0 -8px
+                border none
+                display block
+                z-index 1
+
+    .tableRowComponentBar
+        margin 5px -7% 30px 13%;
+        color $lightGrey
+        font-size 1.2*$px
+        span
+            float left
+            position relative
+            text-align center
+            height 10px
+            width 7.46%
+        span.tableRowComponentBarElement:after
+            content  "|"
+            height 10px
+            display block
+            font-size 1.2*$px
+			
+[dir="rtl"]
+	.trc
+		&-data
+			padding 0 130px 0 0
+		&-table__th--sticky, 
+		&-table__td--sticky
+			right 0
+	.tableRowComponentEditImage
+		margin 0 0 0 10px
+			
+            
+        
+
+    

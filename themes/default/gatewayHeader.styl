@@ -1,0 +1,138 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+$iconColor = #87c530
+$headerBackground = #eeeeee
+$textColor = #1e1e1e
+$footerBackground = #52a72e
+
+.gwh
+    &-header
+        background $headerBackground
+        overflow hidden
+        width 100%
+        &__menu
+            z-index 9999
+            position absolute
+            top 44px
+            left 0px
+            background-color $iconColor
+            border 1px solid $silver
+            display none
+            .menuComponent 
+                color $gray
+                .menuArticleMenu, .menuArticleSubMenu, .menuCommands, .outputcollapsed, .menuArticleFooter
+                    background-color #fff
+                .change_lang
+                    .languageLink
+                        color $gray
+                        &:hover
+                            background-color #fff
+                    .languageLinkSelected
+                        color #fff
+                        background-color $gray
+                        &:hover
+                            background-color $gray
+            &Cont
+                float left
+                padding 11px 10px 7px 10px
+                border-right 1px solid $iconColor
+            &Icon:before
+                color $iconColor
+                font-size 1.5rem
+                font-weight 500
+                cursor pointer
+        &__title
+            float left
+            padding 10px 0 10px 0
+            text-align center
+            color $gray
+            font-size 18px
+            width calc(100% - 282px)
+            &--withMenu
+                width calc(100% - 300px)
+        &__back
+            float left
+            padding 13px 0 0 10px
+            width 140px
+            &--withMenu
+                width 100px
+            span:before
+                color $iconColor
+                font-size 1.2rem
+                font-weight 500
+                cursor pointer
+        &__disabled
+            pointer-events none
+            cursor default                 
+        &__right
+            float right
+        &__resources
+            float right
+            padding 13px 22px 13px 13px
+            &:before
+                color $iconColor
+                font-size 1.2rem
+                cursor pointer
+        &__logo
+            height 22px
+            width 60px
+            float right
+            margin 10px 20px 0 0
+            @media screen and (max-width 767px)
+                margin 10px 3px 0 0
+            @media screen and (min-width 768px) and (max-width 1024px)
+                margin 10px 5px 0 0
+
+    &-body
+        width 100%
+        overflow hidden
+        background white
+        padding 25px
+        &__icon
+            display block
+            margin auto
+            text-align center   
+        &__title
+            text-align center
+            color $iconColor
+            font-weight normal
+            margin 0
+        &__description
+            text-align center
+            font-weight 600
+            color $textColor
+            font-size 16px
+            margin 0 0 24px 0
+
+    &-footer
+        background-color $footerBackground
+        color white
+        overflow hidden
+        padding 12px
+        &__type, &__points, &__duration
+            float right
+            margin 0 35px 0 0
+            font-size 12px
+
+    &.sticky
+        .gwh-body
+            padding 5px
+            &__icon
+                display none
+            &__title
+                margin 0
+                font-size 1rem
+            &__description
+                font-size 0.9rem
+                margin 0 0 5px 0
+                font-weight normal
+        .gwh-footer
+            padding 3px
+            &__duration
+                display none        
+            &__points
+                display none        
+            &__type
+                display none        
+    

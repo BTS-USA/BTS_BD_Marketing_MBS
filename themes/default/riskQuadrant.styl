@@ -1,0 +1,297 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+
+.riskSingleQuadrant
+  &__texttArea
+    border 1px solid  black
+  &__modalWrapper
+    position absolute
+    top 0
+  &__modal
+    position fixed
+    height 100%
+    width 100%
+    background rgba(0,0,0,0.7)
+    z-index 1005
+  &__createActionModal
+    padding 20px 10px
+    margin 0 0 30px 0
+    position absolute
+    width 60%
+    left 50%
+    top 50%
+    transform translate(-50%, -50%)
+    height 80vh
+    overflow auto
+    -webkit-border-radius 10px
+    -moz-border-radius 10px
+    border-radius 10px
+    background white
+  &__themeHolder
+    display flex
+    font-size 14px
+    color white
+    margin 2%
+  &__riskThemeBlock
+    width 15px
+    height 15px
+    float left
+    margin 2px 5px
+  &__riskThemeTitle
+    float left
+    padding 0px 5px
+  &__container
+    position relative
+  &__maincontainer
+    @media screen and (max-width 768px)
+      clear both
+  &__highRiskCont
+    font-size 20px
+    font-weight 600
+    padding 3px
+    padding-bottom 4px
+    text-align center
+    text-transform uppercase
+  &__mainViewCont
+    margin 25px 5px
+  &__graphView
+      min-width 300px
+      max-width 900px
+  &__viewOptionsCont
+    color white
+    margin-top -72px
+    float right
+    color dimgray
+    @media screen and (max-width 768px)
+      margin-top 0
+      float none
+  &__listViewButton, &__graphViewButton
+    cursor pointer
+    min-width 70px
+    float left
+    padding 10px
+    text-align center
+    background linear-gradient(180deg, rgba(242, 242, 242, 1) 0%, rgba(242, 242, 242, 1) 63%, rgba(223, 223, 223, 1) 100%, rgba(223, 223, 223, 1) 100%)
+    color #A8ADB4
+    @media screen and (max-width 768px)
+      width 50%
+  &__listViewButton
+    border-top-left-radius 12px
+  &__graphViewButton  
+    border-top-right-radius 12px
+  &__noteText
+    color white
+    flex 1
+    @media screen and (max-width 768px)
+      margin-bottom 6px
+  &__view
+    display none
+    &--active
+      display block
+      background darkgray
+  &__table
+    text-align center
+    background white
+    color gray
+    width 100%
+    display table
+    border-collapse collapse
+    @media screen and (max-width 768px)
+      display block
+    &Row
+      display table-row
+      cursor pointer
+      &:active
+        border 4px solid rgba(128, 204, 40, 1)
+      &:last-child 
+        &Cell
+          border-bottom none
+      @media screen and (max-width 768px)
+        display block
+        width 100%
+        overflow hidden
+        
+        &:nth-child(even)
+          background #f7f7f7 
+      
+    &Cell
+      display table-cell
+      border-bottom 2px solid #efefef !important
+      padding 10px
+      vertical-align middle
+      @media screen and (max-width 768px)
+        display block
+        float left
+        box-sizing border-box
+    &Avg
+      background rgba(226, 226, 226, 1)
+      @media screen and (max-width 768px)
+        background none
+    &Sequence
+      width 8%
+      color rgba(128, 204, 40, 1)
+      font-weight 600
+      position relative
+      border-left 8px solid
+      @media screen and (max-width 768px)
+        width 13%
+        height 50px
+
+    &theme
+      max-width 5px
+      height 100%
+      background red
+
+    &Idea
+      width 40%
+      text-align left
+      background rgb(255,255,255)
+      background -moz-linear-gradient(90deg, rgba(255,255,255,1) 94%, rgba(232,232,232,1) 100%)
+      background -webkit-linear-gradient(90deg, rgba(255,255,255,1) 94%, rgba(232,232,232,1) 100%)
+      background linear-gradient(90deg, rgba(255,255,255,1) 94%, rgba(232,232,232,1) 100%)
+      font-size 18px
+      font-weight 600
+      @media screen and (max-width 768px)
+        width 85%
+        height 50px
+        overflow hidden
+        white-space nowrap
+        text-overflow ellipsis
+        background none
+        font-size 16px
+    &Attributes
+      width 13%        
+      @media screen and (max-width 768px)
+        width 25%
+        height 66px
+      
+    &TeamNo
+      width 10%
+      @media screen and (max-width 768px)
+        width 25%
+        height 66px
+  &__values
+    font-size 18px
+    font-weight 600
+  &__attribute
+    font-size 14px
+    text-transform capitalize
+  &__teamNo
+    font-size 13px
+    color #A8ADB4
+  &__active
+    display block
+    background rgba(109, 116, 126, 1)
+    color white
+  &__noteHolder
+    display flex
+    font-size 14px
+    @media screen and (max-width 768px)
+      display block
+      padding-top 10px
+      text-align center
+  &__sortCont
+    display none
+    i
+      color white
+      line-height 0
+      &:before
+        font-size 1.2rem
+  &__sortContainerWrapper
+    flex 0 0 40%
+    display flex
+    justify-content flex-end
+    @media screen and (max-width 768px)
+      justify-content center
+  &__dropdownCont
+    border 2px solid gray
+    border-radius 5px
+    margin-left 10px
+    color gray
+    width 200px
+    padding 5px
+    cursor pointer
+  &__dot
+    height 8px
+    width 8px
+    background rgba(128, 204, 40, 1)
+    border-radius 100%
+    display block
+    position absolute
+    top 50%
+    left 13px
+    transform translateY(-50%)
+    @media screen and (max-width 767px)
+      left 5px
+      top 45%
+    &--visited
+      opacity 0
+  &__removeIconCont
+    color white
+    position relative
+    z-index 999
+    text-align end
+    margin 20px
+    cursor pointer
+    float right
+    max-width 200px
+  &__removeIcon
+    border 1px solid white
+    border-radius 100%
+    height 30px
+    width 30px
+    font-size 14px
+    font-weight 600
+    text-align center
+    padding 7px 2px 0 2px
+  &__closetext
+    padding-right 5px
+
+.highcharts-tick
+  stroke none
+  
+.rq
+  position relative
+  &-header
+      font-size 24px
+      margin 50px 0 20px 0
+  &-content
+      display flex
+  &-decision
+      &__container
+          flex 1
+          width 50%
+          height 40%
+          background-color #ffffff          
+          p
+              font-size 20px
+              padding 0 0 20px 0
+  &-right
+    padding 10px 5% 0px 0px
+    float right
+  &-table
+      display table
+      width 100%
+  &-tRow
+      display table-row
+  &-tCell, &-rTHead
+      display table-cell
+      padding 3px 10px
+      font-family 'Open Sans', sans-serif
+      font-weight 400
+      font-style normal
+      font-size 14px
+      line-height 16px
+      &:hover
+        background-color rgba(178, 173 , 180, 1)
+        color rgb(255, 255, 255)
+
+.cl_loader-backdrop
+  background #182033
+  height 100%
+  position absolute
+  width 100%
+  z-index 9999
+  opacity 1
+  top 0

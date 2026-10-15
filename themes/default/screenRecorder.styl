@@ -1,0 +1,68 @@
+
+.vhe  
+    &-mainCont
+        position relative
+        margin 0
+        padding 0
+    &-article
+        margin 10px 0 10px 0
+    &-textarea
+        border 5px solid rgba(10, 185, 240, 1)
+        font-family inherit
+        width 100%
+        resize none
+    &-instructions
+        padding 4px 0
+        color $white90
+        display flex
+        &__text
+            flex auto
+            font-weight 600
+            font-size 16px
+  
+        
+    &-submit
+        &__cont
+            margin-bottom 50px
+        &__button
+            // display flex
+            // align-items center
+            // padding 10px
+            // color $white90FFF
+            // text-transform uppercase
+            border-radius 20px
+            margin-top 10px
+            font-weight 600
+            transition all 500ms cubic-bezier(0.6, -0.28, 0.735, 0.045)
+    &-disabled
+        background-color rgba(191, 194, 200, 1)
+        cursor none
+        opacity 1
+        pointer-events none
+    &-enabled
+        background linear-gradient(180deg, rgba(66, 208, 255, 1) 0%, rgba(10, 185, 240, 1) 81%)
+        cursor pointer    
+    &-center
+        display flex
+        align-items center
+        justify-content center
+    &-video
+        display flex
+        align-items center
+        justify-content center
+        height 400px
+        width 800px
+        margin:0 auto;
+    
+    &-text
+        // font-family 'Open Sans Light', 'Open Sans Regular', 'Open Sans', sans-serif
+        font-weight 300
+        font-size 14px
+        &__characterRemaining
+            font-size 14px
+
+    &-modalWrapper
+        position absolute
+        top 0
+        display none
+  

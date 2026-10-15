@@ -1,0 +1,89 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.pc
+    &-container
+        background-color $white
+        padding-right 1.5rem !important
+        margin-bottom 2rem
+    &-content
+        overflow hidden
+    &-listleft
+        width 50px
+    &-listright
+        width calc(100% - 50px)
+    
+    &-rightpanel
+        color inherit
+        margin-bottom 10px
+        background-color $white
+        padding-right 1rem
+        cursor move
+        border-radius $radius
+        border 1px solid $neutral-medium
+        flex()
+        justify-content space-between
+        align-items center
+        &:after
+            content '\f338'
+            font-family 'fa-solid-900'
+        .ranking-question__label
+            float left
+            margin-right 5px
+    &-rowitem
+        margin-bottom 10px
+        &.ui-sortable-helper
+            box-shadow $shadow-small
+            border 1px solid $primary
+            border-radius $radius
+    &-order
+        &listleftpanel
+            background-color transparent
+            margin-bottom 10px
+            width 50px
+            flex()
+            align-items center
+            justify-content center
+            position relative
+        &index
+            height 40px
+            width 40px
+            border-radius $radius
+            background-color $primary-medium
+            color $white
+            display block
+            font-size 1rem
+            font-weight bold
+            line-height 38px
+            border 1px solid $primary-medium
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+    &-votes
+        margin 0
+        padding 1rem
+        flex-grow 1
+    &-draggablecontainer
+        display none
+    &-buttons
+        height auto
+    .prioritizeComponentTable 
+        &.readonly
+            opacity 0.6
+
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width 600px)
+    .pc
+        &-listleft, &-orderlistleftpanel
+            width 40px
+        &-orderindex
+            height 30px
+            width 30px
+            line-height 26px
+            font-size 1rem
+            border-width 2px
+        &-listright
+            width calc(100% - 40px)
+        &-votes
+            font-size .8rem
+            padding .5rem

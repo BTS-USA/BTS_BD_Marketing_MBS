@@ -1,0 +1,173 @@
+// Font Size
+$px = (0.625) rem
+
+// Primary colors
+$brightSun = #ffd237
+$deluge = #855fa8
+$emerald = #56cd89
+$sunsetOrange = #ff4e3a
+$pickledBlueWood = #334d5c
+$treePoppy = #fe9c1f
+$deepCerulean = #0079b0
+$cerulean = #00adef
+$pulseGreen = #bdd747
+
+// Secondary colors
+$apple = #36b544
+$wildWatermelor = #ff4f80
+$ceriseRed = #cf2764
+$fuchsiaPink = #a842a8
+$pistachio = #a1b900
+$monarch = #740927
+$bayOfMany = #274d7e
+$corn = #ecba01
+$monza = #d2003f
+$pear = #00cc27
+$papaya = #ea6100
+$banana = #feb900
+$bloodRed = #cc0000
+$royalBlue = #0c52b2
+
+// Grey colors
+$white = #FFF
+$whiteSmoke = #F5F6F6
+$mercury = #E6E6E6
+$disabled = #E6E6E666
+$silver = #CCC
+$gray = #808080
+$gray30 = #666666
+$gray60 = #999
+$gray94 = #f0f0f0
+$lightGray = #d1d1d1
+$mediumGray = #b8b8b8
+$tundora = #4D4D4D
+$codGray = #1E1E1E
+$black90 = alpha(#000, 0.9)
+$black80 = alpha(#000, 0.8)
+$black70 = alpha(#000, 0.7)
+$black60 = alpha(#000, 0.6)
+$black50 = alpha(#000, 0.5)
+$black40 = alpha(#000, 0.4)
+$black30 = alpha(#000, 0.3)
+$black20 = alpha(#000, 0.2)
+$black10 = alpha(#000, 0.1)
+$white90 = alpha(#FFF, 0.9)
+$white80 = alpha(#FFF, 0.8)
+$white70 = alpha(#FFF, 0.7)
+$white60 = alpha(#FFF, 0.6)
+$white50 = alpha(#FFF, 0.5)
+$white40 = alpha(#FFF, 0.4)
+$white30 = alpha(#FFF, 0.3)
+$white20 = alpha(#FFF, 0.2)
+$white10 = alpha(#FFF, 0.1)
+
+//Eval Form
+$sliderRed = #e4440d
+$sliderOrange = #e09534
+$sliderYellow = #f1cc22
+$sliderLightGreen = #97ca4d
+$sliderGreen = #4dca5b
+    
+// Mixins
+
+// Button
+button($background)
+    background-color $background
+    &:hover
+        background-color lighten($background, 3)
+    &:focus,
+    &.focus,
+    &:active,
+    &.active,
+    &:active,
+    &.active
+        background-color darken($background, 3)
+    &.disabled,
+    &[disabled]
+        background-color $silver
+        cursor not-allowed
+        pointer-events none // Future-proof disabling of clicks
+        text-shadow none
+
+// Triangle
+triangle($width, $height, direction, $color)
+    // Base triangle styles
+    width 0
+    height 0
+    background 0
+    border-style solid
+
+    // Styles for each direction
+    directions = {
+        top: {
+            border-width: 0 ($width * .5) $height ($width * .5),
+            border-color: transparent transparent $color transparent
+        },
+        topRight: {
+            border-width: 0 $width $height 0,
+            border-color: transparent $color transparent transparent
+        },
+        right: {
+            border-width: ($height * .5) 0 ($height *.5) $width,
+            border-color: transparent transparent transparent $color
+        },
+        bottomRight: {
+            border-width: 0 0 $height $width,
+            border-color: transparent transparent $color transparent
+        },
+        bottom: {
+            border-width: $height ($width * .5) 0 ($width * .5),
+            border-color: $color transparent transparent transparent
+        },
+        bottomLeft: {
+            border-width: $width 0 0 $height,
+            border-color: transparent transparent transparent $color
+        },
+        left: {
+            border-width: ($height * .5) $width ($height * .5) 0,
+            border-color: transparent $color transparent transparent
+        },
+        topLeft: {
+            border-width: $height $width 0 0,
+            border-color: $color transparent transparent transparent
+        }
+    }
+
+    // Mixin styles for passed direction
+    styles = directions[direction]
+    {styles}
+
+
+border-radius(n)
+    -webkit-border-radius n
+    -moz-border-radius n
+    border-radius n
+
+none-select()
+    -webkit-user-select none
+    -moz-user-select none
+    -ms-user-select none
+    user-select none
+    pointer-events none
+
+placeholder-text(n)
+    &::-webkit-input-placeholder
+        color n
+    &:-moz-placeholder
+        color n
+    &::-moz-placeholder
+        color n
+    &:-ms-input-placeholder
+        color n
+
+ box-shadow(n)
+   -webkit-box-shadow n
+   -moz-box-shadow n
+   box-shadow n
+
+transition(n)
+    -webkit-transition n
+    -moz-transition n
+    -o-transition n
+    transition n
+

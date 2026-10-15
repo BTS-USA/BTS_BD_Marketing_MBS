@@ -1,0 +1,12 @@
+<div class="sr-rp__session{{?it.assigned}} sr-rp__session-passigned{{?}}" data-sessionid="{{=it.id}}" data-srsession>
+    <p class="sr-rp__session-participant cl-xs-column-5 cl-lg-column-4" data-srparticipant>{{=Wizer.ParticipantName}}</p>
+    <p class="sr-rp__session-timeinterval cl-xs-column-5 cl-lg-column-5" data-srsessiontimeinterval>
+        {{? new moment(it.startTime).format("DD") !== new moment(it.endTime).format("DD")}}
+        {{=new moment(it.startTime).format("MM/DD/YYYY")}} {{=new moment(it.startTime).format("hh:mm a")}} - {{=new moment(it.endTime).format("MM/DD/YYYY")}} {{=new moment(it.endTime).format("hh:mm a")}}
+        {{??}}
+        {{=new moment(it.startTime).format("hh:mm a")}} - {{=new moment(it.endTime).format("hh:mm a")}}
+        {{?}}
+    </p>
+    <div class="sr-rp__session-close cl-icon cl-icon--remove" data-srsessionclose></div>
+    <div class="sr-rp__session-send cl-icon cl-icon--send" data-srsessionsend></div>
+</div>

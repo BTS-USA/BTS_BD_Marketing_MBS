@@ -1,0 +1,53 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="scc cl-component">
+
+            {{? it.header}}
+            <header class="scc-header--main cl-header--main" data-stackedcolumnchartheader>
+                {{? it.header.title}}
+                <h1 class="scc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="scc-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <section class="scc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="scc-instructions cl-instructions">
+                        <p class="scc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+
+                    <section class="scc-content cl-content" data-stackedcolumnchartsection>
+                        <article class="scc-content-stackedcolumnChart--container" data-stackedcolumnchartholder>
+                        </article>
+                    </section>
+
+                    <!-- {{? it.votesAmount || it.average}}
+                    <footer class="scc-footer cl-footer">
+                        {{? it.votesAmount}}
+                        <div class="scc-stats cl-stats" data-stackedcolumncharttotalvotes>
+                            <span class="scc-stats__text">{{=it.votesAmount.text}}</span>
+                            <span class="scc-stats__value" data-stackedcolumncharttotalvotesval>{{=it.votesAmount.val}}</span>
+                        </div>
+                        {{?}}
+                        {{? it.average}}
+                        <div class="scc-stats cl-stats" data-stackedcolumnchartavg>
+                            <span class="scc-stats__text">{{=it.average.text}}</span>
+                            <span class="scc-stats__value" data-stackedcolumnchartavgval>{{=it.average.val}}</span>
+                        </div>
+                        {{?}}
+                    </footer>
+                    {{?}} -->
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

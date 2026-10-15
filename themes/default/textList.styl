@@ -1,0 +1,108 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Matching Result Component Styles
+.tlc
+    &-ideaAttributes
+        padding 10px
+        &:nth-child(even)
+            background #e6e5e5
+            color gray
+        &:nth-child(odd)
+            background #dedede
+            color gray
+    &-filters
+        background-color $tundora
+        padding 20px 20px 5px 20px
+        margin 0 0 20px 0
+        color white
+    &-filter
+        margin 0 20px 15px 0
+        &:last-child
+            margin 0 0 15px 0
+        @media (min-width: 768px)
+            float left        
+    &-article
+        margin 10px 0 10px 0
+    &-vote,
+    &-author
+        padding 10px 20px
+    &-vote 
+        background-color alpha($codGray, 0.5)
+        color white
+        &__number
+            float left
+            margin 0 10px 0 0
+            color white
+            &--hide
+                display none
+        &__text
+            font-weight 100
+    &-author
+        background-color $codGray
+        color $cerulean
+        display flex
+        &:after
+            content ''
+            display table
+            clear both
+        &__text
+            flex 1
+    &-markImportant, &-likeIcon
+        color #ccc
+        opacity 50%
+        cursor pointer
+    &-markImportant
+        margin-right 15px
+        &:before
+            font-size 20px
+        &--checked
+            opacity 1
+            color $cerulean
+        &--disabled
+            opacity 0.2
+            pointer-events none
+    &-likeIcon
+        color white
+        &--checked
+            opacity 1
+            color red
+        &--disabled
+            opacity 0.2
+            pointer-events none
+    &-deleteIcon
+        color white
+        float right
+        cursor pointer
+    &-votelist
+        margin 39px 0px 20px 0px
+        float right
+    &-peopleIcon
+        color #ccc
+        margin-right 9px
+        padding 1px 0
+        &:before
+            font-size 18px
+    &-likeCount
+        color #ccc
+        margin-right 15px
+		
+        
+[dir="rtl"]
+	.tlc
+		&-vote__number
+			float right
+			margin 0 0 0 10px
+		&-filter
+			float right
+            
+.riskTextList
+    &__iconCont
+        display flex
+        width 100%
+    &__Ideatext
+        text-transform capitalize
+        font-size 14px
+    &__noComments
+        color white
+        text-align center

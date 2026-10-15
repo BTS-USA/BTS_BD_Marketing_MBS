@@ -1,0 +1,11 @@
+<div class="LeaderBoardWizlet">
+    <table class="leaderboard">
+        {{~it.votes :vote:index}}
+        <tr>
+            <td class="rating">{{=index+1}}</td>
+            <td class="name">{{=vote.participantName}}</td>
+            <td class="score">{{=vote.responseText}}</td>
+        </tr>
+        {{~}}
+    </table>
+</div>

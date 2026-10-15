@@ -1,0 +1,47 @@
+.wizletMultiQuestionRadio #contentBox
+{
+	float: none;
+}
+
+.wizletMultiQuestionRadio .Even td
+{
+	background:  transparent url('/Wizer/Content/WizletResources/Shared/media/img/bg_white_50.png');
+	padding: 6px 4px;
+	font-size: 14px;
+}
+
+
+.wizletMultiQuestionRadio .Odd td
+{
+	background:  transparent url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_50.png');
+	padding: 7px 4px;
+	font-size: 14px;
+}
+
+.wizletMultiQuestionRadio .titleRow th
+{
+	background:  transparent url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_50.png');	
+	padding: 7px 4px;
+}
+
+.wizletMultiQuestionRadio .mainContent 
+{
+	padding-bottom: 70px;	
+	margin-bottom: 0px;
+}
+
+.wizletMultiQuestionRadio .multiQuestionRadioTable
+{
+	width: 100%;
+}
+
+.wizletMultiQuestionRadio .alternativeColumn
+{
+	width: 100px;
+}
+
+.wizletMultiQuestionRadio th.titleColumn
+{
+    text-align: left; 
+    padding-left: 20px;
+}

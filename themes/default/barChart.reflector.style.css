@@ -1,0 +1,36 @@
+@import url("../../shared/css/style.css");
+
+.horisontalBarChartLegend
+{
+	float: right;
+	padding-top: 12px;
+	margin-right: 30px;
+	margin-left: 10px;
+	width: 40px;
+}
+
+
+.headerText
+{
+	font-size: 24px;
+	font-weight: bold;
+	margin-left: 6px;
+}
+
+.resultRowContent
+{
+	font-weight: bold;
+	
+}
+
+.resultRowTitle
+{
+	padding-top: 12px;
+	width: 300px;
+}
+
+.result-header
+{
+	margin: 35px 35px 20px;
+}
+

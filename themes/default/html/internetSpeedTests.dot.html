@@ -1,0 +1,143 @@
+<div class="ctpc-internet cl-xs-column-12 ctpc-body" data-internet-tests>
+	<p class="ctpc-test__caption">{{=it.textContent.internetTestContent.CTP_Internet_Test}}</p>
+	<div class="ctpc-internet__progress">
+		<table border="0" align="center" cellpadding="5" cellspacing="0" class="ctpc-table" data-internet-progress>
+			<tr class="ctpc-table__row">
+				<td class="ctpc-table__cellhead ctpc-table__cellhead--even" colspan="1">
+					<span class="ctpc-table__label ctpc-table__label--header"> {{=it.textContent.internetTestContent.CTP_Internet_Progress}} </span>
+				</td>
+				<td class="ctpc-table__cellhead" colspan="1"></td>
+			</tr>
+			<tr class="ctpc-table__row ctpc-progress__type">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Progress_Type}} 
+					</span>
+				</td>
+				<td class="ctpc-table__cell ctpc-progress__typevalue">
+					<span id="lblInternetDownload" class="ctpc-table__value" data-progress-type></span>
+				</td>
+			</tr>
+			<tr class="ctpc-table__row ctpc-progress__pass">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Progress_Pass}} 
+					</span>
+				</td>
+				<td class="ctpc-table__cell">
+					<span id="lblInternetDownload" class="ctpc-table__value" data-progress-pass></span>
+				</td>
+			</tr>
+			<tr class="ctpc-table__row ctpc-progress__percent">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Progress_PercentDone}} 
+					</span>
+				</td>
+				<td class="ctpc-table__cell">
+					<span id="lblInternetDownload" class="ctpc-table__value ctpc--important" data-progress-percent></span>
+				</td>
+			</tr>
+			<tr class="ctpc-table__row ctpc-progress__speed">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Progress_Speed}} 
+					</span>
+				</td>
+				<td class="ctpc-table__cell">
+					<span id="lblInternetDownload" class="ctpc-table__value ctpc--important" data-progress-speed></span>
+				</td>
+			</tr>
+			<tr class="ctpc-table__row ctpc-progress__error">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Error}} 
+					</span>
+				</td>
+				<td class="ctpc-table__cell">
+					<span id="lblInternetDownload" class="ctpc-table__value ctpc--important" data-progress-error></span>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="ctpc-internet__testResult">
+		<table border="0" align="center" cellpadding="5" cellspacing="0" class="ctpc-table" data-internet-result>
+			<tr class="ctpc-table__row">
+				<td class="ctpc-table__cellhead ctpc-table__cellhead--even" colspan="1">
+					<span class="ctpc-table__label ctpc-table__label--header"> {{=it.textContent.internetTestContent.CTP_Internet_Test_Result}} </span>
+				</td>
+				<td class="ctpc-table__cellhead" colspan="1"></td>
+			</tr>
+			<tr class="ctpc-table__row {{?it.internetTests && it.internetTests.config && !it.internetTests.config.download}}ctpc-table__row--hide{{?}}">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Test_Download}} 
+					</span>
+				</td>
+				<td class="ctpc-table__cell">
+					<span id="lblInternetDownload" class="ctpc-table__value" data-internet-download></span>
+				</td>
+			</tr>  
+			<tr class="ctpc-table__row {{?it.internetTests && it.internetTests.config && !it.internetTests.config.upload}}ctpc-table__row--hide{{?}}">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Test_Upload}} 
+					</span>
+				</td>
+				<td class="ctpc-table__cell">
+					<span id="lblInternetUpload" class="ctpc-table__value" data-internet-upload></span>
+				</td>
+			</tr>
+			<tr class="ctpc-table__row {{?it.internetTests && it.internetTests.config && !it.internetTests.config.latency}}ctpc-table__row--hide{{?}}">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Test_Latency}} 
+					</span>
+				</td>
+				<td class="ctpc-table__cell">
+					<span id="lblInternetLatency" class="ctpc-table__value" data-internet-latency></span>
+				</td>
+			</tr>  
+			<tr class="ctpc-table__row {{?it.internetTests && it.internetTests.config && !it.internetTests.config.jitter}}ctpc-table__row--hide{{?}}">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Test_Jitter}} 
+					</span>
+				</td>
+				<td class="ctpc-table__cell">
+					<span id="lblInternetJitter" class="ctpc-table__value" data-internet-jitter></span>
+				</td>
+			</tr>
+			<tr class="ctpc-table__row {{?it.internetTests && it.internetTests.config && !it.internetTests.config.testServer}}ctpc-table__row--hide{{?}}">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Test_TestServer}} 
+					</span>
+				</td>
+				<td class="ctpc-table__cell">
+					<span id="lblInternetTestServer" class="ctpc-table__value" data-internet-testserver></span>
+				</td>
+			</tr>  
+			<tr class="ctpc-table__row {{?it.internetTests && it.internetTests.config && !it.internetTests.config.ip}}ctpc-table__row--hide{{?}}">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Test_IP}} 
+					</span>
+				</td>
+				<td class="ctpc-table__cell">
+					<span id="lblInternetIP" class="ctpc-table__value" data-internet-ip></span>
+				</td>
+			</tr>
+			<tr class="ctpc-table__row {{?it.internetTests && it.internetTests.config && !it.internetTests.config.hostName}}ctpc-table__row--hide{{?}}">
+				<td class="ctpc-table__cell ctpc-table__cell--even">
+					<span class="ctpc-table__label">
+						{{=it.textContent.internetTestContent.CTP_Internet_Test_HostName}}
+					</span>
+				</td>
+				<td class="ctpc-table__cell">
+					<span id="lblInternetHostName" class="ctpc-table__value" data-internet-hostname></span>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

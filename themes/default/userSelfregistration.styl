@@ -1,0 +1,159 @@
+// Import variables and mixins
+@import "shared/cl.styl"
+
+// User registration Component Stylus
+.usr
+    &__footer
+        float left
+        width 100%
+        background-color $mercury
+        padding 20px
+        position relative
+        display flex
+        justify-content center
+    &__article
+        padding 20px 10px 20px 10px
+    &__profile
+        padding 0 0.8*$px 20px 0.8*$px
+        height 8.5*$px
+        position relative
+    &__btn-container 
+        margin 10px 0 0 0
+    &__disabled
+        font-size 1.6*$px
+        color $codGray
+        padding 5px 0
+        display inline-block
+    &__instructions
+        margin 40px 0 0 0
+        &-title
+            font-size 3.2*$px
+            color $cerulean
+            font-weight 100
+        &-text
+            font-size 1.8*$px
+    &_form_body
+        background-color #FFFFFF
+        margin 0 0 20px 0
+    &_RegistrationButton, &_CancelButton, &_ClearButton
+        float none
+        margin 0 auto
+        width 11.1*$px
+    &__policy
+        float left
+        width 100%
+        margin 20px 0 0 0
+        &-text
+            font-size 1.2*$px
+            color $gray
+            padding 0 40px
+            text-align center
+    &__ErrorMsg 
+        display none
+        padding 5px
+        background-color #FF4E3A
+        color #FFFFFF
+        text-align center
+        position absolute
+        top -29px
+        width 100%
+        left 0
+    &_Buttons
+        vertical-align middle
+        height 40px
+        margin 10px 5px 0 0
+        padding 0 20px 0 20px
+        background #36b544
+        cursor pointer
+        width 100px
+        text-align center
+        line-height 40px
+        color #fff
+        float left
+    &.cl__component
+        float none
+        margin 10px auto 10px auto
+    &.cl__component::after
+        clear both
+        content ""
+
+
+    /* unique form elements
+    **********************************/
+    /* if this works out we can move these to CL */
+    label
+        color $gray
+        font-size 1.6*$px
+        font-weight 400
+        margin 0 0 5px 0
+        display inline-block
+
+    input[type="text"], input[type="password"] 
+        border 1px solid $mercury
+        color $codGray
+        padding 7px 5px
+        font-size 1.6*$px
+        line-height 1.4em
+        font-weight 400
+        width 100%
+        &::-webkit-input-placeholder
+            font-style italic
+    .checkbox
+        display:block
+        padding 1*$px 
+        z-index 9
+
+    .optionText 
+        padding 0 9px
+
+    .multi-check 
+        background-color $tundora
+        color white
+        position relative
+
+    .dropdown
+        width: 100%
+        border: 1px solid #ccc
+        background-color #FFFFFF
+        z-index 999999999
+        display none
+        position absolute
+        box-sizing border-box
+    .rootNode 
+        display inline-block
+        padding 1*$px
+        width 100%
+        cursor pointer
+        box-sizing border-box
+    .dropPlaceholder 
+        padding 10px
+    .arrow-down 
+        width 14px
+        height 14px
+        display inline
+        margin-right 8px
+        background transparent url("media/img/arrow.png") no-repeat
+        float right
+        margin 0.3rem 0 0 0
+    .open .arrow-down
+        height 14px
+        display inline
+        background transparent url("media/img/arrowUp.png") no-repeat
+        float right
+        margin-top 0.3rem
+    .dropdown .checkall
+        display block
+        margin 0 0 5px 0
+        padding 0 0 5px 0
+        border-bottom 1px solid #ccc
+        cursor pointer
+    .dropdown .selected 
+        background-color rgb(113, 113, 113) !important
+        color #fff
+    .require_field
+        color #F00
+        font-size 1.8*$px
+        position absolute
+        top calc( 50% - 5px )
+        right 13px
+        background-color #FFFFFF

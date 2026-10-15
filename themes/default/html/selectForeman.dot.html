@@ -1,0 +1,28 @@
+﻿<div class="wizletSelectForeman">
+    <div class="SelectForemanTitle">{{=it.title}}</div>
+    <div class="SelectForemanBody">
+        <table>
+            <tbody>
+                {{~it.participants :participant:index}}
+                {{console.log(participant);}}
+                <tr>
+                    {{?participant.isForeman==true}}
+                    <td class="isSelected">
+                        {{??}}
+                    <td>
+                        {{?}}
+                        <label for="radio-{{=participant.Id}}">
+                            {{=index+1}}&nbsp;&nbsp;:&nbsp;&nbsp;{{=participant.Name}}
+                        </label>
+                        {{?participant.isForeman==true}}
+                        <input type="radio" name="selectForeman" id="radio-{{=participant.Id}}" data-id="{{=participant.Id}}" checked="checked" style="display:none;" />
+                        {{??}}
+                        <input type="radio" name="selectForeman" id="radio-{{=participant.Id}}" data-id="{{=participant.Id}}" style="display:none;" />
+                        {{?}}
+                    </td>
+                </tr>
+                {{~}}
+            </tbody>
+        </table>
+    </div>
+</div>

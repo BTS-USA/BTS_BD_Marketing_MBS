@@ -1,0 +1,22 @@
+<article class="layout-container evc">
+    <!-- first component -->
+    <section>{{=it.components[0]}}</section>
+
+    <!-- second component -->
+    <section>
+        <!--<article class="evc__collapse">
+            Collpase all
+        </article>-->
+        <article>{{=it.components[1]}}</article>
+    </section>
+	
+	{{? it.components.length > 2}}
+	<!-- third component -->
+    <section>
+        <!--<article class="evc__collapse">
+            Collpase all
+        </article>-->
+        <article>{{=it.components[2]}}</article>
+    </section>
+	{{?}}
+</article>

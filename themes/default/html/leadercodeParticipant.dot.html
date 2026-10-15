@@ -1,0 +1,24 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="lcpc cl-component">
+            {{? it.header}}
+            <header class="lcpc-header--main cl-header--main">
+                {{? it.header.title}}
+                <h1 class="lcpc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="lcpc-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+            <div class="lcpc-container cl-container">
+                <div class="lcpc-message"><span data-error></span></div>
+                <input type="text" class="lcpc-inputbox" placeholder="{{!it.textContent.enterCodePlaceHolder}}" data-code />
+            </div>
+        </section>
+    </div>
+</div>

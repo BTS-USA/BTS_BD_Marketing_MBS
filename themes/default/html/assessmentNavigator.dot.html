@@ -1,0 +1,15 @@
+<div class="anavc-container">
+    {{? it.options }}
+    {{~it.options :option:index}}
+    <div class="anavc-item">
+        <div class="anavc-title">{{=option.title}}</div>
+        <div class="anavc-action cl-icon cl-icon--play {{? option.selected }}anavc-action--selected{{?}}" data-action="{{=option.actionXML}}"></div>
+    </div>
+    {{~}}
+    <div class="anavc-endsession" data-endsession>{{=it.endSessionText}}</div>
+    {{??}}
+    <div>
+    {{= it.noOptions ? it.noOptions : 'No options configured' }}
+    </div>
+    {{?}}
+</div>

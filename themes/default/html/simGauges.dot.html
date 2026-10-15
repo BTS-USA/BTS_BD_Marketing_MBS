@@ -1,0 +1,8 @@
+{{ for(var i = 1; i <= 6; i++) { }}
+<div class="bottomContainer{{=i}} bottomContainer col-xs-2 col-sm-2 col-md-2 col-lg-2">
+    <div class="bottomContentContainer{{=i}} bottomContentContainer">
+        <img class="bottomIconsImage{{=i}} bottomIconsImage" src="{{=it.imageURL}}" />
+        <div class="bottomText{{=i}} bottomText">{{=it.text}}</div>
+    </div>
+</div>
+{{ } }}

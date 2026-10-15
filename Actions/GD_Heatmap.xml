@@ -1,0 +1,95 @@
+<Action>
+<Component type="HeatmapComponent" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_heatmap.dot",
+  "css":"styles/as_heatmap.css",
+  "header": {
+    "bgimage": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/headerGraphic.svg",
+    "title": "!{GD_Heatmap_Title}",
+    "description": "!{GD_Heatmap_Description}"
+  },
+  "liveUpdate":true,
+  "heatmapType": "QUESTION",
+  "direction": "VERTICAL",
+  "showValues": true,
+  "showAllTeams": true,
+  "appendParticipantName": true,
+  "columnLabel": "!{HeatmapLabel1}",
+  "isDelivery": false,
+  "filterQuestions":[
+    {
+      "filterQuestion":"Leader",
+      "filterText":1
+    }
+  ],
+  "teamName":{
+    "question":"Team_Name"
+  },
+  "questions": [
+    {
+      "title": "!{Heatmap_Base_Value_Assign}",
+      "binding": "Base_Value_Assign"
+    },
+    {
+      "title": "!{Heatmap_Activity1}",
+      "binding": "Activity1_MOMENT_SINGLE_SELECT",
+      "isAlphabet": true
+    },
+    {
+      "title": "!{Heatmap_Activity2}",
+      "binding": "Activity2_MOMENT_SINGLE_SELECT",
+      "isAlphabet": true
+    },
+    {
+      "title": "!{Heatmap_Activity3}",
+      "binding": "Activity3_Ranking_Heatmap_Enabled"
+    },
+    {
+      "title": "!{Heatmap_Activity4}",
+      "binding": "Activity4_MOMENT_SINGLE_SELECT",
+      "isAlphabet": true
+    },
+    {
+      "title": "!{Heatmap_Activity5}",
+      "binding": "Activity5_MOMENT_SINGLE_SELECT",
+      "isAlphabet": true
+    },
+    {
+      "title": "!{Heatmap_Activity6}",
+      "binding": "Activity6_Brainstorm_Heatmap_Enabled"
+    }
+  ],
+  "options": [
+    {
+      "val": "0",
+      "class": "color-0"
+    },
+    {
+      "val": "111",
+      "class": "tick"
+    }
+  ],
+  "sortAverageValues": "DESC",
+  "sorting": {
+    "question": "db:Team_Track",
+    "isNumeric": true,
+    "sortOrder": "ASC"
+  },
+  "multiSort":{
+  },
+  "maxList":"1000",
+  "trackQuestion": "Group_Director",
+  "scope": [
+    "Group_Director",
+    "Team_Track",
+    "Leader",
+    "Team_Name",
+    "Base_Value_Assign",
+    "Activity1_MOMENT_SINGLE_SELECT",
+    "Activity2_MOMENT_SINGLE_SELECT",
+    "Activity3_Ranking_Heatmap_Enabled",
+    "Activity4_MOMENT_SINGLE_SELECT",
+    "Activity5_MOMENT_SINGLE_SELECT",
+    "Activity6_Brainstorm_Heatmap_Enabled"
+  ]
+  }]]></Component>
+</Action>

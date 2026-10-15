@@ -1,0 +1,248 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="sbsc cl-component">
+            <article class="cl-xs-column-6 cl-md-column-6 sbsc-rightcol cl-padding--no">
+                {{?it.leftOptions.length > 0}}
+                <header class="sbsc-viewport">
+                    <h2 class="sbsc-viewport__title">Now Viewing</h2>
+                    <div class="sbsc-viewport__select">
+                        <div class="sbsc-viewport__selections" data-left-dropdown data-dropdown>
+                            <div class="sbsc-viewport__rootNode">
+                                <span class="sbsc-viewport__rootNodeText" data-rootnodetext>{{=it.defaultDataForm.title}}</span>
+                                <div class="sbsc-viewport__rootNodeIcon"></div>
+                            </div>
+                        </div>
+                        <div class="sbsc-viewport__options" data-left-dropdown-options data-dropdown-options
+                            data-dropdownside="left">
+                            {{var count = 0;}}
+                            {{~it.leftOptions: leftOption:index}}
+                            {{? !leftOption.enabledByField || it.assessmentBasicData[leftOption.enabledByField]}}
+                            <div class="sbsc-viewport__viewportOption cl-md-column-12 cl-sm-column-12 cl-xs-column-12 {{? it.defaultDataForm.title === leftOption.title}} sbsc-viewport__viewportOption--selected {{?}}"
+                                data-viewportoptionindex="{{=count}}" data-viewportoption-left data-viewportoption
+                                data-side="left" data-container="data-container-left" data-action="{{=leftOption.actionXML}}"
+                                {{? leftOption.entryResponseId}} data-entry-response-id="{{=leftOption.entryResponseId}}{{?}}">
+                                <span class="sbsc-viewport__viewportOptionText" data-option-text>{{=leftOption.title}}</span>
+                            </div>
+                            {{count++;}}
+                            {{?}}
+                            {{~}}
+                        </div>
+                    </div>
+                </header>
+                <div class="sbsc-window sbsc-window--left cl-vp" data-sidewindow>
+                    <header class="sbsc-window__header">
+                        <h3 class="sbsc-window__title" data-container-header-left></h3>
+                        <a class="sbsc-window__button" data-expand></a>
+                    </header>
+                    {{? it.showVideo=='true' || !it.showVideo }}
+                    <div class="sbsc-window__body sbsc-window__body--left" data-container-left>
+                        <i>nothing selected</i>
+                    </div>
+                    {{? it.videoFeatures != 'Disabled' }}
+                    <div class="sbsc-window__video" data-videosize="small">
+                        <div class="sbsc-window__videoHeader">
+                            <h4 class="sbsc-window__noteText">VIDEO</h4>
+                            <div class="sbsc-window__noteExpandBtn" data-videoexpandbtn></div>
+                            <div class="sbsc-window__noteCollapseBtn" data-videocollapsebtn></div>
+                        </div>
+                        <section class="cc-videobox__alertBoxContainer" data-alert-box>
+                            <div class="cc-videobox__alertBox">
+                                <div class="cc-videobox__alertBox--unableTo">
+                                    <img src="/wizer/Content/WizletResources/themes/default/shared/images/alert.jpg" />
+                                    <h1>
+                                        {{? it.assessorWebRTCText }}
+                                        {{=it.assessorWebRTCText.FFInfoTitle || 'Unable to connect the call'}}
+                                        {{??}}
+                                        Unable to connect the call
+                                        {{?}}
+                                    </h1>
+                                    <p>
+                                    {{? it.assessorWebRTCText }}
+                                        {{=it.assessorWebRTCText.FFInfoDescription || 'In order to connect with the person you are scheduled to meet, please use the below call-in information:'
+                                        }}
+                                    {{??}}
+                                        In order to connect with the person you are scheduled to meet, please use the below call-in information:
+                                    {{?}}
+                                    </p>
+                                </div>
+                                <div class="cc-videobox__alertBox--contactInfo">
+                                    <ul data-fallback-info-list></ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="cc-videobox sbsc-window__videoBody--small" data-label="videobox">
+                            <div class="cc-videobox-screen" data-form="video-screen">
+                                <div id="subscriberSbs"></div>
+                                <div id="publisherSbs"></div>
+                            </div>
+                            <div class="cc-videobox__buttons">
+                                {{? it.webRTCAVOptions }}
+                                <div class="cc-videobox__videoOptions">
+                                    <div class="cc-videobox__option">
+                                        <div class="cc-videobox__checkboxContainer">
+                                            <input type="checkbox" id="videoOff" data-video-opt>
+                                            <label for="videoOff" data-video-opt-label>
+                                                {{? it.assessorWebRTCText }}
+                                                {{=it.assessorWebRTCText.videoOffText || 'Turn off Video'}}
+                                                {{??}}
+                                                Turn off Video
+                                                {{?}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="cc-videobox__option">
+                                        <div class="cc-videobox__checkboxContainer">
+                                            <input type="checkbox" id="audioOff" data-audio-opt>
+                                            <label for="audioOff" data-audio-opt-label>
+                                                {{? it.assessorWebRTCText }}
+                                                {{=it.assessorWebRTCText.audioOffText || "Don't Connect to Audio"}}
+                                                {{??}}
+                                                Don't Connect to Audio
+                                                {{?}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{?}}
+                                <span class="cl-button cc-button__start" data-video-start="{{! it.callId}}" title="Call participant (and other assossors, if any)">
+                                    Start
+                                    call
+                                </span>
+                                <span class="cl-button cc-button__start" data-video-start-assessor="{{! it.callId}}"
+                                      title="Call other assossors, if any">Start assessor call</span>
+                                <span class="cl-button cc-button__forceFallback" title="Force Fallback"
+                                      data-force-fallback>
+                                    {{? it.assessorWebRTCText }}
+                                    {{=it.assessorWebRTCText.FFBtnText || 'Force Fallback'}}
+                                    {{??}}
+                                    Force Fallback
+                                    {{?}}
+                                </span>
+                            </div>
+                            <section id="noExcercises" class="cc-videobox__message hide" data-label="video-call-message">
+                                Video calls are only available on days with calendar items with the participant
+                            </section>
+                            <section id="exercisesQuestion" class=""></section>
+
+                        </section>
+                        <div></div>
+                    </div>
+                    {{?}}
+                    {{??}}
+                    <div class="sbsc-window__body sbsc-window__body--hideVideo" data-container-left>
+                        <i>nothing selected</i>
+                    </div>
+                    {{?}}
+                </div>
+                {{?}}
+            </article>
+
+            <article class="cl-xs-column-6 cl-md-column-6 sbsc-leftcol cl-padding--no">
+                <header class="sbsc-viewport">
+                    <h2 class="sbsc-viewport__title">Now Viewing</h2>
+                    <div class="sbsc-viewport__select">
+                        <div class="sbsc-viewport__selections" data-right-dropdown data-dropdown>
+                            <div class="sbsc-viewport__rootNode">
+                                <span class="sbsc-viewport__rootNodeText" data-rootnodetext>{{=(it.defaultEvalForm ? it.defaultEvalForm.title : '')}}</span>
+                                <div class="sbsc-viewport__rootNodeIcon"></div>
+                            </div>
+                        </div>
+                        <div class="sbsc-viewport__options" data-right-dropdown-options data-dropdown-options
+                            data-dropdownside="right">
+                            {{var count = 0;}}
+                            {{~it.rightOptions: rightOption:index}}
+                            <div class="sbsc-viewport__viewportOption cl-md-column-12 cl-sm-column-12 cl-xs-column-12 {{? it.defaultEvalForm.title === rightOption.title}} sbsc-viewport__viewportOption--selected {{?}}"
+                                data-viewportoptionindex="{{=count}}" data-option-complete="{{= rightOption.complete }}"
+                                data-option-exerciseid="{{= rightOption.exerciseId }}" data-option-evalformquestionid="{{= rightOption.evalFormQuestionId }}"
+                                data-viewportoption-right data-viewportoption data-side="right" data-container="data-container-right"
+                                data-action="{{=rightOption.actionXML}}" {{? rightOption.entryResponseId}}
+                                data-entry-response-id="{{=rightOption.entryResponseId}}" {{?}}
+                                {{? rightOption.newCall}} data-new-call{{?}}>
+                                <span class="sbsc-viewport__viewportOptionText" data-option-text>{{=rightOption.title}}</span>
+                            </div>
+                            {{count++;}}
+                            {{~}}
+                        </div>
+                    </div>
+
+                </header>
+                <div class="sbsc-window  sbsc-window--right cl-vp" data-sidewindow>
+                    <header class="sbsc-window__header">
+                        <h3 class="sbsc-window__title" data-container-header-right></h3>
+                        <a class="sbsc-window__button" data-expand></a>
+                    </header>
+
+                    {{? it.showNotes=='true' || !it.showNotes }}
+                    <div class="sbsc-window__body sbsc-window__body--right" data-right-container>
+                        <div class="sbsc-window__rightCont" data-container-right>
+                            <i>nothing selected</i>
+                        </div>
+                    </div>
+                    <div class="sbsc-window__notes" data-notesize="small" data-assessor-notes>
+                        <div class="sbsc-window__noteHeader">
+                            <h4 class="sbsc-window__noteText">NOTES</h4>
+                            <div class="sbsc-window__noteExpandBtn" data-noteexpandbtn></div>
+                            <div class="sbsc-window__noteCollapseBtn" data-notecollapsebtn></div>
+                        </div>
+                        {{~it.notesQuestion:objQuestion:idx}}
+                        <div data-binding="{{=objQuestion.index}}" data-binding-alt="{{=objQuestion.question}}"
+                            data-render="{{=objQuestion.renderer}}" data-assessor-notebody class="sbsc-window__textAreaContainer"></div>
+                        {{~}}
+                    </div>
+                    {{??}}
+                    <div class="sbsc-window__body sbsc-window__body--hideNote" data-right-container>
+                        <div class="sbsc-window__rightCont" data-container-right>
+                            <i>nothing selected</i>
+                        </div>
+                    </div>
+                    {{?}}
+                </div>
+            </article>
+
+        </section>
+    </div>
+</div>
+<section class="fc-modal" data-fallback-confirmation>
+    <article class="fc-modal__dialog">
+        <div class="fc-modal__container">
+            <section class="fc-modal__body">
+                <header class="fc-modal__header">
+                    <h3 class="fc-modal__title">
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.FFPopupTitle || 'Force Fallback'}}
+                        {{??}}
+                        Force Fallback
+                        {{?}}
+                    </h3>
+                </header>
+                <div class="fc-modal__content">
+                    <p>
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.FFPopupMessage || 'Do you wish to force fallback?'}}
+                        {{??}}
+                        Do you wish to force fallback?
+                        {{?}}
+                    </p>
+                </div>
+                <footer class="fc-modal__footer" data-btnholder>
+                    <div class="fc-modal__buttons">
+                        <div class="fc-customButton fc-customButton__no" data-fallback-no>
+                            {{? it.assessorWebRTCText }}
+                            {{=it.assessorWebRTCText.FFPopupNoBtn || 'No'}}
+                            {{??}}
+                            No
+                            {{?}}
+                        </div>
+                        <div class="fc-customButton fc-customButton__yes" data-fallback-yes>
+                            {{? it.assessorWebRTCText }}
+                            {{=it.assessorWebRTCText.FFPopupYesBtn || 'Yes'}}
+                            {{??}}
+                            Yes
+                            {{?}}
+                        </div>
+                    </div>
+                </footer>
+            </section>
+        </div>
+    </article>
+</section>

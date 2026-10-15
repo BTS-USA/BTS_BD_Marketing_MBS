@@ -1,0 +1,87 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="fileUploadDownload cl-component" data-fileUploadDownload>
+            <article class="fileUpload-container cl-container" data-fileupload>
+                <div class="form-row fileUpload__attachment">
+                    <div class="fileUpload-cont form-val__cell">
+                        <div class="fileUpload__attachmentTextCont">
+                            <i class="cl-icon cl-icon--attachment fileUpload__attachmentIcon"></i>
+                            <span class="fileUpload__attachmentText">{{=it.labels.attachments}}</span>
+                        </div>
+                        <div class="fileUpload__noAttachment" data-no-attachment>
+                            <span class="">{{=it.labels.noAttached}}</span>
+                        </div>
+                        <div data-uploadList>
+                            <span class="cl-button fileUpload__browseBtn" id="btnOverviewAttachment" data-files-attach data-jfiler-name="files">{{=it.labels.browse}}</span>
+                            <div class="fileUpload__attachment-btnCont">
+                                <span class="fileUpload__attachment-insertBtn" type="button" data-upload>{{=it.labels.upload}}</span>
+                            </div>
+                            <div class="cl__loader-wrap fileUpload-loader" data-loader>
+                                <div class="cl__loader-container fileUpload-loaderSubCont">
+                                    <div class="cl__loader fileUpload-loaderCont"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="fileDownload-container cl-container" data-fileDownload>
+                <div class="form-row fileDownload__attachment">
+                    <div class="fileDownload-cont form-val__cell">
+                        <div class="fileDownload-listCont">
+                            {{~it.attachments:attachment}}
+                            <div class="fileDownload-list" data-fielist>
+                                <div class="fileDownload-list__fileNameCont">
+                                    <div class="fileDownload-list__fileNameText">{{=attachment.name}}</div>
+                                    <div class="fileDownload-list__uploadedOn fileUpload--details">
+                                        {{=it.labels.uploadOn}} {{=attachment.uploadedOn}}</div>
+                                    <div class="fileDownload-list__fileSize fileUpload--details">{{=attachment.sizeKb}}</div>
+                                </div>
+                                <div class="fileDownload-list__fileDetailsCont">
+                                    <span class="cl-icon cl-icon--delete fileDownload-list__removeIcon" data-attachmentId="{{=attachment.attachmentId}}" data-filename="{{=attachment.name}}" data-removefile></span>
+                                    <a class="cl-icon cl-icon--download fileDownload-list__downloadIcon" href="/wizer/{{=attachment.url}}" target="_blank"></a>
+                                </div>
+                            </div>
+                            {{~}}
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="cl-modal fileUpload-modal" data-remove-file>
+            <article class="fileUpload-modal__dialog">
+                <div class="cl-modal__container modal-sm">
+                    <section class="cl-modal__body fileUpload-modal__body">
+                        <div class="cl-modal__content">
+                            <span>{{=it.labels.confirm}}</span>
+                        </div>
+                        <footer class="cl-modal__footer" data-btnholder>
+                            <div class="cl-modal__buttons fileUpload-modal__buttons">
+                                <span class="cl-button fileUpload-modal__buttons--cancel" data-btn="no">{{=it.labels.cancel}}</span>
+                                <span class="cl-button" data-btn="yes">{{=it.labels.delete}}</span>
+                            </div>
+                        </footer>
+                    </section>
+                </div>
+            </article>
+        </section>
+
+        <section class="cl-modal fileUpload-modal" data-duplicate-file>
+            <article class="fileUpload-modal__dialog">
+                <div class="cl-modal__container modal-sm">
+                    <section class="cl-modal__body fileUpload-modal__body">
+                        <div class="cl-modal__content" data-msg>
+                            <span></span>
+                        </div>
+                        <footer class="cl-modal__footer" data-btnholder>
+                            <div class="cl-modal__buttons fileUpload-modal__buttons">
+                                <span class="cl-button fileUpload-modal__buttons--cancel" data-btn="no">{{=it.labels.no}}</span>
+                                <span class="cl-button" data-btn="yes">{{=it.labels.yes}}</span>
+                            </div>
+                        </footer>
+                    </section>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>

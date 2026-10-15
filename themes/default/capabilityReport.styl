@@ -1,0 +1,47 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+.crc
+    page-break-inside avoid
+    &-body
+        background white
+        padding 20px 0
+    &-capability
+        background $deepCerulean
+        padding 5px 20px
+        margin-bottom 20px
+        &__header
+            padding 10px 20px
+        &__title
+            font-size 1.6*$px
+            text-transform uppercase
+            color #FFFFFF
+            font-weight 400
+        &__fields
+            clear both
+            padding 0 20px
+        &__row
+            margin 5px 0
+        &__value-cell
+            padding 10px 20px
+        &__label-cell
+            padding 10px 20px 10px 0px
+        &__proficiency-label, &__individual-label, &__exercise-label
+            color $gray
+            font-size 1.2*$px
+        &__proficiency-result, &__individual-feedback, &__exercise-feedback
+            color $tundora
+        &__individual-label
+            font-size 1.2*$px
+        &__proficiency-result
+            &--level1 /* significant development needed */
+                color $monza
+            &--level2 /* development needed */
+                color $treePoppy
+            &--level3 /* proficient */
+                color $apple
+            &--level4 /* strength */
+                color $apple
+        
+        &__individual-feedback 
+            background $mercury

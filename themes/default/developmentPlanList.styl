@@ -1,0 +1,372 @@
+@import "shared/cl.styl"
+
+.developmentplanpopup.ui-dialog
+     top 0 !important
+     left 0 !important
+     height 100% !important
+     width 100% !important
+     padding-top 30px
+     position fixed
+     > ui-dialog-content
+        height 100% !important
+.developmentplanpopup
+    .ui-dialog-titlebar
+        padding 0px !important
+    .ui-widget-header
+        border 0px !important
+    .ui-dialog-title
+        display none
+    .ui-dialog-content
+        max-height calc(100% - 1px) !important
+        padding 0em 1em .5em 1em !important
+    .ui-dialog-titlebar-close
+        margin -25px -6px 0 0
+        right .625rem
+        top .2rem
+        padding 1rem
+        cursor pointer
+        background $codGray
+    .ui-icon-closethick
+        width .9375rem
+        height .9375rem
+        background url("media/img/close.svg") no-repeat center center
+        margin -7px 0 0 -7px
+
+.dpel
+    overflow hidden
+    @media screen and (max-width 767px)
+        padding 20px
+    &-header
+        &__title
+            overflow hidden
+        &__print
+            float right
+            font-size 1.6rem
+            padding 3px 15px 0 0
+            cursor pointer
+            @media screen and (max-width 767px)
+                font-size 1rem
+                font-weight bold
+
+        &__addNew
+            float right
+            margin 0 15px 0 0
+            cursor pointer
+            &:before
+                font-size 1.7rem
+            @media screen and (max-width 767px)
+                &:before
+                    font-size 1.2rem
+                    
+        &__participant
+            font-size 1.6rem
+            text-transform uppercase
+            font-weight 600
+            @media screen and (max-width 767px)
+                font-size 1rem
+        &-item
+            float left
+            margin 3px
+                       
+        &__participantCont
+            width 87%
+            float left
+            padding 0 10px
+            @media screen and (min-width 768px) and (max-width 1024px)
+                width 70%
+                line-height 1.8rem
+            @media screen and (max-width 767px)
+                width 70%
+                line-height 1.2rem
+            
+        &__buttons
+            width 13%
+            float right
+            @media screen and (max-width 1024px)
+                width 30%
+
+    &-list
+        &-row
+            padding 0
+            border-spacing 10px
+            .cl-vp[min-width~="768px"] &
+                display table
+        &-item
+            padding 0
+            float left
+            .cl-vp[min-width~="768px"] &
+                display table-cell
+            
+            padding 5px
+            @media print
+                .cl-vp[min-width~="768px"] &
+                    display block !important
+                    width 100% !important
+            &-cont
+                margin-bottom 10px
+                @media print
+                    page-break-inside avoid
+            &__categoryKey
+                text-transform uppercase
+                font-weight 600
+                display block
+                margin 0 0 5px 0
+                font-size 1.2rem
+                @media print
+                    display none
+        &-cont
+            &__hide
+                display none
+            
+    &-item
+        word-wrap break-word
+        padding 0px 10px
+        @media print
+            padding 0 15px
+
+        &:first-child
+            .dpel-item__cont
+                border-top none
+
+        &-header, &-footer
+            padding 15px
+            overflow hidden
+            background-color $bayOfMany
+            color white
+            &__button
+                float left
+            
+        &__header
+            width calc(100% - 70px)
+            float left
+            &Item
+                color white
+                padding 0 0 0 5px
+                @media print
+                    padding 0
+            &Response
+                float left 
+            @media print
+                border-bottom 1px solid $bayOfMany
+                width 100%
+                padding 0 0 10px 0
+                
+        &__quesDispText
+            float left
+            clear both
+            @media print
+                padding 0 7px 0 0 
+            
+        &-buttons
+            width 30px
+            height 30px
+            border-radius 50%
+            border 3px solid #fff
+            position relative
+            cursor pointer   
+            &:before
+                position absolute
+                left 5px
+                top 4px
+                font-size 0.9rem 
+                font-weight bold
+            @media print
+                display none
+        &-content
+            clear both
+            background-color white
+            padding 10px
+
+        &--border
+            .dpel-item__cont
+                border-top 1px solid $bayOfMany
+                @media print
+                    border-top none
+
+        &__title
+            color $bayOfMany
+            font-weight 600
+            .dpel-item__cont
+                border-top none
+
+        &__cont
+            padding 10px 10px 20px 10px
+            @media print
+                padding 5px 0 0 0
+
+        &__headerCont
+            overflow hidden
+            padding 0 0 2px 0
+        
+        &__notes
+            color $bayOfMany
+
+        &__completionStatus, &__author
+            .dpel-item__responseText
+                font-size 18px
+
+        &__label--color
+            color $bayOfMany
+            font-weight 600
+
+        &__label--cerulean
+            color $cerulean
+            font-size 0.8rem
+
+        &__author
+            .dpel-item__cont
+                overflow hidden
+                border-bottom 1px solid $bayOfMany
+                @media print
+                    border-bottom none
+                     
+        &__authorLabel, &__authorName
+            color $cerulean
+            font-weight 600
+            margin 5px 0 0 0
+            float left
+
+        &__authorName
+            padding 0
+            margin 5px 0 0 5px
+
+        &__response--color
+            color $treePoppy
+            
+        &__response--1
+            color $papaya
+            
+        &__response--2
+            color $banana
+            
+        &__response--3
+            color $pear
+        
+        &__collapse
+            float right
+            margin 0 0 0 7px
+            
+        &__edit
+            float left
+        
+        &__godoCompletionStatus
+            float left
+            padding 0 0 0 10px
+            font-size 12px
+            clear both
+            @media print
+                padding 0
+                clear both
+                
+        &__godoDate
+            float left
+            font-size 12px
+            padding 0 0 0 2px
+            @media print
+                font-size 10px
+
+        &__categoryKey
+            display none
+            @media print
+                display block
+                float left
+                text-transform capitalize
+                padding 0 7px 0 0
+
+        &--noPadding
+            padding 0
+    
+    &-content
+        &__hide
+            max-height 0
+            overflow hidden
+            padding 0
+            transition max-height .7s ease-out
+            -webkit-transition max-height .7s ease-out
+            @media print
+                max-height 10000px
+        &__show
+            max-height 10000px
+            transition max-height .7s ease-in
+            -webkit-transition max-height .7s ease-in
+
+    &-filter
+        &__label
+            padding 8px 15px 0 0
+            float left
+        &__select
+            float left
+            border none
+            font-size .875rem
+            outline none
+            padding .4rem .625rem
+            resize none
+            color white
+            background $tundora
+            width 252px
+            &.disabled
+                background alpha($tundora, 0.3)
+
+        &-cont
+            margin 0 0 20px 0
+            &:after
+                display table
+                content ""
+                clear both
+
+@media print
+    body
+        background-image none
+        height auto !important
+    body *
+        visibility hidden
+    .mainWrapper.SideBySide.wizTypeSideBySide
+        overflow initial !important
+        overflow-x initial !important
+    .page #main, .apum-bar, .dpel-item-edit, .sbsc-rightcol
+        display none
+    .cl-md-column-6, .cl-md-cell-6, .cl-sm-column-12
+        width 100% !important
+    .dpel-header
+        background-color $cerulean
+        -webkit-print-color-adjust exact
+        visibility visible
+        text-align center
+        &__title, &__participant
+            visibility visible
+        &__title
+            font-weight 600
+            font-size 1.6rem
+        &__participant
+            text-transform capitalize
+        &__addNew, &__print
+            display none
+    .dpel-list-cont *
+        visibility visible
+    .dpel-list-item
+        width 100%
+    .dpel-list-item-cont
+        page-break-inside avoid         
+    .dpel-item__headerText, .dpel-item__quesDispText
+        color $bayOfMany
+        font-size 24px
+    .sbsc-window__body--right
+        height calc(100% - 30px)
+    .sbsc-window__rightCont, .dpel, .sbsc, .sbsc-window__body--right
+        overflow visible
+    .sbsc-window--expand
+        width 100%
+    .dpel-item__headerText.dpel-item__response--1
+        color $papaya
+        font-size 18px
+    .dpel-item__headerText.dpel-item__response--2
+        color $banana
+        font-size 18px
+    .dpel-item__headerText.dpel-item__response--3
+        color $pear
+        font-size 18px
+    .dpel-item__label--cerulean
+        color $cerulean
+        font-size 18px
+    .dpel-filter-cont
+        display none

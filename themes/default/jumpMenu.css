@@ -1,0 +1,77 @@
+.wizletJumpMenu
+{
+	font-family: arial;
+	font-size: 13px;
+}
+
+.wizletJumpMenu h2 {
+	font-size: 16px;
+	padding: 20px 0 7px 0; 
+	margin: 0 0 0 20px;
+}
+
+.wizletJumpMenu .JumpMenuWizlet
+{
+	float: left;
+	width: 100%;
+}
+
+.wizletJumpMenu #contentBox
+{
+	float: none;
+}
+
+.wizletJumpMenu .mainContentWrapper
+{
+	padding: 0px;
+}
+
+.wizletJumpMenu #description ul
+{
+	margin-bottom: 10px;
+	margin-left: 35px;
+}
+
+.wizletJumpMenu #description p
+{
+	font-size: 14px;
+	padding-top: 15px;
+	padding: 15px 17px;
+}
+
+.wizletJumpMenu .JumpMenuContainer
+{
+	position: relative;
+	left: 0px;
+	top: 0px;
+	padding-left: 17px;
+	padding-bottom: 17px;
+	float: left;
+}
+
+.wizletJumpMenu .textButton
+{
+	display: block;
+	background: url(media/img/textbutton_icon.png) no-repeat 0 0;
+	min-height: 31px;
+	padding-left: 40px;
+	padding-top: 7px;
+	cursor: pointer;
+}
+
+.wizletJumpMenu .textButton:hover
+{
+	/*background-position: 0 -469px;*/
+}
+
+
+.wizletJumpMenu .textButton.danish {
+    color: orangered;
+}
+.wizletJumpMenu .textButton.world {
+    color: cornflowerblue;
+}
+.wizletJumpMenu .textButton.biggerthanusa {
+    color: lightgreen;
+}
+

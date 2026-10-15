@@ -1,0 +1,99 @@
+
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="tlc-section-main" data-componentContainer>
+            {{? it.header}}
+            <header class="cl-header--main" data-textListHeader>
+                <div class="cl-header-wrapper">
+                    {{? it.header.title}}
+                    <h1 class="cl-header__title--main">{{=it.header.title}}</h1>
+                    {{?}}
+                    {{? it.header.description}}
+                    <p class="cl-header__description--main">{{=it.header.description}}</p>
+                    {{?}}
+                </div>
+            </header>
+            {{?}}
+        </section>
+        <article class="ic-article">
+            <div class="cl-container ic-mainContainer">
+
+                <div class="ic-mainCont" data-idea-cont>
+                    <div class="cl-xs-column-12 cl-row">
+                        <div class="ic-row cl-row" data-textareacontainer>
+                            <div class="ic-instructions">
+                                <p class="ic-instructions__text">{{=it.instructions[0]}}</p>
+                                <span class="ic-text__small"><span data-textlimit>{{=it.maxTextLimit}}</span> {{=it.instructions[1]}}</span>
+                            </div>
+                            <div>
+                                <textarea class="ic-textarea" maxlength="{{=it.maxTextLimit}}" data-ideaText></textarea>
+                            </div>
+                        </div>
+
+                        <div class="ic-row cl-row" data-riskthemecontainer>
+                            <select data-risktheme class="ic-select">
+                                {{~it.riskThemes:theme}}
+                                <option value="{{=theme.value}}">{{=theme.text}}</option>
+                                {{~}}
+                            </select>
+                        </div>
+
+                        <div class="ic-row cl-row" data-buttoncontainer>
+                            <div class="ic-center">
+                                {{? it.buttons[0] }}
+                                <div class="ic-submit_button ic-disabled" data-submitbutton>
+                                    {{=it.buttons[0].title}}
+                                    <i class="cl-icon cl-icon--tick-filled"></i>
+                                </div>
+                                {{?}}
+                            </div>
+                        </div>
+
+                        <div class="ic-row cl-row" data-submittextcontainer>
+                            <div class="ic-center ic-textheader">
+                                {{=it.instructions[2]}}
+                            </div>
+                        </div>
+
+
+                        <div class="ic-row cl-row" data-ideasContainer>
+                            {{~it.ideas:idea:id}}
+                            <div class="cl-xs-column-12 cl-row">
+                                <div class="ic-votes">
+                                    <div>
+                                        {{? it.renderTextArea == false }}
+                                        <div class="ic-uppardivider" style="background-color:{{=idea.riskColorCode}}">
+                                        </div>
+                                        {{?}}
+                                        <div class="ic-author">
+                                            <span class="ic-peopleIcon cl-icon cl-icon--people"></span>
+                                            <p class="ic-author__text" data-voteauthor="">{{=idea.ParicipantName}}</p>
+                                            <span class="ic-text">{{=it.instructions[3]}}: <span class="ic-text__bold">{{=idea.riskThemeText}}</span></span>
+                                            {{? it.showImportantStatus == true && it.isLeader == true}}
+                                            <span class="tlc-markImportant cl-icon cl-icon--tick-filled" data-voteAuthorIndex="{{=idea.Id}}" ></span>
+                                            {{??}}
+                                            <span class="tlc-markImportant cl-icon" data-voteAuthorIndex="{{=idea.Id}}" ></span>
+                                            {{?}}
+                                        </div>
+                                        <div class="ic-divider">
+                                            <hr class="ic-divider__hr">
+                                        </div>
+                                        <div class="ic-vote {{? it.renderTextArea == false }} ic-vote__box {{?}}">
+                                            <p class="ic-vote__text cl-paragraph">{{=idea.ResponseText}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{~}}
+                        </div>
+
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </article>
+
+    </div>
+</div>

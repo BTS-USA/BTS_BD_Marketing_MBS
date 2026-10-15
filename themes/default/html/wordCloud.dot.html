@@ -1,0 +1,38 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="wcc cl__component">
+            {{? it.header}}
+                <header class="wcc-header cl-header--main">
+                    {{? it.header.breadCrumbs}}
+                        <p class="msc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="msc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="msc-header-wrapper cl-header-wrapper">
+						{{? it.header.title}}
+							<h1 class="wcc-header__title cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+								{{=it.header.title}}
+							</h1>
+						{{?}}
+						{{? it.header.description}}
+							<p class="wcc-header__description cl-header__description--main">
+								{{=it.header.description}}
+							</p>
+						{{?}}
+					</div>
+                </header>
+            {{?}}
+            <div class="wcc-container cl-container">
+               <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <div class="wcc-instructions cl-instructions">
+                            <p class="wcc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                    <article class="wcc-content cl-content" data-wordCloudContainer></article>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

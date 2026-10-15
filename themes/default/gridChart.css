@@ -1,0 +1,63 @@
+
+.wizletGridChart { 
+	/*background-image:url("media/img/bg.png"); */
+	color:#fff; 
+	font-size:12px; 
+	line-height:1.3em; 
+	font-family:arial; }
+
+.wizletGridChart h1{ line-height: 30px; }
+
+.wizletGridChart .legend { width:960px; margin:auto; margin-top:10px; }
+.wizletGridChart .legend .container { overflow:hidden; background-color:#666; padding:5px; width:auto; float:right; clear:right; margin-right:60px; }
+.wizletGridChart .legend .legend-box { float:left; padding-left:18px; margin-right:15px; font-weight:bold; }
+.wizletGridChart .legend .legend-box.participant { background-image:url("media/img/dot.png"); background-repeat:no-repeat;  height:15px; }
+.wizletGridChart .legend .legend-box.global-avr { background-image:url("media/img/refdot.png"); background-repeat:no-repeat; height:15px; }
+.wizletGridChart .legend .legend-box.group-avr { background-image:url("media/img/averagedot.png"); background-repeat:no-repeat; height:15px; }
+.wizletGridChart .legend .legend-box.you { background-image:url("media/img/mydot.png"); background-repeat:no-repeat; height:15px; }
+.wizletGridChart #presenter_BaseSlide .legend .legend-box.you { display:none; }
+
+
+.wizletGridChart .centralizer{ width:960px; margin:auto; position:relative; margin-top:40px; }
+
+.wizletGridChart .results,.wizletGridChart .comments{ width:460px; float: left; }
+
+
+/* .grid{ position:relative; background-image:url("images/grid.png"); background-position: -1 0; margin-left:40px; } */ 
+.wizletGridChart .grid,.wizletGridChart .grid .x-axis,.wizletGridChart #x-axis-label,.wizletGridChart .grid .x-line{ width:899px; }
+.wizletGridChart .grid,.wizletGridChart .grid .y-axis,.wizletGridChart .grid .y-line{ height:499px; }
+.wizletGridChart .grid .x-axis,.wizletGridChart .grid .y-axis{ background-color: #fff; position:absolute; padding:0; }
+	.wizletGridChart .grid .x-axis{ height:3px; }
+	.wizletGridChart .grid .y-axis{ width:3px; }
+
+	.wizletGridChart .grid .dot{ background-image:url("media/img/dot.png"); width:15px; height:15px; }
+	.wizletGridChart .grid .dot{ position:absolute; z-index:1; } 
+	.wizletGridChart .grid .refdot { background-image:url("media/img/refdot.png"); width:15px; height:15px; position:absolute; z-index:2;}
+	.wizletGridChart .grid .explanation{ background-color: #00114e; padding:5px; border:1px solid #fff; font-size:10px; width:100px;}
+	.wizletGridChart .grid .explanation{ position:absolute; } 
+		.wizletGridChart .grid .explanation h3{ margin: -20px 0 5px 0; }
+		.wizletGridChart .grid .explanation img{ margin-left:-15px; }
+	.wizletGridChart .grid .P1 { position:absolute; z-index:0; background-image:url("media/img/p1.png"); width:450px; height:250px; background-repeat:no-repeat; }
+	.wizletGridChart .grid .P2 { position:absolute; z-index:2; background-image:url("media/img/p2.png"); width:15px; height:15px; background-repeat:no-repeat;}
+	.wizletGridChart .grid .averagedot { position:absolute; z-index:2; background-image:url("media/img/averagedot.png"); width:15px; height:15px;}
+	.wizletGridChart .grid .mydot { position:absolute; background-image:url("media/img/mydot.png"); width:15px; height:15px; z-index:2; }
+
+	.wizletGridChart .grid .axis-value-label{ font-size:9px; position:absolute; }
+
+.wizletGridChart #x-axis-label,.wizletGridChart #y-axis-label{ font-size:16px; font-weight:bold; }
+.wizletGridChart #x-axis-label{ text-align:center; height:20px; margin-top: 20px; float:right; }
+.wizletGridChart #y-axis-label{
+	 writing-mode: bt-rl; 
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	position: absolute;
+	left:-260px;
+	top:250px;
+	width:499px;
+	text-align:center;
+}
+.wizletGridChart .grid .y-line,.wizletGridChart .grid .x-line{ background:url("media/img/grid.png"); position:absolute; }
+.wizletGridChart .grid .y-line{ width:1px; }
+.wizletGridChart .grid .x-line{ height:1px; background-position: 0 1px;}
+

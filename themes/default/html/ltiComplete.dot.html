@@ -1,0 +1,28 @@
+﻿<div class="mainContentWrapper">
+	<div class="mainContent">
+		<section class="lti cl-component">
+			<div class="lti-container cl-container">
+				<div class="cl-xs-column-12 cl-row lti-cl-row">
+					<article class="lti-article cl-article">
+						<div class="lti-buttons-container">
+                            {{~it.menuOptions:option:optionIndex }}
+							<div class="lti-button option-{{=optionIndex}} lti-navigationOptions {{?(!option.navigation.remove)}}active{{?}} {{? option.selected}}lti-button--selected {{?}} {{=option.navigation.targetSection}}" data-remove="{{=option.navigation.remove}}" data-action-option="{{=optionIndex}}" data-navigate="click" {{=option.navigation.data}} {{?it.showDisabledButton}}data-buttondisabled="{{=option.navigation.remove}}"{{?}} data-complete>
+                                {{? option.img}}
+								<img class="lti-button__image" src="{{=option.img}}" height="20" />
+                                {{??}}
+								<span class="lti-button__text">{{=option.navigation.title}}</span>
+                                {{?}}
+							</div>
+                            {{~}}
+						</div>
+						
+							<div class="lti-message">
+								<span data-error/>
+							</div>
+						
+					</article>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

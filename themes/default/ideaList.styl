@@ -1,0 +1,218 @@
+// import variables and mixins
+@import "shared/cl.styl"
+// Matching Result Component Styles
+.ic
+    &-mainCont
+        position relative
+        height 500px
+        margin 0
+        padding 0
+    &-article
+        margin 10px 0 10px 0
+    &-mainContainer
+        margin 0 auto
+        position relative
+        height auto
+    &-row        
+        padding-top 5%
+        margin auto
+        width 80%
+    &-textarea
+        border 5px solid rgba(10, 185, 240, 1)
+        height 120px
+        padding 10px
+        font-family inherit
+        width 100%
+        resize none
+    &-instructions
+        padding 10px 20px
+        color #fff
+        display flex
+        &__text
+            flex auto
+            font-weight 600
+            font-size 16px
+    &-select
+        width 100%
+        height 50px
+        padding 2px 2px 2px 20px
+        border-radius 10px
+        background linear-gradient(180deg, rgba(66, 208, 255, 1) 0%, rgba(10, 185, 240, 1) 81%)
+        color #fff
+    &-submit_button
+        width 130px
+        position relative
+        padding 10px 2px 2px 2px
+        color #FFFFFF
+        text-align center
+        text-transform uppercase
+        border-radius 20px
+        font-weight 600
+        transition all 500ms cubic-bezier(0.6, -0.28, 0.735, 0.045)
+        height 40px
+    &-disabled
+        background-color rgba(191, 194, 200, 1)
+        cursor none
+        opacity 1
+        pointer-events none
+    &-enabled
+        background linear-gradient(180deg, rgba(66, 208, 255, 1) 0%, rgba(10, 185, 240, 1) 81%)
+        cursor pointer    
+    &-center
+        display flex
+        align-items center
+        justify-content center
+    &-vote 
+        background-color rgba(255, 255, 255, 1);
+        color #6D747
+        padding 10px 20px
+        &__text
+            font-family 'Open Sans Light', 'Open Sans Regular', 'Open Sans', sans-serif
+            font-weight 300
+        &__box
+            padding 10% 5% 10% 5%
+            text-align center
+    &-author
+        background-color rgba(255, 255, 255, 1);
+        color #6D747
+        display flex
+        padding 2% 2% 1% 2%
+        &:after
+            content ''
+            display table
+            clear both
+        &__text
+            flex 1
+            font-family 'Open Sans Light', 'Open Sans Regular', 'Open Sans', sans-serif
+            font-weight 300
+    &-peopleIcon
+        color #ccc
+        margin-right 9px
+        padding 1px 0
+        &:before
+            font-size 18px
+    &-text
+        font-family 'Open Sans Light', 'Open Sans Regular', 'Open Sans', sans-serif
+        font-weight 300
+        font-size 14px
+        &__bold
+            font-weight 600
+        &__small
+            font-size 12px
+    &-textheader        
+        font-family 'Open Sans Light', 'Open Sans Regular', 'Open Sans', sans-serif
+        font-weight 300
+        font-style normal
+        font-size 18px
+        color #fff
+    &-votes 
+        margin-bottom 5%
+    &-uppardivider
+        display flex
+        justify-content center
+        align-items center
+        height 10px
+        width 100%
+    &-divider 
+        background-color #fff       
+        display flex
+        justify-content center
+        align-items center
+        &__hr
+            width 95%            
+        &__highlighter
+            border 5px solid
+            width 100%
+
+.select option:hover
+    background-color rgb(168, 173, 180)
+    color #fff
+
+.disabled
+    opacity 0.5
+    pointer-events none		
+        
+.tlc
+    &-ideaAttributes
+        padding 10px
+        &:nth-child(even)
+            background #e6e5e5
+            color gray
+        &:nth-child(odd)
+            background #dedede
+            color gray
+    &-filters
+        background-color $tundora
+        padding 20px 20px 5px 20px
+        margin 0 0 20px 0
+        color white
+    &-filter
+        margin 0 20px 15px 0
+        &:last-child
+            margin 0 0 15px 0
+        @media (min-width: 768px)
+            float left        
+    &-article
+        margin 10px 0 10px 0
+    &-vote,
+    &-author
+        padding 10px 20px
+    &-vote 
+        background-color alpha($codGray, 0.5)
+        color white
+        &__number
+            float left
+            margin 0 10px 0 0
+            color white
+            &--hide
+                display none
+        &__text
+            font-weight 100
+    &-author
+        background-color $codGray
+        color $cerulean
+        display flex
+        &:after
+            content ''
+            display table
+            clear both
+        &__text
+            flex 1
+    &-markImportant, &-likeIcon
+        color #ccc
+        opacity 50%
+        cursor pointer
+    &-markImportant
+        margin-right 15px
+        &:before
+            font-size 20px
+        &--checked
+            opacity 1
+            color $cerulean
+        &--disabled
+            opacity 0.2
+            pointer-events none
+    &-likeIcon
+        color white
+        &--checked
+            opacity 1
+            color red
+        &--disabled
+            opacity 0.2
+            pointer-events none
+    &-deleteIcon
+        color white
+        float right
+        cursor pointer
+    &-votelist
+        margin 39px 0px 20px 0px
+        float right
+    &-peopleIcon
+        color #ccc
+        margin-right 9px
+        padding 1px 0
+        &:before
+            font-size 18px
+    &-likeCount
+        color #ccc
+        margin-right 15px            

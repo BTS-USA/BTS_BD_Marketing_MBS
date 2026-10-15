@@ -1,0 +1,67 @@
+// import component library mixins and variables
+@import "shared/cl.styl"
+
+.wizletAchievement 
+    .achievementContainer
+       width 100%
+       padding 0.5*$px
+       margin 0.5*$px 0
+       background-color: #ffffff;
+       h1.achivementTitle
+                border 0
+                font-weight 100
+                padding 1*$px 2*$px 
+                margin 0 0 1*$px 0
+                font-size 1.4*$px
+                text-align: center;
+                width 100%
+                background-color #2D6D91
+                text-transform uppercase
+       .achievementContent
+             padding 0.5*$px 1*$px
+             width 100%
+             margin-bottom 1*$px
+             .achievementTable
+                width:100%;
+          .achivementBoard
+             clear both
+             .sco*$pxessage
+                color #58595B
+                text-align center
+                margin 0.5*$px 0 1*$px 0
+                font-size 1.4*$px
+                .*$pxainingPoints
+                   font-weight 600
+       &:after
+          content ""
+          display block
+       .scoreHolder
+          margin 0.5*$px 0 0 0
+          width 100%
+          text-align center;
+          .star
+             margin 0 .25*$px 0 0.25*$px
+             display inline-block;
+       span.currentLevelLabel
+             color #AAAAAA;
+             font-size 1.4*$px;
+             width 100%;
+             text-align center;
+             display inline-block;
+             padding 0 0 0.5*$px 0;
+       .achievementCertificateHolder 
+          margin 1*$px 0 0 0
+          width 100%
+          .achievementCertificateLink 
+             display block
+             padding 0.5*$px 1*$px
+             margin 0
+             text-align center
+             font-size 1.6*$px
+             width 100%
+             text-decoration none
+             background-color #3EB3F5
+             text-transform uppercase
+             border-radius: 0.2*$px;
+             -moz-border-radius: 0.2*$px;
+             -webkit-border-radius: 0.2*$px;

@@ -1,0 +1,20 @@
+﻿<div>
+    <div class="copy_url">
+        <span class="copy_url-meeting__code"> {{= it.content.meetingHeaderText }}{{=it.code}}</span>
+        <span class="copy_url-url_text" data-meeting-copydirecturl data-direct-link="{{=it.link}}">
+            {{=it.content.linkTitle}}
+        </span>
+    </div>
+
+    <section class="copy_url-modal cl-modal" data-copyurl-modal>
+        <article class="cl-modal__dialog">
+            <div class="cl-modal__container">
+                <section class="cl-modal__body">
+                    <div class="cl-modal__content">
+                        <p>{{=it.content.linkCopiedText}}</p>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </section>
+</div>

@@ -1,0 +1,7 @@
+
+.BarChart_OuterDiv 
+{
+	height: 430px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}

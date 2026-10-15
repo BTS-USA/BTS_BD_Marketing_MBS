@@ -1,0 +1,83 @@
+<Action>
+  <Component type="SingleSelect" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_singleSelect.dot",
+  "css": "styles/as_singleSelect.css",
+  "header": {
+    "bgimage": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/headerGraphic.svg",
+    "title": "!{Activity2_MomentSingleSelectRadioTitle}",
+    "description": "!{Activity2_MomentSingleSelectRadioDescription}"
+  },
+  "instructions": "!{Activity2_MomentSingleSelectRadioInstructions}",
+  "type": "select",
+  "readOnlyCondition": "Q.Leader==2",
+  "questions": [
+    {
+      "binding": "Activity2_MOMENT_SINGLE_SELECT",
+      "options": [
+        {
+          "name": "!{Activity2_MomentSingleSelectOption1}",
+          "title": "!{Activity2_MomentSingleSelectOption1}",
+          "subDescription": "!{Activity2_MomentSingleSelectDescription1}",
+          "value": "1"
+        },
+        {
+          "name": "!{Activity2_MomentSingleSelectOption2}",
+          "title": "!{Activity2_MomentSingleSelectOption2}",
+          "subDescription": "!{Activity2_MomentSingleSelectDescription2}",
+          "value": "2"
+        },
+        {
+          "name": "!{Activity2_MomentSingleSelectOption3}",
+          "title": "!{Activity2_MomentSingleSelectOption3}",
+          "subDescription": "!{Activity2_MomentSingleSelectDescription3}",
+          "value": "3"
+        }
+      ]
+    }
+  ],
+  "bindings": {
+    "1": {
+      "bind": "db:Activity2_MOMENT_SINGLE_SELECT",
+      "render": "renderer/radio",
+      "trackQuestion": "Team_Track",
+      "renderOptions": {
+        "id": 1,
+        "val": "1",
+        "type": "select"
+      }
+    },
+    "2": {
+      "bind": "db:Activity2_MOMENT_SINGLE_SELECT",
+      "render": "renderer/radio",
+      "trackQuestion": "Team_Track",
+      "renderOptions": {
+        "id": 2,
+        "val": "2",
+        "type": "select"
+      }
+    },
+    "3": {
+      "bind": "db:Activity2_MOMENT_SINGLE_SELECT",
+      "render": "renderer/radio",
+      "trackQuestion": "Team_Track",
+      "renderOptions": {
+        "id": 3,
+        "val": "3",
+        "type": "select"
+      }
+    }
+  },
+  "buttons": [
+    {
+      "text": "!{Activity2_submit}",
+      "type": "submit",
+      "submitButton": true
+    }
+  ],
+  "scope": [
+    "Activity2_MOMENT_SINGLE_SELECT",
+    "Team_Track",
+    "Leader"
+  ]
+}]]></Component>
+</Action>

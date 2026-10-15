@@ -1,0 +1,163 @@
+@import "./shared/cl.styl"
+
+$pink = #f51d60
+
+::placeholder {
+  font-size: 12px
+  text-align: center
+}
+
+.gt
+  margin 0 365px 0 210px
+  @media screen and (max-width 768px)
+    margin 0 70px
+  &-errors
+    padding 3px
+    color $ceriseRed
+  &-headerText
+    font-size 2.2em
+    font-weight 700
+    font-style normal
+    color $codGray
+  &-input
+    border-top none
+    border-right none
+    border-left none
+    border-bottom: 1px solid 
+    width 70%
+    :focus
+      box-shadow none !important
+  &-backgroundImg
+    position absolute
+    height 360px
+    bottom 25px
+    right 0
+    vertical-align middle
+    z-index -1
+    @media screen and (max-width 768px)
+      bottom 87px
+  &-card
+    display flex
+    text-align center
+    margin-top 15px
+    &-left
+      width 35%
+      position relative
+      box-shadow 0 2px 20px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)
+      &-heading
+        text-align center
+        color $cerulean
+        padding 7px
+        font-size 14px
+        margin 0 50px
+        p
+          font-weight 600
+      &-title
+        padding 7px
+        text-align center
+        font-size 17px
+        font-weight 700
+        color $cerulean
+      &-desc
+        font-size 12px
+        text-align center
+        margin 0 25px
+      &-submit
+        position absolute
+        bottom 5px
+        width 100%
+        padding 7px
+        margin 18px 0 10px 0
+        display flex
+        justify-content center
+        .button
+          background-color rgba(40, 50, 75, 1)
+          text-align center
+          padding 5px 40px
+          border-radius 20px
+          color #fff
+          cursor pointer
+          font-size 14px
+          &:hover
+            background-color $cerulean
+      &-icon
+        text-align center
+        font-size 22px
+        padding 7px
+        color $cerulean
+    &-right
+      width 50%
+      margin-left 10px
+      box-shadow 0 2px 20px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)
+      @media screen and (max-width 768px)
+        width 65%
+      &-heading
+        text-align center
+        color $cerulean
+        padding 7px
+        font-size 14px
+      &-participat
+        display flex
+        justify-content center
+        margin-top 25px
+      &-leader
+        width: 50%
+        text-align center
+        .icon
+          padding 7px
+          font-size 22px
+          color $cerulean
+        .title
+          padding 5px
+          text-align center
+          font-size 17px
+          font-weight 700
+          color #00adef
+        .input
+          margin-top 20px
+        .submit
+          margin 39px 45px 31px 45px
+          position relative
+          top 13px
+          @media screen and (max-width 768px)
+            margin 60px 45px 31px 45px
+          &-button
+            padding 5px 30px
+            border-radius 20px
+            color #fff
+            cursor pointer
+            font-size 14px
+            background-color rgba(40, 50, 75, 1)
+            &:hover
+              background-color $cerulean
+      &-follower
+        text-align center
+        width 50%
+        border-left 2px dashed
+        .icon
+          padding 7px
+          font-size 22px
+          color $cerulean
+        .title
+          padding 5px
+          text-align center
+          font-size 17px
+          font-weight 700
+          color #00adef
+        .input
+          margin-top 20px
+        .submit
+          margin 39px 45px 31px 45px
+          position relative
+          top 13px
+          @media screen and (max-width 768px)
+            margin 60px 45px 31px 45px
+          &-button
+            padding 5px 30px
+            border-radius 20px
+            color #fff
+            cursor pointer
+            font-size 14px
+            background-color rgba(40, 50, 75, 1)
+            &:hover
+              background-color $cerulean

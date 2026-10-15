@@ -1,0 +1,88 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="tilePageComponent">
+            {{? it.header}}
+            <header class="componentName__header-main cl__header-main">
+                {{? it.header.title}}
+                <h1 class="componentName__title-main cl__title-main">{{=it.header.title}}</h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="componentName__description-main cl__description-main">{{=it.header.description}}</p>
+                {{?}}
+            </header>
+            {{?}}
+            <article class="tilePage container-fluid pulsetilePage">
+                <div class="container-fluid pulseMenuContainer">
+                    <div class="pulseNavigationView">
+                        <div class="pulseNavigationSlider">
+                            {{var space = 3600; var columns=0;}}
+                            {{~it.links :link:i}}
+                            {{? columns%3==0}}
+                            <div class="pulseNavigationPanel{{?!(link.navigation.remove)}} active{{?}}">
+                                {{?}}
+                                {{?space==3600}}
+                                <div class="pulseNavigationCol col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                    {{?}}
+                                    <div class="pulseNavigationElement pulseNavElm-{{=i}} fix-box-{{=link.size}}">
+                                        {{? link.size==1}}
+                                        {{#def.snippet_1}}
+                                        {{?}}
+                                        {{? link.size==2}}
+                                        {{#def.snippet_2}}
+                                        {{?}}
+                                        {{? link.size==4}}
+                                        {{#def.snippet_4}}
+                                        {{?}}
+                                        <div class="commandOutput outputcollapsed" data-closeelement="{{=i}}" id="commandOutput{{=i}}"></div>
+                                    </div>
+                                    {{space = space - (Math.pow(link.size,2)*225);}}
+                                    {{? space==0 || it.links.length-1<=i}}
+                                </div>
+                                {{columns++;}}
+                                {{space = 3600;}}
+                                {{?}}
+                                {{? columns%3==0 || it.links.length-1<=i}}
+
+                            </div>
+                            {{?}}
+                            {{~}}
+                        </div>
+                    </div>
+                    <div class="pulseNavigationControls col-xs-12">
+                        <div class="pulseNavigationPagination"></div>
+                    </div>
+                </div>
+
+            </article>
+            <footer>
+            </footer>
+        </section>
+
+   </div>
+</div>
+
+{{##def.snippet_1: 
+    <a class="pulseNavigationLink pulseNav_{{=i}}{{?!(link.navigation.remove)}} active{{?}}" style="{{?link.color}}background-color:{{=link.color+";"}}{{?}} {{?link.navigation}} {{?link.background}}background-image:url('{{=link.background}}'){{?}}" data-outputelem="commandOutput{{=i}}" data-navigate="click" {{=link.navigation.data}} {{?}}>
+        {{?link.image}}<img src="{{=link.image}}">{{?}}
+        <div class="pulseNavTitle">
+            <span class="pulseNavText">{{=link.title}}</span>
+        </div>
+        {{?link.additionalInfo && link.additionalInfo}}<div class="tilePageContentDetails"> {{= link.isRegistered == null ? link.additionalInfo : (link.isRegistered == "true" ? link.additionalInfo : link.notRegisteredMessage) }} </div>{{?}}
+    </a>#}}
+
+{{##def.snippet_2:
+    <a class="pulseNavigationLink pulseNav_{{=i}}{{?!(link.navigation.remove)}} active{{?}}" style="{{?link.color}}background-color:{{=link.color+";"}}{{?}} {{?link.navigation}} {{?link.background}}background-image:url('{{=link.background}}'){{?}}" data-outputelem="commandOutput{{=i}}" data-navigate="click" {{=link.navigation.data}} {{?}} >
+        {{?link.image}}<img src="{{=link.image}}">{{?}}
+        <div class="pulseNavTitle">
+            <span class="pulseNavText">{{=link.title}}</span>
+        </div>
+        {{?link.additionalInfo && link.additionalInfo}}<div class="tilePageContentDetails"> {{= link.isRegistered == null ? link.additionalInfo : (link.isRegistered == "true" ? link.additionalInfo : link.notRegisteredMessage) }} </div>{{?}}
+    </a>#}}
+
+{{##def.snippet_4:
+    <a class="pulseNavigationLink pulseNav_{{=i}}{{?!(link.navigation.remove)}} active{{?}}" style="{{?link.color}}background-color:{{=link.color+";"}}{{?}} {{?link.background}}background-image:url('{{=link.background}}'){{?}}" {{?link.navigation}} data-outputelem="commandOutput{{=i}}" data-navigate="click" {{=link.navigation.data}} {{?}}>
+        <div class="pulseNavTitle">
+            <span class="pulseNavText">{{=link.title}}</span>
+        </div>
+        {{?link.additionalInfo && link.additionalInfo}}<div class="tilePageContentDetails"> {{= link.isRegistered == null ? link.additionalInfo : (link.isRegistered == "true" ? link.additionalInfo : link.notRegisteredMessage) }} </div>{{?}}
+    </a>#}}

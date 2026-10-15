@@ -1,0 +1,94 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="hmcp cl-component">
+            {{? it.header}}
+                <header class="hmcp-header--main cl-header--main">
+                    {{? it.header.breadCrumbs}}
+                        <p class="hmcp-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="hmcp-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="hmcp-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                            <h1 class="hmcp-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                                {{=it.header.title}}
+                            </h1>
+                        {{?}}
+                        {{? it.header.description}}
+                            <p class="hmcp-header__description--main cl-header__description--main">
+                                {{=it.header.description}}
+                            </p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+            <div class="hmcp-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <!-- Instructions -->
+                    <div class="hmcp-instructions cl-instructions">
+                        <p class="hmcp-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+                    <div class="cl-row hmcp-progressive-leaderboard">
+                        <div class="cl-md-column-12 cl-xs-column-12 hmcp-progressive-leaderboard-refresh">
+                            <div class="hmcp-btn-container">
+
+                                <div class="hmcp-buttons cl-buttons" data-hmcpbuttons>
+                                    <button type="button" data-buttons id="headtMap{{=it.button.type}}Button"
+                                        {{? it.button.nextButton}}data-nextbutton data-pulsenextbutton{{?}}
+                                        class="hmcp-reverse-button hmcp-button--clear cl-button cl-button--clear clear {{? it.button.hide}}cl-button--hidden{{?}}"
+                                        {{? it.button.disabled}} disabled{{?}} data-button="clear">
+                                        <div class="hmcp-rev-button--text cl-button--text">{{=it.button.revBtnText}}</div>
+                                    </button>
+                                    <button type="button" data-buttons id="headtMap{{=it.button.type}}Button"
+                                        {{? it.button.nextButton}}data-nextbutton data-pulsenextbutton{{?}}
+                                        class="hmcp-submit-button hmcp-button--submit cl-button cl-button--submit submit {{? it.button.hide}}cl-button--hidden{{?}}"
+                                        {{? it.button.disabled}} disabled{{?}} data-button="submit">
+                                        <div class="hmcp-button--text cl-button--text"  {{? it.button.nextButton}}data-sscnextbuttontext{{?}}>{{=it.button.text}}</div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="animation-container">
+
+                            </div>
+                        </div>
+                        <div class="cl-md-column-12 cl-xs-column-12 hmcp-progressive-leaderboard-table">
+                            <!-- Desktop Table -->
+                            <div class="hmcp-content cl-content">
+                                <article class="hmcp-article cl-article">
+                                    <div class="hmcp-data">
+                                        <div class="hmcp-table cl-table">
+                                            <div class="hmcp-table__thead">
+                                                {{~it.heatmapData.columnHeaders: label: index}}
+                                                {{? label != ""}}
+                                                <div class="hmcp-table__th">{{=label}}</div>
+                                                {{??}}
+                                                <div class="hmcp-table__th"></div>
+                                                {{?}}
+                                                {{~}}
+                                            </div>
+                                            {{~it.heatmapData.rows: row: oIndx}}
+                                            <div class="hmcp-table__row  hmcp-table_row{{=oIndx}} {{?row.myScore}}{{=row.myScore}}{{?}} {{? oIndx < +it.userList}}hide{{?}}">
+                                                {{? row.rank}}
+                                                <div class="hmcp-table__td"><b>{{=row.rank}}</b></div>
+                                                {{?}}
+                                                <div class="hmcp-table__th">{{=row.header}}</div>
+                                                {{~row.data: data: index}}
+                                                <div class='hmcp-table__td {{?data.cls}}{{=data.cls}}{{?}}'>{{?it.showValues}}{{=data.value}} {{?}}</div>
+                                                {{~}}
+                                            </div>
+                                            {{~}} 
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+

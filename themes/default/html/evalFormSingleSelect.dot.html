@@ -1,0 +1,81 @@
+<div class="mainContentWrapper separatetemplate">
+    <div class="mainContent">
+        <section class="ssc cl-component" data-component-version="{{=it.version}}" data-singleselectcomponent>
+
+            {{? it.header}}
+            <header class="ssc-header--main cl-header--main" data-barchartcomponentheader>
+                {{? it.header.title}}
+                <h1 class="ssc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="ssc-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <div class="ssc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="ssc-instructions cl-instructions">
+                        <p class="ssc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+
+                    <div class="ssc-content cl-content">
+
+                        <div class="ssc-row {{=it.type}}">
+                            {{~it.questions:question:j}}
+                            {{~ question.options:option:i}}
+                            <div class="ssc-article ssc-leadTextPanel ssc-division{{=question.options.length}}" data-component-version="{{=it.version}}" data-option="{{=i+1}}" data-leadbinding="{{=option.value}}">
+                                <div class="singleSelectOption{{=i+1}}LeadText singleSelectLeadText" data-leadtextpanel>
+                                    <div class="singleSelectOption{{=i+1}}LeadTextLabel singleSelectLeadTextLabel" data-leadtextlabelindex="{{=i+1}}" data-leadtextlabel>
+                                    </div>
+                                </div>
+                            </div>
+                            {{~}}
+                            {{~}}
+                        </div>
+
+                        <div class="ssc-row {{=it.type}} separatetemplate">
+                            {{~it.questions:question:j}}
+                            {{~ question.options:option:i}}
+                            <div class="ssc-article ssc-result{{=i+1}} singleSelectOptionCont" data-component-version="{{=it.version}}" data-option="{{=i+1}}" data-binding="{{=option.value}}" data-binding-alt="result{{=i+1}}" data-optioncount="{{=question.options.length}}" data-optioncontainer></div>
+                            {{? it.type === "radio"}}
+                            <div class="ssc-description" data-optiondesccont>
+                                {{?it.version==1}}
+                                <p class="ssc-description__text" data-optiondescription data-component-version="{{=it.version}}">
+                                    {{=option.description}}
+                                </p>
+                                {{??}}
+                                <p class="ssc-description__text" data-optiondescription data-component-version="{{=it.version}}">
+                                    {{=option.subDescription}}
+                                </p>
+                                {{?}}
+                            </div>
+                            {{?}}
+                            {{~}}
+                            {{~}}
+                        </div>
+                    </div>
+                    <footer class="ssc-footer ssc--footer" data-sscbuttons>
+                        {{? it.buttons[0].show || it.buttons[0].show === undefined}}
+                        <div class="ssc-button--submit ssc-button" id="singleSelectSubmitButton" data-submitbutton data-buttons>
+                            <span class=" ssc-submitbuttontext ssc-buttontext cl-button cl-button--submit" data-sscsubmitbuttontext>{{=it.buttons[0].navigation.title}}</span>
+                        </div>
+                        {{?}}
+                        {{? it.buttons[1].show || it.buttons[1].show === undefined}}
+                        <div class="ssc-button--clear ssc-button buttonEnabled singleSelectClearButton" id="singleSelectClearButton" data-clearaction data-buttons data-enabled="{{=it.buttons[1].navigation.remove}}">
+                            <span class="ssc-clearbuttontext ssc-buttontext cl-button cl-button--clear" data-sscsubmitbuttontext>{{=it.buttons[1].navigation.title}}</span>
+                        </div>
+                        {{?}}
+                    </footer>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

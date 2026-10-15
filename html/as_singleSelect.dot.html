@@ -1,0 +1,77 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="ssc cl-component" data-component-version="{{=it.version}}" data-singleselectcomponent>
+
+        {{? it.header}}
+            <header class="ssc-header-main cl-header--main">
+                {{? it.header.breadCrumbs}}
+                    <p class="ssc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                {{?}}
+                {{? it.header.bgimage}}
+                 <div class="ssc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                {{?}}
+                <div class="ssc-header-wrapper cl-header-wrapper">
+                    {{? it.header.title}}
+                        <h1 class="ssc-title-main cl-header__title--main">{{=it.header.title}}</h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="ssc-description-main cl-header__description--main">{{=it.header.description}}</p>
+                    {{?}}
+                </div>
+            </header>
+        {{?}}
+
+            <div class="ssc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="ssc-instructions cl-instructions">
+                        <p class="ssc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+
+                    <div class="ssc-content cl-content {{? it.reportView}}report-view-main{{?}}">
+                        <div class="ssc-row {{=it.type}}">
+                            {{~it.questions:question:j}}
+                            {{~ question.options:option:i}}
+                            <div class="ssc-article cl-article ssc-result{{=i+1}} singleSelectOptionCont" data-component-version="{{=it.version}}" data-option="{{=i+1}}" data-binding="{{=option.value}}" data-binding-alt="result{{=i+1}}" data-optioncount="{{=question.options.length}}" data-leadtext="{{?option.leadText}}{{=option.leadText}}{{?}}" data-optioncontainer></div>
+                            {{? it.type === "radio"}}
+                            <div class="ssc-description" data-optiondesccont>
+                                {{?it.version==1}}
+                                {{? option.description}}
+                                <p class="ssc-description__text" data-optiondescription data-component-version="{{=it.version}}">
+                                    {{=option.description}}                                    
+                                </p>
+                                {{?}}
+                                {{??}}
+                                {{? option.subDescription}}
+                                <p class="ssc-description__text" data-optiondescription data-component-version="{{=it.version}}">                                   
+                                        {{=option.subDescription}}
+                                </p>
+                                {{?}}
+                                {{?}}
+                            </div>
+                            {{?}}
+                            {{~}}
+                            {{~}}
+                        </div>
+                    </div>
+
+                    <footer class="ssl-footer cl-footer">
+                        {{? it.buttons}}
+                        <div class="ssl-buttons cl-buttons" data-sscbuttons>
+                            {{~it.buttons :button:index}}
+                            <button type="button" data-buttons id="singleSelect{{=button.type}}Button"
+                                 {{?button.submitButton}}data-submitbutton data-pulsesubmitbutton{{??button.clearButton}}data-clearAction{{?}}
+                                class="buttonDisabled ssl-button ssl-button--{{=button.type}} cl-button cl-button--{{=button.type}} exclude {{? button.hide}}cl-button--hidden{{?}}"
+                                {{? button.disabled}} disabled{{?}} data-button="{{=button.type}}">
+                                <div class="ssl-button--text cl-button--text"  {{?button.submitButton}}data-sscSubmitbuttontext{{?}}>{{=button.text}}</div>
+                            </button>
+                            {{~}}
+                        </div>
+                        {{?}}
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

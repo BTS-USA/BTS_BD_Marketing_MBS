@@ -1,0 +1,19 @@
+<Action>
+  <Component type="Info"><![CDATA[{
+  "templateInEvent": "html/as_info.dot",
+  "css": "styles/as_info.css",
+  "header": {
+    "bgimage": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/headerGraphic.svg",
+    "title": "!{Activity3_RankingMomentScenarioTitle}",
+    "description": "!{Activity3_RankingMomentScenarioDescription}"
+  },
+  "images": [
+    "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/moment-2B.png"
+  ],
+  "content": {
+    "headline": "!{Activity3_RankingMomentScenarioContentHeadline}",
+    "text": "!{Activity3_RankingMomentScenarioContentText}",
+    "list": "!{Activity3_RankingMomentScenarioContentList}"
+  }
+}]]></Component>
+</Action>

@@ -1,0 +1,441 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+html
+    height 100%
+body
+    color $darkgrey
+    font-size 1.18rem
+    height 100%
+    background-image url('../images/background.jpg')
+    background-size cover
+    background-position center
+    background-repeat no-repeat
+    background-attachment fixed
+    -webkit-overflow-scrolling touch
+#wizer
+    .page
+        #main
+            background-color $white
+            box-shadow $shadow-small
+            position fixed
+            #offlineStatus, #menuPulseIcon, .separator, #WizerLogButton, #A4, #A3, .dBGraphics
+                display none
+            .logout-btn, #A5
+                position fixed
+                left auto
+                right 12px
+                top 14px
+                width auto
+                font-size 0
+                transition 0.5s ease
+                color $darkgrey
+                &:after
+                    content '\f011'
+                    font-family 'fa-solid-900'
+                    font-size 1.2rem
+                &:hover
+                    color $primary
+            #A5
+                right 46px
+                &:after
+                    content '\f01e'
+            #menuParticipantName
+                right 5.5rem
+                left auto
+                top 0
+                line-height 55px
+                font-size 1.05rem
+                font-weight normal
+                color $darkgrey
+            #menuEventName
+                background url('../images/client-logo.png')
+                background-position left center
+                background-repeat no-repeat
+                background-size contain
+                height 55px
+                width 144px
+                top 0
+                right auto
+                left 1rem
+                font-size 0
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+#votingSlideDiv
+    box-sizing content-box
+    -webkit-font-smoothing subpixel-antialiased
+    -webkit-font-smoothing antialiased
+    padding 4.5rem 0 4rem /*top-padding 6rem with metrics, 4.5 without metrics*/
+    .mainWrapper
+        margin auto
+        width 100%
+        max-width 98%
+        border-radius $radius
+        background-color $white
+        box-shadow $shadow-bg
+        /*------------------------------------------------------------------------------------------------------------------------------------------*/
+        .cl
+            &-header
+                &--main
+                    border-radius $radius $radius 0 0
+                    background-color $white
+                    min-height 6rem
+                    margin-bottom 0
+                    padding 1rem 0
+                    flex()
+                    align-items center
+                    color $primary
+                    border-top 0
+                    justify-content center
+                &-image
+                    background-position center
+                    background-size cover
+                    background-image url('../images/header.jpg') !important
+                    background-repeat no-repeat
+                &__title--main
+                    text-align center
+                    padding 0 1rem 10px
+                    max-width 100%
+                    font-weight 600
+                &__description--main
+                    text-align center
+                    margin 0
+                    padding 0 1rem 0
+                    max-width 100%
+                    font-size 1.25rem
+            &-instructions
+                background-color transparent
+                padding 0
+                margin-bottom 1rem
+                &__text
+                    display inline-block
+                    padding 0
+                    color inherit
+                    text-transform none
+                    font-size inherit
+                    font-weight 600
+                    // &:before
+                    //     content '\f129'
+                    //     color $white
+                    //     margin-right .5rem
+                    //     font-family 'fa-solid-900'
+                    //     background-color $primary
+                    //     padding 0.4rem 0.6rem
+                    //     border-radius 25px
+                    //     font-size 10px
+            &-bar
+                background-color $neutral-light
+                border-radius 1rem
+                height 20px
+                &__inner
+                    background-color $primary
+                    border-radius 1rem
+                &.optimal-bar
+                    .cl-bar__inner
+                        background-color $primary-medium
+            &-bubble
+                color $primary
+                background-color $secondary
+                font-size 1.1rem
+                &:after
+                    content ''
+                    border-color $secondary transparent transparent transparent
+            &-footer
+                margin-bottom 1rem
+                text-align right
+                overflow hidden
+            &-button
+                margin 0
+                padding .8rem 1rem
+                background-color $primary
+                border-radius $radius
+                line-height normal
+                font-size 1.3rem
+                font-weight normal
+                text-transform uppercase
+                transition background 0.6s ease
+                float right
+                &--submit
+                    background-color $secondary
+                    margin-left 5px
+                    color $primary
+                    text-transform none
+                    &:active, &:focus, &:hover
+                        background-color $secondary
+                    &.ssc-button--disabled
+                        display none !important
+                    &.clicked-saved
+                        background-color $success
+                        color $white
+                &--clear
+                    background-color $primary
+                    &:active, &:focus, &:hover
+                        background-color $primary
+                &--hidden
+                    display none
+                &.disabled
+                    opacity .5
+            &-row
+                padding 0
+                float none
+            &-content
+                margin-bottom 10px
+            &-article
+                &:last-child
+                    margin-bottom 0
+            &-container
+                max-width none
+                padding 1rem
+                .colHeaders
+                    border-radius $radius
+                    text-align center
+                    margin-bottom 2px
+                    overflow hidden
+                .colHeader
+                    background-color $neutral-light
+                    padding .5rem 1rem
+        /*------------------------------------------------------------------------------------------------------------------------------------------*/
+        .tc
+            clear both
+            &-bar
+                border-bottom 2px solid $primary
+                background-color $white
+                margin 0
+                padding-top 1rem
+                border-radius $radius $radius 0 0
+                flex()
+                justify-content center
+                &__tab
+                    padding 1rem
+                    margin 0
+                    font-size inherit
+                    color inherit
+                    border-radius 0
+                    border none !important
+                    background-color white
+                    border-right 1px solid $neutral-light
+                    cursor pointer
+                    &:after
+                        content none
+                    &--active
+                        background-color $primary
+                        color $white
+                &__title
+                    color inherit
+                    margin 0
+                    padding 0
+                    font-size inherit
+                    &--active
+                        color $white
+            &-container > .tc-bar
+                > .tc-bar__tab
+                    display flex
+                    align-items center
+                    &:not(:last-child)
+                        box-shadow inset -1px 0 0 rgba(2, 26, 50, .22)
+                    > .tc-bar__title:before
+                        margin-right .5rem
+                        color $primary-medium
+                        font-family 'fa-solid-900'
+                        font-size .9rem
+                    > .tc-bar__title[data-action='Base_CaseStudy']:before
+                        content '\f02d'
+                    > .tc-bar__title[data-action*='Scenario']:before
+                        content '\f075'
+                    > .tc-bar__title[data-action*='Feedback']:before
+                        content '\f005'
+                    > .tc-bar__title[data-action*='Input']:before
+                        content '\f0ca'
+                    > .tc-bar__title[data-action='GD_Section_1']:before
+                        content '\f509'
+                    > .tc-bar__title[data-action='Facilitator']:before
+                        content '\f080'
+                    > .tc-bar__title[data-action='Reset']:before
+                        content '\f013'
+                    &.tc-bar__tab--active
+                        > .tc-bar__title:before
+                            color $secondary
+                        &:not(:last-child)
+                            box-shadow inset -1px 0 0 rgba(255, 182, 18, .6)
+            &-page__page
+                .cl-header--main
+                    border-radius 0
+                .tc-container > .tc-bar > .tc-bar__tab > .tc-bar__title:before
+                    content none
+                .tc
+                    &-bar, &-xs
+                        border none
+                        background-color $neutral-light
+                        overflow hidden
+                        padding .5rem
+                        justify-content center
+                        border-radius 0
+                        >div
+                            display inline-block
+                        &__tab
+                            padding .5rem 1rem
+                            margin 2px
+                            border-radius 2rem
+                            width auto
+                            &--active
+                                background-color $primary-medium
+        /*------------------------------------------------------------------------------------------------------------------------------------------*/
+        .nc
+            &-container
+                border-top 1px dashed $neutral-medium
+            &-buttons-container
+                margin 0
+                padding 0
+                text-align center
+            &-button
+                background $neutral-dark
+                border-radius 50%
+                height 50px
+                width 50px
+                line-height 50px
+                font-size 0
+                padding 0
+                margin 5px
+                text-align center
+                box-shadow 2px 2px 10px rgba(0, 0, 0, 0.3)
+                vertical-align middle
+                cursor pointer
+                display inline-block
+                &:hover
+                    background $primary
+                &:before
+                    content ''
+                    font-family 'fa-solid-900'
+                    font-size 1rem
+                    color $white
+                &.home:before
+                    content '\f015'
+                &.menu:before
+                    content '\f0ca'
+                &.previous:before
+                    content '\f060'
+                &.next:before
+                    content '\f061'
+
+.logoutConfirm
+    p
+        margin auto
+        text-align center
+    .logoutConfirmBtn
+        display inline-block !important
+    &:before
+        content ''
+        display block
+        border 14px solid transparent
+        border-bottom 14px solid #333
+        position absolute
+        top -1.5rem
+        right 0.8rem
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+body[class*=Team_Name]
+    background-image url('../images/team-name.jpg')
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+    #votingSlideDiv
+        padding 4.5rem 0 0
+        .mainWrapper
+            background transparent
+            box-shadow none
+            padding 0
+            width 60%
+            max-width none
+            margin 0
+            .nc-container
+                border-top 0
+            // .identifier
+            //     height calc(100vh - 55px)
+body[class*=Team_Name]
+    .tc-page__page 
+        &.tc-action-Team_Name_Follower_AS_InfoNote
+            #votingSlideDiv
+                .mainWrapper
+                    width auto
+                    max-width none
+                    border-radius 0
+                    padding 0
+                    .identifier
+                        &-page-meta
+                            display none
+[class*=Splash], [class*=InfoNote]
+    #votingSlideDiv
+        padding 55px 0 0
+        .mainWrapper
+            width auto
+            max-width none
+            border-radius 0
+            padding 0
+            .identifier
+                height calc(100vh - 55px)
+                &-page-meta
+                    display none
+    
+body[class*=_Moment_Result], .bodyProgressive_Leaderboard, .bodyStatic_Leaderboard
+    font-size 1.4rem
+    p
+        line-height 1.8rem
+body[class*='Activity3_AS_Ranking_Moment_Feedback']
+    @media screen and (max-width 1100px)
+        #votingSlideDiv
+            .mainWrapper
+                .cl
+                    &-header
+                        &__title--main
+                            font-size 1.6rem
+.logoutConfirm
+    background-color $primary !important
+    &:before
+        border-bottom-color $primary
+    .noButton, .yesButton
+        background-color $secondary !important
+        color $primary
+.bodyReporting_Screen
+    .tc
+        &-acc
+            &tabs
+                height 100%
+            &__item
+                font-weight normal
+                font-size 1.2rem
+                &:last-child
+                    border-bottom 0
+            &__label
+                background-color $white
+                color $primary
+.bodyActivity6_AS_Moment_Tabs
+    .tc-page__page 
+        &.tc-action-Activity6_AS_Moment_Scenario
+            .ic-paragraph
+                margin 0
+            .ic-content
+                padding 1rem 0 0 0 
+.bodyStatic_Leaderboard
+    .hmc-table__th:first-child
+        text-align center
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.pc-savedmessage, .inputSavedMessage
+    &:before
+        display none !important
+@media screen and (max-width 1400px)
+    #votingSlideDiv
+        .mainWrapper
+            width 99%
+            max-width none
+@media screen and (max-width 1024px)
+    body[class*=Team_Name]
+        background-position center
+    #votingSlideDiv
+        .mainWrapper
+            .cl
+                &-header
+                    &__title--main
+                        max-width none
+                    &__description--main
+                        max-width none
+                    &-image
+                        display none
+
+                                padding .3rem .6rem

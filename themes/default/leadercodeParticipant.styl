@@ -1,0 +1,60 @@
+.lcpc
+    background-color white
+    &-content
+        padding 20px
+    &-container
+        position relative
+        overflow hidden
+        max-width 33.5rem
+    &-inputbox
+        border none
+        text-align center
+        margin 0 auto
+        width 100%
+        padding 10px 0
+        margin-top 5px
+        margin-bottom 20px
+        display block
+    &-message
+        height 40px
+        text-align center
+        display table
+        color white
+        margin 0 auto 10px auto
+        width calc(100% - 20px)
+        opacity 0
+        &-error
+            background #FF4E3A
+        &-success
+            background #6A9E44
+        & span
+            display table-cell
+            vertical-align middle
+        &--show
+            opacity 1
+    &-button
+        height 40px
+        text-align center
+        display table
+        border-radius 8px
+        width 48%
+        & span
+            display table-cell
+            vertical-align middle
+            text-transform uppercase
+    &-back-button
+        float left
+        color white
+        cursor pointer
+        background #3C3E40
+    &-join-button
+        float right
+        color #EDEDE6
+        height 40px
+        cursor pointer
+        background #6A9E44
+        &--disabled
+            color #91CBE7
+            background #5CAD92
+            cursor not-allowed
+            pointer-events none

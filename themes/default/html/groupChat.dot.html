@@ -1,0 +1,68 @@
+﻿<div class="questionWrapper">
+    {{? !it.wizletInfo.isMeeting && it.wizletInfo.isMeeting !=undefined }}
+    <ul class="chat" data-chat-discussion>
+        {{? it.votes && it.votes.length}}
+        {{~ it.votes:vote:index }}
+        {{? vote.IsClass === true }}
+        <li class="notification-counter-latest-chat">
+            {{?? vote.isLeader === true }}
+            <li class="notification-leadermsgs notification-common">
+            {{??}}
+            <li class="notification-othermsgs notification-common">
+            {{?}}
+            <div class="chat-body clearfix">
+                <div class="header">
+                    <span class="chat-text">{{=vote.Name}}</span>
+                    {{? vote.isLeader}}<span class="chat-text">({{=it.wizletInfo.content.leaderText}})</span>{{?}}
+                </div>
+                <div class="chat-msgText">
+                    <span>{{=vote.ResponseText || ''}}</span>
+                </div>
+
+                {{? !isNaN(Date.parse(vote.Timestamp)) === false }}
+                <span class="chat-time_date">{{=vote.Timestamp}}</span>
+                {{??}}
+                <span
+                    class="chat-time_date">{{= moment(new Date(vote.Timestamp).toISOString()).format("DD/MM/YY, HH:mm")}}</span>
+                {{?}}
+
+                {{~}}
+                {{?}}
+            </div>
+        </li>
+    </ul>
+    {{??}}
+    <ul class="chat" data-chat-discussion>
+        {{? it.votes && it.votes.length}}
+        {{~ it.votes:vote:index }}
+            {{? vote.isLeader === true}}
+            <li class="notification-counter-latest-chat leaderChat">
+            {{?? vote.isCurrentUser === true }}
+            <li class="notification-counter-latest-chat CurrUser">
+            {{?? vote.IsClass === true }}
+            <li class="notification-counter-latest-chat">    
+            {{??}}
+            <li>
+            {{?}}
+            <div class="chat-body clearfix">
+                <div class="header">
+                    <strong class="primary-font">{{=vote.Name}}</strong>
+                </div>
+                <p>
+                    {{=vote.ResponseText || ''}}
+                </p>
+
+                {{? !isNaN(Date.parse(vote.Timestamp)) === false }}
+                <span class="time_date">{{=vote.Timestamp}}</span>
+                {{??}}
+                <span
+                    class="time_date">{{= moment(new Date(vote.Timestamp).toISOString()).format("DD/MM/YY, HH:mm")}}</span>
+                {{?}}
+
+                {{~}}
+                {{?}}
+            </div>
+        </li>
+    </ul>
+    {{?}}
+</div>

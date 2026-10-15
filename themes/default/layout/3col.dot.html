@@ -1,0 +1,11 @@
+<div class="container">
+    {{~it.components :component:i}}
+    {{? i%3 == 0}}
+    <div class="row{{=(i/3) | 0}} row">
+        {{?}}
+        <div class="row{{=(i/3) | 0}} col{{=i%3}} col-md-4">{{=component}}</div>
+        {{? i%3 == 2}}
+    </div>
+    {{?}}
+    {{~}}
+</div>

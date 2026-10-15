@@ -1,0 +1,101 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="bcc cl-component">
+
+            {{? it.header}}
+                <header class="bcc-header--main cl-header--main" data-barChartComponentHeader>
+                    {{? it.header.breadCrumbs}}
+                        <p class="bcc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="bcc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="bcc-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                            <h1 class="bcc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                                {{=it.header.title}}
+                            </h1>
+                        {{?}}
+                        {{? it.header.description}}
+                            <p class="bcc-header__description--main cl-header__description--main">
+                                {{=it.header.description}}
+                            </p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+
+            <section class="bcc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <div class="bcc-instructions cl-instructions">
+                            <p class="bcc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                    
+                    {{? it.type == "Barchart" && typeof it.filterQuestions !== "undefined"}}  
+                        {{? it.filterQuestions[0]}}
+                        <div class="bcc-filters-container cl-row">
+                            {{~it.filterQuestions[0].options :filterQuestion:index}}
+
+                                <div data-barChartComponentFilter class="bcc-filter-container" id="{{=filterQuestion.value}}" data-filter="{{=filterQuestion.value}}">
+                                    <div class="bcc-filter" data-barChartComponentFilterCheck id="{{=filterQuestion.value}}" data-filter="{{=filterQuestion.value}}">
+                                        <input type='checkbox' class="bcc-filter__checkbox cl-checkbox" data-bcccheckbox value="filter-{{=filterQuestion.value}}" id="bcc-filter_{{=filterQuestion.value}}">
+                                        <label for="bcc-filter_{{=filterQuestion.value}}" class="bcc-filter__label">{{=filterQuestion.description}}</label>
+                                    </div>
+                                </div>
+
+                            {{~}}
+                        </div>
+                        {{?}}
+                    {{?}}
+        
+                <section class="bcc-content cl-content" data-barChartComponentSection>
+                    {{~it.responseOptions:responseOption:ind}}
+
+                         <article class="bcc-article cl-table" data-barChartComponentRow>
+                            <div class="bcc-question cl-md-cell-6 cl-xs-cell-12" data-barChartComponentQuestion>
+                                 <p class="bcc-paragraph cl-paragraph">{{=responseOption.description}}</p>   
+                            </div>
+                            <div class="bcc-answer cl-md-cell-6 cl-xs-cell-12" data-barChartComponentAnswer>
+                                {{?responseOption.charts}}
+                                    {{~responseOption.charts: chart:i}}
+                                        {{?chart}}
+                                            <div class="bar-container" data-name="{{=responseOption.response}}">
+                                                <div class="bcc-bar cl-bar">
+                                                    <div class="bcc-bar__inner cl-bar__inner" data-barChartComponentHorizontalBarChartInner style="width:{{=chart.percent}}%">
+                                                        <div class="bcc-bubble cl-bubble" data-barChartComponentBuble>
+                                                            {{=chart.text}}
+                                                        </div> 
+                                                    </div> 
+                                                </div>
+                                                <div class="bcc-filter-name" data-barChartListFilterName>{{=chart.filterText}}</div>
+                                            </div>
+                                        {{?}}
+                                    {{~}}
+                                {{?}}
+                            </div>
+                        </article>
+                    {{~}}
+                </section>
+                
+                {{? it.votesAmount || it.average}}
+                    <footer class="bcc-footer cl-footer">
+                        {{? it.votesAmount}}
+                             <div class="bcc-stats cl-stats" data-barChartComponentTotalVotes>
+                                <span class="bcc-stats__text">{{=it.votesAmount.text}}</span>
+                                <span class="bcc-stats__value" data-barChartComponentTotalVotesVal>{{=it.votesAmount.val}}</span> 
+                            </div>
+                        {{?}}
+                        {{? it.average}}
+                             <div class="bcc-stats cl-stats" data-barChartComponentAvg>
+                                <span class="bcc-stats__text">{{=it.average.text}}</span>
+                                <span class="bcc-stats__value" data-barChartComponentAvgVal>{{=it.average.val}}</span> 
+                            </div>
+                        {{?}}
+                    </footer>
+                {{?}}
+            </section>
+        </section>
+    </div>
+</div>

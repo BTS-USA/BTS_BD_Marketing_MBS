@@ -1,0 +1,243 @@
+{{? it.type == "likeVideo"}}
+
+{{? it.ratingVideos && it.ratingVideos.length > 0 }}
+{{~it.ratingVideos: ratingVideo :index }}
+
+<article class="vhr-article">
+    <div class="cl-container vhr-mainContainer" data-ideaid_{{=ratingVideo.ideaId}}>
+        <div class="vhr-likeRatingCont vhr-likeRatingCont--noExpanded" data-like-cont
+            data-ideaid="{{=ratingVideo.ideaId}}" data-ideaid_{{=ratingVideo.ideaId}}>
+            <div class="vhr-likeRatingWrapper">
+                <div class="vhr-like__imgCont">
+                    <!-- <video autostart="false" data-preview-recorded
+                    src="/wizer/pages/Events/VideoHuntTool/media/rbc_lif_test9.mp4"></video> -->
+                    <img class="vhr-like__imgContImg" src="{{=ratingVideo.posterUrl}}"
+                        data-video_{{=ratingVideo.ideaId}} data-videourl="{{=ratingVideo.videoUrl}}"><img />
+                </div>
+                <div class="vhr-likeRating__textCont">
+                    <div class="vhr-likeRating__ideaText" data-ideatext_{{=ratingVideo.ideaId}}>
+                        {{=ratingVideo.ideaText}}
+                    </div>
+                    <div class=" vhr-likeRating__commentButton">
+                        <span class="vhr-commentButton" data-like-comment-button data-close_{{=ratingVideo.ideaId}}
+                            data-ideaid="{{=ratingVideo.ideaId}}">
+                            <i class="cl-icon cl-icon--addComment"></i></span>
+                    </div>
+                                        
+                </div>
+                {{? it.categories && !it.hideCategory }}
+                <div class="vhr-likeRating__textCategory">
+                    <span class="vhr-likeRating__ideaCategoryText">
+                        {{=ratingVideo.category}}
+                    </span>
+                </div>
+                {{?}}
+                <div class="vhr-ratingCont__author">
+                    <div class="vhr-userName">
+                        <i class="vhr-userIcon cl-icon cl-icon--user"></i>
+                        <span class="vhr-userNameText">{{=ratingVideo.ideaAuthorName}}</span>
+                    </div>
+                </div>
+                <i class="vhr-likeRating__playIcon cl-icon cl-icon--play01" data-video-modal></i></span>
+                <i class="vhr-likeRating__likeIcon cl-icon cl-icon--heart-empty" data-likeidea
+                    data-likeidea_{{=ratingVideo.ideaId}}></i></span>
+                <div class="vhr-commentCont" data-like-comment-container data-ideaid="{{=ratingVideo.ideaId}}"
+                    data-comment-ideaid_{{=ratingVideo.ideaId}}>
+                    <div class="vhr-like__commentWrapper">
+                        <div class="vhr-commentDisplay__close "><span class="vhr-like__close" data-close-comment01
+                                data-ideaid="{{=ratingVideo.ideaId}}"><i class="cl-icon cl-icon--remove"></i></span>
+                        </div>
+
+                        <div class="cl-row vhr-like__commentInput" data-textarea-container01>
+                            <div class="vhr-like__commentInstructions">
+                                <span
+                                    class="vhr-like__commentInstructionsText">{{=it.textContent.likeCommentTitle}}</span>
+                                <span class="vhr-like__remainingText"> <span data-textlimit_{{=ratingVideo.ideaId}}
+                                        data-textlimit>{{=it.maxTextLimit}}</span>
+                                    {{=it.textContent.likeCharacterRemainingText}}</span>
+                                <div>
+                                    <textarea class="vhr-comment__textarea" maxlength="{{=it.maxTextLimit}}"
+                                        placeholder="{{=it.textContent.commentPlaceholder}}" data-like-comment-text
+                                        data-comment-text_{{=ratingVideo.ideaId}}></textarea>
+                                </div>
+                                <div class="cl-button vhr-comment__saveButtonCont vhr-disabled" data-save-button
+                                    data-save-button_{{=ratingVideo.ideaId}}>
+                                    <span>{{=it.textContent.saveCommentText}}</span>
+                                    <i class="cl-icon cl-icon--tick"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vhr-like__commentDisplay">
+
+                            <div class="vhr-commentDisplay__holder" data-commentlist_{{=ratingVideo.ideaId}}>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+{{~}}
+{{??}}
+<div class="vhr-center vhr-noVideolabel">
+    {{=it.textContent.noVideoText}}
+</div>
+{{?}}
+
+{{??}}
+
+{{? it.ratingVideos && it.ratingVideos.length > 0 }}
+{{~it.ratingVideos: ratingVideo :index }}
+<div id="vhr-heightCont_{{=index}}" class="vhr-heightCont" data-height data-ideaid_{{=ratingVideo.ideaId}}>
+    <div class="vhr-mainWrapper" id="vhr-mainWrapper_{{=index}}" data-rating-container
+        data-ideaid="{{=ratingVideo.ideaId}}">
+        <!-- Device type HTML -->
+        {{? it.deviceType == 'desktop' }}
+        <div class="vhr-videoCont">
+            <div class="vhr-rate__imgCont">
+                <!-- <video autostart="false" data-preview-video src="{{=ratingVideo.videoUrl}}" data-video_{{=ratingVideo.ideaId}}></video> -->
+                <img class="vhr-rate__imgContImg" src="{{=ratingVideo.posterUrl}}" data-video_{{=ratingVideo.ideaId}}
+                    data-videourl="{{=ratingVideo.videoUrl}}"><img />
+            </div>
+            <span class="vhr-videoCont__playButton" data-video-modal><i class="cl-icon cl-icon--play01"></i></span>
+        </div>
+        <div class="vhr-ratingCont">
+            <div class="vhr-ratingCont__title" data-ideatext_{{=ratingVideo.ideaId}}>{{=ratingVideo.ideaText}}</div>
+            {{? it.categories && !it.hideCategory }}<div class="vhr-ratingCont__category">{{=ratingVideo.category}}</div>{{?}}
+            <div class="vhr-ratingCont__rating">
+                {{~it.sliders: slides:i }}
+                <div class="vhr-ratingCont__sliderContainer">
+                    <div class="vhr-ratingCont__sliderText">{{=slides.sliderText}} </div>
+                    <input type="hidden" class="single-slider" value=""
+                        data-slider-rate="{{=slides.name}}_{{=ratingVideo.ideaId}}" />
+                </div>
+                {{~}}
+                <div class="vhr-commentButtonCont">
+                    <span class="vhr-commentButton" data-rate-comment-button data-close_{{=ratingVideo.ideaId}}
+                        data-ideaid="{{=ratingVideo.ideaId}}">
+                        <i class="cl-icon cl-icon--addComment"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="vhr-ratingCont__author">
+                <div class="vhr-userName">
+                    <i class="vhr-userIcon cl-icon cl-icon--user"></i>
+                    <span class="vhr-userNameText">{{=ratingVideo.ideaAuthorName}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="vhr-commentCont" data-comment-container data-ideaid="{{=ratingVideo.ideaId}}"
+            data-comment-ideaid_{{=ratingVideo.ideaId}}>
+            <div class="vhr-commentWrapper">
+                <div class="cl-row vhr-commentInput" data-textarea-container>
+                    <div class="vhr-commentInstructions">
+                        <span class="vhr-commentInstructions_text">{{=it.textContent.rateCommentTitle}}</span>
+                        <span class="vhr-commentInstructions__characterRemaining"><span data-textlimit
+                                data-textlimit_{{=ratingVideo.ideaId}}>{{=it.maxTextLimit}}</span>
+                            {{=it.textContent.rateCharacterRemainingText}}</span>
+                        <div>
+                            <textarea class="vhr-comment__textarea" maxlength="{{=it.maxTextLimit}}"
+                                placeholder="{{=it.textContent.commentPlaceholder}}" data-comment-text
+                                data-comment-text_{{=ratingVideo.ideaId}}></textarea>
+                        </div>
+                        <div class="cl-button vhr-comment__saveButtonCont vhr-disabled" data-save-button
+                            data-save-button_{{=ratingVideo.ideaId}}>
+                            <span>{{=it.textContent.saveCommentText}}</span>
+                            <i class="cl-icon cl-icon--tick"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="vhr-commentDisplay">
+                    <div class="vhr-commentDisplay__close">
+                        <span class="" data-close-comment data-ideaid="{{=ratingVideo.ideaId}}"><i
+                                class="cl-icon cl-icon--close-border"></i></span>
+                    </div>
+                    <div class="vhr-commentDisplay__holder" data-commentlist_{{=ratingVideo.ideaId}}>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{??}}
+        <div class="vhr-videoContMobile">
+            <div class="vhr-videoContMobile-title" data-ideatext_{{=ratingVideo.ideaId}}>
+                {{=ratingVideo.ideaText}}
+            </div>
+            {{? it.categories && !it.hideCategory }}<div class="vhr-videoContMobile-category">{{=ratingVideo.category}}</div>{{?}}
+            <div class="vhr-videoContMobile-videoSection">
+                <div class="vhr-videoContMobile-video">
+                    <img class="vhr-rate__imgContImg" src="{{=ratingVideo.posterUrl}}"
+                        data-video_{{=ratingVideo.ideaId}} data-videourl="{{=ratingVideo.videoUrl}}"><img />
+                </div>
+            </div>
+            <div class="vhr-videoContMobile-playButton">
+                <span class="play" data-video-modal><i class="cl-icon cl-icon--play01"></i></span>
+            </div>
+            <div class="vhr-videoContMobile-rating">
+                {{~it.sliders: slides:i }}
+                <div class="vhr-ratingCont__sliderContainer container">
+                    <div class="vhr-ratingCont__sliderText title">{{=slides.sliderText}} </div>
+                    <input type="hidden" class="single-slider" value=""
+                        data-slider-rate="{{=slides.name}}_{{=ratingVideo.ideaId}}" />
+                </div>
+                {{~}}
+            </div>
+            <div class="vhr-videoContMobile-author">
+                <div class="vhr-ratingCont__author">
+                    <div class="vhr-userName">
+                        <i class="vhr-userIcon cl-icon cl-icon--user"></i>
+                        <span class="vhr-userNameText">{{=ratingVideo.ideaAuthorName}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="vhr-videoContMobile-comment">
+                <span class="vhr-commentButton" data-comment-click id="vhr-commentButton_{{=index}}" index={{=index}}
+                    action="0" data-rate-comment-button data-close_{{=ratingVideo.ideaId}}
+                    data-ideaid="{{=ratingVideo.ideaId}}">
+                    <i class="cl-icon cl-icon--addComment"></i>
+                </span>
+            </div>
+            <div class="vhr-commentCont" id="vhr-commentCont_{{=index}}" data-comment-container
+                data-ideaid="{{=ratingVideo.ideaId}}" data-comment-ideaid_{{=ratingVideo.ideaId}}>
+                <div class="vhr-commentWrapper">
+                    <div class="cl-row vhr-commentInput" data-textarea-container>
+                        <div class="vhr-commentDisplay__close">
+                            <span data-comment-click class="closeButton" index={{=index}} data-close-comment
+                                data-ideaid="{{=ratingVideo.ideaId}}"><i
+                                    class="cl-icon cl-icon--close-border"></i></span>
+                        </div>
+                        <div class="commentInstructions">
+                            <span class="commentInstructions-text">{{=it.textContent.rateCommentTitleMobile}}</span>
+                            <span class="commentInstructions-characterRemaining"><span data-textlimit
+                                    data-textlimit_{{=ratingVideo.ideaId}}>{{=it.maxTextLimit}}</span>
+                                {{=it.textContent.rateCharacterRemainingTextMobile}}</span>
+                        </div>
+                        <div>
+                            <textarea class="vhr-comment__textarea" maxlength="{{=it.maxTextLimit}}"
+                                placeholder="{{=it.textContent.commentPlaceholder}}" data-comment-text
+                                data-comment-text_{{=ratingVideo.ideaId}}></textarea>
+                        </div>
+                        <div class="cl-button vhr-comment__saveButtonCont vhr-disabled" data-save-button
+                            data-save-button_{{=ratingVideo.ideaId}}>
+                            <span>{{=it.textContent.saveCommentText}}</span>
+                            <i class="cl-icon cl-icon--tick"></i>
+                        </div>
+                        <div class="vhr-commentDisplay__holder" data-commentlist_{{=ratingVideo.ideaId}}>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{?}}
+    </div>
+</div>
+{{~}}
+{{??}}
+<div class="vhr-center vhr-noVideolabel">
+    {{=it.textContent.noVideoText}}
+</div>
+{{?}}
+
+{{?}}

@@ -1,0 +1,21 @@
+<section class="FB-page-gauges" {{? typeof it.gaugeId !== "undefined"}}id="{{=it.gaugeId}}"{{?}}>
+    
+    {{? typeof it.gaugeTitle !== "undefined"}}
+        <div class="FB-page-gauges__title">{{=it.gaugeTitle}}</div>
+    {{?}}
+
+    <article class="FB-page-gauges__holder">
+        {{for(var counter = 0; counter < it.numGauges; counter++) {}}
+            <div class="FB-page-gauge-wrapper {{=it.labels[counter].binding}}">
+                <div class="FB-page-gauge">
+                    <div class="FB-page-gauge__label">
+                        <p>{{=it.labels[counter].label}}</p>
+                    </div>
+                    <div class="FB-page-gauge__data">
+                        <div class="{{=it.labels[counter].binding}}" data-binding="{{=it.labels[counter].binding}}"></div>
+                    </div>
+                </div>
+            </div>
+        {{};}}
+    </article>
+</section>

@@ -1,0 +1,196 @@
+﻿{{
+        function pad(t) { return t < 10 ? '0' + t : t; };
+        function formatTime(dt) {
+            var actualhours= dt.getHours();
+            var ampm = actualhours >= 12 ? 'PM' : 'AM';
+            var hours = actualhours % 12;
+            hours = hours ? hours : 12;
+            var monthNames = it.wizletInfo.textContent.monthNames;
+            return dt.getDate() + " " + monthNames[dt.getMonth()] + " " + dt.getFullYear()+ "  "+hours + ":" + pad(dt.getMinutes())+ "  "  +ampm;
+        }
+}}
+
+<div class="ec-view__allMailPreview--participantName">{{=it.participantName}}</div>
+{{?it.allMails.emails && it.allMails.emails.length > 0}}
+<div class="ec-view__allMailPreview--typeTitle"><h2>INBOX</h2></div>
+{{~it.allMails.emails :email:index}}
+<div class="ec-view__allMailPreview--email print-global-pagebreak-after">
+<header class="ec-view__header" data-eid="{{=email.id}}">
+    <div class="ec-view__firstRow">
+        <h2 class="ec-view__subject">{{=email.subject}}</h2>
+        <div class="ec-view__important">
+            {{?email.isImportant && email.isImportant == true}}
+                <a class="ec-view__important--icon"></a>
+            {{?}}
+        </div>
+    </div>
+    <div class="ec-view__sender"><span class="ec-view__label">{{=it.wizletInfo.textContent.from}}: </span>{{=email.from}}</div>
+    <div class="ec-view__recipient">
+        <span class="ec-view__label">{{=it.wizletInfo.textContent.to}}: </span>{{=(email.to||"")}}
+    </div>
+    {{?email.cc}}
+    <div class="ec-view__recipient">
+        <span class="ec-view__label">{{=it.wizletInfo.textContent.cc}}: </span>{{=(email.cc||"")}}
+    </div>
+    {{?}}
+        {{
+            var previewTime = new Date(email.sentTime);
+        }}
+    <span class="ec-view__date" title="{{! previewTime.toUTCString() }}">
+        {{=formatTime(new Date(email.sentTime))}}
+    </span>
+</header>
+<div class="ec-view__content">{{=email.body}}</div>
+{{?email.attachments.length>0}}
+    <div class="ec-view__attachments">
+        {{?email.attachments.length>0}}
+        {{~email.attachments :emailValue:emailIndex}}
+        <a class="ec-view__attach" href="wizer/{{=emailValue.url}}" target="_blank">
+            <span class="ec-view__filename">{{=emailValue.name}}</span>
+            <span class="ec-view__filesize">({{=emailValue.sizeKb}}Kb)</span>
+        </a>
+        {{~}}
+        {{?}}
+    </div>
+{{?}}
+</div>
+{{~}}
+{{?}}
+
+{{?it.allMails.drafts && it.allMails.drafts.length > 0}}
+<div class="ec-view__allMailPreview--typeTitle"><h2>DRAFT</h2></div>
+{{~it.allMails.drafts :draft:index}}
+<div class="ec-view__allMailPreview--email print-global-pagebreak-after">
+<header class="ec-view__header" data-eid="{{=draft.id}}">
+    <div class="ec-view__firstRow">
+        <h2 class="ec-view__subject">{{=draft.subject}}</h2>
+        <div class="ec-view__important">
+            {{?draft.isImportant && draft.isImportant == true}}
+                <a class="ec-view__important--icon"></a>
+            {{?}}
+        </div>
+    </div>
+    <div class="ec-view__sender"><span class="ec-view__label">{{=it.wizletInfo.textContent.from}}: </span>{{=draft.from}}</div>
+    <div class="ec-view__recipient">
+        <span class="ec-view__label">{{=it.wizletInfo.textContent.to}}: </span>{{=(draft.to||"")}}
+    </div>
+    {{?draft.cc}}
+    <div class="ec-view__recipient">
+        <span class="ec-view__label">{{=it.wizletInfo.textContent.cc}}: </span>{{=(draft.cc||"")}}
+    </div>
+    {{?}}
+        {{
+            var previewTime = new Date(draft.sentTime);
+        }}
+    <span class="ec-view__date" title="{{! previewTime.toUTCString() }}">
+        {{=formatTime(new Date(draft.sentTime))}}
+    </span>
+</header>
+<div class="ec-view__content">{{=draft.body}}</div>
+{{?draft.attachments.length>0}}
+    <div class="ec-view__attachments">
+        {{?draft.attachments.length>0}}
+        {{~draft.attachments :draftValue:draftIndex}}
+        <a class="ec-view__attach" href="wizer/{{=draftValue.url}}" target="_blank">
+            <span class="ec-view__filename">{{=draftValue.name}}</span>
+            <span class="ec-view__filesize">({{=draftValue.sizeKb}}Kb)</span>
+        </a>
+        {{~}}
+        {{?}}
+    </div>
+{{?}}
+</div>
+{{~}}
+{{?}}
+
+{{?it.allMails.sent && it.allMails.sent.length > 0}}
+<div class="ec-view__allMailPreview--typeTitle"><h2>SEND</h2></div>
+{{~it.allMails.sent :send:index}}
+<div class="ec-view__allMailPreview--email print-global-pagebreak-after">
+<header class="ec-view__header" data-eid="{{=send.id}}">
+    <div class="ec-view__firstRow">
+        <h2 class="ec-view__subject">{{=send.subject}}</h2>
+        <div class="ec-view__important">
+            {{?send.isImportant && send.isImportant == true}}
+                <a class="ec-view__important--icon"></a>
+            {{?}}
+        </div>
+    </div>
+    <div class="ec-view__sender"><span class="ec-view__label">{{=it.wizletInfo.textContent.from}}: </span>{{=send.from}}</div>
+    <div class="ec-view__recipient">
+        <span class="ec-view__label">{{=it.wizletInfo.textContent.to}}: </span>{{=(send.to||"")}}
+    </div>
+    {{?send.cc}}
+    <div class="ec-view__recipient">
+        <span class="ec-view__label">{{=it.wizletInfo.textContent.cc}}: </span>{{=(send.cc||"")}}
+    </div>
+    {{?}}
+        {{
+            var previewTime = new Date(send.sentTime);
+        }}
+    <span class="ec-view__date" title="{{! previewTime.toUTCString() }}">
+        {{=formatTime(new Date(send.sentTime))}}
+    </span>
+</header>
+<div class="ec-view__content">{{=send.body}}</div>
+{{?send.attachments.length>0}}
+    <div class="ec-view__attachments">
+        {{?send.attachments.length>0}}
+        {{~send.attachments :sentValue:sentIndex}}
+        <a class="ec-view__attach" href="wizer/{{=sentValue.url}}" target="_blank">
+            <span class="ec-view__filename">{{=sentValue.name}}</span>
+            <span class="ec-view__filesize">({{=sentValue.sizeKb}}Kb)</span>
+        </a>
+        {{~}}
+        {{?}}
+    </div>
+{{?}}
+</div>
+{{~}}
+{{?}}
+
+{{?it.allMails.deleted && it.allMails.deleted.length > 0}}
+<div class="ec-view__allMailPreview--typeTitle"><h2>DELETED</h2></div>
+{{~it.allMails.deleted :deleted:index}}
+<div class="ec-view__allMailPreview--email print-global-pagebreak-after">
+<header class="ec-view__header" data-eid="{{=deleted.id}}">
+    <div class="ec-view__firstRow">
+        <h2 class="ec-view__subject">{{=deleted.subject}}</h2>
+        <div class="ec-view__important">
+            {{?deleted.isImportant && deleted.isImportant == true}}
+                <a class="ec-view__important--icon"></a>
+            {{?}}
+        </div>
+    </div>
+    <div class="ec-view__sender"><span class="ec-view__label">{{=it.wizletInfo.textContent.from}}: </span>{{=deleted.from}}</div>
+    <div class="ec-view__recipient">
+        <span class="ec-view__label">{{=it.wizletInfo.textContent.to}}: </span>{{=(deleted.to||"")}}
+    </div>
+    {{?deleted.cc}}
+    <div class="ec-view__recipient">
+        <span class="ec-view__label">{{=it.wizletInfo.textContent.cc}}: </span>{{=(deleted.cc||"")}}
+    </div>
+    {{?}}
+        {{
+            var previewTime = new Date(deleted.sentTime);
+        }}
+    <span class="ec-view__date" title="{{! previewTime.toUTCString() }}">
+        {{=formatTime(new Date(deleted.sentTime))}}
+    </span>
+</header>
+<div class="ec-view__content">{{=deleted.body}}</div>
+{{?deleted.attachments.length>0}}
+    <div class="ec-view__attachments">
+        {{?deleted.attachments.length>0}}
+        {{~deleted.attachments :deletedValue:deletedIndex}}
+        <a class="ec-view__attach" href="wizer/{{=deletedValue.url}}" target="_blank">
+            <span class="ec-view__filename">{{=deletedValue.name}}</span>
+            <span class="ec-view__filesize">({{=deletedValue.sizeKb}}Kb)</span>
+        </a>
+        {{~}}
+        {{?}}
+    </div>
+{{?}}
+</div>
+{{~}}
+{{?}}

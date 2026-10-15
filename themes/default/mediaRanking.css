@@ -1,0 +1,126 @@
+
+.wizletMediaRanking #contentBox
+{
+	float: none;
+}
+
+.wizletMediaRanking #ranking_TableDiv
+{
+	padding-left: 30px;
+}
+
+.wizletMediaRanking .missingMediaWarning
+{
+	padding-left: 30px;
+}
+
+.wizletMediaRanking .mediaRankingContent .rankRadio 
+{
+	background: none;
+}
+
+.wizletMediaRanking #radioCaption
+{
+	padding-bottom: 10px;
+	clear: both;
+	font-size: 16px;
+}
+
+.wizletMediaRanking #ranking_TableDiv 
+{
+	height: auto;	
+}
+
+.wizletMediaRanking .rankRadio input
+{
+	float: left;
+}
+
+.wizletMediaRanking .ranking_Table {
+	width: auto;
+}
+
+.wizletMediaRanking .ranking_Table td {
+    vertical-align: middle;
+}
+
+.wizletMediaRanking #player
+{
+	margin-right: 30px;
+}
+
+.wizletMediaRanking .rankVoteRadioBox
+{
+	background:  url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_25.png');
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	width: auto;
+	padding: 0px 10px;
+	float: left;
+	clear: both;
+	margin-right: 20px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+
+.wizletMediaRanking .rankVoteRadioBoxDescLeft,
+.wizletMediaRanking .rankVoteRadioBoxDescRight
+{
+	float: left;
+	font-size: 11px;
+	font-weight: bold;
+	margin-top: 2px;
+	width: 50px;
+}
+
+.wizletMediaRanking .rankVoteRadioBoxDescLeft
+{
+	margin-right: 12px;
+	margin-left: 8px;
+	text-align: right;
+}
+
+.wizletMediaRanking .rankVoteRadioBoxDescRight
+{
+	margin-left: 17px;
+	text-align: left;
+}
+
+
+.wizletMediaRanking .rankRadio
+{
+	float: left;
+	background: none;
+	width: auto;
+	padding: 0px;
+}
+
+.wizletMediaRanking .rankVoteRadioBoxButtons input
+{
+	float: left;
+	display: block;
+	margin-top: 9px;
+	height: 15px;
+	padding-top: 0px;
+}
+
+.wizletMediaRanking *:first-child+html .rankRadio input
+{
+	margin-top: 5px;
+}
+
+.wizletMediaRanking .rankVoteSendContainer
+{
+	float: left;
+	clear: both;
+	margin-top: 15px;
+}
+
+.wizletMediaRanking .mediaRankingContent {
+	margin-left:30px;
+}
+
+.wizletMediaRanking #sendContainer.sendAction {
+	float:right;
+	margin:20px 20px 0 0;
+}

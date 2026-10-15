@@ -1,0 +1,40 @@
+<Action>
+  <Component type="Feedback" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_singleSelectFB.dot",
+  "css": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/styles/as_singleSelectFB.css",
+  "feedbackTitle": "!{Activity4_Feedback}",
+  "trackQuestion": "Team_Track",
+  "questions": [
+    {
+      "binding": "Activity4_MOMENT_SINGLE_SELECT",
+      "feedback": {
+        "description": "!{Activity4_MomentSingleSelectOption1}",
+        "feedback": "!{Activity4_OutcomeA}"
+      },
+      "content": {
+        "description": "!{Activity4_MomentSingleSelectOption1}",
+        "feedback": "!{Activity4_OutcomeA}"
+      }
+    }
+  ],
+  "metrics": [
+    {
+      "metricValue": "!{Activity4_A_Score_1}",
+      "label": "!{Activity4_Top_Gauges_Gauge1}"
+    },
+    {
+      "metricValue": "!{Activity4_A_Score_2}",
+      "label": "!{Activity4_Top_Gauges_Gauge2}"
+    },
+    {
+      "metricValue": "!{Activity4_A_Score_3}",
+      "label": "!{Activity4_Top_Gauges_Gauge3}"
+    }
+  ],
+  "scoreText": "!{Activity4_Score}",
+  "scope": [
+    "Activity4_MOMENT_SINGLE_SELECT",
+    "Team_Track"
+  ]
+}]]></Component>
+</Action>

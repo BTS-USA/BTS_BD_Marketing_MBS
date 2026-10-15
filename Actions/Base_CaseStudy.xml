@@ -1,0 +1,19 @@
+<Action>
+  <Component type="Info"><![CDATA[{
+  "templateInEvent": "html/as_info.dot",
+  "css": "styles/as_info.css",
+  "header": {
+    "bgimage": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/headerGraphic.svg",
+    "title": "!{Base_MomentCasestudyTitle}",
+    "description": "!{Base_MomentCasestudyDescription}"
+  },
+  "images": [
+    "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/case-study.png"
+  ],
+  "content": {
+    "headline": "!{Base_MomentCasestudyContentHeadline}",
+    "text": "!{Base_MomentCasestudyContentText}",
+    "list": "!{Base_MomentCasestudyContentList}"
+  }
+}]]></Component>
+</Action>

@@ -1,0 +1,43 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="ifc cl-component">
+            {{? it.header}}
+                <header class="ifc-header-main cl-header--main">
+                    {{? it.header.breadCrumbs}}
+                        <p class="ifc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="ifc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="ifc-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                            <h1 class="ifc-title-main cl-header__title--main">{{=it.header.title}}</h1>
+                        {{?}}
+                        {{? it.header.description}}
+                            <p class="ifc-description-main cl-header__description--main">{{=it.header.description}}</p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+            <div class="ifc-container cl-container" data-maincontainer>
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <div class="ifc-instructions cl-instructions">
+                            <p class="ifc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                    <div class="ifc-content cl-content">
+                        {{~it.questions :input:index}}
+                        <article class="cl-xs-column-{{=12/it.questions.length}} ifc-article cl-article">
+                            {{? input.title}}
+                                <div class="ifc-title cl-label">{{=input.title}}</div>
+                            {{?}}
+                            <div data-binding="{{=input.binding}}" class="ifc-textarea-container cl-textarea-container"></div>
+                        </article>
+                        {{~}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

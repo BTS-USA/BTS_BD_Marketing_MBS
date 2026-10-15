@@ -1,0 +1,48 @@
+<div class="riskSingleQuadrant__table" data-list-table>
+    {{~it.filteredArray :ideas:index }}
+    {{? !it.isListView}}
+    <div class="riskSingleQuadrant__tableRow" data-list-row data-id="{{=ideas.IdeaId}}" data-ideaText="{{=ideas.IdeaText}}">
+        
+        <div class="riskSingleQuadrant__tableSequence riskSingleQuadrant__tableCell" style="border-color:{{=ideas.themeColorCode}}"  >
+            <span class="riskSingleQuadrant__dot" data-dot="{{=index+1}}"></span>
+            <span>{{=index+1}}</span>
+        </div>
+        <div class="riskSingleQuadrant__tableIdea riskSingleQuadrant__tableCell" >{{=ideas.IdeaText}}</div>
+        {{~ideas.ideaAttr :attr:i }}
+        <div class="riskSingleQuadrant__tableAttributes riskSingleQuadrant__tableCell {{=attr.key}}">
+            <div class="riskSingleQuadrant__attribute">{{=attr.key}}</div>
+            <div class="riskSingleQuadrant__values">{{=attr.value}}</div>
+        </div>
+        {{~}}
+        <div class="riskSingleQuadrant__tableTeamNo riskSingleQuadrant__tableCell">
+            <span class="riskSingleQuadrant__teamNo">{{=ideas.IdeaAuthorName}}</span>
+        </div>
+    </div>
+    {{?}}
+    {{? it.isListView}}
+    <div class="riskSingleQuadrant__tableRow" data-idea-row data-id="{{=ideas.IdeaId}}" data-ideaText="{{=ideas.IdeaText}}">
+        <div class="riskSingleQuadrant__tableSequence riskSingleQuadrant__tableCell" style="border-color:{{=ideas.themeColorCode}}">
+            <span class="riskSingleQuadrant__dot" data-dot="{{=index+1}}"></span>
+            <span>{{=index+1}}</span>
+        </div>
+        <div class="riskSingleQuadrant__tableIdea riskSingleQuadrant__tableCell">{{=ideas.IdeaText}}</div>
+
+        <div class="riskSingleQuadrant__tableAttributes riskSingleQuadrant__tableCell">
+            <div class="riskSingleQuadrant__attribute">{{=it.wizletInfo.textContent.impactText}}</div>
+            <div class="riskSingleQuadrant__values">{{=ideas.Impact}}</div>
+        </div>
+        <div class="riskSingleQuadrant__tableAttributes riskSingleQuadrant__tableCell">
+            <div class="riskSingleQuadrant__attribute">{{=it.wizletInfo.textContent.likelihoodText}}</div>
+            <div class="riskSingleQuadrant__values">{{=ideas.Likelihood}}</div>
+        </div>
+        <div class="riskSingleQuadrant__tableAttributes riskSingleQuadrant__tableCell riskSingleQuadrant__tableAvg">
+            <div class="riskSingleQuadrant__attribute">{{=it.wizletInfo.textContent.avgText}}</div>
+            <div class="riskSingleQuadrant__values">{{=ideas.Average}}</div>
+        </div>
+        <div class="riskSingleQuadrant__tableTeamNo riskSingleQuadrant__tableCell">
+            <span class="riskSingleQuadrant__teamNo">{{=ideas.IdeaAuthorName}}</span>
+        </div>
+    </div>
+    {{?}}
+    {{~}}
+</div>

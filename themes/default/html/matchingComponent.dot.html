@@ -1,0 +1,92 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="mc cl-component">
+            {{? it.header}}
+                <header class="mc-header cl-header--main">
+                    {{? it.header.breadCrumbs}}
+                        <p class="mc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="mc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="mc-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                            <h1 class="mc-header__title cl-header__title--main">{{=it.header.title}}</h1>
+                        {{?}}
+                        {{? it.header.description}}
+                            <p class="mc-header__description cl-header__description--main">{{=it.header.description}}</p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+            <div class="mc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="mc-instructions cl-instructions">
+                        <p class="mc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+
+                    <div class="mc-content cl-content">
+                        <div class="mc-question-column cl-xs-column-6 cl-padding--no">
+                            {{~it.questions:question:index}}
+                            <div class="mc-question" data-matchingComponentQuestion data-quesid="{{=question.binding}}">
+                                <div class="matchingComponentQuestionDescription">
+                                    <p>{{=question.description}}</p>
+                                </div>
+                            </div>
+                            {{~}}
+                        </div>
+                        <div class="mc-answer-column cl-xs-column-6 cl-padding--no">
+                            {{~it.options:option:index}}
+                            <div draggable="true" class="mc-answer" data-matchingComponentAnswer data-index="{{=option.myIndex}}">
+                                <div class="mc-drag-icon">
+                                </div>
+                                <p class="mc-description">{{=option.description}}</p>
+                            </div>
+                            {{~}}
+                        </div>
+                    </div>
+
+                    <footer class="mc-footer cl-footer" data-matchingcomponentfooter>
+                        <div class="mc-buttons cl-buttons" data-mcbuttons>
+                        {{? it.buttons_v2 }}
+                            {{~it.buttons_v2 :button:index}}
+                            <div id="matching{{=button.type}}Button"
+                                data-componentbuttons data-buttons
+                                {{? button.type=="submit"}} data-submitbutton data-submitaction data-matchingcomponentsubmit data-pulsesubmitbutton{{?}}
+                                {{? button.type=="clear"}} data-clearAction{{?}}
+                                class="mc-button mc-button--{{=button.type}} cl-button cl-button--{{=button.type}}">
+                                <div class="mc-button--text cl-button--text" 
+                                    {{? button.type=="submit"}} data-submitaction {{?}} 
+                                    data-mcsubmitbuttontext {{? button.disabled}} disabled{{?}} 
+                                    data-button="{{=button.type}}">
+                                    {{=button.navigation.title}}
+                                </div>
+                            </div>
+                            {{~}}
+                        {{??}}
+                            {{? it.buttonSubmit}}
+                                <div class="mc-button mc-button--submit cl-button cl-button--submit js-button-submit" data-matchingcomponentsubmit data-pulsesubmitbutton>
+                                   <div class="mc-button--text cl-button--text">{{=it.buttonSubmit}}</div>
+                                </div>
+                            {{?}}
+
+                            {{? it.buttons}}
+                                {{~it.buttons :button:index}}
+                                <div {{? button.type === "submit"}} data-submitbutton data-matchingcomponentsubmit data-pulsesubmitbutton{{?}}
+                                     {{? button.type === "clear"}} data-clearAction{{?}}
+                                     class="mc-button mc-button--{{=button.type}} cl-button cl-button--{{=button.type}} exclude {{? button.hide}}cl-button--hidden{{?}}"
+                                     {{? button.disabled}} disabled{{?}} data-button="{{=button.type}}">
+                                    <div class="mc-button--text cl-button--text">{{=button.text}}</div>
+                                </div>
+                                {{~}}
+                            {{?}}
+                        {{?}}
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </section>
+   </div>
+</div>

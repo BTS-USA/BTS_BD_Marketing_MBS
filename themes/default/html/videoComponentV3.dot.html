@@ -1,0 +1,58 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="vcjwp cl-component" data-videocomponentjwp>
+            {{? it.header}}
+                <header class="vcjwp-header-main cl-header--main {{? it.header.pointer == false}} cl-pointer--hidden{{?}}">
+                    {{? it.header.breadCrumbs}}
+                        <p class="vcjwp-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                    {{?}}
+                    {{? it.header.bgimage}}
+                     <div class="vcjwp-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                    {{?}}
+                    <div class="vcjwp-header-wrapper cl-header-wrapper">
+                        {{? it.header.title}}
+                            <h1 class="vcjwp-title-main cl-header__title--main">{{=it.header.title}}</h1>
+                        {{?}}
+                        {{? it.header.description}}
+                            <p class="vcjwp-description-main cl-header__description--main">{{=it.header.description}}</p>
+                        {{?}}
+                    </div>
+                </header>
+            {{?}}
+            <div class="vcjwp-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <div class="vcjwp-instructions cl-instructions">
+                            <p class="vcjwp-nstructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                    
+                    <div class="vcjwp-content cl-content">
+                        <article class="vcjwp-article{{? it.transcript}} cl-row{{?}} cl-article" data-videocomponentjwpcont>
+                            <div class="vcjwp-video{{? it.transcript}} cl-sm-column-7{{?}} cl-xs-column-12 cl-padding--no">
+                                <div id="player" class="provider" data-videocomponentjwp-streamingvideocontainer></div>
+                            </div>
+                            {{? it.transcript}}
+                            <div class="vcjwp-transcript cl-sm-column-5 cl-xs-column-12" data-videocomponentjwp-transcriptcont>
+                                <div class="vcjwp-transcript__header" data-videocomponentjwp-transcripttitle>
+                                    <h3 class="vcjwp-transcript__h3 cl-h3">{{=it.transcript.title}}</h3>
+                                </div>
+                                <div class="vcjwp-accordion cl-accordion">
+                                    <div class="vcjwp-accordion__header cl-accordion__header" data-videocomponentjwp-transcriptdetailscont data-videocomponentjwp-accordionsign>
+                                        <p class="vcjwp-paragraph cl-paragraph" data-videocomponentjwp-transcripttext>{{=it.transcript.label}}</p>
+                                        <div class="vcjwp-accordion-sign"></div>
+                                    </div>
+                                    <div class="vcjwp-accordion__content cl-accordion__content" data-videocomponentjwp-transcriptdesccont>
+                                        <p class="vcjwp-paragraph cl-paragraph" data-videocomponentjwp-transcriptdesc>{{=it.transcript.text}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{?}}
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

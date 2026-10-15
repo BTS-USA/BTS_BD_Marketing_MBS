@@ -1,0 +1,56 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="tlc-section-main" data-componentContainer>
+            {{? it.header}}
+            <header class="tlc-header-main cl-header--main" data-textListHeader>
+                <div class="tlc-header-wrapper cl-header-wrapper">
+                    {{? it.header.title}}
+                    <h1 class="tlc-title-main cl-header__title--main">{{=it.header.title}}</h1>
+                    {{?}}
+                    {{? it.header.description}}
+                    <p class="tlc-description-main cl-header__description--main">{{=it.header.description}}</p>
+                    {{?}}
+                </div>
+            </header>
+            {{?}}
+        </section>
+        <article>
+            <div class="topRisk__mainCont cl-container" data-ideasContainer>
+                <div class="topRisk__mainContWrapper">
+
+                    <div class="cl-xs-column-12 cl-row">
+                        <div class="topRisk__sortContainerWrapper">
+                            <div class="topRisk__sortCont" data-sorting>
+                                <i class="cl-icon cl-icon--descendingArrow"></i>
+                                <select class="topRisk__dropdownCont" data-select-option>
+                                    <option value="0">{{=it.textContent.sortText}}</option>
+                                    {{~it.sortOptions :type:index}}
+                                    <option value="{{=type.key}}">{{=type.value}}</option>
+                                    {{~}}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{?it.isLeader == true && it.likeAllIdeasCheckbox == true}}
+                    {{? it.disableLikeAllIdeasCheck === undefined || it.disableLikeAllIdeasCheck === true}}
+                    <div class="cl-xs-column-12 cl-row">
+                        <div class="topRisk__left" data-checkboxcontaier>
+                            <input type="checkbox" data-likeallideascheck />
+                            <span>{{= it.textContent.likeAllIdeasText }}  <span class="topRisk__warning">({{= it.textContent.likeAllIdeasWarningText}})</span></span>
+                        </div>
+                    </div>
+                    {{?}}
+                    {{?}}
+
+
+
+                    <div class="cl-xs-column-12 cl-row" data-list>
+
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

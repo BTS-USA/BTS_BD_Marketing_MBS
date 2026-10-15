@@ -1,0 +1,181 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+//lightgreen = #80CC28
+textGray = #515151
+submitGreen = #80CC28
+
+.qna
+    &-content
+        width 100%
+        text-align center
+        @media screen and (max-width 768px)
+            top 18%
+        &__container
+            background-color $cerulean
+            border-radius 50%
+            color white
+            cursor pointer
+            height 134px
+            text-align center
+            width 141px
+            margin 0 auto
+            &--hide
+                display none
+            
+            
+        &__raiseHandIcon
+            width 100%
+            &:before
+                display inline-block
+                font-size 3em
+                position relative
+                top 12px
+        &__text
+            position relative
+            top 15px
+            font-size 1.2rem
+            line-height 1px
+        
+        &__anotherQuestionText
+            padding 15px
+            font-size 1.5em
+            margin 0 0 0 20px
+            color textGray
+            display none
+            &--display
+                display block
+
+            
+    &-button
+        &__cancel
+            background-color $gray
+            &:hover, &:active
+                background-color $gray
+        &__submit
+            background-color submitGreen
+            &:hover, &:active
+                background-color submitGreen
+    &-question
+        &__list
+            width 100%
+            margin-bottom 8px
+        &__listCont
+            display flex    
+        &__textCont
+            display flex
+            width 70%
+            background-color $gray
+            color #fff
+            padding 15px 20px
+            border-top-left-radius 10px
+            border-bottom-left-radius 10px
+        &__text
+            padding 0 10px
+            font-weight 600
+            word-break break-word
+            align-self center
+            width 100%
+            display flex
+            justify-content center
+            flex-direction column
+        &__icon
+            display flex
+            justify-content center
+            flex-direction column
+            span:before
+                font-size 1.5em
+                position relative
+                top 3px
+        &__removeCont
+            display flex
+            width 30%
+            color #fff
+            padding 35px
+            border-top-right-radius 10px
+            border-bottom-right-radius 10px
+            background-color white
+            text-align center    
+            justify-content center
+            flex-direction column
+            @media screen and (max-width 768px)
+                padding 15px
+        &__removeText, &__questionText
+            font-size 1.125em
+            @media screen and (max-width 768px)
+                font-size 0.9em
+        &__removeText
+            padding 0 5px 
+        &__remove
+            background-color red
+            padding 6px
+            font-weight 600
+            cursor pointer
+        &__removeIcon
+            &::before
+                font-size 0.8rem
+    &-video
+        &__container
+            display flex
+            justify-content center
+        &__liveIcon
+            height 30px
+            width 30px
+            color white
+            background-color red
+            border-radius 23px
+            opacity 0.7
+            max-width 100%
+            margin 0 auto
+        &__description
+            color $gray
+            padding 15px 0
+            text-align center
+            font-weight 400		          
+
+    &-alert
+        width 100%
+        margin-top 150px
+        text-align center
+        box-shadow none
+   
+
+    &-modal
+        &__body
+            padding 0
+        &__dialog
+            box-shadow none
+        &__container
+            margin 35px
+        &__questionText
+            color $gray
+            @media screen and (max-width 768px)
+                font-size 0.8em
+        &__remainingText
+            float left
+        &__remainingCharacterCont
+            color $gray
+            float right
+            @media screen and (max-width 768px)
+                font-size 0.8em
+        &__remainingCharacters
+            float left
+            padding 0 3px 0 0
+        &__content
+           &--textColor
+                color $cerulean
+        &__textarea
+            border 4px solid $cerulean
+            margin 10px 0
+            color $gray
+        &__closebtn
+            cursor pointer
+        &__alertContent
+            font-size 1.2em
+            color gray
+        &__alertIcon
+            padding 10px 0
+            &:before
+                font-size 3em
+                color $treePoppy
+                

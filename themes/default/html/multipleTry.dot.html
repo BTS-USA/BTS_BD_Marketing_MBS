@@ -1,0 +1,64 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="mt cl-component">
+           
+            {{? it.header}}
+                <header class="mt-header--main cl-header--main">
+                    {{? it.header.title}}
+                        <h1 class="mt-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                            {{=it.header.title}}
+                        </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="mt-header__description--main cl-header__description--main">
+                            {{=it.header.description}}
+                        </p>
+                    {{?}}
+                </header>
+            {{?}}
+            
+            <div class="mt-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <div class="mt-instructions cl-instructions">
+                            <p class="mt-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                    <article class="mt-article cl-row">
+                        {{? it.button}}
+                            <div class="mt-button--tryAgain mt-button" data-tryagain-button>
+                                <span class="mt-tryAgainButtonText mt-buttonText cl-button cl-button--submit" data-tryagain-text>{{=it.button.title}}</span>
+                            </div>
+                        {{?}}
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<section class="cl-modal" data-trysuccessful-modal>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn" data-dismiss="modal" data-btn="close" aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body">
+                <header></header>
+                <div class="cl-modal__content">
+                    <span class="mt-modal__text" data-trysuccessfultext>{{=it.trySuccessMessage}}</span>
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        {{?it.navigation && it.navigation.targetSection && it.navigation.targetSection !== ''}}
+                        <div class="mt-button mt-navigationOptions mt-button {{?(!it.navigation.remove)}}active{{?}} {{=it.navigation.targetSection}}" data-remove="{{=it.navigation.remove}}" 
+                             data-navigate="click" {{=it.navigation.data}} data-trysuccessful-ok>
+                            <span class="cl-button cl-button--submit">{{=it.okayText}}</span></div>
+                        {{?}}
+                        <span class="cl-button cl-button--submit mt-button {{?it.navigation && it.navigation.targetSection && it.navigation.targetSection !== ''}}mt-button--hidden{{?}}" data-dismiss="modal" data-btn="close" data-trysuccessful-ok-close>{{=it.okayText}}</span>
+                        </div>
+                </footer>
+            </section>
+        </div>
+    </article>
+</section>

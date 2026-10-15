@@ -1,0 +1,73 @@
+<Action>
+  <Component type="as_progressiveLeaderboard" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_progressiveLeaderboard.dot",
+  "css": "styles/as_progressiveLeaderboard.css",
+  "header": {
+    "title": "!{Progressive_Leaderboard_Title}",
+    "description": "!{Progressive_Leaderboard_Description}",
+    "bgimage": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/headerGraphic.svg"
+  },
+  "filterQuestions": [
+    {
+      "filterQuestion": "Leader",
+      "filterText": 1
+    }
+  ],
+  "liveUpdate": true,
+  "heatmapType": "QUESTION",
+  "direction": "VERTICAL",
+  "showValues": true,
+  "columnLabel": "!{Progressive_Leaderboard_Column}",
+  "isDelivery": false,
+  "appendTeamNumber": true,
+  "teamName": {
+    "question": "Team_Name"
+  },
+  "questions": [
+    {
+      "title": "!{Progressive_Leaderboard_Metric1}",
+      "binding": "Metric1"
+    },
+    {
+      "title": "!{Progressive_Leaderboard_Metric2}",
+      "binding": "Metric2"
+    },
+    {
+      "title": "!{Progressive_Leaderboard_Metric3}",
+      "binding": "Metric3"
+    },
+    {
+      "title": "!{Progressive_Leaderboard_Total}",
+      "binding": "Metric_Total"
+    }
+  ],
+  "options": [],
+  "multiSort": {
+    "Metric_Total": "desc",
+    "Metric1": "desc",
+    "Metric2": "desc",
+    "Metric3": "desc"
+  },
+  "isShowRank": true,
+  "maxList": "100",
+  "userList": "3",
+  "button": {
+    "topResultText": true,
+    "topText": "!{Progressive_Leaderboard_ComingUp}",
+    "revBtnText": "!{Progressive_Leaderboard_Reveal}",
+    "text": "!{Progressive_Leaderboard_Next}",
+    "type": "Command",
+    "nextButton": true
+  },
+  "trackQuestion": "Cohort_Track",
+  "scope": [
+    "Metric1",
+    "Metric2",
+    "Metric3",
+    "Metric_Total",
+    "Cohort_Track",
+    "Team_Name",
+    "Leader"
+  ]
+}]]></Component>
+</Action>

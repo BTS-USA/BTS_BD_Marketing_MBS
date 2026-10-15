@@ -1,0 +1,42 @@
+<Action disableDynamicVotes="false">
+  <Component type="Input" customJS="true"><![CDATA[{
+  "css": "styles/as_brainstormInput.css",
+  "instructions": "!{Activity6_InputInstructions}",
+  "readOnlyCondition": "Q.Leader==2",
+  "trackQuestion": "Team_Track",
+  "questions": [
+    {
+      "binding": "1"
+    }
+  ],
+  "bindings": {
+    "1": {
+      "bind": "db:Activity6_INPUT_1",
+      "render": "events/BTS_BD_Marketing_MBS/js/textAreaAD",
+      "trackQuestion": "Team_Track",
+      "heatmap_enabled": "Activity6_Brainstorm_Heatmap_Enabled",
+      "renderOptions": {
+        "placeholder": "!{Activity6_PlaceholderText}",
+        "class": "cl-textarea",
+        "maxCharacters": {
+          "maxValue": 250,
+          "class": "inputComponentMessageLength",
+          "text": " !{Activity6_CharactersRemaining}"
+        },
+        "submitButton": {
+          "class": "inputComponentSubmit cl-button cl-button--submit",
+          "text": "!{Activity6_submit}",
+          "clearText": false,
+          "message": "!{Activity6_saved}"
+        }
+      }
+    }
+  },
+  "scope": [
+    "Activity6_INPUT_1",
+    "Activity6_Brainstorm_Heatmap_Enabled",
+    "Team_Track",
+    "Leader"
+  ]
+}]]></Component>
+</Action>

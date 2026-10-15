@@ -1,0 +1,53 @@
+﻿    {{? it && it.startTime}}
+    {{
+        var dateTime= new moment(it.startTime),
+        endTime = dateTime.clone();
+        endTime.add(it.duration*1,'m');
+    }}{{?}}
+    {{var eveId=0;}}
+    {{? it && it.id}}{{
+        eveId = it.id;
+    }}{{?}}
+<div class="cc-form__row">
+    <span class="cc-form__tbbox cc-form__cell">
+        <input readonly type="text" value="{{? dateTime}}{{=dateTime.format('DD MMM YYYY')}}{{?}}" class="cl-form__text cc-form__tbfield" data-field="datepick" data-eveid="{{=eveId}}" placeholder="DATE" />
+    </span>
+    <span class="cc-form__icon cc-form__icon--datepic cc-form__cell" data-icon="datepick" data-eveid="{{=eveId}}"></span>
+</div>
+
+<div class="cc-form__row cc-form__row--half">
+    <span class="cc-form__tbbox cc-form__cell">
+        <input type="text" value="{{? dateTime && it.duration}}{{=dateTime.format('hh:mm A')}}{{?}}" class="cl-form__text cc-form__tbfield" data-field="stimepick" data-eveid="{{=eveId}}" placeholder="START" />
+    </span>
+    <span class="cc-form__icon cc-form__icon--clock cc-form__cell" data-icon="stimepick" data-eveid="{{=eveId}}"></span>
+</div>
+
+<div class="cc-form__row cc-form__row--half">
+    <span class="cc-form__tbbox cc-form__cell">
+        <input type="text" value="{{? endTime && it.duration}}{{=endTime.format('hh:mm A')}}{{?}}" class="cl-form__text cc-form__tbfield" data-field="etimepick" data-eveid="{{=eveId}}" placeholder="END" />
+    </span>
+    <span class="cc-form__icon cc-form__icon--clock cc-form__cell" data-icon="etimepick" data-eveid="{{=eveId}}"></span>
+</div>
+
+<div class="cc-form__row">
+    <span class="cc-form__tbbox cc-form__cell">
+        <input type="text" value="{{? it && it.title}}{{=it.title}}{{?}}" class="cl-form__text cc-form__tbfield" placeholder="TITLE" data-field="title" />
+    </span>
+</div>
+
+<div class="cc-form__row">
+    <span class="cc-form__tbbox cc-form__cell">
+        <input type="text" value="{{? it && it.description}}{{=it.description}}{{?}}" class="cl-form__text cc-form__tbfield" placeholder="DESCRIPTION" data-field="description" />
+    </span>
+</div>
+
+<div class="cc-form__row">
+    <div class="cc-form__tbbox">
+        <textarea class="cl-form__text cc-form__tbfield" rows="2" data-autoresize placeholder="DETAILS" data-field="details">{{? it && it.details}}{{=it.details.replace(/\<br\>/g,"\r")}}{{?}}</textarea>
+    </div>
+</div>
+
+<div class="cc-button__holder cc-form__row" data-btnholder>
+    <span class="cl-button cc-button cc-button__cancel" data-btn="cancel">CANCEL</span>
+    <span class="cl-button cc-button cc-button__ok" data-btn="ok">OK</span>
+</div>

@@ -1,0 +1,156 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+
+.mpl
+    &-wrapper
+        display none
+        position relative
+        @media screen and (max-width 768px)
+            width 40px
+            height 40px
+    &-followerCount
+        position absolute
+        top 0
+        left 30px
+        width 20px
+        height 20px
+        border-radius 10px
+        font-size 9px
+        color $white90
+        background-color #80CC28
+        text-align center
+        z-index 1
+        line-height 20px
+
+    &-followericon
+        width 40px
+        height 40px
+        line-height 40px
+        box-shadow rgba(0, 0, 0, 0.2) 0px 5px 8px
+        background linear-gradient(to bottom, rgba(109,116,126,1) 0%, rgba(92,98,106,1) 100%)
+        border-radius 30px
+        text-align center
+        position relative
+        display inline-block
+        margin-bottom 10px
+        cursor pointer
+        i
+            &:before
+                color $white90
+                font-size 18px
+                position absolute
+                top 50%
+                left 50%
+                transform translate(-50%,-50%)
+
+    &-followerDetails
+        position fixed
+        width 100%
+        height 100vh
+        z-index 10001
+        top 0
+        left 0
+        background-color rgba(40,50,75, 0.9)
+        // &.hideDetails
+        //     display none
+    &-modal
+        background-color $white
+        border-radius 12px
+        box-shadow rgba(0, 0, 0, 0.2) 0px 5px 8px
+        height auto
+        max-height calc(100vh - 200px)
+        width 100%
+        max-width 300px
+        position absolute
+        top 50%
+        left 50%
+        padding 15px
+        transform translate(-50%,-50%)
+        overflow hidden
+        @media screen and (max-width 414px)
+            max-width 100% !important
+            width 100%
+            padding 50px 15px 15px
+            position relative
+            height 100vh !important
+            max-height 100vh
+            box-sizing border-box
+            display table
+            border-radius 0
+            top 0
+            left 0
+            transform none
+            text-align left
+        &__close
+            // width 24px
+            // height 24px
+            // position absolute
+            // top 8px
+            // right 8px
+            text-align right
+            color #a8adb4
+            overflow hidden
+            z-index 1
+            cursor pointer
+            display block
+            // padding 0
+            // margin 0
+            font-weight normal
+            // @media screen and (max-width 414px)
+            //     top 10px
+            //     right 10px
+            //     width 32px
+            //     height 32px
+        &__container
+            padding 0
+            border-radius 0
+            box-shadow none
+            max-height auto
+            position static
+            top auto
+            left auto
+            transform none
+            color #6D747E
+        &__header
+            font-size 18px
+            color #6D747E
+            font-weight 600
+            margin-bottom 5px
+        &__legandsContainer
+            margin 5px 0
+        &__lateJoinlabel, &__logoutlabel
+            display inline-block
+            margin-right 24px
+            margin-bottom 0
+            font-size 11px
+            color #6D747E
+            background-color transparent
+            position static
+            line-height 1.4em
+            height auto
+            padding 0
+            &:before
+                color #6D747E
+                display inline
+                margin-right 2px
+                    
+        &__holder
+            max-height calc(100vh - 290px)
+            overflow auto
+            @media screen and (max-width 414px)
+                max-height calc(100vh - 128px)
+        &__participantnameCont
+            font-size 13px
+            // height 35px
+            // line-height 35px
+            position relative
+            margin-bottom 2px
+            background-color #A8ADB4
+            display flex
+            color $white
+            padding 10px 10px 10px 5px
+            &.loggedout
+                background-color #C7CACE
+        &__participantname
+            flex 1

@@ -1,0 +1,469 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+.cs
+  &--main
+    padding 6px 0
+  &__mainContentWrapper
+    width 100%
+    height 100%
+  &-disabled
+    background-color rgba(191, 194, 200, 1)
+    cursor none
+    opacity 1
+    pointer-events none
+  &__mainCont
+    position relative
+  &__mainWrapper
+    margin-bottom 20px
+    display table
+    width 100%
+  &__cardWrapper
+    width 170px
+    margin 0 auto
+    clear both
+    float none
+    @media screen and (max-width 414px)
+      width 160px
+  &__component
+    @media screen and (max-width 414px)
+      background $mercury
+      margin-top 10px
+  &__progressArticle
+    width 15%
+    position fixed
+    right 10px
+    border 1px solid $mercury
+    top 70px
+    height 56px
+    padding 5px 10px 13px 10px
+    @media screen and (max-width 812px)
+      width auto
+      position unset
+      border none
+      right 0
+      top 0
+      margin 16px
+      padding 0
+      height auto
+  &__progressBarCont
+    progress
+      width 100%
+  &__progressBar
+    &-text
+      font-size 14px
+      font-style italic
+  &__mainArticle
+    width 50%
+    float left
+  &__commonOptions
+    font-size 13px
+    border-radius 5px
+    padding 10px
+    cursor pointer
+    height 52px
+    display flex
+    justify-content center
+    align-items center
+    font-weight 600
+  &__mobileCont
+    display flex
+  &__color-0
+    background rgba(0, 110, 185, 1)
+    &:hover
+        background rgba(6,108,142,1)
+  &__color-1
+    background rgba(40, 50, 75, 1)
+    &:hover
+        background rgba(55,74,121,0.89)
+  &__focus
+    &Type
+      text-align center
+      margin 8px 0
+      font-weight 600
+      @media screen and (max-width 414px)
+        font-size 14px
+    &Options
+      border-radius 5px
+      // padding 10px
+      text-align center
+      margin 0 5px
+      width 30%
+      float left
+      &--mobile
+        // background rgba(0, 110, 185, 1)
+        margin 8px 0
+        width 65%
+        color $white90
+        position relative
+      &--viewCard
+        background $mercury
+        margin 8px 0 8px -1px
+        width 30%
+        border-radius 0
+        border-top-right-radius 5px
+        border-bottom-right-radius 5px
+        i:before
+          font-size 18px
+    &Header
+      color $white90
+      font-size 13px
+      border-radius 5px
+      padding 10px
+      cursor pointer
+      height 48px
+      display flex
+      justify-content center
+      align-items center
+      font-weight 600
+      &:hover
+        background rgba(6,108,142,1)
+    &Card
+      &Cont
+        background $mercury
+        height 48px
+        width 100%
+        margin 5px 0
+        border-radius 5px
+      &Wrapper
+        border 2px solid $cerulean
+        background-color color $white90
+        display flex
+        justify-content center
+        align-items center
+        height 100%
+        border-radius 5px
+        img
+          width 35px
+          height auto
+      &TextCont
+        width calc(100% - 35px)
+        font-size 9px
+        height 100%
+        background $cerulean
+        color $white90
+        text-transform uppercase
+        display flex
+        text-align left
+        
+        position relative
+        &:hover
+          .cs__focusCardCloseButton
+            opacity 0.5
+            top 0
+            left 0
+            cursor pointer
+          
+      &CloseButton
+        opacity 0
+        width 100%
+        position absolute
+        display flex
+        height 100%
+        font-size 8px
+        align-items center
+        justify-content flex-end
+        box-sizing border-box
+        padding 0 8px 0 0
+        border-top-right-radius 5px
+        border-bottom-right-radius 5px
+        background linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%)
+          
+      &Text
+        width 100%
+        height 100%
+        display flex
+        align-items center
+        word-break break-word
+        font-weight bold
+        padding 0 4px
+        line-height 1
+        font-size 9px
+      &--disabled
+        pointer-events none
+        background rgba(168, 173, 180, 1)
+        &:hover
+          background rgba(168, 173, 180, 1)
+      &--clicked
+        background rgba(128, 204, 40, 1)
+        &:hover
+          background rgba(128, 204, 40, 1)
+  &__carousel
+    &NoCardsText
+      display flex
+      align-items center
+      justify-content center
+      color $gray
+    &Card
+      &Cont
+        height 165px
+        width 170px
+        // border 2px solid $cerulean
+        text-align center
+        // border-radius 5px
+        margin 0 auto
+        position relative
+        @media screen and (max-width 414px)
+          width 160px
+      &Wrapper
+        border 2px solid $cerulean
+        border-radius 5px
+        position relative
+        margin 0 10px
+      &Img
+        height calc(158px - 45px)
+        width auto
+        margin 0 auto
+      &Text
+        background $cerulean
+        color $white90
+        font-size 14px
+        border-top-right-radius 5px
+        border-top-left-radius 5px
+        height 40px
+        padding 5px
+        display flex
+        align-items center
+        justify-content center
+    &Previous, &Next
+      height 30%
+      display flex
+      justify-content center
+      align-items center
+      background #5c626a !important
+      top 33%
+      width 30px
+      color #ffffff
+      text-decoration none
+      &:hover, &:focus
+        background black !important
+        opacity .5
+    &--disabled
+      pointer-events none
+      background #ccc !important
+      &:hover, &:focus
+        background #ccc !important
+        opacity .5
+    &Previous
+      margin-left -30px
+    &Next
+      margin-right -30px
+  &-modalWrapper
+    position absolute
+    top 0
+    // display none
+    z-index 10003
+  &-modal
+    position fixed
+    height 100%
+    width 100%
+    background rgba(0,0,0,.9)
+    z-index 1005
+    &__noCardText
+      text-align center
+    &__container
+        width 100%
+        height 100%
+        overflow auto
+        border-radius 0
+        color $white90
+    &__body
+        position absolute
+        transform translate(-50%, -60%)
+        top 40%
+        left 50%
+    &__backControl
+      text-align right
+      padding 15px
+    &__card
+      &Title
+        color $white90
+        text-align center
+        font-size 20px
+        font-weight 300
+      &Cont
+        height 58px
+        width 295px
+        display flex
+        border 2px solid $cerulean
+        margin 16px 0
+        border-radius 5px
+      &Img
+        height auto
+        width 40px
+        border-top-left-radius 5px
+        border-bottom-left-radius 5px
+      &TextCont
+        width calc(100% - 40px)
+        background $cerulean
+        height 100%
+        display flex
+        align-items center
+        padding 0 10px
+        border-top-right-radius 5px
+        border-bottom-right-radius 5px
+      &Text
+        width calc(100% - 15px)
+        text-transform uppercase
+        font-size 13px
+        font-weight 700
+        padding 0 5px 0 0
+    &__closeCardIcon
+      font-size 13px
+      font-weight 900
+    &__dialog
+      width 25%
+      @media screen and (max-width: 414px)
+        height 50vh !important
+        top 20% !important
+        width 100%
+    &__dialogCard
+      background #00adef
+      border-radius 10px
+      @media screen and (max-width: 414px)
+        border-radius 0
+        -webkit-border-radius 0
+    &__content
+      color #ffffff
+      text-align center
+    &__buttons
+      float none
+      width 100%
+      text-align center
+      &_yes, &_no
+        border 2px solid #fff
+        color #fff
+        font-size 14px
+        font-weight 600
+    &__title
+      text-align center
+      color #ffffff
+      font-weight 600
+      margin none
+  &__footer
+    text-align center
+    margin 10px 0
+    display flex
+    justify-content center
+    align-items center
+    &Button
+      background transparent
+      border 3px solid rgba(168, 173, 180, 1)
+      color gray
+      display flex !important
+      justify-content center
+      align-items center
+      margin 0 5px
+    &Text
+      font-size 14px
+      margin 0 5px
+    &Icon
+      font-size 10px
+      font-weight 700
+  
+  &-isUsedCard
+    border 2px solid #00bfff47
+    .cs__carouselCardText, img
+      opacity 0.2
+  &__cardRemainingText
+    text-align center
+    font-size 14px
+    color $gray
+    padding 5px 0
+  
+  &__notifictaionIndex
+    border-radius 50%
+    border 1px solid $gray
+    height 22px
+    width 22px
+    position absolute
+    color $gray
+    display flex
+    justify-content center
+    align-items center
+    top -9px
+    right 0
+    background $silver
+  &-sm
+    &__dialog
+      width 30%
+      @media screen and (max-width 414px)
+        width 50%
+        height 30%
+        margin-top 60px
+    &__content
+      padding 25px
+    &__text
+      display flex
+      justify-content center
+      align-items center
+  &__carousel
+    &_slide
+      display flex
+      overflow hidden
+      width 151px
+      margin auto
+    &_slider
+      width 150px
+      margin 0 auto
+    &_arrow
+      display flex
+      position absolute
+      width 170px
+      &_left
+        width 50%
+        height 165px
+        justify-content flex-start
+        display flex
+        align-items center
+      &_right
+        width 50%
+        height 165px
+        justify-content flex-end
+        display flex
+        align-items center
+.Progressbar
+  position relative
+  height 5px
+  // border-radius 1000px
+  background-color $silver
+  // clip-path inset(0 0 0 0 round 1000px)
+
+
+.Progressbar__value
+  height 5px
+  transition width 0.4s ease-in-out
+  // border-radius 1000px 0 0 1000px
+  background-color $sunsetOrange
+  will-change width
+
+
+.Progressbar > progress
+  opacity 0
+  width 1px
+  height 1px
+  position absolute
+  pointer-events none
+
+.isUsed
+  position absolute
+  transform translate(-50%, -50%)
+  top 50%
+  left 50%
+  &-text
+    font-size 14px
+    color #6D747E
+    font-weight 700 
+  &-iconCont
+    color white
+    background $gray
+    border-radius 50%
+    height 40px
+    width 40px
+    margin 0 auto
+    display flex
+    justify-content center
+    align-items center
+    i
+      font-size 18px
+      font-weight 600

@@ -1,0 +1,228 @@
+﻿{{##def.video: 
+<div class="mediaListBox">
+    {{?field.config.media.url==""}}
+        {{?it.entry.isEdit}}
+            {{?field.config.preVideoImage != null}}<img src="{{=field.config.preVideoImage}}" />{{?}}
+            <label class="recordbutton" for="recordbutton-{{=field.config.questionId}}">{{=field.config.media.recordLabel}} </label>
+            <input type="button" id="recordbutton-{{=field.config.questionId}}" class="recordVideo" data-questionid="{{=field.config.questionId}}" data-participantid="{{=field.config.media.participantId}}" value="{{=field.config.media.recordLabel}}" style="visibility:hidden" />
+            <label class="photobutton" for="photobutton-{{=field.config.questionId}}">{{=field.config.media.photoLabel}} </label>
+            <input type="button" id="photobutton-{{=field.config.questionId}}" class="takePhoto" data-questionid="{{=field.config.questionId}}" data-participantid="{{=field.config.media.participantId}}" value="{{=field.config.media.photoLabel}}" style="visibility:hidden" />
+        {{??}}
+            <img src="/Wizer/content/novideo.png" />
+        {{?}}
+    {{??}}
+        <h1><span>{{=field.config.label}}</span></h1>
+        {{?field.config.media.mimeType && field.config.media.mimeType.lastIndexOf("image/") === 0}}
+            <img src="{{=field.config.media.url}}" />
+            {{?it.entry.isEdit}}
+                <label for="button-{{=field.config.media.Id}}" class="deleteVideobutton">{{=field.config.media.deleteLabel}} </label>
+                <input type="button" id="button-{{=field.config.media.Id}}" class="deleteVideo" data-id="{{=field.config.media.Id}}" data-confirm="{{=field.config.media.confirmLabel}}" data-questionid="{{=field.config.questionId}}" value="{{=field.config.media.deleteLabel}}" style="visibility:hidden">
+            {{?}}
+        {{??}}
+            <div id="VideoPlayer"><div href="{{=field.config.media.url}}" class="videoPlayer" id="videoPlayer-{{=field.config.media.Id}}"></div></div>
+            {{?it.entry.isEdit}}
+                <label for="button-{{=field.config.media.Id}}" class="deleteVideobutton">{{=field.config.media.deleteLabel}} </label>
+                <input type="button" id="button-{{=field.config.media.Id}}" class="deleteVideo" data-id="{{=field.config.media.Id}}" data-confirm="{{=field.config.media.confirmLabel}}" data-questionid="{{=field.config.questionId}}" value="{{=field.config.media.deleteLabel}}" style="visibility:hidden">
+            {{?}}
+            {{it.videos.push({ id: '{{=field.config.media.Id}}', url: '{{=field.config.media.url}}', key: '{{=field.config.media.key}}', autoPlay: field.config.media.autoPlay });}}
+        {{?}}
+    {{?}}
+</div>
+#}}
+
+
+
+<div class="entry {{?it.entry.isEdit}}edit{{??}}view{{?}} 
+        {{?it.entry.totalAverageRank && it.entry.totalAverageRank.Count != 0}}
+            rated
+        {{??}}
+            notrated
+        {{?}}
+        ">
+    <div class="entryLeft">
+    {{~it.entry.fieldList :field:index}}
+    <div class="field field-{{!field.config.question}} {{?field.config.lineCount == 1}}
+                                                            hasInput
+                                                        {{?}}
+                                                        {{?field.config.lineCount > 1}}
+                                                            hasTextarea
+                                                        {{?}}
+                                                        {{?field.config.options.length}}
+                                                            hasOptions
+                                                        {{?}}
+                                                        {{?field.config.media!==null}}
+                                                            hasMedia
+                                                        {{?}}
+                                                        {{?field.config.type == 'Date'}}
+                                                            hasDate
+                                                        {{?}}
+
+                                                        field{{=index}}
+
+    " data-questionid="{{=field.config.questionId}}">
+        {{?it.entry.isEdit}}
+        <span>
+            {{?it.wizletInfo.enableDraft && field.config.questionId==it.wizletInfo.entryQuestionId}}
+            Draft
+            <select class="isDraft">
+                <option value="null">Please choose...</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+            {{?}}
+            {{?field.config.media==null}}
+            {{!field.config.label}}
+            {{?field.config.options.length}}
+            <select class="input{{=index}} category">
+                <option value="null">{{! field.config.defaultOptionLabel || "Please choose..." }}</option>
+                {{~field.config.options:option}}
+                <option value="{{=option.KeypadNumber}}">{{=option.ResponseText}}</option>
+                {{~}}
+            </select>
+            {{??}}
+            {{?field.config.lineCount == 1}}
+            <input class="input{{=index}} {{?field.config.type == 'Date'}}hasDate{{?}}" data-pattern="{{?field.config.pattern !== undefined}}{{=field.config.pattern}}{{?}}" {{?field.config.maxlength!=null}}maxlength ="{{=field.config.maxlength}}" {{?}} />
+            {{?field.config.maxlength!=null}}<div class="remainingCharacters input{{=index}}">{{=field.config.maxlength}}</div>{{?}}
+            {{?}}
+            {{?field.config.lineCount > 1}}
+            <textarea rows="{{!field.config.lineCount}}" class="input{{=index}}" {{?field.config.maxlength!=null}}maxlength ="{{=field.config.maxlength}}" {{?}} />
+            {{?field.config.maxlength!=null}}<div class="remainingCharacters input{{=index}}">{{=field.config.maxlength}}</div>{{?}}
+            {{?}}
+            {{?}}
+            {{??}}
+            {{#def.video}}
+            {{?}}
+        </span>
+        {{??}}
+        {{?field.config.media==null}}
+        <div class="label notEdit">{{=field.config.label}}</div>
+        <div class="value notEdit {{?field.config.type == 'Date'}}hasDate{{?}}">
+            {{?field.config.options.length}}
+            {{/*Note: Here we need to show text of option for which keypadnumber is fieldtext */ }}
+            {{~field.config.options:option}}
+            {{?option.KeypadNumber==field.text}}
+            {{!option.ResponseText}}
+            {{?}}
+            {{~}}
+            {{??}}
+            {{!field.text}}
+            {{?}}
+        </div>
+        {{??}}
+        {{#def.video}}
+        {{?}}
+        {{?}}
+    </div>
+    {{~}}
+    {{? it.entry.authorId != -1 && !it.entry.isEdit}}
+    <span class="info author">
+        {{!it.wizletInfo.authorLabel || 'Created by:'}}
+        <span class="first-field field-author">
+            {{!it.entry.authorName}}
+        </span>
+    </span>
+    {{?}}
+    </div>
+    <div class="entryRight">
+        <div class="optional-image-container">
+            {{?it.wizletInfo.picture}}
+            <img src="wizer/pages/events/{{=Wizer.EventName}}/{{=it.wizletInfo.picture}}" />
+            {{?}}
+        </div>
+        {{?it.ranks.length > 0}}
+        <div class="ranking">
+            <p class="title"></p>
+            {{?!it.wizletInfo.disableStats}}
+            <p class="stats">
+                {{?it.entry.totalAverageRank && it.entry.totalAverageRank.Count && it.entry.totalAverageRank.Average}}
+                {{=(it.wizletInfo.totalAvgLabel || "Total average is {0} of {1} opinions")
+                .replace('{0}', '<span class=" data average">' + it.entry.totalAverageRank.Average.toFixed(2) + '</span>')
+                .replace('{1}', '<span class="data count">' + it.entry.totalAverageRank.Count + '</span>')
+                }}
+                {{??}}
+                {{=(it.wizletInfo.totalAvgLabel || "Total average is {0} of {1} opinions")
+                .replace('{0}', '<span class=" data average">0</span>')
+                .replace('{1}', '<span class="data count">0</span>')
+                }}
+                {{?}}
+            </p>
+            {{?}}
+            {{~it.ranks :rank}}
+            <div class="dimension">
+                <p>{{!rank.label}}</p>
+                {{?it.entry.isEdit}}
+                <p>
+                    {{=(it.wizletInfo.dimensionLabel || "{0} of {1} opinions")
+                    .replace('{0}', rank.averageRank)
+                    .replace('{1}', rank.count)
+                    }}
+                </p>
+                {{??}}
+                <input type="range" min="{{=rank.minValue}}" max="{{=rank.maxValue}}" value="{{=rank.myRank}}" /> <div class="leftlabel">{{=rank.minLabel}}</div><div class="rightlabel">{{=rank.maxLabel}}</div>
+                {{?}}
+            </div>
+            {{~}}
+        </div>
+        {{?}}
+        {{?it.wizletInfo.commentQuestionId}}
+        <div class="commentsContainer">
+            {{?!it.entry.isMine}}
+            <div class="addComment">
+                <textarea rows="2" class="inputComment" maxlength="100" /><input class="addCommentButton" type="button" value="Submit" />
+            </div>
+            {{?}}
+            <div class="commentsDiv" {{? it.entry.comments && !it.entry.comments.length}} style="display:none;" {{?}}>
+                <table id="commentsTable">
+                    {{~it.entry.comments :comment:index}}
+                    <tr id="{{=comment.id}}comment" class="comment">
+                        <td>{{=comment.text}}</td>
+                        <td>-&nbsp;{{=comment.author}}</td>
+                        {{?(comment.author== Wizer.ParticipantName) && (!it.wizletInfo.disableCommentDeletion)}}
+                        <td>
+                            <span class="deleteComment"><input data-type="delete" data-id="{{=comment.id}}" class="deleteCommentButton" type="button" value="Delete" /></span>
+                            <span class="confirmDeleteComment" hidden="hidden">
+                                <input data-type="yes" data-id="{{=comment.id}}" class="deleteCommentButton" type="button" value="Yes" />
+                                <input data-type="no" data-id="{{=comment.id}}" class="deleteCommentButton" type="button" value="No" />
+                            </span>
+                        </td>
+                        {{?}}
+                    </tr>
+                    {{~}}
+                </table>
+            </div>
+
+        </div>
+        {{?}}
+    </div>
+    {{?it.wizletInfo.nextLabel}}
+        <button class="nextEntry">{{=it.wizletInfo.nextLabel}}</button>
+    {{?}}
+    {{?it.entry.isEdit}}
+    <ul class="entryActions">
+        
+        {{?!it.wizletInfo.disableDeletion}}
+        <li>
+            <div class="entryActionButtons">
+                <span class="deleteEntry"><input type="button" data-type="delete" class="delete" value="{{=(it.wizletInfo.deleteLabel  || 'Delete')}}" /></span>
+                <span class="confirmDeleteEntry" hidden="hidden">
+                    <input data-type="yes" class="delete" type="button" value="Yes" />
+                    <input data-type="no" class="delete" type="button" value="No" />
+                </span>
+            </div>
+        </li>
+        {{?}}
+        <li>
+            {{ /*Note: the save button is a UX trick to ensure we get a change event from the user updating the last input box */ }}
+            <input type="submit" class="save" value="{{=(it.wizletInfo.saveLabel  || "Save")}}" />
+        </li>
+        <li>
+            <div id="lastSaved"></div>
+        </li>
+    </ul>
+    {{?}}
+    {{?it.wizletInfo.isEmbedded}}
+    <div class="closeControl">
+        <button class="closeAction exclude">{{=(it.wizletInfo.closeLabel  || "Close")}}</button>
+    </div>
+    {{?}}
+</div>

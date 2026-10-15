@@ -1,0 +1,71 @@
+<div class="mainContentWrapper">
+    <div class="mainContent"> 
+        <section class="coc cl-component" data-capabilityoverviewcomponent>
+            {{? it.header}}
+            <header class="coc-header--main cl-header--main" data-capabilityoverviewheader>
+                {{? it.header.title}}
+                <h1 class="coc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="coc-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+            
+            <div class="coc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+
+                    <div class="coc-capability__select">
+                        <div class="coc-capability__selections" data-coc-capability-dropdown data-coc-dropdown>
+                            <div class="coc-capability__rootNode">
+                                <span class="coc-capability__rootNodeText" data-coc-rootnodetext>
+                                    {{? it.capability}}
+                                    {{=it.capability.capabilityName}}
+                                    {{?}}
+                                </span>
+                                <div class="coc-capability__rootNodeIcon"></div>
+                            </div>
+                        </div>
+                        <div class="coc-capability__options" data-coc-capability-dropdown-options data-coc-dropdown-options>
+                            {{? it.capabilityNames.length > 0}}
+                            {{~it.capabilityNames :capabilityName:index}}
+                            <div class="coc-capability__option cl-md-column-12 cl-sm-column-12 cl-xs-column-12 {{? index === 0}} coc-capability__option--selected {{?}}" data-coc-capability-option data-coc-option="{{=index}}">
+                                <span class="coc-capability__optionText" data-coc-capability-option-text>{{=capabilityName}}</span>
+                            </div>
+                            {{~}}
+                            {{?}}
+                        </div>
+                    </div>
+
+                    <div class="coc-capability__exercises" data-coc-capability-exercises>
+                        {{#def.exercises}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{{##def.exercises:
+{{? it.capability}}
+{{~it.capability.exercises :exercise:ind}}
+<div class="coc-capability__exercise">
+    <div class="coc-exercise__header">
+        <span class="coc-exercise__name">{{=exercise.exerciseName}}</span>
+    </div>
+    <div class="coc-exercise__behaviours">
+        {{~exercise.behaviours :behaviour:j}}
+        <div class="coc-behaviour">
+            <p class="coc-behaviour__name">{{=behaviour.behaviourName}}</p>
+            <p class="coc-behaviour__score" {{?behaviour.scoreValue != 0}}title="{{=behaviour.behaviourScore}}"{{?}}>{{= behaviour.scoreValue == 0 ? behaviour.behaviourScore : behaviour.scoreValue }}</p>
+        </div>
+        {{~}}
+    </div>
+</div>
+{{~}}
+{{?}}
+#}}

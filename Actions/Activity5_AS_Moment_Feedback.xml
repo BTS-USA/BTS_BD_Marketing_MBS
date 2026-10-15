@@ -1,0 +1,50 @@
+<Action>
+  <Component type="TabComponent" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_tabs.dot",
+  "type": "tab",
+  "version": "2",
+  "showTabs": true,
+  "header": {
+    "bgimage": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/headerGraphic.svg",
+    "title": "!{Activity5_MomentSingleSelectRadioTitle}",
+    "description": "!{Activity5_MomentSingleSelectRadioDescription}"
+  },
+  "YourAction": "!{Activity5_YourAction}",
+  "yourChoiceText": "!{Activity5_YourChoice}",
+  "trackQuestion": "Team_Track",
+  "tabOptions": [
+    {
+      "title": "!{Activity5_TabTitle1}",
+      "actionXML": "Activity5_AS_Moment_FeedbackA",
+      "conditionQuestion": "Activity5_MOMENT_SINGLE_SELECT",
+      "conditionAnswer": "1",
+      "youraction": "!{Activity5_YourAction}"
+    },
+    {
+      "title": "!{Activity5_TabTitle2}",
+      "actionXML": "Activity5_AS_Moment_FeedbackB",
+      "conditionQuestion": "Activity5_MOMENT_SINGLE_SELECT",
+      "conditionAnswer": "2",
+      "youraction": "!{Activity5_YourAction}"
+    },
+    {
+      "title": "!{Activity5_TabTitle3}",
+      "actionXML": "Activity5_AS_Moment_FeedbackC",
+      "conditionQuestion": "Activity5_MOMENT_SINGLE_SELECT",
+      "conditionAnswer": "3",
+      "youraction": "!{Activity5_YourAction}"
+    },
+    {
+      "title": "!{Activity5_TabTitle4}",
+      "actionXML": "Activity5_AS_Moment_FeedbackD",
+      "conditionQuestion": "Activity5_MOMENT_SINGLE_SELECT",
+      "conditionAnswer": "4",
+      "youraction": "!{Activity5_YourAction}"
+    }
+  ],
+  "scope": [
+    "Activity5_MOMENT_SINGLE_SELECT",
+    "Team_Track"
+  ]
+}]]></Component>
+</Action>

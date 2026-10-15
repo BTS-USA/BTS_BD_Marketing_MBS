@@ -1,0 +1,272 @@
+// import component library mixins and variables
+@import "shared/cl.styl"
+
+button($color = $apple)
+    background $color
+    boxSizing()
+    border none
+    color white
+    cursor pointer
+    font-size 1.4*$px
+    height 4*$px
+    line-height 4*$px
+    outline 0
+    text-align center
+    text-transform uppercase
+    width 110px
+    &:hover 
+        background lighten($color, 6%)
+    &:active 
+        background darken($color, 6%)
+
+.ap
+    &-mainTitle
+        margin 0 20px 10px 20px
+        font-size 20px
+        font-weight 600
+        color $gray
+    &-backdrop
+        position fixed
+    &-mainContentWrapper
+        height 100%
+        width 100%
+    &-mainContainer
+        margin-top 30px
+    &-modalWrapper
+        position absolute
+        top 0
+    &-modal
+        position fixed
+        height 100%
+        width 100%
+        background rgba(0,0,0,.7)
+        z-index 1005
+    &-subHeader
+        display flex
+    &-rightContent
+        padding 10px 20px
+        color $gray
+    &-createActionWrapper, &-myActionWrapper
+        background $mercury
+        padding 20px 10px
+        margin 0 0 30px 0
+        border-top 2px solid $cerulean
+    &-createActionModal
+        padding 20px 10px
+        margin 0 0 30px 0
+        position absolute
+        width 60%
+        left 50%
+        top 50%
+        transform translate(-50%,-50%)
+        height 80vh
+        background white
+        overflow auto
+        border-radius 10px
+        @media screen and (max-width 768px)
+            height 95vh
+            width 90%
+
+    &-actionPlan
+        &__title
+            flex 0 0 60%
+            padding 10px 0
+            font-weight 600
+            font-size 18px
+            color $gray
+            @media screen and (max-width 768px)
+                flex 0 0 50%
+        &__tabsCont
+            flex 0 0 40%
+            display flex
+            font-size 15px
+            justify-content flex-end
+            @media screen and (max-width 768px)
+                flex 0 0 50%
+    &-instruction
+        &Title
+            font-weight 600
+        &Text
+            margin 10px 0
+            font-size 15px
+            span 
+                ol
+                    padding 0 0 0 30px
+    &-form
+        &__save
+            button($apple)
+            margin 15px 0
+            border-radius 5px
+            &.disabled
+                background $gray
+                cursor default
+                float left
+
+        &__delete, &__yes, &__no
+            button($apple)
+            margin 15px 0 0 5px
+            border-radius 5px
+            background $sunsetOrange
+            &.disabled
+                background $gray
+                cursor default
+                float left
+            &:hover
+                background $sunsetOrange
+        &__yes, &__no
+            width 52.5px
+            float left
+        &__controls
+            justify-content flex-end
+            display flex
+        &__confirmation
+            display none
+        &__enableConfirm
+            justify-content flex-end
+            display flex
+        &__disableControls
+            pointer-events none
+    &-dd
+        &__label
+            padding 8px 15px 5px 0
+            font-weight 600
+            color $gray
+        &__select
+            float left
+            border none
+            font-size .875rem
+            outline none
+            padding .625rem .625rem
+            resize none
+            width 100%
+            color white
+            background $tundora
+            border-radius 5px
+            &.disabled
+                background alpha($tundora, 0.3)
+    
+    &-textArea
+        &__maxCharacters
+            font-size 14px
+            padding 15px 5px 0 0
+            font-weight 500
+            color $gray
+            justify-content flex-end
+            display flex
+            flex 0 0 55%
+        &__titleCont
+            display flex
+            padding-bottom 5px
+        &__label
+            padding 15px 15px 0 0
+            font-weight 600
+            color $gray
+            flex 0 0 45%
+        &__textarea
+            border none
+            color $codGray
+            float none
+            font-size .875rem
+            height 7.5rem
+            outline none
+            padding .625rem
+            resize none
+            width 100%
+            float left
+            &.disabled
+                background alpha(white, 0.3)
+        &__border
+            border 4px solid $tundora
+    &-date
+        &__label
+            padding 15px 15px 5px 0
+            font-weight 600
+            color $gray
+        &__input
+            border none
+            color $tundora
+            font-size .875rem
+            outline none
+            padding .625rem .625rem
+            resize none
+            width 100%
+            color white !important
+            border-radius 5px
+            -webkit-border-radius 5px !important
+            -moz-border-radius 5px !important
+            background $tundora url("media/img/calendar.png") no-repeat center right .625rem
+            &.disabled
+                background alpha($tundora, 0.3)
+    
+    &--hidden
+        display none
+    &--show
+        display block
+    &-createActionText, &-myActionText
+        padding 10px
+        cursor pointer
+    &-active
+        border 2px solid $cerulean
+        border-top-left-radius 5px
+        border-top-right-radius 5px
+        color $cerulean
+        border-bottom 2px solid $mercury
+        margin-bottom -2px
+        position relative
+        z-index 1
+    &-inactive
+        background linear-gradient(180deg, rgba(230, 230, 230, 1) 0%, rgba(230, 230, 230, 1) 76%, rgba(215, 215, 215, 1) 100%, rgba(215, 215, 215, 1) 100%)
+        border none
+        border-radius 5px
+        border-bottom-right-radius 0px
+        border-bottom-left-radius 0px
+        color $gray
+        &:hover
+            background $gray
+            color white
+    &-cardWrapper
+        cursor pointer
+        width 31%
+        float left
+        max-height 250px
+        margin 11px
+        min-height 255px
+        background white
+        border-radius 10px
+        box-shadow(3px 3px 15px $silver)
+        @media screen and (max-width 767px)
+            width calc( 100% - 22px)
+        @media (min-width 768px) and (max-width 1023px)
+            width 46%
+            margin 14px
+    &-user
+        &Details
+            background $cerulean
+            color white
+            padding 20px
+            border-radius 10px
+            border-bottom-left-radius 0
+            border-bottom-right-radius 0
+            height 92px
+            &__dateText
+                font-size 14px
+                margin 10px 0
+            &__topicText
+                width 100%
+                overflow hidden
+                white-space nowrap
+                text-overflow ellipsis
+        &Action
+            padding 15px
+            border-bottom 1px solid $mercury
+            height 116px
+            font-size 14px
+        &Name
+            padding 10px 20px
+            font-size 14px
+            color $gray
+    &-closeModal
+        text-align right
+        padding 0 15px 0 0
+        &__button
+            cursor pointer

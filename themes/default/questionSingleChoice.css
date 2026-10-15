@@ -1,0 +1,139 @@
+.wizletQuestionSingleChoice #contentBox {
+	float: none;
+}
+/*
+.answersTable td{
+	 background:  url('/Wizer/Content/WizletResources/Shared/media/img/bg_black_50.png');
+}
+
+.answersTable .alternate td
+{
+	background:  url('/Wizer/Content/WizletResources/Shared/media/img/bg_white_50.png');
+}
+*/
+.wizletQuestionSingleChoice .domainOption {
+    padding: 3px 0;
+    font-size: 14px;
+}
+
+.wizletQuestionSingleChoice .domainOptionLink.disabled {
+	display:none;
+}
+
+.wizletQuestionSingleChoice .answersTable {
+    /* is set in Content/WizletResources/Shared/css/style.css line 930 */
+	/*border-collapse:collapse;*/
+	width: 100%;
+}
+
+.wizletQuestionSingleChoice #presenter_BaseSlide {
+	width: auto;
+	height: 100%;
+}
+/*
+#presenter_BaseSlide .answersTable td.domainOption {
+    background: url('/Wizer/Content/WizletResources/QuestionSingleChoice/img/buttonLarge_bg.jpg') repeat-x;
+    height: 35px;
+    padding: 0 0 10px;
+    -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+    border-radius: 5px; */
+	/* behavior: url(/Wizer/Content/WizletResources/Shared/css/PIE.htc); */
+	/*position: relative; 
+}*/
+
+.wizletQuestionSingleChoice #presenter_BaseSlide .answersTable td.domainOptionDivider {
+    display: none;
+}
+
+.wizletQuestionSingleChoice .mainContentWrapper .mainContent {
+	margin-bottom: 0;
+	padding-bottom: 10px;
+	position: relative;
+	z-index: 10;
+}
+
+
+
+.wizletQuestionSingleChoice input{
+    position:absolute;
+    left:-3000px;
+}
+
+
+.wizletQuestionSingleChoice label {
+    /*height:35px;*/          /* This style is overwritten in the hybrid portal specific stylesheet */
+    line-height:35px;     /* This style is overwritten in the hybrid portal specific stylesheet */
+    font-size: 12px;
+    display:block;
+    padding:0 20px;
+    cursor:pointer;
+    
+    background: url('/Wizer/Content/WizletResources/QuestionSingleChoice/img/buttonLarge_bg.jpg') repeat-x;
+    -moz-border-radius: 5px;
+	  -webkit-border-radius: 5px;
+	
+	  border-radius: 5px;
+	  /* behavior: url(/Wizer/Content/WizletResources/Shared/css/PIE.htc); */
+}
+
+.wizletQuestionSingleChoice label.checked {    
+    background: url('/Wizer/Content/WizletResources/QuestionSingleChoice/img/buttonLargeActive_bg.jpg') repeat-x;
+}
+/* The color of the clicked element is in the Content/WizletResources/Shared/css/style.css */
+/*
+
+label.clicked 
+{
+    background: url('/Wizer/Content/WizletResources/QuestionSingleChoice/img/buttonLargeClicked_bg.jpg') repeat-x;
+}*/
+.wizletQuestionSingleChoice label#followupLabel {
+    background:none;
+    padding:0;
+    margin-top:20px;
+    font-size:14px;
+}
+.wizletQuestionSingleChoice textarea#followup{
+    width:400px;
+    height:100px;
+    font-size: 13px;
+}
+
+.wizletQuestionSingleChoice .designedButton 
+{
+    /* position:absolute;
+    top: -6px;
+    right: 30px;
+    z-index:100;
+    float:right;*/
+}
+
+/* wizlets now don't draw the buttons and should leave styling them to the overall 
+#sendContainer
+{
+    display: none;
+    position: static;
+    margin-right:30px;
+
+}
+*/
+
+.wizletQuestionSingleChoice button#undo { visibility: hidden; }
+
+.wizletQuestionSingleChoice .designedButton.dBGraphics.designedButtonStateDefault{  /*Undo btn has no container.*/
+    float:right;
+    margin-left: 5px;
+    margin-right: 43px;
+}
+.wizletQuestionSingleChoice #jumpButtonsContainer{
+    /* display:none; */
+}
+.wizletQuestionSingleChoice h1 {
+    z-index:10;  
+    font-size: 22px; 
+}
+
+.wizletQuestionSingleChoice div.followup 
+{
+    display: none;
+}

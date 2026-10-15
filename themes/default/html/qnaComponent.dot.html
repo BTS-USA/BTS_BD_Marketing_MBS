@@ -1,0 +1,151 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section data-comment class="qna cl-component">
+            {{? it.header }}
+            <header class="qna-header cl-header--main">
+                {{? it.header.title }}
+                    <h1 class="qna-header__title cl-header__title--main" data-qna-header>{{=it.header.title}}</h1>
+                {{?}}
+            </header>
+            {{?}}
+            <div class="qna-container cl-container">
+                <div class="cl-xs-column-12 cl-row qna-container__column">
+                    <article class="qna-question" data-qna-question-list>
+                    </article>
+                    <article class="qna-content">
+                        {{? it.question }}
+                        <div class="qna-content__anotherQuestionText" data-qna-another-question>{{=it.question.askQuestion}}</div>
+                        {{?}}
+                        <div class="qna-content__container" data-qna-raiseHand>
+                            <div class="qna-content__raiseHandIcon cl-icon cl-icon--raiseHand">
+                            </div>
+                            {{? it.content.raiseHandText}}
+                            <span class="qna-content__text">{{=it.content.raiseHandText}}</span>
+                            {{?}}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section data-qna-nextinque-alert>
+            {{? it.content }}
+            <header class="qna-videoheader cl-header--main">
+                {{? it.content.nextInQueHeader }}
+                <h1 class="qna-video__title cl-header__title--main" data-qnaalerttitle>{{=it.content.nextInQueHeader}}</h1>
+                {{?}}
+            </header>
+            {{?}}
+            <article class="cl-modal__dialog qna-alert">
+                <div class="cl-modal__container">
+                    <section class="cl-modal__body">
+                        <div class="qna-modal__alertIcon cl-icon cl-icon--alert"></div>
+                        <div class="cl-modal__content">
+                            <h3 data-alerttext-top>{{=it.content.nextInQueTopText}}</h3>
+                        </div>
+                        <div class="cl-modal__content">
+                            <h4 data-alerttext class="qna-modal__content--textColor"></h4>
+                        </div>
+                        <div class="cl-modal__content">
+                            <span data-alerttext-bottom>{{=it.content.nextInQueBottomText}}</span>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </section>
+
+        <section data-video class="qna-video cl-component">
+            {{? it.video }}
+            <header class="qna-videoheader cl-header--main">
+                {{? it.video.title }}
+                    <h1 class="qna-video__title cl-header__title--main" data-qnavideotitle >{{=it.video.title}}</h1>
+                {{?}}
+            </header>
+            {{?}}
+            <article class="qna-video__content">
+                {{? it.video.description }}
+                   <div class="qna-video__liveIcon"></div>
+                   <h4 class="qna-video__description" data-qnavideodescription >{{=it.video.description}}</h4>
+                {{?}}
+                <div id="videoContainer" class="qna-video__container">
+                    <div id="hostDivider" class="hidden"></div>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>
+
+<section class="cl-modal" data-add-question>
+    <article class="cl-modal__dialog qna-modal__dialog">
+        <div class="cl-modal__container qna-modal__container">
+            <header class="">
+                {{? it.content.questionText}}
+                <span type="text" class="qna-modal__questionText" data-dismiss="modal" data-btn="close" aria-hidden="true">{{=it.content.questionText}}</span>
+                {{?}}
+                <div class="qna-modal__remainingCharacterCont">
+                    <span type="text" class="qna-modal__remainingCharacters" data-dismiss="modal" data-btn="close" aria-hidden="true" data-qna-remainingCharacters >{{=it.content.maxValue}}</span>
+                    {{? it.content.remainingText}}
+                    <span type="text" class="qna-modal__remainingText" data-dismiss="modal" data-btn="close" aria-hidden="true" >{{=it.content.remainingText}}</span>
+                    {{?}}
+                </div>
+            </header>
+            <section class="cl-modal__body qna-modal__body">
+                <header>
+                </header>
+                {{? it.content }}
+                <div class="cl-modal__content qna-modal__content">
+                    <textarea class="cl-textarea qna-modal__textarea" maxlength= "{{=it.content.maxValue}}" placeholder="{{=it.content.placeholder}}" data-input-textarea></textarea>
+                </div>
+                {{?}}
+                <footer class="cl-modal__footer qna-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons qna-modal__buttons">
+                        <span class="cl-button qna-button__cancel" data-button="cancel">{{=it.content.cancel}}</span>
+                        <span class="cl-button qna-button__submit disabled" data-button="submit">{{=it.content.submit}}</span>
+                    </div>
+                </footer>
+            </section>
+        </div>
+    </article>
+</section>
+<section class="cl-modal" data-remove-question-alert>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container modal-sm">
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn qna-modal__closebtn" data-dismiss="modal" data-btn="close" aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body">
+                {{? it.question}}
+                <div class="cl-modal__content qna-modal__alertContent">
+                    <span>{{=it.question.cancelQuestionAlert}}</span>
+                </div>
+                {{?}}
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button" data-btn="no">{{=it.content.cancel}}</span>
+                        <span class="cl-button" data-btn="yes">{{=it.content.delete}}</span>
+                    </div>
+                </footer>
+            </section>
+        </div>
+    </article>
+</section>
+
+<section class="cl-modal" data-notify-participant>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container modal-sm">
+            <header class="cl-modal__header cl-modal__header--close">
+                <span type="button" class="cl-modal__closebtn qna-modal__closebtn" data-dismiss="modal" data-btn="close" aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body">
+                <div class="cl-modal__content qna-modal__alertContent" data-content>
+                    <span></span>
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button" data-btn="yes">{{=it.content.ok}}</span>
+                    </div>
+                </footer>
+            </section>
+        </div>
+    </article>
+</section>

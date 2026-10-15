@@ -1,0 +1,125 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+.pbm
+    &[data-pbm-holder]
+        max-width none
+    &-table
+        border-collapse separate
+        border-spacing 5px
+        padding 5px
+        width 100%
+        max-width 100%
+        // table cells and rows
+        &__headerRow
+            text-align center
+            color $cerulean
+            font-weight 100
+            font-size 1.4*$px
+        &__row
+            text-align center
+            height 75px
+        &__headerCell
+            vertical-align top
+        &__dataCell
+            background-color $deepCerulean
+            color white
+            position relative
+        &__labelCell
+            padding 10px
+            min-width 180px
+            max-width 180px
+            color $cerulean
+            font-weight 700
+            text-align left
+            vertical-align middle
+        &__cell
+            vertical-align middle
+            min-width 60px
+            width 60px
+            max-width 60px
+            &:nth-last-child(1)
+                width 60px!important
+                max-width 60px!important
+                min-width 60px!important
+        &__text-content
+            display inline-block
+            height 70px
+            overflow hidden
+            padding 5px
+            margin 0 15px 0 0
+            word-break break-all
+        &__more-icon
+            position absolute
+            right 0
+            bottom 0
+            width 0
+            height 0
+            cursor pointer
+            border-bottom 35px solid $cerulean
+            border-left 35px solid transparent
+            &:after
+                font-family "clIcons"
+                content "\f11d"
+                font-size 1.6*$px
+                position absolute
+                right 2px
+                top 16px
+        &-cols--1
+            & ^[1]__cell
+                width 50%
+                max-width 50%
+        &-cols--2
+            & ^[1]__cell
+                width 33%
+                max-width 33%
+        &-cols--3
+            & ^[1]__cell
+                width 20%
+                max-width 20%
+        &-cols--4
+            & ^[1]__cell
+                width 12.5%
+                max-width 12.5%
+        &-cols--5
+            & ^[1]__cell
+                width 11.11%
+                max-width 11.11%
+        &-cols--6
+            & ^[1]__cell
+                width 10%
+                max-width 10%
+        &-cols--7
+            & ^[1]__cell
+                width 9.09%
+                max-width 9.09%
+        &-cols--8
+            & ^[1]__cell
+                width 8.33%
+                max-width 8.33%
+        &-cols--9
+            & ^[1]__cell
+                width 7.69%
+                max-width 7.69%
+        &-cols--10
+            & ^[1]__cell
+                width 7.14%
+                max-width 7.14%
+    
+    .callform-public
+        &:before
+            content "Published"
+            color green
+            cursor pointer
+            
+    /*popover styles*/
+    .popover
+        background-color $deepCerulean
+        color white
+        border 2px solid $cerulean
+        .arrow:after
+            border-left-color $cerulean
+        &-content
+            max-width 200px
+            max-height 300px
+            overflow auto

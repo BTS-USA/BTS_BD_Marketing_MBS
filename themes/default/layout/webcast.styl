@@ -1,0 +1,69 @@
+@import "../shared/cl.styl"
+/* This is css for the layouts in the wizer core*/
+/* if you are using a layoutInevent then please let it have its own css called layout.css in the events/layout folder*/
+
+$mw480 = "only screen and (max-width: 480px)"
+
+.wcp
+    margin 0 auto
+    &__header
+        background #00adef
+        margin 0
+        &:after
+            clear both
+            float left
+            @media $mw480
+                display none
+        @media $mw480
+            padding 0
+        &-description
+            @media $mw480
+                display none
+        &-title
+            @media $mw480
+                margin 5px 0
+    &__container
+        margin 40px 0 0 0
+        padding 0
+        @media $mw480
+            margin 10px 0 0 0
+    &__input
+        background-color alpha($codGray, 0.9)
+        padding 25px 0 0 0
+        position relative
+
+        @media $mw480
+            padding 45px 0 0 0
+            margin -5px 0 0 0
+
+        &-logo
+            overflow hidden
+            margin 0 auto
+            position absolute
+            width 100%
+            top 0
+
+            &-container
+                float right
+        
+        &-text
+            float right
+            font-size 1.8*$px
+            color #fff
+            margin 3px 20px 0 2px
+            
+            @media $mw480
+                font-size 1.4*$px
+                margin 5px 20px 0 2px
+        &-img
+            float right
+            height auto
+            width 35px
+            @media $mw480
+                height auto
+                width 35px
+
+.ifc
+    padding 0 0 10px 0
+
+// custome changes to components

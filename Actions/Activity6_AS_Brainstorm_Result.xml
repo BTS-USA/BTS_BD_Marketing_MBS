@@ -1,0 +1,41 @@
+<Action disableDynamicVotes="false">
+  <Component type="TextList" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_brainstormTextlist.dot",
+  "css": "styles/as_brainstormTextlist.css",
+  "teamNameQuestion": "Team_Name",
+  "isMeeting": false,
+  "showLikeStatus": false,
+  "showLikeCount": false,
+  "appendParticipantName": true,
+  "showCount": {
+    "show": false,
+    "yourCount": "!{Activity6_Myentries}",
+    "totalCount": "!{Activity6_Totalentries}"
+  },
+  "version": "2.0",
+  "trackQuestion": "Cohort_Track",
+  "header": {
+    "bgimage": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/headerGraphic.svg",
+    "title": "!{Activity6_BrainStormTitle}",
+    "description": "!{Activity6_BrainStormDescription}"
+  },
+  "questions": [
+    {
+      "binding": "Activity6_INPUT_1"
+    }
+  ],
+  "showAuthor": true,
+  "showFilters": false,
+  "restrictions": [
+    "myTrackParticipantVotes",
+    "myVotes"
+  ],
+  "refresh": true,
+  "maxLists": 1000,
+  "scope": [
+    "Activity6_INPUT_1",
+    "Team_Name",
+    "Cohort_Track"
+  ]
+}]]></Component>
+</Action>

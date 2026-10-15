@@ -1,0 +1,226 @@
+// import variables and mixins
+@import "../shared/cl.styl"
+
+
+/* This is css for the layouts in the wizer core*/
+/* if you are using a layoutInevent then please let it have its own css called layout.css in the events/layout folder*/
+/* its probably not the best way overwrite this but its good for now --itai */
+
+.EvalFormCompleteContentWrapper
+    padding 10px
+
+    .completeButton
+        color #fff
+        background-color #00adef
+        float right
+        padding 5px 20px
+        margin-bottom 15px
+        font-size 1rem
+        font-weight bold
+        cursor pointer
+
+    .ec
+        height 100vh
+        width 100%
+        position relative
+        overflow hidden
+        &-button
+            width 85px
+            &__holder
+                clear both
+                text-align right
+                display table
+                width 100%
+            &--yes
+                button($apple)
+            &--no
+                button($monza)
+                margin-right 5px
+
+.evc
+    padding 10px
+    overflow auto
+    
+    &__collapse
+        text-align right
+        cursor pointer
+        padding 10px 15pxf
+        font-size 1.2*$px
+
+    .cl-textarea
+        resize auto
+        border solid 5px $silver
+        font-weight 400
+        height 80px
+        
+    .cl-instructions
+        margin 0px
+        padding 0 0 0 5px
+        background-color $mercury
+        
+    .cl-instructions__text
+        color $tundora
+        text-transform none
+        font-size 1.2*$px
+        margin 3px 0 0 0
+        
+    &-ic
+        &__itemheader
+            display table-row
+        &__itemheadercontainer, &__itemheaders
+            &::after
+                content ""
+                display block
+                clear both
+        &__item
+            padding 5px
+            display block
+            float left
+            max-width 80%
+            &--title
+                font-weight bold
+    
+    .ssc
+        &-division5
+            width calc(100% / 5)
+        &-division4
+            width calc(100% / 4)
+        &-division3
+            width calc(100% / 3)
+        &-division2
+            width calc(100% / 2)
+        &-division1
+            width 100%
+        &-full
+            width 100%
+            height 100%
+            display inline-block
+        &-row
+            display table
+            width 100%
+            &:after
+                content ""
+                display block
+                clear both
+        &-content
+            margin 0px
+        &-optionContainer
+            float left
+            display block
+            width 100%
+            
+        &-article
+            display table-cell
+            vertical-align top
+            margin 0px
+            background-color $mercury
+            cursor pointer
+            &.clicked
+                .singleSelectLeftPanel
+                    background-color darken($apple, 30%) !important
+                .singleSelectRightPanel
+                    background-color $apple !important
+                    color #FFF
+                .singleSelectAccordionContainer
+                    background-color $apple !important
+        .singleSelectRightPanel
+            position relative
+            display block
+            height 100%
+            .singleSelectOptionAccordionSign
+                position absolute
+                top 0
+                right 0
+        .singleSelectLeadText
+            display block
+            padding 10px
+            text-align center
+        &-radioSelected:after
+            content ''
+            position absolute
+            top -1px
+            right -2px
+            width 22px
+            height 22px
+            border-radius 7px
+            background-color $cerulean
+            transition all .2s
+            z-index 11
+        &-leadTextPanel
+            cursor default
+        
+    .singleSelectOptionCont
+        .singleSelectRightPanel
+            background-color #fff !important
+            border solid $silver
+            border-width 3px 3px 3px 2px
+            padding 10px 10px
+        .singleSelectAccordionContainer
+            vertical-align top
+          
+    .singleSelectRightPanelLabel
+        word-break break-word
+        font-size 1.2*$px
+        font-weight 400
+        &:before
+            content ''
+            position absolute
+            top -5px
+            right -6px
+            width 30px
+            height 30px
+            border-radius(10px)
+            background-color $mercury
+            border 5px solid $silver
+            z-index 10
+        
+    .singleSelectOption1RightPanel
+        border-left solid 5px $silver
+        
+    .tc
+        &-acc
+            &__item
+                padding 5px 10px
+                for i in (1..50)
+                    &:nth-child({i})
+                        &:before
+                            content ''+i+''
+                &:before
+                    display inline-block
+                    font-size 1.6*$px
+                    text-align center
+                    color white
+                    padding 5px
+                    width 32px
+                    height 32px
+                    background-color $cerulean
+                    border-radius(50%)
+                    position absolute
+                    top 10px
+                    left 5px
+            &__page
+                padding 5px 0 10px 0
+                position relative
+            &__label
+                width calc(100% - 30px)
+                padding 10px 15px 10px 35px
+        &-text
+            &-column
+                for i in (1..10)
+                    &-{i}
+                        font-size 1.4*$px
+                        padding 0
+                        color $gray
+        &-expandCollapseCont
+            text-align right
+            padding 10px 5px
+            border-bottom 1px solid #CCC
+            margin 5px 0
+            
+        /* text content component */
+        &-row
+            padding-top 5px
+        .ifc
+            &-label
+                margin 5px 0 0 0
+                font-size 1.2*$px

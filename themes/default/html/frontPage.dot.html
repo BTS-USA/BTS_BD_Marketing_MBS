@@ -1,0 +1,40 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="frontPageComponent">
+            <article class="frontPage container-fluid pulseFrontPage">
+                <div class="container-fluid pulseMenuContainer">
+                    <div class="pulseNavigationView">
+                        <div class="pulseNavigationSlider">
+                        {{?it.columns != null && it.columns.length > 0}}
+                            {{~it.columns :column:index }}
+                                {{? index%3==0}}
+                                <div class="pulseNavigationPanel">
+                                {{?}}
+                                <div class="pulseNavigationCol col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                      {{?column.links && column.links.length > 0}}
+                                        {{~column.links :link:i}}
+                                    <div class="pulseNavigationElement pulseNavElm-{{=i}} col-xs-{{=link.span}} col-sm-{{=link.span}} col-md-{{=link.span}} col-lg-{{=link.span}} fix-box-{{=link.rows}} {{?(!link.navigation || !link.navigation.remove)}} active{{?}}">
+                                        <a class="pulseNavigationLink pulseNav_{{=i}}" {{?link.navigation}} data-navigate="click" {{=link.navigation.data}} {{?}} {{?link.navigation}} data-remove="{{=link.navigation.remove}}" {{?}}style="{{?link.background}}background-color:{{=link.background}}{{??}}{{?link.backgroundImage}}background-image:url('{{=link.backgroundImage}}'){{?}}{{?}}">
+                                            <div class="linkContent">
+                                                {{?link.content}}
+                                                {{=link.content}}
+                                                {{?}}
+                                            </div>
+                                        </a>
+                                    </div>
+                                        {{~}}
+                                    {{?}}
+                                </div>
+                                {{? index%3==2}}
+                            </div>
+                            {{?}}
+                            {{~}}
+                            {{?}}
+                        </div>
+                    </div>
+                </div>
+                <div class="pulseNavigationControls col-xs-12"><div class="pulseNavigationPagination"></div></div>
+            </article>
+        </section>
+   </div>
+</div>

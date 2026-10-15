@@ -1,0 +1,149 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.gauge
+    background $mediumgrey
+    font-size 1.5rem
+    height 116px
+    width 116px
+    border-radius 50%
+    z-index 1
+    position absolute
+    right 21%
+    top 0
+    &-value
+        position absolute
+        top 55%
+        left 50%
+        vendor(transform, translateX(-50%))
+        color $secondary
+    &-label
+        position relative
+        color $white
+        right 64%
+        top 46%
+        text-transform uppercase
+        font-size inherit
+    &:after
+        content ''
+        display block
+        height 1.5rem
+        width 1.5rem
+        border-radius 50%
+        background-color $color-primary
+        position absolute
+        right -.5rem
+        bottom -.5rem
+
+.gauges
+    &.multiplegauges
+        flex()
+        flex-flow wrap
+        border-radius $radius $radius 0 0
+        margin-bottom 2px
+        text-align center
+        background $primary
+        padding 0.8rem .5rem
+        .gauge
+            flex-grow 1
+            position relative
+            right auto
+            top auto
+            height auto
+            width auto
+            border-radius 0
+            font-size inherit
+            background-color transparent
+            &-value
+                transform none
+                position static
+                font-size 2.2rem
+                display block
+                margin auto
+                line-height 2.5rem
+                font-family 'Gibson-SemiBold'
+            &-label
+                position static
+                text-transform none
+                display block
+                font-size 1.2rem
+                &:before
+                    margin-right .4rem
+                    color $white
+                    font-family 'fa-solid-900'
+                    font-size 1.1rem
+            &:nth-child(1) .gauge-label:before
+                content '\f135'
+            &:nth-child(2) .gauge-label:before
+                content '\f0c0'
+            &:nth-child(3) .gauge-label:before
+                content '\f201'
+            &:after
+                display none
+        &.open
+            display block
+.metricValue
+    position absolute
+    right 27%
+    padding 5px
+    background-color $white
+    display inline-block
+    border-radius 5px
+    font-size 10px
+    font-weight bold
+    &.positiveVal
+        background-color $green
+        color $white
+    &.negativeVal
+        background-color $red
+        color $white
+
+.wizletCircularGauges
+    .highcharts-container 
+        margin auto
+        height 55px !important
+    .gauges
+        &:not(.multiplegauges)
+            .gauge
+                top 55px
+                border-radius 0 0 $radius $radius
+                height 70px
+                &:after
+                    right -1.7rem
+                &-label
+                    position absolute
+                    right auto
+                    left -75px
+                    top 25px
+
+            .metricValue
+                right 12%
+                top 2px
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width 1024px)
+    .gauge
+        right 4%
+@media screen and (max-width 600px)
+    .gauge
+        top -3px
+        &-icon
+            position fixed
+            top 12px
+            right 5.5rem
+            z-index 1002
+            font-size 1.5rem
+            &:before
+                content '\f080'
+                font-family 'fa-solid-900'
+                color $white
+            &.clicked:before
+                color $color-primary
+        .metricValue
+            right 8%
+    .gauges
+        vendor(transition, all 1s ease)
+        &.multiplegauges
+            display none
+            vendor(transition, all 1s ease)
+            &.open
+                flex()
+                vendor(transition, all 1s ease)

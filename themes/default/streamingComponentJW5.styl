@@ -1,0 +1,39 @@
+// import variables and mixins
+@import "shared/cl.styl"
+@import "shared/YTPlayer.css"
+
+// Streaming Component Styles
+.sc
+    &-article
+        margin 0 0 10px 0
+
+
+    // These classes needed because footer and buttons dynamicaly comes from textAreaAD renderer.
+    // We may want to change this, but before we need to understand all use cases and how user interacts with this component.
+    article
+        .youtubePlayer
+            display: block;
+            margin: auto;
+            vertical-align: top;
+            background: rgba(0,0,0,0.5);
+            position: relative;
+            width: 100%;
+            height: 500px;
+            left: 0;
+            overflow: hidden;
+            border-radius: 0;
+            border: 1px solid #fff;
+            -moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
+            box-shadow: 0 0 10px rgba(0,0,0,.5);
+
+    footer
+        overflow: hidden;
+        margin-top: 1rem;
+        width: 100%;
+
+        .sc-buttons
+            overflow: hidden;
+
+            .sc-button-container
+                float: right;
+                margin-right: 5px;

@@ -1,0 +1,146 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Single Select List Component Styles
+.ssls
+    &-article
+        margin 0 0 10px 0
+    &-button
+        text-transform capitalize
+        &--disabled
+            pointer-events none
+            background-color $silver
+            color $white
+            text-shadow none
+            cursor not-allowed        
+        &--hide
+            display none
+    &-question,
+    &-answer
+        padding 20px
+        background-color $gray60
+        &:after, &:before
+            content ""
+            clear both
+            display block
+
+    &-question 
+        background-color $silver
+        text-align center
+        &__title
+            margin 0 0 5px 0
+
+    &-answer
+        @media screen and (max-width 768px)
+            padding 20px 0 40px 0
+    &-footer
+        text-align right
+
+    &-savedmessage
+        &:before
+            content ""
+            width 20px
+            height 16px
+            margin 0 5px 0 0
+            background url("media/img/checkWhite.svg") no-repeat center center
+            display inline-block 
+            vertical-align middle
+
+.singleSelectlistSmiley
+    text-align center
+    &-text
+        width 100%
+        text-align center
+        font-size 1.4*$px
+        font-weight bold
+        color white
+        top 25px
+        position relative
+        display none
+        @media screen and (max-width 768px)
+            display block
+    &-holder
+        body
+            padding 0
+        .row 
+            display block
+
+        .singleSelectListQuestion label 
+            display none
+
+        #contentBox
+            float none
+
+        .smiley-circle
+            width 40px
+            height 40px
+            @media screen and (max-width 768px)
+                width 20px
+                height 20px
+            background-color #656565
+            cursor pointer
+            margin 0 
+            border-radius 100%
+            position relative
+            margin 0 auto
+            float none
+            &.selected:after
+                content ''
+                width 22px
+                height 22px
+                position: absolute
+                background white
+                border-radius 50%
+                top 9px
+                left 9px
+                @media screen and (max-width 768px)
+                    width 10px
+                    height 10px
+                    top 5px
+                    left 5px
+        .circle_container
+            cursor pointer
+            text-align left
+            height 20px
+            width 4.7*$px
+            @media screen and (max-width 768px)
+                width 100%
+            height 100%
+            margin 0 auto
+            font-weight bolder
+            position relative
+
+        .smiley-text__container .text
+            padding 6px 0
+            font-size 1.2*$px
+            text-align center
+            color white
+            @media screen and (max-width 768px)
+                position absolute
+                display none
+                top 20px
+                left -5px
+                padding-top 0
+                padding-left 0
+        .smiley
+            padding 0 2%
+            display inline-block
+            @media screen and (max-width 768px)
+                padding 0 1.5%
+                &-text__container
+                    position relative
+                    top 8px				
+                &:first-child, &:last-child
+                    .smiley-text__container .text
+                        display block
+                &:last-child
+                    .smiley-text__container .text
+                        left 0
+    
+.readonly
+    .singleSelectlistSmiley-holder
+        opacity 0.5
+        .circle_container
+            cursor default
+            .smiley-circle
+                cursor default    

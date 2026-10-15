@@ -1,0 +1,43 @@
+@import "../shared/cl.styl"
+
+.tbHoldPage
+    &__header, &__navigation
+        .cl-container
+            min-width 300px
+            max-width 50%
+            min-height 100px
+            float none
+            background-color #fff
+            &:after
+                content ""
+                float left
+                clear
+.hpc
+    &__container
+        background white
+        text-align center
+        color gray
+    &__code-prefix, &__code, &__wait-message
+        font-size 1rem
+        padding 10px
+        text-align center
+    &__code
+        background $cerulean
+        padding 10px
+        display inline-block
+        color white
+        margin 10px 0
+        font-size 3.2*$px
+    &__code, &__code-prefix
+        font-weight 400
+    &__code-prefix
+        font-size 2*$px 
+        padding 25px 0 0 0
+        margin 0 0 15px 0
+    &__wait-message
+        text-align center
+    &__navigation
+        background-color red
+        .nc-buttons-container
+            margin 15px 15px
+        

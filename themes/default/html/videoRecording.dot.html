@@ -1,0 +1,103 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="cc cl-component" data-videoRecording>
+
+            {{? it.texts}}
+            <header class="cc-header--main cl-header--main{{? it.texts.pointer == false}} cl-pointer--hidden{{?}}">
+                {{? it.texts.title}}
+                <h1 class="cc-header__title--main cl-header__title--main{{? !it.texts.description}} cl-margin--no{{?}}">
+                            {{=it.texts.title}}
+                        </h1> {{?}} {{? it.texts.description}}
+                <p class="cc-header__description--main cl-header__description--main">
+                    {{=it.texts.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <div class="cc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.texts.instructions}}
+                    <div class="cc-instructions cl-instructions">
+                        <p class="cc-instructions__text cl-instructions__text">{{=it.texts.instructions}}</p>
+                    </div>
+                    {{?}}
+
+                    <div class="cc-videobox__backscreen {{?!it.DB[it.question] && (it.bindingParticipant || it.reviewOnly)}}cc-videobox__backscreen--disabled{{?}}">
+                        {{?!it.DB[it.question] && (it.bindingParticipant || it.reviewOnly)}}<span class="cc-videobox__noRecording">{{=it.texts.noRecording}}</span>{{?}}
+                        <section class="em cl-component">
+                            <div class="cc-videobox__screen" data-form="video-screen" data-video-container>
+                                <div class="cc-videobox__wrapper cc-videobox__publisher-wrapper">
+                                    <div id="publisher" class="cc-videobox__publisher"></div>
+                                </div>
+                            </div>
+                            <div data-player></div>
+                        </section>
+                        <div data-status class="cc-status">
+                            {{? (it.bindingParticipant || it.reviewOnly) && !it.DB[it.question] }} No recording {{?}}
+                        </div>
+
+                        <div class="cc-videobox__centerbuttons">
+                            <div data-buttons-empty="">
+                                {{? !it.bindingParticipant && !it.reviewOnly }}
+                                <span class="cl-button cc-button__record" data-video-record="">
+                                </span> {{?}}
+                            </div>
+                            <div data-buttons-recording="">
+                                <span class="cl-button cc-button__stop" data-video-stop-recording="">
+                                </span>
+                            </div>
+                            <div data-buttons-loader="">
+                                <span class="cc-loader" data-loader> </span>
+                                <span class="cc-loader__wait" data-loader-wait></span>
+                            </div>
+                        </div>
+
+                        <div class="cc-videobox__buttons">
+                            <div data-buttons-hasvideo="">
+                                {{? !it.bindingParticipant && !it.reviewOnly }}
+                                <span class="cl-button cc-button__rerecord {{?it.DB[it.question] && !JSON.parse(it.DB[it.question]).draft && (!it.bindingParticipant || !it.reviewOnly)}}cc-button__rerecord--hide{{?}}" data-video-record="" data-video-rerecord>{{! it.texts.rerecord }}</span>
+                                <span class="cl-button cc-button__delete" data-video-delete="">{{! it.texts.delete }}</span>
+                                <span data-wrap-video-submit>
+                                    <span class="cl-button cc-button__submit" data-video-submit="" title="{{! it.texts.submitTitle }}">{{! it.texts.submit }}</span>
+                                </span>
+                                <span data-wrap-video-unsubmit>
+                                    <span class="cl-button cc-button__unsubmit" data-video-unsubmit="" title="{{! it.texts.unsubmitTitle }}">{{! it.texts.unsubmit }}</span>
+                                </span>
+                                {{?}}
+                                {{? it.bindingParticipant }}
+                                <span data-wrap-bookmark-publish>
+                                    <span class="cl-button cc-button__publish" data-bookmark-publish="" title="{{! it.texts.publishTitle }}">{{! it.texts.publish }}</span>
+                                </span>
+                                <span data-wrap-bookmark-unpublish>
+                                    <span class="cl-button cc-button__unpublish" data-bookmark-unpublish="" title="{{! it.texts.unpublishTitle }}">{{! it.texts.unpublish }}</span>
+                                </span>
+                                {{?}}
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <div class="cc-notes__panel" data-bookmarks-panel>
+                        <div class="cc-notes__title">
+                            <span class="cc-notes__annotationText">{{=it.texts.annotations || 'Annotations'}}</span>
+                            <div data-bookmark-add class="bookmark-add">{{=it.texts.addNote || 'Add Note'}}</div>
+                        </div>
+                        <div class="cc-notes__head" data-bookmarker>
+                            <div data-bookmark-input class="bookmark-input">
+                                <input type="number" class="bookmark-time" data-bookmark-mins />{{=it.texts.mins || 'mins'}}
+                                <input type="number" class="bookmark-time" data-bookmark-secs />{{=it.texts.secs || 'secs'}}
+                                <input type="text" placeholder="Title" data-bookmark-title />
+                                <textarea type="text" placeholder="Details" data-bookmark-detail></textarea>
+                            </div>
+                            <div class="bookmark-buttons" data-bookmark-buttons>
+                                <div class="inner_btn-save" data-bookmark-save>{{=it.texts.save || 'Save'}}</div>
+                                <div class="inner_btn-cancel" data-bookmark-cancel>{{=it.texts.cancel || 'Cancel'}}</div>
+                            </div>
+                        </div>
+                        <div class="cc-notes__playlist" data-playlist></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+    </div>

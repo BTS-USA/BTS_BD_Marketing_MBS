@@ -1,0 +1,63 @@
+﻿<div class="wizletVoteCountResult">
+    <div class="VoteCountResultTitle">{{=it.title}}</div>
+    <div class="VoteCountResultBuyBody">
+        <table>
+            {{var showQuestionsWithNoVotes = it.selectedOnly;}}
+            {{var hideMyVote = it.hideMyVote;}}
+            {{var hideVoteCount = it.hideVoteCount;}}
+            {{var hideTeamVote = it.hideTeamVote;}}
+            <thead>
+                
+                <tr>
+                    <th class="companyName">{{=it.questionsLabel}}</th>
+                    <th></th>
+                    {{? hideMyVote==false}}
+                    <th class="mySelection">{{=it.myLabel}}</th>
+                    {{?}}
+                    {{? hideTeamVote==false}}
+                    <th class="myTackLabel">{{=it.myTrackLabel}}</th>
+                    {{?}}
+                    {{? hideVoteCount==false}}
+                    <th class="graphBuy"></th>
+                    <th class="countLabelBuy">{{=it.countLabel}}</th>
+                    {{?}}
+                </tr>
+                
+            </thead>
+            <tbody>
+                {{~it.questions :question:index}}
+                {{ var showHide="style=\"display:none;\"";}}
+                {{? showQuestionsWithNoVotes==false || (showQuestionsWithNoVotes==true && question.score>0)}}
+                    {{ showHide="";}}
+                {{?}}
+                <tr id="{{=question.Id}}tr" {{=showHide}}>
+                    <td ><div class="companyNameBG">{{=question.label}}</div></td>
+                    <td>{{=question.description}}</td>
+                    {{? hideMyVote==false}}
+                    <td id="{{=question.Id}}myvote">
+                        {{? question.mySelection==true}}
+                        <img src="/Wizer/Content/checkedsign.png" />
+                        {{?}}
+                    </td>
+                    {{?}}
+                    {{? hideTeamVote==false}}
+                    <td id="{{=question.Id}}teamvote">
+                        {{? question.teamSelection==true}}
+                        <img src="/Wizer/Content/checkedsign.png" />
+                        {{?}}
+                    </td>
+                    {{?}}
+                    {{? hideVoteCount==false}}
+                    <td >
+                        <div id="{{=question.Id}}graph" class="VoteCountResultBar" style="width:{{=question.graphPercent}}%"></div>
+                    </td>
+                    <td id="{{=question.Id}}score">{{=question.score}}</td>
+                    {{?}}
+                   
+                </tr>
+                
+                {{~}}
+            </tbody>
+        </table>
+    </div>
+</div>

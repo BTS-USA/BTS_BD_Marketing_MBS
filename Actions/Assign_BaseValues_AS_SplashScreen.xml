@@ -1,0 +1,38 @@
+<Action layout="identifier">
+  <Component type="Vanilla"><![CDATA[{
+  "eventTitle": "!{AS_Screen_EventTitle}",
+  "css": "events/BTS_BD_Marketing_MBS/styles/as_splashScreen.css",
+  "trackQuestion": "Team_Track",
+  "images": [
+    {
+      "src": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/images/welcome.jpg",
+      "alt": "backgroundImage"
+    },
+    {
+      "src": "",
+      "alt": "identifierImage"
+    },
+    {
+      "src": "",
+      "alt": "teamIcon"
+    }
+  ],
+  "showNavigation": false,
+  "session": {
+    "sessionTitle": "!{Welcome_AS_Screen_Title}",
+    "sessionSubTitle": "!{Welcome_AS_Screen_subTitle}"
+  },
+ "templateInEvent": "html/as_identiferPage.dot"
+}]]></Component>
+  <Voting autoNext="false" doneText="">
+    <Score result="db:Metric1" type="Vote" response="50"></Score>
+    <Score result="db:Metric2" type="Vote" response="50"></Score>
+    <Score result="db:Metric3" type="Vote" response="50"></Score>
+    <Score result="db:Base_Metric1" type="Vote" response="50"></Score>
+    <Score result="db:Base_Metric2" type="Vote" response="50"></Score>
+    <Score result="db:Base_Metric3" type="Vote" response="50"></Score>
+    <!-- metric total 150 -->
+    <Score result="db:Metric_Total" type="Vote" response="150"></Score>
+    <Score result="db:Base_Value_Assign" type="Vote" response="111"></Score>
+  </Voting>
+</Action>

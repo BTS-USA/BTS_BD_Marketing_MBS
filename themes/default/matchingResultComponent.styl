@@ -1,0 +1,49 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Matching Result Component Styles
+.mrc
+    &-article 
+        margin 0 0 10px 0
+    &-result-bar
+        padding 20px 0
+        background-color $tundora
+        line-height 1
+    &-answer-row
+        color $codGray
+        background-color $silver
+    &-question,
+    &-answer
+        padding 20px
+    &-percentage
+        text-align center
+        font-weight 600
+        color white
+    &-bar
+        &__inner
+            float left
+            height 100%
+            &--true
+                @extend .mrc-bar__inner
+                background-color $apple
+            &--false
+                @extend .mrc-bar__inner
+                background-color $sunsetOrange
+            
+    // define styles for right/wrong answers
+    &-question
+        &--success
+            background-color lighten($apple, 40)
+        &--fail
+            background-color lighten($sunsetOrange, 30)
+    &-answer
+        &--success
+            background-color lighten($apple, 20)
+        &--fail
+            background-color lighten($sunsetOrange, 20)
+
+[dir="rtl"]
+	.mrc
+		&-bar
+			&__inner--true, &__inner--false, &__inner--true--false
+				float right

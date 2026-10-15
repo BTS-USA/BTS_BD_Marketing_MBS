@@ -1,0 +1,124 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="riskRating-component cl-component">
+            {{? it.header.title || it.header.description}}
+            <header class="riskRating--main cl-header--main">
+                {{? it.header.title}}
+                <h1 class="riskRating__title--main cl-header__title--main">{{=it.header.title}}</h1>
+                {{?}}
+                {{? it.header.firstDescription && it.header.secondDescription }}
+                <div class="riskRating__description--main cl-header__description--main">
+                    <span>{{=it.header.firstDescription}} {{=it.ideasArray.length}}</span>
+                    <span>{{=it.header.secondDescription}}</span>
+                    <span class="riskRating__boldtext">{{=it.header.thirdDescription}}</span>
+                    <span>{{=it.header.fourthDescription}}</span>
+                </div>
+                {{?}}
+            </header>
+            {{?}}
+        </section>
+        <article class="riskRating__mainSlider" data-slider>
+            <div class="riskRating__mainCont" data-slider-container>
+
+                <div class="riskRating__message"><span data-error></span></div>
+                {{? it.newIdeasArray }}
+                {{? it.newIdeasArray.length > 0 }}
+                {{? it.header.sixthDescription}}
+                <h1 class="riskRating__title--main cl-header__title--main">{{=it.header.sixthDescription}}</h1>
+                {{?}}
+                {{~it.newIdeasArray: ideas:index }}
+                <div class="cl-xs-column-12 cl-row">
+                    <div class="riskRating__mainWrapper" data-slider-main data-ideaid="{{=ideas.Id}}">
+                        <div class="riskRating__ideaText">
+                            {{=ideas.ResponseText}}
+
+                            <div class="riskRating__sliderCont">
+                                {{~it.sliders: slides:i }}
+                                <div class="riskRating__sliderContainer">
+                                    <div class="riskRating__sliderWrapper">
+                                        <div class="riskRating__propertyText">{{=slides.sliderText}}  </div>
+                                        {{? i == 0 && ideas.Impact }}
+                                        <input type="hidden" class="single-slider" value={{=ideas.Impact}}
+                                               data-slider-rate="{{=slides.name}}_{{=ideas.Id}}" />
+                                        {{?? i == 1 && ideas.Likelihood }}
+                                        <input type="hidden" class="single-slider" value={{=ideas.Likelihood}}
+                                               data-slider-rate="{{=slides.name}}_{{=ideas.Id}}" />
+                                        {{??}}
+                                        <input type="hidden" class="single-slider"
+                                               data-slider-rate="{{=slides.name}}_{{=ideas.Id}}" />
+                                        {{?}}
+                                    </div>
+                                </div>
+                                {{~}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{~}}
+
+                <div class="cl-xs-column-12 cl-row">
+                    <div class="riskRating__center">
+                        {{? it.buttons[0] }}
+                        <div class="riskRating__submit_button" data-submitbutton>
+                            {{=it.buttons[0].title}}
+                            <i class="cl-icon cl-icon--tick-filled"></i>
+                        </div>
+                        {{?}}
+                    </div>
+                </div>
+                {{?}}
+                {{?}}
+                {{? it.oldIdeasArray}}
+                {{? it.oldIdeasArray.length > 0 }}
+                {{? it.header.fifthDescription}}
+                <h1 class="riskRating__title--main cl-header__title--main">{{=it.header.fifthDescription}}</h1>
+                {{?}}
+                {{~it.oldIdeasArray: ideas:index }}
+                <div class="cl-xs-column-12 cl-row">
+                    <div class="riskRating__mainWrapper" data-slider-main data-ideaid="{{=ideas.Id}}">
+                        <div class="riskRating__ideaText">
+                            {{=ideas.ResponseText}}
+
+                            <div class="riskRating__sliderCont">
+                                {{~it.sliders: slides:i }}
+                                <div class="riskRating__sliderContainer disabledContainer">
+                                    <div class="riskRating__sliderWrapper">
+                                        <div class="riskRating__propertyText">{{=slides.sliderText}}  </div>
+                                        {{? i == 0 && ideas.Impact }}
+                                        <input type="hidden" class="single-slider" value={{=ideas.Impact}}
+                                               data-slider-rate="{{=slides.name}}_{{=ideas.Id}}" />
+                                        {{?? i == 1 && ideas.Likelihood }}
+                                        <input type="hidden" class="single-slider" value={{=ideas.Likelihood}}
+                                               data-slider-rate="{{=slides.name}}_{{=ideas.Id}}" />
+                                        {{??}}
+                                        <input type="hidden" class="single-slider"
+                                               data-slider-rate="{{=slides.name}}_{{=ideas.Id}}" />
+                                        {{?}}
+                                    </div>
+                                </div>
+                                {{~}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{~}}
+                {{?}}
+                {{?}}
+            </div>
+        </article>
+
+        <section class="cl-modal" data-submit-modal>
+            <article class="cl-modal__dialog">
+                <div class="riskRating__modal cl-modal__container">
+                    <section class="cl-modal__body">
+                        <div class="cl-modal__content">
+                            <span data-message></span>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </section>
+
+    </div>
+</div>
+

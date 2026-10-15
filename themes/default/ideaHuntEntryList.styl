@@ -1,0 +1,252 @@
+// import component library mixins and variables
+@import "shared/cl.styl"
+@import "ideaHuntEntry.styl"
+
+/* Removed default padding from mainContentWrapper */
+ideaPadding()
+    padding 1*$px
+ideaMargin()
+    margin 0 .2*$px .2*$px  
+
+.ideaList 
+    background $mercury
+    font-size 1.4*$px
+    line-height 1.4
+    padding 4*$px 4*$px 8*$px
+
+    /* Header */
+    &__header
+        margin-bottom 3*$px
+        &-list
+            margin-bottom .2*$px
+    &__title
+        border none
+        font-size 3.2*$px
+        font-weight 300
+        font-style normal
+        line-height 1
+        margin 0
+        padding 0
+        color $apple
+        text-align left
+        text-transform uppercas
+        @media screen and (max-width: 768px) {
+            font-size 2.2*$px
+        }
+    &__label
+        color $gray
+        font-size 1.8*$px
+        margin-bottom .5*$px
+        display block
+        &-legend
+            display inline-block
+            vertical-align middle
+            margin 0
+            line-height 1
+            font-size 1.4*$px
+        &-list
+            float left
+    &__filters
+        margin-bottom 3*$px
+    &__dropdown
+        input()
+        background $tundora
+        color white
+    &__list
+        margin-bottom 3*$px
+        &-headline
+            label()
+    &__legend
+        float right
+    &__legendItem
+        float left
+        margin-right 2*$px
+        &:last-child
+            margin 0
+    &__legendColor
+        width 1.2*$px
+        height 1.2*$px
+        display inline-block
+        vertical-align middle
+        &-blue
+            background $bayOfMany
+        &-green
+            background green
+    &__legendLabel
+        display inline-block
+        vertical-align middle
+
+    /* Idea block */
+    &__idea
+        cursor pointer
+        background $bayOfMany
+        color white
+        margin-bottom 1.6*$px
+        &-myIdea
+            background $apple
+        &-header
+            ideaPadding()
+            ideaMargin()
+        &-title
+            font-weight normal
+            margin-bottom .5*$px
+            height 4.3*$px
+            overflow hidden
+            text-overflow ellipsis
+        &-category
+            font-style italic
+            height 2*$px
+            font-size 1.6*$px
+        &-ranks
+            background white
+            color $codGray
+            ideaMargin()
+        &-body
+            ideaPadding()
+            ideaMargin()
+            background $gray
+        &-description
+            height 11.5*$px
+            overflow hidden
+            text-overflow ellipsis
+        &-author
+            font-weight 600
+            overflow hidden
+            height 20px
+        &-label
+            font-style italic
+            margin-bottom .5*$px
+            text-transform uppercase
+            font-style italic
+        &-footer
+            ideaMargin()
+            ideaPadding()
+            overflow hidden
+            height 65px
+    /* Video thumbnail and play button */
+    &__thumbnail
+        height 190px
+        overflow hidden
+        ideaMargin()
+        position relative
+        &-image
+            width 100%
+        &-noVideo
+            position absolute
+            left 0
+            top 0
+            right 0
+            bottom 0
+            background url(../../Shared/media/img/novideo.png) no-repeat center center
+        &-play
+            boxSizing()
+            position absolute
+            top 50%
+            left 50%
+            position absolute
+            width 7*$px
+            height 7*$px
+            margin-left -3.5*$px
+            margin-top -3.5*$px
+            border-radius 100%
+            background rgba(255,255,255,0.9)
+            padding 1.5*$px
+            box-shadow 0 0 10px rgba(0,0,0,.3)
+            &:after
+                content ""
+                width 100%
+                height 100%
+                display block
+                margin-left .4*$px
+                background url(media/img/play.svg) no-repeat center center
+			
+    /* Rank cells */
+    &__rankCell   
+        font-weight 600
+        float left
+        text-transform uppercase
+        width 40%
+        height 55px
+        overflow hidden
+        ideaPadding()
+        &:last-child
+            width 20%
+        &-title
+            color $codGray
+            font-style italic
+        &-value
+            color $corn
+        &-id
+            color $tundora
+        &-date
+            color $corn
+            font-size 1.4*$px
+            white-space nowrap
+        &-progressItem
+            width 17%
+            max-width 2.5*$px
+            margin-right 2%
+            float left
+            &:after
+                display block
+                content ""  
+                width 100%
+                height auto
+                padding-top 100%
+                border 1px solid black
+                background white
+                border-radius 100%
+            &:last-child 
+                margin-right 0
+        &-progressItem-full
+            &:after
+                background $apple
+        &-status
+            height 70px
+            overflow hidden
+            &:first-child
+                width 40%
+            &:last-child 
+                width 60%
+    /* Footer show more button */
+    &__footer
+        margin-bottom 2.5*$px
+        float none
+        &-showMore
+            button($cerulean)
+
+.window
+    &--noscroll
+        overflow hidden
+
+@media screen and (max-width: 768px)
+    .ideaList
+        padding 3*$px 1*$px
+        font-size 1.35*$px
+        &__title
+            font-size 3*$px
+        &__legend
+            float none
+            display block
+            &:after
+                content ""
+                display block
+                margin-bottom 1*$px
+                clear both
+        &__label
+            &-list
+                float none
+                margin-bottom 1*$px
+
+[dir="rtl"]
+	.ideaList
+		&__rankCell
+			&-progressItem
+				float right
+				&:first-child
+					margin-right 0
+				&:last-child
+					margin-right 2%
+		&__title
+			text-align right
+		

@@ -1,0 +1,10 @@
+.wizletSplitPoints #contentBox
+{
+	float: none;
+	overflow: hidden;
+}
+
+.wizletSplitPoints #sendContainer {
+    float: right;
+    margin-right: 30px;
+}

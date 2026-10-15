@@ -1,0 +1,333 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+.sr
+    margin 20px 0 0 0
+    height 100vh
+    position relative
+    overflow hidden
+    @media (min-width 768px)
+        margin 0 auto
+        height calc(100vh - 150px)
+    &-container
+        height calc(100% - 130px)
+        position relative
+        max-width 100%    
+    &-lp
+        background-color $silver
+        height 100%
+        position absolute
+        top 0
+        z-index 1
+        overflow auto
+        transition(all 0.25s ease)
+        @media (min-width 768px)
+            z-index 1
+            position relative
+            left 0
+            top 0
+        
+        .cl-mobile &
+            width 100%
+            background-color $silver
+            height calc(100% - 55px)
+            position absolute
+            top 0px
+            z-index 1
+            overflow auto
+            transition(all 0.25s ease)
+        &__control
+            @media(max-width: 768px)
+                &-inactive
+                    display none
+            &--picker
+                display none
+            &--tz
+                text-align center
+                background-color $tundora
+                padding 5px 15px
+                font-size 1.4*$px
+                text-transform uppercase
+                color #fff
+                height 30px
+            .pika-button
+                height 100%
+                display block !important
+            .pika-single
+                width 100%
+                background-color transparent
+                border none
+                padding 0 0 5px 0
+                font-family inherit
+                font-weight 400
+                .pika-title
+                    background-color $tundora
+                    padding 5px 15px
+                    .pika-select
+                        display none
+                    .pika-next
+                    .pika-prev
+                        background none
+                        text-indent 0
+                        opacity 1
+                        width 15px
+                        height 25px
+                        font-family "clIcons"
+                        display inline-block !important
+                        vertical-align middle
+                        line-height 1
+                        font-weight normal
+                        font-style normal
+                        speak none
+                        text-decoration inherit
+                        text-transform none
+                        text-rendering auto
+                        -webkit-font-smoothing antialiased
+                        -moz-osx-font-smoothing grayscale
+                        cursor pointer
+                        
+                        &:before
+                            color #fff
+                            padding 5px 3px
+                            font-size 1.2*$px
+                    .pika-prev:before
+                        content "\f111"
+                    .pika-next:before
+                        content "\f112"
+                .pika-label
+                    background-color transparent
+                    color #fff
+                    font-weight inherit
+                    padding 4px 3px 0
+                .pika-table
+                    width calc(100% - 30px)
+                    margin 0 15px
+                    td
+                        vertical-align top
+                        height 43px
+                    th
+                        color #1e1e1e
+                        line-height 35px
+                        border-bottom 1px solid #fff
+                        abbr[title]
+                            border none
+                            text-decoration none
+                .pika-button
+                    text-align center
+                    background-color transparent
+                    color $tundora
+                    font-size 1.6*$px
+                    padding 0 0 3px
+                    max-width 43px
+                    margin 0 auto
+                .no-padding
+                    padding 0
+                .is-today .pika-button
+                    color $cerulean
+                .is-today .pika-button:hover
+                    border-radius(50%  !important)
+                    color $cerulean !important /*important is added to override the Pikaday css*/
+                .is-selected .pika-button
+                    background-color $cerulean
+                    border-radius(50%)
+                    color #fff
+                    box-shadow none
+                .pika-button:hover /*important is added to override the Pikaday css*/
+                    color inherit !important 
+                    background none !important
+                .is-selected .pika-button:hover /*important is added to override the Pikaday css*/
+                    color #fff !important    
+                    background #00adef !important
+                    border-radius(50% !important)
+
+    &-rp
+        background-color #fff
+        color $tundora
+        height 100%
+        position absolute
+        overflow hidden
+        top 0
+        right 0
+        z-index 5
+        transition(all 0.5s ease)
+        @media (min-width 768px)
+            z-index 0
+            position absolute
+            right 0
+            top 0
+        @media (min-width 768px)
+            z-index 0
+            position relative
+            right 0
+            top 0
+        .cl-mobile &
+            z-index 5
+            right inherit
+            top 0px
+            width 100%
+            transition(all 0.5s ease)
+
+        &--collapse
+            right -100%
+            transition(all 0.5s ease)
+            .cl-mobile &
+                left 100%
+            @media (min-width 768px)
+                left auto
+        &--open
+            right 0
+            transition(all 0.5s ease)
+            .cl-mobile &
+                right 0 
+                transition(all 0.5s ease)
+
+        &__currDate
+            background-color $gray
+            padding 4px 15px 5px
+            color $mercury
+            height 30px
+            @media (min-width 768px)
+                display none
+            .cl-mobile &
+                display block
+        &__back
+            display block
+            float left
+            margin-right 10px
+            font-size 1.2*$px
+            line-height 22px
+            @media (min-width 768px)
+                display none
+            .cl-mobile &
+                display block
+            &:before
+                font-size 1.2*$px
+                margin-right 1px 
+        &__slotlist
+            height 100%
+            overflow auto
+            @media (max-width: 767px)
+                height calc(100% - 30px)
+            
+        &__hourholder
+            border-top 1px solid $silver
+            position relative
+            min-height 75px
+            &:first-child
+                border-top none
+                .sr-rp__timelabel
+                    top 0
+        &__timelabel
+            position absolute
+            font-size 1.2*$px
+            top 10px
+            left 0px
+
+        &__session
+            width calc(100% - 50px)
+            min-height 40px
+            overflow hidden
+            background $emerald
+            margin 10px 0 0 50px
+            cursor pointer
+            &:last-child
+                margin 10px 0 10px 50px
+            &-participant
+                color white
+                font-size 14px
+                @media (min-width: 1024px)
+                    line-height 38px
+                    font-size 15px
+                float left
+                height 100%
+                visibility hidden
+                padding 0 0 0 20px
+                @media (max-width: 1023px)
+                    padding 10px 0 10px 10px
+            &-timeinterval
+                color white
+                font-size 14px
+                @media (min-width: 1024px)
+                    line-height 38px
+                    font-size 15px
+                float left
+                height 100%
+                padding 0 0 0 20px
+                @media (max-width: 1023px)
+                    padding 10px 0 10px 10px
+            &-close, &-send
+                float right
+                width 8%
+                opacity 0
+                @media (min-width: 1024px)
+                    line-height 38px
+                    width 6%
+                height 100%
+                text-align center
+                @media (max-width: 1023px)
+                    padding 10px 0 10px 5px
+            &-close
+                @media (max-width: 1023px)
+                    padding 7px 0 10px 5px    
+            &-passigned
+                background $cerulean
+                .sr-rp__session-participant
+                    color white
+                    visibility visible
+                .sr-rp__session-timeinterval
+                    color white 
+                .sr-rp__session-close
+                    opacity 1
+                    &:before
+                        color white
+                        font-size 1.28*$px
+                        @media (min-width: 1024px)
+                            font-size 1.6*$px    
+                        font-weight 700
+                .sr-rp__session-send
+                    opacity 1
+                    &:before
+                        color white
+                        font-size 1.92*$px
+                        @media (min-width: 1024px)
+                            font-size 2.4*$px
+                        font-weight 200
+                    
+    &-button
+        &__no
+            button($sunsetOrange)
+        &__yes
+            button($apple)
+
+    &-sessions
+        &__count
+            position relative
+            margin 0 auto
+            height 0
+            top -7px
+            text-align center
+            -webkit-user-select none
+            -moz-user-select none
+            -ms-user-select none
+            user-select none
+            pointer-events none
+        &__dot
+            font-size 3px
+            height 3px
+            width 3px
+            border-radius(4px)
+            margin 0px 1px
+            background-color $cerulean
+            display inline-block
+            line-height 1
+            -webkit-user-select none
+            -moz-user-select none
+            -ms-user-select none
+            user-select none
+            pointer-events none
+            .is-selected &
+                background-color #fff
+
+.cl-modal
+    &__closebtn
+        cursor pointer

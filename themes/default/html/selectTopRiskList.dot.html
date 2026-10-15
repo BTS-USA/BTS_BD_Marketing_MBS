@@ -1,0 +1,53 @@
+{{~it.ideas:idea:id}}
+<div class="topRisk__votesWrapper" style="border-top:10px solid {{=idea.riskColorCode}}">
+    <div class="topRisk__extraWrapper">
+        <div class="topRisk__titleCont topRisk__title">
+            <div class="topRisk__titlePeopleIcon cl-icon cl-icon--people"></div>
+            <div class="topRisk__titleAuthortext" data-voteauthor="">{{=idea.IdeaAuthorName}}</div>
+            <div class="cl-icon cl-icon--heart-empty topRisk__like"
+                 data-voteauthorId="{{=idea.IdeaId}}" data-like></div>
+        </div>
+
+        <div class="topRisk__ideaCont topRisk__idea">
+            <div class="topRisk__ideaText cl-paragraph">{{=idea.IdeaText}}</div>
+            <div class="topRisk__ideaRiskThemeText">
+                {{=it.textContent.riskThemeText}}: <span class="topRisk__ideaRiskThemeType">{{=idea.riskThemeText}}</span>
+            </div>
+        </div>
+        {{? it.textContent}}
+        <div class="topRisk__attributes">
+            <div class="topRisk__attrCont">
+                <div class="c100 p{{=idea.impactPercent}} small">
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill topRisk__fill"></div>
+                    </div>
+                </div>
+                <span class="topRisk__attr">{{=it.textContent.impactText}}: {{=idea.Impact}}</span>
+            </div>
+            <div class="topRisk__attrCont">
+                <div class="c100 p{{=idea.likePercent}} small">
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill topRisk__fill"></div>
+                    </div>
+                </div>
+                <span class="topRisk__attr">
+                    {{=it.textContent.likelihoodText}}:
+                    {{=idea.Likelihood}}
+                </span>
+            </div>
+            <div class="topRisk__attrCont">
+                <div class="c100 p{{=idea.avgPercent}} small">
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill topRisk__fill"></div>
+                    </div>
+                </div>
+                <span class="topRisk__attr">{{=it.textContent.avgText}}: {{=idea.average}}</span>
+            </div>
+        </div>
+        {{?}}
+    </div>
+</div>
+{{~}}

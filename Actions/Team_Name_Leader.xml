@@ -1,0 +1,41 @@
+<Action>
+<Component type="teamName" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_teamName.dot",
+  "css": "events/BTS_BD_Marketing_MBS/styles/as_teamName.css",
+  "instructions": "!{Team_Input_Instructions}",
+  "disabled": "Q.Leader == 2",
+  "readOnlyCondition": "Q.Leader==2",
+  "questions": [
+    {
+      "question": "Team_Name",
+      "renderOptions": {
+        "placeholder": "!{Team_Name_Placeholder}",
+        "class": "cl-textinput",
+        "pattern": "^[a-zA-Z0-9 ]+$",
+        "maxCharacters": {
+          "maxValue": 20,
+          "class": "inputComponentMessageLength",
+          "text": "!{Team_Name_Remaining_Text}"
+        }
+      }
+    }
+  ],
+  "buttons": [
+    {
+      "class": "inputComponentSubmit cl-button cl-button--submit",
+      "text": "!{submit}",
+      "type": "submit",
+      "submitButton": true,
+      "message": "!{saved}"
+    }
+  ],
+  "thankYou": {
+    "title": "!{Team_Name_ThankYou_Title}",
+    "message": "!{Team_Name_ThankYou_Message}"
+  },
+  "scope": [
+    "Team_Name",
+    "Leader"
+  ]
+}]]></Component>
+</Action>

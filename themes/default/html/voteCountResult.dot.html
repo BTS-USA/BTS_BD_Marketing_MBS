@@ -1,0 +1,58 @@
+﻿<div class="wizletVoteCountResult">
+    <div class="VoteCountResultTitle">{{=it.title}}</div>
+    <div class="VoteCountResultBody">
+        <table>
+            {{var hideTeamVote = it.hideTeamVote;}}
+            {{var hidemyVote = it.hideMyVote;}}
+            <thead>
+                <tr>
+                    <th class="srno"></th>
+                    <th class="questionsLabel">{{=it.questionsLabel}}</th>
+                    {{? hidemyVote==false}}
+                    <th class="myLabel">{{=it.myLabel}}</th>
+                    {{?}}
+                    {{? hideTeamVote==false}}
+                    <th class="myTackLabel">{{=it.myTrackLabel}}</th>
+                    {{?}}
+                    <th class="graph"></th>
+                    <th class="countLabel">{{=it.countLabel}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{~it.questions :question:index}}
+                {{var countToBeHighlighted = it.highlightTop;}}
+                {{var showImage = question.mySelection;}}
+                {{? index < countToBeHighlighted}}
+
+                <tr class="VoteCountResultHighLightRow">
+                    <td>{{=index+1}}</td>
+                    {{??}}
+                <tr>
+                    <td></td>
+                    {{?}}
+
+                    <td>{{=question.label}}</td>
+                    {{? hidemyVote==false}}
+                    <td class="mychoice">
+                        {{? showImage==true}}
+                        <img src="/Wizer/Content/checkedsign.png" />
+                        {{?}}
+                    </td>
+                    {{?}}
+                    {{? hideTeamVote==false}}
+                    <td class="mychoice" id="{{=question.Id}}teamvote">
+                        {{? question.teamSelection==true}}
+                        <img src="/Wizer/Content/checkedsign.png" />
+                        {{?}}
+                    </td>
+                    {{?}}
+                    <td>
+                        <div id="{{=question.Id}}graph" class="VoteCountResultBar" style="width:{{=question.graphPercent}}%"></div>
+                    </td>
+                    <td id="{{=question.Id}}score">{{=question.score}}</td>
+                </tr>
+                {{~}}
+            </tbody>
+        </table>
+    </div>
+</div>

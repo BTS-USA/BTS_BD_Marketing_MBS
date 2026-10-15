@@ -1,0 +1,174 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="dpel table">
+            {{? it.wizletInfo.header}}
+            <header class="dpel-header cl-header--main">
+                {{? it.wizletInfo.header.title}}
+                <div class="dpel-header__title cl-header__title--main{{? !it.wizletInfo.header.description}} cl-margin--no{{?}}">
+                    
+                    <div class="dpel-header__participantCont">
+                        <span class="dpel-header__participant">{{=it.wizletInfo.header.title}} - {{=it.participantName}}</span>
+                    </div>
+                    <div class="dpel-header__buttons">
+                        <span class="dpel-header__addNew cl-icon cl-icon--addNew" data-addnew></span>
+                        <span class="dpel-header__print" data-print>{{=it.wizletInfo.print}}</span>
+                    </div>
+                </div>
+                {{?}}
+                {{? it.wizletInfo.header.description}}
+                <p class="dpel-header__description cl-header__description--main">
+                    {{=it.wizletInfo.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+            <article class="dpel-list-cont cl-container">
+                {{?it.wizletInfo.filterQuestions}}
+                <div class="dpel-filter-cont">
+                    {{~it.wizletInfo.filterQuestions :filterQuestion:index}}
+                    <div class="dpel-filter">
+                        {{?filterQuestion.options}}
+                            <label class="dpel-filter__label">{{=filterQuestion.label}}: </label>
+                            <select class="dpel-filter__select" data-filter-select data-question-id="{{=filterQuestion.questionId}}">
+                                <option value="0">{{=filterQuestion.defaultOption}}</option>
+                                {{~filterQuestion.options :option:ind}}
+                                <option value="{{=option.KeypadNumber}}" {{?filterQuestion.selectedFilter == option.KeypadNumber}} selected {{?}}>{{=option.ResponseText}}</option>
+                                {{~}}
+                            </select>
+                        {{?}}
+                    </div>
+                    {{~}}
+                </div>
+                {{?}}
+                {{? it.feedbackList != null && it.feedbackList.length > 0 }}
+                <div class="cl-md-column-12 cl-sm-column-12 cl-xs-column-12 dpel-list-row">
+                    {{~it.feedbackList :feedback:findex}}
+                    <div class="dpel-list-item cl-md-column-4 cl-sm-column-4 cl-xs-column-12" data-dpellistitem>
+                        <span class="dpel-list-item__categoryKey" data-dpelitemcategorykey>{{=feedback.key}}</span>
+                        {{~feedback.feedbacks :f:ind}}
+                            <div class="dpel-list-item-cont" data-dpelitemcont data-responseid="{{=f.parentResponseId}}">
+                                <header class="dpel-item-header" data-dpelitemheader>
+                                    <div class="dpel-item__header">
+                                        {{?feedback.key !== it.wizletInfo.godo.key}}
+                                        {{?it.wizletInfo.headerQuestions}}
+                                        {{~it.wizletInfo.headerQuestions :headerQuestion:i}}
+                                            {{~f.responses :response:index}}
+                                            {{?response.questionId === headerQuestion.Id}}
+                                                {{?headerQuestion.showQuestionDisplayText}}<p class="{{= headerQuestion.questionDisplayTextCss }}">{{= headerQuestion.QuestionDisplayText }}</p>{{?}}
+                                                {{?headerQuestion.showKey}}
+                                                <p class="dpel-item__headerText dpel-item__categoryKey">{{=feedback.key}}: </p>
+                                                {{?}}
+                                                <p class="dpel-item__headerText dpel-item__headerItem {{?headerQuestion.cssClass}}{{=headerQuestion.cssClass}}{{?}} {{?!headerQuestion.showQuestionDisplayText}}dpel-item--noPadding{{?}}">{{=response.responseText}}</p>
+                                            {{?}}
+                                            {{~}}
+                                        {{~}}
+                                        {{?}}
+                                        {{??}}
+                                        {{?it.wizletInfo.godo.headerQuestions}}
+                                        {{~it.wizletInfo.godo.headerQuestions :godoHeaderQuestion:i}}
+                                            {{~f.responses :response:index}}
+                                                {{?response.questionId === godoHeaderQuestion.Id}}
+                                                {{?response.responseText !== ''}}
+                                                    {{?godoHeaderQuestion.showQuestionDisplayText}}<p class="{{=godoHeaderQuestion.questionDisplayTextCss }}">{{=godoHeaderQuestion.QuestionDisplayText }}</p>{{?}}
+                                                    {{?godoHeaderQuestion.type && godoHeaderQuestion.type === 'date'}}
+                                                        {{?response.showInList}}
+                                                        <p class="dpel-item__headerText dpel-item__headerItem {{?godoHeaderQuestion.cssClass}}{{=godoHeaderQuestion.cssClass}}{{?}} {{?response.godoCssClass}}{{=response.godoCssClass}}{{?}}">{{=godoHeaderQuestion.label}}{{=(godoHeaderQuestion.format == null ? moment(response.responseText).format('dd MMM yyyy') : moment(response.responseText).format(godoHeaderQuestion.format))}}</p>
+                                                        {{?}}
+                                                    {{??godoHeaderQuestion.type && godoHeaderQuestion.type === 'status'}}
+                                                        <p class="dpel-item__headerText dpel-item__headerItem {{?godoHeaderQuestion.cssClass}}{{=godoHeaderQuestion.cssClass}}{{?}} dpel-item__response--{{=response.originalResponseText}} {{?!godoHeaderQuestion.showQuestionDisplayText}}dpel-item--noPadding{{?}}">{{= response.responseText }}
+                                                        </p>
+                                                    {{??}}
+                                                        {{?godoHeaderQuestion.showKey}}
+                                                            <p class="dpel-item__headerText dpel-item__categoryKey">{{=feedback.key}}: </p>
+                                                        {{?}}
+                                                        <p class="dpel-item__headerText dpel-item__headerItem {{?godoHeaderQuestion.cssClass}}{{=godoHeaderQuestion.cssClass}}{{?}} {{?!godoHeaderQuestion.showQuestionDisplayText}}dpel-item--noPadding{{?}}">{{=response.responseText}}</p>
+                                                    {{?}}
+                                                {{?}}
+                                                {{?}}
+                                            {{~}}
+                                        {{~}}
+                                        {{?}}
+                                        {{?}}
+                                    </div>
+                                    <div class= "dpel-item-header__button">
+                                        <div data-edit="{{= f.parentResponseId}}" class="dpel-item-buttons dpel-item__edit cl-icon cl-icon--edit"></div>
+                                        <div class="dpel-item-buttons dpel-item__collapse cl-icon cl-icon--collapse" data-expand-collapse></div>
+                                    </div>
+                                </header>
+                                <article class="dpel-item-content dpel-content__hide" data-dpelitemcontent>
+                                    {{?feedback.key !== it.wizletInfo.godo.key}}
+                                    {{? it.wizletInfo.author}}
+                                    <div class="dpel-item dpel-item__author">
+                                        <div class="dpel-item__cont">
+                                            <span class="dpel-item__authorLabel">{{=it.wizletInfo.author.label}}</span>
+                                            <span class="dpel-item__authorName">{{=f.authorParticipantName}}</span>
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{~it.wizletInfo.questions :question:i}}
+                                    {{~f.responses :response:index}}
+                                    {{?response.questionId === question.Id}}
+                                        
+                                    {{?response.responseText !== ''}}
+                                    <div class="dpel-item {{?question.cssClass}}{{=question.cssClass}}{{?}}">
+                                        <div class="dpel-item__cont">
+                                            {{?question.showQuestionDisplayText}}<span class="{{= question.questionDisplayTextCss }}">{{= question.QuestionDisplayText }}</span>{{?}}
+                                            {{?question.type && question.type === 'date'}}
+                                            <span class="dpel-item__responseText {{?question.responseTextCss}}{{=question.responseTextCss}}{{?}}">{{=(question.format == null ? moment(response.responseText).format('dd MMM yyyy') : moment(response.responseText).format(question.format))}}</span>
+                                            {{??question.type && question.type === 'status'}}
+                                            <span class="dpel-item__responseText {{?question.responseTextCss}}{{=question.responseTextCss}}{{?}} dpel-item__response--{{=response.originalResponseText}}">{{= response.responseText }}</span>
+                                            {{??}}
+                                            <span class="dpel-item__responseText {{?question.responseTextCss}}{{=question.responseTextCss}}{{?}}">{{= response.responseText }}</span>
+                                            {{?}}
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{?}}
+                                        
+                                    {{~}}
+                                    {{~}}
+                                    {{??}}
+                                    {{? it.wizletInfo.author}}
+                                    <div class="dpel-item dpel-item__author">
+                                        <div class="dpel-item__cont">
+                                            <span class="dpel-item__authorLabel">{{=it.wizletInfo.author.label}}</span>
+                                            <span class="dpel-item__authorName">{{=f.authorParticipantName}}</span>
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{~it.wizletInfo.godo.questions :godoQuestion:i}}
+                                    {{~f.responses :response:index}}
+                                    {{?response.questionId === godoQuestion.Id}}
+                                        
+                                    {{?response.responseText !== ''}}
+                                    <div class="dpel-item {{?godoQuestion.cssClass}}{{=godoQuestion.cssClass}}{{?}}">
+                                        <div class="dpel-item__cont">
+                                            {{?godoQuestion.showQuestionDisplayText}}<span class="{{= godoQuestion.questionDisplayTextCss }}">{{= godoQuestion.QuestionDisplayText }}</span>{{?}}
+                                            {{?godoQuestion.type && godoQuestion.type === 'date'}}
+                                            <span class="dpel-item__responseText {{?godoQuestion.responseTextCss}}{{=godoQuestion.responseTextCss}}{{?}}">{{=(godoQuestion.format == null ? moment(response.responseText).format('dd MMM yyyy') : moment(response.responseText).format(godoQuestion.format))}}</span>
+                                            {{??godoQuestion.type && godoQuestion.type === 'status'}}
+                                            <span class="dpel-item__responseText {{?godoQuestion.responseTextCss}}{{=godoQuestion.responseTextCss}}{{?}} dpel-item__response--{{=response.originalResponseText}}">{{= response.responseText }}</span>
+                                            {{??}}
+                                            <span class="dpel-item__responseText {{?godoQuestion.responseTextCss}}{{=godoQuestion.responseTextCss}}{{?}}">{{= response.responseText }}</span>
+                                            {{?}}
+                                        </div>
+                                    </div>
+                                    {{?}}
+                                    {{?}}
+                                        
+                                    {{~}}
+                                    {{~}}
+                                    {{?}}
+                                </article>
+                            </div>        
+                        {{~}}
+                    </div>
+                {{~}}
+                </div>
+                {{??}}
+                <div>{{?it.wizletInfo.noFeedbacksText != null}}{{=it.wizletInfo.noFeedbacksText}}{{?}}</div>
+                {{?}}
+            </article>
+        </section>
+    </div>
+</div>

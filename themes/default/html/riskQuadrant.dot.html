@@ -1,0 +1,43 @@
+<div class="mainContentWrapper">
+    <div class="mainContent"  data-riskquadrantmain>
+        <section class="riskRating-component cl-component">
+            {{? it.header.title || it.header.description}}
+            <header class="riskRating--main cl-header--main">
+                {{? it.header.title}}
+                <h1 class="riskRating__title--main cl-header__title--main">{{=it.header.title}}</h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="riskRating__description--main cl-header__description--main">{{=it.header.description}}</p>
+                {{?}}
+            </header>
+            {{?}}
+        </section>
+        <div class="rq-container cl-container">
+            <div class="cl-xs-column-12 cl-row">
+
+                <article class="">
+                    <div class="rq-content">
+                        <div class="rq-decision__container">
+                            <div class="rq-decision__chart">
+                                {{? it.type.toLowerCase() === "multiquadrantview"}}
+                                {{? it.showQuadrantCheck === undefined || it.showQuadrantCheck === true}}
+                                <div class="rq-right" data-checkboxcontaier>
+                                    <input type="checkbox" data-riskqaudrantcheck />
+                                    <span>{{= it.riskQuadrantCheckboxText }}</span>
+                                </div>
+                                {{?}}
+                                {{?}}
+
+                                <div id="container" data-quadrantchart></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="popupContent" data-quadrantpopup>
+    <div class=""><i class="cl-icon cl-icon--remove"></i></div>
+</div>

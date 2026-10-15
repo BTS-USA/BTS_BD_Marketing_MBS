@@ -1,0 +1,173 @@
+
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="tc">
+            <article class="tc-container cl-component">
+                {{? it.header}}
+                <header class="tc-header cl-header--main{{? it.header.pointer == false}} cl-pointer--hidden{{?}}">
+                    {{? it.header.title}}
+                    <h1 class="tc-header__title cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                        {{=it.header.title}}
+                    </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                    <p class="tc-header__description cl-header__description--main">
+                        {{=it.header.description}}
+                    </p>
+                    {{?}}
+                </header>
+                {{?}}
+                {{? it.instructions}}
+                <div class="tc__instructions cl__instructions">
+                    <p class="tc__instructions-text cl__instructions-text">{{=it.instructions}}</p>
+                </div>
+                {{?}}
+                {{?it.type && it.type=='accordion'}}
+                <div class="tc-acc">
+                    {{~it.tabOptions :rootMenuItem:rootMenuIndex}}
+                    {{? rootMenuItem.create}}
+                    <div class="tc-acc__item" id="accordion{{=rootMenuIndex}}">
+                        <div class="tc-acc__title">  <span class="tc-acc__label" {{?rootMenuItem.actionXML}} data-action="{{=rootMenuItem.actionXML}}" {{?}}> {{=rootMenuItem.title}} </span><div class="tc-acc__ico"></div></div>
+                        <div class="tc-acc__page  showcontent" id="accordionPage{{=rootMenuIndex}}">
+                        </div>
+                    </div>
+                    {{?}}
+                    {{~}}
+                </div>
+                {{??}}
+                <div class="tc-bar hidden-xs">
+                    {{~it.tabOptions :rootMenuItem:rootMenuIndex}}
+                    {{? rootMenuItem.create}}
+                    <div class="tc-bar__tab tab" data-menuid="{{=rootMenuIndex}}">
+                        <span class="tc-bar__title"
+                              {{? rootMenuItem.actionXML}} data-action="{{=rootMenuItem.actionXML}}" {{?}}
+                              {{? rootMenuItem.children}} data-children="true" {{?}}
+                              {{? rootMenuItem.hasTimer}} data-timer="true" {{??}} data-timer="false" {{?}}>
+                            {{? rootMenuItem.hasTimer}}
+                            {{=rootMenuItem.timerDuration}}
+                            {{??}}
+                            {{=rootMenuItem.title}}
+                            {{?}}
+                        </span>
+                        {{?rootMenuItem.children}}
+                        {{~rootMenuItem.children :childmenu:menuindex}}
+                        {{? childmenu.create}}
+                        <span class="tc-bar__arrow arrow"></span>
+                        {{break;}}
+                        {{?}}
+                        {{~}}
+                        {{?}}
+                    </div>
+                    {{?}}
+                    {{~}}
+                </div>
+                <div class="tc-menu hidden-xs">
+                    {{~it.tabOptions :rootMenuItem:rootMenuIndex}}
+                    {{?rootMenuItem.children}}
+                    <ul>
+                        {{~rootMenuItem.children :submenu:menuIndex}}
+                        {{? submenu.create}}
+                        <li class="tc-submenu clearfix" data-menuid="{{=rootMenuIndex}}">
+                            {{?submenu.icon}}<img src="{{=submenu.icon}}" class="icon" />{{?}}
+                            <span class="tc-submenu__label"
+                                  {{?submenu.actionXML}} data-action="{{=submenu.actionXML}}" {{?}}>{{=submenu.title}}</span>
+                            {{?submenu.children}}
+                            {{~submenu.children :childmenu:menuindex}}
+                            {{? childmenu.create}}
+                            <div class="tc-submenu__arrow arrow"></div>
+                            {{break;}}
+                            {{?}}
+                            {{~}}
+                            <ul>
+                                {{~submenu.children :childmenu:menuindex}}
+                                {{? childmenu.create}}
+                                <li class="tc-submenu__sub">
+                                    <img class="tc-submenu__ico" />
+                                    <span class="tc-submenu__sublabel"
+                                          {{?childmenu.actionXML}} data-action="{{=childmenu.actionXML}}" {{?}}>{{=childmenu.title}}</span>
+                                </li>
+                                {{?}}
+                                {{~}}
+                            </ul>
+                            {{?}}
+                        </li>
+                        {{?}}
+                        {{~}}
+                    </ul>
+                    {{?}}
+                    {{~}}
+                </div>
+
+                <div class="tc-acctabs-xs visible-xs">
+                    {{~it.tabOptions :rootMenuItem:rootMenuIndex}}
+                    {{? rootMenuItem.create}}
+                    <div>
+                        <div class="tc-acctab" data-menuid="{{=rootMenuIndex}}">
+                            <span class="tc-acctab__label cl-xs-column-12"
+                                  {{? rootMenuItem.actionXML}} data-action="{{=rootMenuItem.actionXML}}" {{?}}
+                                  {{? rootMenuItem.children}} data-children="true" {{?}}
+                                  {{? rootMenuItem.hasTimer}} data-timer="true" {{??}} data-timer="false" {{?}}>
+                                {{? rootMenuItem.hasTimer}}
+                                {{=rootMenuItem.timerDuration}}
+                                {{??}}
+                                {{=rootMenuItem.title}}
+                                {{?}}
+                            </span>
+                            {{?rootMenuItem.children}}
+                            {{~rootMenuItem.children :childmenu:menuindex}}
+                            {{? childmenu.create}}
+                            <span class="tc-acctab__arrow"></span>
+                            {{break;}}
+                            {{?}}
+                            {{~}}
+                            {{?}}
+                        </div>
+                        <div class="tc-acctab__menu">
+                            {{?rootMenuItem.children}}
+                            <ul class="tc-acctab__list--bi cl-xs-column-12">
+                                {{~rootMenuItem.children :submenu:menuIndex}}
+                                {{? submenu.create}}
+                                <li class="tc-acctab__submenu--bi" data-menuid="{{=rootMenuIndex}}">
+                                    {{?submenu.icon}}<img src="{{=submenu.icon}}" class="tc-acctab__ico--bi" />{{?}}
+                                    <span class="tc-acctab__label--bi  cl-xs-column-12"
+                                          {{?submenu.actionXML}} data-action="{{=submenu.actionXML}}" {{?}}>{{=submenu.title}}</span>
+                                    {{?submenu.children}}
+                                    {{~submenu.children :childmenu:menuindex}}
+                                    {{? childmenu.create}}
+                                    <div class="tc-acctab__arrow--bi"></div>
+                                    {{break;}}
+                                    {{?}}
+                                    {{~}}
+                                    <ul class="tc-acctab__list--tri cl-xs-column-12">
+                                        {{~submenu.children :childmenu:menuindex}}
+                                        {{? childmenu.create}}
+                                        <li class="tc-acctab__submenu--tri" data-menuid="{{=rootMenuIndex}}">
+                                            <img class="tc-acctab__ico--tri" />
+                                            <span class="tc-acctab__label--tri  cl-xs-column-12"
+                                                  {{?childmenu.actionXML}} data-action="{{=childmenu.actionXML}}" {{?}}>{{=childmenu.title}}</span>
+                                        </li>
+                                        {{?}}
+                                        {{~}}
+                                    </ul>
+                                    {{?}}
+                                </li>
+                                {{?}}
+                                {{~}}
+                            </ul>
+                            {{?}}
+                        </div>
+                    </div>
+                    {{?}}
+                    {{~}}
+                </div>
+                <div class="tc-page__container">
+                    <div class="tc-page__page" id="tc-page__page">
+                    </div>
+                </div>
+                {{?}}
+
+
+            </article>
+        </section>
+    </div>
+</div>

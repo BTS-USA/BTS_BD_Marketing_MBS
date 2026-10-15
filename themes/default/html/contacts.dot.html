@@ -1,0 +1,139 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="coc cl-component">
+            <section class="coc-row coc-row--controls">
+                <div class="coc-row__addnew" data-new data-contact="new">
+                    <span class="coc-row__addnew--expicon" data-icon>
+                    </span><span class="coc-row__addnew--label">{{=it.textContent.addNewContact}}</span>
+                </div>
+            </section>
+            <section class="coc-row coc-form--hide" data-contactheader data-contact="new">
+                <article class="coc-row__fields ">
+                    <div class="coc-row__fields-col1 cl-xs-column-12 cl-sm-column-6">
+                        <textarea class="cl-form__text coc-textbox coc-row__fields-col1--fieldcolor" rows="1" data-autoresize data-field="name" placeholder="Name"></textarea>
+                    </div>
+                    <div class="coc-row__fields-col2 cl-xs-column-12 cl-sm-column-3">
+                        <span>{{! it.layout.labels.field2 }}:</span>
+                        <span class="coc-row__fields-col2--value">
+                            <textarea class="cl-form__text coc-textbox coc-row__fields-col2--fieldcolor" rows="1" data-field="field2" data-autoresize></textarea>
+                        </span>
+                    </div>
+                    <div class="coc-row__fields-col3 cl-xs-column-12 cl-sm-column-3">
+                        <span>{{! it.layout.labels.field3 }}:</span>
+                        <span>
+                            <textarea class="cl-form__text coc-textbox coc-row__fields-col3--fieldcolor" rows="1" data-field="field3" data-autoresize></textarea>
+                        </span>
+                    </div>
+                    <div class="coc-row__icons">
+                        <div class="coc-row__icons--email"></div>
+                        <div class="coc-row__icons--video" data-calls></div>
+                        <div class="coc-row__icons--collapse" data-exp data-contact="new"></div>
+                    </div>
+                </article>
+            </section>
+            <section class="coc-details coc-form--hide" data-contactdetails data-contact="new">
+                <article class="coc-form" data-form data-contact="new">
+                </article>
+                {{? it.layout.notes != null && it.layout.notes == true }}
+                <article class="coc-note">
+                    <header class="coc-note__header">
+                        <h2 class="coc-note__title cl-md-column-8 cl-xs-column-12">{{=it.textContent.noteHistoryTitle}}</h2>
+                        <div class="coc-note__btns-holder cl-md-column-4 cl-xs-column-12">
+                            <div class="coc-note__icon">
+                                <div class="coc-note__icon--expand" data-expandnote data-contid="new">
+                                    <span class="coc-note__btn-label" data-expandnote-label>{{=it.textContent.viewNoteHistory}}</span>
+                                </div>
+                            </div>
+                            <div class="coc-note__icon">
+                                <div class="coc-note__icon--addnew" data-addnote data-contid="new">
+                                    <span class="coc-note__btn-label">{{=it.textContent.addNewNote}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <article class="coc-note__details">
+                        <div class="coc-note__heading coc-note__heading--hide">
+                            <div class="coc-note__label cl-table">
+                                <div class="coc-note__cell cl-xs-cell-4 cl-md-cell-2">{{= it.workOnTemplates ? "Delta" : it.textContent.noteDateTitle}}</div>
+                                <div class="coc-note__cell cl-xs-cell-4 cl-md-cell-4">{{=it.textContent.activityHistoryTitle}}</div>
+                                <div class="coc-note__cell cl-xs-cell-4 cl-md-cell-6">{{=it.textContent.mgmtNotesTitle}}</div>
+                            </div>
+                        </div>
+                        <div class="coc-note__holder" data-notesholder>
+                            <div data-nonotes>{{=it.textContent.noNotes ? it.textContent.noNotes : 'No Notes'}}</div>
+                        </div>
+                    </article>
+                </article>
+                {{?}}
+            </section>
+            {{~it.contacts :contact:index}}
+            <section class="coc-row coc-header--closed {{? !contact.isTemplate}}coc--modified{{?}}" data-contactheader data-contact="{{!contact.id}}">
+                <article class="coc-row__fields">
+                    <div class="coc-row__fields-col1 cl-xs-column-12 cl-md-column-6 cl-lg-column-6 cl-sm-column-6 {{? !contact.isTemplate && contact.name != contact.original.name}}coc--modified{{?}}">
+                        <textarea class="cl-form__text coc-textbox coc-row__fields-col1--fieldcolor" rows="1" data-autoresize data-field="name" placeholder="Name" {{?it.isReadOnly}} readonly {{?}}>{{!contact.name || ' '}}</textarea>
+                    </div>
+                    <div class="coc-row__fields-col2 cl-xs-column-12 cl-md-column-3 cl-lg-column-3 cl-sm-column-3 {{? !contact.isTemplate && contact.field2 != contact.original.field2}}coc--modified{{?}}">
+                        <span>{{! it.layout.labels.field2 }}:</span>
+                        <span class="coc-row__fields-col2--value">
+                            <textarea class="cl-form__text coc-textbox coc-row__fields-col2--fieldcolor" rows="1" data-autoresize data-field="field2" {{?it.isReadOnly}} readonly {{?}}>{{!contact.field2 || ' '}}</textarea>
+                        </span>
+                    </div>
+                    <div class="coc-row__fields-col3 cl-xs-column-12 cl-md-column-3 cl-lg-column-3 cl-sm-column-3 {{? !contact.isTemplate && contact.field3 != contact.original.field3}}coc--modified{{?}}">
+                        <span>{{! it.layout.labels.field3 }}:</span>
+                        <span>
+                            <textarea class="cl-form__text coc-textbox coc-row__fields-col3--fieldcolor" rows="1" data-autoresize data-field="field3" {{?it.isReadOnly}} readonly {{?}}>{{!contact.field3 || ' '}}</textarea>
+                        </span>
+                    </div>
+                </article>
+                <article class="coc-row__icons">
+                    <div class="coc-row__icons--email" data-readOnly></div>
+                    <div class="coc-row__icons--video" data-calls></div>
+                    <div class="coc-row__icons--expand" data-exp data-contact="{{!contact.id}}"></div>
+                </article>
+            </section>
+
+            <section class="coc-details coc-form--hide" data-contactdetails data-contact="{{!contact.id}}">
+                <article class="coc-form" data-form data-contact="{{!contact.id}}">
+                </article>
+                {{? it.layout.notes != null && it.layout.notes == true }}
+                <article class="coc-note">
+                    <header class="coc-note__header">
+                        <h2 class="coc-note__title cl-md-column-8 cl-xs-column-12">{{=it.textContent.noteHistoryTitle}}</h2>
+                        <div class="coc-note__btns-holder cl-md-column-4 cl-xs-column-12">
+                            <div class="coc-note__icon">
+                                <div class="coc-note__icon--expand" data-expandnote data-contid="{{!contact.id}}">
+                                    <span class="coc-note__btn-label" data-expandnote-label>{{=it.textContent.viewNoteHistory}}</span>
+                                </div>
+                            </div>
+                            <div class="coc-note__icon">
+                                <div class="coc-note__icon--addnew" data-addnote data-contid="{{!contact.id}}">
+                                    <span class="coc-note__btn-label">{{=it.textContent.addNewNote}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <article class="coc-note__details">
+                        <div class="coc-note__heading" data-noteheading>
+                            <div class="coc-note__label cl-table">
+                                <div class="coc-note__cell">{{=it.workOnTemplates ? "Delta" : it.textContent.noteDateTitle}}</div>
+                                <div class="coc-note__cell">{{=it.textContent.activityHistoryTitle}}</div>
+                                <div class="coc-note__cell">{{=it.textContent.mgmtNotesTitle}}</div>
+                                <div class="coc-note__cell coc-note__dummy"></div>
+                                <div class="coc-note__cell coc-note__dummy"></div>
+                            </div>
+                        </div>
+                        <div class="coc-note__holder" data-notesholder>
+                            <div data-nonotes>{{=it.textContent.noNotes ? it.textContent.noNotes : 'No Notes'}}</div>
+                        </div>
+                    </article>
+                </article>
+                {{?}}
+            </section>
+
+            {{~}}
+            {{? !it.contacts.length}}
+                <div>{{=it.textContent.noContacts ? it.textContent.noContacts : 'No Contacts'}}</div>
+            {{?}}
+        </section>
+    </div>
+</div>

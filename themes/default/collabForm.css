@@ -1,0 +1,37 @@
+﻿.wizletCollabForm #title
+{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.wizletCollabForm #fieldTable 
+{
+    border-width: medium;
+    border-style: solid;
+    border-color: Red;
+}
+
+.wizletCollabForm #refreshAction
+{
+    visibility: hidden;
+}
+
+.wizletCollabForm .locked input
+{
+    background-color: #CCC;
+}
+
+.wizletCollabForm .unlocked .editAction
+{
+    background-color: #CCC;
+}
+
+.wizletCollabForm .locked .saveAction
+{
+    background-color: #CCC;
+}
+
+.wizletCollabForm .locked .cancelAction
+{
+    background-color: #CCC;
+}

@@ -1,0 +1,25 @@
+<Action>
+  <Component type="Feedback" customJS="true"><![CDATA[{
+  "templateInEvent": "html/as_singleSelectFB.dot",
+  "css": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/styles/as_singleSelectFB.css",
+  "feedbackTitle": "!{Activity5_Feedback}",
+  "trackQuestion": "Team_Track",
+  "questions": [
+    {
+      "binding": "Activity5_MOMENT_SINGLE_SELECT",
+      "feedback": {
+        "description": "!{Activity5_MomentSingleSelectOption4}",
+        "feedback": "!{Activity5_OutcomeD}"
+      },
+      "content": {
+        "description": "!{Activity5_MomentSingleSelectOption4}",
+        "feedback": "!{Activity5_OutcomeD}"
+      }
+    }
+  ],
+  "scope": [
+    "Activity5_MOMENT_SINGLE_SELECT",
+    "Team_Track"
+  ]
+}]]></Component>
+</Action>

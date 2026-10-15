@@ -1,0 +1,29 @@
+<section class="eml-page">
+	{{~it.emails :email:index}}
+		<article class="eml-page-email">
+			<div class="eml-page-email__header cl-row">
+				{{? (it.images && it.images[index])}}
+				<div class="eml-page-thumbnail">
+					<img src="{{=it.images[index].src}}" class="eml-page-thumbnail__image"/>
+				</div>
+				{{?}}
+				<div class="eml-page-meta">
+					<div class="eml-page-meta__subject">
+						<p>{{=email.subject}}</p>
+					</div>
+					<div class="eml-page-meta__item">
+						<p><span class="eml-page-label">{{=email.fromText}}:</span> {{=email.fromName}}</p>
+					</div>
+					<div class="eml-page-meta__item">
+						<p>{{=email.fromTitle}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="eml-page-email__body">
+				<article class="eml-page-content">
+					<p class="eml-page-content__text">{{=email.body}}</p>
+				</article>
+			</div>
+		</article>
+	{{~}}
+</section>

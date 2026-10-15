@@ -1,0 +1,6 @@
+<Action>
+  <Component type="Vanilla"><![CDATA[{
+  "templateInEvent": "html/as_blank.dot",
+  "css": "styles/as_blank.css"
+}]]></Component>
+</Action>

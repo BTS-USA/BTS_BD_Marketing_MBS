@@ -1,0 +1,103 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+// Assessment Component Styles
+.dropdown{
+    margin-bottom: 20px;
+    position: relative;
+}
+.dropdown > a > input {
+    width: 98%;
+    padding-left: 10px;
+}
+.dropdown-menu {
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.dropdown-menu > li {
+    padding: 2px 10px;
+}
+.dropdown-menu > li > p {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;    
+    cursor: pointer;
+}
+.dropdown-menu > li > p:hover,
+.dropdown-menu > li > p:focus {
+  background-color: #454545;
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
+  background-image: -o-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e8e8e8));
+  background-image: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);"
+  background-repeat: repeat-x;
+}
+.dropdown-menu > .active > p,
+.dropdown-menu > .active > p:hover,
+.dropdown-menu > .active > p:focus {
+  background-color: #357ebd;
+  background-image: -webkit-linear-gradient(top, #428bca 0%, #357ebd 100%);
+  background-image: -o-linear-gradient(top, #428bca 0%, #357ebd 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#428bca), to(#357ebd));
+  background-image: linear-gradient(to bottom, #428bca 0%, #357ebd 100%);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff357ebd', GradientType=0);"
+  background-repeat: repeat-x;
+}
+
+.open > .dropdown-menu {
+    display: block;
+}
+.btn-default{
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+	width: 100%
+}
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}

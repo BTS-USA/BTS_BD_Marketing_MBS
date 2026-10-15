@@ -1,0 +1,30 @@
+<div id="myCarousel" class="carousel slide" data-interval="false" data-wrap="false">
+    <!-- Carousel items -->
+    <div class="cs__carousel_arrow">
+        <div class="cs__carousel_arrow_left">
+            <a class="cs__carouselPrevious carousel-control left" href="#myCarousel" data-slide="prev" data-prev>&lsaquo;</a>
+        </div>
+        <div class="cs__carousel_arrow_right">
+            <a class="cs__carouselNext carousel-control right" href="#myCarousel" data-slide="next" data-next>&rsaquo;</a>
+        </div>
+    </div>
+    <div class="carousel-inner cs__carousel_slide">
+        {{?it.cards.length > 0}}
+        {{~it.cards :card:cId}}
+        <div class="cs__carouselCardCont item {{?cId === 0}}active{{?}}" data-value="{{=card.value}}" index="{{=cId}}"
+            data-card-title="{{=card.text}}" data-icon-path="{{=card.imgPath}}" data-card-header>
+            <div class="cs__carouselCardWrapper cs__carousel_slider" data-card-isused data-card-value="{{=card.value}}">
+                <div class="cs__carouselCardText">{{=card.text}}</div>
+                <img class="cs__carouselCardImg" src="{{=card.imgPath}}" alt="Slide">
+            </div>
+        </div>
+        {{~}}
+        {{??}}
+        <div class="cs__carouselCardCont cs__carouselNoCardsText">{{=it.textContent.noCards}}</div>
+        {{?}}
+    </div>
+    <!-- Carousel nav
+        <a class="cs__carouselPrevious carousel-control left" href="#myCarousel" data-slide="prev" data-prev>&lsaquo;</a>
+        <a class="cs__carouselNext carousel-control right" href="#myCarousel" data-slide="next" data-next>&rsaquo;</a>
+    -->
+</div>

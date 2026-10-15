@@ -1,0 +1,133 @@
+﻿<div class="mainContentWrapper">
+	<div class="mainContent ">
+		<section class="usr cl__component cl__container cl-xs-column-12 cl-sm-column-10">
+
+			<div class="usr_form_body cl-xs-column-12 cl-sm-column-6  cl-noLeft cl-noRight">
+				{{? it.header}}
+				<header class="usr__header-main cl__header-main{{? it.header.pointer == false}} cl__pointer-hidden{{?}}">
+					{{? it.header.title}}
+					<h1 class="usr__title-main cl__title-main">{{=it.header.title}}</h1>
+					{{?}}
+					{{? it.header.description}}
+					<p class="usr__description-main cl__description-main">{{=it.header.description}}</p>
+					{{?}}
+				</header>
+				{{?}}
+                <article class="usr__article cl__row cl-xs-column-12" data-comp-type="registration">
+                    {{?it.userDetailsShown === undefined || it.userDetailsShown}}
+                    <div class="cl__row">
+                        <div class="usr__profile cl-xs-column-12 cl-sm-column-6">
+                            <div><label>Name</label></div>
+                            <div>
+                                <input type="text" placeholder="Enter Name" data-input data-name value="{{=it.DB['USER.NAME']}}" /><span class="require_field">*</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cl__row">
+                        <div class="usr__profile cl-sm-column-6">
+                            <div><label>Email Id</label></div>
+                            <div>
+                                <span class="usr__disabled" data-email>{{=it.DB['USER.EMAIL']}}</span>
+                            </div>
+                        </div>
+                        <div class="usr__profile cl-sm-column-6">
+                            <div><label>Event</label></div>
+                            <div>
+                                <span class="usr__disabled" data-event>{{=Wizer.EventName}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cl__row">
+                        {{?it.isNew == 1}}
+                        <div class="usr__profile cl-xs-column-12 cl-sm-column-6">
+                            <div><label>{{?it.newUserEnterPwdText}}{{=it.newUserEnterPwdText}}{{??}}New Password{{?}}</label></div>
+                            <div>
+                                <input type="password" placeholder="{{?it.newUserEnterPwdText}}{{=it.newUserEnterPwdText}}{{??}}Enter new password{{?}}" data-input data-password /><span class="require_field">*</span>
+                            </div>
+                        </div>
+                        {{??}}
+                        <div class="usr__profile cl-xs-column-12 cl-sm-column-6">
+                            <div><label>{{?it.existingUserEnterPwdText}}{{=it.existingUserEnterPwdText}}{{??}}Password{{?}}</label></div>
+                            <div>
+                                <input type="password" placeholder="{{?it.existingUserEnterPwdText}}{{=it.existingUserEnterPwdText}}{{??}}Enter password{{?}}" data-input data-password /><span class="require_field">*</span>
+                            </div>
+                        </div>
+                        {{?}}
+                        {{?it.isNew == 1}}
+                        <div class="usr__profile cl-xs-column-12 cl-sm-column-6">
+                            <div><label>{{?it.reEnterPasswordText}}{{=it.reEnterPasswordText}}{{??}}Confirm Password{{?}}</label></div>
+                            <div>
+                                <input type="password" placeholder="{{?it.reEnterPasswordText}}{{=it.reEnterPasswordText}}{{??}}Confirm Password{{?}}" data-input data-repassword /><span class="require_field">*</span>
+                            </div>
+                        </div>
+                        {{?}}
+                    </div>
+                    {{?}}
+                    {{~it.questions:question:j}}
+                    <div class="usr__profile cl-xs-column-12 cl-sm-column-6">
+                        <div><label>{{=question.title}}</label></div>
+                        <div class="usr__Renderer" data-binding="{{=question.value}}">
+                        </div>
+                    </div>
+                    {{~}}
+                    {{?it.userDetailsShown === undefined || it.userDetailsShown}}
+                    <div class="usr__policy">
+                    	<p class="usr__policy-text">
+                    	{{=it.tcpp || 'By clicking on Sign up, you agree to the Terms and conditions and privacy policy'}}
+                    	</p>
+                    </div>
+                    {{?}}
+                </article>
+				<footer class="usr__btn-Container usr__footer usr__controls">
+					<div class="usr__ErrorMsg" data-componentmessage></div>
+					{{?it.userDetailsShown === undefined || it.userDetailsShown}}
+					{{? it.buttons[0] }}
+					{{? it.buttons[0].show || it.buttons[0].show === undefined}}
+					<div class="usr_RegistrationButton usr_Buttons usrComponent__button" id="usrSubmitButton" data-buttons data-submitaction>
+						<div class="usr__controls-submit usrSubmitButtonText usrButtonText cl__button cl__button-submit" data-buttontext disabled>{{=it.buttons[0].navigation.title}}</div>
+					</div>
+					{{?}}
+					{{?}}
+					{{? it.buttons[1] }}
+					{{? it.buttons[1].show || it.buttons[1].show === undefined}}
+					<div class="usr_CancelButton usr_Buttons buttonEnabled usr_Component__button" data-enabled="{{=it.buttons[1].navigation.remove}}" id="usrcancelButton" data-cancelaction data-buttons>
+						<div class="usr__controls-cancel usrCancelButtonText usrButtonText cl__button cl__button-cancel" data-buttontext>{{=it.buttons[1].navigation.title}}</div>
+					</div>
+					{{?}}
+					{{?}}
+					{{? it.buttons[2] }}
+					{{? it.buttons[2].show || it.buttons[2].show === undefined}}
+					<div class="usr_ClearButton usr_Buttons buttonEnabled usr_Component__button" data-enabled="{{=it.buttons[2].navigation.remove}}" id="usrClearButton" data-clearaction data-buttons>
+						<div class="usr__controls-clear usrClearButtonText usrButtonText cl__button cl__button-clear" data-buttontext>{{=it.buttons[2].navigation.title}}</div>
+					</div>
+					{{?}}
+					{{?}}
+					{{??}}
+					{{? it.buttons[0] }}
+					{{? it.buttons[0].show || it.buttons[0].show === undefined}}
+					<div class="usr_skipButton usr_Buttons usrComponent__button" id="usrSkipButton" data-buttons data-skipaction>
+						<div class="usr__controls-skip usrSkipButtonText usrButtonText cl__button cl__button-skip" data-buttontext disabled>{{=it.buttons[0].navigation.title}}</div>
+					</div>
+					{{?}}
+					{{?}}
+					{{? it.buttons[1] }}
+					{{? it.buttons[1].show || it.buttons[1].show === undefined}}
+					<div class="usr_nextButton usr_Buttons buttonEnabled usr_Component__button" id="usrNextButton" data-nextaction data-buttons>
+						<div class="usr__controls-next usrNextButtonText usrButtonText cl__button cl__button-next" data-buttontext>{{=it.buttons[1].navigation.title}}</div>
+					</div>
+					{{?}}
+					{{?}}
+					{{?}}
+				</footer>
+			</div>
+			<div class="cl-xs-column-12 cl-sm-column-5 cl-xs-offset-0 cl-sm-offset-1">
+				{{? it.instructions}}
+				<div class="usr__instructions cl__instructions">
+					<h1 class="usr__instructions-title">{{=Wizer.EventName}}</h1>
+					<p class="usr__instructions-text cl__instructions-text">{{=it.instructions}}</p>
+				</div>
+				{{?}}
+			</div>
+		</section>
+	</div>
+</div>

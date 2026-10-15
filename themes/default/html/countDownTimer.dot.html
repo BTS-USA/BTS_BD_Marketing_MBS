@@ -1,0 +1,4 @@
+﻿<div class="countDownTimerHolder">
+{{?it.leadText}}<span>{{?it.label}}{{=it.label}}{{?}}</span><span class="countDownleadText">{{=it.leadText}}</span>{{?}}
+<span class="countDownTimer {{?!it.isAssessmentStartTimer}}countDownleadText--ends{{?}}" data-name="{{?it.timeUpText}}{{=it.timeUpText}}{{??}}time is up!{{?}}" data-timeinms="{{=it.timeInMs}}">{{=it.time}}</span>
+</div>

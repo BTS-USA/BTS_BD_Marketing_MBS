@@ -1,0 +1,39 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section data-comment class="gwc cl-component">
+            <div class="gwc-container cl-container">
+                <div class="gwc-content">
+                    <div class="gwc-like__container">
+                        {{? it.content}}
+                        <div class="gwc-like__textCont" data-like-content>
+                            <span class="gwc-like__icon cl-icon cl-icon--like" data-like-icon></span>
+                            <div class="gwc-like__text" data-like-text>{{=it.content.contentliketext}}</div>
+                        </div>
+                        <div class="gwc-like__count" data-like-count></div>
+                        {{?}}
+                    </div>
+                    <div class="gwc-comments__mainCont">
+                        <div class="gwc-comments__commentContent">
+                            <div class="gwc-comments__commentBox">
+                                <textarea class="cl-textarea gwc-comments__commentArea" placeholder="{{=it.content.placeholder}}" data-input-commentBox></textarea>
+                            </div>
+                            <div class="gwc-comments__countCont">
+                                <div class="gwc-comments__count" data-show-comment>
+                                    <span class="gwc-comments__countText" data-show-comment-text>{{=it.content.showcommentstext}}</span>
+                                    <span class="gwc-comments__countNumber" data-comment-count></span>
+                                </div>
+                                <div class="cl-button gwc-comments__button" data-comment-save>{{=it.content.postcommenttext}}</div>
+                            </div>
+                        </div>
+                        <div class="gwc-comments__wrapper gwc-comments--hidden" data-comment-list>
+                            <div class="gwc-comments__showMoreComments" data-more-comments>
+                                <span>{{=it.content.viewmorecomments}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+

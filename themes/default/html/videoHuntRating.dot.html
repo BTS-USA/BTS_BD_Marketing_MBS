@@ -1,0 +1,58 @@
+<div class="mainContentWrapper vhr-mainContainerWrapper" data-main-wrapper>
+    <div class="mainContent">
+        <section class="vhr-section-main">
+            {{? it.header}}
+            <header class="cl-header--main">
+                <div class="cl-header-wrapper">
+                    {{? it.header.title}}
+                    <h1 class="cl-header__title--main">{{=it.header.title}}</h1>
+                    {{?}}
+                    {{? it.header.description}}
+                    <p class="cl-header__description--main">{{=it.header.description}}</p>
+                    {{?}}
+                </div>
+            </header>
+            {{?}}
+        </section>
+
+        <article class="vhr-article">
+            <div class="cl-container vhr-mainContainer">
+
+                <div class="cl-row" data-list-container></div>
+
+                <div class="cl-row vhr-submit__cont" data-button-container>
+                    <div class="vhr-center">
+                        {{? it.buttons[0] }}
+                        <div class=" cl-button vhr-submit__button" data-submitbutton>
+                            {{=it.buttons[0].title}}
+                            <i class="cl-icon vhr-submit__icon cl-icon--tick"></i>
+                        </div>
+                        {{?}}
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</div>
+
+
+<div class="vhr-modalWrapper" data-recorded-video-modal>
+    <article class="vhr-modal">
+        <div class="vhr-modal__container">
+            <section class="vhr-modal__body">
+                <div class="vhr-modal__backControl">
+                    <i class="cl-icon cl-icon--back"></i>
+                    <span data-back-button>{{=it.textContent.backToRatingText}}</span>
+                </div>
+                <div class="vhr-modal__content">
+                    <div class="vhr-modal__videoRecording" data-fp-container>
+                        <!-- <video autostart="false" data-preview-recorded controls="" src=""></video> -->
+                    </div>
+                    <div class="vhr-modal__ideaTitle" data-modalideaText>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </article>
+</div>

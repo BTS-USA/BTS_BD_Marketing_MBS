@@ -1,0 +1,200 @@
+<div class="mainContentWrapper vhe-mainContainerWrapper" data-main-wrapper>
+    <div class="mainContent">
+        <section class="vhe-section-main" data-componentContainer>
+            {{? it.header}}
+            <header class="cl-header--main" data-textListHeader>
+                <div class="cl-header-wrapper">
+                    {{? it.header.title}}
+                    <h1 class="cl-header__title--main">{{=it.header.title}}</h1>
+                    {{?}}
+                    {{? it.header.description}}
+                    <p class="cl-header__description--main">{{=it.header.description}}</p>
+                    {{?}}
+                </div>		  
+            </header>
+            {{?}}
+        </section>
+        <article class="vhe-article">
+            <div class="cl-container vhe-mainContainer">
+
+                <div class="vhe-mainCont" data-main-cont>
+                    <div class="cl-xs-column-12 cl-row">
+                        <div class="cl-row" data-textarea-container>
+                            <div class="vhe-instructions">
+                                <p class="vhe-instructions__text">{{=it.textContent.videoTitle}}</p>
+                                <span class="vhe-text__characterRemaining"><span
+                                        data-textlimit>{{=it.maxTextLimit}}</span>
+                                    {{=it.textContent.characterRemainingText}}</span>
+                            </div>
+                            <div>
+                                <textarea class="vhe-textarea" maxlength="{{=it.maxTextLimit}}"
+                                    data-titleText></textarea>
+                            </div>
+                        </div>
+                        {{? it.categories && !it.hideCategory }}
+                        <div class="cl-row vhe-instructionsCont" data-category-container>
+                            <div class="vhe-instructions">
+                                <div class="vhe-instructions__text">
+                                    {{=it.textContent.categoryText}}
+                                </div>
+                            </div>
+                            <select data-category class="vhe-categoryDropdown">
+                                {{~it.categories:categoryName}}
+                                <option value="{{=categoryName.value}}" class="vhe-categoryOptions">
+                                    {{=categoryName.text}}</option>
+                                {{~}}
+                            </select>
+                        </div>
+                        {{?}}
+                        <input type="file" style="visibility:hidden;" accept="video/*" capture name="fileToUpload"
+                            data-file-upload-directly="">
+                        <div class="cl-row vhe-recordVideo__wrapper" data-record-container>
+                            <div class="cl-xs-column-12 cl-row vhe-recordVideo__cont">
+                                <div class="vhe-recordVideo__text">{{=it.textContent.submitVideoText}}</div>
+                                <div class="vhe-recordVideo__limit">{{=it.textContent.recordLimit}}</div>
+                                <div class="vhe-videoOptions" data-video-options>
+                                    {{? it.isRecord}}
+                                    <div class="vhe-videoOptions__recordButton vhe-videoOptions__button"
+                                        data-start-recording>
+                                        <span class="vhe-videoOptions__text">{{=it.textContent.recordText}}</span>
+                                        <span class="vhe-videoOptions__iconCont vhe-videoOptions__recordIcon"
+                                            data-start-button>
+                                            <i class="cl-icon cl-icon--play01 vhe-videoOptions__icon"></i>
+                                        </span>
+                                    </div>
+                                    {{?}}
+                                    {{? it.isFileBrowse}}
+                                    <div class="vhe-videoOptions__browseButton vhe-videoOptions__button"
+                                        data-browse-video>
+                                        <span class="vhe-videoOptions__text">{{=it.textContent.browseText}}</span>
+                                        <span class="vhe-videoOptions__iconCont" data-browse-button>
+                                            <i
+                                                class="cl-icon cl-icon--folder vhe-videoOptions__icon vhe-videoOptions__browserIcon"></i>
+                                        </span>
+                                    </div>
+                                    {{?}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cl-row vhe-recordedVideo__wrapper" data-recorded-container>
+                            <div class="vhe-recordedVideo__cont">
+                                <video class="vhe-recordedVideo__video" autoplay="" data-outer-preview></video>
+                                <span class="vhe-recordedVideo__deletedIcon" data-delete-video><i
+                                        class="cl-icon cl-icon--delete"></i></span>
+                                <span class="vhe-recordedVideo__expandIcon" data-expand-video><i
+                                        class="cl-icon cl-icon--play01"></i></span>
+                                <span class="vhe-recordedVideo__ideatext"  data-ideaText></span>
+                            </div>
+
+
+                        </div>
+						
+                        <div class="cl-row vhe-submit__cont" data-button-container>
+                            <div class="vhe-center">
+                                {{? it.buttons[0] }}
+                                <div class=" cl-button vhe-submit__button vhe-disabled" data-submitbutton>
+                                    {{=it.buttons[0].title}}
+                                    <i class="cl-icon vhe-submit__icon cl-icon--tick"></i>
+                                </div>
+                                {{?}}
+                            </div>
+                        </div>
+                        <div class="afterSubmitText hidden" data-afterbutton>{{=it.afterSubmitText}}</div>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+
+<div class="vhe-modalWrapper" data-video-modal>
+    <article class="vhe-modal">
+        <div class="vhe-modal__container">
+            <section class="vhe-modal__body">			  
+                <div class="vhe-modal__content">
+                    <div class="vhe-video__recording">
+                        <video autoplay="" data-preview-video controls disablepictureinpicture
+                            controlslist="nodownload"></video>
+                    </div>
+                    <div class="vhe-video__recording">
+                        <video autoplay="" data-video controls disablepictureinpicture
+                            controlslist="nodownload"></video>
+                    </div>
+                </div>
+                <!-- <div id="avRecorder" class=""></div> -->
+                <footer class="vhe-modal__footer" data-btnholder>
+                    <div class="vhe-videoControl">
+                        <div class="vhe-videoControl__button vhe-videoControl__stopButton" data-stop-recording><i
+                                class="cl-icon cl-icon--stop"></i></div>
+                        <div class="vhe-videoControl__button vhe-videoControl__rerecordButton" data-rerecord-button>
+                        </div>
+                    </div>
+                    <div class="vhe-closeControl" data-right-panel>
+                        <span class="vhe-closeControl__confirm" data-confirm-button>
+                            <i class="vhe-closeControl__button cl-icon cl-icon--tick"></i>
+                        </span>
+                        <span class="vhe-closeControl__closeModal" data-close-modal>
+                            <i class="vhe-closeControl__button cl-icon cl-icon--remove"></i>
+                        </span>
+
+                    </div>
+                </footer>
+            </section>
+        </div>
+    </article>
+</div>
+
+<div class="vhe-modalWrapper" data-recorded-video-modal>
+    <article class="vhe-modal">
+        <div class="vhe-modal__container">
+            <section class="vhe-modal__body">
+                <div class="vhe-backControl">
+                    <i class="cl-icon cl-icon--back"></i>
+                    <span data-back-button>{{=it.textContent.backText}}</span>
+                </div>
+                <div class="vhe-modal__content">
+                    <div class="vhe-video__recording" data-fp-container>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </article>
+</div>
+
+<div class="vhe-modalWrapper" data-loading-modal>
+    <article class="vhe-modal">
+        <div class="vhe-modal__container">
+            <section class="vhe-modal__body">
+                <div class="vhe-loading-content">
+                    <div class="vhe-loading-image" />
+                    <p class="vhe-loading-message">{{=it.textContent.videoUploadMessage}}</p>
+                    <p data-loading-message></p>
+                </div>
+            </section>
+        </div>
+    </article>
+</div>
+
+<section class="cl-modal" data-confsubmitVideo>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+            {{?it.confirmSubmit}}
+            <section class="cl-modal__body">
+                <header>
+                    <h2 class="cl-modal__title">{{=it.confirmSubmit.title}}</h2>
+                </header>
+                <div class="cl-modal__content">
+                    {{=it.confirmSubmit.description}}
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button ec-button ec-button__cancel" data-cancelbtn>{{=it.confirmSubmit.btn[0].cancel_btn_title}}</span>
+                        <span class="cl-button ec-button ec-button__ok" data-OKbtn>{{=it.confirmSubmit.btn[1].ok_btn_title}}</span>
+                    </div>
+                </footer>
+            </section>
+            {{?}}
+        </div>
+    </article>
+</section>

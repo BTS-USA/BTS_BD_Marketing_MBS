@@ -1,0 +1,29 @@
+
+// import variables and mixins
+@import "shared/cl.styl"
+
+$highcharts-color-1 = #28324B
+$highcharts-color-2 = #A01882
+$highcharts-color-3 = #006D55
+
+
+.bach
+    &-container
+        max-width 100%
+    &-content
+        &-stackedColumnChart
+            &--container
+                width 100%
+                height 550px
+    .highcharts
+        &-color-0
+            fill $highcharts-color-1
+            stroke $highcharts-color-1
+        &-color-1
+            fill $highcharts-color-2
+            stroke $highcharts-color-2
+        &-color-2
+            fill $highcharts-color-3
+            stroke $highcharts-color-3
+        &-tooltip
+            filter none

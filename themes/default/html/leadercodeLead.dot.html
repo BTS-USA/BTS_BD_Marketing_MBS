@@ -1,0 +1,83 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="lclc cl-component">
+           
+            {{? it.header}}
+                <header class="lclc-header--main cl-header--main">
+                    {{? it.header.title}}
+                        <h1 class="lclc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                            {{=it.header.title}}
+                        </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="lclc-header__description--main cl-header__description--main">
+                            {{=it.header.description}}
+                        </p>
+                    {{?}}
+                    {{?it.images && it.images.length}}
+                    <div class="lclc-banner">
+                    </div>
+                    {{?}}
+                    <div class="lclc-container-code" data-leadercode>
+                        <span>{{=it.code}}</span>
+                        <a style="font-style:italic;color:gray;cursor:pointer;" data-copydirectlink>Copy Direct Link</a>
+                    </div>
+                </header>
+            {{?}}
+                     
+            <div class="lclc-container cl-container" data-qrcode-parent>
+					<div class="lclc__facguide" data-qrcode>
+					</div>
+					<div style="text-align:center;cursor:pointer;font-size:small;font-weight:bold;color:#0ab9f0;" data-qrcode-copy>
+						<a data-image-source data-copy-meeting-code={{=it.code}} data-copy-meeting-title={{=it.meetingTitle}}>{{=it.copyQrCode}}</a>
+					</div>
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="lclc-instructions cl-instructions cl-xs-column-11 cl-md-column-6">
+                        <p class="lclc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+
+                    </div>
+                    <div class="lclc-instructions__userlist cl-xs-column-12 cl-md-column-6" data-userlist>
+                     
+                    </div>
+                    {{?}}
+                    
+                    <article class="lclc-article cl-row">
+                        {{? it.content}}
+                            <div class="lclc-column-right cl-xs-column-12 {{?it.images}}cl-md-column-6 {{??}}cl-md-column-12{{?}}">
+                                <article class="lclc-content">
+                                    {{? it.content.headline}}
+                                        <header class="lclc-content__header">
+                                            <h3 class="lclc-h3 cl-h3">{{=it.content.headline}}</h3>
+                                        </header>
+                                    {{?}}
+                                    {{? it.content.text}}
+                                        <div class="lclc-paragraph cl-paragraph">
+                                            {{=it.content.text}}
+                                        </div>
+                                    {{?}}
+                                    {{? it.content.list}}
+                                        <ul class="lclc-list">
+                                            {{=it.content.list}}
+                                        </ul>
+                                    {{?}}
+                                    {{? it.feedbackOptions}}
+                                        <div class="lclc-feedback">
+                                            {{~it.feedbackOptions :value}}
+                                                <div class="lclc-feedback__option">{{=value}}</div>
+                                            {{~}}
+                                        </div>
+                                    {{?}}
+                                </article>
+                            </div>
+                        {{?}}
+                    </article>
+                </div>
+
+                <div class="lcpc-message lcpc-message-success">
+                    <span data-error=""></span>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

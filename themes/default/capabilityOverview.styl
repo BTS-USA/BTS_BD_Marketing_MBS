@@ -1,0 +1,90 @@
+// import variables and mixins
+@import "shared/cl.styl"
+
+.coc
+    margin 20px 0 0 0
+    &-capability
+        &__dropdown
+            width 100%
+        &__exercises
+            width 100%
+            margin 30px 0 0 0
+        &__exercise
+            margin 0 0 15px 0
+        &__select
+            padding 0
+            width 100%
+            height auto
+            border 0
+            overflow hidden
+        &__selections
+            background-color #fff
+            height 40px
+            cursor default
+            border 1px solid $silver
+        &__rootNode
+            overflow hidden
+            position relative
+            height 100%
+        &__rootNodeText
+            float left
+            height 100%
+            color $cerulean
+            padding 8px 1px 0px 5px
+            width calc(100% - 30px)
+            text-align center
+        &__rootNodeIcon
+            position absolute
+            right 12px
+            top 9px
+            font-family "clIcons"
+            &:after
+                content "\f10f"
+                font-size 1.3rem
+                font-weight bold
+                color $gray
+
+        &__options
+            overflow hidden
+            color #000
+            position absolute
+            width 98%
+            z-index 2
+            background #fff
+            margin 1px 0 0 0
+            border 1px solid $silver
+            display none
+            &--open
+                display block
+
+        &__option
+            padding 5px 10px
+            cursor default
+            &:hover
+                background-color $cerulean
+                color #fff
+            &--selected
+                background-color $cerulean
+                color #fff
+
+    &-exercise
+        &__header
+            background-color $cerulean
+            color #fff
+            padding 5px
+        &__name
+            margin 0 0 0 10px
+        &__behaviours
+            padding 10px
+    &-behaviour
+        padding 5px
+        overflow hidden
+        &__name
+            width 100%
+            color $tundora
+            font-weight 700
+        &__score
+            margin 5px 0 0 25px
+
+    &-behaviour:not(:first-child)
+        margin 8px 0 0 0

@@ -1,0 +1,112 @@
+﻿// import variables and mixins
+@import "shared/cl.styl"
+
+// Individual Results Component Styles
+.irc
+    // Styles for cells with serial numbers
+    &-article
+        position relative
+        overflow hidden
+    // Default styles for table with data
+    &-data
+        padding 0 0 0 10%
+        overflow-x auto
+        overflow-y hidden
+        -webkit-overflow-scrolling auto
+        // Extended styles for mobile view table
+        &--mobile
+            @extend .irc-data
+            width 100%
+    &-table
+        &__thead,
+        &__row
+            display table-row
+            width 100%
+        &__thead
+            background-color $codGray
+            color white
+        &__row
+            &:nth-child(even)
+                background-color $mercury
+                .irc-table__td--sticky
+                    background-color darken($cerulean, 10%)
+            &:nth-child(odd)
+                background-color white
+                .irc-table__td--sticky
+                    background-color $cerulean
+        &__row.demote
+            background-color #e2725b
+        &__row.promote
+            background-color #74C365
+
+        &__th,
+        &__td
+            display table-cell
+            vertical-align middle
+            width auto
+            text-align center
+            padding 10px
+            &--serial
+                @extend .irc-table__td
+                background-color $cerulean
+                color white
+        &__th
+            white-space nowrap
+        &__th--sticky,
+        &__td--sticky
+            display table-column-group
+            position absolute
+            top auto
+            left 0
+            text-align center
+            border none
+            padding 10px
+            background-color $codGray
+            color white
+            height 100%
+            width 10%
+            z-index 5
+            -webkit-transform translateZ(0px)
+        &__sign
+            height 100%
+            width 100%
+            display inline-block
+        &__count
+            width 100%   
+            display inline-block 
+    // Styles for cell with data in mobile view 
+    &-participant
+        margin 0 0 10px 0
+    &-records
+        width 100%
+        float left
+        &__question,
+        &__vote
+            float left
+        &__question
+            margin 0 10px 0 0
+            color $deepCerulean
+            
+    &-left
+        text-align left
+
+@media screen and (max-width: 767px)
+    .hidden-xs
+        display none !important
+    .visible-xs
+        display block
+
+@media screen and (min-width: 767px)
+    .hidden-xs
+        display block
+    .visible-xs
+        display none !important
+
+[dir="rtl"]
+	.irc
+		&-data
+			padding 0 10% 0 0
+		&-table
+			&__th--sticky,
+			&__td--sticky
+				right 0

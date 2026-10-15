@@ -1,0 +1,136 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        {{? it.matrix.matrix.capabilities.length > 0 && it.matrix.matrix.exercises.length > 0}}
+        <section class="im cl-component" data-im-window>
+            <article class="im-table cl-table">
+                <div class="im-table__headRow cl-table-headerRow cl-table-headerRow--count">
+                    <div class="cl-table-cell">
+                    </div>
+                    {{~it.matrix.matrix.exercises :exercise:index}}
+                    <div class="im-table__headerCell cl-table-cell" data-exercise-id="exercise{{=index}}">
+                        <span class="im-table__titleText">{{=exercise}}</span>
+                    </div>
+                    {{~}}
+                    <div class="im-table__headerCell cl-table-cell">
+                        <span class="im-table__titleText">Average</span>
+                    </div>
+                    <div class="im-table__headerCell cl-table-cell">
+                        <span class="im-table__titleText">Overall</span>
+                    </div>
+                </div>
+                {{? it.integrationMatrixEditable }}
+                <div class="im-table__headRow im-table__headRow--count cl-table-headerRow cl-table-headerRow--count">
+                    <div class="im-table__headerCell cl-table-cell im-table__expandBehaviours" data-im-expandbehaviours data-im-expand="behaviours">
+                        <span class="im-table__expandBehavioursText" data-expandbehaviours-text>{{=it.contents.expandBehaviours}}</span>
+                        <span class="im-table__expandNotesText" data-expandnotes-text>{{=it.contents.expandNotes}}</span>
+                    </div>
+                    {{~it.matrix.matrix.exercises :exercise:index}}
+                    {{ var matchedArray = it.matrix.matrix.evalFormStatus.filter(function(e){ return e.exerciseTitle == exercise; }); }}
+                    {{ var matched = { exerciseId: 0, evalFormQuestionId: 0, evalFormComplete: false }; }}
+                    {{ if(matchedArray.length > 0) matched = matchedArray[0]; }}
+                    <div class="im-table__headerCell cl-table-cell im-reopen{{= matched.evalFormComplete ? '' : ' im-reopen__hide' }}" {{= matched.evalFormComplete ? 'data-reopenbutton' : '' }} data-exerciseid="{{= matched.exerciseId }}" data-evalformquestionid="{{= matched.evalFormQuestionId }}">
+                        <span class="im-reopen__text" data-reopenbuttontext>{{=it.contents.open}}</span>
+                    </div>
+                    {{~}}
+                    <div class="im-table__headerCell cl-table-cell">
+                        <span class="im-table__titleText"></span>
+                    </div>
+                    <div class="im-table__headerCell cl-table-cell">
+                        <span class="im-table__titleText"></span>
+                    </div>
+                </div>
+                {{??}}
+                <div class="im-table__headRow cl-table-headerRow cl-table-headerRow--count">
+                    <div class="im-table__headerCell cl-table-cell im-table__expandBehaviours" data-im-expandbehaviours data-im-expand="behaviours">
+                        <span class="im-table__expandBehavioursText" data-expandbehaviours-text>{{=it.contents.expandBehaviours}}</span>
+                        <span class="im-table__expandNotesText" data-expandnotes-text>{{=it.contents.expandNotes}}</span>
+                    </div>
+                    {{~it.matrix.matrix.exercises :exercise:index}}
+                    <div class="im-table__headerCell cl-table-cell">
+                    </div>
+                    {{~}}
+                    <div class="im-table__headerCell cl-table-cell">
+                    </div>
+                    <div class="im-table__headerCell cl-table-cell">
+                    </div>
+                </div>
+                {{?}}
+                {{~it.matrix.matrix.capabilities :capability:index }}
+                <div class="im-table__row cl-table-row im-table__row--count im-table__row--count-{{=index + 1}}" data-cap-row="{{!index}}">
+                    <div class="im-table__labelCell cl-table-cell">
+                        <span class="im-table__label">{{=capability.title}}</span>
+                        <span class="im-table__chat icon icon_cl-icons-10" data-im-comments></span>
+                        <span class="im-table__behaviours icon icon_cl-icons-04" data-im-behaviours></span>
+                    </div>
+                    {{~capability.exerciseScores :score:indx}}
+                    <div class="im-table__dataCell cl-table-cell">
+                        {{?capability.isLinkedToExercise[indx] && capability.isLinkedToExercise[indx]===true}}
+                        <input class="im-table__input" type="text" value="{{=score}}" readonly />
+                        {{??}}
+                        <input class="im-table__input" type="text" value="-" readonly />
+                        {{?}}
+                    </div>
+                    {{~}}
+                    <div class="im-table__resultCell cl-table-cell">
+                        <input class="im-table__input" type="text" value="{{=capability.avgScore}}" readonly />
+                    </div>
+                    <div class="im-table__overallCell cl-table-cell">
+                        <div data-binding="ASSESS.{{=it.matrix.matrix.voteQuestions[index]}}"></div>
+                    </div>
+                </div>
+                {{?capability.behaviours && capability.behaviours.length > 0}}
+                {{~capability.behaviours :behaviour:ind}}
+                <div class="im-table__row cl-table-row im-table__behaviour-row im-table__behaviour-row--{{=ind + 1}} im-table__behaviour-row--hide" data-behaviours-row>
+                    <div class="cl-table-cell">
+                    </div>
+                    <div class="im-table__labelCell im-table__behaviourTitleCell cl-table-cell">
+                        <span class="im-table__label im-table__behaviourTitle">{{=behaviour.title}}</span>
+                    </div>
+                    {{~behaviour.scores :score:indx}}
+                    <div class="im-table__dataCell cl-table-cell">
+                        <input class="im-table__input" type="text" value="{{=score}}" readonly />
+                    </div>
+                    {{~}}
+                </div>
+                {{~}}
+                {{?}}
+                <div class="im-table__row cl-table-row im-table__comment-row im-table__comment-row--hide" data-comm-row>
+                    <div class="im-table__labelCell cl-table-cell"></div>
+                    {{~capability.exerciseScores: comment: indx}}
+                    <div class="im-table__dataCell cl-table-cell">
+                        <div class="im-table__comment-holder">
+                            {{? capability.comments && capability.comments.length}}
+                            {{var commentdata=capability.comments[indx];}}
+                            <p class="im-table__comment-text">{{=(typeof commentdata !== "undefined" && commentdata !== null)!=''?commentdata:''}}</p>
+                            <a role="button" tabindex="0" class="im-table__more-icon" data-content="<div class='im-comment__popover' >{{!(typeof commentdata !== 'undefined' && commentdata !== null)!=''?commentdata:''}}</div>" data-more-comment></a>
+                            {{?}}
+                        </div>
+                    </div>
+                    {{~}}
+                </div>
+                {{~}}
+
+
+                <div class="im-table__row cl-table-row im-table__result-row">
+                    <div class="cl-table-cell">
+                    </div>
+                    {{~it.matrix.matrix.exercises :exercise:index}}
+                    <div class="im-table__headerCell cl-table-cell im-table__overallText">
+                        {{?index==it.matrix.matrix.exercises.length-1}}
+                        Overall
+                        {{?}}
+                    </div>
+                    {{~}}
+                    <div class="im-table__resultCell cl-table-cell">
+                        <input class="im-table__input" type="text" value="{{=it.matrix.matrix.capabilityAverage}}" readonly data-overall />
+                    </div>
+                    <div class="im-table__overallCell cl-table-cell" data-binding="overall" data-render="{{=it.bindings["overall"].render}}">
+                    </div>
+                </div>
+
+            </article>
+            <div class="im__scroll-notice" data-im-notice></div>
+        </section>
+        {{?}}
+    </div>
+</div>

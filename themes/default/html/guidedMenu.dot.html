@@ -1,0 +1,45 @@
+﻿<div>
+    <div class="content">
+        <div class="guides">
+            {{~it.guides :item:index }}
+            <div class="guide {{? item.type}}{{=item.type}}{{?}}" id="guide_{{=index}}">
+                <div class="subtitle">{{=item.title}}</div>
+                <div class="guideButton" data-jumpbutton='0' {{? item.category}} data-category="{{=item.category}}{{?}}">
+                    <div class="icon"></div>
+                    <span class="buttonText">Destination TBD</span>
+                    {{? item.pointer}}
+                    <div class="data" id="wizlet-{{=item.pointer.data}}"></div>
+                    {{?}}
+                    {{? item.fallback }}
+                    <div class="fallback">{{=item.fallback}}</div>
+                    {{?}}
+                </div>
+            </div>
+            {{~}}
+
+        </div>
+        <div class="menu">
+            <div class="title">{{=it.visual.text(it.menu, 'title')}}</div>
+            {{~it.menu.content.blocks :block:blockIndex }}
+            <div class="block" id="block_{{=blockIndex}}">
+                <div class="blockHeader">
+                    {{=block.title}}
+                    <div class="blockIcon"></div>
+                </div>
+                {{~block.columns :column:columnIndex }}
+                <div class="column column_{{=columnIndex}}">
+                    {{~column.options :option:optionIndex}}
+                    <div class="option option_{{=optionIndex}} {{?(!option.navigation.remove)}} active{{?}} {{?(option.navigation.complete)}} complete{{?}}" data-complete="{{=option.navigation.complete}}" data-remove="{{=option.navigation.remove}}" {{?(!option.navigation.remove)}}data-navigate="click" {{=option.navigation.data}}{{?}} data-category="{{=option.category}}">
+                        <div class="optionIcon {{?(option.navigation.complete)}}completed{{?}}"></div>
+                        <span class="optionTitle">
+                            {{!option.navigation.title}}
+                        </span>
+                    </div>
+                    {{~}}
+                </div>
+                {{~}}
+            </div>
+            {{~}}
+        </div>
+    </div>
+</div>

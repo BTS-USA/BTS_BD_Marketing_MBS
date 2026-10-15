@@ -1,0 +1,78 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        {{? it.matrix.calls.length > 0 && it.matrix.questions.length > 0}}
+        <section>
+            <article>
+                {{~it.matrix.calls :call:index}}
+                <div class="cfLeft" data-callForms>
+                    <div class="item-row normal" data-cfitem>
+                        <span> Call Form: {{=new it.moment(call.timestamp).format('MMM DD, YYYY')}} - {{=new it.moment(call.timestamp).format('hh:mmA')}}</span>
+                        <div class="item-row__ico collapsed" data-first-icon></div>
+                    </div>
+                    <div class="item-detail collapsed" data-collapsed>
+                        {{?it.wizletInfo.name}}
+                        <div class="item-detail__info">
+                            <label class="iLabel">Call Form:</label><span data-callformname>{{=it.wizletInfo.name}}</span>
+                        </div>
+                        {{?}}
+                        {{?it.wizletInfo.description}}
+                        <div class="item-detail__info">
+                            <label class="iLabel">Description:</label><span data-callformdesc>{{=it.wizletInfo.description}}</span>
+                        </div>
+                        {{?}}
+                        {{?it.wizletInfo.experience}}
+                        <div class="item-detail__info">
+                            <label class="iLabel">Experience:</label><span data-callformexp>{{=it.wizletInfo.experience}}</span>
+                        </div>
+                        {{?}}
+                        {{?it.wizletInfo.role}}
+                        <div class="item-detail__info">
+                            <label class="iLabel">Your Role:</label><span data-callformrole>{{=it.wizletInfo.role}}</span>
+                        </div>
+                        {{?}}
+                        <div class="expandAll" data-expandall>
+                            <span>Expand All</span>
+                            <div class="expandAll__ico collapsed" data-second-icon></div>
+                        </div>
+                       
+                        <div>
+                            {{~it.matrix.questions :question:qIndex}}
+                            <div class="subItem-cnt" data-questions>
+                                <div class="subItem-row" data-third-colxpd>
+                                    <span>{{=question.text}}</span>
+                                    <div class="subItem-row__ico collapsed" data-third-icon></div>
+                                </div>
+                                <div class="subItem-detail" data-third-detail>
+                                    <div class="subItem-detail__choice" data-votes>
+                                        {{~call.votes :vote:vIndex}}
+                                            {{?question.id == vote.QuestionId}}
+                                                {{?question.responseOptions}}
+                                                    {{~question.responseOptions :option:oIndex}}
+                                                        {{?option.value == vote.ResponseText}}
+                                                            <p class="option">{{=option.responseText}}</p>
+                                                        {{?}}
+                                                    {{~}}
+                                                 {{??}}
+                                                    <p class="note">{{=vote.ResponseText}}</p>
+                                               {{?}}
+                                            {{?}}
+                                       {{~}}
+                                        {{ var foundVote = call.votes.filter(function (el) {  return el.QuestionId == question.id;  });}}
+                                        {{?foundVote.length === 0}}
+                                            <p class="option"></p>
+                                        {{?}}
+                                    </div>
+                                </div>
+                             </div>
+                            {{~}}
+                         </div>
+                    </div>
+                </div>
+                {{~}}
+            </article>
+        </section>
+        {{??}}
+            No call form available
+        {{?}}
+    </div>
+</div>

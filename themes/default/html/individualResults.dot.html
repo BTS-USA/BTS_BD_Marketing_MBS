@@ -1,0 +1,21 @@
+﻿<div class="IndividualResults">
+    <table class="individualResultsTable">
+        <tbody>
+            <tr>
+                <th><div>User</div></th>
+                {{~it.questionVotes.questions :question:qi}}
+                    <th><div class='question'>{{=question}}</div></th>
+                {{~}}
+            </tr>
+            {{~it.questionVotes.participationVotes :participation:qi}}
+                <tr>
+                    <td><div class='name'>{{=participation.participationName}}</div></td>
+                    {{~participation.votes :vote:index}}
+                        {{ var strClass = (index % 2 === 0) ? 'class=\'alternate\'' : ''; }}
+                        <td {{=strClass}}><div class='vote'>{{=vote}}</div></td>
+                    {{~}}
+                </tr>
+            {{~}}
+        </tbody>
+    </table>
+</div>

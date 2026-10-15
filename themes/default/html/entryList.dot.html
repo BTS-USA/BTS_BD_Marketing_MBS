@@ -1,0 +1,75 @@
+﻿<div class="entryList">
+    {{? it.wizletInfo != null}}
+        {{? it.wizletInfo.menu != null}}
+        <div class="menu"></div>
+        {{?}}
+        {{? !it.wizletInfo.add.disable}}
+        <a class="addAction">{{!it.wizletInfo.add.label}}</a>
+        {{?}}
+    {{?}}
+    <div class="list">
+        {{~it.entryList :entry}}
+        <div class="listItem" data-entryid="{{=entry.id}}">
+            {{ /*ToDo: consider using an entryListItem template for modularity */ }}
+            <a class="openAction">
+                {{~entry.fieldList :field:index}}
+                
+                <span class="field field-{{!field.config.question}} field{{=index}} {{?index == 0}}likelyTitle{{?}} {{?index == 1}}likelyDescription{{?}}
+                                                                    " data-questionid="{{=field.config.questionId}}">
+                    {{?field.options && field.options.length}}
+                        {{/*Note: Here we need to show text of option for which keypadnumber is fieldtext */ }}
+                        {{~field.options:option}}
+                            {{?option.KeypadNumber==field.text}}
+                                {{!option.ResponseText}}
+                            {{?}}
+                        {{~}}
+                    {{??}}
+                        {{?field.mediaInfo && field.mediaInfo.mimeType.substr(0,5) == "image"}}
+                            <img src="{{!field.mediaInfo.url}}">
+                        {{??}}
+                            {{!field.text}}
+                        {{?}}
+                    {{?}}
+                </span>
+                {{~}}
+
+                {{? entry.totalAverageRank && entry.totalAverageRank.Count != 0}}
+                
+                <span class="info">
+                    <span class="info field-averagerank">
+                        {{!it.wizletInfo.scoreLabel}} <span class="data">{{=entry.totalAverageRank.Average.toFixed(2)}}</span>
+                    </span>
+                    <span class="info field-rankposition">
+                        {{!it.wizletInfo.rankLabel}} <span class="data">{{=entry.totalAverageRank.Position}}</span>
+                    </span>
+                </span>
+                
+                {{??}}
+                    <span class="info">
+                    <span class="info field-averagerank">
+                        {{!it.wizletInfo.scoreLabel}} <span class="data">{{!it.wizletInfo.noRankingText}}</span>
+                    </span>
+                    <span class="info field-rankposition">
+                        {{!it.wizletInfo.rankLabel}} <span class="data">0</span>
+                    </span>         
+                    </span>
+                {{?}}
+
+                {{? entry.authorId != -1}}
+                
+                <span class="info author">
+                
+                    {{!it.wizletInfo.authorLabel}}
+                    <span class="first-field field-author">
+                    {{!entry.authorName}}
+                    </span>
+                </span>
+                {{?}}
+            </a>
+        </div>
+        {{~}}
+    </div>
+    {{? it.showMoreButton > 0}}
+        <button class="moreButton" data-list-length="{{= it.showMoreButton }}">{{!it.wizletInfo.moreLabel}}</button>
+    {{?}}
+</div>

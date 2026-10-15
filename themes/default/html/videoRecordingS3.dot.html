@@ -1,0 +1,66 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="cc cl-component" data-videoRecording>
+            {{? it.texts}}
+            <header class="cc-header--main cl-header--main{{? it.texts.pointer == false}} cl-pointer--hidden{{?}}">
+                {{? it.texts.title}}
+                <h1 class="cc-header__title--main cl-header__title--main{{? !it.texts.description}} cl-margin--no{{?}}">
+                    {{=it.texts.title}}
+                </h1> {{?}} {{? it.texts.description}}
+                <p class="cc-header__description--main cl-header__description--main">
+                    {{=it.texts.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <div class="cc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    <video autoplay="" data-preview-video controls=""></video>
+                    {{? !it.directlyOpenCamera}}
+                    <div class="video-recording">
+                        <div>
+                            <video autoplay="" data-video controls=""></video>
+                        </div>
+                        <button data-start-recording-btn>
+                            {{=it.texts.startRecording}}
+                        </button>
+                        <button data-stop-recording-btn>
+                            {{=it.texts.stopRecording}}
+                        </button>
+                    </div>
+                    {{?}}
+                    {{? it.directlyOpenCamera}}
+                    <div class="video-recording-ios" data-camera-recording-only>
+                        {{? it.isMacBook}}
+                        <button  data-file-upload-lbl>{{=it.texts.chooseFile}}</button>
+                        <input type="file" style="visibility:hidden;" accept="video/*;capture" name="fileToUpload" data-file-upload="">
+                        {{?}}
+                        {{? !it.isMacBook}}
+                        <button data-file-upload-lbl>{{=it.texts.startRecording}}</button>
+                        <input type="file" style="visibility:hidden;" accept="video/*" capture name="fileToUpload" data-file-upload="">
+                        {{?}}
+                        <input type="submit" data-file-upload-btn="" value="Upload">
+                    </div>
+                    {{?}}
+                    <button data-upload-recording-btn>
+                        {{=it.texts.uploadRecording}}
+                    </button>
+                    <button data-cancel-recording-btn>
+                        {{=it.texts.cancelRecording}}
+                    </button>
+                    <div data-success-msg>
+                        {{=it.texts.successMsg}}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+
+

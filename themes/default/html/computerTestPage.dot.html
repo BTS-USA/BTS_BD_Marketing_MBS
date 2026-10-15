@@ -1,0 +1,430 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="ctpc cl-component">
+            {{? it.header}}
+            <header class="ctpc-header--main cl-header--main">
+                
+                    {{? it.header.title}}
+                        <h1 class="ctpc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                            {{=it.header.title}}
+                        </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="ctpc-header__description--main cl-header__description--main">
+                            {{=it.header.description}}
+                        </p>
+                    {{?}}
+            </header>
+            {{?}} 
+            
+            <article class="ctpc-article cl-xs-column-12 cl-padding--no">
+                <div class="ctpc-topbar">
+                    <div class="ctpc-body cl-xs-column-12 mainContent">
+                        <div class="ctpc-topbar-container cl-sm-column-6 cl-xs-column-12 border_right">
+                            <span class="ctpc-topbar__number">{{=it.textContent.content.CTP_round1}}</span>
+                            <span class="ctpc-topbar__instructions cl-xs-column-12">{{=it.textContent.content.CTP_text1}}</span>
+                            <div class="ctpc-topbar__controls">
+                                <a>
+                                    <button type="button" class="ctpc-button ctpc-button-submit cl-button cl-button--submit ctpc-button" data-target="myTableTop" data-begin-test>{{=it.textContent.content.CTP_button1}}</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ctpc-topbar-container cl-sm-column-6 cl-xs-column-12">
+                            <span class="ctpc-topbar__number">{{=it.textContent.content.CTP_round2}}</span>
+                            <span class="ctpc-topbar__instructions cl-xs-column-12">{{=it.textContent.content.CTP_text2}}</span>
+                            <div class="ctpc-topbar__controls">
+                                <a href="http://speedtest.charter.com/" target="_blank" >
+                                    <button type="submit" class="ctpc-button-submit cl-button cl-button--submit ctpc-button" data-open-test>{{=it.textContent.content.CTP_button2}}</button>
+                                </a>
+                            </div>
+                            <span class="ctpc-topbar__instructions cl-xs-column-12">{{=it.textContent.content.CTP_text3}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ctpc-message cl-xs-column-12 ctpc--hidden" data-message>
+                    <span data-browser-supported></span>
+                </div>
+                <div class="ctpc-body cl-xs-column-12 mainContent">
+                    <span class="ctpc-body__no-content cl-xs-column-12 ctpc--hidden">{{=it.textContent.content.CTP_warning}}</span>
+                    
+                    <table border="0" align="center" cellpadding="5" cellspacing="0" class="ctpc-table" id="myTableTop" data-table>
+                        <tr class="ctpc-table__row">
+                            <td class="ctpc-table__cellhead ctpc-table__cellhead--even" width="33%">
+                                <span class="ctpc-table__label ctpc-table__label--header">
+                                    {{=it.textContent.table.tableTitle_1}}
+                                </span>
+                            </td>
+                            <td class="ctpc-table__cellhead" width="33%">
+                                <span class="ctpc-table__label ctpc-table__label--header">
+                                    <span ID="lblOperatingSystem" data-version ></span>
+                                </span>
+                            </td>
+                            <td class="ctpc-table__cellhead ctpc-table__cellhead--even" width="33%">
+                                <span class="ctpc-table__label ctpc-table__label--header">
+                                    {{=it.textContent.table.tableTitle_2}}
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="ctpc-table__row {{?it.customizeTests && !it.showTests.browserCompatibility}}ctpc-table__row--hide{{?}}">
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span class="ctpc-table__label">
+                                    {{=it.textContent.table.tableContent_1}}   
+                                </span>
+                            </td>
+                            <td class="ctpc-table__cell">
+                                    <span ID="lblBrowser"Class="ctpc-table__value" data-name></span>
+                            </td>
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span id="lblBrowserValid" class="ctpc-table__value" data-name-enabled></span>
+                            </td>
+                        </tr>
+                        <tr class="ctpc-table__row {{?it.customizeTests && !it.showTests.javascript}}ctpc-table__row--hide{{?}}">
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span class="ctpc-table__label">
+                                    {{=it.textContent.table.tableContent_2}}
+                                </span>
+                            </td>
+                            <td class="ctpc-table__cell">
+                                <span ID="lblJavascriptEnabled" Class="ctpc-table__value" data-jsEnabled></span>
+                            </td>
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span id="lblJavascriptEnabledValid" class="ctpc-table__value" data-js-enabled></span>
+                            </td>
+                        </tr>
+                        <tr class="ctpc-table__row {{?it.customizeTests && !it.showTests.iFrames}}ctpc-table__row--hide{{?}}">
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span class="ctpc-table__label">
+                                    {{=it.textContent.table.tableContent_3}} 
+                                </span>
+                            </td>
+                            <td class="ctpc-table__cell">
+                                <span ID="lblFramesEnabled" Class="ctpc-table__value" data-frames></span>
+                            </td>
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span id="lblFramesEnabled" class="ctpc-table__value" data-frames-enabled></span>
+                            </td>
+                        </tr>
+                        <tr class="ctpc-table__row {{?it.customizeTests && !it.showTests.cookies}}ctpc-table__row--hide{{?}}">
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span class="ctpc-table__label">
+                                    {{=it.textContent.table.tableContent_4}} 
+                                </span>
+                            </td>
+                            <td class="ctpc-table__cell">
+                                <span ID="lblCookiesEnabled" Class="ctpc-table__value" data-cookies ></span>
+                            </td>
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span id="lblCookiesEnabledValid" class="ctpc-table__value" data-cookies-enabled></span>
+                            </td>
+                        </tr>
+                        <tr class="ctpc-table__row {{?it.customizeTests && !it.showTests.screenResolution}}ctpc-table__row--hide{{?}}">
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span class="ctpc-table__label">
+                                   {{=it.textContent.table.tableContent_5}} 
+                                </span>
+                            </td>
+                            <td class="ctpc-table__cell">
+                                <span ID="lblScreenResolution" Class="ctpc-table__value" data-resolution ></span>
+                            </td>
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span id="lblScreenResolutionValid" class="ctpc-table__value" data-resolution-enabled></span>
+                            </td>
+                        </tr>
+                        <tr class="ctpc-table__row {{?it.customizeTests && !it.showTests.webRtc}}ctpc-table__row--hide{{?}}">
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span class="ctpc-table__label">
+                                   {{=it.textContent.table.tableContent_6}} 
+                                </span>
+                            </td>
+                            <td class="ctpc-table__cell">
+                                <span ID="lblWebcamEnabled" Class="ctpc-table__value" data-webcam ></span>
+                            </td>
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span id="lblWebcamValid" class="ctpc-table__value" data-webcam-enabled></span>
+                            </td>
+                        </tr>
+                        <tr class="ctpc-table__row {{?it.customizeTests && !it.showTests.webRtc}}ctpc-table__row--hide{{?}}">
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span class="ctpc-table__label">
+                                   {{=it.textContent.table.tableContent_7}} 
+                                </span>
+                            </td>
+                            <td class="ctpc-table__cell">
+                                <span ID="lblMicrophoneEnabled" Class="ctpc-table__value" data-microphone></span>
+                            </td>
+                            <td class="ctpc-table__cell ctpc-table__cell--even">
+                                <span id="lblMicrophoneValid" class="ctpc-table__value" data-microphone-enabled></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+            <article class="ctpc-content cl-xs-column-12">
+                        <div class="ctpc-body cl-xs-column-12 mainContent">
+                            <h4 class="ctpc--important ctpc-subtitle">{{=it.textContent.content.heading}}</h4>
+                            <ol>
+                                <!-- <li class="mainText"><strong><span class="chromeInvalid">Smart Phones are not supported.</span></strong></li>-->
+                                <li><span class="chromeInvalid"><strong>{{=it.textContent.content.title}}</strong></span></li>
+                            </ol>
+
+                            <br />
+                            <h4>{{=it.textContent.content.subTitle_1}}</h4>
+                            <p>
+                                {{=it.textContent.content.subTitle_content1}}
+                            </p>
+                            <h4>{{=it.textContent.content.subTitle_2}}</h4>
+                            <p>
+                                {{=it.textContent.content.subTitle_content2}}
+                            </p>
+                            <br />
+                            <table class="ctpc-table" width="100%" align="center" cellpadding="5" cellspacing="0" id="myTableCenter" name="myTableOrange">
+                                <tr class="ctpc-table__row">
+                                    <td class="ctpc-table__cellhead ctpc-table__cellhead--even" colspan="1">
+                                        <span class="ctpc-table__label ctpc-table__label--header"> {{=it.textContent.table.CTP_table_PC}} </span>
+                                    </td>
+                                    <td class="ctpc-table__cellhead" colspan="1"></td>
+                                </tr>
+                                <tr class="ctpc-table__row">
+                                    <td class="ctpc-table__cell ctpc-table__cell--even">
+                                        <span class="ctpc-table__label">{{=it.textContent.table.table_CPU}}</span>
+                                    </td>
+                                    <td class="ctpc-table__cell">
+                                        <span class="ctpc-table__value">{{=it.textContent.table.CTP_table_PC_description1}} </span>
+                                    </td>
+                                </tr>
+                                <tr class="ctpc-table__row">
+                                    <td class="ctpc-table__cell ctpc-table__cell--even">
+                                        <span class="ctpc-table__label">{{=it.textContent.table.table_OS}}</span>
+                                    </td>
+                                    <td class="ctpc-table__cell">
+                                        <span class="ctpc-table__value">{{=it.textContent.table.CTP_table_PC_description2}}</span>
+                                    </td>
+                                </tr>
+                                <tr class="ctpc-table__row">
+                                    <td class="ctpc-table__cell ctpc-table__cell--even">
+                                        <span class="ctpc-table__label">{{=it.textContent.table.table_RAM}}</span>
+                                    </td>
+                                    <td class="ctpc-table__cell">
+                                        <span class="ctpc-table__value">{{=it.textContent.table.CTP_table_PC_description3}}</span>
+                                    </td>
+                                </tr>
+                                <tr class="ctpc-table__row">
+                                    <td class="ctpc-table__cellhead ctpc-table__cellhead--even" colspan="1">
+                                        <span class="ctpc-table__label ctpc-table__label--header">{{=it.textContent.table.CTP_table_MAC}}</span>
+                                    </td>
+                                    <td class="ctpc-table__cellhead" colspan="1"></td>
+                                </tr>
+                                <tr class="ctpc-table__row">
+                                    <td class="ctpc-table__cell ctpc-table__cell--even">
+                                        <span class="ctpc-table__label">{{=it.textContent.table.table_CPU}}</span>
+                                    </td>
+                                    <td class="ctpc-table__cell">
+                                        <span class="ctpc-table__value">{{=it.textContent.table.CTP_table_MAC_description1}}</span>
+                                    </td>
+                                </tr>
+                                <tr class="ctpc-table__row">
+                                    <td class="ctpc-table__cell ctpc-table__cell--even">
+                                        <span class="ctpc-table__label">{{=it.textContent.table.table_OS}}</span>
+                                    </td>
+                                    <td class="ctpc-table__cell">
+                                        <span class="ctpc-table__value">{{=it.textContent.table.CTP_table_MAC_description2}}</span>
+                                    </td>
+                                </tr>
+                                <tr class="ctpc-table__row">
+                                    <td class="ctpc-table__cell ctpc-table__cell--even">
+                                           <span class="ctpc-table__label">{{=it.textContent.table.table_RAM}}</span>
+                                    </td>
+                                    <td class="ctpc-table__cell">
+                                        <span class="ctpc-table__value">{{=it.textContent.table.CTP_table_MAC_description3}}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <form id="form2" runat="server">
+
+                                <h2 class="ctpc-body__title--fix">{{=it.textContent.content.fixes}}</h2>
+                                <p class="ctpc--important">{{=it.textContent.content.comment}}
+                                </p>
+                                <br/>
+                                <h3>{{=it.textContent.content.CTP_subTitle_requirement}}</span>
+                                </h3>
+                                <br />
+                                {{? it.browsers.Firefox }}
+                                <h4>
+                                    <strong>{{=it.textContent.content.CTP_Firefox}}</strong>
+                                </h4>
+
+                                <ul>
+                                   {{=it.textContent.content.CTP_Firefox_req}}
+                                </ul>
+                                <br/>
+                                {{?}}
+                                {{? it.browsers.Chrome }}
+                                <h4>{{=it.textContent.content.CTP_Google}}
+                                </h4>
+                                <ul>
+                                   {{=it.textContent.content.CTP_Google_req}}
+                                </ul>
+                                <br/>
+                                {{?}}
+                                {{? it.browsers.IE || it.browsers.InternetExplorer }}
+                                <h4>
+                                    {{=it.textContent.content.CTP_IE}}
+                                </h4>
+                                <ul>
+                                    {{=it.textContent.content.CTP_IE_req}}
+                                </ul>
+                                <br />
+                                {{?}}
+                                <h3>
+                                    {{=it.textContent.content.CTP_subTitle_Javascript}}
+                                </h3>
+                                <br/>
+                                {{? it.browsers.Firefox }}
+                                <h4>
+                                    <strong>{{=it.textContent.content.CTP_Firefox}}</strong>
+                                </h4>
+                                <ul>
+                                   {{=it.textContent.content.CTP_Firefox_JS}}
+                                </ul>
+                                <br />
+                                {{?}}
+                                {{? it.browsers.Chrome }}
+                                <h4>
+                                   <strong>{{=it.textContent.content.CTP_Google}}</strong>
+                                </h4>
+                                <ul>
+                                   {{=it.textContent.content.CTP_Google_JS}}
+                                </ul>
+                                <br />
+                                {{?}}
+                                {{? it.browsers.IE || it.browsers.InternetExplorer }}
+                                <h4>
+                                    <strong>{{=it.textContent.content.CTP_IE}}</strong>
+                                </h4>
+                                <ul>
+                                     {{=it.textContent.content.CTP_IE_JS}}
+                                </ul>
+                                </br>
+                                {{?}}
+                                <h3>{{=it.textContent.content.CTP_subTitle_iFrames}}</h3>
+                                </br>
+                                {{? it.browsers.Firefox }}
+                                <h4>
+                                    <strong>{{=it.textContent.content.CTP_Firefox}}</strong>
+                                </h4>
+                                <ul>
+                                    {{=it.textContent.content.CTP_Firefox_iFrames}}
+                                </ul>
+                                <br />
+                                {{?}}
+                                {{? it.browsers.Chrome}}
+                                <h4>
+                                    <strong>{{=it.textContent.content.CTP_Google}}</strong>
+                                </h4>
+                                <ul>
+                                    {{=it.textContent.content.CTP_Google_iFrames}}
+                                </ul>
+                                <br/>
+                                {{?}}
+                                {{? it.browsers.IE || it.browsers.InternetExplorer }}
+                                <h4>
+                                    <strong>{{=it.textContent.content.CTP_IE}}</strong>
+                                </h4>
+                                <ul>
+                                    {{=it.textContent.content.CTP_IE_iFrames}}
+                                </ul>
+                                <br />
+                                {{?}}
+                                <p class="pageHeader" style="text-align: center">
+                                    <a name="cookies" id="cookies"></a><h3 class="pageHeaderComputerTest">{{=it.textContent.content.CTP_subTitle_cookies}}</h3>
+                                </p>
+                                </br>
+                                <h4>
+                                   {{=it.textContent.content.CTP_subTitle_cookies_windows}}
+                                </h4>
+                                </br>
+                                 {{? it.browsers.Firefox }}
+                                    <ul>
+                                        <li>
+                                            {{=it.textContent.content.CTP_Cookies_firefox}}
+                                            <ul>
+                                                <li>
+                                                    {{=it.textContent.content.CTP_Cookies_firefoxContent}}
+                                                </li>
+                                            </ul>
+                                        </li>
+                                     </ul>
+                                </br>
+                                {{?}}
+                                {{? it.browsers.Chrome}}
+                                    <ul>
+                                        <li>
+                                            {{=it.textContent.content.CTP_Cookies_chrome}}
+                                            <ul>
+                                                <li>
+                                                    {{=it.textContent.content.CTP_Cookies_chromeContent}}
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                <br />
+                                {{?}}
+                                {{? it.browsers.IE || it.browsers.InternetExplorer }}
+                                    <ul>
+                                        <li>
+                                            {{=it.textContent.content.CTP_Cookies_IE}}
+                                            <ul>
+                                                <li>
+                                                    {{=it.textContent.content.CTP_Cookies_IEContent}}
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    
+                                    </ul>
+                                <br/>
+                                {{?}}
+                                <h4>
+                                    {{=it.textContent.content.CTP_subTitle_cookies_mac}}
+                                </h4>
+                                <br/>
+                                {{? it.browsers.Firefox }}
+                                    <ul>
+                                        <li>
+                                            {{=it.textContent.content.CTP_Cookies_firefox}}
+                                            <ul>
+                                                <li>
+                                                    {{=it.textContent.content.CTP_Cookies_macFirefox}}
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                <br/>
+                                {{?}}
+                                {{? it.browsers.Chrome}}
+                                    <ul>
+                                        <li>
+                                            {{=it.textContent.content.CTP_Cookies_chrome}}
+                                            <ul>
+                                                <li>
+                                                    {{=it.textContent.content.CTP_Cookies_macChrome}}
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                <br/>
+                                {{?}}
+                                <h3>
+                                    {{=it.textContent.content.CTP_subTitle_resolution}}
+                                </h3>
+
+                                <ul>
+                                    {{=it.textContent.content.CTP_resolution_content}}
+                                </ul>
+                            </form>
+                        </div>
+                <div id="webcam" class="ctpc-webcam"></div>
+            </article>
+        </section>
+    </div>
+</div>

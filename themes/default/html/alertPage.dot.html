@@ -1,0 +1,20 @@
+<div class="alert-page-container content-wrapper">
+    <section class="alert-inner-container">
+        <article class="alert-content">
+            <section class="alert-text-container">
+                <article class="alert__title"><p>{{=it.header.title}}</p></article>
+                <article class="alert__description"><p>{{=it.header.description}}</p></article>
+            </section>
+            <footer class="alert-navigation-holder">
+                {{~it.menuOptions:option:optionIndex }}
+                    <div class="cl-button option-{{=optionIndex}}" data-remove="{{=option.navigation.remove}}" 
+                        data-action-option="{{=optionIndex}}" data-navigate="click" {{=option.navigation.data}}>
+                        <span class="cl-button__text">{{=option.navigation.title}}</span>
+                    </div>
+                {{~}}
+            </footer>
+        </article>
+    </section>
+</div>
+
+

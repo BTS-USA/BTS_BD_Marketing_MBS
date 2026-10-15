@@ -1,0 +1,53 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="cnc cl-component">
+            {{? it.header}}
+                <header class="cnc-header--main cl-header--main">
+                    {{? it.header.title}}
+                        <h1 class="cnc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                            {{=it.header.title}}
+                        </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="cnc-header__description--main cl-header__description--main">
+                            {{=it.header.description}}
+                        </p>
+                    {{?}}
+                </header>
+            {{?}}
+
+            <div class="cnc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <div class="cnc-instructions cl-instructions">
+                            <p class="cnc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                    <article class="cnc-article" data-cncarticle>
+                        {{ for(var i = 0; i < it.inputBoxesCount; i++) { }}
+                            <input class="cnc-input{{=i}} cnc-input" type="number" name="input{{=i}}" maxlength="1" data-codeinput data-inputfield="{{=i}}" />
+                        {{ } }}
+                    </article>
+                    <div class="cnc-errorCont" data-cncerrorcont>
+                        <div class="cnc-error" data-cncerror>
+                            <span class="cnc-errorMsg">{{=it.errorMsg}}</span>
+                        </div>
+                    </div>
+                    <footer class="cnc-footer cl-content" data-cnbuttons>
+                        {{~it.codeOptions :option:optionIndex}}
+                        <div class="cnc-buttonCont">
+                            <div class="cnc-button option-{{=optionIndex}} cnc-navigationOptions {{? option.selected}}cnc-button--selected {{?}} {{=option.navigation.targetSection}}" data-code="{{=option.navigation.code}}" data-remove="{{=option.navigation.remove}}" data-action-option="{{=optionIndex}}" data-navigate="click" {{=option.navigation.data}} {{?it.showDisabledButton}}data-buttondisabled="{{=option.navigation.remove}}"{{?}}>
+                                {{? option.img}}
+                                <img class="cnc-button__image" src="{{=option.img}}" height="20" />
+                                {{??}}
+                                <span class="cnc-button__text">{{=option.navigation.title}}</span>
+                                {{?}}
+                            </div>
+                        </div>
+                        {{~}}
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

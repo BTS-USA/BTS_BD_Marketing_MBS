@@ -1,0 +1,42 @@
+﻿// import component library mixins and variables
+@import "shared/cl.styl"
+
+// Navigation Component Styles
+.nc
+    &-buttons-container
+        margin 40px 0 0 0
+        text-align right
+    &-button
+        vertical-align middle
+        height 40px
+        margin 10px 5px 0 0 
+        padding 0 20px 0 20px
+        background $apple
+        cursor pointer
+        display none
+        &:last-child
+            margin 10px 0 0 0
+        &__image
+            -webkit-transform   translate(0,50%)
+            -o-transform        translate(0,50%)
+            -moz-transform      translate(0,50%)
+            -ms-transform       translate(0,50%)
+            transform           translate(0,50%)
+        &__text
+            line-height 40px
+            text-align center
+            color #FFF
+        &--selected
+            background $cerulean
+    &-button[data-buttondisabled="true"]
+        display inline-block
+        opacity 0.3
+        cursor default
+    &-button.active
+        display inline-block
+    &-button.nc-button--nextAction
+        display inline-block
+    &-button.nc-button--previousAction
+        display inline-block
+    &-button.hidden
+        display none

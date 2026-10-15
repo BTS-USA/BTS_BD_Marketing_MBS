@@ -1,0 +1,118 @@
+/* This is css for the layouts in the wizer core*/
+/* if you are using a layoutInevent then please let it have its own css called layout.css in the events/layout folder*/
+
+html, body, #wizer, .page, .mainWrapper, .appliedLayout
+    height 100%
+#votingSlideDiv
+    height calc(100% - 45px)
+.layoutContainer
+    overflow hidden
+    clear both
+    @media screen and (max-width: 767px) 
+        overflow visible
+
+/*  Sim page layout styles */
+$sim-hh = 60px
+.sim
+    height 100%
+    position relative
+    @media screen and (max-width: 767px) 
+        height auto
+    &-rounds
+        height $sim-hh
+        color white
+        font-size 1rem
+        @media screen and (max-width: 767px) 
+            display none
+    &-rounds__text
+        padding-left 2rem
+    &-rounds__current
+        font-size 2rem
+    &-middle__container
+        width 100%
+        height calc(100% - 160px) /* rounds + gauges height */
+        @media screen and (max-width: 767px) 
+            padding-top 50px
+    &-container
+        width 80%
+        float left
+        margin 0 auto
+        height 80%
+        overflow hidden
+        @media screen and (max-width: 767px) 
+            height auto
+            padding 1rem
+            float none
+            width 100%
+    &-header
+        background-color black
+        color white
+        padding 10px
+        height 50px
+        h1
+            text-decoration none
+    &-info
+    &-singleSelect
+        padding 0
+        height calc(100% - 50px)
+        overflow auto
+        background-color silver
+        padding-bottom 30px
+        @media screen and (max-width: 767px)
+            height auto
+            overflow hidden
+    &-info
+        background-color white
+        .cl-row
+            padding 0
+        .ic-column-left
+        .ic-column-right
+            width 100%
+    &-left__panel
+    &-right__panel
+        position relative
+        width 10%
+        float left
+        height 80%
+        @media screen and (max-width: 767px) 
+            position absolute
+            width 100%
+            height 80px
+            float none
+            top 0
+            left 0
+    &-bottom__bar
+        height 100px
+    &-nav__container
+        position absolute
+        right 0
+        top calc(50% - 130px)
+        @media screen and (max-width: 767px) 
+            position relative
+            margin 0 auto
+            width 100%
+    &-nav__icon__container
+        height 50px
+        width 50px
+        background rgba(0, 0, 0, 0.4)
+        text-align center
+        margin 1px
+        @media screen and (max-width: 767px) 
+            float left
+            width 20%
+            margin 0
+    img.sim-nav__icon
+        width 30px
+        height 30px
+        margin-top 10px
+    .bottomContentContainer
+        background rgba(0,173,239,0.5)
+        margin-right 2px
+        padding 20px 0
+        text-align center
+        color white
+        font-size .8rem
+        height 100px
+    .bottomContainer
+        padding 0
+        margin 0

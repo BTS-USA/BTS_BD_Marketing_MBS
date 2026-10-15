@@ -1,0 +1,23 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <div class="infoContainer">
+            <div class="infoTitle"><h1 class="infoHeader">{{=it.title}}</h1></div>
+            <div class="infoContentContainer">
+                <div class="infoLeftColumn cl-xs-column-12 cl-sm-column-12 cl-md-column-6 cl-lg-column-6">
+                    <div class="infoContent">
+                        {{=it.text}}
+                    </div>
+                </div>
+                <div class="infoRightColumn  cl-xs-column-12 cl-sm-column-12 cl-md-column-6 cl-lg-column-6">
+                    <div class="imgWrapp">
+                        <ul>
+                            {{~it.images :value:index}}
+                            <li><img src="{{=value}}" /></li>
+                            {{~}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

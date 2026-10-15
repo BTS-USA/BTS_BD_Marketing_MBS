@@ -1,0 +1,36 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="lch cl-component">
+            {{? it.header}}
+                <!-- Header -->
+                <header class="lch-header--main cl-header--main" data-lineChartHeader>
+                    {{? it.header.title}}
+                        <h1 class="lch-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                            {{=it.header.title}}
+                        </h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="lch-header__description--main cl-header__description--main">
+                            {{=it.header.description}}
+                        </p>
+                    {{?}}
+                </header>
+            {{?}}
+
+            <section class="lch-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                        <!-- Instructions -->
+                        <div class="lch-instructions cl-instructions">
+                            <p class="lch-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                        </div>
+                    {{?}}
+                <section class="lch-content cl-content" data-lineChartSection>
+                    <article class="lch-content-lineChart--container" data-lineChartHolder>
+                        <!-- chart is rendered in this element -->
+                    </article>
+                </section>
+            </section>
+        </section>
+    </div>
+</div>

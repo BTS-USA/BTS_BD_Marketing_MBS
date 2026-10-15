@@ -1,0 +1,89 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="tlc cl-component" data-componentContainer>
+            {{? it.header}}
+            <header class="tlc-header-main cl-header--main" data-textListHeader>
+                {{? it.header.breadCrumbs}}
+                    <p class="tlc-breadCrumbs-main cl-header-breadCrumbs--main">{{=it.header.breadCrumbs}}</p>
+                {{?}}
+                {{? it.header.bgimage}}
+                 <div class="tlc-header-image cl-header-image" style="background-image:url({{=it.header.bgimage}})"></div>
+                {{?}}
+                <div class="tlc-header-wrapper cl-header-wrapper">
+                    {{? it.header.title}}
+                        <h1 class="tlc-title-main cl-header__title--main">{{=it.header.title}}</h1>
+                    {{?}}
+                    {{? it.header.description}}
+                        <p class="tlc-description-main cl-header__description--main">{{=it.header.description}}</p>
+                    {{?}}
+                </div>
+            </header>
+            {{?}}
+            <div class="tlc-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="tlc-instructions cl-instructions">
+                        <p class="tlc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+
+                    <div class="tlc-content cl-content" data-textListBody>
+                        <div class="tlc-sorting">
+                            {{? it.showFilters}}
+                            <div class="tlc-filters cl-row">
+                                {{ for(var i = 1; i <= it.restrictions.length; i++) { }}
+                                <div class="tlc-filter{{=i}} tlc-filter filterRestriction" data-filterRestriction
+                                    data-componentFilter="{{=i}}">
+                                    <div class="tlc-filter__radio" filter="{{=i}}" data-key="{{=it.restrictions[i - 1]}}">
+                                        {{? i === 1}}
+                                        <input type="radio" class="tlc-radio cl-radio" id="radio{{=i}}"
+                                            name="textListComponentTabs" data-inputRadio checked />
+                                        {{??}}
+                                        <input type="radio" class="tlc-radio cl-radio" id="radio{{=i}}"
+                                            name="textListComponentTabs" data-inputRadio />
+                                        {{?}}
+                                        <label for="radio{{=i}}"
+                                            class="tlc-label">{{=it.filters ? it.filters[it.restrictions[i - 1]] : it.restrictions[i-1]}}</label>
+                                    </div>
+                                </div>
+                                {{ } }}
+
+                                {{? it.filterQuestions}}
+                                {{ for(var j = 1; j <= it.filterQuestions[0].options.length; j++) { }}
+                                <div class="tlc-filter{{=j}} tlc-filter filterQuestion" data-filterQuestion>
+                                    <div class="tlc-filter__radio" filter="{{=j+it.restrictions.length}}"
+                                        data-key="{{=it.filterQuestions[0].options[j - 1].value}}"
+                                        data-filteroption="{{=j}}">
+                                        <input type="radio" class="tlc-radio cl-radio"
+                                            id="radio{{=j+it.restrictions.length}}" name="textListComponentTabs"
+                                            data-inputradio />
+                                        <label for="radio{{=j+it.restrictions.length}}"
+                                            class="tlc-label">{{=it.filterQuestions[0].options[j - 1].description}}</label>
+                                    </div>
+                                </div>
+                                {{ } }}
+                                {{?}}
+                            </div>
+                            {{?}}
+                            {{? it.showCount.show}}
+                            <div class="tlc-showCounts cl-showCount">
+                                <div class="tlc-showCount yourCount cl-showCount" data-yourcount>
+                                    <div class="tlc-showCount_value cl-showCount_value" data-yourcount-value></div>
+                                    <div class="tlc-showCount_label cl-showCount_label" data-yourcount-text>{{=it.showCount.yourCount}}</div>
+                                </div>
+                                <div data-totalcount class="tlc-showCount totalCount cl-showCount">
+                                    <div class="tlc-showCount_value cl-showCount_value" data-totalcount-value></div>
+                                    <div class="tlc-showCount_label cl-showCount_label" data-totalcount-text>{{=it.showCount.totalCount}}</div>
+                                </div>
+                            </div>
+                            {{?}}
+                        </div>
+                            <div class="tlc-votes" data-votesContainer>
+                            </div>
+                            <div class="tlc-showMoreVotes hidden" data-showMoreVotesContainer></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

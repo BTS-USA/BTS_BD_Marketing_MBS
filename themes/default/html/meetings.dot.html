@@ -1,0 +1,266 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="meetings cl-component">
+
+            {{? it.header}}
+            <header class="meetings-header--main cl-header--main">
+                {{? it.header.title}}
+                <h1 class="meetings-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="meetings-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <div class="meetings-container cl-container">
+                <div class="cl-xs-column-12 cl-row">
+                    {{? it.instructions}}
+                    <div class="meetings-instructions cl-instructions">
+                        <p class="meetings-instructions__text cl-instructions__text">{{=it.instructions}}</p>
+                    </div>
+                    {{?}}
+                    <article class="meetings-article cl-row">
+                        <section class="meetings-body" data-meetings-body>
+                            <div class="meetings-body__leftPanel">
+                                <div class="meetings-body__list">
+                                    <div class="meetings-list__header">
+                                        <div class="meetings-list__text">
+                                            <p class="meetings-text__title">{{=it.content.meetingList}}</p>
+                                            <p class="meetings-text__desc">{{=it.content.meetingListDesc}}</p>
+                                        </div>
+                                        <div class="meetings-list__icon cl-icon cl-icon--meeting"></div>
+                                        <div class="meetings-list__accordion cl-icon cl-icon--plus" data-meetingslist-accordion></div>
+                                    </div>
+                                    <div class="meetings-list__body" data-meetingslist-body>
+                                        <div class="meetings-list">
+                                            {{?it.meetings && it.meetings.length > 0}}
+                                            {{~it.meetings :meeting:ind}}
+                                            <div class="meetings-list__meeting" data-meetingid="{{=meeting.id}}" data-meeting>
+                                                <div class="meetings-meeting__details">
+                                                    <div class="meetings-meeting__left">
+                                                        <p class="meetings-meeting__title {{?meeting.status !== 'Closed'}}meetings-meeting__title--notClosed{{?}}">{{=meeting.title}}</p>
+                                                        {{?meeting.startTime}}
+                                                        <div class="meetings-meeting__dateTime">
+                                                            <i class="cl-icon cl-icon--calendar"></i>
+                                                            <span class="meetings-meeting__date">{{=meeting.startDate}}</span>
+                                                            <i class="cl-icon cl-icon--clock"></i>
+                                                            <span class="meetings-meeting__time">{{=meeting.time}}</span>
+                                                        </div>
+                                                        {{?}}
+                                                    </div>
+
+                                                    <div class="meetings-meeting__right">
+                                                        <p class="meetings-meeting__code {{?meeting.status !== 'Closed'}}meetings-meeting__code--notClosed{{?}}">{{=it.content.meetingId}} {{=meeting.code}}</p>
+                                                        <p class="meetings-meeting__status">{{=meeting.status}}</p>
+                                                    </div>
+                                                </div>
+                                                {{?it.content.leaderText}}
+                                                <div>
+                                                    {{=it.content.leaderText}}: {{=meeting.leaderName}}
+                                                </div>
+                                                {{??}}
+                                                <div>
+                                                    Leader: {{=meeting.leaderName}}
+                                                </div>
+                                                {{?}}
+                                                {{?meeting.isLeader}}
+                                                <div class="meetings-meeting__copyURL">
+                                                    <span data-direct-link="{{=meeting.directLinkText}}" data-meeting-copydirecturl> {{?meeting.status !== 'Closed'}}{{=it.content.copyDirectURL}}{{?}}</span>
+                                                </div>
+                                                {{?}}
+                                            </div>
+                                            {{~}}
+                                            {{??}}
+                                            <p class="meetings-list__noMeeting">{{=it.content.noMeetings}}</p>
+                                            {{?}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="meetings-body__instructions">
+                                    <div class="meetings-instructions__header">
+                                        <p class="meetings-instructions__title">{{=it.content.leaderInstructions}}</p>
+                                        <div class="meetings-instructions__accordion cl-icon cl-icon--plus" data-instructions-accordion></div>
+                                    </div>
+                                    <div class="meetings-instructions__body" data-instructions-body>
+                                        {{? it.leaderInstructions}}
+                                        <ol>
+                                            {{~it.leaderInstructions :li:index}}
+                                            <li>{{=li.instruction}}</li>
+                                            {{~}}
+                                        </ol>
+                                        {{?}}
+                                    </div>
+                                </div>
+                                <!--comments section-->
+                                <div>
+                                    <div>
+                                        <ul id="discussion"></ul>
+                                    </div>
+                                </div>
+                                <!--comments end-->
+                            </div>
+                            <!-- <div class="meetings-mobileFooter" id="meetings-mobileFooter" data-meetings-startjoin data-meetings-mobilefooter>
+                                <div class="meetings-start__error" data-meetings-start-error>{{=it.content.meetingAlreadyOpened}}</div>
+                                <div class="meetings-start__button meetings-mobileFooter__startButton" data-start-meeting-button>
+                                    <span>{{=it.content.leaderText}}</span>
+                                </div>
+                                <div class="meetings-mobileFooter__joinButton" data-join-meeting-button>
+                                    <span>{{=it.content.followerText}}</span>
+                                </div>
+                            </div> -->
+                            <div class="meetings-body__rightPanel" data-meetings-startjoin data-meetings-rightpanel>
+                                <div class="meetings-startJoin" data-select-leader-follower data-rightpanel-actions>
+                                    <div class="meetings-start__error" data-meetings-start-error>{{=it.content.meetingAlreadyOpened}}</div>
+                                    <div class="meetings-leader__start">
+                                        <p class="meetings-start__text">{{=it.content.createMeeting}}</p>
+                                        <div class="meetings-start__button meetings-buttons" data-start-meeting-button>{{=it.content.leaderText}}</div>
+                                    </div>
+                                    <div class="meetings-follower__join">
+                                        <p class="meetings-join__text">{{=it.content.joinMeeting}}</p>
+                                        <div class="meetings-join__button meetings-buttons" data-join-meeting-button>{{=it.content.followerText}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="meetings-start hide" data-meeting-start data-rightpanel-actions>
+                                    <div class="meetings-start__password">
+                                        <p class="meetings-start__passwordText">{{=it.content.enterPwd}}</p>
+                                        <input class="meetings-start__passwordInput" type="password" placeholder="{{=it.content.enterPwdPlaceholder}}" data-meetings-input data-start-meeting-pwd />
+                                        <div class="meetings-start__invalidTooltip meetings-invalid__tooltip" data-meetings-invalid data-meeting-pwd-invalid></div>
+                                    </div>
+                                    <div class="meetings-start__title">
+                                        <p class="meetings-start__titleText">{{=it.content.enterTitle}}</p>
+                                        <input class="meetings-start__titleInput" type="text" placeholder="{{=it.content.enterTitlePlaceholder}}" data-meetings-input data-start-meeting-title />
+                                        <div class="meetings-start__invalidTooltip meetings-invalid__tooltip" data-meetings-invalid data-meeting-title-invalid></div>
+                                    </div>
+                                    <div class="meetings-start__backSubmit">
+                                        <div class="meetings-start__back" data-meetings-start-back>
+                                            <span class="cl-icon cl-icon--pointLeft"></span>
+                                            <span class="cl-icon cl-icon--pointLeft"></span>
+                                        </div>
+                                        <div class="meetings-start__submit" data-meetings-start-submit>{{=it.content.submit}}</div>
+                                    </div>
+                                    <div class="meetings-errors" data-meetings-errors></div>
+                                </div>
+
+                                <div class="meetings-join hide" data-meeting-join data-rightpanel-actions>
+                                    <div class="meetings-join__password">
+                                        <p class="meetings-join__codeText">{{=it.content.enterCode}}</p>
+                                        <input class="meetings-join__codeInput" type="text" placeholder="{{=it.content.enterCodePlaceholder}}" data-meetings-input data-join-meeting-code />
+                                        <div class="meetings-join__invalidTooltip meetings-invalid__tooltip" data-meetings-invalid data-meeting-code-invalid></div>
+                                    </div>
+                                    <div class="meetings-join__backJoin">
+                                        <div class="meetings-join__back" data-meetings-join-back>
+                                            <span class="cl-icon cl-icon--pointLeft"></span>
+                                            <span class="cl-icon cl-icon--pointLeft"></span>
+                                        </div>
+                                        <div class="meetings-join__submit" data-meetings-join-submit>{{=it.content.submit}}</div>
+                                    </div>
+                                    <div class="meetings-errors" data-meetings-errors></div>
+                                </div>
+
+                                <div class="meetings-selectedMeeting hide" data-meeting-selectedmeeting data-rightpanel-actions>
+
+                                </div>
+                            </div>
+                        </section>
+                        <div class="meetings-mobileFooter" id="meetings-mobileFooter" data-meetings-startjoin data-meetings-mobilefooter data-meetings-body>
+                            <div class="meetings-start__error" data-meetings-start-error>{{=it.content.meetingAlreadyOpened}}</div>
+                            <div class="meetings-start__button meetings-mobileFooter__startButton" data-start-meeting-button>
+                                <span>{{=it.content.leaderText}}</span>
+                            </div>
+                            <div class="meetings-mobileFooter__joinButton" data-join-meeting-button>
+                                <span>{{=it.content.followerText}}</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<section class="meetings-modal cl-modal" data-meetings-modal data-meetings-modal-all>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+            <section class="cl-modal__body">
+                <div class="cl-modal__content">
+                {{? it.content.copied }}
+                    <p>{{=it.content.copied}}</p>
+                {{??}}
+                    <p>Meeting Link Copied to clipboard</p>
+                    <p>Successfully</p>
+                {{?}}
+                </div>
+            </section>
+        </div>
+    </article>
+</section>
+<section class="meetings-modal__leaderStart cl-modal" data-meetingleaderstart-modal data-meetings-modal-all>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+            <header class="cl-modal__header cl-modal__header--close">
+                <span class="cl-modal__headerText">{{=it.content.loginAsLeader}}</span>
+                <span type="button" class="cl-modal__closebtn cl-icon cl-icon--remove" data-dismiss="modal" data-deletebtn="close" aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body" data-meeting-start>
+                <div class="cl-modal__content meetings-start">
+                    <div class="meetings-start__password">
+                        <p class="meetings-start__passwordText">{{=it.content.enterPwd}}</p>
+                        <input class="meetings-start__passwordInput" type="password" placeholder="{{=it.content.enterPwdPlaceholder}}" data-meetings-input data-start-meeting-pwd />
+                        <div class="meetings-start__invalidTooltip meetings-invalid__tooltip" data-meetings-invalid data-meeting-pwd-invalid></div>
+                    </div>
+                    <div class="meetings-start__title">
+                        <p class="meetings-start__titleText">{{=it.content.enterTitle}}</p>
+                        <input class="meetings-start__titleInput" type="text" placeholder="{{=it.content.enterTitlePlaceholder}}" data-meetings-input data-start-meeting-title />
+                        <div class="meetings-start__invalidTooltip meetings-invalid__tooltip" data-meetings-invalid data-meeting-title-invalid></div>
+                    </div>
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="meetings-start__submit" data-meetings-start-submit>{{=it.content.submit}}</div>
+                </footer>
+                <div class="meetings-errors" data-meetings-errors></div>
+            </section>
+        </div>
+    </article>
+</section>
+<section class="meetings-modal__followerJoin cl-modal" data-meetingfollowerjoin-modal data-meetings-modal-all>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+            <header class="cl-modal__header cl-modal__header--close">
+                <span class="cl-modal__headerText">{{=it.content.joinAsFollower}}</span>
+                <span type="button" class="cl-modal__closebtn cl-icon cl-icon--remove" data-dismiss="modal" data-deletebtn="close" aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body" data-meeting-join>
+                <div class="cl-modal__content meetings-join">
+                    <div class="meetings-join__password">
+                        <p class="meetings-join__codeText">{{=it.content.enterCode}}</p>
+                        <input class="meetings-join__codeInput" type="text" placeholder="{{=it.content.enterCodePlaceholder}}" data-meetings-input data-join-meeting-code />
+                        <div class="meetings-join__invalidTooltip meetings-invalid__tooltip" data-meetings-invalid data-meeting-code-invalid></div>
+                    </div>
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="meetings-join__submit" data-meetings-join-submit>{{=it.content.submit}}</div>
+                </footer>
+                <div class="meetings-errors" data-meetings-errors></div>
+            </section>
+        </div>
+    </article>
+</section>
+<section class="meetings-modal__others cl-modal" data-meetings-other-modal data-meetings-modal-all>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+            <header class="cl-modal__header cl-modal__header--close">
+                <span class="cl-modal__headerText">{{=it.content.meetingsText}}</span>
+                <span type="button" class="cl-modal__closebtn cl-icon cl-icon--remove" data-dismiss="modal" data-deletebtn="close" aria-hidden="true"></span>
+            </header>
+            <section class="cl-modal__body">
+                <div class="cl-modal__content" data-meeting-selectedmeeting data-meetings-other-modal-content></div>
+            </section>
+        </div>
+    </article>
+</section>

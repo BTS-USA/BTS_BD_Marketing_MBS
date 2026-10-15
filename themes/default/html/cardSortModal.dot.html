@@ -1,0 +1,29 @@
+<div class="cs-modalWrapper" data-modal-card>
+    <article class="cs-modal">
+        <div class="cs-modal__container">
+            <div class="cs-modal__backControl">
+                <i class="cl-icon cl-icon--back"></i>
+                <span data-back-button>{{=it.wizletInfo.textContent.backText}}</span>
+                <!-- <span data-back-button>Back</span> -->
+            </div>
+            <section class="cs-modal__body">
+                <div class="cs-modal__content">
+                    <div class="cs-modal__cardTitle">{{=it.type.name}}</div>
+                    {{?it.type.cards.length > 0}}
+                    {{~it.type.cards :card:ind}}
+                    <div class="cs-modal__cardCont"  data-modal-card-cont data-card-value="{{=it.type.value}}">
+                        <img class="cs-modal__cardImg" src="{{=card.imgPath}}" alt="Card">
+                        <div class="cs-modal__cardTextCont" data-text-container>
+                            <span class="cs-modal__cardText" value="{{=card.value}}">{{=card.title}}</span>
+                            <i class="cl-icon cs-modal__closeCardIcon cl-icon--remove" data-remove-card-mobile></i>
+                        </div>
+                    </div>
+                    {{~}}
+                    {{??}}
+                    <div class="cs-modal__noCardText">{{=it.wizletInfo.textContent.noCards}}</div>
+                    {{?}}
+                </div>
+            </section>
+        </div>
+    </article>
+</div>

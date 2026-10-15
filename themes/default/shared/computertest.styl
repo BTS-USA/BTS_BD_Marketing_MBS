@@ -1,0 +1,389 @@
+    @import "componentlibrary.styl"
+    html
+        overflow -moz-scrollbars-vertical
+        line-height 1.5em
+
+    p, li
+        font-size 1.6*$px
+        color $codGray
+        margin 0 0 0.5em 0
+    a:link
+        font-size 1.6*$px
+        color $deepCerulean
+    a:visited
+        //color darken($deepCerulean, 40%)
+        color #00496a
+    ul, ol
+        padding 0 0 0 20px
+    h2, h3, h4, h5, h6
+        margin 0 0 10px 0
+        font-weight 600
+        line-height 1.4em
+    h1
+        font-size 3.6*$px
+    h2
+        font-size 3*$px
+    h3
+        font-size 2.4*$px
+        color $deepCerulean
+    h4
+        font-size 1.8*$px
+    h5
+        font-size 1.4*$px
+    h6
+        font-size 1.2*$px
+    .border_right
+        border-right 1px solid #e6e6e6
+    .BeginTest
+        -moz-box-shadow inset 0px 1px 0px 0px #ffffff
+        -webkit-box-shadow inset 0px 1px 0px 0px #ffffff
+        box-shadow inset 0px 1px 0px 0px #ffffff
+        background -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) )
+        background -moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% )
+        background-color #ededed
+        -moz-border-radius 6px
+        -webkit-border-radius 6px
+        border-radius 6px
+        border 1px solid #777777
+        display inline-block
+        color #002d56
+        text-decoration none
+        font-family Verdana
+        font-size 15px
+        font-weight bold
+        padding 6px 24px
+        text-decoration none
+        text-shadow 1px 1px 0px #ededed
+
+
+    .style3
+        color #ADB500
+        font-weight bold
+        font-size 12px
+        font-family Verdana, Arial, Helvetica, sans-serif
+
+    .style4
+        color #ADB500
+        font-size 14px
+        font-family Verdana, Arial, Helvetica, sans-serif
+
+    .style5
+        font-size 12px
+        font-style normal
+        line-height normal
+        font-variant normal
+        text-transform none
+        color #000000
+        text-decoration none
+        font-family Verdana, Arial, Helvetica, sans-serif
+/*
+    #myTableTop, #myTableTop td
+        border 2px solid #002d56
+
+    #myTableCenter, #myTableCenter
+        border 2px solid #002d56
+
+    #myTableBottom, #myTableBottom td
+        border 1px solid #666666
+
+    #myTableOrange, #myTableOrange td
+        border 2px solid #002d56
+
+    #myTableNested, #myTableNested td
+        border 1px
+
+    #myTableNone, #myTableNone td
+        border 0px
+
+    #myTableAll, #myTableAll td
+        border 1px
+        border-top-color #002d56
+        border-top-style solid
+        border-bottom-color #002d56
+        border-bottom-style solid
+        */
+    .navText
+        font-size 12px
+        font-style normal
+        font-weight bolder
+        text-transform lowercase
+        color #ADB500
+        text-decoration none
+
+    body
+        background-color #FFFFFF
+
+    .clients
+        font-size small
+        font-style normal
+        font-weight bold
+        font-variant normal
+        text-transform lowercase
+        color #002d56
+
+    .newsHeader
+        font-size 12px
+        font-style normal
+        font-weight bold
+        font-variant normal
+        text-transform none
+        color #024D6E
+
+    .newsItemHeader
+        font-size 12px
+        font-style normal
+        font-weight bold
+        font-variant normal
+        text-transform none
+        color #333333
+
+    .newsItemText
+        font-size 12px
+        font-style normal
+        font-weight bold
+        font-variant normal
+        text-transform none
+        color #000000
+
+    .copyright
+        font-size 10px
+        font-style normal
+        font-weight bold
+        font-variant normal
+        text-transform none
+        color #000000
+
+    h6
+        font-size 20px
+        font-style normal
+        line-height normal
+        font-weight bolder
+        color #024D6E
+        text-decoration none
+
+    .whiteText
+        font-family Verdana, Arial, Helvetica, sans-serif
+        font-size 14px
+        font-style normal
+        line-height normal
+        font-weight bolder
+        font-variant normal
+        text-transform none
+        color #FFFFFF
+        text-decoration none
+
+    .TM
+        font-family Verdana, Arial, Helvetica, sans-serif
+        font-size 8px
+        font-style normal
+        line-height normal
+        font-weight bold
+        font-variant normal
+        text-transform none
+        color #ADB500
+        text-decoration none
+
+    .author
+        font-family Verdana, Arial, Helvetica, sans-serif
+        font-size 10px
+        font-style normal
+        line-height normal
+        font-weight normal
+        font-variant normal
+        text-transform none
+        color #000000
+
+    .orange
+        font-family Verdana, Arial, Helvetica, sans-serif
+        font-size 12px
+        font-style normal
+        line-height normal
+        font-weight normal
+        font-variant normal
+        text-transform none
+        color #002d56
+        text-decoration none
+
+    .clam
+        position relative
+        margin-left 1em
+        margin-bottom 1em
+        margin-top 1em
+        display none
+        font-family Verdana, Arial, Helvetica, sans-serif
+        font-size 12px
+        font-style italic
+        line-height normal
+        font-weight normal
+        font-variant normal
+        text-transform none
+        color #000000
+        text-decoration none
+        border-color #ADB500
+        border-width thin
+        border-style solid
+
+    .clamitem
+        margin-bottom 0em
+        margin-top 0em
+
+    .TASLHeader
+        font-family Verdana, Arial, Helvetica, sans-serif
+        font-size 18px
+        font-style normal
+        line-height normal
+        font-weight bold
+        font-variant normal
+        text-transform none
+        color #002d56
+
+    .Valid
+        color green
+        font-size 12pt
+
+    .Invalid
+        color red
+        font-size 12pt
+
+    .chromeInvalid
+        color #ff4e3a
+        font-size 10pt
+
+//new css
+.ct
+    &-progress
+        &__error
+            display none
+    &-internet
+        display none
+    &-header
+        &--main
+            margin 0
+            padding 15px 15px
+            width 100%
+            z-index 999999
+            box-shadow(0 1px 1px rgba(17, 17, 17, 0.3))
+        &__description
+            &--main
+                color #fff
+    &-button
+        width 200px
+    &-content
+        position relative
+        margin 20px 0 0 0
+        padding 0
+        &:first-of-type
+            margin 0 0 0 0
+    &-topbar
+        padding 20px 15px
+        background-color #fcfcfc
+        border-style solid
+        border-color $mercury
+        border-width 1px 0
+        overflow hidden
+        &-container
+            float left
+        &__number
+            display block
+            margin 0 auto 10px auto
+            width 45px
+            height 45px
+            border 1px solid $mercury
+            //background-color alpha($mercury ,0.3)
+            background-color rgba(230,230,230,0.3)
+            border-radius 50%
+            text-align center
+            font-size 2.4*$px
+            line-height 1.8em
+            color $silver
+        &__instructions
+          text-align center
+          padding 0 15px 20px 15px
+          font-size 1.2*$px
+          color $silver
+        &__controls
+            text-align center
+    &-body
+        padding 20px 15px
+        float none
+        margin 0 auto
+        max-width 960px
+        &__no-content
+            text-align center
+            color $mercury
+        &__title
+            &--fix
+                color $cerulean
+    &-table
+        max-width 800px
+        width 100%
+        margin 0 auto 10px auto
+        &__cell
+            padding 12px
+            &--even
+                background-color #fcfcfc
+        &__row
+            border-bottom 1px solid $mercury
+            &:last-child
+                border 0
+        &__cellhead
+            padding 12px
+            background-color $deepCerulean
+            &--even
+                //background-color darken($deepCerulean, 10%)
+                background-color #006d9e
+        &__label
+            width 100%
+            display inline-block
+            color $gray
+            font-size 1.2*$px
+            &--header
+                text-align center
+                color #fff
+                font-size 1.6*$px
+            &--headerleft
+                text-align left
+        &__value
+            display inline-block
+            text-align center
+            width 100%
+            color $gray
+            font-size 1.2*$px
+            &--check
+                background url("../media/img/check.svg") no-repeat
+                height 15px
+                width 15px
+                display block
+                top 50%
+                left 50%
+                position relative
+            &--ex
+                background url("../media/img/closeBlue.svg") no-repeat
+                height 13px
+                width 13px
+                display block
+                top 50%
+                left 50%
+                position relative
+    &-test
+        &__caption
+            text-align center
+            font-weight bold
+            padding 0 0 20px 0
+            font-size 20px
+    &--hidden
+        display none
+    &--fadeout
+        opacity 0 
+        transition(opacity 0.25s ease-in)
+        pointer-events none
+        position absolute
+        z-index -1
+    &--fadein
+        opacity 1 !important
+        transition(opacity 0.25s ease-in)
+        pointer-events auto !important
+        position static
+        z-index auto
+    &--important
+        color $sunsetOrange

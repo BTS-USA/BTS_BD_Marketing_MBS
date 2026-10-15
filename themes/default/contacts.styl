@@ -1,0 +1,479 @@
+﻿// import component library mixins and variables
+@import "shared/cl.styl"
+
+.coc
+    height calc(80vh - 40px)
+    width 100%
+    position relative
+    overflow auto
+    background-color #fff
+
+    @media (min-width 768px)
+        max-width 1024px  //for screens larger then 1024px (ipad) screen will show background
+        margin 0 auto
+        height calc(80vh - 10px)
+    .cl-vp[max-width~="768px"]
+        max-width 1024px  //for screens larger then 1024px (ipad) screen will show background
+        margin 0 auto
+        height 90vh
+    &-row
+        margin 10px 0px 0px 0px
+        background-color $gray
+        color #ffffff
+        position relative
+        &__addnew
+            background-color $tundora
+            cursor pointer
+            display table-cell
+            vertical-align top
+            padding 5px
+            &--label
+                padding 0px 6px
+            &--expicon
+            &--collicon
+                font-family "clicons"
+                line-height 0.5em
+                font-size 1.9*$px
+            &--expicon
+                &:before
+                    content "\f114"
+            &--collicon
+                &:before
+                    content "\f113"
+        &__fields
+            width calc(100% - 135px)
+            padding-left 10px
+            display table
+            min-height 40px
+            @media (max-width 768px)
+                width calc(100% - 135px)
+            .cl-vp[max-width~="768px"] &
+                width calc(100% - 135px)
+            &-col1
+            &-col2
+            &-col3
+                &--fieldcolor, &--fieldcolor.cl-form__text
+                    background-color transparent
+                    color #ffffff        
+            &>&-col1
+                font-size 1.6*$px
+                padding 5px 10px 0px 0px
+                display table-cell
+                vertical-align top
+                float none
+                @media (max-width 768px)
+                    display table
+                .cl-vp[max-width~="480px"] &
+                    display initial
+                & > textarea
+                    font-size 1.6*$px
+                    padding-left 0px
+                    &::placeholder
+                        color #fff
+                        opacity 0.6
+                        font-size 1.4*$px
+            &>&-col2, &>&-col3
+                font-size 1.4*$px
+                padding 5px 0px 0px 10px
+                border-left solid 1px $codGray
+                display table-cell
+                vertical-align top
+                float none
+                @media (max-width 768px)
+                    border none
+                    padding 0px 0px 5px 0px
+                    display table
+                    width 100%
+                .cl-vp[max-width~="480px"] &
+                    border 0
+                    padding 0px 0px 5px 0px
+                    width 100%
+                & textarea
+                    font-size 1.5*$px
+                    font-weight bold
+                    @media (max-width 768px)
+                        padding 0px 0px 0px 5px
+                    .cl-vp[max-width~="768px"] &
+                        padding 0px 0px 0px 5px
+            &-col2 > span
+            &-col3 > span
+                vertical-align top
+                &:first-child
+                    padding 7px 0px 7px 5px
+                    vertical-align top
+                    white-space nowrap
+                    @media (max-width 768px)
+                        padding 0px
+                    .cl-vp[max-width~="768px"] &
+                        padding 0px
+                &:last-child
+                    width 100%
+        &__icons
+            position absolute
+            top 0px
+            right 0px
+            font-family "clicons"
+            text-align center
+            line-height 2em
+            font-size 2.1*$px
+            cursor pointer
+            &:after
+                content ""
+                clear both
+                display block
+            &--email
+            &--video
+            &--expand
+            &--collapse
+                width 40px
+                height 40px
+                background-color #696565
+                margin-right 5px
+                float left
+            &--email
+                &:before
+                    content "\f121"
+            &--video
+                &:before
+                    content "\f122"
+            &--expand
+                &:before
+                    content "\f114"
+            &--collapse
+                &:before
+                    content "\f113"
+    
+    .sbsc &-row.coc--modified
+        .coc-row__icons:before
+            font-family "clIcons"
+            content "\f116"
+            float left
+            background-color $apple
+            width 22px
+            height 22px
+            border-radius 50%
+            font-size 0.7rem
+            text-align center
+            line-height 23px
+            margin 10px 8px 0px 0
+            display block
+                            
+    &-details
+        background-color $silver
+        padding 20px 10px 10px 10px
+        
+    &-form
+        display block
+        width 100%
+        @media (min-width 768px)
+            display table
+        .cl-vp[max-width~="768px"] &
+            display table
+        &:after
+            display block
+            clear both
+            content ""
+        &__container
+            padding-bottom 20px
+        &__col
+            padding 0px 10px 0px 0px
+            float none
+            @media (min-width 768px)
+                float left
+            .cl-vp[max-width~="768px"]
+                float left
+        &__col-1
+            width 100%
+        &__col-2
+            width 100%
+            @media (min-width 768px)
+                width calc(100% / 2)
+            .cl-vp[max-width~="768px"]
+                width calc(100% / 2)
+        &__col-3
+            width 100%
+            @media (min-width 768px)
+                width calc(100% / 3)
+            .cl-vp[max-width~="768px"]
+                width calc(100% / 3)
+        &__col-4
+            width 100%
+            @media (min-width 768px)
+                width calc(100% / 4)
+            .cl-vp[max-width~="768px"]
+                width calc(100% / 4)
+        &__col-5
+            width 100%
+            @media (min-width 768px)
+                width calc(100% / 5)
+            .cl-vp[max-width~="768px"]
+                width calc(100% / 5)
+        &__infotitle
+            font-size 1.6*$px
+            padding-bottom 10px
+        &__field
+            background-color #fff
+            display table
+            width 100%
+            margin 0px 0px 5px 0px
+            .sbsc &.coc--modified:after
+                font-family "clIcons"
+                line-height 19px
+                content "\f116"
+                height 16px
+                width 16px
+                background-color $apple
+                color #fff
+                border-radius 50%
+                font-size 0.6rem
+                display block
+                text-align center
+                position relative
+                top 18px
+                transform translate(-50%,-50%)
+        &__fieldlabel
+            font-style italic
+            color $silver
+            padding 7px 5px
+            font-size 1.4*$px
+            text-transform capitalize
+            display table-cell
+            vertical-align top
+            white-space nowrap
+        &__fieldinput
+            display table-cell
+            vertical-align top
+            width 100%
+        &--show
+            display block
+        &--hide
+            display none
+    &-textbox, &-textbox.cl-form__text
+        border none
+        font-size 1.4*$px
+        float none
+        min-height 30px
+        resize none
+        overflow hidden
+        placeholder-text($mercury)
+        @media (max-width 768px)
+            min-height 20px
+        .cl-vp[max-width~="768px"]
+            min-height 20px
+        &--disabled
+            background-color transparent
+    &-note
+        &__cell
+            width 28% !important
+            float left
+        &__dummy
+            width 8% !important
+            float left
+        &__header
+            padding 0 10px 0 0
+            &:after
+                content ""
+                display block
+                clear both
+        &__title
+        &__btns-holder
+            float left
+        &__title
+            padding 0
+            font-size 1.6*$px
+            font-weight 400
+            @media (max-width 768px)
+                padding 10px 0
+            .cl-vp[max-width~="768px"]
+                padding 10px 0
+        &__btns-holder
+            padding 0
+            text-align right
+        &__icon
+            float left
+            width 50%
+            font-size 1.2*$px
+            @media (max-width 768px)
+                &:first-child
+                    width 60%
+                &:last-child
+                    width 40%
+            .cl-vp[max-width~="768px"]
+                &:first-child
+                    width 60%
+                &:last-child
+                    width 40%
+            &--expand
+            &--addnew
+                float right
+                &:after
+                    font-family "clIcons"
+                    width 30px
+                    height 30px
+                    line-height 30px
+                    background-color $cerulean
+                    color white
+                    display block
+                    text-align center
+                    font-size 2.4*$px
+                    float left
+                    margin 4px 0 4px 7px
+                    cursor pointer        
+            &--expand
+                &:after
+                    content "\f114"
+            &--addnew
+                &:after
+                    content "\f124"
+            &--delete
+                @media (max-width 768px)
+                    right 0 
+                    background-color $silver
+                    top 40%
+                .cl-vp[max-width~="768px"]
+                    right 0 
+                    background-color $silver
+                    top 40%
+                &:after
+                    font-family "clIcons"
+                    content "\f115"
+                    display block
+                    width 26px
+                    height 26px
+                    line-height 26px
+                    background-color $monza
+                    text-align center
+                    border-radius(50%)
+                    color #fff
+                    font-size 1.2*$px
+                    margin 5px
+                    cursor pointer
+                    float right
+            &--disabled
+                &:after
+                    background-color $gray
+        &__expand:after
+            content "\f113"
+        .sbsc &__expand.coc--modified
+        .sbsc &__icon--expand.coc--modified
+            &:after
+                margin 4px 0 4px 6px
+            .coc-note__btn-label:after
+                font-family "clIcons"
+                content "\f119"
+                color $apple
+                width 18px
+                height 18px
+                background-color $silver
+                text-align center
+                line-height 19px
+                border-radius 50%
+                position relative
+                left 47px
+                top -22px
+                display block
+                float right
+        
+        &__btn-label
+            float left
+            width calc(100% - 47px)
+            margin 0 0 0 10px
+        &__heading            
+            text-transform uppercase
+            font-weight 600
+            font-size 1.2*$px
+            &--hide
+                display none
+            &--show
+                display block
+        &__date-text
+            cursor default
+            padding 5px
+        &__details
+            padding 10px 5px 0 0
+        &__data
+            table-layout fixed
+            &-cell
+                background-color $mercury
+                border-bottom 5px solid $silver
+                border-right 5px solid $silver
+                vertical-align top
+                font-size 1.4*$px
+                width 28%
+                display table-cell
+                postion relative
+                &:last-child
+                    background-color transparent
+                    border-right none
+                    width 8%
+                &:nth-last-child(2)
+                    background-color transparent
+                    width 8%
+                    
+                &--hidden
+                    display none !important
+            &-text
+                width 100%
+                background-color transparent
+                padding 5px
+                display inline-block
+            
+        .sbsc &__data.coc--modified
+            .coc-note__activity:after
+                font-family "clIcons"
+                content "\f116"
+                line-height 19px
+                top 14px
+                height 16px
+                width 16px
+                background-color $apple
+                color #fff
+                border-radius 50%
+                font-size 0.6rem
+                display block
+                text-align center
+                float right
+                position relative
+                transform translate(-50%,-50%)  
+                  
+        &__edit-mode
+            .coc-note__activity
+                background-color #fff
+        &__edit-mode-workontemplate
+            .coc-note__activity
+            .coc-note__mgmtnotes
+                background-color #fff
+
+@media (min-width: 992px)
+    .cl-md-column-5, .cl-md-cell-5 
+        width: 50% !important
+
+[dir="rtl"]
+    .coc-row
+        &__icons
+            left 0
+            right auto
+        &__fields
+            &>.coc-row__fields-col2, &>.coc-row__fields-col3
+                padding 5px 10px 0px 0
+                border-right solid 1px $codGray
+                border-left none		
+            &-col2 > span:first-child, &-col3 > span:first-child
+                padding 7px 5px 7px 0
+    .coc-note
+        &__title, &__btns-holder, &__icon, &__cell
+            float right
+        &__header
+            padding 0 0 0 10px
+        &__details
+            padding 10px 0 0 5px
+        &__data-cell
+            border-left 5px solid $silver
+            border-right none
+    .coc-form
+        &__col
+            padding 0 0 0 10px
+            @media (min-width 768px)
+                float right
+            .cl-vp[max-width~="768px"]
+                float right

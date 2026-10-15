@@ -1,0 +1,345 @@
+﻿<div class="mainContentWrapper">
+    <div class="mainContent">
+        <div class="cc-videobox__buttons">
+            {{? it.webRTCAVOptions }}
+            <div class="cc-videobox__videoOptions chkVideo">
+                <div class="cc-videobox__option">
+                    <div class="cc-videobox__checkboxContainer">
+                        <input type="checkbox" id="videoOff" data-video-opt>
+                        <label for="videoOff" data-video-opt-label>
+                            {{? it.assessorWebRTCText }}
+                            {{=it.assessorWebRTCText.videoOffText || 'Turn off Video'}}
+                            {{??}}
+                            Turn off Video
+                            {{?}}
+                        </label>
+                    </div>
+                </div>
+                <div class="cc-videobox__option chkAudio">
+                    <div class="cc-videobox__checkboxContainer">
+                        <input type="checkbox" id="audioOff" data-audio-opt>
+                        <label for="audioOff" data-audio-opt-label>
+                            {{? it.assessorWebRTCText }}
+                            {{=it.assessorWebRTCText.audioOffText || "Don't Connect to Audio"}}
+                            {{??}}
+                            Don't Connect to Audio
+                            {{?}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            {{?}}
+            <div data-buttons-in-call="">
+                <span class="cl-button cc-button__stop" data-video-hangup="" title="Leave the call">Hang up</span>
+                {{? it.mayEndCall }}
+                <span class="cl-button cc-button__stop" data-video-endcall="" title="End the call for everyone">End
+                    call</span>
+                {{?}}
+                <span class="cl-button cc-button__mute" data-video-mute="">Active</span>
+                {{? it.mayEndCall }}
+                <span class="cl-button cc-button__forceFallback" title="Force Fallback" data-force-fallback>
+                    {{? it.assessorWebRTCText }}
+                    {{=it.assessorWebRTCText.FFBtnText || 'Force Fallback'}}
+                    {{??}}
+                    Force Fallback
+                    {{?}}
+                </span>
+                {{?}}
+            </div>
+            <div data-buttons-no-call="">
+                <span class="cl-button cc-button__start" data-video-start="{{! it.callId}}" title="Call participant (and other assossors, if any)">Start
+                    call</span>
+                <span class="cl-button cc-button__start" data-video-start-assessor="{{! it.callId}}" title="Call other assossors, if any">Start
+                    assessor call</span>
+                <span class="cl-button cc-button__forceFallback" title="Force Fallback" data-force-fallback>
+                    {{? it.assessorWebRTCText }}
+                    {{=it.assessorWebRTCText.FFBtnText || 'Force Fallback'}}
+                    {{??}}
+                    Force Fallback
+                    {{?}}
+                </span>
+            </div>
+        </div>
+        <section class="em cl-component cc-videobox" data-label="videobox">
+            <div class="cc-videobox__screen" data-form="video-screen" data-video-container>
+                <div class="cc-videobox__wrapper cc-videobox__subscriber-wrapper">
+                    <div id="subscriberVc" class="cc-videobox__subscriber">
+                        <div id="videoCallConnectingDiv" class="scall-popup__callLoadingDiv">
+                            <div class="scall-popup__calling--status">
+                                {{? it.assessorWebRTCText }}
+                                {{=it.assessorWebRTCText.callConnectingMsg || 'Connecting your call, please wait.'}}
+                                {{??}}
+                                Connecting your call, please wait.
+                                {{?}}
+                            </div>
+                            <div class="scall-popup__calling--progress" id="mainProgress">
+                                <div class="pbBox pbBox__nill"></div>
+                                <div class="pbBox pbBox__nill"></div>
+                                <div class="pbBox pbBox__nill"></div>
+                                <div class="pbBox pbBox__nill"></div>
+                                <div class="pbBox pbBox__nill"></div>
+                                <div class="pbBox pbBox__nill"></div>
+                                <div class="pbBox pbBox__nill"></div>
+                                <div class="pbBox pbBox__nill"></div>
+                                <div class="pbBox pbBox__nill" style="display:none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cc-videobox__wrapper cc-videobox__publisher-wrapper">
+                    <div id="publisherVc" class="cc-videobox__publisher"></div>
+                </div>
+            </div>
+        </section>
+        <section id="exercisesQuestion" class=""></section>
+        <section class="cc-videobox__message--end" data-label="video-call-ended"></section>
+        {{? it.mayEndCall }}
+        <section class="cc-videobox__alertBoxContainer" data-alert-box>
+            <div class="cc-videobox__alertBox">
+                <div class="cc-videobox__alertBox--unableTo">
+                    <img src="/wizer/Content/WizletResources/themes/default/shared/images/alert.jpg" />
+                    <h1>
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.FFInfoTitle || 'Unable to connect the call'}}
+                        {{??}}
+                        Unable to connect the call
+                        {{?}}
+                    </h1>
+                    <p>
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.FFInfoDescription || 'In order to connect with the person you are
+                        scheduled to meet, please use the below call-in information:'}}
+                        {{??}}
+                        In order to connect with the person you are scheduled to meet, please use the below call-in
+                        information:
+                        {{?}}
+                    </p>
+                </div>
+                <div class="cc-videobox__alertBox--contactInfo">
+                    <ul data-fallback-info-list></ul>
+                </div>
+                <div class="cc-videobox__alertBox--helpImprove">
+                    <a data-help-improve-failureLink>
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.FFHelpUsImprove || 'Help us improve, Let us know what went wrong.'}}
+                        {{??}}
+                        Help us improve, Let us know what went wrong.
+                        {{?}}
+                    </a>
+                </div>
+            </div>
+        </section>
+        {{?}}
+        <section class="cc-videobox__ratingsMainContainer" data-label="rating-block">
+            <div class="cc-videobox__ratingsContainer">
+                <div class="cc-videobox__ratingCloseBtn cl-icon cl-icon--remove" data-rating-close></div>
+                <div class="cc-videobox__ratings">
+                    <p data-rate-experience>
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.ratingTitle || 'Rate your experience'}}
+                        {{??}}
+                        Rate your experience
+                        {{?}}
+                    </p>
+                    <p data-appreciate-msg>
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.ratingThankYou || 'Thank You, We appreciate your feedback.'}}
+                        {{??}}
+                        Thank You, We appreciate your feedback.
+                        {{?}}
+                    </p>
+                    <div class="cc-videobox__ratings--startCont">
+                        <i id="startRating" class="cc-videobox__ratings--star" data-star-value="1"></i>
+                        <i id="startRating" class="cc-videobox__ratings--star" data-star-value="2"></i>
+                        <i id="startRating" class="cc-videobox__ratings--star" data-star-value="3"></i>
+                        <i id="startRating" class="cc-videobox__ratings--star" data-star-value="4"></i>
+                        <i id="startRating" class="cc-videobox__ratings--star" data-star-value="5"></i>
+                    </div>
+                </div>
+                <div class="cc-videobox__ratings--helpImprove" data-help-improve>
+                    <a data-help-improve-link>
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.FFHelpUsImprove || 'Help us improve, Let us know what went wrong.'}}
+                        {{??}}
+                        Help us improve, Let us know what went wrong.
+                        {{?}}
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<section class="cl-modal" data-feedback-form>
+    <article class="cl-modal__dialog">
+        <div class="cl-modal__container">
+
+            <header class="cl-modal__header cl-modal__header--close">
+                <h3 class="cl-modal__title">
+                    {{? it.assessorWebRTCText }}
+                    {{=it.assessorWebRTCText.feedbackTitle || 'Help us improve'}}
+                    {{??}}
+                    Help us improve
+                    {{?}}
+                </h3>
+                <span type="button" class="cl-modal__closebtn cl-icon cl-icon--remove" data-dismiss="modal" aria-hidden="true" data-closemodal></span>
+            </header>
+            <section class="cl-modal__body">
+                <div class="cl-modal__content">
+                    <form data-feedback-formControl>
+                        <div>
+                            <p>
+                                {{? it.assessorWebRTCText }}
+                                {{=it.assessorWebRTCText.feedbackDescription || 'Description'}}
+                                {{??}}
+                                Description
+                                {{?}}
+                            </p>
+                            <textarea id="description" cols="30" rows="5" data-feedback-formComment></textarea>
+                        </div>
+                        <div class="cl-modal__content--fileInput">
+                            <p>
+                                {{? it.assessorWebRTCText }}
+                                {{=it.assessorWebRTCText.feedbackAttach || 'Attach a file'}}
+                                {{??}}
+                                Attach a file
+                                {{?}}
+                            </p>
+                            <input type="text" data-feedback-attachmentFilename disabled>
+                            <label for="file-upload" class="cl-modal__content--customUpload">
+                                <span class="cl-modal__content--addFile">+</span>
+                            </label>
+                            <input type="file" id="file-upload" accept="image/*" style="display:none"
+                                data-feedback-formAttachments>
+                        </div>
+                        <p class="cl-modal__content--fileTypes">
+                            (<strong>
+                                {{? it.assessorWebRTCText }}
+                                {{=it.assessorWebRTCText.feedbackFileFormatText || 'File format:'}}
+                                {{??}}
+                                File format:
+                                {{?}}
+                            </strong>
+                            &nbsp;
+                            {{? it.assessorWebRTCText }}
+                            {{=it.assessorWebRTCText.feedbackFileFormats || 'JPEG, GIF,'}}
+                            {{??}}
+                            JPEG, GIF,
+                            {{?}}
+                            &nbsp;
+                            <strong>
+                                {{? it.assessorWebRTCText }}
+                                {{=it.assessorWebRTCText.feedbackFileSizeText || 'File Size:'}}
+                                {{??}}
+                                File Size:
+                                {{?}}
+                            </strong>
+                            &nbsp;
+                            {{? it.assessorWebRTCText }}
+                            {{=it.assessorWebRTCText.feedbackFileSize || 'Max 10 MB.'}}
+                            {{??}}
+                            Max 10 MB.
+                            {{?}}
+                            )
+                        </p>
+                    </form>
+                </div>
+                <footer class="cl-modal__footer" data-btnholder>
+                    <div class="cl-modal__buttons">
+                        <span class="cl-button ec-button ec-button__cancel" data-feedback-btn="submit">
+                            {{? it.assessorWebRTCText }}
+                            {{=it.assessorWebRTCText.feedbackSubmit || 'Submit'}}
+                            {{??}}
+                            Submit
+                            {{?}}
+                        </span>
+                    </div>
+                </footer>
+                <div class="cl-modal__thankYou" data-feedback-thankyou>
+                    <p>
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.feedbackThankYou || 'Thank you! for your feedback.'}}
+                        {{??}}
+                        Thank you! for your feedback.
+                        {{?}}
+                    </p>
+                </div>
+                <div class="cl-modal__errorMsg" data-feedback-errorMsg></div>
+            </section>
+        </div>
+    </article>
+</section>
+<section class="fc-modal" data-fallback-confirmation>
+    <article class="fc-modal__dialog">
+        <div class="fc-modal__container">
+            <section class="fc-modal__body">
+                <header class="fc-modal__header">
+                    <h3 class="fc-modal__title">
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.FFPopupTitle || 'Force Fallback'}}
+                        {{??}}
+                        Force Fallback
+                        {{?}}
+                    </h3>
+                </header>
+                <div class="fc-modal__content">
+                    <p>
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.FFPopupMessage || 'Do you wish to force fallback?'}}
+                        {{??}}
+                        Do you wish to force fallback?
+                        {{?}}
+                    </p>
+                    <p class="fc-modal__content--msg" data-incall-msg>
+                        {{? it.assessorWebRTCText }}
+                        {{=it.assessorWebRTCText.FFPopupEndCallMessage || "(If you click 'Yes' your active call will be
+                        disconnected)"}}
+                        {{??}}
+                        (If you click 'Yes' your active call will be disconnected)
+                        {{?}}
+                    </p>
+                </div>
+                <footer class="fc-modal__footer" data-btnholder>
+                    <div class="fc-modal__buttons">
+                        <div class="fc-customButton fc-customButton__no" data-fallback-no>
+                            {{? it.assessorWebRTCText }}
+                            {{=it.assessorWebRTCText.FFPopupNoBtn || 'No'}}
+                            {{??}}
+                            No
+                            {{?}}
+                        </div>
+                        <div class="fc-customButton fc-customButton__yes" data-fallback-yes>
+                            {{? it.assessorWebRTCText }}
+                            {{=it.assessorWebRTCText.FFPopupYesBtn || 'Yes'}}
+                            {{??}}
+                            Yes
+                            {{?}}
+                        </div>
+                    </div>
+                </footer>
+            </section>
+        </div>
+    </article>
+</section>
+<section class="pfi-modal" data-participant-fallback>
+    <article class="pfi-modal__dialog">
+        <div class="pfi-modal__container">
+            <section class="pfi-modal__header">
+                <p class="pfi-modal__title" data-participant-fallback-sessionName></p>
+                <span type="button" class="pfi-modal__closeBtn cl-icon cl-icon--remove" aria-hidden="true" data-close-participant-fallback></span>
+            </section>
+            <section class="pfi-modal__body">
+                <div class="pfi-modal__alertBox">
+                    <div class="pfi-modal__alertBox--unableTo">
+                        <img src="/wizer/Content/WizletResources/themes/default/shared/images/alert.jpg" />
+                        <h1 data-participant-fallback-infoTitle></h1>
+                        <p data-participant-fallback-infoDescription></p>
+                    </div>
+                    <div class="pfi-modal__alertBox--contactInfo">
+                        <ul data-fallback-pinfo-list>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </article>
+</section>

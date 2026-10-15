@@ -1,0 +1,205 @@
+﻿.wizletEditForm body{ /*Overwrite style in default wizlet css*/
+/*    background: #254265 url(/Wizer/Content/WizletResources/Shared/media/img/bg_blueLines.png) center no-repeat;*/
+    /*background: transparent;*/
+    background-attachment: fixed; 
+}
+.wizletEditForm #EditFormWizlet{
+    margin:auto;
+    width:960px;
+
+    margin-top:10px;
+    margin-bottom:10px;
+    overflow: hidden;
+
+    clear:left;
+    padding: 0;
+}
+
+.wizletEditForm #contentBox{
+    padding: 13px;
+    float: none;
+}
+.wizletEditForm #EditFormWizlet #column1,
+.wizletEditForm #EditFormWizlet .mainContentWrapper,
+.wizletEditForm #EditFormWizlet .header{
+    float:left;     
+}
+.wizletEditForm #EditFormWizlet #column1{
+  width:200px;
+  margin-right:10px;
+}
+.wizletEditForm #EditFormWizlet .mainContentWrapper{
+  padding: 0;
+}
+.wizletEditForm #EditFormWizlet .mainContent{
+  margin:0;
+}
+.wizletEditForm #EditFormWizlet .header{
+  width:728px;
+}
+.wizletEditForm #EditFormWizlet .header .box{
+    padding: 0;
+}
+.wizletEditForm /* #EditFormWizlet */ h1 {
+  color: #fff;
+  border-bottom: 1px solid #5c6681;
+  overflow: hidden;
+  padding: 20px 10px 10px 20px;
+  margin-bottom: 15px;
+}
+.wizletEditForm #EditFormWizlet .header p{
+  padding:10px;
+}
+.wizletEditForm #EditFormWizlet .description{
+    padding: 10px;
+    width:auto;
+}
+.wizletEditForm #EditFormWizlet .description h2{
+    padding: 10px;
+    font-size: 16px;
+    line-height: 22px;
+}
+.wizletEditForm #EditFormWizlet .description p{
+    padding: 3px 0;
+}
+
+
+
+.wizletEditForm #EditFormWizlet .EditFormWizlet,
+.wizletEditForm #EditFormWizlet .EditFormWizlet .gradient{
+    background-color:#e7e7e7!important;
+    color: #000;
+    width:728px;
+}
+.wizletEditForm #EditFormWizlet table tr td{
+    vertical-align:top;
+    padding-bottom:10px;
+}
+.wizletEditForm #EditFormWizlet #column1 a{
+    display:block;
+    padding: 5px 10px;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+.wizletEditForm #EditFormWizlet #column1 a:hover{
+     background-color: #10488a;
+}
+.wizletEditForm #EditFormWizlet #column2,
+.wizletEditForm #EditFormWizlet #column3{
+    margin: 0 10px 10px 10px;
+}
+.wizletEditForm #EditFormWizlet #column2 .EditFormRow,
+.wizletEditForm #EditFormWizlet #column3 .EditFormRow{
+    margin-top:10px;
+    float:left;
+    clear:left;
+}
+.wizletEditForm #EditFormWizlet label,
+.wizletEditForm #EditFormWizlet input,
+.wizletEditForm #EditFormWizlet textarea{
+    float:left;
+}
+.wizletEditForm #EditFormWizlet input[type="text"],
+.wizletEditForm #EditFormWizlet textarea{
+    width:300px;
+}
+.wizletEditForm #EditFormWizlet label,
+.wizletEditForm #EditFormWizlet .mandatory{
+    text-transform:uppercase;
+    font-weight:bold;
+}
+.wizletEditForm #EditFormWizlet .radioOptionsContainer label{
+    float: left;
+    clear:none;
+    line-height:18px;
+    font-weight:normal;
+    text-transform:none;
+}
+.wizletEditForm #EditFormWizlet label,
+.wizletEditForm #EditFormWizlet input,
+.wizletEditForm #EditFormWizlet textarea,
+.wizletEditForm #EditFormWizlet .EditFormRow,
+.wizletEditForm #EditFormWizlet .EditForm_TextBox_Item {
+    clear:left;
+}
+    
+.wizletEditForm #EditFormWizlet #column3{
+    margin-top:25px;
+}
+.wizletEditForm #EditFormWizlet #sendContainer{
+    position:static;
+    margin-left: 260px;
+    padding-bottom:10px;
+}
+.wizletEditForm #EditFormWizlet #confirmationMessage{
+    position: absolute;
+    bottom: 10px;
+    right: 80px;
+    width: 280px;
+    border: 1px solid gray;
+    padding: 10px;
+    
+}
+.wizletEditForm #EditFormWizlet #sendContainer button{
+    background-image: url("/Wizer/Content/WizletResources/Contribute/images/btn_bg.png");
+    background-repeat: repeat-x;
+    color:#fff;
+    cursor:pointer;
+	padding: 0 8px;
+
+    height:24px;
+    line-height: 18px;
+
+	background-position: 0 -5px;
+  background-color: #2b9835;
+    
+  border-top: 1px solid #40af49;
+  border-left: 1px solid #40af49;
+  border-right: 1px solid #217831;
+  border-bottom: 1px solid #217831;
+}
+.wizletEditForm #EditFormWizlet #sendContainer button:hover{
+    background-color: #2b9835;
+    background-image:none;
+}
+
+.wizletEditForm #EditFormWizlet ul.subnav li.selected a{
+    background-color: #10488a;
+}
+
+.wizletEditForm .EditFormRow {
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+.wizletEditForm .EditFormRow label {
+  float: left;
+  width: 150px;
+}
+
+.wizletEditForm .EditFormRow input[type=text] {
+  float: left;
+  width: 200px;
+}
+
+.wizletEditForm .EditFormWizlet {
+  margin-top: 40px;
+}
+
+.wizletEditForm .EditFormWizlet #columnTable {
+  float: left;
+}
+
+.wizletEditForm .header {
+  overflow:hidden;
+}
+
+.wizletEditForm .EditFormRow label {
+  font-size:14px;
+  font-weight:bold;
+  margin-right:10px;
+}
+
+.wizletEditForm .EditFormRow input {
+  padding:10px;
+}

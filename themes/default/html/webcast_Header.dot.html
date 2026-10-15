@@ -1,0 +1,15 @@
+﻿
+    {{? it.header}}
+    <header class="wcp__header cl-header--main{{? it.header.pointer == false}} cl-pointer--hidden{{?}}">
+        {{? it.header.title}}
+        <h1 class="wcp__header-title cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+            {{=it.header.title}}
+        </h1>
+        {{?}}
+        {{? it.header.description}}
+        <p class="wcp__header-description cl-header__description--main">
+            {{=it.header.description}}
+        </p>
+        {{?}}
+    </header>
+    {{?}}

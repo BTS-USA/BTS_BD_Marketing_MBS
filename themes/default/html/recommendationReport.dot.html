@@ -1,0 +1,62 @@
+<div class="mainContentWrapper">
+    <div class="mainContent">
+        <section class="rr cl-component" data-component-version="{{=it.version}}" data-recommendationcomponent>
+
+            {{? it.header}}
+            <header class="rrc-header--main cl-header--main" data-brrhartcomponentheader>
+                {{? it.header.title}}
+                <h1 class="rrc-header__title--main cl-header__title--main{{? !it.header.description}} cl-margin--no{{?}}">
+                    {{=it.header.title}}
+                </h1>
+                {{?}}
+                {{? it.header.description}}
+                <p class="rrc-header__description--main cl-header__description--main">
+                    {{=it.header.description}}
+                </p>
+                {{?}}
+            </header>
+            {{?}}
+
+            <div class="rrc-container cl-container">
+                <div class="cl-xs-column-12 cl-row cl-padding--no">
+                    <header class="rrc-grade">
+                        <h1 class="rrc-grade__header">Overall Recommendation</h1>
+                        <div class="rrc-grade__menuhold" data-recommendation-tab data-binding="overall" data-render="{{=it.bindings["overall"].render}}">
+                            
+                        </div>
+                    </header>
+                    <div class="cl-xs-column-12 rrc-body">
+                        <div class="rrc-matrix__holder">
+                            {{?it.matrix.capabilities}}
+                            <div class="cl-table rrc-matrix__table">
+                                
+                                <div class="cl-table-headerRow rrc-matrix__row rrc-matrix__row--header">
+                                    <div class="cl-table-cell rrc-matrix__cell rrc-matrix__cell--header rrc-matrix__cell--blank"></div>
+                                    {{~it.matrix.capabilities[0].voteOptions:option:index}}
+                                    <div class="cl-table-cell rrc-matrix__cell rrc-matrix__cell--header {{?index%2!=0}}rrc-matrix__cell--oddheader{{?}}"><span class="rrc-matrix__headlabel" data-head>{{=option}}</span></div>
+                                    {{~}}
+                                </div>
+                                {{~it.matrix.capabilities:capability:index}}
+                                <div class="cl-table-row rrc-matrix__row" data-recommedation-row="{{=index}}">
+                                    <div class="cl-table-cell rrc-matrix__cell"><label class="rrc-matrix__label" data-row-head>{{=capability.title}}</label></div>
+                                   {{~it.matrix.capabilities[0].voteOptions:option:opindex}}
+                                    {{var voteObj= it.Q['ASSESS.'+capability.voteQuestion];}}
+                                    {{var vote= voteObj!=undefined?(voteObj.length>0?voteObj[0]:voteObj):"";}}
+                                    <div class="cl-table-cell rrc-matrix__cell {{?opindex%2==0}}rrc-matrix__cell--oddcell{{?}} {{?(vote==opindex+1) || (vote.text==opindex+1)}}rrc-matrix__cell--marked{{?}}" data-row-cell></div>
+                                   {{~}}
+                                </div>
+                                {{~}}
+                            </div>
+                            {{??}}
+                            <div>No Information to show</div>
+                            {{?}}
+                        </div>
+                        <div class="rrc-summery cl-xs-column-12">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</div>

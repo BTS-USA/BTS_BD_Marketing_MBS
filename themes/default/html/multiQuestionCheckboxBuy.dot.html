@@ -1,0 +1,12 @@
+﻿{{? it.wizletInfo.title}}
+<h2>{{=it.wizletInfo.title}}</h2>
+{{?}}
+{{~it.wizletInfo.costQuestions :costquestion:index}}
+<p>{{!costquestion.label || 'What you have to spend:'}} <span id="costQuestionValue{{=index}}" class="costQuestionValue" data-questionid="{{=costquestion.questionId}}"></span>
+    {{? it.wizletInfo.costMin}} (leave at least {{=it.wizletInfo.costMin}}){{?}}</p>
+{{~}}
+<ul class="multiGrid">
+    {{~it.questions :question:index}}
+        <li><label><input type="checkbox" data-questionid="{{=question.Id}}" data-cost="{{=question.cost}}" value="yes" {{? question.checked}}checked="checked" {{?}} data-condition="{{=question.condition}}" />{{=question.label}}: <div class="subtitle">{{=((question.options && question.options.subtitle) || "<i>no subtitle</i>")}}</div> ({{=question.cost}})</label></li>
+    {{~}}
+</ul>

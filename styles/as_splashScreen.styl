@@ -1,0 +1,63 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.identifier
+    &-background
+        background-repeat no-repeat
+        background-position center
+        background-size cover
+    &-content
+        vertical-align middle
+    &-blue-box-wrapper
+        margin 0 auto auto
+        float none
+    &-page
+        &-content
+            background-color transparent
+            border none
+            border-radius 1rem
+            padding 0 .5rem
+            width auto
+            max-width 40rem
+            margin auto
+            text-align center
+        &-text
+            padding 0
+            &__title
+                line-height normal
+                color $primary
+                font-size 2rem
+                padding-bottom 0.6rem
+            &__sub-title
+                line-height normal
+                p
+                    color $primary
+                    line-height 3.2rem
+            .highlight-text
+                padding-top 1.3rem
+                color $secondary
+                font-weight bold
+    &-footer
+        display none
+        margin auto
+        text-align center
+        float none
+        min-width 60%
+        width auto
+        padding 1rem
+        .cl-button--submit
+            background-color $neutral-dark !important
+            font-size 1rem
+            &:hover
+                background-color $neutral-medium !important
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width 1400px)
+    .identifier
+        &-background
+            background-position center left
+            background-image url('../images/welcome-ipad.jpg') !important
+        &-blue-box-wrapper
+            margin auto 0 auto auto
+            width 50%
+        // &-page
+        //     &-content
+        //         max-width 22rem

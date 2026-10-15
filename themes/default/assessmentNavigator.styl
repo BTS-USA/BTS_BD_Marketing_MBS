@@ -1,0 +1,43 @@
+@import "shared/cl.styl"
+
+.anavc
+    &-container
+        padding 10px
+    &-item
+        clear both
+        overflow hidden
+        border-bottom 1px solid #ccc
+    &-title
+        float left
+        padding 20px 15px 15px 25px
+        font-weight 700
+        font-size 1rem
+        color $deepCerulean
+        width 80%
+    &-action
+        padding 15px
+        border-radius 50%
+        float left
+        cursor pointer
+        background-color $gray
+        margin-top 10px
+        position relative
+        width 40px
+        height 40px
+        &:before
+            color white
+            position absolute
+            font-weight bold
+            top 12px
+            left 13px
+        &--selected
+            background-color $apple
+    &-endsession
+        button($cerulean)
+        color #fff
+        cursor pointer
+        float left
+        padding 5px 20px
+        margin 25px
+        clear both
+        font-weight bold

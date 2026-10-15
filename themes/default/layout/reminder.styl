@@ -1,0 +1,71 @@
+@import "../shared/cl.styl"
+/*  ========================== */
+/* Reminder page layout styles */
+
+
+.rmd
+    position relative
+    height 100% 
+    width 100%
+    display table
+    &-container
+        display table-cell
+        height 100%
+        float none
+        text-align center
+        vertical-align middle
+        padding-top 100px
+        @media (max-width: 767px)
+            width 100%
+            display block
+            background-color #fff
+            margin 0
+            padding-top 0
+    &-header
+        float none
+        margin 0 auto
+    &-content
+        float none
+        margin 0 auto
+    &-button
+        &__ok
+            margin-bottom 30px
+            display inline-block
+            position relative
+            height 100%
+    &-date
+        width 66%
+        margin 0 auto
+        &__container
+            background-color $mercury
+            padding 10px
+            color $gray
+            border 1px solid transparent
+            border-radius 5px
+        &__month
+            font-size 1.8*$px
+            line-height 1em
+        &__day
+            font-size 8.5*$px
+            line-height 1em
+            margin 3px 0 3px 0
+        &__time
+            font-size 1.4*$px
+            line-height 1em
+    &-text
+        padding 30px 33px 30px 33px
+        min-height 100px
+        &__text
+            font-size 2.2*$px
+            line-height 1em
+            color tundora
+    &-content
+        background-color #fff
+        padding 40px 0 0 0
+    &-shield
+        background black
+        width 100vw
+        height 100vh
+        position fixed
+        opacity .4
+        z-index -1

@@ -1,0 +1,78 @@
+@import "../shared/cl.styl"
+/* This is css for the layouts in the wizer core*/
+/* if you are using a layoutInevent then please let it have its own css called layout.css in the events/layout folder*/
+
+
+/*  ========================== */
+/*  Common styles for all feedback pages
+Need to move this in some common file */
+
+.FB-page-content
+    &__header
+        padding 0
+        margin 0
+        background-color transparent
+        color $cerulean
+    &__title
+        text-align left
+        font-size 2.4*$px
+        font-weight 300
+        margin 0
+        padding 0 0 10px
+
+/*  Feedback_SingleSelect page layout styles */
+.FBSSG
+    &-header
+        clear both
+    &-content
+        padding 0 50px
+        clear both
+        &__wrapper
+            background-color #fff
+            padding 20px 30px
+    &-info
+        .cl-container
+            margin initial
+            @media (max-width: 768px)
+                >.cl-row
+                    padding 0
+                .ic-column-right
+                    padding 0
+                .ic-content
+                    padding 10px 0
+    &-gauges
+        margin-top 50px
+        .FB-page-gauges
+            &__title
+                display none
+        .FB-page-gauge-wrapper
+            display inline-block
+            margin 0 10px 10px 0
+            height 95px
+            background-color white
+            min-width 154px
+            @media (max-width: 768px)
+                display block
+                margin 0 0 10px
+                min-width 0
+        .FB-page-gauge
+            text-align center
+            height 100%
+            &__label
+                height 35px
+                background-color $cerulean
+                line-height 35px
+                border 1px solid #35a1c8
+                padding 0 5px
+                font-size 1.5*$px
+                color #fff
+            &__data
+                height 60px
+                line-height 50px
+                border 1px solid #d6d6d6
+                border-top none
+                padding 5px
+                font-size 2.4*$px
+                color $cerulean
+                > div
+                    background-color #f2f2f2

@@ -1,0 +1,121 @@
+﻿<style>
+    
+    .mediaRecorderContainer {
+        float: left;
+        margin: 65px auto 0 auto;
+    }
+
+    form {
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+
+    @media only screen and (device-width: 768px) {
+        .mediaRecorderContainer {
+            display: none;
+        }
+
+    }
+
+    @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    }
+
+    @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    }
+
+</style>
+
+
+<div class="mediaRecorderContainer" width="375" style="">
+    <span id="loaded" style="visibility:visible">
+        <table class="mediaHolder" cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr>
+                    <td class="mediaLeftTop"></td>
+
+                    <td class="mediaTop">
+                        <div>MEDIA RECORDER</div>
+
+                        <div class="ButtonHolder">
+                            <input type="button" id="videoRecorder" class="videoRecorderSelected">
+                            <input type="button" class="soundRecorder">
+                            <input type="button" class="photoRecorder">
+                        </div>
+                    </td>
+
+                    <td class="mediaRightTop"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div align="center" class="mediaContent">
+            <applet id="applet" archive="VideoApplet.jar" codebase="/Wizer/Content/vimas/" code="com.vimas.videoapplet.VimasVideoApplet.class" name="VimasVideoApplet" width="326" height="275" hspace="0" vspace="0" align="middle" mayscript="true" title="Java(TM)">
+                <param name="left" valuetype="0">
+                <param name="top" value="0">
+                <param name="Registration" value="video_wizerize_com.txt">
+                <param name="LocalizationFile" value="/Wizer/Content/vimas/localization.xml">
+                <param name="ServerScript" value="{{=it.baseurl}}/Wizer/Vote/VoteWithVideo_Vimas">
+                <param name="NoVideo" value="false">
+                <param name="VideoServerFolder" value="videofiles/">
+                <param name="TimeLimit" value="600">
+                <param name="BlockSize" value="102400">
+                <param name="UserServerFolder" value="mp4">
+                <param name="LowQuality" value="512,48">
+                <param name="NormalQuality" value="512,48">
+                <param name="HighQuality" value="512,48">
+                <param name="FrameSize" value="large">
+                <param name="interface" value="compact">
+                <param name="UserPostVariables" value="ParticipationId,QuestionId,MimeType,ParentResponseId">
+                <param name="OverlayImageURL" value="overlayImage.png">
+                <param name="ParticipationId" value="61">
+                <param name="QuestionId" value="43">
+                <param name="ParentResponseId" value="">
+                <param name="MimeType" value="video/mp4">
+                <param name="copy" value="true">
+                <param name="Permission" value="all-permissions">
+            </applet>
+        </div>
+    </span>
+    <form name="Gui_RP" onsubmit="event.returnValue=false;return false;">
+        <table class="mediaHolder" cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr>
+                    <td class="mediaLeftBottom"></td>
+                    <td class="mediaBottom">
+                        <table cellspacing="0" width="100%" style="padding-top:5px;" cellpadding="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td style="width:40px;">
+                                        <input type="button" id="btnRecord" class="btnRecord" onclick="RECORD_RP(this);">
+                                    </td>
+                                    <td style="width:40px;">
+                                        <input type="button" id="btnDelete" class="btnDelete" onclick="ERASE_RP();">
+                                    </td>
+                                    <td style="width:40px;">
+                                        <input type="button" id="btnStop" class="btnStop" onclick="STOP_RP();">
+                                    </td>
+                                    <td style="width:40px;">
+                                        <input type="button" id="btnPlay" class="btnPlay" onclick="PLAYBACK_RP();">
+                                    </td>
+                                    <td style="width:40px;">
+                                        <input type="button" value="Pause" style="width:75;font-family:Tahoma;font-size:10pt; visibility:hidden;" onclick="PAUSE_RP();">
+                                    </td>
+                                    <td>
+                                        <input type="text" id="SendStatus" size="7" style="width:85;font-family:Tahoma;font-size:10pt; border:none; background-color:transparent; visibility:hidden;">
+                                        <img id="OKIcon" src="/Wizer/content/Symbol_OK.png" style="visibility:hidden">
+                                    </td>
+                                    <td style="text-align:right; width:40px;">
+                                        <input type="button" id="btnSendMedia" class="btnSendMedia" onclick="parent.sendAndNext();">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <input type="text" name="Status" value="" size="34" maxlength="60" style="width:240;font-family:Tahoma;font-size:10pt; visibility:hidden;">
+                        <input type="text" id="Timer" name="Timer" size="7" style="width:85;font-family:Tahoma;font-size:10pt; visibility:hidden;">
+                    </td>
+                    <td class="mediaRightBottom"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

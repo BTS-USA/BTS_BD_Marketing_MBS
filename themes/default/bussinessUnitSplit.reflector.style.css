@@ -1,0 +1,161 @@
+@import url("../../shared/css/style.css");
+
+#presenter_BaseSlide
+{
+	padding: 30px;
+}
+
+
+.buSplitContentContainer
+{
+	background: url('/wizer/content/businessgame/result_resources/media/img/bgunit_box_top_bg.png')  top left;
+	width: 982px;
+	float: left;
+	padding-right: 11px;
+	margin: 0 0px 10px;
+}
+
+#presenter_BaseSlide .buSplitContentContainer
+{
+	margin: 0 0px 10px;
+	width: 1200px;
+}
+
+.buSplitContentContainer h1
+{
+	float:left;
+	font-size:18px;
+	margin: 6px 20px;
+}
+
+
+.buSplitContentContainer p
+{
+	float:right;
+	font-size:16px;
+	margin:14px 0 0 5px;
+	font-weight:bold;
+	text-align: center;
+	width: 61px;
+}
+
+
+.buSplitContentBottom
+{
+	float: left;
+	clear: both;
+	width: 100%;
+	padding-right: 0px;
+	margin-top: 0px;
+	padding-bottom: 7px;
+}
+
+.buSplitContentTop
+{
+	width: 100%;
+	float: left;
+}
+
+.buSplitIndex
+{
+	background-color: #000;
+	padding: 4px 11px 5px;
+	color: #fff;
+	font-size: 11px;
+	font-weight: normal;
+	float: right;
+	margin-left: 10px;
+}
+
+.presenterView .buSplitIndex
+{	
+	padding: 5px 11px 5px;
+	font-size: 12px;
+}
+
+.horisontalBarChartLegend
+{
+	float: right;
+}
+
+
+
+.buSplitContentTotalContainer
+{
+	background: url('/wizer/content/businessgame/result_resources/media/img/bgunit_box_top_bg.png')  top left;
+	width:982px;
+	height: 52px;
+	float: left;
+	padding-right: 11px;
+	margin: 35px 0px 30px;
+}
+
+#presenter_BaseSlide .buSplitContentTotalContainer
+{
+	margin: 35px 0px 30px;
+	width: 1200px;
+}
+
+.buSplitContentTotalContainer h1
+{
+	float:left;
+	font-size:22px;
+	margin:13px 20px 0 20px;
+}
+
+.buSplitContentTotalContainer p
+{
+	float:right;
+	font-size:18px;
+	margin:15px 0 0 5px;
+	font-weight:bold;
+	text-align: center;
+	width: 61px;
+}
+
+.buSplitContentTotalContainer .motivationScoreProgressBarTotal
+{
+	width:330px;
+	float: right;
+}
+
+
+.motivationScoreProgressBarTotal
+{
+	float:left;
+	background: url('/wizer/content/businessgame/result_resources/media/img/motivation_score_total_progressbar_inner_bg.png') no-repeat top left;
+	width:746px;
+	height:36px;
+	margin:8px;
+	position: relative;
+}
+.motivationScoreProgressBarRight
+{
+	background: url('/wizer/content/businessgame/result_resources/media/img/motivation_score_total_progressbar_green_right.png') no-repeat top left;
+	width:1px;
+	margin-top:1px;
+	height:36px;
+	float:left;
+	position: absolute;
+	left: -1px;
+}
+.motivationScoreProgressBarLeft
+{
+	height:36px;
+	float:left;
+	background: url('/wizer/content/businessgame/result_resources/media/img/motivation_score_total_progressbar_green.png') no-repeat top right;
+}
+
+.headerText
+{
+	font-size: 24px;
+	font-weight: bold;
+	margin-left: 6px;
+}
+
+.buSplitLabel
+{
+	padding-right: 6px;
+}
+
+
