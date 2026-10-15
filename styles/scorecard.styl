@@ -1,0 +1,41 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.ic
+    &-column-left
+        padding 0 10px 10px 0
+    &-column-right
+        float none
+        width 100%
+    &-content
+        padding 1rem 0
+    &-h3
+        padding 0 0 5px 0
+        color $neutral-dark
+        font-weight bold
+    &-paragraph, &-list
+        line-height 1.5rem
+        table
+            tr
+                th
+                    background-color $primary-dark
+                    padding .5rem
+                    color $white
+                    font-weight normal
+                    border 1px solid $primary-dark
+                td
+                    width 33.33%
+                    padding 1rem
+                    border 1px solid $primary-dark
+                &:nth-child(odd)
+                    td
+                        background-color $neutral-light
+                        color $black
+                &:nth-child(even)
+                    td
+                        background-color $neutral-light
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width 600px)
+    .ic-paragraph
+        overflow-x auto
+        table tr td
+            padding .5rem

@@ -47,6 +47,10 @@
       "title": "!{Heatmap_Moment4}",
       "binding": "Activity5_MOMENT_SINGLE_SELECT",
       "isAlphabet": true
+    },
+    {
+      "title": "!{Heatmap_Verity}",
+      "binding": "VerityScoreResult_BfjT9repUwzLCkHdKJme"
     }
   ],
   "options": [
@@ -78,7 +82,8 @@
     "Activity1_MOMENT_SINGLE_SELECT",
     "Activity2_MOMENT_SINGLE_SELECT",
     "Activity6_Brainstorm_Heatmap_Enabled",
-    "Activity5_MOMENT_SINGLE_SELECT"
+    "Activity5_MOMENT_SINGLE_SELECT",
+    "VerityScoreResult_BfjT9repUwzLCkHdKJme"
   ]
   }]]></Component>
 </Action>

@@ -86,6 +86,11 @@
       "icon": "result"
     },
     {
+      "title": "!{GD_Bot1_AS_Verity}",
+      "section": "Bot1_AS_Verity",
+      "icon": "input"
+    },
+    {
       "title": "!{ThankYou_AS_SplashScreen_button}",
       "section": "ThankYou_AS_SplashScreen",
       "icon": "info"

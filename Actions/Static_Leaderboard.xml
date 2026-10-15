@@ -39,6 +39,10 @@
       "binding": "Metric3"
     },
     {
+      "title": "!{Progressive_Leaderboard_Verity}",
+      "binding": "VerityScoreResult_BfjT9repUwzLCkHdKJme"
+    },
+    {
       "title": "!{Progressive_Leaderboard_Total}",
       "binding": "Metric_Total"
     }
@@ -88,7 +92,12 @@
         "sorting": {
           "question": "Metric3",
           "isNumeric": true,
-          "sortOrder": "DESC"
+          "sortOrder": "DESC",
+          "sorting": {
+            "question": "VerityScoreResult_BfjT9repUwzLCkHdKJme",
+            "isNumeric": true,
+            "sortOrder": "DESC"
+          }
         }
       }
     }
@@ -99,6 +108,7 @@
     "Metric1",
     "Metric2",
     "Metric3",
+    "VerityScoreResult_BfjT9repUwzLCkHdKJme",
     "Metric_Total",
     "Cohort_Track",
     "Team_Name",
