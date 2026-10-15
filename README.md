@@ -33,8 +33,6 @@ The **Facilitator** tab opens results without moving the participant room: bar c
 | 4 | Activity5 | Choose A–D |
 | Verity | Bot1_AS_Verity | Leader chats with the bot; score written to `VerityScoreResult_BfjT9repUwzLCkHdKJme` |
 
-Unused Allegis leftovers (Activity3 ranking, Activity4 MCQ) remain in the repo but are out of the live GD / Facilitator / Reporter menus.
-
 ## Scoring
 
 | Moment | Effect on the gauges |
