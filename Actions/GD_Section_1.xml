@@ -71,32 +71,9 @@
       "icon": "result"
     },
     {
-      "title": "!{GD_Activity3_Tabs}",
-      "section": "Activity3_AS_Ranking_Moment_Tabs",
+      "title": "!{GD_Activity6_Tabs}",
+      "section": "Activity6_AS_Moment_Tabs",
       "icon": "input"
-    },
-    {
-      "title": "!{GD_Activity3_Feedback}",
-      "section": "Activity3_AS_Ranking_Moment_Feedback",
-      "icon": "result"
-    },
-    {
-      "title": "!{GD_Activity4_Tabs}",
-      "section": "Activity4_AS_Moment_Tabs",
-      "icon": "input"
-    },
-    {
-      "title": "!{GD_Activity4_Aggregator}",
-      "embed": "Aggregator",
-      "options": {
-        "actionXML": "Activity4_Aggregator"
-      },
-      "icon": "aggregator"
-    },
-    {
-      "title": "!{GD_Activity4_Feedback}",
-      "section": "Activity4_AS_Moment_Feedback",
-      "icon": "result"
     },
     {
       "title": "!{GD_Activity5_Tabs}",
@@ -107,11 +84,6 @@
       "title": "!{GD_Activity5_Feedback}",
       "section": "Activity5_AS_Moment_Feedback",
       "icon": "result"
-    },
-    {
-      "title": "!{GD_Activity6_Tabs}",
-      "section": "Activity6_AS_Moment_Tabs",
-      "icon": "input"
     },
     {
       "title": "!{ThankYou_AS_SplashScreen_button}",

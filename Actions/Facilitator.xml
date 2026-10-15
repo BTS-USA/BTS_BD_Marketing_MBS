@@ -26,23 +26,13 @@
       "icon": "result"
     },
     {
-      "title": "!{GD_Activity3_Result}",
-      "section": "Activity3_AS_Ranking_Moment_Result",
-      "icon": "result"
-    },
-    {
-      "title": "!{GD_Activity4_Result}",
-      "section": "Activity4_AS_Moment_Result",
+      "title": "!{GD_Activity6_Wordcloud}",
+      "section": "Activity6_Result_MBS_Wordcloud",
       "icon": "result"
     },
     {
       "title": "!{GD_Activity5_Result}",
       "section": "Activity5_AS_Moment_Result",
-      "icon": "result"
-    },
-    {
-      "title": "!{GD_Activity6_Wordcloud}",
-      "section": "Activity6_Result_MBS_Wordcloud",
       "icon": "result"
     },
     {

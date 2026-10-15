@@ -30,32 +30,23 @@
       "binding": "Base_Value_Assign"
     },
     {
-      "title": "!{Heatmap_Activity1}",
+      "title": "!{Heatmap_Moment1}",
       "binding": "Activity1_MOMENT_SINGLE_SELECT",
       "isAlphabet": true
     },
     {
-      "title": "!{Heatmap_Activity2}",
+      "title": "!{Heatmap_Moment2}",
       "binding": "Activity2_MOMENT_SINGLE_SELECT",
       "isAlphabet": true
     },
     {
-      "title": "!{Heatmap_Activity3}",
-      "binding": "Activity3_Ranking_Heatmap_Enabled"
+      "title": "!{Heatmap_Moment3}",
+      "binding": "Activity6_Brainstorm_Heatmap_Enabled"
     },
     {
-      "title": "!{Heatmap_Activity4}",
-      "binding": "Activity4_MOMENT_SINGLE_SELECT",
-      "isAlphabet": true
-    },
-    {
-      "title": "!{Heatmap_Activity5}",
+      "title": "!{Heatmap_Moment4}",
       "binding": "Activity5_MOMENT_SINGLE_SELECT",
       "isAlphabet": true
-    },
-    {
-      "title": "!{Heatmap_Activity6}",
-      "binding": "Activity6_Brainstorm_Heatmap_Enabled"
     }
   ],
   "options": [
@@ -86,10 +77,8 @@
     "Base_Value_Assign",
     "Activity1_MOMENT_SINGLE_SELECT",
     "Activity2_MOMENT_SINGLE_SELECT",
-    "Activity3_Ranking_Heatmap_Enabled",
-    "Activity4_MOMENT_SINGLE_SELECT",
-    "Activity5_MOMENT_SINGLE_SELECT",
-    "Activity6_Brainstorm_Heatmap_Enabled"
+    "Activity6_Brainstorm_Heatmap_Enabled",
+    "Activity5_MOMENT_SINGLE_SELECT"
   ]
   }]]></Component>
 </Action>

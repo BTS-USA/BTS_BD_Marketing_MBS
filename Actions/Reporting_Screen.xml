@@ -13,20 +13,12 @@
       "actionXML": "Activity2_AS_Moment_Result"
     },
     {
-      "title": "!{GD_Activity3_Result}",
-      "actionXML": "Activity3_AS_Ranking_Moment_Result"
-    },
-    {
-      "title": "!{GD_Activity4_Result}",
-      "actionXML": "Activity4_AS_Moment_Result"
+      "title": "!{GD_Activity6_Wordcloud}",
+      "actionXML": "Activity6_Result_MBS_Wordcloud"
     },
     {
       "title": "!{GD_Activity5_Result}",
       "actionXML": "Activity5_AS_Moment_Result"
-    },
-    {
-      "title": "!{GD_Activity6_Wordcloud}",
-      "actionXML": "Activity6_Result_MBS_Wordcloud"
     },
     {
       "title": "!{GD_Static_Leaderboard}",

@@ -3,43 +3,40 @@
   <AggregatorDB doneText="">
 
    <Score result="M1_Metric1" type="Choice" method="sum">
-      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="1" Response="1"></Question>
-      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="2" Response="2"></Question>
-      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="3" Response="2"></Question>
-      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="4" Response="1"></Question>
+      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="1" Response="-1"></Question>
+      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="2" Response="-1"></Question>
+      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="3" Response="1"></Question>
+      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="4" Response="-2"></Question>
    </Score>
    <Score result="M1_Metric2" type="Choice" method="sum">
       <Question name="Activity1_MOMENT_SINGLE_SELECT" value="1" Response="3"></Question>
-      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="2" Response="-1"></Question>
-      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="3" Response="1"></Question>
-      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="4" Response="2"></Question>
+      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="2" Response="2"></Question>
+      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="3" Response="-1"></Question>
+      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="4" Response="1"></Question>
    </Score>
    <Score result="M1_Metric3" type="Choice" method="sum">
-      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="1" Response="3"></Question>
-      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="2" Response="1"></Question>
-      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="3" Response="2"></Question>
-      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="4" Response="-1"></Question>
+      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="1" Response="2"></Question>
+      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="2" Response="3"></Question>
+      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="3" Response="4"></Question>
+      <Question name="Activity1_MOMENT_SINGLE_SELECT" value="4" Response="5"></Question>
    </Score>
 
   <Total result="Metric1" method="sum">
     <Question validate="false">Base_Metric1</Question>
     <Question validate="false">M1_Metric1</Question>
     <Question validate="false">M2_Metric1</Question>
-    <Question validate="false">M4_Metric1</Question>
   </Total>
 
   <Total result="Metric2" method="sum">
     <Question validate="false">Base_Metric2</Question>
     <Question validate="false">M1_Metric2</Question>
     <Question validate="false">M2_Metric2</Question>
-    <Question validate="false">M4_Metric2</Question>
   </Total>
 
   <Total result="Metric3" method="sum">
     <Question validate="false">Base_Metric3</Question>
     <Question validate="false">M1_Metric3</Question>
     <Question validate="false">M2_Metric3</Question>
-    <Question validate="false">M4_Metric3</Question>
   </Total>
 
   <Total result="Metric_Total" method="sum">
