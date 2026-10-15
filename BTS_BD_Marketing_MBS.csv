@@ -241,7 +241,7 @@ Bot1_AS_Verity_BotId;Bot1_AS_Verity_BotId in English;;;;;;;;;;;;;;;;;
 Bot1_AS_Verity_Environment;production;;;;;;;;;;;;;;;;;
 GD_Bot1_AS_Verity;Verity Bot;;;;;;;;;;;;;;;;;
 Bot1_AS_Verity_Follower_AS_InfoNote;Please wait for your team leader to complete the Verity exercise.;;;;;;;;;;;;;;;;;
-Bot1_AS_Verity_Follower_Screen_Title;Please wait for your Leader to complete the Verity bot exercise. Sit tight — your facilitator will move everyone forward once leaders are done.;;;;;;;;;;;;;;;;;
+Bot1_AS_Verity_Follower_Screen_Title;Please wait for your Leader to complete the Verity exercise;;;;;;;;;;;;;;;;;
 Begin;Begin;;;;;;;;;;;;;;;;;
 Activity6_MomentScenarioTitle;Moment 3: When a Team Has a Breakthrough Worth Scaling;;;;;;;;;;;;;;;;;
 Activity6_MomentScenarioContentText;"One of Ember's regional sales teams built an AI process that automates pipeline generation. In six months, the team cut prospecting time by half and now spends that time closing deals.<br><br>The COO wants it live in every market by early next year. The other regional sales heads aren't convinced. Three objections keep coming up:<br><br>""Our sales cycles are longer and relationship-driven.""<br>""Our data isn't clean enough for this.""<br>""We'd have to drop tools we've already invested in.""<br><br>The COO has asked for your recommendation, not just a reaction.<br><br><b>What do you recommend? Brainstorm at your table.</b>";;;;;;;;;;;;;;;;;
@@ -371,7 +371,8 @@ Activity5_OutcomeC;Purpose moves people through fear, not around it. But leading
 Activity5_OutcomeD;Creates conditions for real trust. You leave knowing what this group fears — making your advocacy upward specific and credible. But the timeline doesn't pause, and leaders leaving without direction may read it as: the organization doesn't have one.;;;;;;;;;;;;;;;;;
 Activity6_BrainStormTitle;Moment 3: When a Team Has a Breakthrough Worth Scaling;;;;;;;;;;;;;;;;;
 Activity6_BrainStormDescription;<b>What do you recommend? Brainstorm at your table.</b>;;;;;;;;;;;;;;;;;
-Activity6_PlaceholderText;Enter each recommendation as a separate entry. Submit multiple ideas.;;;;;;;;;;;;;;;;;
+Activity6_InputInstructions;Your ideas are being captured as you go. Enter each recommendation as a separate entry, then submit. You can add multiple recommendations — submit one, then enter the next.;;;;;;;;;;;;;;;;;
+Activity6_PlaceholderText;Type one recommendation here, then submit. Add as many as you like.;;;;;;;;;;;;;;;;;
 Activity6_CharactersRemaining;characters remaining;;;;;;;;;;;;;;;;;
 Activity6_Myentries;My entries;;;;;;;;;;;;;;;;;
 Activity6_Totalentries;Total entries;;;;;;;;;;;;;;;;;
