@@ -1,0 +1,21 @@
+<Action layout="identifier">
+  <Component type="Vanilla"><![CDATA[{
+  "templateInEvent": "html/as_infoNote.dot",
+  "css": "styles/as_infoNote.css",
+  "eventTitle": "",
+  "trackQuestion": "Team_Track",
+  "images": [
+    {
+      "src": "",
+      "alt": "backgroundImage"
+    }
+  ],
+  "textContent": [
+    {
+      "title": "!{Bot1_AS_Verity_Follower_Screen_Title}",
+      "alignment": "TopLeft",
+      "icon": ""
+    }
+  ]
+}]]></Component>
+</Action>

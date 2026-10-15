@@ -1,19 +1,23 @@
 <Action disableDynamicVotes="false">
-  <Component type="scorecard" customJS="true"><![CDATA[{
-  "templateInEvent": "html/scorecard.dot",
-  "css": "styles/scorecard.css",
-  "instructions": "!{Bot1_AS_Verity_Instructions}",
-  "header": {
-    "bgimage": "/Wizer/Pages/events/BTS_BD_Marketing_MBS/images/headerGraphic.svg",
-    "title": "!{Bot1_AS_Verity_Title}",
-    "description": "!{Bot1_AS_Verity_Description}"
-  },
-  "botId": "!{Bot1_AS_Verity_BotId}",
-  "environment": "!{Bot1_AS_Verity_Environment}",
-  "trackQuestion": "Cohort_Track",
-  "scope": [
-    "Cohort_Track",
-    "VerityScoreResult_BfjT9repUwzLCkHdKJme"
-  ]
+   <Component type="TabComponent"><![CDATA[{
+  "type": "tab",
+  "version": "2",
+  "showTabs": false,
+  "tabOptions": [
+    {
+      "title": "!{Bot1_AS_Verity_Title}",
+      "actionXML": "Bot1_AS_Verity_Leader",
+      "conditionQuestion":"Leader",
+      "conditionAnswer":"1"
+    },
+    {
+      "title": "!{Bot1_AS_Verity_Follower_AS_InfoNote}",
+      "actionXML": "Bot1_AS_Verity_Follower_AS_InfoNote",
+      "conditionQuestion":"Leader",
+      "conditionAnswer":"2"
+    }
+  ],
+  "title": "!{}",
+  "scope": ["Leader"]
 }]]></Component>
 </Action>
