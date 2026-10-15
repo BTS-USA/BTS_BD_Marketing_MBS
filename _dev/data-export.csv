@@ -3,13 +3,8 @@ Team_Name;;Team Name
 Metric1;;AI Velocity
 Metric2;;Team Trust
 Metric3;;Enterprise Value
-Activity1_MOMENT_SINGLE_SELECT;;Moment 1: Prioritizing First Steps
-Activity2_MOMENT_SINGLE_SELECT;;Moment 2: When Morale and Engagement Is Low
-Activity3_RANKING1;;Moment 2B Option A
-Activity3_RANKING2;;Moment 2B Option B
-Activity3_RANKING3;;Moment 2B Option C
-Activity3_RANKING4;;Moment 2B Option D
-Activity4_MOMENT_SINGLE_SELECT;;Moment 3: When a Team Has a Breakthrough Worth Scaling
-Activity5_MOMENT_SINGLE_SELECT;;Moment 4A: When Your Team Is Afraid of Being Replaced by AI
-Activity6_INPUT_1;;Moment 4B open response
+Activity1_MOMENT_SINGLE_SELECT;;Moment 1
+Activity2_MOMENT_SINGLE_SELECT;;Moment 2
+Activity6_INPUT_1;;Moment 3
+Activity5_MOMENT_SINGLE_SELECT;;Moment 4
 Metric_Total;;Total score
