@@ -107,7 +107,7 @@ define(['jquery', 'Q', 'wizer-api', 'wizletBase', 'doT', 'jsCalcLib/numberFormat
                     if (self.wizletInfo.filterQuestions) {
                         participantList = self.filterParticipants(response.participants, questions);
                         participantList.then(function (participants) {
-                            console.log(participants);
+                            // console.log(participants);
                             
                             if (self.wizletInfo.heatmapType == "OPTION") {
                                 self.processOptionData(participants, optionMap);

@@ -73,7 +73,7 @@ define(['jquery', 'Q', 'wizer-api', 'wizletBase', 'WizerModel', 'doT', 'logger']
                                 }}
                                 if(promises.length > 0){
                                 Q.all(promises).then(function(){
-                                    console.log('Promise resolved');
+                                    // console.log('Promise resolved');
                                 });
                             }
                         }); 

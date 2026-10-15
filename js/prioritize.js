@@ -66,7 +66,7 @@ define(['jquery', 'Q', 'WizerModel', 'wizer-api', 'wizletBase', 'doT'],
                 self.wizerApi.removeVotes({
                     votes: votes
                 }).then(function (response) {
-                    console.log(response);
+                    // console.log(response);
                 })
                 if (self.options.wizletInfo.type === "QUESTIONS") {
                     self.render(self.options, true);
