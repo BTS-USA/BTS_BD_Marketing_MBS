@@ -223,7 +223,6 @@ TabTitle3;C;;;;;;;;;;;;;;;;;
 TabTitle4;D;;;;;;;;;;;;;;;;;
 AS_Screen_EventTitle;BTS BD Marketing MBS;;;;;;;;;;;;;;;;;
 Begin;Begin;;;;;;;;;;;;;;;;;
-ThankYou_AS_Screen_Title;Thank You;;;;;;;;;;;;;;;;;
 Activity6_MomentScenarioTitle;Moment 4: When Your Team Is Afraid of Being Replaced by AI;;;;;;;;;;;;;;;;;
 Activity6_MomentScenarioContentText;"Meridian's enterprise leadership has announced an AI transformation across every brand. Sourcing workflows, candidate screening, client reporting: significant changes are coming. Leadership has been clear: this is the direction.<br><br>You're in what was supposed to be a strategy alignment session with your direct reports, all senior leaders themselves, each managing large teams now asking hard questions.<br><br>Before you get through the agenda, one of your most respected peers puts it plainly: ""I need to ask you directly: are we being replaced? Because that's the question I can't answer for my people right now."" These are experienced leaders, not panicking but watching you closely. They know the initiative is real. Some roles will shift. The full picture isn't defined. And their teams are looking to them for answers they don't have.<br><br><b>Whatever you say here will likely be repeated to hundreds of people by tomorrow. What do you say, and what do you do in the next two weeks to make sure it holds up?</b>";;;;;;;;;;;;;;;;;
 Reset;Reset;;;;;;;;;;;;;;;;;
@@ -402,96 +401,96 @@ Vaishnavi Pednekar;;vaishnavi.pednekar@bts.com;;;Vote,Administrator;Individual;;
 C1 Group Director;;gd_bdm;;p1;Vote,GroupDirector;Individual:Group_Director;1;1;2;2;;;;;;1;;
 C1 Facilitator;;fac_bdm;;p1;Vote;ForemanOrDirector;;;2;;1;1;;;;1;;
 C1 Reporter;;rep_bdm;;p1;Vote;Individual:Reporting_Screen;;;;;1;;;;;1;;
-C1 Team 1;;bdm1;;p1;Vote;ForemanOrDirector;1;;;;1;;1;1;1;1;1;1L
-C1 Team 1 Follower 1;;bdm1a;;p1;Vote;ForemanOrDirector;1;;;;1;;1;;2;1;1a;1F1
-C1 Team 1 Follower 2;;bdm1b;;p1;Vote;ForemanOrDirector;1;;;;1;;1;;2;1;1b;1F2
-C1 Team 2;;bdm2;;p1;Vote;ForemanOrDirector;1;;;;1;;2;2;1;1;2;2L
-C1 Team 2 Follower 1;;bdm2a;;p1;Vote;ForemanOrDirector;1;;;;1;;2;;2;1;2a;2F1
-C1 Team 2 Follower 2;;bdm2b;;p1;Vote;ForemanOrDirector;1;;;;1;;2;;2;1;2b;2F2
-C1 Team 3;;bdm3;;p1;Vote;ForemanOrDirector;1;;;;1;;3;3;1;1;3;3L
-C1 Team 3 Follower 1;;bdm3a;;p1;Vote;ForemanOrDirector;1;;;;1;;3;;2;1;3a;3F1
-C1 Team 3 Follower 2;;bdm3b;;p1;Vote;ForemanOrDirector;1;;;;1;;3;3;2;1;3b;3F2
-C1 Team 4;;bdm4;;p1;Vote;ForemanOrDirector;1;;;;1;;4;;1;1;4;4L
-C1 Team 4 Follower 1;;bdm4a;;p1;Vote;ForemanOrDirector;1;;;;1;;4;;2;1;4a;4F1
-C1 Team 4 Follower 2;;bdm4b;;p1;Vote;ForemanOrDirector;1;;;;1;;4;;2;1;4b;4F2
-C1 Team 5;;bdm5;;p1;Vote;ForemanOrDirector;1;;;;1;;5;5;1;1;5;5L
-C1 Team 5 Follower 1;;bdm5a;;p1;Vote;ForemanOrDirector;1;;;;1;;5;;2;1;5a;5F1
-C1 Team 5 Follower 2;;bdm5b;;p1;Vote;ForemanOrDirector;1;;;;1;;5;;2;1;5b;5F2
-C1 Team 6;;bdm6;;p1;Vote;ForemanOrDirector;1;;;;1;;6;6;1;1;6;6L
-C1 Team 6 Follower 1;;bdm6a;;p1;Vote;ForemanOrDirector;1;;;;1;;6;;2;1;6a;6F1
-C1 Team 6 Follower 2;;bdm6b;;p1;Vote;ForemanOrDirector;1;;;;1;;6;;2;1;6b;6F2
-C1 Team 7;;bdm7;;p1;Vote;ForemanOrDirector;1;;;;1;;7;7;1;1;7;7L
-C1 Team 7 Follower 1;;bdm7a;;p1;Vote;ForemanOrDirector;1;;;;1;;7;;2;1;7a;7F1
-C1 Team 7 Follower 2;;bdm7b;;p1;Vote;ForemanOrDirector;1;;;;1;;7;;2;1;7b;7F2
-C1 Team 8;;bdm8;;p1;Vote;ForemanOrDirector;1;;;;1;;8;8;1;1;8;8L
-C1 Team 8 Follower 1;;bdm8a;;p1;Vote;ForemanOrDirector;1;;;;1;;8;;2;1;8a;8F1
-C1 Team 8 Follower 2;;bdm8b;;p1;Vote;ForemanOrDirector;1;;;;1;;8;;2;1;8b;8F2
-C1 Team 9;;bdm9;;p1;Vote;ForemanOrDirector;1;;;;1;;9;9;1;1;9;9L
-C1 Team 9 Follower 1;;bdm9a;;p1;Vote;ForemanOrDirector;1;;;;1;;9;;2;1;9a;9F1
-C1 Team 9 Follower 2;;bdm9b;;p1;Vote;ForemanOrDirector;1;;;;1;;9;;2;1;9b;9F2
-C1 Team 10;;bdm10;;p1;Vote;ForemanOrDirector;1;;;;1;;10;10;1;1;10;10L
-C1 Team 10 Follower 1;;bdm10a;;p1;Vote;ForemanOrDirector;1;;;;1;;10;;2;1;10a;10F1
-C1 Team 10 Follower 2;;bdm10b;;p1;Vote;ForemanOrDirector;1;;;;1;;10;;2;1;10b;10F2
-C1 Team 11;;bdm11;;p1;Vote;ForemanOrDirector;1;;;;1;;11;11;1;1;11;11L
-C1 Team 11 Follower 1;;bdm11a;;p1;Vote;ForemanOrDirector;1;;;;1;;11;;2;1;11a;11F1
-C1 Team 11 Follower 2;;bdm11b;;p1;Vote;ForemanOrDirector;1;;;;1;;11;;2;1;11b;11F2
-C1 Team 12;;bdm12;;p1;Vote;ForemanOrDirector;1;;;;1;;12;12;1;1;12;12L
-C1 Team 12 Follower 1;;bdm12a;;p1;Vote;ForemanOrDirector;1;;;;1;;12;;2;1;12a;12F1
-C1 Team 12 Follower 2;;bdm12b;;p1;Vote;ForemanOrDirector;1;;;;1;;12;;2;1;12b;12F2
-C1 Team 13;;bdm13;;p1;Vote;ForemanOrDirector;1;;;;1;;13;13;1;1;13;13L
-C1 Team 13 Follower 1;;bdm13a;;p1;Vote;ForemanOrDirector;1;;;;1;;13;;2;1;13a;13F1
-C1 Team 13 Follower 2;;bdm13b;;p1;Vote;ForemanOrDirector;1;;;;1;;13;;2;1;13b;13F2
-C1 Team 14;;bdm14;;p1;Vote;ForemanOrDirector;1;;;;1;;14;14;1;1;14;14L
-C1 Team 14 Follower 1;;bdm14a;;p1;Vote;ForemanOrDirector;1;;;;1;;14;;2;1;14a;14F1
-C1 Team 14 Follower 2;;bdm14b;;p1;Vote;ForemanOrDirector;1;;;;1;;14;;2;1;14b;14F2
-C1 Team 15;;bdm15;;p1;Vote;ForemanOrDirector;1;;;;1;;15;15;1;1;15;15L
-C1 Team 15 Follower 1;;bdm15a;;p1;Vote;ForemanOrDirector;1;;;;1;;15;;2;1;15a;15F1
-C1 Team 15 Follower 2;;bdm15b;;p1;Vote;ForemanOrDirector;1;;;;1;;15;;2;1;15b;15F2
-C1 Team 16;;bdm16;;p1;Vote;ForemanOrDirector;1;;;;1;;16;16;1;1;16;16L
-C1 Team 16 Follower 1;;bdm16a;;p1;Vote;ForemanOrDirector;1;;;;1;;16;;2;1;16a;16F1
-C1 Team 16 Follower 2;;bdm16b;;p1;Vote;ForemanOrDirector;1;;;;1;;16;;2;1;16b;16F2
-C1 Team 17;;bdm17;;p1;Vote;ForemanOrDirector;1;;;;1;;17;17;1;1;17;17L
-C1 Team 17 Follower 1;;bdm17a;;p1;Vote;ForemanOrDirector;1;;;;1;;17;;2;1;17a;17F1
-C1 Team 17 Follower 2;;bdm17b;;p1;Vote;ForemanOrDirector;1;;;;1;;17;;2;1;17b;17F2
-C1 Team 18;;bdm18;;p1;Vote;ForemanOrDirector;1;;;;1;;18;18;1;1;18;18L
-C1 Team 18 Follower 1;;bdm18a;;p1;Vote;ForemanOrDirector;1;;;;1;;18;;2;1;18a;18F1
-C1 Team 18 Follower 2;;bdm18b;;p1;Vote;ForemanOrDirector;1;;;;1;;18;;2;1;18b;18F2
-C1 Team 19;;bdm19;;p1;Vote;ForemanOrDirector;1;;;;1;;19;19;1;1;19;19L
-C1 Team 19 Follower 1;;bdm19a;;p1;Vote;ForemanOrDirector;1;;;;1;;19;;2;1;19a;19F1
-C1 Team 19 Follower 2;;bdm19b;;p1;Vote;ForemanOrDirector;1;;;;1;;19;;2;1;19b;19F2
-C1 Team 20;;bdm20;;p1;Vote;ForemanOrDirector;1;;;;1;;20;20;1;1;20;20L
-C1 Team 20 Follower 1;;bdm20a;;p1;Vote;ForemanOrDirector;1;;;;1;;20;;2;1;20a;20F1
-C1 Team 20 Follower 2;;bdm20b;;p1;Vote;ForemanOrDirector;1;;;;1;;20;;2;1;20b;20F2
-C1 Team 21;;bdm21;;p1;Vote;ForemanOrDirector;1;;;;1;;21;21;1;1;21;21L
-C1 Team 21 Follower 1;;bdm21a;;p1;Vote;ForemanOrDirector;1;;;;1;;21;;2;1;21a;21F1
-C1 Team 21 Follower 2;;bdm21b;;p1;Vote;ForemanOrDirector;1;;;;1;;21;;2;1;21b;21F2
-C1 Team 22;;bdm22;;p1;Vote;ForemanOrDirector;1;;;;1;;22;22;1;1;22;22L
-C1 Team 22 Follower 1;;bdm22a;;p1;Vote;ForemanOrDirector;1;;;;1;;22;;2;1;22a;22F1
-C1 Team 22 Follower 2;;bdm22b;;p1;Vote;ForemanOrDirector;1;;;;1;;22;;2;1;22b;22F2
-C1 Team 23;;bdm23;;p1;Vote;ForemanOrDirector;1;;;;1;;23;23;1;1;23;23L
-C1 Team 23 Follower 1;;bdm23a;;p1;Vote;ForemanOrDirector;1;;;;1;;23;;2;1;23a;23F1
-C1 Team 23 Follower 2;;bdm23b;;p1;Vote;ForemanOrDirector;1;;;;1;;23;;2;1;23b;23F2
-C1 Team 24;;bdm24;;p1;Vote;ForemanOrDirector;1;;;;1;;24;24;1;1;24;24L
-C1 Team 24 Follower 1;;bdm24a;;p1;Vote;ForemanOrDirector;1;;;;1;;24;;2;1;24a;24F1
-C1 Team 24 Follower 2;;bdm24b;;p1;Vote;ForemanOrDirector;1;;;;1;;24;;2;1;24b;24F2
-C1 Team 25;;bdm25;;p1;Vote;ForemanOrDirector;1;;;;1;;25;25;1;1;25;25L
-C1 Team 25 Follower 1;;bdm25a;;p1;Vote;ForemanOrDirector;1;;;;1;;25;;2;1;25a;25F1
-C1 Team 25 Follower 2;;bdm25b;;p1;Vote;ForemanOrDirector;1;;;;1;;25;;2;1;25b;25F2
-C1 Team 26;;bdm26;;p1;Vote;ForemanOrDirector;1;;;;1;;26;26;1;1;26;26L
-C1 Team 26 Follower 1;;bdm26a;;p1;Vote;ForemanOrDirector;1;;;;1;;26;;2;1;26a;26F1
-C1 Team 26 Follower 2;;bdm26b;;p1;Vote;ForemanOrDirector;1;;;;1;;26;;2;1;26b;26F2
-C1 Team 27;;bdm27;;p1;Vote;ForemanOrDirector;1;;;;1;;27;27;1;1;27;27L
-C1 Team 27 Follower 1;;bdm27a;;p1;Vote;ForemanOrDirector;1;;;;1;;27;;2;1;27a;27F1
-C1 Team 27 Follower 2;;bdm27b;;p1;Vote;ForemanOrDirector;1;;;;1;;27;;2;1;27b;27F2
-C1 Team 28;;bdm28;;p1;Vote;ForemanOrDirector;1;;;;1;;28;28;1;1;28;28L
-C1 Team 28 Follower 1;;bdm28a;;p1;Vote;ForemanOrDirector;1;;;;1;;28;;2;1;28a;28F1
-C1 Team 28 Follower 2;;bdm28b;;p1;Vote;ForemanOrDirector;1;;;;1;;28;;2;1;28b;28F2
-C1 Team 29;;bdm29;;p1;Vote;ForemanOrDirector;1;;;;1;;29;29;1;1;29;29L
-C1 Team 29 Follower 1;;bdm29a;;p1;Vote;ForemanOrDirector;1;;;;1;;29;;2;1;29a;29F1
-C1 Team 29 Follower 2;;bdm29b;;p1;Vote;ForemanOrDirector;1;;;;1;;29;;2;1;29b;29F2
-C1 Team 30;;bdm30;;p1;Vote;ForemanOrDirector;1;;;;1;;30;30;1;1;30;30L
-C1 Team 30 Follower 1;;bdm30a;;p1;Vote;ForemanOrDirector;1;;;;1;;30;;2;1;30a;30F1
-C1 Team 30 Follower 2;;bdm30b;;p1;Vote;ForemanOrDirector;1;;;;1;;30;;2;1;30b;30F2
+C1 Team 1;;bdm1@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;1;1;1;1;1;1L
+C1 Team 1 Follower 1;;bdm1a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;1;;2;1;1a;1F1
+C1 Team 1 Follower 2;;bdm1b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;1;;2;1;1b;1F2
+C1 Team 2;;bdm2@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;2;2;1;1;2;2L
+C1 Team 2 Follower 1;;bdm2a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;2;;2;1;2a;2F1
+C1 Team 2 Follower 2;;bdm2b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;2;;2;1;2b;2F2
+C1 Team 3;;bdm3@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;3;3;1;1;3;3L
+C1 Team 3 Follower 1;;bdm3a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;3;;2;1;3a;3F1
+C1 Team 3 Follower 2;;bdm3b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;3;3;2;1;3b;3F2
+C1 Team 4;;bdm4@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;4;;1;1;4;4L
+C1 Team 4 Follower 1;;bdm4a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;4;;2;1;4a;4F1
+C1 Team 4 Follower 2;;bdm4b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;4;;2;1;4b;4F2
+C1 Team 5;;bdm5@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;5;5;1;1;5;5L
+C1 Team 5 Follower 1;;bdm5a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;5;;2;1;5a;5F1
+C1 Team 5 Follower 2;;bdm5b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;5;;2;1;5b;5F2
+C1 Team 6;;bdm6@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;6;6;1;1;6;6L
+C1 Team 6 Follower 1;;bdm6a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;6;;2;1;6a;6F1
+C1 Team 6 Follower 2;;bdm6b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;6;;2;1;6b;6F2
+C1 Team 7;;bdm7@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;7;7;1;1;7;7L
+C1 Team 7 Follower 1;;bdm7a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;7;;2;1;7a;7F1
+C1 Team 7 Follower 2;;bdm7b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;7;;2;1;7b;7F2
+C1 Team 8;;bdm8@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;8;8;1;1;8;8L
+C1 Team 8 Follower 1;;bdm8a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;8;;2;1;8a;8F1
+C1 Team 8 Follower 2;;bdm8b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;8;;2;1;8b;8F2
+C1 Team 9;;bdm9@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;9;9;1;1;9;9L
+C1 Team 9 Follower 1;;bdm9a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;9;;2;1;9a;9F1
+C1 Team 9 Follower 2;;bdm9b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;9;;2;1;9b;9F2
+C1 Team 10;;bdm10@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;10;10;1;1;10;10L
+C1 Team 10 Follower 1;;bdm10a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;10;;2;1;10a;10F1
+C1 Team 10 Follower 2;;bdm10b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;10;;2;1;10b;10F2
+C1 Team 11;;bdm11@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;11;11;1;1;11;11L
+C1 Team 11 Follower 1;;bdm11a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;11;;2;1;11a;11F1
+C1 Team 11 Follower 2;;bdm11b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;11;;2;1;11b;11F2
+C1 Team 12;;bdm12@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;12;12;1;1;12;12L
+C1 Team 12 Follower 1;;bdm12a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;12;;2;1;12a;12F1
+C1 Team 12 Follower 2;;bdm12b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;12;;2;1;12b;12F2
+C1 Team 13;;bdm13@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;13;13;1;1;13;13L
+C1 Team 13 Follower 1;;bdm13a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;13;;2;1;13a;13F1
+C1 Team 13 Follower 2;;bdm13b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;13;;2;1;13b;13F2
+C1 Team 14;;bdm14@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;14;14;1;1;14;14L
+C1 Team 14 Follower 1;;bdm14a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;14;;2;1;14a;14F1
+C1 Team 14 Follower 2;;bdm14b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;14;;2;1;14b;14F2
+C1 Team 15;;bdm15@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;15;15;1;1;15;15L
+C1 Team 15 Follower 1;;bdm15a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;15;;2;1;15a;15F1
+C1 Team 15 Follower 2;;bdm15b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;15;;2;1;15b;15F2
+C1 Team 16;;bdm16@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;16;16;1;1;16;16L
+C1 Team 16 Follower 1;;bdm16a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;16;;2;1;16a;16F1
+C1 Team 16 Follower 2;;bdm16b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;16;;2;1;16b;16F2
+C1 Team 17;;bdm17@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;17;17;1;1;17;17L
+C1 Team 17 Follower 1;;bdm17a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;17;;2;1;17a;17F1
+C1 Team 17 Follower 2;;bdm17b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;17;;2;1;17b;17F2
+C1 Team 18;;bdm18@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;18;18;1;1;18;18L
+C1 Team 18 Follower 1;;bdm18a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;18;;2;1;18a;18F1
+C1 Team 18 Follower 2;;bdm18b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;18;;2;1;18b;18F2
+C1 Team 19;;bdm19@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;19;19;1;1;19;19L
+C1 Team 19 Follower 1;;bdm19a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;19;;2;1;19a;19F1
+C1 Team 19 Follower 2;;bdm19b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;19;;2;1;19b;19F2
+C1 Team 20;;bdm20@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;20;20;1;1;20;20L
+C1 Team 20 Follower 1;;bdm20a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;20;;2;1;20a;20F1
+C1 Team 20 Follower 2;;bdm20b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;20;;2;1;20b;20F2
+C1 Team 21;;bdm21@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;21;21;1;1;21;21L
+C1 Team 21 Follower 1;;bdm21a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;21;;2;1;21a;21F1
+C1 Team 21 Follower 2;;bdm21b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;21;;2;1;21b;21F2
+C1 Team 22;;bdm22@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;22;22;1;1;22;22L
+C1 Team 22 Follower 1;;bdm22a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;22;;2;1;22a;22F1
+C1 Team 22 Follower 2;;bdm22b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;22;;2;1;22b;22F2
+C1 Team 23;;bdm23@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;23;23;1;1;23;23L
+C1 Team 23 Follower 1;;bdm23a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;23;;2;1;23a;23F1
+C1 Team 23 Follower 2;;bdm23b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;23;;2;1;23b;23F2
+C1 Team 24;;bdm24@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;24;24;1;1;24;24L
+C1 Team 24 Follower 1;;bdm24a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;24;;2;1;24a;24F1
+C1 Team 24 Follower 2;;bdm24b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;24;;2;1;24b;24F2
+C1 Team 25;;bdm25@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;25;25;1;1;25;25L
+C1 Team 25 Follower 1;;bdm25a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;25;;2;1;25a;25F1
+C1 Team 25 Follower 2;;bdm25b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;25;;2;1;25b;25F2
+C1 Team 26;;bdm26@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;26;26;1;1;26;26L
+C1 Team 26 Follower 1;;bdm26a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;26;;2;1;26a;26F1
+C1 Team 26 Follower 2;;bdm26b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;26;;2;1;26b;26F2
+C1 Team 27;;bdm27@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;27;27;1;1;27;27L
+C1 Team 27 Follower 1;;bdm27a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;27;;2;1;27a;27F1
+C1 Team 27 Follower 2;;bdm27b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;27;;2;1;27b;27F2
+C1 Team 28;;bdm28@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;28;28;1;1;28;28L
+C1 Team 28 Follower 1;;bdm28a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;28;;2;1;28a;28F1
+C1 Team 28 Follower 2;;bdm28b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;28;;2;1;28b;28F2
+C1 Team 29;;bdm29@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;29;29;1;1;29;29L
+C1 Team 29 Follower 1;;bdm29a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;29;;2;1;29a;29F1
+C1 Team 29 Follower 2;;bdm29b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;29;;2;1;29b;29F2
+C1 Team 30;;bdm30@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;30;30;1;1;30;30L
+C1 Team 30 Follower 1;;bdm30a@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;30;;2;1;30a;30F1
+C1 Team 30 Follower 2;;bdm30b@bts.com;;p1;Vote;ForemanOrDirector;1;;;;1;;30;;2;1;30b;30F2
 ;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;
@@ -501,115 +500,115 @@ C1 Team 30 Follower 2;;bdm30b;;p1;Vote;ForemanOrDirector;1;;;;1;;30;;2;1;30b;30F
 C2 Group Director;;2gd_bdm;;p2;Vote,GroupDirector;Individual:Group_Director;3;3;4;4;;;;;;2;;
 C2 Facilitator;;2fac_bdm;;p2;Vote;ForemanOrDirector;;;4;;2;2;;;;2;;
 C2 Reporter;;2rep_bdm;;p2;Vote;Individual:Reporting_Screen;;;;;2;;;;;2;;
-C2 Team 1;;2bdm1;;p2;Vote;ForemanOrDirector;3;;;;2;;31;31;1;2;1;1L
-C2 Team 1 Follower 1;;2bdm1a;;p2;Vote;ForemanOrDirector;3;;;;2;;31;;2;2;1a;1F1
-C2 Team 1 Follower 2;;2bdm1b;;p2;Vote;ForemanOrDirector;3;;;;2;;31;;2;2;1b;1F2
-C2 Team 2;;2bdm2;;p2;Vote;ForemanOrDirector;3;;;;2;;32;32;1;2;2;2L
-C2 Team 2 Follower 1;;2bdm2a;;p2;Vote;ForemanOrDirector;3;;;;2;;32;;2;2;2a;2F1
-C2 Team 2 Follower 2;;2bdm2b;;p2;Vote;ForemanOrDirector;3;;;;2;;32;;2;2;2b;2F2
-C2 Team 3;;2bdm3;;p2;Vote;ForemanOrDirector;3;;;;2;;33;33;1;2;3;3L
-C2 Team 3 Follower 1;;2bdm3a;;p2;Vote;ForemanOrDirector;3;;;;2;;33;;2;2;3a;3F1
-C2 Team 3 Follower 2;;2bdm3b;;p2;Vote;ForemanOrDirector;3;;;;2;;33;;2;2;3b;3F2
-C2 Team 4;;2bdm4;;p2;Vote;ForemanOrDirector;3;;;;2;;34;34;1;2;4;4L
-C2 Team 4 Follower 1;;2bdm4a;;p2;Vote;ForemanOrDirector;3;;;;2;;34;;2;2;4a;4F1
-C2 Team 4 Follower 2;;2bdm4b;;p2;Vote;ForemanOrDirector;3;;;;2;;34;;2;2;4b;4F2
-C2 Team 5;;2bdm5;;p2;Vote;ForemanOrDirector;3;;;;2;;35;35;1;2;5;5L
-C2 Team 5 Follower 1;;2bdm5a;;p2;Vote;ForemanOrDirector;3;;;;2;;35;;2;2;5a;5F1
-C2 Team 5 Follower 2;;2bdm5b;;p2;Vote;ForemanOrDirector;3;;;;2;;35;;2;2;5b;5F2
-C2 Team 6;;2bdm6;;p2;Vote;ForemanOrDirector;3;;;;2;;36;36;1;2;6;6L
-C2 Team 6 Follower 1;;2bdm6a;;p2;Vote;ForemanOrDirector;3;;;;2;;36;;2;2;6a;6F1
-C2 Team 6 Follower 2;;2bdm6b;;p2;Vote;ForemanOrDirector;3;;;;2;;36;;2;2;6b;6F2
-C2 Team 7;;2bdm7;;p2;Vote;ForemanOrDirector;3;;;;2;;37;37;1;2;7;7L
-C2 Team 7 Follower 1;;2bdm7a;;p2;Vote;ForemanOrDirector;3;;;;2;;37;;2;2;7a;7F1
-C2 Team 7 Follower 2;;2bdm7b;;p2;Vote;ForemanOrDirector;3;;;;2;;37;;2;2;7b;7F2
-C2 Team 8;;2bdm8;;p2;Vote;ForemanOrDirector;3;;;;2;;38;38;1;2;8;8L
-C2 Team 8 Follower 1;;2bdm8a;;p2;Vote;ForemanOrDirector;3;;;;2;;38;;2;2;8a;8F1
-C2 Team 8 Follower 2;;2bdm8b;;p2;Vote;ForemanOrDirector;3;;;;2;;38;;2;2;8b;8F2
-C2 Team 9;;2bdm9;;p2;Vote;ForemanOrDirector;3;;;;2;;39;39;1;2;9;9L
-C2 Team 9 Follower 1;;2bdm9a;;p2;Vote;ForemanOrDirector;3;;;;2;;39;;2;2;9a;9F1
-C2 Team 9 Follower 2;;2bdm9b;;p2;Vote;ForemanOrDirector;3;;;;2;;39;;2;2;9b;9F2
-C2 Team 10;;2bdm10;;p2;Vote;ForemanOrDirector;3;;;;2;;40;40;1;2;10;10L
-C2 Team 10 Follower 1;;2bdm10a;;p2;Vote;ForemanOrDirector;3;;;;2;;40;;2;2;10a;10F1
-C2 Team 10 Follower 2;;2bdm10b;;p2;Vote;ForemanOrDirector;3;;;;2;;40;;2;2;10b;10F2
-C2 Team 11;;2bdm11;;p2;Vote;ForemanOrDirector;3;;;;2;;41;41;1;2;11;11L
-C2 Team 11 Follower 1;;2bdm11a;;p2;Vote;ForemanOrDirector;3;;;;2;;41;;2;2;11a;11F1
-C2 Team 11 Follower 2;;2bdm11b;;p2;Vote;ForemanOrDirector;3;;;;2;;41;;2;2;11b;11F2
-C2 Team 12;;2bdm12;;p2;Vote;ForemanOrDirector;3;;;;2;;42;42;1;2;12;12L
-C2 Team 12 Follower 1;;2bdm12a;;p2;Vote;ForemanOrDirector;3;;;;2;;42;;2;2;12a;12F1
-C2 Team 12 Follower 2;;2bdm12b;;p2;Vote;ForemanOrDirector;3;;;;2;;42;;2;2;12b;12F2
-C2 Team 13;;2bdm13;;p2;Vote;ForemanOrDirector;3;;;;2;;43;43;1;2;13;13L
-C2 Team 13 Follower 1;;2bdm13a;;p2;Vote;ForemanOrDirector;3;;;;2;;43;;2;2;13a;13F1
-C2 Team 13 Follower 2;;2bdm13b;;p2;Vote;ForemanOrDirector;3;;;;2;;43;;2;2;13b;13F2
-C2 Team 14;;2bdm14;;p2;Vote;ForemanOrDirector;3;;;;2;;44;44;1;2;14;14L
-C2 Team 14 Follower 1;;2bdm14a;;p2;Vote;ForemanOrDirector;3;;;;2;;44;;2;2;14a;14F1
-C2 Team 14 Follower 2;;2bdm14b;;p2;Vote;ForemanOrDirector;3;;;;2;;44;;2;2;14b;14F2
-C2 Team 15;;2bdm15;;p2;Vote;ForemanOrDirector;3;;;;2;;45;45;1;2;15;15L
-C2 Team 15 Follower 1;;2bdm15a;;p2;Vote;ForemanOrDirector;3;;;;2;;45;;2;2;15a;15F1
-C2 Team 15 Follower 2;;2bdm15b;;p2;Vote;ForemanOrDirector;3;;;;2;;45;;2;2;15b;15F2
-C2 Team 16;;2bdm16;;p2;Vote;ForemanOrDirector;3;;;;2;;46;46;1;2;16;16L
-C2 Team 16 Follower 1;;2bdm16a;;p2;Vote;ForemanOrDirector;3;;;;2;;46;;2;2;16a;16F1
-C2 Team 16 Follower 2;;2bdm16b;;p2;Vote;ForemanOrDirector;3;;;;2;;46;;2;2;16b;16F2
-C2 Team 17;;2bdm17;;p2;Vote;ForemanOrDirector;3;;;;2;;47;47;1;2;17;17L
-C2 Team 17 Follower 1;;2bdm17a;;p2;Vote;ForemanOrDirector;3;;;;2;;47;;2;2;17a;17F1
-C2 Team 17 Follower 2;;2bdm17b;;p2;Vote;ForemanOrDirector;3;;;;2;;47;;2;2;17b;17F2
-C2 Team 18;;2bdm18;;p2;Vote;ForemanOrDirector;3;;;;2;;48;48;1;2;18;18L
-C2 Team 18 Follower 1;;2bdm18a;;p2;Vote;ForemanOrDirector;3;;;;2;;48;;2;2;18a;18F1
-C2 Team 18 Follower 2;;2bdm18b;;p2;Vote;ForemanOrDirector;3;;;;2;;48;;2;2;18b;18F2
-C2 Team 19;;2bdm19;;p2;Vote;ForemanOrDirector;3;;;;2;;49;49;1;2;19;19L
-C2 Team 19 Follower 1;;2bdm19a;;p2;Vote;ForemanOrDirector;3;;;;2;;49;;2;2;19a;19F1
-C2 Team 19 Follower 2;;2bdm19b;;p2;Vote;ForemanOrDirector;3;;;;2;;49;;2;2;19b;19F2
-C2 Team 20;;2bdm20;;p2;Vote;ForemanOrDirector;3;;;;2;;50;50;1;2;20;20L
-C2 Team 20 Follower 1;;2bdm20a;;p2;Vote;ForemanOrDirector;3;;;;2;;50;;2;2;20a;20F1
-C2 Team 20 Follower 2;;2bdm20b;;p2;Vote;ForemanOrDirector;3;;;;2;;50;;2;2;20b;20F2
-C2 Team 21;;2bdm21;;p2;Vote;ForemanOrDirector;3;;;;2;;51;51;1;2;21;21L
-C2 Team 21 Follower 1;;2bdm21a;;p2;Vote;ForemanOrDirector;3;;;;2;;51;;2;2;21a;21F1
-C2 Team 21 Follower 2;;2bdm21b;;p2;Vote;ForemanOrDirector;3;;;;2;;51;;2;2;21b;21F2
-C2 Team 22;;2bdm22;;p2;Vote;ForemanOrDirector;3;;;;2;;52;52;1;2;22;22L
-C2 Team 22 Follower 1;;2bdm22a;;p2;Vote;ForemanOrDirector;3;;;;2;;52;;2;2;22a;22F1
-C2 Team 22 Follower 2;;2bdm22b;;p2;Vote;ForemanOrDirector;3;;;;2;;52;;2;2;22b;22F2
-C2 Team 23;;2bdm23;;p2;Vote;ForemanOrDirector;3;;;;2;;53;53;1;2;23;23L
-C2 Team 23 Follower 1;;2bdm23a;;p2;Vote;ForemanOrDirector;3;;;;2;;53;;2;2;23a;23F1
-C2 Team 23 Follower 2;;2bdm23b;;p2;Vote;ForemanOrDirector;3;;;;2;;53;;2;2;23b;23F2
-C2 Team 24;;2bdm24;;p2;Vote;ForemanOrDirector;3;;;;2;;54;54;1;2;24;24L
-C2 Team 24 Follower 1;;2bdm24a;;p2;Vote;ForemanOrDirector;3;;;;2;;54;;2;2;24a;24F1
-C2 Team 24 Follower 2;;2bdm24b;;p2;Vote;ForemanOrDirector;3;;;;2;;54;;2;2;24b;24F2
-C2 Team 25;;2bdm25;;p2;Vote;ForemanOrDirector;3;;;;2;;55;55;1;2;25;25L
-C2 Team 25 Follower 1;;2bdm25a;;p2;Vote;ForemanOrDirector;3;;;;2;;55;;2;2;25a;25F1
-C2 Team 25 Follower 2;;2bdm25b;;p2;Vote;ForemanOrDirector;3;;;;2;;55;;2;2;25b;25F2
-C2 Team 26;;2bdm26;;p2;Vote;ForemanOrDirector;3;;;;2;;56;56;1;2;26;26L
-C2 Team 26 Follower 1;;2bdm26a;;p2;Vote;ForemanOrDirector;3;;;;2;;56;;2;2;26a;26F1
-C2 Team 26 Follower 2;;2bdm26b;;p2;Vote;ForemanOrDirector;3;;;;2;;56;;2;2;26b;26F2
-C2 Team 27;;2bdm27;;p2;Vote;ForemanOrDirector;3;;;;2;;57;57;1;2;27;27L
-C2 Team 27 Follower 1;;2bdm27a;;p2;Vote;ForemanOrDirector;3;;;;2;;57;;2;2;27a;27F1
-C2 Team 27 Follower 2;;2bdm27b;;p2;Vote;ForemanOrDirector;3;;;;2;;57;;2;2;27b;27F2
-C2 Team 28;;2bdm28;;p2;Vote;ForemanOrDirector;3;;;;2;;58;58;1;2;28;28L
-C2 Team 28 Follower 1;;2bdm28a;;p2;Vote;ForemanOrDirector;3;;;;2;;58;;2;2;28a;28F1
-C2 Team 28 Follower 2;;2bdm28b;;p2;Vote;ForemanOrDirector;3;;;;2;;58;;2;2;28b;28F2
-C2 Team 29;;2bdm29;;p2;Vote;ForemanOrDirector;3;;;;2;;59;59;1;2;29;29L
-C2 Team 29 Follower 1;;2bdm29a;;p2;Vote;ForemanOrDirector;3;;;;2;;59;;2;2;29a;29F1
-C2 Team 29 Follower 2;;2bdm29b;;p2;Vote;ForemanOrDirector;3;;;;2;;59;;2;2;29b;29F2
-C2 Team 30;;2bdm30;;p2;Vote;ForemanOrDirector;3;;;;2;;60;60;1;2;30;30L
-C2 Team 30 Follower 1;;2bdm30a;;p2;Vote;ForemanOrDirector;3;;;;2;;60;;2;2;30a;30F1
-C2 Team 30 Follower 2;;2bdm30b;;p2;Vote;ForemanOrDirector;3;;;;2;;60;;2;2;30b;30F2
+C2 Team 1;;2bdm1@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;31;31;1;2;1;1L
+C2 Team 1 Follower 1;;2bdm1a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;31;;2;2;1a;1F1
+C2 Team 1 Follower 2;;2bdm1b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;31;;2;2;1b;1F2
+C2 Team 2;;2bdm2@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;32;32;1;2;2;2L
+C2 Team 2 Follower 1;;2bdm2a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;32;;2;2;2a;2F1
+C2 Team 2 Follower 2;;2bdm2b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;32;;2;2;2b;2F2
+C2 Team 3;;2bdm3@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;33;33;1;2;3;3L
+C2 Team 3 Follower 1;;2bdm3a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;33;;2;2;3a;3F1
+C2 Team 3 Follower 2;;2bdm3b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;33;;2;2;3b;3F2
+C2 Team 4;;2bdm4@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;34;34;1;2;4;4L
+C2 Team 4 Follower 1;;2bdm4a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;34;;2;2;4a;4F1
+C2 Team 4 Follower 2;;2bdm4b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;34;;2;2;4b;4F2
+C2 Team 5;;2bdm5@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;35;35;1;2;5;5L
+C2 Team 5 Follower 1;;2bdm5a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;35;;2;2;5a;5F1
+C2 Team 5 Follower 2;;2bdm5b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;35;;2;2;5b;5F2
+C2 Team 6;;2bdm6@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;36;36;1;2;6;6L
+C2 Team 6 Follower 1;;2bdm6a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;36;;2;2;6a;6F1
+C2 Team 6 Follower 2;;2bdm6b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;36;;2;2;6b;6F2
+C2 Team 7;;2bdm7@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;37;37;1;2;7;7L
+C2 Team 7 Follower 1;;2bdm7a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;37;;2;2;7a;7F1
+C2 Team 7 Follower 2;;2bdm7b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;37;;2;2;7b;7F2
+C2 Team 8;;2bdm8@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;38;38;1;2;8;8L
+C2 Team 8 Follower 1;;2bdm8a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;38;;2;2;8a;8F1
+C2 Team 8 Follower 2;;2bdm8b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;38;;2;2;8b;8F2
+C2 Team 9;;2bdm9@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;39;39;1;2;9;9L
+C2 Team 9 Follower 1;;2bdm9a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;39;;2;2;9a;9F1
+C2 Team 9 Follower 2;;2bdm9b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;39;;2;2;9b;9F2
+C2 Team 10;;2bdm10@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;40;40;1;2;10;10L
+C2 Team 10 Follower 1;;2bdm10a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;40;;2;2;10a;10F1
+C2 Team 10 Follower 2;;2bdm10b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;40;;2;2;10b;10F2
+C2 Team 11;;2bdm11@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;41;41;1;2;11;11L
+C2 Team 11 Follower 1;;2bdm11a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;41;;2;2;11a;11F1
+C2 Team 11 Follower 2;;2bdm11b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;41;;2;2;11b;11F2
+C2 Team 12;;2bdm12@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;42;42;1;2;12;12L
+C2 Team 12 Follower 1;;2bdm12a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;42;;2;2;12a;12F1
+C2 Team 12 Follower 2;;2bdm12b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;42;;2;2;12b;12F2
+C2 Team 13;;2bdm13@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;43;43;1;2;13;13L
+C2 Team 13 Follower 1;;2bdm13a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;43;;2;2;13a;13F1
+C2 Team 13 Follower 2;;2bdm13b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;43;;2;2;13b;13F2
+C2 Team 14;;2bdm14@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;44;44;1;2;14;14L
+C2 Team 14 Follower 1;;2bdm14a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;44;;2;2;14a;14F1
+C2 Team 14 Follower 2;;2bdm14b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;44;;2;2;14b;14F2
+C2 Team 15;;2bdm15@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;45;45;1;2;15;15L
+C2 Team 15 Follower 1;;2bdm15a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;45;;2;2;15a;15F1
+C2 Team 15 Follower 2;;2bdm15b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;45;;2;2;15b;15F2
+C2 Team 16;;2bdm16@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;46;46;1;2;16;16L
+C2 Team 16 Follower 1;;2bdm16a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;46;;2;2;16a;16F1
+C2 Team 16 Follower 2;;2bdm16b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;46;;2;2;16b;16F2
+C2 Team 17;;2bdm17@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;47;47;1;2;17;17L
+C2 Team 17 Follower 1;;2bdm17a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;47;;2;2;17a;17F1
+C2 Team 17 Follower 2;;2bdm17b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;47;;2;2;17b;17F2
+C2 Team 18;;2bdm18@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;48;48;1;2;18;18L
+C2 Team 18 Follower 1;;2bdm18a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;48;;2;2;18a;18F1
+C2 Team 18 Follower 2;;2bdm18b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;48;;2;2;18b;18F2
+C2 Team 19;;2bdm19@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;49;49;1;2;19;19L
+C2 Team 19 Follower 1;;2bdm19a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;49;;2;2;19a;19F1
+C2 Team 19 Follower 2;;2bdm19b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;49;;2;2;19b;19F2
+C2 Team 20;;2bdm20@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;50;50;1;2;20;20L
+C2 Team 20 Follower 1;;2bdm20a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;50;;2;2;20a;20F1
+C2 Team 20 Follower 2;;2bdm20b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;50;;2;2;20b;20F2
+C2 Team 21;;2bdm21@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;51;51;1;2;21;21L
+C2 Team 21 Follower 1;;2bdm21a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;51;;2;2;21a;21F1
+C2 Team 21 Follower 2;;2bdm21b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;51;;2;2;21b;21F2
+C2 Team 22;;2bdm22@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;52;52;1;2;22;22L
+C2 Team 22 Follower 1;;2bdm22a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;52;;2;2;22a;22F1
+C2 Team 22 Follower 2;;2bdm22b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;52;;2;2;22b;22F2
+C2 Team 23;;2bdm23@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;53;53;1;2;23;23L
+C2 Team 23 Follower 1;;2bdm23a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;53;;2;2;23a;23F1
+C2 Team 23 Follower 2;;2bdm23b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;53;;2;2;23b;23F2
+C2 Team 24;;2bdm24@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;54;54;1;2;24;24L
+C2 Team 24 Follower 1;;2bdm24a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;54;;2;2;24a;24F1
+C2 Team 24 Follower 2;;2bdm24b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;54;;2;2;24b;24F2
+C2 Team 25;;2bdm25@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;55;55;1;2;25;25L
+C2 Team 25 Follower 1;;2bdm25a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;55;;2;2;25a;25F1
+C2 Team 25 Follower 2;;2bdm25b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;55;;2;2;25b;25F2
+C2 Team 26;;2bdm26@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;56;56;1;2;26;26L
+C2 Team 26 Follower 1;;2bdm26a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;56;;2;2;26a;26F1
+C2 Team 26 Follower 2;;2bdm26b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;56;;2;2;26b;26F2
+C2 Team 27;;2bdm27@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;57;57;1;2;27;27L
+C2 Team 27 Follower 1;;2bdm27a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;57;;2;2;27a;27F1
+C2 Team 27 Follower 2;;2bdm27b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;57;;2;2;27b;27F2
+C2 Team 28;;2bdm28@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;58;58;1;2;28;28L
+C2 Team 28 Follower 1;;2bdm28a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;58;;2;2;28a;28F1
+C2 Team 28 Follower 2;;2bdm28b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;58;;2;2;28b;28F2
+C2 Team 29;;2bdm29@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;59;59;1;2;29;29L
+C2 Team 29 Follower 1;;2bdm29a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;59;;2;2;29a;29F1
+C2 Team 29 Follower 2;;2bdm29b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;59;;2;2;29b;29F2
+C2 Team 30;;2bdm30@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;60;60;1;2;30;30L
+C2 Team 30 Follower 1;;2bdm30a@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;60;;2;2;30a;30F1
+C2 Team 30 Follower 2;;2bdm30b@bts.com;;p2;Vote;ForemanOrDirector;3;;;;2;;60;;2;2;30b;30F2
 ;;;;;;;;;;;;;;;;;;
 Test Group Director;;gd_tbdm;;p;Vote,GroupDirector;Individual:Group_Director;5;5;6;6;;;;;;3;;
 Test Facilitator;;fac_tbdm;;p;Vote;ForemanOrDirector;;;6;;3;3;;;;3;;
 Test Reporter;;rep_tbdm;;p;Vote;Individual:Reporting_Screen;;;;;3;;;;;3;;
-Test Team 1;;tbdm1;;p;Vote;ForemanOrDirector;5;;;;3;;61;61;1;3;1;1L
-Test Team 1 Follower 1;;tbdm1a;;p;Vote;ForemanOrDirector;5;;;;3;;61;;2;3;1a;1F1
-Test Team 1 Follower 2;;tbdm1b;;p;Vote;ForemanOrDirector;5;;;;3;;61;;2;3;1b;1F2
-Test Team 2;;tbdm2;;p;Vote;ForemanOrDirector;5;;;;3;;62;62;1;3;2;2L
-Test Team 2 Follower 1;;tbdm2a;;p;Vote;ForemanOrDirector;5;;;;3;;62;;2;3;2a;2F1
-Test Team 2 Follower 2;;tbdm2b;;p;Vote;ForemanOrDirector;5;;;;3;;62;;2;3;2b;2F2
-Test Team 3;;tbdm3;;p;Vote;ForemanOrDirector;5;;;;3;;63;63;1;3;3;3L
-Test Team 3 Follower 1;;tbdm3a;;p;Vote;ForemanOrDirector;5;;;;3;;63;;2;3;3a;3F1
-Test Team 3 Follower 2;;tbdm3b;;p;Vote;ForemanOrDirector;5;;;;3;;63;;2;3;3b;3F2
-Test Team 4;;tbdm4;;p;Vote;ForemanOrDirector;5;;;;3;;64;64;1;3;4;4L
-Test Team 4 Follower 1;;tbdm4a;;p;Vote;ForemanOrDirector;5;;;;3;;64;;2;3;4a;4F1
-Test Team 4 Follower 2;;tbdm4b;;p;Vote;ForemanOrDirector;5;;;;3;;64;;2;3;4b;4F2
-Test Team 5;;tbdm5;;p;Vote;ForemanOrDirector;5;;;;3;;65;65;1;3;5;5L
-Test Team 5 Follower 1;;tbdm5a;;p;Vote;ForemanOrDirector;5;;;;3;;65;;2;3;5a;5F1
-Test Team 5 Follower 2;;tbdm5b;;p;Vote;ForemanOrDirector;5;;;;3;;65;;2;3;5b;5F2
+Test Team 1;;tbdm1@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;61;61;1;3;1;1L
+Test Team 1 Follower 1;;tbdm1a@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;61;;2;3;1a;1F1
+Test Team 1 Follower 2;;tbdm1b@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;61;;2;3;1b;1F2
+Test Team 2;;tbdm2@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;62;62;1;3;2;2L
+Test Team 2 Follower 1;;tbdm2a@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;62;;2;3;2a;2F1
+Test Team 2 Follower 2;;tbdm2b@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;62;;2;3;2b;2F2
+Test Team 3;;tbdm3@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;63;63;1;3;3;3L
+Test Team 3 Follower 1;;tbdm3a@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;63;;2;3;3a;3F1
+Test Team 3 Follower 2;;tbdm3b@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;63;;2;3;3b;3F2
+Test Team 4;;tbdm4@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;64;64;1;3;4;4L
+Test Team 4 Follower 1;;tbdm4a@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;64;;2;3;4a;4F1
+Test Team 4 Follower 2;;tbdm4b@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;64;;2;3;4b;4F2
+Test Team 5;;tbdm5@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;65;65;1;3;5;5L
+Test Team 5 Follower 1;;tbdm5a@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;65;;2;3;5a;5F1
+Test Team 5 Follower 2;;tbdm5b@bts.com;;p;Vote;ForemanOrDirector;5;;;;3;;65;;2;3;5b;5F2
 ;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;
