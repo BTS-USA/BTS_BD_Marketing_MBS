@@ -2,7 +2,7 @@
   <Component type="Feedback" customJS="true"><![CDATA[{
   "templateInEvent": "html/as_singleSelectFB.dot",
   "css": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/styles/as_singleSelectFB.css",
-  "feedbackTitle": "!{Activity4_Feedback}",
+  "feedbackTitle": "!{Feedback}",
   "trackQuestion": "Team_Track",
   "questions": [
     {
@@ -20,18 +20,18 @@
   "metrics": [
     {
       "metricValue": "!{Activity4_A_Score_1}",
-      "label": "!{Activity4_Top_Gauges_Gauge1}"
+      "label": "!{Top_Gauges_Gauge1}"
     },
     {
       "metricValue": "!{Activity4_A_Score_2}",
-      "label": "!{Activity4_Top_Gauges_Gauge2}"
+      "label": "!{Top_Gauges_Gauge2}"
     },
     {
       "metricValue": "!{Activity4_A_Score_3}",
-      "label": "!{Activity4_Top_Gauges_Gauge3}"
+      "label": "!{Top_Gauges_Gauge3}"
     }
   ],
-  "scoreText": "!{Activity4_Score}",
+  "scoreText": "!{Impacts}",
   "scope": [
     "Activity4_MOMENT_SINGLE_SELECT",
     "Team_Track"

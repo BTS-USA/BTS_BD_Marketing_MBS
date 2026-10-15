@@ -7,7 +7,7 @@
     "title": "!{Activity5_MomentSingleSelectRadioTitle}",
     "description": "!{Activity5_MomentSingleSelectRadioDescription}"
   },
-  "instructions": "!{Activity5_MomentSingleSelectRadioInstructions}",
+  "instructions": "!{RadioInstructions}",
   "type": "select",
   "readOnlyCondition": "Q.Leader==2",
   "questions": [
@@ -85,7 +85,7 @@
   },
   "buttons": [
     {
-      "text": "!{Activity5_submit}",
+      "text": "!{submit}",
       "type": "submit",
       "submitButton": true
     }

@@ -2,7 +2,7 @@
   <Component type="Feedback" customJS="true"><![CDATA[{
   "templateInEvent": "html/as_singleSelectFB.dot",
   "css": "/Wizer/Pages/Events/BTS_BD_Marketing_MBS/styles/as_singleSelectFB.css",
-  "feedbackTitle": "!{Activity5_Feedback}",
+  "feedbackTitle": "!{Feedback}",
   "trackQuestion": "Team_Track",
   "questions": [
     {

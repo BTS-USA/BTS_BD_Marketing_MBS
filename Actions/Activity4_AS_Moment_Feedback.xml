@@ -9,30 +9,30 @@
     "title": "!{Activity4_MomentSingleSelectRadioTitle}",
     "description": "!{Activity4_MomentSingleSelectRadioDescription}"
   },
-  "YourAction": "!{Activity4_YourAction}",
-  "yourChoiceText": "!{Activity4_YourChoice}",
+  "YourAction": "!{YourAction}",
+  "yourChoiceText": "!{YourChoice}",
   "trackQuestion": "Team_Track",
   "tabOptions": [
     {
-      "title": "!{Activity4_TabTitle1}",
+      "title": "!{TabTitle1}",
       "actionXML": "Activity4_AS_Moment_FeedbackA",
       "conditionQuestion": "Activity4_MOMENT_SINGLE_SELECT",
       "conditionAnswer": "1",
-      "youraction": "!{Activity4_YourAction}"
+      "youraction": "!{YourAction}"
     },
     {
-      "title": "!{Activity4_TabTitle2}",
+      "title": "!{TabTitle2}",
       "actionXML": "Activity4_AS_Moment_FeedbackB",
       "conditionQuestion": "Activity4_MOMENT_SINGLE_SELECT",
       "conditionAnswer": "2",
-      "youraction": "!{Activity4_YourAction}"
+      "youraction": "!{YourAction}"
     },
     {
-      "title": "!{Activity4_TabTitle3}",
+      "title": "!{TabTitle3}",
       "actionXML": "Activity4_AS_Moment_FeedbackC",
       "conditionQuestion": "Activity4_MOMENT_SINGLE_SELECT",
       "conditionAnswer": "3",
-      "youraction": "!{Activity4_YourAction}"
+      "youraction": "!{YourAction}"
     }
   ],
   "scope": [

@@ -9,37 +9,37 @@
     "title": "!{Activity1_MomentSingleSelectRadioTitle}",
     "description": "!{Activity1_MomentSingleSelectRadioDescription}"
   },
-  "YourAction": "!{Activity1_YourAction}",
-  "yourChoiceText": "!{Activity1_YourChoice}",
+  "YourAction": "!{YourAction}",
+  "yourChoiceText": "!{YourChoice}",
   "trackQuestion": "Team_Track",
   "tabOptions": [
     {
-      "title": "!{Activity1_TabTitle1}",
+      "title": "!{TabTitle1}",
       "actionXML": "Activity1_AS_Moment_FeedbackA",
       "conditionQuestion": "Activity1_MOMENT_SINGLE_SELECT",
       "conditionAnswer": "1",
-      "youraction": "!{Activity1_YourAction}"
+      "youraction": "!{YourAction}"
     },
     {
-      "title": "!{Activity1_TabTitle2}",
+      "title": "!{TabTitle2}",
       "actionXML": "Activity1_AS_Moment_FeedbackB",
       "conditionQuestion": "Activity1_MOMENT_SINGLE_SELECT",
       "conditionAnswer": "2",
-      "youraction": "!{Activity1_YourAction}"
+      "youraction": "!{YourAction}"
     },
     {
-      "title": "!{Activity1_TabTitle3}",
+      "title": "!{TabTitle3}",
       "actionXML": "Activity1_AS_Moment_FeedbackC",
       "conditionQuestion": "Activity1_MOMENT_SINGLE_SELECT",
       "conditionAnswer": "3",
-      "youraction": "!{Activity1_YourAction}"
+      "youraction": "!{YourAction}"
     },
     {
-      "title": "!{Activity1_TabTitle4}",
+      "title": "!{TabTitle4}",
       "actionXML": "Activity1_AS_Moment_FeedbackD",
       "conditionQuestion": "Activity1_MOMENT_SINGLE_SELECT",
       "conditionAnswer": "4",
-      "youraction": "!{Activity1_YourAction}"
+      "youraction": "!{YourAction}"
     }
   ],
   "scope": [

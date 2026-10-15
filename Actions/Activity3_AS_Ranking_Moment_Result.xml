@@ -12,28 +12,28 @@
     {
       "questions": [
         {
-          "option_title": "!{Activity3_RankingMomentLabel1}",
+          "option_title": "!{TabTitle1}",
           "title": "!{Activity3_RankingMomentOption1}",
           "name": "Activity3_RANKING1",
           "minValue": 0,
           "maxValue": 4
         },
         {
-          "option_title": "!{Activity3_RankingMomentLabel2}",
+          "option_title": "!{TabTitle2}",
           "title": "!{Activity3_RankingMomentOption2}",
           "name": "Activity3_RANKING2",
           "minValue": 0,
           "maxValue": 4
         },
         {
-          "option_title": "!{Activity3_RankingMomentLabel3}",
+          "option_title": "!{TabTitle3}",
           "title": "!{Activity3_RankingMomentOption3}",
           "name": "Activity3_RANKING3",
           "minValue": 0,
           "maxValue": 4
         },
         {
-          "option_title": "!{Activity3_RankingMomentLabel4}",
+          "option_title": "!{TabTitle4}",
           "title": "!{Activity3_RankingMomentOption4}",
           "class": "optimal",
           "text": "!{Optimal}",

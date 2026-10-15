@@ -25,9 +25,9 @@
         },
         "submitButton": {
           "class": "inputComponentSubmit cl-button cl-button--submit",
-          "text": "!{Activity6_submit}",
+          "text": "!{submit}",
           "clearText": false,
-          "message": "!{Activity6_saved}"
+          "message": "!{saved}"
         }
       }
     }

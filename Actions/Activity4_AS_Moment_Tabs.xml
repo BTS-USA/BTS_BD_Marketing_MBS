@@ -6,16 +6,16 @@
   "showTabs": true,
   "tabOptions": [
     {
-      "title": "!{Activity4_Case_Study}",
+      "title": "!{Case_Study}",
       "actionXML": "Base_CaseStudy"
     },
     {
-      "title": "!{Activity4_Scenario}",
+      "title": "!{Scenario}",
       "actionXML": "Activity4_AS_Moment_Scenario",
       "open": true
     },
     {
-      "title": "!{Activity4_Decision}",
+      "title": "!{Decision}",
       "actionXML": "Activity4_AS_Moment_Input"
     }
   ],

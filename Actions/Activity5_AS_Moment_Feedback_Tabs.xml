@@ -6,15 +6,15 @@
   "showTabs": true,
   "tabOptions": [
     {
-      "title": "!{Activity5_Case_Study}",
+      "title": "!{Case_Study}",
       "actionXML": "Base_CaseStudy"
     },
     {
-      "title": "!{Activity5_Scenario}",
+      "title": "!{Scenario}",
       "actionXML": "Activity5_AS_Moment_Scenario"
     },
     {
-      "title": "!{Activity5_Feedback}",
+      "title": "!{Feedback}",
       "actionXML": "Activity5_AS_Moment_Feedback",
       "open": true
     }

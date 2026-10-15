@@ -12,22 +12,22 @@
   "questions": [
     {
       "binding": "Activity3_RANKING1",
-      "label": "!{Activity3_RankingMomentLabel1}",
+      "label": "!{TabTitle1}",
       "title": "!{Activity3_RankingMomentOption1}"
     },
     {
       "binding": "Activity3_RANKING2",
-      "label": "!{Activity3_RankingMomentLabel2}",
+      "label": "!{TabTitle2}",
       "title": "!{Activity3_RankingMomentOption2}"
     },
     {
       "binding": "Activity3_RANKING3",
-      "label": "!{Activity3_RankingMomentLabel3}",
+      "label": "!{TabTitle3}",
       "title": "!{Activity3_RankingMomentOption3}"
     },
     {
       "binding": "Activity3_RANKING4",
-      "label": "!{Activity3_RankingMomentLabel4}",
+      "label": "!{TabTitle4}",
       "title": "!{Activity3_RankingMomentOption4}"
     }
   ],
