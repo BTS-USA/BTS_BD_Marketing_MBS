@@ -88,3 +88,54 @@
                 left 4rem
             &.RightBottom, &.RightTop
                 right 4rem
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.tc-action-Team_Name_Follower_AS_InfoNote
+    overflow hidden
+    #votingSlideDiv
+        box-sizing border-box
+        height 100vh
+        padding 55px 0 0
+        overflow hidden
+        .mainWrapper
+            width 100%
+            max-width none
+            height 100%
+            margin 0
+            padding 0
+            overflow hidden
+            background transparent
+            box-shadow none
+            border-radius 0
+        .identifier
+            height 100%
+            overflow hidden
+            &-background
+                height 100%
+                overflow hidden
+                background-color $white
+                background-repeat no-repeat
+                background-position right bottom
+                background-size 100% auto
+    .inc-noteBox
+        &-container
+            height 100%
+            padding 0
+            overflow hidden
+        &.LeftTop
+            top 2.75rem
+            left 3.5rem
+        &-text
+            width auto
+            max-width 28rem
+            max-height none
+            padding 1.15rem 1.35rem 1rem
+            border-radius 0.75rem 0.75rem 0 0
+            line-height 1.45
+            color $darkgrey
+            border-bottom 3px solid $primary
+            box-shadow $shadow-bg
+@media screen and (max-width 1024px)
+    .tc-action-Team_Name_Follower_AS_InfoNote
+        .inc-noteBox.LeftTop
+            top 1.5rem
+            left 1.5rem

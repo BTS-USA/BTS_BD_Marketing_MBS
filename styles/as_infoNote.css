@@ -562,3 +562,62 @@ blockquote:after {
     right: 4rem;
   }
 }
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.tc-action-Team_Name_Follower_AS_InfoNote {
+  overflow: hidden;
+}
+.tc-action-Team_Name_Follower_AS_InfoNote #votingSlideDiv {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 55px 0 0;
+  overflow: hidden;
+}
+.tc-action-Team_Name_Follower_AS_InfoNote #votingSlideDiv .mainWrapper {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+.tc-action-Team_Name_Follower_AS_InfoNote #votingSlideDiv .identifier {
+  height: 100%;
+  overflow: hidden;
+}
+.tc-action-Team_Name_Follower_AS_InfoNote #votingSlideDiv .identifier-background {
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 100% auto;
+}
+.tc-action-Team_Name_Follower_AS_InfoNote .inc-noteBox-container {
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+.tc-action-Team_Name_Follower_AS_InfoNote .inc-noteBox.LeftTop {
+  top: 2.75rem;
+  left: 3.5rem;
+}
+.tc-action-Team_Name_Follower_AS_InfoNote .inc-noteBox-text {
+  width: auto;
+  max-width: 28rem;
+  max-height: none;
+  padding: 1.15rem 1.35rem 1rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  line-height: 1.45;
+  color: #333;
+  border-bottom: 3px solid #ca1c68;
+  box-shadow: 0 5px 30px 0 rgba(127,127,127,0.35);
+}
+@media screen and (max-width: 1024px) {
+  .tc-action-Team_Name_Follower_AS_InfoNote .inc-noteBox.LeftTop {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+}
