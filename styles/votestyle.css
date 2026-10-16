@@ -893,7 +893,7 @@ body[class*=Team_Name] {
   background-color: #fff;
 }
 body[class*=Team_Name] #votingSlideDiv {
-  padding: 4.5rem 0 0;
+  padding: 55px 0 0;
 }
 body[class*=Team_Name] #votingSlideDiv .mainWrapper {
   background: transparent;
@@ -902,6 +902,7 @@ body[class*=Team_Name] #votingSlideDiv .mainWrapper {
   width: 100%;
   max-width: none;
   margin: 0 auto;
+  border-top: none;
 }
 body[class*=Team_Name] #votingSlideDiv .mainWrapper .nc-container {
   border-top: 0;

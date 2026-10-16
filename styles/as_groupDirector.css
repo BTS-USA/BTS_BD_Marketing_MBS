@@ -627,7 +627,7 @@ blockquote:after {
   color: #ca1c68;
 }
 #votingSlideDiv .mainWrapper .cl-modal__content {
-  color: #ca1c68;
+  color: #24282b;
   padding: 0;
 }
 #votingSlideDiv .mainWrapper .cl-modal__buttons {
@@ -638,26 +638,27 @@ blockquote:after {
   margin: 2px;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  transition: background 1s ease;
+  transition: all 1s ease;
   text-transform: none;
 }
 #votingSlideDiv .mainWrapper .cl-modal__buttons .cl-button.ec-button__ok {
   background: #ca1c68;
+  color: #fff;
   margin-left: 5px;
 }
 #votingSlideDiv .mainWrapper .cl-modal__buttons .cl-button.ec-button__ok:active,
 #votingSlideDiv .mainWrapper .cl-modal__buttons .cl-button.ec-button__ok:focus,
 #votingSlideDiv .mainWrapper .cl-modal__buttons .cl-button.ec-button__ok:hover {
-  background: #ca1c68;
+  transform: scale(1.1);
 }
 #votingSlideDiv .mainWrapper .cl-modal__buttons .cl-button.ec-button__cancel {
-  background: #1d7279;
-  color: #ca1c68;
+  background: #24282b;
+  color: #fff;
 }
 #votingSlideDiv .mainWrapper .cl-modal__buttons .cl-button.ec-button__cancel:active,
 #votingSlideDiv .mainWrapper .cl-modal__buttons .cl-button.ec-button__cancel:focus,
 #votingSlideDiv .mainWrapper .cl-modal__buttons .cl-button.ec-button__cancel:hover {
-  background: #1d7279;
+  transform: scale(1.1);
 }
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 600px) {

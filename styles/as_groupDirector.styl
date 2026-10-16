@@ -120,7 +120,7 @@
         &__title
             color $primary
         &__content
-            color $primary
+            color $neutral-dark
             padding 0
         &__buttons
             float none
@@ -129,18 +129,19 @@
                 margin 2px
                 padding .5rem 1rem
                 border-radius $radius
-                transition background 1s ease
+                transition all 1s ease
                 text-transform none
                 &.ec-button__ok
                     background $primary
+                    color $white
                     margin-left 5px
                     &:active, &:focus, &:hover
-                        background $primary
+                        transform scale(1.1)
                 &.ec-button__cancel
-                    background $secondary
-                    color $primary
+                    background $neutral-dark
+                    color $white
                     &:active, &:focus, &:hover
-                        background $secondary
+                        transform scale(1.1)
 
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 @media screen and (max-width 600px)
