@@ -1,22 +1,4 @@
 @font-face {
-  font-family: 'Gibson-Light';
-  src: url("../fonts/Gibson-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gibson-Regular';
-  src: url("../fonts/Gibson-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gibson-SemiBold';
-  src: url("../fonts/Gibson-SemiBold.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
   font-family: 'fa-regular-400';
   src: url("../fonts/fa-regular-400.eot");
   src: url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype"), url("../fonts/fa-regular-400.svg#fontawesome") format("svg");
@@ -31,15 +13,12 @@ p,
 li,
 input,
 button {
-  font-family: 'Gibson-Regular';
   font-weight: normal;
   line-height: normal;
-  line-height: 1.8rem;
 }
 h1,
 h2,
 h3 {
-  font-family: 'Gibson-SemiBold';
   font-weight: normal;
   line-height: normal;
   margin: 0;
@@ -97,13 +76,13 @@ input {
   height: 5px;
 }
 ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   -webkit-border-radius: 5px;
-  background: #fff;
   border-radius: 0px;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: #676e75 !important;
+  background: rgba(0,0,0,0.3);
 }
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(0,0,0,0.3);
@@ -505,7 +484,7 @@ body {
   color: #333;
   font-size: 1.18rem;
   height: 100%;
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/mainBG.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -545,7 +524,7 @@ body {
 }
 #wizer .page #main .logout-btn:hover,
 #wizer .page #main #A5:hover {
-  color: #021a32;
+  color: #ca1c68;
 }
 #wizer .page #main #A5 {
   right: 46px;
@@ -563,12 +542,12 @@ body {
   color: #333;
 }
 #wizer .page #main #menuEventName {
-  background: url("../images/client-logo.png");
+  background: url("../images/client-logo-black.svg");
   background-position: left center;
   background-repeat: no-repeat;
   background-size: contain;
   height: 55px;
-  width: 144px;
+  width: 94px;
   top: 0;
   right: auto;
   left: 1rem;
@@ -587,41 +566,38 @@ body {
   max-width: 98%;
   border-radius: 5px;
   background-color: #fff;
+  border-radius: 5px;
   box-shadow: 0 5px 30px 0 rgba(127,127,127,0.35);
+  border-top: 1px solid #ca1c68;
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 }
 #votingSlideDiv .mainWrapper .cl-header--main {
-  border-radius: 5px 5px 0 0;
   background-color: #fff;
-  min-height: 6rem;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-image: linear-gradient(to right, #e8eaeb, transparent) 1 0;
+  border-radius: 5px 5px 0 0;
+  min-height: 8rem;
   margin-bottom: 0;
   padding: 1rem 0;
-  display: flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  align-items: center;
-  color: #021a32;
-  border-top: 0;
-  justify-content: center;
+  overflow: hidden;
+  color: inherit;
 }
 #votingSlideDiv .mainWrapper .cl-header-image {
-  background-position: center;
-  background-size: cover;
-  background-image: url("../images/header.jpg") !important;
+  background-position: right top;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 #votingSlideDiv .mainWrapper .cl-header__title--main {
-  text-align: center;
+  text-align: left;
   padding: 0 1rem 10px;
   max-width: 100%;
   font-weight: 600;
 }
 #votingSlideDiv .mainWrapper .cl-header__description--main {
-  text-align: center;
+  text-align: left;
   margin: 0;
   padding: 0 1rem 0;
   max-width: 100%;
@@ -646,20 +622,20 @@ body {
   height: 20px;
 }
 #votingSlideDiv .mainWrapper .cl-bar__inner {
-  background-color: #021a32;
+  background-color: #ca1c68;
   border-radius: 1rem;
 }
 #votingSlideDiv .mainWrapper .cl-bar.optimal-bar .cl-bar__inner {
-  background-color: #337ab7;
+  background-color: #e75394;
 }
 #votingSlideDiv .mainWrapper .cl-bubble {
-  color: #021a32;
-  background-color: #ffb612;
+  color: #fff;
+  background-color: #24282b;
   font-size: 1.1rem;
 }
 #votingSlideDiv .mainWrapper .cl-bubble:after {
   content: '';
-  border-color: #ffb612 transparent transparent transparent;
+  border-color: #24282b transparent transparent transparent;
 }
 #votingSlideDiv .mainWrapper .cl-footer {
   margin-bottom: 1rem;
@@ -668,41 +644,45 @@ body {
 }
 #votingSlideDiv .mainWrapper .cl-button {
   margin: 0;
-  padding: 0.8rem 1rem;
-  background-color: #021a32;
+  padding: 0.5rem 1rem;
+  background-color: #ca1c68;
   border-radius: 5px;
   line-height: normal;
   font-size: 1.3rem;
   font-weight: normal;
   text-transform: uppercase;
-  transition: background 0.6s ease;
+  transition: all 0.6s ease;
   float: right;
 }
 #votingSlideDiv .mainWrapper .cl-button--submit {
-  background-color: #ffb612;
+  background-color: #ca1c68;
   margin-left: 5px;
-  color: #021a32;
+  border: 1px solid #ca1c68;
+  color: #fff;
   text-transform: none;
+/*&.clicked-saved
+                        background-color $success
+                        color $white*/
 }
 #votingSlideDiv .mainWrapper .cl-button--submit:active,
 #votingSlideDiv .mainWrapper .cl-button--submit:focus,
 #votingSlideDiv .mainWrapper .cl-button--submit:hover {
-  background-color: #ffb612;
+  transform: scale(1.1);
 }
 #votingSlideDiv .mainWrapper .cl-button--submit.ssc-button--disabled {
   display: none !important;
 }
-#votingSlideDiv .mainWrapper .cl-button--submit.clicked-saved {
-  background-color: #1e853b;
-  color: #fff;
-}
 #votingSlideDiv .mainWrapper .cl-button--clear {
-  background-color: #021a32;
+  background-color: #fff;
+  border: 1px solid #ca1c68;
+  color: #ca1c68;
 }
 #votingSlideDiv .mainWrapper .cl-button--clear:active,
 #votingSlideDiv .mainWrapper .cl-button--clear:focus,
 #votingSlideDiv .mainWrapper .cl-button--clear:hover {
-  background-color: #021a32;
+  background-color: #ca1c68;
+  color: #fff;
+  transform: scale(1.1);
 }
 #votingSlideDiv .mainWrapper .cl-button--hidden {
   display: none;
@@ -738,10 +718,10 @@ body {
   clear: both;
 }
 #votingSlideDiv .mainWrapper .tc-bar {
-  border-bottom: 2px solid #021a32;
+  border-bottom: 2px solid #ca1c68;
   background-color: #fff;
   margin: 0;
-  padding-top: 1rem;
+  padding-top: 0rem;
   border-radius: 5px 5px 0 0;
   display: flex;
   display: -webkit-box;
@@ -765,7 +745,7 @@ body {
   content: none;
 }
 #votingSlideDiv .mainWrapper .tc-bar__tab--active {
-  background-color: #021a32;
+  background-color: #ca1c68;
   color: #fff;
 }
 #votingSlideDiv .mainWrapper .tc-bar__title {
@@ -786,7 +766,7 @@ body {
 }
 #votingSlideDiv .mainWrapper .tc-container > .tc-bar > .tc-bar__tab > .tc-bar__title:before {
   margin-right: 0.5rem;
-  color: #337ab7;
+  color: #e75394;
   font-family: 'fa-solid-900';
   font-size: 0.9rem;
 }
@@ -812,7 +792,7 @@ body {
   content: '\f013';
 }
 #votingSlideDiv .mainWrapper .tc-container > .tc-bar > .tc-bar__tab.tc-bar__tab--active > .tc-bar__title:before {
-  color: #ffb612;
+  color: #fff;
 }
 #votingSlideDiv .mainWrapper .tc-container > .tc-bar > .tc-bar__tab.tc-bar__tab--active:not(:last-child) {
   box-shadow: inset -1px 0 0 rgba(255,182,18,0.6);
@@ -845,10 +825,10 @@ body {
 }
 #votingSlideDiv .mainWrapper .tc-page__page .tc-bar__tab--active,
 #votingSlideDiv .mainWrapper .tc-page__page .tc-xs__tab--active {
-  background-color: #337ab7;
+  background-color: #1d7279;
 }
 #votingSlideDiv .mainWrapper .nc-container {
-  border-top: 1px dashed #ccc;
+  border-top: 1px dashed #a1aab0;
 }
 #votingSlideDiv .mainWrapper .nc-buttons-container {
   margin: 0;
@@ -871,7 +851,7 @@ body {
   display: inline-block;
 }
 #votingSlideDiv .mainWrapper .nc-button:hover {
-  background: #021a32;
+  background: #ca1c68;
 }
 #votingSlideDiv .mainWrapper .nc-button:before {
   content: '';
@@ -909,10 +889,8 @@ body {
 }
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 body[class*=Team_Name] {
-  background-image: url("../images/team-name.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-image: none;
+  background-color: #fff;
 }
 body[class*=Team_Name] #votingSlideDiv {
   padding: 4.5rem 0 0;
@@ -921,9 +899,9 @@ body[class*=Team_Name] #votingSlideDiv .mainWrapper {
   background: transparent;
   box-shadow: none;
   padding: 0;
-  width: 60%;
+  width: 100%;
   max-width: none;
-  margin: 0;
+  margin: 0 auto;
 }
 body[class*=Team_Name] #votingSlideDiv .mainWrapper .nc-container {
   border-top: 0;
@@ -972,15 +950,20 @@ body[class*=_Moment_Result] p,
   }
 }
 .logoutConfirm {
-  background-color: #021a32 !important;
+  background-color: #24282b !important;
 }
 .logoutConfirm:before {
-  border-bottom-color: #021a32;
+  border-bottom-color: #24282b;
 }
 .logoutConfirm .noButton,
 .logoutConfirm .yesButton {
-  background-color: #ffb612 !important;
-  color: #021a32;
+  background-color: #ca1c68 !important;
+  color: #fff;
+  transition: all 1s ease;
+}
+.logoutConfirm .noButton:hover,
+.logoutConfirm .yesButton:hover {
+  transform: scale(1.1);
 }
 .bodyReporting_Screen .tc-acctabs {
   height: 100%;
@@ -994,7 +977,7 @@ body[class*=_Moment_Result] p,
 }
 .bodyReporting_Screen .tc-acc__label {
   background-color: #fff;
-  color: #021a32;
+  color: #ca1c68;
 }
 .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-paragraph {
   margin: 0;

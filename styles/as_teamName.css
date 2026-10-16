@@ -1,22 +1,4 @@
 @font-face {
-  font-family: 'Gibson-Light';
-  src: url("../fonts/Gibson-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gibson-Regular';
-  src: url("../fonts/Gibson-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gibson-SemiBold';
-  src: url("../fonts/Gibson-SemiBold.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
   font-family: 'fa-regular-400';
   src: url("../fonts/fa-regular-400.eot");
   src: url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype"), url("../fonts/fa-regular-400.svg#fontawesome") format("svg");
@@ -31,15 +13,12 @@ p,
 li,
 input,
 button {
-  font-family: 'Gibson-Regular';
   font-weight: normal;
   line-height: normal;
-  line-height: 1.8rem;
 }
 h1,
 h2,
 h3 {
-  font-family: 'Gibson-SemiBold';
   font-weight: normal;
   line-height: normal;
   margin: 0;
@@ -97,13 +76,13 @@ input {
   height: 5px;
 }
 ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   -webkit-border-radius: 5px;
-  background: #fff;
   border-radius: 0px;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: #676e75 !important;
+  background: rgba(0,0,0,0.3);
 }
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(0,0,0,0.3);
@@ -498,14 +477,96 @@ blockquote:after {
   }
 }
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
+.animated-waves {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 24vh;
+  min-height: 140px;
+  max-height: 260px;
+  z-index: 0;
+  pointer-events: none;
+}
+.wave-svg {
+  width: 100%;
+  height: 100%;
+}
+.parallax > use {
+  animation: move-forever 45s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 15s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 20s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 23s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 30s;
+}
+.wave-1 {
+  fill: rgba(202,28,104,0.4);
+}
+.wave-2 {
+  fill: rgba(202,28,104,0.5);
+}
+.wave-3 {
+  fill: rgba(202,28,104,0.6);
+}
+.wave-4 {
+  fill: #ca1c68;
+}
+@-moz-keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+@-webkit-keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+@-o-keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+#votingSlideDiv .mainWrapper .mainContent {
+  position: relative;
+  z-index: 1;
+}
 #votingSlideDiv .mainWrapper .tnc-container {
-  background-color: transparent;
-  max-width: 28rem;
-  margin: 10rem auto 0 auto;
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: none;
+  background-color: #fff;
+  max-width: 22rem;
+  margin: 4rem auto 0 auto;
+  padding: 2rem 1.75rem 1.5rem;
+  border-radius: 2px;
+  overflow: visible;
+  box-shadow: 0 0 3rem -0.5rem rgba(0,0,0,0.2);
 }
 #votingSlideDiv .mainWrapper .tnc-instructions {
   text-align: center;
@@ -514,20 +575,9 @@ blockquote:after {
 #votingSlideDiv .mainWrapper .tnc-instructions__text {
   background-color: transparent;
   padding: 0;
-  color: #fff;
-  font-size: 1.7rem;
-  font-weight: normal;
-}
-#votingSlideDiv .mainWrapper .tnc-instructions__text:before {
-  content: '';
-  display: block;
-  width: 4.5rem;
-  height: 4.5rem;
-  margin: 1rem auto;
-  background-image: url("../images/team.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  color: #ca1c68;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 #votingSlideDiv .mainWrapper .tnc-buttons.cl-buttons {
   text-align: center;
@@ -538,48 +588,50 @@ blockquote:after {
 }
 #votingSlideDiv .mainWrapper .tnc-buttons.cl-buttons .cl-button--submit {
   float: none !important;
+  background-color: #ca1c68 !important;
+  border-radius: 2rem;
 }
 #votingSlideDiv .mainWrapper .tnc-textarea-container {
-  margin: 1rem auto;
+  margin: 1rem auto 0;
   text-align: center;
 }
 #votingSlideDiv .mainWrapper .tnc-textarea-container input {
+  box-sizing: border-box;
   box-shadow: none;
   width: 100%;
-  padding: 1.06rem;
+  padding: 1rem;
   border-radius: 2rem;
   text-align: center;
-  background-color: transparent;
-  color: #fff;
+  background-color: #f7f7f7;
+  color: #24282b;
 }
 #votingSlideDiv .mainWrapper .tnc-textarea-container .inputComponentMessageLength {
   text-align: center;
-  font-size: 1rem;
-  padding: 5px 0 0 0;
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
   position: static;
   width: 100%;
-  color: #fff;
+  color: #333;
 }
 #votingSlideDiv .mainWrapper .tnc-thankyou {
   display: none;
   border-radius: 1.4rem;
   text-align: center;
-  padding: 5.5rem 3.5rem 5rem;
+  padding: 3rem 2rem;
 }
 #votingSlideDiv .mainWrapper .tnc-thankyou__title {
-  color: #ffb93b;
-  font-family: 'Gibson-SemiBold';
-  font-size: 4rem;
+  color: #ca1c68;
+  font-size: 2.5rem;
+  font-weight: bold;
   line-height: 1.15;
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
 }
 #votingSlideDiv .mainWrapper .tnc-thankyou__message {
-  color: #fff;
-  font-family: 'Gibson-Regular';
-  font-size: 2.15rem;
+  color: #24282b;
+  font-size: 1.3rem;
   line-height: 1.55;
   margin: 0 auto;
-  max-width: 48rem;
+  max-width: 36rem;
 }
 #votingSlideDiv .mainWrapper .tnc.is-submitted .tnc-form {
   display: none;
@@ -588,27 +640,73 @@ blockquote:after {
   display: block;
 }
 #votingSlideDiv .mainWrapper .tnc.is-submitted .tnc-container {
-  max-width: 56rem;
-  margin: 6rem auto 0;
-  padding: 0;
+  max-width: 40rem;
+}
+.tnc-team-icon {
+  display: block;
+  width: 5.5rem;
+  height: auto;
+  margin: 0 auto 0.85rem;
   overflow: visible;
-  background-color: transparent;
+}
+.tnc-team-icon__member {
+  fill: #24282b;
+  stroke: #fff;
+  stroke-width: 4;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: team-bounce 1.6s ease-in-out infinite;
+}
+.tnc-team-icon__member--center {
+  animation-delay: 0.2s;
+}
+.tnc-team-icon__member--right {
+  animation-delay: 0.4s;
 }
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 600px) {
   #votingSlideDiv .mainWrapper .tnc-container {
-    margin: 8rem auto 0;
-  }
-  #votingSlideDiv .mainWrapper .tnc.is-submitted .tnc-container {
-    margin: 4rem auto 0;
+    margin: 3rem 1rem 0;
   }
   #votingSlideDiv .mainWrapper .tnc-thankyou {
-    padding: 3.5rem 1.75rem 3.25rem;
+    padding: 2.5rem 1.5rem;
   }
   #votingSlideDiv .mainWrapper .tnc-thankyou__title {
-    font-size: 2.8rem;
+    font-size: 2rem;
   }
   #votingSlideDiv .mainWrapper .tnc-thankyou__message {
-    font-size: 1.6rem;
+    font-size: 1.1rem;
+  }
+}
+@-moz-keyframes team-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@-webkit-keyframes team-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@-o-keyframes team-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@keyframes team-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
   }
 }

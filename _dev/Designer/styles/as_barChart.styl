@@ -1,0 +1,30 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.bcc
+    &-question
+        background-color $white
+        border-radius $radius 0 0 $radius
+        border 1px solid $neutral-medium
+        border-right none
+        padding 1rem
+    &-answer
+        background-color $white
+        border-radius 0 $radius $radius 0
+        border 1px solid $neutral-medium
+        border-left none
+        padding 1rem
+        .cl-bubble
+            left 98%
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width 991px)
+    .bcc
+        &-question
+            border-radius $radius $radius 0 0
+            border-right 1px solid $neutral-light
+            border-bottom none
+            padding .5rem
+        &-answer
+            border-radius 0 0 $radius $radius
+            border-left 1px solid $neutral-light
+            border-top none
+            padding 1rem .5rem .5rem

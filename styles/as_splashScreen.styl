@@ -2,10 +2,15 @@
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 .identifier
     &-background
+        position relative
+        overflow hidden
         background-repeat no-repeat
         background-position center
         background-size cover
+        background-image none !important
     &-content
+        position relative
+        z-index 1
         vertical-align middle
     &-blue-box-wrapper
         margin 0 auto auto
@@ -17,14 +22,14 @@
             border-radius 1rem
             padding 0 .5rem
             width auto
-            max-width 40rem
+            max-width unset
             margin auto
             text-align center
         &-text
             padding 0
             &__title
                 line-height normal
-                color $primary
+                color $neutral-dark
                 font-size 2rem
                 padding-bottom 0.6rem
             &__sub-title
@@ -32,10 +37,13 @@
                 p
                     color $primary
                     line-height 3.2rem
+                    font-weight bold
             .highlight-text
                 padding-top 1.3rem
-                color $secondary
-                font-weight bold
+                color $neutral-dark
+                font-size 2rem
+                font-weight normal
+                line-height normal
     &-footer
         display none
         margin auto
@@ -49,15 +57,48 @@
             font-size 1rem
             &:hover
                 background-color $neutral-medium !important
+.animated-waves
+    position absolute
+    bottom 0rem
+    left 0
+    width 100%
+    height 17vh
+    min-height 200px
+    max-height 220px
+    z-index 0
+    pointer-events none
+.wave-svg
+    width 100%
+    height 100%
+.parallax > use
+    animation move-forever 45s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite
+    &:nth-child(1)
+        animation-delay -2s
+        animation-duration 15s
+    &:nth-child(2)
+        animation-delay -3s
+        animation-duration 20s
+    &:nth-child(3)
+        animation-delay -4s
+        animation-duration 23s
+    &:nth-child(4)
+        animation-delay -5s
+        animation-duration 30s
+.wave-1
+.wave-2
+.wave-3
+.wave-4
+    fill rgba($primary, 0.3)
+@keyframes move-forever
+    0%
+        transform translate3d(-90px, 0, 0)
+    100%
+        transform translate3d(85px, 0, 0)
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
-@media screen and (max-width 1400px)
+/*@media screen and (max-width 1400px)
     .identifier
-        &-background
-            background-position center left
-            background-image url('../images/welcome-ipad.jpg') !important
         &-blue-box-wrapper
-            margin auto 0 auto auto
-            width 50%
+            width 50%*/
         // &-page
         //     &-content
         //         max-width 22rem

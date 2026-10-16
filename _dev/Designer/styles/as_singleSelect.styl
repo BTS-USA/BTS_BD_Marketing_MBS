@@ -1,0 +1,117 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.ssc
+    &-article
+        background-color transparent
+        .singleSelect
+            &LeftPanel
+                background-color $white !important
+                border-radius $radius 0 0 $radius
+                border 1px solid $neutral-medium
+                border-right none
+                padding 1rem
+                &Label
+                    background-color transparent !important
+                    font-size 0 !important
+                    height 30px
+                    width 30px
+                    border-radius 50%
+                    border 2px solid $neutral-medium
+                    margin auto
+                    background-clip content-box
+                    padding 5px
+            &RightPanel
+                background-color $white !important
+                border 1px solid $neutral-medium
+                border-radius 0 $radius $radius 0
+                border-left none
+                padding 1rem
+            &AccordionContainer
+                background-color $white !important
+                cursor pointer
+                border 1px solid $neutral-medium
+                border-radius 0 $radius $radius 0
+                border-left none
+                pointer-events auto !important
+                padding 1rem
+        &.clicked
+            .singleSelect
+                &LeftPanel
+                    background-color $white !important
+                    border-color $primary
+                    &Label
+                        background-color $primary !important
+                        border-color $primary !important
+                &RightPanel
+                    background-color $white !important
+                    color inherit
+                    border-color $primary
+                &AccordionContainer
+                    background-color $white !important
+                    border-color $primary
+    &-description
+        background-color $neutral-light
+        padding 1rem
+        border-radius 0 0 $radius $radius
+    &-button--disabled
+        background-color transparent !important
+    &-savedmessage
+        &:before
+            display none
+/* Correct/incorrect selection styles---------------------------------------*/
+.ssc
+    &-article
+        &.correct
+            border none
+            .singleSelect
+                &LeftPanel,
+                &RightPanel,
+                &AccordionContainer
+                    background-color lighten($success, 80%) !important
+        &.clicked
+            &.correct
+                border none
+                .singleSelect
+                    &LeftPanel,
+                    &RightPanel,
+                    &AccordionContainer
+                        background-color lighten($success, 80%) !important
+                .singleSelectLeftPanelLabel
+                    background-color $success !important
+                    border-color $success !important
+            &.incorrect
+                border none
+                .singleSelect
+                    &LeftPanel,
+                    &RightPanel,
+                    &AccordionContainer
+                        background-color lighten($error, 80%) !important
+                .singleSelectLeftPanelLabel
+                    background-color $error !important
+                    border-color $error !important
+    &-feedback
+        padding 1rem
+        background $neutral-light
+        border-bottom 3px solid $primary
+        border-radius $radius
+        &__label
+            font-weight 600
+            margin-bottom .5rem
+            color $primary
+/* Use this when core styles aren't taken automatically ----------------------------*/
+.ssc
+    &-article
+        display table
+        width 100%
+        .singleSelect
+            &LeftPanel, &RightPanel, &AccordionContainer
+                display table-cell
+                vertical-align middle
+                float none
+    &-description
+        display none
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width 600px)
+    .ssc
+        .singleSelectLeftPanel, .singleSelectRightPanel
+            padding .5rem

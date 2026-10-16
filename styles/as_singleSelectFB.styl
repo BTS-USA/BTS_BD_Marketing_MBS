@@ -13,7 +13,7 @@
             margin-top .75rem
             border 1px solid rgba(2, 26, 50, .12)
             border-radius 12px
-            background linear-gradient(135deg, rgba(51, 122, 183, .08), rgba(255, 182, 18, .12))
+            background-color $neutral-light
             box-shadow 0 8px 24px rgba(2, 26, 50, .08)
         .youSelected
             &_title
@@ -43,13 +43,13 @@
                     height 1.8rem
                     flex 0 0 1.8rem
                     border-radius 50%
-                    background-color $secondary
-                    color $primary
+                    background-color $neutral-dark
+                    color $white
                     font-family 'fa-solid-900'
                     font-size .8rem
             &_description
                 padding .75rem .85rem
-                border-left 4px solid $secondary
+                border-left 4px solid $neutral-dark
                 border-radius 8px
                 background-color $white
                 box-shadow 0 3px 9px rgba(2, 26, 50, .12)
@@ -58,7 +58,6 @@
                 .feedback_you-selected
                     margin-bottom .35rem
                     color $primary
-                    font-family 'Gibson-SemiBold', sans-serif
                     font-weight 600
     &-metrics
         padding 0 0 0 1rem
@@ -69,7 +68,7 @@
                 border-radius 12px
                 overflow hidden
                 text-align left
-                background linear-gradient(135deg, rgba(51, 122, 183, .08), rgba(255, 182, 18, .12))
+                background-color $neutral-light
                 box-shadow 0 8px 24px rgba(2, 26, 50, .08)
                 .scoreHeader
                     display flex
@@ -77,7 +76,6 @@
                     gap .65rem
                     padding 0 0 .75rem
                     color $primary
-                    font-family 'Gibson-SemiBold', sans-serif
                     font-size 1.15rem
                     font-weight 600
                     &:before
@@ -89,8 +87,8 @@
                         height 2rem
                         flex 0 0 2rem
                         border-radius 50%
-                        background-color $secondary
-                        color $primary
+                        background-color $neutral-dark
+                        color $white
                         font-family 'fa-solid-900'
                         font-size .95rem
             &-box
@@ -101,7 +99,7 @@
                 align-items center
                 justify-content space-between
                 gap .75rem
-                border-left 4px solid $secondary
+                border-left 4px solid $neutral-dark
                 border-radius 8px
                 background-color $white
                 box-shadow 0 3px 9px rgba(2, 26, 50, .12)
@@ -117,8 +115,7 @@
                     gap .65rem
                     width auto
                     padding 0
-                    color $primary
-                    font-family 'Gibson-Regular', sans-serif
+                    color $neutral-dark
                     font-weight 400
                     line-height 1.2
                     &:before
@@ -129,8 +126,8 @@
                         height 2rem
                         flex 0 0 2rem
                         border-radius 50%
-                        background-color $primary
-                        color $secondary
+                        background-color $neutral-dark
+                        color $white
                         font-family 'fa-solid-900'
                         font-size .9rem
                 &:nth-child(1) .metric_label:before
@@ -144,7 +141,6 @@
                 flex 0 0 auto
                 padding 0
                 color $primary
-                font-family 'Gibson-SemiBold', sans-serif
                 font-size 1.05rem
                 font-weight 600
                 text-align right

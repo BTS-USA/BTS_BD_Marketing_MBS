@@ -1,0 +1,185 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.fbc
+    &-content
+        overflow hidden
+    &-feedback
+        padding 0 .25rem 0 0
+        color $darkgrey
+        line-height 1.5
+    &-article
+        &.feedback
+            padding 1rem
+            margin-top .75rem
+            border 1px solid rgba(2, 26, 50, .12)
+            border-radius 12px
+            background linear-gradient(135deg, rgba(51, 122, 183, .08), rgba(255, 182, 18, .12))
+            box-shadow 0 8px 24px rgba(2, 26, 50, .08)
+        .youSelected
+            &_title
+                display none
+            &_option
+                color $darkgrey
+                margin-bottom 1rem
+            &_Description--text
+                strong, b
+                    color $primary
+        .feedback
+            &_title
+                display flex
+                align-items center
+                gap .55rem
+                padding .15rem 0 .65rem
+                color $primary
+                font-family 'Gibson-SemiBold', sans-serif
+                font-size 1.05rem
+                font-weight 600
+                &:before
+                    content '\f005'
+                    display flex
+                    align-items center
+                    justify-content center
+                    width 1.8rem
+                    height 1.8rem
+                    flex 0 0 1.8rem
+                    border-radius 50%
+                    background-color $secondary
+                    color $primary
+                    font-family 'fa-solid-900'
+                    font-size .8rem
+            &_description
+                padding .75rem .85rem
+                border-left 4px solid $secondary
+                border-radius 8px
+                background-color $white
+                box-shadow 0 3px 9px rgba(2, 26, 50, .12)
+                color $darkgrey
+                line-height 1.5
+                .feedback_you-selected
+                    margin-bottom .35rem
+                    color $primary
+                    font-family 'Gibson-SemiBold', sans-serif
+                    font-weight 600
+    &-metrics
+        padding 0 0 0 1rem
+        .metric
+            &-container
+                padding 1rem
+                border 1px solid rgba(2, 26, 50, .15)
+                border-radius 12px
+                overflow hidden
+                text-align left
+                background linear-gradient(135deg, rgba(51, 122, 183, .08), rgba(255, 182, 18, .12))
+                box-shadow 0 8px 24px rgba(2, 26, 50, .08)
+                .scoreHeader
+                    display flex
+                    align-items center
+                    gap .65rem
+                    padding 0 0 .75rem
+                    color $primary
+                    font-family 'Gibson-SemiBold', sans-serif
+                    font-size 1.15rem
+                    font-weight 600
+                    &:before
+                        content '\f080'
+                        display flex
+                        align-items center
+                        justify-content center
+                        width 2rem
+                        height 2rem
+                        flex 0 0 2rem
+                        border-radius 50%
+                        background-color $secondary
+                        color $primary
+                        font-family 'fa-solid-900'
+                        font-size .95rem
+            &-box
+                overflow visible
+                padding .65rem .85rem
+                margin-bottom .55rem
+                flex()
+                align-items center
+                justify-content space-between
+                gap .75rem
+                border-left 4px solid $secondary
+                border-radius 8px
+                background-color $white
+                box-shadow 0 3px 9px rgba(2, 26, 50, .12)
+                transition transform .2s ease, box-shadow .2s ease
+                &:last-child
+                    margin-bottom 0
+                &:hover
+                    transform translateY(-2px)
+                    box-shadow 0 6px 14px rgba(2, 26, 50, .16)
+                .metric_label
+                    display flex
+                    align-items center
+                    gap .65rem
+                    width auto
+                    padding 0
+                    color $primary
+                    font-family 'Gibson-Regular', sans-serif
+                    font-weight 400
+                    line-height 1.2
+                    &:before
+                        display flex
+                        align-items center
+                        justify-content center
+                        width 2rem
+                        height 2rem
+                        flex 0 0 2rem
+                        border-radius 50%
+                        background-color $primary
+                        color $secondary
+                        font-family 'fa-solid-900'
+                        font-size .9rem
+                &:nth-child(1) .metric_label:before
+                    content '\f135'
+                &:nth-child(2) .metric_label:before
+                    content '\f0c0'
+                &:nth-child(3) .metric_label:before
+                    content '\f201'
+            &score
+                width auto
+                flex 0 0 auto
+                padding 0
+                color $primary
+                font-family 'Gibson-SemiBold', sans-serif
+                font-size 1.05rem
+                font-weight 600
+                text-align right
+                &.positiveVal
+                    color $success
+                    &:before
+                        content '+'
+                &.negativeVal
+                    color $error
+                    &:before
+                        content '-'
+                &.zero
+                    color $primary
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width 600px)
+    .fbc
+        &-feedback
+            padding 0
+        &-article
+            &.feedback
+                padding .75rem
+            .feedback_description
+                padding .7rem .75rem
+        &-metrics
+            padding .5rem 0
+            .metric
+                &-container
+                    padding .75rem
+                &-box
+                    padding .6rem .7rem
+                &score
+                    font-size 1.1rem
+
+@media (prefers-reduced-motion reduce)
+    .fbc-metrics .metric-box
+        transition none
+        &:hover
+            transform none

@@ -1,0 +1,153 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.groupDirectorContentWrapper
+    .groupDirector-container
+        padding 0
+        max-width none
+    .qncArticle
+        display none
+    .groupDirectorVoteCountContainer
+        width 16rem
+        margin 1rem auto -10px
+        border-radius 2rem
+        flex()
+        justify-content center
+        align-items center
+        position relative
+        z-index 1
+        background-color $secondary
+        color $white
+        .groupdirectorvotecountlabel,
+        .groupDirectorVoteCount
+            width auto
+    .JumpMenuWrapper
+        .JumpMenuContainer
+            .jumpMenuItem
+                position relative
+                background-color $white
+                color inherit
+                border-radius $radius
+                border 1px solid $neutral-medium
+                &:hover
+                    background-color $white
+                    border-color $primary
+                    color $primary
+                &:after
+                    content ''
+                    font-family 'fa-solid-900'
+                    height auto
+                    width auto
+                    line-height 22px
+                    background none
+                &.info:after
+                    content '\f51c'
+                &.input:after
+                    content '\f044'
+                &.feedback:after
+                    content '\f46d'
+                &.result:after
+                    content '\f108'
+                &.download:after
+                    content '\f019'
+                &.reset:after
+                    content '\f021'
+                &[data-type=Embed]
+                    &:after
+                        content '\f013'
+                    // &.currentActionEmbed:after
+                    //     animation rotate 1s ease
+                    &.Visited:after
+                        content '\f058'
+                &.currentActionAction
+                    background-color $primary !important
+                    color $white !important
+                    border-color $primary
+                    border-left 5px solid $secondary !important
+                    &:hover
+                        background-color $primary
+                        color $white 
+                &.currentActionEmbed, &.currentActionCommand
+                    background-color $primary
+                    color $white 
+                    border-color $primary
+                    border-left 5px solid $secondary
+                    &:hover
+                        background-color $primary
+                        border-color $primary
+                        color $white
+                &.Visited
+                    background-color $white
+                    border-color $primary
+                    color $primary
+                    border-left 5px solid $primary
+                    &:after
+                        content '\f058'
+    .embeddingWrapper
+        position relative
+        clear none
+        float left
+        .wizlet.wizletAggregator
+            position absolute
+            top 25px
+            right 25px
+            width 16px
+            height 22px
+            background-color $primary-dark
+            transition all .5s ease
+            &:hover
+                background-color $primary-dark
+            &:after
+                content '\f013'
+                font-family 'fa-solid-900'
+                color $primary
+            .textContent
+                display none
+#votingSlideDiv .mainWrapper
+    .cl-modal
+        position fixed
+        background-color $overlay-dark
+        &__dialog
+            width 20rem
+            background-color $white
+            border-radius $radius
+            box-shadow $shadow-small
+            animation pulse .5s ease
+            text-align center
+        &__header
+            display none
+        &__body
+            padding 1rem
+        &__title
+            color $primary
+        &__content
+            color $primary
+            padding 0
+        &__buttons
+            float none
+            .cl-button
+                float none
+                margin 2px
+                padding .5rem 1rem
+                border-radius $radius
+                transition background 1s ease
+                text-transform none
+                &.ec-button__ok
+                    background $primary
+                    margin-left 5px
+                    &:active, &:focus, &:hover
+                        background $primary
+                &.ec-button__cancel
+                    background $secondary
+                    color $primary
+                    &:active, &:focus, &:hover
+                        background $secondary
+
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width 600px)
+    .groupDirectorContentWrapper
+        .JumpMenuWrapper
+            .JumpMenuContainer
+                .jumpMenuItem
+                    padding .5rem
+                    margin 2px 0
+                    width 100%

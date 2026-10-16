@@ -1,0 +1,40 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.hmc
+    &-data
+        padding 1rem 0 0 0
+    &-table
+        display table
+        font-size inherit
+        border 1px solid $neutral-medium
+        border-top 0
+        &__thead, &__row
+            display table-row
+        &__th, &__td
+            display table-cell
+            border-left 1px solid $neutral-medium
+            font-size inherit
+        &__th
+            &:first-child
+                text-align left
+        &__thead
+            background $primary
+            color $white
+            .hmc-table__th
+                &:first-child
+                    text-align center
+        &__td
+            color inherit
+            &.tick
+                font-size 0
+                &:after
+                    content '\f058'
+                    font-family 'fa-solid-900'
+                    font-size 1.2rem
+                    display inline-block
+                    color $success
+        // &__row
+        //     &:nth-child(even)
+        //         background-color $neutral-light
+        //     &.myScore
+        //         background-color lighten($success, 80%)

@@ -1,4 +1,17 @@
 <div class="mainContentWrapper">
+    <div class="animated-waves" aria-hidden="true">
+        <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+            </defs>
+            <g class="parallax">
+                <use href="#gentle-wave" x="48" y="0" class="wave-1"></use>
+                <use href="#gentle-wave" x="48" y="3" class="wave-2"></use>
+                <use href="#gentle-wave" x="48" y="5" class="wave-3"></use>
+                <use href="#gentle-wave" x="48" y="7" class="wave-4"></use>
+            </g>
+        </svg>
+    </div>
     <div class="mainContent">
         <section class="tnc cl-component">
             {{? it.header}}
@@ -28,6 +41,20 @@
                 <div class="cl-xs-column-12 cl-row">
                     {{? it.instructions}}
                     <div class="tnc-instructions cl-instructions">
+                        <svg class="tnc-team-icon" viewBox="0 0 120 72" aria-hidden="true">
+                            <g class="tnc-team-icon__member">
+                                <circle cx="24" cy="30" r="10"></circle>
+                                <path d="M6 62a18 16 0 0 1 36 0z"></path>
+                            </g>
+                            <g class="tnc-team-icon__member tnc-team-icon__member--right">
+                                <circle cx="96" cy="30" r="10"></circle>
+                                <path d="M78 62a18 16 0 0 1 36 0z"></path>
+                            </g>
+                            <g class="tnc-team-icon__member tnc-team-icon__member--center">
+                                <circle cx="60" cy="24" r="13"></circle>
+                                <path d="M36 64a24 20 0 0 1 48 0z"></path>
+                            </g>
+                        </svg>
                         <p class="tnc-instructions__text cl-instructions__text">{{=it.instructions}}</p>
                     </div>
                     {{?}}

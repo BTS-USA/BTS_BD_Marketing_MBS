@@ -1,4 +1,17 @@
 <section class="identifier-background identifier--display-table" style="background-image:url('{{=it.images[0].src}}')">
+    <div class="animated-waves" aria-hidden="true">
+        <svg class="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+            </defs>
+            <g class="parallax">
+                <use href="#gentle-wave" x="48" y="0" class="wave-1"></use>
+                <use href="#gentle-wave" x="48" y="3" class="wave-2"></use>
+                <use href="#gentle-wave" x="48" y="5" class="wave-3"></use>
+                <use href="#gentle-wave" x="48" y="7" class="wave-4"></use>
+            </g>
+        </svg>
+    </div>
     <article class="identifier-content identifier--display-table-cell">
         {{? it.session.sessionTitle != '' || it.session.sessionSubTitle != ''}}
         <div class="identifier-blue-box-wrapper cl-xs-column-9 cl-md-column-8 cl-padding--no">

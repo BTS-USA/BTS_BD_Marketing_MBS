@@ -1,22 +1,4 @@
 @font-face {
-  font-family: 'Gibson-Light';
-  src: url("../fonts/Gibson-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gibson-Regular';
-  src: url("../fonts/Gibson-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gibson-SemiBold';
-  src: url("../fonts/Gibson-SemiBold.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
   font-family: 'fa-regular-400';
   src: url("../fonts/fa-regular-400.eot");
   src: url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype"), url("../fonts/fa-regular-400.svg#fontawesome") format("svg");
@@ -31,15 +13,12 @@ p,
 li,
 input,
 button {
-  font-family: 'Gibson-Regular';
   font-weight: normal;
   line-height: normal;
-  line-height: 1.8rem;
 }
 h1,
 h2,
 h3 {
-  font-family: 'Gibson-SemiBold';
   font-weight: normal;
   line-height: normal;
   margin: 0;
@@ -97,13 +76,13 @@ input {
   height: 5px;
 }
 ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   -webkit-border-radius: 5px;
-  background: #fff;
   border-radius: 0px;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: #676e75 !important;
+  background: rgba(0,0,0,0.3);
 }
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(0,0,0,0.3);
@@ -500,11 +479,15 @@ blockquote:after {
 .hmcp-data {
   padding: 0;
 }
+.hmcp-submit-button {
+  background-color: #1d7279 !important;
+  border-color: #1d7279 !important;
+}
 .hmcp-table {
   border-radius: 5px 5px 0 0;
   display: 18px;
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #a1aab0;
 }
 .hmcp-table__thead,
 .hmcp-table__row {
@@ -520,7 +503,7 @@ blockquote:after {
 }
 .hmcp-table__th b,
 .hmcp-table__td b {
-  background-color: #337ab7;
+  background-color: #ca1c68;
   border-radius: 5px;
   padding: 6px 14px;
   color: #333;
@@ -529,16 +512,16 @@ blockquote:after {
 .hmcp-table__th {
   color: #fff;
   padding: 0.9rem;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #a1aab0;
+  border-bottom: 1px solid #a1aab0;
 }
 .hmcp-table__th:last-child {
   border-bottom: 0;
 }
 .hmcp-table__td {
   color: #333;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #a1aab0;
+  border-bottom: 1px solid #a1aab0;
 }
 .hmcp-table__td:first-child {
   min-width: 5.75rem;
@@ -548,7 +531,7 @@ blockquote:after {
   border-right: 0;
 }
 .hmcp-table__thead {
-  background: #021a32;
+  background: #ca1c68;
   color: #fff;
 }
 .hmcp-table__row {
@@ -573,7 +556,7 @@ blockquote:after {
 .hmcp-table__row:nth-child(2) .hmcp-table__td b,
 .hmcp-table__row:nth-child(3) .hmcp-table__td b,
 .hmcp-table__row:nth-child(4) .hmcp-table__td b {
-  border: 1px solid #337ab7;
+  border: 1px solid #e75394;
   color: #fff;
   font-weight: bold;
   position: relative;

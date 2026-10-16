@@ -1,0 +1,39 @@
+@import "common-rules.styl"
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+.bclc
+    &-question
+        background-color $white
+        border-radius $radius 0 0 $radius
+        border 1px solid $neutral-light
+        border-right none
+        padding 1rem
+        .ranking-question__text 
+            &.optimal-text
+                background $primary-medium
+                border-radius 2rem
+                padding 0.4rem 0.5rem
+                line-height 3rem
+                color $white
+    &-answer
+        background-color $white
+        border-radius 0 $radius $radius 0
+        border 1px solid $neutral-light
+        border-left none
+        padding 1rem
+        .cl-bubble
+            left 98%
+    &-header--article
+        background-color $neutral-light
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width 991px)
+    .bclc
+        &-question
+            border-radius $radius $radius 0 0
+            border-right 1px solid $neutral-light
+            border-bottom none
+            padding .5rem
+        &-answer
+            border-radius 0 0 $radius $radius
+            border-left 1px solid $neutral-light
+            border-top none
+            padding 1rem .5rem .5rem

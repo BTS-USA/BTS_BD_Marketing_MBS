@@ -1,22 +1,4 @@
 @font-face {
-  font-family: 'Gibson-Light';
-  src: url("../fonts/Gibson-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gibson-Regular';
-  src: url("../fonts/Gibson-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gibson-SemiBold';
-  src: url("../fonts/Gibson-SemiBold.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
   font-family: 'fa-regular-400';
   src: url("../fonts/fa-regular-400.eot");
   src: url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype"), url("../fonts/fa-regular-400.svg#fontawesome") format("svg");
@@ -31,15 +13,12 @@ p,
 li,
 input,
 button {
-  font-family: 'Gibson-Regular';
   font-weight: normal;
   line-height: normal;
-  line-height: 1.8rem;
 }
 h1,
 h2,
 h3 {
-  font-family: 'Gibson-SemiBold';
   font-weight: normal;
   line-height: normal;
   margin: 0;
@@ -103,7 +82,7 @@ input {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: #ccc !important;
+  background: rgba(0,0,0,0.3);
 }
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(0,0,0,0.3);
@@ -501,14 +480,14 @@ blockquote:after {
 .bcc-question {
   background-color: #fff;
   border-radius: 5px 0 0 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #a1aab0;
   border-right: none;
   padding: 1rem;
 }
 .bcc-answer {
   background-color: #fff;
   border-radius: 0 5px 5px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #a1aab0;
   border-left: none;
   padding: 1rem;
 }

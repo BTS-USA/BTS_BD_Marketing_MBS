@@ -1,35 +1,29 @@
 @import "common-rules.styl"
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
+animatedWaves(fixed, 24vh, 140px, 260px, rgba($primary, 0.4) rgba($primary, 0.5) rgba($primary, 0.6) $primary)
 #votingSlideDiv
     .mainWrapper
+        .mainContent
+            position relative
+            z-index 1
         .tnc
             &-container
-                background-color transparent
-                max-width 28rem
-                margin 10rem auto 0 auto
-                padding 1rem 2rem
-                border-radius $radius
-                overflow hidden
-                box-shadow none
+                background-color $white
+                max-width 22rem
+                margin 4rem auto 0 auto
+                padding 2rem 1.75rem 1.5rem
+                border-radius 2px
+                overflow visible
+                box-shadow $shadow-big
             &-instructions
                 text-align center
                 margin 0
                 &__text
                     background-color transparent
                     padding 0
-                    color $white
-                    font-size 1.7rem
-                    font-weight normal
-                    &:before
-                        content ''
-                        display block
-                        width 4.5rem
-                        height 4.5rem
-                        margin 1rem auto
-                        background-image url('../images/team.png')
-                        background-repeat no-repeat
-                        background-position center
-                        background-size contain
+                    color $primary
+                    font-size 1.1rem
+                    font-weight bold
             &-buttons.cl-buttons
                 text-align center
                 float none
@@ -37,66 +31,82 @@
                     display none !important
                 .cl-button--submit
                     float none !important
+                    background-color $primary !important
+                    border-radius 2rem
             &-textarea-container
-                margin 1rem auto
+                margin 1rem auto 0
                 text-align center
                 input
+                    box-sizing border-box
                     box-shadow none
                     width 100%
-                    padding 1.06rem
+                    padding 1rem
                     border-radius 2rem
                     text-align center
-                    background-color transparent
-                    color $white
+                    background-color #f7f7f7
+                    color $neutral-dark
                 .inputComponentMessageLength
                     text-align center
-                    font-size 1rem
-                    padding 5px 0 0 0
+                    font-size 0.8rem
+                    padding 0.5rem 0
                     position static
                     width 100%
-                    color white
+                    color $darkgrey
             &-thankyou
                 display none
-                // background-color #051a33
                 border-radius 1.4rem
                 text-align center
-                padding 5.5rem 3.5rem 5rem
+                padding 3rem 2rem
                 &__title
-                    color #ffb93b
-                    font-family 'Gibson-SemiBold'
-                    font-size 4rem
+                    color $primary
+                    font-size 2.5rem
+                    font-weight bold
                     line-height 1.15
-                    margin 0 0 2rem
+                    margin 0 0 1rem
                 &__message
-                    color $white
-                    font-family 'Gibson-Regular'
-                    font-size 2.15rem
+                    color $neutral-dark
+                    font-size 1.3rem
                     line-height 1.55
                     margin 0 auto
-                    max-width 48rem
+                    max-width 36rem
             &.is-submitted
                 .tnc-form
                     display none
                 .tnc-thankyou
                     display block
                 .tnc-container
-                    max-width 56rem
-                    margin 6rem auto 0
-                    padding 0
-                    overflow visible
-                    background-color transparent
+                    max-width 40rem
+.tnc-team-icon
+    display block
+    width 5.5rem
+    height auto
+    margin 0 auto 0.85rem
+    overflow visible
+    &__member
+        fill $neutral-dark
+        stroke $white
+        stroke-width 4
+        transform-box fill-box
+        transform-origin center bottom
+        animation team-bounce 1.6s ease-in-out infinite
+        &--center
+            animation-delay 0.2s
+        &--right
+            animation-delay 0.4s
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 @media screen and (max-width 600px)
     #votingSlideDiv
         .mainWrapper
             .tnc-container
-                margin 8rem auto 0
-            .tnc.is-submitted
-                .tnc-container
-                    margin 4rem auto 0
+                margin 3rem 1rem 0
             .tnc-thankyou
-                padding 3.5rem 1.75rem 3.25rem
+                padding 2.5rem 1.5rem
                 &__title
-                    font-size 2.8rem
+                    font-size 2rem
                 &__message
-                    font-size 1.6rem
+                    font-size 1.1rem
+@keyframes team-bounce
+    0%, 100%
+        transform translateY(0)
+    50%
+        transform translateY(-7px)

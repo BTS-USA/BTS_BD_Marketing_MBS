@@ -1,22 +1,4 @@
 @font-face {
-  font-family: 'Gibson-Light';
-  src: url("../fonts/Gibson-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gibson-Regular';
-  src: url("../fonts/Gibson-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gibson-SemiBold';
-  src: url("../fonts/Gibson-SemiBold.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
   font-family: 'fa-regular-400';
   src: url("../fonts/fa-regular-400.eot");
   src: url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype"), url("../fonts/fa-regular-400.svg#fontawesome") format("svg");
@@ -31,15 +13,12 @@ p,
 li,
 input,
 button {
-  font-family: 'Gibson-Regular';
   font-weight: normal;
   line-height: normal;
-  line-height: 1.8rem;
 }
 h1,
 h2,
 h3 {
-  font-family: 'Gibson-SemiBold';
   font-weight: normal;
   line-height: normal;
   margin: 0;
@@ -103,7 +82,7 @@ input {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: #ccc !important;
+  background: rgba(0,0,0,0.3);
 }
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(0,0,0,0.3);
@@ -504,7 +483,7 @@ blockquote:after {
 .ssc-article .singleSelectLeftPanel {
   background-color: #fff !important;
   border-radius: 5px 0 0 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #a1aab0;
   border-right: none;
   padding: 1rem;
 }
@@ -514,14 +493,14 @@ blockquote:after {
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  border: 2px solid #ccc;
+  border: 2px solid #a1aab0;
   margin: auto;
   background-clip: content-box;
   padding: 5px;
 }
 .ssc-article .singleSelectRightPanel {
   background-color: #fff !important;
-  border: 1px solid #ccc;
+  border: 1px solid #a1aab0;
   border-radius: 0 5px 5px 0;
   border-left: none;
   padding: 1rem;
@@ -529,7 +508,7 @@ blockquote:after {
 .ssc-article .singleSelectAccordionContainer {
   background-color: #fff !important;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid #a1aab0;
   border-radius: 0 5px 5px 0;
   border-left: none;
   pointer-events: auto !important;
@@ -537,20 +516,20 @@ blockquote:after {
 }
 .ssc-article.clicked .singleSelectLeftPanel {
   background-color: #fff !important;
-  border-color: #021a32;
+  border-color: #ca1c68;
 }
 .ssc-article.clicked .singleSelectLeftPanelLabel {
-  background-color: #021a32 !important;
-  border-color: #021a32 !important;
+  background-color: #ca1c68 !important;
+  border-color: #ca1c68 !important;
 }
 .ssc-article.clicked .singleSelectRightPanel {
   background-color: #fff !important;
   color: inherit;
-  border-color: #021a32;
+  border-color: #ca1c68;
 }
 .ssc-article.clicked .singleSelectAccordionContainer {
   background-color: #fff !important;
-  border-color: #021a32;
+  border-color: #ca1c68;
 }
 .ssc-description {
   background-color: #e8eaeb;
@@ -570,7 +549,7 @@ blockquote:after {
 .ssc-article.correct .singleSelectLeftPanel,
 .ssc-article.correct .singleSelectRightPanel,
 .ssc-article.correct .singleSelectAccordionContainer {
-  background-color: #c6f2d3 !important;
+  background-color: #e3f2da !important;
 }
 .ssc-article.clicked.correct {
   border: none;
@@ -578,11 +557,11 @@ blockquote:after {
 .ssc-article.clicked.correct .singleSelectLeftPanel,
 .ssc-article.clicked.correct .singleSelectRightPanel,
 .ssc-article.clicked.correct .singleSelectAccordionContainer {
-  background-color: #c6f2d3 !important;
+  background-color: #e3f2da !important;
 }
 .ssc-article.clicked.correct .singleSelectLeftPanelLabel {
-  background-color: #1e853b !important;
-  border-color: #1e853b !important;
+  background-color: #72bf44 !important;
+  border-color: #72bf44 !important;
 }
 .ssc-article.clicked.incorrect {
   border: none;
@@ -590,22 +569,22 @@ blockquote:after {
 .ssc-article.clicked.incorrect .singleSelectLeftPanel,
 .ssc-article.clicked.incorrect .singleSelectRightPanel,
 .ssc-article.clicked.incorrect .singleSelectAccordionContainer {
-  background-color: #f9d1d3 !important;
+  background-color: #fdcdd7 !important;
 }
 .ssc-article.clicked.incorrect .singleSelectLeftPanelLabel {
-  background-color: #da1e28 !important;
-  border-color: #da1e28 !important;
+  background-color: #f00a3c !important;
+  border-color: #f00a3c !important;
 }
 .ssc-feedback {
   padding: 1rem;
   background: #e8eaeb;
-  border-bottom: 3px solid #021a32;
+  border-bottom: 3px solid #ca1c68;
   border-radius: 5px;
 }
 .ssc-feedback__label {
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #021a32;
+  color: #ca1c68;
 }
 /* Use this when core styles aren't taken automatically ----------------------------*/
 .ssc-article {

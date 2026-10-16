@@ -1,20 +1,5 @@
 /*json('./colors.json')*/
 @font-face
-  font-family 'Gibson-Light'
-  src url("../fonts/Gibson-Light.ttf") format("truetype")
-  font-weight 300
-  font-style normal
-@font-face
-  font-family 'Gibson-Regular'
-  src url("../fonts/Gibson-Regular.otf") format("opentype")
-  font-weight 400
-  font-style normal
-@font-face
-  font-family 'Gibson-SemiBold'
-  src url("../fonts/Gibson-SemiBold.otf") format("opentype")
-  font-weight 600
-  font-style normal
-@font-face
   font-family 'fa-regular-400'
   src url("../fonts/fa-regular-400.eot")
   src url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype"), url("../fonts/fa-regular-400.svg#fontawesome") format("svg")
@@ -26,16 +11,17 @@
 // -------------------------------------------------//<<<<-----NewColors--->>>>---------------------------------------------------//
 $white = #ffffff
 $neutral-dark = #24282b
-$neutral-medium = #cccccc
+$neutral-medium = lighten($neutral-dark, 60%)
 $neutral-light = lighten($neutral-dark, 90%)
 $darkgrey =  #333333
 $black = #000000
 /*Primary color and shades*/
-$primary = #021a32
-$primary-medium = #337ab7
+$primary = #CA1C68
+$primary-dark = darken($primary, 40%)
+$primary-medium = lighten($primary, 30%)
 $primary-light = lighten($primary, 70%)
 /*Secondary color and shades*/
-$secondary = #ffb612 
+$secondary = #1D7279
 $secondary-dark = darken($secondary, 80%)
 $secondary-medium = lighten($secondary, 30%)
 $secondary-light = lighten($secondary, 70%)
@@ -50,11 +36,11 @@ $tertiary3 = #1C4C87
 $tertiary3-medium = lighten($tertiary3, 40%)
 $tertiary3-light = lighten($tertiary3, 70%)
 /*Defaults*/
-$error = #DA1E28
+$error = #f00a3c
 $error-dark = darken($error,30%)
-$success = #1E853B
+$success = #72bf44
 $success-dark = darken($success,30%)
-$warning = #FDD13A
+$warning = #dfdf00
 $warning-dark = darken($warning,30%)
 $note = #0071EB
 $note-dark = darken($note,50%)
@@ -68,12 +54,9 @@ $shadow-bg = 0 5px 30px 0 rgba(127, 127, 127, 0.35)
 $radius = 5px
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 body, p, li, input, button
-    font-family 'Gibson-Regular'
     font-weight normal
     line-height normal
-    line-height 1.8rem
 h1, h2, h3
-    font-family 'Gibson-SemiBold'
     font-weight normal
     line-height normal
     margin 0
@@ -118,13 +101,12 @@ textarea, input
     width 10px
     height 5px
 ::-webkit-scrollbar-track
-    // -webkit-box-shadow inset 0 0 6px rgba(0,0,0,0.3)
+    -webkit-box-shadow inset 0 0 6px rgba(0,0,0,0.3)
     -webkit-border-radius $radius
-    background $white 
     border-radius 0px
 ::-webkit-scrollbar-thumb
     border-radius $radius
-    background #676e75 !important
+    background rgba(0,0,0,0.3)
 ::-webkit-scrollbar-thumb:window-inactive
     background rgba(0,0,0,0.3)
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -165,6 +147,42 @@ blockquote
         bottom -18px
         right 10px
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
+animatedWaves(position = absolute, height = 17vh, minHeight = 100px, maxHeight = 170px, fills = rgba($primary, 0.3) rgba($primary, 0.3) rgba($primary, 0.3) rgba($primary, 0.3))
+    .animated-waves
+        position position
+        bottom 0
+        left 0
+        width 100%
+        height height
+        min-height minHeight
+        max-height maxHeight
+        z-index 0
+        pointer-events none
+    .wave-svg
+        width 100%
+        height 100%
+    .parallax > use
+        animation move-forever 45s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite
+        &:nth-child(1)
+            animation-delay -2s
+            animation-duration 15s
+        &:nth-child(2)
+            animation-delay -3s
+            animation-duration 20s
+        &:nth-child(3)
+            animation-delay -4s
+            animation-duration 23s
+        &:nth-child(4)
+            animation-delay -5s
+            animation-duration 30s
+    for fill, i in fills
+        .wave-{i + 1}
+            fill fill
+    @keyframes move-forever
+        0%
+            transform translate3d(-90px, 0, 0)
+        100%
+            transform translate3d(85px, 0, 0)
 flex()
     display flex
     display -webkit-box
