@@ -228,7 +228,7 @@ GD_Reset_Event_desc;Are you sure you want to reset the event?;;;;;;;;;;;;;;;;;
 GD_cl_btn_title;Cancel;;;;;;;;;;;;;;;;;
 GD_ok_btn_title;Ok;;;;;;;;;;;;;;;;;
 Welcome_AS_Screen_Title;Welcome to;;;;;;;;;;;;;;;;;
-Welcome_AS_Screen_subTitle;"Business Development Events<br>AI Simulation<br><p class=""highlight-text"">Dallas, Houston, Chicago, San Francisco</p>";;;;;;;;;;;;;;;;;
+Welcome_AS_Screen_subTitle;"Business Development Events<br>AI Simulation";;;;;;;;;;;;;;;;;
 Assign_Base_Values;Assign Base Values;;;;;;;;;;;;;;;;;
 Base_Case_Study;Case Context;;;;;;;;;;;;;;;;;
 Base_MomentCasestudyTitle;Welcome to Indigo;;;;;;;;;;;;;;;;;
