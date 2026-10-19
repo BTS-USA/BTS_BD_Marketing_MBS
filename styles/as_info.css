@@ -8,6 +8,27 @@
   src: url("../fonts/fa-solid-900.eot");
   src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg");
 }
+@font-face {
+  font-family: 'MarkOT';
+  src: url("../fonts/MarkOT.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MarkOT';
+  src: url("../fonts/MarkOT-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MarkOT';
+  src: url("../fonts/MarkOT-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 body,
 p,
 li,
@@ -15,12 +36,14 @@ input,
 button {
   font-weight: normal;
   line-height: normal;
+  font-family: 'MarkOT';
 }
 h1,
 h2,
 h3 {
-  font-weight: normal;
+  font-weight: 700;
   line-height: normal;
+  font-family: 'MarkOT';
   margin: 0;
 }
 ul,
@@ -512,6 +535,12 @@ blockquote:after {
 .ic-paragraph table tr:nth-child(even) td,
 .ic-list table tr:nth-child(even) td {
   background-color: #e8eaeb;
+}
+.tc-action-Activity6_AS_Moment_Scenario .ic-paragraph ul {
+  list-style-position: inside;
+}
+.tc-action-Activity6_AS_Moment_Scenario .ic-paragraph li {
+  margin-left: 0;
 }
 body[class*='Activity3_AS_Ranking_Moment_Feedback'] .tc-page__page.tc-action-Activity3_AS_Ranking_Moment_Feedback .ic-container {
   width: calc(100% - 1.5rem);

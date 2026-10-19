@@ -8,6 +8,27 @@
   src: url("../fonts/fa-solid-900.eot");
   src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg");
 }
+@font-face {
+  font-family: 'MarkOT';
+  src: url("../fonts/MarkOT.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MarkOT';
+  src: url("../fonts/MarkOT-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MarkOT';
+  src: url("../fonts/MarkOT-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 body,
 p,
 li,
@@ -15,12 +36,14 @@ input,
 button {
   font-weight: normal;
   line-height: normal;
+  font-family: 'MarkOT';
 }
 h1,
 h2,
 h3 {
-  font-weight: normal;
+  font-weight: 700;
   line-height: normal;
+  font-family: 'MarkOT';
   margin: 0;
 }
 ul,
@@ -579,7 +602,7 @@ body {
   border-bottom-style: solid;
   border-image: linear-gradient(to right, #e8eaeb, transparent) 1 0;
   border-radius: 5px 5px 0 0;
-  min-height: 8rem;
+  min-height: 6rem;
   margin-bottom: 0;
   padding: 1rem 0;
   overflow: hidden;
@@ -883,7 +906,7 @@ body {
 }
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 body[class*=Team_Name] {
-  background-image: none;
+  background-image: url("../images/team-name.jpg");
   background-color: #fff;
 }
 body[class*=Team_Name] #votingSlideDiv {
