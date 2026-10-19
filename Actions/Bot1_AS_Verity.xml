@@ -11,8 +11,8 @@
       "conditionAnswer":"1"
     },
     {
-      "title": "!{Bot1_AS_Verity_Title}",
-      "actionXML": "Bot1_AS_Verity_Follower",
+      "title": "!{Bot1_AS_Verity_Follower_AS_InfoNote}",
+      "actionXML": "Bot1_AS_Verity_Follower_AS_InfoNote",
       "conditionQuestion":"Leader",
       "conditionAnswer":"2"
     }
