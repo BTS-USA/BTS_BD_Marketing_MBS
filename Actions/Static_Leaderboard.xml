@@ -40,7 +40,7 @@
     },
     {
       "title": "!{Progressive_Leaderboard_Verity}",
-      "binding": "VerityScoreResult_BfjT9repUwzLCkHdKJme"
+      "binding": "VerityScoreResult_HHSF6soY3vHUZULhWgVz"
     },
     {
       "title": "!{Progressive_Leaderboard_Total}",
@@ -94,7 +94,7 @@
           "isNumeric": true,
           "sortOrder": "DESC",
           "sorting": {
-            "question": "VerityScoreResult_BfjT9repUwzLCkHdKJme",
+            "question": "VerityScoreResult_HHSF6soY3vHUZULhWgVz",
             "isNumeric": true,
             "sortOrder": "DESC"
           }
@@ -108,7 +108,7 @@
     "Metric1",
     "Metric2",
     "Metric3",
-    "VerityScoreResult_BfjT9repUwzLCkHdKJme",
+    "VerityScoreResult_HHSF6soY3vHUZULhWgVz",
     "Metric_Total",
     "Cohort_Track",
     "Team_Name",

@@ -38,7 +38,7 @@
     },
     {
       "title": "!{Progressive_Leaderboard_Verity}",
-      "binding": "VerityScoreResult_BfjT9repUwzLCkHdKJme"
+      "binding": "VerityScoreResult_HHSF6soY3vHUZULhWgVz"
     },
     {
       "title": "!{Progressive_Leaderboard_Total}",
@@ -51,7 +51,7 @@
     "Metric1": "desc",
     "Metric2": "desc",
     "Metric3": "desc",
-    "VerityScoreResult_BfjT9repUwzLCkHdKJme": "desc"
+    "VerityScoreResult_HHSF6soY3vHUZULhWgVz": "desc"
   },
   "isShowRank": true,
   "maxList": "100",
@@ -69,7 +69,7 @@
     "Metric1",
     "Metric2",
     "Metric3",
-    "VerityScoreResult_BfjT9repUwzLCkHdKJme",
+    "VerityScoreResult_HHSF6soY3vHUZULhWgVz",
     "Metric_Total",
     "Cohort_Track",
     "Team_Name",

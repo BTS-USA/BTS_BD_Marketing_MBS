@@ -31,7 +31,7 @@ The **Facilitator** tab opens results without moving the participant room: bar c
 | 2 | Activity2 | Choose A–C |
 | 3 | Activity6 | Open text brainstorm; multiple entries allowed |
 | 4 | Activity5 | Choose A–D |
-| Verity | Bot1_AS_Verity | Leader chats with the bot; score written to `VerityScoreResult_BfjT9repUwzLCkHdKJme` |
+| Verity | Bot1_AS_Verity | Leader chats with the bot; score written to `VerityScoreResult_HHSF6soY3vHUZULhWgVz` |
 
 ## Scoring
 
