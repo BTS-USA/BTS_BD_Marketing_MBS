@@ -24,7 +24,7 @@ body
                 position fixed
                 left auto
                 right 12px
-                top 14px
+                top 16px
                 width auto
                 font-size 0
                 transition 0.5s ease
@@ -42,7 +42,7 @@ body
             #menuParticipantName
                 right 5.5rem
                 left auto
-                top 0
+                top -1px
                 line-height 55px
                 font-size 1.05rem
                 font-weight normal
@@ -72,7 +72,7 @@ body
         background-color $white
         border-radius 5px
         box-shadow $shadow-bg
-        border-top 1px solid #ca1c68
+        // border-top 1px solid #ca1c68
         /*------------------------------------------------------------------------------------------------------------------------------------------*/
         .cl
             &-header
@@ -160,8 +160,6 @@ body
                     border 1px solid $primary
                     color $white
                     text-transform none
-                    &:active, &:focus, &:hover
-                        transform scale(1.1)
                     &.ssc-button--disabled
                         display none !important
                     /*&.clicked-saved
@@ -174,7 +172,6 @@ body
                     &:active, &:focus, &:hover
                         background-color $primary
                         color $white
-                        transform scale(1.1)
                 &--hidden
                     display none
                 &.disabled
@@ -351,8 +348,19 @@ body[class*=Team_Name]
             border-top none
             .nc-container
                 border-top 0
-            // .identifier
-            //     height calc(100vh - 55px)
+            .tc-page__page
+                overflow visible
+body[class*=Bot1_AS_Verity]
+    #votingSlideDiv
+        padding 55px 0 0
+        .mainWrapper
+            background transparent
+            box-shadow none
+            padding 0
+            width 100%
+            max-width none
+            margin 0 auto
+            border-top none
 body[class*=Team_Name]
     .tc-page__page 
         &.tc-action-Team_Name_Follower_AS_InfoNote
@@ -363,6 +371,7 @@ body[class*=Team_Name]
                     border-radius 0
                     padding 0
                     .identifier
+                        height calc(100vh - 55px)
                         &-page-meta
                             display none
 [class*=Splash], [class*=InfoNote]
@@ -420,9 +429,11 @@ body[class*='Activity3_AS_Ranking_Moment_Feedback']
                 margin 0
             .ic-content
                 padding 1rem 0 0 0 
-.bodyStatic_Leaderboard
+.bodyStatic_Leaderboard, .tc-action-Static_Leaderboard
     .hmc-table__th:first-child
         text-align center
+.verity-instructions
+    padding-bottom 0.8rem
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 .pc-savedmessage, .inputSavedMessage
     &:before

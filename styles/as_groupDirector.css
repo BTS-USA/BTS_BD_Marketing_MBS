@@ -76,16 +76,17 @@ input {
   height: 5px;
 }
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
   -webkit-border-radius: 5px;
   border-radius: 0px;
+  background: #fff;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: rgba(0,0,0,0.3);
+  background: #a1aab0 !important;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.2);
 }
 .shield {
   position: absolute;
@@ -579,31 +580,6 @@ blockquote:after {
 }
 .groupDirectorContentWrapper .JumpMenuWrapper .JumpMenuContainer .jumpMenuItem.Visited:after {
   content: '\f058';
-}
-.groupDirectorContentWrapper .embeddingWrapper {
-  position: relative;
-  clear: none;
-  float: left;
-}
-.groupDirectorContentWrapper .embeddingWrapper .wizlet.wizletAggregatorDB {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  width: 16px;
-  height: 22px;
-  background-color: #79113e;
-  transition: all 0.5s ease;
-}
-.groupDirectorContentWrapper .embeddingWrapper .wizlet.wizletAggregatorDB:hover {
-  background-color: #79113e;
-}
-.groupDirectorContentWrapper .embeddingWrapper .wizlet.wizletAggregatorDB:after {
-  content: '\f013';
-  font-family: 'fa-solid-900';
-  color: #ca1c68;
-}
-.groupDirectorContentWrapper .embeddingWrapper .wizlet.wizletAggregatorDB .textContent {
-  display: none;
 }
 #votingSlideDiv .mainWrapper .cl-modal {
   position: fixed;

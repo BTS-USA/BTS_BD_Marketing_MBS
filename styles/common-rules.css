@@ -84,16 +84,17 @@ input {
   height: 5px;
 }
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
   -webkit-border-radius: 5px;
   border-radius: 0px;
+  background: #fff;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: rgba(0,0,0,0.3);
+  background: #a1aab0 !important;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.2);
 }
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 .shield {

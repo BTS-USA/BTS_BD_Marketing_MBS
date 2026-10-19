@@ -76,16 +76,17 @@ input {
   height: 5px;
 }
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
   -webkit-border-radius: 5px;
   border-radius: 0px;
+  background: #fff;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: rgba(0,0,0,0.3);
+  background: #a1aab0 !important;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.2);
 }
 .shield {
   position: absolute;
@@ -510,7 +511,7 @@ body {
   position: fixed;
   left: auto;
   right: 12px;
-  top: 14px;
+  top: 16px;
   width: auto;
   font-size: 0;
   transition: 0.5s ease;
@@ -535,7 +536,7 @@ body {
 #wizer .page #main #menuParticipantName {
   right: 5.5rem;
   left: auto;
-  top: 0;
+  top: -1px;
   line-height: 55px;
   font-size: 1.05rem;
   font-weight: normal;
@@ -568,7 +569,6 @@ body {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 5px 30px 0 rgba(127,127,127,0.35);
-  border-top: 1px solid #ca1c68;
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -664,11 +664,6 @@ body {
                         background-color $success
                         color $white*/
 }
-#votingSlideDiv .mainWrapper .cl-button--submit:active,
-#votingSlideDiv .mainWrapper .cl-button--submit:focus,
-#votingSlideDiv .mainWrapper .cl-button--submit:hover {
-  transform: scale(1.1);
-}
 #votingSlideDiv .mainWrapper .cl-button--submit.ssc-button--disabled {
   display: none !important;
 }
@@ -682,7 +677,6 @@ body {
 #votingSlideDiv .mainWrapper .cl-button--clear:hover {
   background-color: #ca1c68;
   color: #fff;
-  transform: scale(1.1);
 }
 #votingSlideDiv .mainWrapper .cl-button--hidden {
   display: none;
@@ -907,11 +901,29 @@ body[class*=Team_Name] #votingSlideDiv .mainWrapper {
 body[class*=Team_Name] #votingSlideDiv .mainWrapper .nc-container {
   border-top: 0;
 }
+body[class*=Team_Name] #votingSlideDiv .mainWrapper .tc-page__page {
+  overflow: visible;
+}
+body[class*=Bot1_AS_Verity] #votingSlideDiv {
+  padding: 55px 0 0;
+}
+body[class*=Bot1_AS_Verity] #votingSlideDiv .mainWrapper {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  border-top: none;
+}
 body[class*=Team_Name] .tc-page__page.tc-action-Team_Name_Follower_AS_InfoNote #votingSlideDiv .mainWrapper {
   width: auto;
   max-width: none;
   border-radius: 0;
   padding: 0;
+}
+body[class*=Team_Name] .tc-page__page.tc-action-Team_Name_Follower_AS_InfoNote #votingSlideDiv .mainWrapper .identifier {
+  height: calc(100vh - 55px);
 }
 body[class*=Team_Name] .tc-page__page.tc-action-Team_Name_Follower_AS_InfoNote #votingSlideDiv .mainWrapper .identifier-page-meta {
   display: none;
@@ -986,8 +998,12 @@ body[class*=_Moment_Result] p,
 .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-content {
   padding: 1rem 0 0 0;
 }
-.bodyStatic_Leaderboard .hmc-table__th:first-child {
+.bodyStatic_Leaderboard .hmc-table__th:first-child,
+.tc-action-Static_Leaderboard .hmc-table__th:first-child {
   text-align: center;
+}
+.verity-instructions {
+  padding-bottom: 0.8rem;
 }
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 .pc-savedmessage:before,

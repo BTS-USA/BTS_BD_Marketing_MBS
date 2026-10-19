@@ -13,7 +13,7 @@
   "textContent": [
     {
       "title": "!{Bot1_AS_Verity_Follower_Screen_Title}",
-      "alignment": "LeftTop",
+      "alignment": "CenterTop",
       "icon": ""
     }
   ]

@@ -13,7 +13,7 @@
   "textContent": [
     {
       "title": "!{Team_Name_Follower_Screen_Title}",
-      "alignment": "LeftTop",
+      "alignment": "CenterTop",
       "icon": ""
     }
   ]

@@ -73,7 +73,7 @@ body[class*='Activity3_AS_Ranking_Moment_Feedback']
         overflow hidden
     &-column-left
         float left
-        width 42%
+        width 32%
         box-sizing border-box
         display block
         padding 0 16px 10px 0
@@ -93,7 +93,10 @@ body[class*='Activity3_AS_Ranking_Moment_Feedback']
         height auto
         border-radius $radius
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
-
+@media screen and (max-width 1500px)
+    .ic
+        &-column-left
+            width 42%
 @media screen and (max-width 600px)
     .ic
         &-column-left, &-column-right
