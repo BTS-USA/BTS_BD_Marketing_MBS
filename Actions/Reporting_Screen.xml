@@ -17,6 +17,10 @@
       "actionXML": "Activity6_Result_MBS_Wordcloud"
     },
     {
+      "title": "!{GD_Activity6_Textlist}",
+      "actionXML": "Activity6_Result_MBS_Textlist"
+    },
+    {
       "title": "!{GD_Activity5_Result}",
       "actionXML": "Activity5_AS_Moment_Result"
     },

@@ -31,6 +31,11 @@
       "icon": "result"
     },
     {
+      "title": "!{GD_Activity6_Textlist}",
+      "section": "Activity6_Result_MBS_Textlist",
+      "icon": "result"
+    },
+    {
       "title": "!{GD_Activity5_Result}",
       "section": "Activity5_AS_Moment_Result",
       "icon": "result"

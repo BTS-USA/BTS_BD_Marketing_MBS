@@ -11,7 +11,7 @@
       "renderOptions": {
         "placeholder": "!{Team_Name_Placeholder}",
         "class": "cl-textinput",
-        "pattern": "^[a-zA-Z0-9 ]+$",
+        "pattern": "^[a-zA-Z0-9 \\-_!@#$%&*()+=.,?'\":;/\\\\]+$",
         "maxCharacters": {
           "maxValue": 20,
           "class": "inputComponentMessageLength",
