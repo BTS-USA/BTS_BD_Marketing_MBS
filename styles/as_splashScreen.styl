@@ -7,7 +7,6 @@
         background-repeat no-repeat
         background-position center
         background-size cover
-        background-image none !important
     &-content
         position relative
         z-index 1
@@ -29,21 +28,33 @@
             padding 0
             &__title
                 line-height normal
-                color $neutral-dark
+                color $white
                 font-size 2rem
                 padding-bottom 0.6rem
             &__sub-title
                 line-height normal
-                p
-                    color $primary
-                    line-height 3.2rem
+                > p:first-child
+                    display inline
+                    padding .05em 0 .12em
+                    background-color $primary
+                    color $white
+                    line-height 1.35
                     font-weight bold
+                    box-decoration-break clone
+                    -webkit-box-decoration-break clone
+                    text-shadow none
+                > p:not(:first-child)
+                    background-color transparent
             .highlight-text
-                padding-top 1.3rem
-                color $neutral-dark
+                display block
+                padding 1.3rem 0 0
+                background-color transparent
+                color $white
                 font-size 2rem
                 font-weight normal
                 line-height normal
+                box-decoration-break slice
+                -webkit-box-decoration-break slice
     &-footer
         display none
         margin auto
@@ -58,6 +69,7 @@
             &:hover
                 background-color $neutral-medium !important
 .animated-waves
+    display none
     position absolute
     bottom 0rem
     left 0

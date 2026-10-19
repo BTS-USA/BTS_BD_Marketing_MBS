@@ -507,7 +507,6 @@ blockquote:after {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: none !important;
 }
 .identifier-content {
   position: relative;
@@ -533,24 +532,37 @@ blockquote:after {
 }
 .identifier-page-text__title {
   line-height: normal;
-  color: #24282b;
+  color: #fff;
   font-size: 2rem;
   padding-bottom: 0.6rem;
 }
 .identifier-page-text__sub-title {
   line-height: normal;
 }
-.identifier-page-text__sub-title p {
-  color: #ca1c68;
-  line-height: 3.2rem;
+.identifier-page-text__sub-title > p:first-child {
+  display: inline;
+  padding: 0.05em 0 0.12em;
+  background-color: #ca1c68;
+  color: #fff;
+  line-height: 1.35;
   font-weight: bold;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  text-shadow: none;
+}
+.identifier-page-text__sub-title > p:not(:first-child) {
+  background-color: transparent;
 }
 .identifier-page-text .highlight-text {
-  padding-top: 1.3rem;
-  color: #24282b;
+  display: block;
+  padding: 1.3rem 0 0;
+  background-color: transparent;
+  color: #fff;
   font-size: 2rem;
   font-weight: normal;
   line-height: normal;
+  box-decoration-break: slice;
+  -webkit-box-decoration-break: slice;
 }
 .identifier-footer {
   display: none;
@@ -569,6 +581,7 @@ blockquote:after {
   background-color: #a1aab0 !important;
 }
 .animated-waves {
+  display: none;
   position: absolute;
   bottom: 0rem;
   left: 0;

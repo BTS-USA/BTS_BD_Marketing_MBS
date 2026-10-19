@@ -568,6 +568,7 @@ blockquote:after {
   display: block;
   margin: auto;
   line-height: 2.5rem;
+  font-weight: bold;
 }
 .gauges.multiplegauges .gauge-label {
   position: static;

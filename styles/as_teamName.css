@@ -586,9 +586,9 @@ blockquote:after {
 #votingSlideDiv .mainWrapper .tnc-container {
   background-color: #fff;
   max-width: 22rem;
-  margin: 4rem auto 0 auto;
+  margin: 15rem auto 0 auto;
   padding: 2rem 1.75rem 1.5rem;
-  border-radius: 2px;
+  border-radius: 5px;
   overflow: visible;
   box-shadow: 0 0 3rem -0.5rem rgba(0,0,0,0.2);
 }
