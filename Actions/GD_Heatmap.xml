@@ -50,7 +50,7 @@
     },
     {
       "title": "!{Heatmap_Verity}",
-      "binding": "Bot1_AS_Verity_Heatmap_Enabled"
+      "binding": "VerityScoreResult_HHSF6soY3vHUZULhWgVz"
     }
   ],
   "options": [
@@ -83,7 +83,7 @@
     "Activity2_MOMENT_SINGLE_SELECT",
     "Activity6_Brainstorm_Heatmap_Enabled",
     "Activity5_MOMENT_SINGLE_SELECT",
-    "Bot1_AS_Verity_Heatmap_Enabled"
+    "VerityScoreResult_HHSF6soY3vHUZULhWgVz"
   ]
   }]]></Component>
 </Action>

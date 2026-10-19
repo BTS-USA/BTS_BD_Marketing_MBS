@@ -59,12 +59,6 @@ define(['jquery', 'Q', 'wizer-api', 'logger', 'wizletBase', 'doT'], function ($,
             self.getVerityUrl(body).then(function (data) {
                 var verityLink = data.GetVerityUrlsV2Result.chatUrl;
                 self.wizletContext.find('[data-src]').attr('src', verityLink);
-                if (self.wizletInfo.heatmapEnabled) {
-                    var qId = self.wizerApi.getQuestionIdByName(self.wizletInfo.heatmapEnabled);
-                    if (qId) {
-                        self.wizerApi.addVote(qId, '111');
-                    }
-                }
             }).catch(function (err) {
                 console.log(err);
             });

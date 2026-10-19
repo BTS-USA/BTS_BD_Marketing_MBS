@@ -10,11 +10,9 @@
   },
   "botId": "!{Bot1_AS_Verity_BotId}",
   "environment": "!{Bot1_AS_Verity_Environment}",
-  "heatmapEnabled": "Bot1_AS_Verity_Heatmap_Enabled",
   "trackQuestion": "Team_Track",
   "scope": [
     "Team_Track",
-    "Bot1_AS_Verity_Heatmap_Enabled",
     "VerityScoreResult_HHSF6soY3vHUZULhWgVz"
   ]
 }]]></Component>
