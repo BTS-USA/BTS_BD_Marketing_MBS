@@ -48,10 +48,10 @@
   "options": [],
   "multiSort": {
     "Metric_Total": "desc",
+    "VerityScoreResult_HHSF6soY3vHUZULhWgVz": "desc",
     "Metric1": "desc",
     "Metric2": "desc",
-    "Metric3": "desc",
-    "VerityScoreResult_HHSF6soY3vHUZULhWgVz": "desc"
+    "Metric3": "desc"
   },
   "isShowRank": true,
   "maxList": "100",

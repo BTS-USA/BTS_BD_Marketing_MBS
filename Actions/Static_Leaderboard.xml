@@ -82,19 +82,19 @@
     "isNumeric": true,
     "sortOrder": "DESC",
     "sorting": {
-      "question": "Metric1",
+      "question": "VerityScoreResult_HHSF6soY3vHUZULhWgVz",
       "isNumeric": true,
       "sortOrder": "DESC",
       "sorting": {
-        "question": "Metric2",
+        "question": "Metric1",
         "isNumeric": true,
         "sortOrder": "DESC",
         "sorting": {
-          "question": "Metric3",
+          "question": "Metric2",
           "isNumeric": true,
           "sortOrder": "DESC",
           "sorting": {
-            "question": "VerityScoreResult_HHSF6soY3vHUZULhWgVz",
+            "question": "Metric3",
             "isNumeric": true,
             "sortOrder": "DESC"
           }
