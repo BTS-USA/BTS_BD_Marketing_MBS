@@ -390,6 +390,18 @@ define(['jquery', 'Q', 'wizer-api', 'wizletBase', 'WizerModel', 'doT', 'logger']
             str;
 
         if (componentVersion == 2) {
+            var pName = vote.participantName;
+            if (this.wizletInfo.teamNameQuestion && myTeamVotes) {
+                for (var ti = 0; ti < myTeamVotes.length; ti++) {
+                    if (pName === myTeamVotes[ti].name) {
+                        if (options.wizletInfo.appendTeamNumber || options.wizletInfo.appendParticipantName) {
+                            pName = pName + ": " + myTeamVotes[ti].questionMap[options.wizletInfo.teamNameQuestion].value;
+                        } else {
+                            pName = myTeamVotes[ti].questionMap[options.wizletInfo.teamNameQuestion].value;
+                        }
+                    }
+                }
+            }
             str = '<article class="tlc-article" vote="' + vote.responseId + '" data-voteContainer>' +
                 '<div class="tlc-vote" data-voteTextContainer>' +
                 '<p class="tlc-vote__text cl-paragraph" data-voteTextIndex="' + vote.responseId + '" data-voteText>' + vote.responseText + '</p></div>';
@@ -410,25 +422,7 @@ define(['jquery', 'Q', 'wizer-api', 'wizletBase', 'WizerModel', 'doT', 'logger']
                 }
                 str += '<p class="tlc-vote__number" data-voteSequenceNumber>' + vote.sequence + '</p>';
                 if (options.wizletInfo.showAuthor) {
-                    var pName = vote.participantEmail;
-                    var displayName = vote.participantName || "";
-                    var teamName = "";
-                    if (this.wizletInfo.teamNameQuestion && myTeamVotes) {
-                        for (var i = 0; i < myTeamVotes.length; i++) {
-                            if (pName === myTeamVotes[i].email &&
-                                myTeamVotes[i].questionMap[options.wizletInfo.teamNameQuestion] &&
-                                myTeamVotes[i].questionMap[options.wizletInfo.teamNameQuestion].value) {
-                                teamName = myTeamVotes[i].questionMap[options.wizletInfo.teamNameQuestion].value;
-                            }
-                        }
-                    }
-                    if (teamName && this.wizletInfo.appendParticipantName && displayName) {
-                        displayName = displayName + ": " + teamName;
-                    } else if (teamName) {
-                        displayName = teamName;
-                    }
-                    
-                    str += '<p class="tlc-author__text" data-voteAuthorIndex="' + vote.responseId + '" data-voteAuthor>' + displayName + '</p></div>';
+                    str += '<p class="tlc-author__text" data-voteAuthorIndex="' + vote.responseId + '" data-voteAuthor>' + pName + '</p></div>';
                 }
             }
             str += '</article>';

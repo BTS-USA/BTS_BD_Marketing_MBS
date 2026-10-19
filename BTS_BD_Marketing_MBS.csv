@@ -214,7 +214,7 @@ Bot1_AS_Verity_Follower_AS_InfoNote;Please wait for your team leader to complete
 Bot1_AS_Verity_Follower_Screen_Title;Please wait for your Leader to complete the Verity exercise;;;;;;;;;;;;;;;;;
 Begin;Begin;;;;;;;;;;;;;;;;;
 Activity6_MomentScenarioTitle;Moment 3: When a Team Has a Breakthrough Worth Scaling;;;;;;;;;;;;;;;;;
-Activity6_MomentScenarioContentText;"One of Ember's regional sales teams built an AI process that automates pipeline generation. In six months, the team cut prospecting time by half and now spends that time closing deals.<br><br>The COO wants it live in every market by early next year. The other regional sales heads aren't convinced. Three objections keep coming up:<br><ul><li>""Our sales cycles are longer and relationship-driven.""</li><li>""Our data isn't clean enough for this.""</li><li>""We'd have to drop tools we've already invested in.""</li></ul><br>The COO has asked for your recommendation, not just a reaction.<br><br><b>What do you recommend? Brainstorm at your table.</b>";;;;;;;;;;;;;;;;;
+Activity6_MomentScenarioContentText;"One of Ember's regional sales teams built an AI process that automates pipeline generation. In six months, the team cut prospecting time by half and now spends that time closing deals.<br><br>The COO wants it live in every market by early next year. The other regional sales heads aren't convinced. Three objections keep coming up:<br><ul><li>""Our sales cycles are longer and relationship-driven.""</li><li>""Our data isn't clean enough for this.""</li><li>""We'd have to drop tools we've already invested in.""</li><li>The COO has asked for your recommendation, not just a reaction.</li></ul><br><br><b>What do you recommend? Brainstorm at your table.</b>";;;;;;;;;;;;;;;;;
 Reset;Reset;;;;;;;;;;;;;;;;;
 Data_Export;Data Export;;;;;;;;;;;;;;;;;
 GD_Reset_Event_title;Reset Event;;;;;;;;;;;;;;;;;
@@ -309,7 +309,7 @@ Activity5_OutcomeD;Creates conditions for real trust. You leave knowing what thi
 Activity6_BrainStormTitle;Moment 3: When a Team Has a Breakthrough Worth Scaling;;;;;;;;;;;;;;;;;
 Activity6_BrainStormDescription;<b>What do you recommend? Brainstorm at your table.</b>;;;;;;;;;;;;;;;;;
 Activity6_InputInstructions;Your ideas are being captured as you go. Enter each recommendation as a separate entry, then submit. You can add multiple recommendations — submit one, then enter the next.;;;;;;;;;;;;;;;;;
-Activity6_PlaceholderText;Type one recommendation here, then submit. Add as many as you like.;;;;;;;;;;;;;;;;;
+Activity6_PlaceholderText;Enter text here;;;;;;;;;;;;;;;;;
 Activity6_CharactersRemaining;characters remaining;;;;;;;;;;;;;;;;;
 Activity6_Myentries;My entries;;;;;;;;;;;;;;;;;
 Activity6_Totalentries;Total entries;;;;;;;;;;;;;;;;;

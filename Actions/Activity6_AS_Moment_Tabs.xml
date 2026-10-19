@@ -13,6 +13,10 @@
       "title": "!{Scenario}",
       "actionXML": "Activity6_AS_Moment_Scenario",
       "open": true
+    },
+    {
+      "title": "!{Decision}",
+      "actionXML": "Activity6_AS_Brainstorm_Input"
     }
   ],
   "title": "!{Activity6_GD_TabsTitle}",
