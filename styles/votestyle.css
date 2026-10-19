@@ -597,10 +597,8 @@ body {
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 }
 #votingSlideDiv .mainWrapper .cl-header--main {
-  background-color: #fff;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-image: linear-gradient(to right, #e8eaeb, transparent) 1 0;
+  background-color: rgba(202,28,104,0.07);
+  border-bottom: 0;
   border-radius: 5px 5px 0 0;
   min-height: 6rem;
   margin-bottom: 0;
@@ -926,6 +924,9 @@ body[class*=Team_Name] #votingSlideDiv .mainWrapper .nc-container {
 }
 body[class*=Team_Name] #votingSlideDiv .mainWrapper .tc-page__page {
   overflow: visible;
+}
+body[class*=Team_Name] #votingSlideDiv .mainWrapper .animated-waves {
+  display: none;
 }
 body[class*=Bot1_AS_Verity] #votingSlideDiv {
   padding: 55px 0 0;
