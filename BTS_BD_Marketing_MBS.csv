@@ -9,7 +9,6 @@ Activity2_MOMENT_SINGLE_SELECT;Individual;MOMENT_SINGLE_SELECT;1:!{Activity2_Mom
 Activity5_MOMENT_SINGLE_SELECT;Individual;MOMENT_SINGLE_SELECT;1:!{Activity5_MomentSingleSelectOption1};2:!{Activity5_MomentSingleSelectOption2};3:!{Activity5_MomentSingleSelectOption3};4:!{Activity5_MomentSingleSelectOption4};Activity5_MOMENT_SINGLE_SELECT;;;;;;;;;;;
 Activity6_INPUT_1;Multi;INPUT_1;Activity6_INPUT_1;;;;;;;;;;;;;;;
 Activity6_Brainstorm_Heatmap_Enabled;Individual;Activity6_Brainstorm_Heatmap_Enabled;Activity6_Brainstorm_Heatmap_Enabled;;;;;;;;;;;;;;;
-Bot1_AS_Verity_Heatmap_Enabled;Individual;Bot1_AS_Verity_Heatmap_Enabled;Bot1_AS_Verity_Heatmap_Enabled;;;;;;;;;;;;;;;
 Activity6_Result_Brainstorm_INPUT_1;Multi;Brainstorm_INPUT_1;Activity6_Result_Brainstorm_INPUT_1;;;;;;;;;;;;;;;
 Activity6_Team_Name;Individual;Team_Name;Activity6_Team_Name;;;;;;;;;;;;;;;
 Cohort_Track;Individual, Protected;Cohort_Track;Cohort_Track;;;;;;;;;;;;;;;
@@ -252,7 +251,7 @@ Heatmap_Moment1;Moment 1;;;;;;;;;;;;;;;;;
 Heatmap_Moment2;Moment 2;;;;;;;;;;;;;;;;;
 Heatmap_Moment3;Moment 3;;;;;;;;;;;;;;;;;
 Heatmap_Moment4;Moment 4;;;;;;;;;;;;;;;;;
-Heatmap_Verity;Verity;;;;;;;;;;;;;;;;;
+Heatmap_Verity;Verity Score;;;;;;;;;;;;;;;;;
 Heatmap_Activity1;Moment 1;;;;;;;;;;;;;;;;;
 Heatmap_Activity2;Moment 2;;;;;;;;;;;;;;;;;
 Heatmap_Activity5;Moment 4;;;;;;;;;;;;;;;;;
