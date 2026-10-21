@@ -1059,6 +1059,30 @@ body[class*=_Moment_Result] p,
 .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-content {
   padding: 1rem 0 0 0;
 }
+.bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left {
+  width: 40%;
+}
+@media screen and (max-width: 1600px) {
+  .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left {
+    width: 54%;
+  }
+  .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left img {
+    height: 24rem;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left {
+    width: 50%;
+  }
+  .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left img {
+    height: 28rem;
+  }
+}
 .bodyStatic_Leaderboard .hmc-table__th:first-child,
 .tc-action-Static_Leaderboard .hmc-table__th:first-child {
   text-align: center;
