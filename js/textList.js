@@ -514,8 +514,12 @@ define(['jquery', 'Q', 'wizer-api', 'wizletBase', 'WizerModel', 'doT', 'logger']
                 response = self.parseMyAsssessorComments(response, options);
             }
             var responseVotes = response.votes || [];
+            // The DOM renders newlines as <br>, and jQuery .text() drops <br>
+            // (yielding no character), so strip newlines here to compare like
+            // for like - otherwise multi-line entries never match and the list
+            // rebuilds (flickers) on every model change.
             var incoming = responseVotes.map(function(vote) {
-                return String(vote.responseId) + ':' + (vote.responseText || '');
+                return String(vote.responseId) + ':' + String(vote.responseText || '').replace(/(?:\r\n|\r|\n)/g, '');
             }).sort().join('|');
             var current = [];
             options.context.find('[data-voteContainer]').each(function() {
