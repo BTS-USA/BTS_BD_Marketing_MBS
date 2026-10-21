@@ -44,11 +44,6 @@
       "binding": "Activity6_Brainstorm_Heatmap_Enabled"
     },
     {
-      "title": "!{Heatmap_Moment4}",
-      "binding": "Activity5_MOMENT_SINGLE_SELECT",
-      "isAlphabet": true
-    },
-    {
       "title": "!{Heatmap_Verity}",
       "binding": "VerityScoreResult_HHSF6soY3vHUZULhWgVz"
     }
