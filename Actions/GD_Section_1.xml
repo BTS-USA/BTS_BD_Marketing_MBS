@@ -76,16 +76,6 @@
       "icon": "input"
     },
     {
-      "title": "!{GD_Activity5_Tabs}",
-      "section": "Activity5_AS_Moment_Tabs",
-      "icon": "input"
-    },
-    {
-      "title": "!{GD_Activity5_Feedback}",
-      "section": "Activity5_AS_Moment_Feedback",
-      "icon": "result"
-    },
-    {
       "title": "!{GD_Bot1_AS_Verity}",
       "section": "Bot1_AS_Verity",
       "icon": "input"

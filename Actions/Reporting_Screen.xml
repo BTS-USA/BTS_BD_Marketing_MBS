@@ -21,10 +21,6 @@
       "actionXML": "Activity6_Result_MBS_Textlist"
     },
     {
-      "title": "!{GD_Activity5_Result}",
-      "actionXML": "Activity5_AS_Moment_Result"
-    },
-    {
       "title": "!{GD_Static_Leaderboard}",
       "actionXML": "Static_Leaderboard"
     }

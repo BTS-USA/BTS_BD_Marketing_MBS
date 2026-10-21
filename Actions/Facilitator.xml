@@ -36,11 +36,6 @@
       "icon": "result"
     },
     {
-      "title": "!{GD_Activity5_Result}",
-      "section": "Activity5_AS_Moment_Result",
-      "icon": "result"
-    },
-    {
       "title": "!{GD_Static_Leaderboard}",
       "section": "Static_Leaderboard",
       "icon": "result"

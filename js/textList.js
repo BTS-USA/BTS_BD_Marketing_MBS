@@ -39,6 +39,10 @@ define(['jquery', 'Q', 'wizer-api', 'wizletBase', 'WizerModel', 'doT', 'logger']
 
     TextList.prototype.unloadHandler = function() {
         //unload wizletbase
+        if (this.refreshVotesTimer) {
+            clearTimeout(this.refreshVotesTimer);
+            this.refreshVotesTimer = null;
+        }
         if (this.refreshVotes) $(document).off("wizer:model:change", this.refreshVotes);
         WizletBase.unloadHandler({
             wizlet: this
@@ -459,10 +463,22 @@ define(['jquery', 'Q', 'wizer-api', 'wizletBase', 'WizerModel', 'doT', 'logger']
     };
     
 
-    //Refreshes votes for the opened tab, i.e. add votes (complete div structure or increment) to the already existing component
+    //Refreshes votes for the opened tab, i.e. add votes (complete div structure or increment) to the already existing component.
+    // One submit updates the model several times; collapse those into a single rebuild.
     TextList.prototype.refreshVotes = function(event) {
         var self = event.data.context;
         var options = event.data.options;
+        if (self.refreshVotesTimer) {
+            clearTimeout(self.refreshVotesTimer);
+        }
+        self.refreshVotesTimer = setTimeout(function() {
+            self.refreshVotesTimer = null;
+            self.refreshVotesNow(options);
+        }, 200);
+    };
+
+    TextList.prototype.refreshVotesNow = function(options) {
+        var self = this;
         var questionId = self.questionId;
         var maxLists = options.wizletInfo.maxLists;
         var assessment = false;
@@ -491,7 +507,17 @@ define(['jquery', 'Q', 'wizer-api', 'wizletBase', 'WizerModel', 'doT', 'logger']
             if (assessment) {
                 response = self.parseMyAsssessorComments(response, options);
             }
-            var responseVotes = response.votes;
+            var responseVotes = response.votes || [];
+            var incoming = responseVotes.map(function(vote) {
+                return String(vote.responseId) + ':' + (vote.responseText || '');
+            }).sort().join('|');
+            var current = [];
+            options.context.find('[data-voteContainer]').each(function() {
+                current.push($(this).attr('vote') + ':' + $(this).find('[data-voteText]').text());
+            });
+            if (incoming === current.sort().join('|')) {
+                return;
+            }
 
             if (self.wizletInfo.incremental !== false) { // incremental is default
 
