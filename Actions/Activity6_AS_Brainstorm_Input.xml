@@ -31,7 +31,7 @@
         "submitButton": {
           "class": "inputComponentSubmit cl-button cl-button--submit",
           "text": "!{submit}",
-          "clearText": true,
+          "clearText": false,
           "message": "!{saved}"
         }
       }
