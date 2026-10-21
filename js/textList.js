@@ -393,6 +393,12 @@ define(['jquery', 'Q', 'wizer-api', 'wizletBase', 'WizerModel', 'doT', 'logger']
         var componentVersion = options.wizletInfo.version || 0,
             str;
 
+        // Preserve line breaks entered by the participant: newlines collapse to a
+        // single space inside a <p>, so convert them to <br> for display.
+        var voteText = (vote.responseText === undefined || vote.responseText === null)
+            ? ''
+            : String(vote.responseText).replace(/(?:\r\n|\r|\n)/g, '<br>');
+
         if (componentVersion == 2) {
             var pName = vote.participantName;
             if (this.wizletInfo.teamNameQuestion && myTeamVotes) {
@@ -408,7 +414,7 @@ define(['jquery', 'Q', 'wizer-api', 'wizletBase', 'WizerModel', 'doT', 'logger']
             }
             str = '<article class="tlc-article" vote="' + vote.responseId + '" data-voteContainer>' +
                 '<div class="tlc-vote" data-voteTextContainer>' +
-                '<p class="tlc-vote__text cl-paragraph" data-voteTextIndex="' + vote.responseId + '" data-voteText>' + vote.responseText + '</p></div>';
+                '<p class="tlc-vote__text cl-paragraph" data-voteTextIndex="' + vote.responseId + '" data-voteText>' + voteText + '</p></div>';
 
             if (this.currentTab !== "myVotes" && this.currentTab !== "allVotes" && this.currentTab !== "myTrackParticipantVotes" && this.currentTab.substring(0, 12) !== "filterOption") {
                 if (options.wizletInfo.showAuthor) {
@@ -435,7 +441,7 @@ define(['jquery', 'Q', 'wizer-api', 'wizletBase', 'WizerModel', 'doT', 'logger']
 
             str = '<div class="textListComponentVote' + vote.responseId + 'Container textListComponentVoteContainer" vote="' + vote.responseId + '" data-voteContainer>' +
                 '<div class="textListComponentVote' + vote.responseId + 'TextContainer textListComponentVoteTextContainer" data-voteTextContainer>' +
-                '<p class="textListComponentVote' + vote.responseId + 'Text textListComponentVoteText" data-voteTextIndex="' + vote.responseId + '" data-voteText>' + vote.responseText + '</p></div>';
+                '<p class="textListComponentVote' + vote.responseId + 'Text textListComponentVoteText" data-voteTextIndex="' + vote.responseId + '" data-voteText>' + voteText + '</p></div>';
 
             if (this.currentTab !== "allVotes" && this.currentTab !== "myTrackParticipantVotes" && this.currentTab.substring(0, 12) !== "filterOption") {
                 if (options.wizletInfo.showAuthor) {
