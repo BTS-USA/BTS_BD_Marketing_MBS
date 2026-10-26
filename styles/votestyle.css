@@ -989,6 +989,9 @@ body[class*=Team_Name] .tc-page__page.tc-action-Team_Name_Follower_AS_InfoNote #
 body[class*=Team_Name] .tc-page__page.tc-action-Team_Name_Follower_AS_InfoNote #votingSlideDiv .mainWrapper .identifier-page-meta {
   display: none;
 }
+.bodyBase_CaseStudy #votingSlideDiv .mainWrapper .ic-column-left {
+  width: 50%;
+}
 [class*=Splash] #votingSlideDiv,
 [class*=InfoNote] #votingSlideDiv {
   padding: 55px 0 0;
