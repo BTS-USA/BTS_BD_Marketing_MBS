@@ -1056,36 +1056,26 @@ body[class*=_Moment_Result] p,
   background-color: #fff;
   color: #ca1c68;
 }
-.bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-paragraph {
-  margin: 0;
-}
-.bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-content {
-  padding: 1rem 0 0 0;
-}
-.bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left {
-  width: 40%;
-}
-@media screen and (max-width: 1600px) {
-  .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left {
-    width: 50%;
-  }
-}
-@media screen and (max-width: 1500px) {
-  .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left {
-    width: 54%;
-  }
-  .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left img {
-    height: 24rem;
-  }
-}
-@media screen and (max-width: 1100px) {
-  .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left {
-    width: 50%;
-  }
-  .bodyActivity6_AS_Moment_Tabs .tc-page__page.tc-action-Activity6_AS_Moment_Scenario .ic-column-left img {
-    height: 28rem;
-  }
-}
+/*.bodyActivity6_AS_Moment_Tabs
+    .tc-page__page 
+        &.tc-action-Activity6_AS_Moment_Scenario
+            .ic-paragraph
+                margin 0
+            .ic-content
+                padding 1rem 0 0 0
+            .ic
+                &-column-left
+                    width 40%
+                    @media screen and (max-width 1600px)
+                        width 50%
+                    @media screen and (max-width 1500px)
+                        width 54%
+                        img
+                            height 24rem
+                    @media screen and (max-width 1100px)
+                        width 50%
+                        img
+                            height 28rem*/
 .bodyStatic_Leaderboard .hmc-table__th:first-child,
 .tc-action-Static_Leaderboard .hmc-table__th:first-child {
   text-align: center;
@@ -1097,6 +1087,15 @@ body[class*=_Moment_Result] p,
 .pc-savedmessage:before,
 .inputSavedMessage:before {
   display: none !important;
+}
+@media screen and (max-width: 1900px) {
+  #votingSlideDiv .mainWrapper .tc-action-Base_CaseStudy .ic-column-left {
+    width: 50%;
+  }
+  #votingSlideDiv .mainWrapper .tc-action-Base_CaseStudy .ic-column-right {
+    width: 50%;
+    float: right;
+  }
 }
 @media screen and (max-width: 1400px) {
   #votingSlideDiv .mainWrapper {
